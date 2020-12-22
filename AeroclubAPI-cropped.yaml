@@ -4377,7 +4377,39 @@ components:
         located_in:
           description: Местонахождение
           items:
-            $ref: "#/components/schemas/Location"
+            $ref: "#/components/schemas/LocationNext"
+        name:
+          description: Название локации
+          items:
+            $ref: "#/components/schemas/LocalizedString"
+        terminal:
+          type: string
+          description: Терминал (например, аэропорта)
+        time_zone_offset:
+          type: string
+          description:
+            Смещение часового пояса в часах относительно UTC+0 в формате
+            'HH:00:00'
+        type:
+          $ref: "#/components/schemas/LocationType"
+      required:
+        - id
+      type: object
+    LocationNext:
+      properties:
+        address:
+          $ref: "#/components/schemas/Address"
+        code:
+          type: string
+          description: Сокращенный код локации на латинице
+        id:
+          type: integer
+          description: ID объекта
+        image_url:
+          type: string
+          description: URL cвязанного изображения
+        located_in:
+          description: Местонахождение
         name:
           description: Название локации
           items:
