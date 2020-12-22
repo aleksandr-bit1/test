@@ -2,8 +2,8 @@
     font-family: 'HarmoniaSans';
     font-style: italic;
     font-weight: bold;
-    src: local('HarmoniaSansProCyr-BoldItalic'),
-    url('./HarmoniaSansProCyr-BoldItalic.woff') format('woff');
+    src: local('HarmoniaSansProCyr-BoldIt'),
+    url('./HarmoniaSansProCyr-BoldIt.woff') format('woff');
 }
 @font-face {
     font-family: 'HarmoniaSans';
@@ -17,15 +17,15 @@
     font-family: 'HarmoniaSans';
     font-style: italic;
     font-weight: 600;
-    src: local('HarmoniaSansProCyr-SemiBoldIt'),
-    url('./HarmoniaSansProCyr-SemiBoldIt.woff') format('woff');
+    src: local('HarmoniaSansProCyr-SemiBdIt'),
+    url('./HarmoniaSansProCyr-SemiBdIt.woff') format('woff');
 }
 @font-face {
     font-family: 'HarmoniaSans';
     font-style: normal;
     font-weight: 600;
-    src: local('HarmoniaSansProCyr-SemiBold'),
-    url('./HarmoniaSansProCyr-SemiBold.woff') format('woff');
+    src: local('HarmoniaSansProCyr-SemiBd'),
+    url('./HarmoniaSansProCyr-SemiBd.woff') format('woff');
 }
 
 
