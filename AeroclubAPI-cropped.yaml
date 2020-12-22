@@ -4494,7 +4494,36 @@ components:
           type: string
           description: URL cвязанного изображения
         located_in:
-          $ref: "#/components/schemas/ModelLocation"
+          $ref: "#/components/schemas/ModelLocationNext"
+        name:
+          description: Наименование локации
+          items:
+            $ref: "#/components/schemas/LocalizedString"
+        terminal:
+          type: string
+          description: Терминал (например, аэропорта)
+        time_zone_offset:
+          type: string
+          description: Смещение часового пояса в часах относительно UTC+0 в формате "HH:00:00"
+        type:
+          $ref: "#/components/schemas/LocationType"
+      required:
+        - id
+        - type
+      type: object
+    ModelLocationNext:
+      properties:
+        code:
+          type: string
+          description: Сокращенный код страны или города на латинице
+        id:
+          type: integer
+          description: ID объекта
+        image_url:
+          type: string
+          description: URL cвязанного изображения
+        located_in:
+          description: Повторящийся объект Локация
         name:
           description: Наименование локации
           items:
