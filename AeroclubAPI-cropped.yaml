@@ -20,6 +20,10 @@ info:
      [![](images/image.png)](images/image.png)
 
      [![](images/image.png "Открыть изображение в новой вкладке")](images/image.png)
+
+     Пример добавления картинки с сылкой:
+     
+     <a href="images/image.png" target="_blank"><img src="images/image.png"/></a>
   termsOfService: http://example.com/terms/
   contact:
     name: API Support
