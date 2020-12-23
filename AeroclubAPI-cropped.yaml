@@ -15,9 +15,12 @@ info:
      Пока не описано
 
      [Ссылка на картинку 1](./images/Aeroclub_ru.png)
+
      [Ссылка на картинку 2](./images/Aeroclub_ru.png?target=_blank)
-     [Ссылка на картинку 3](./images/Aeroclub_ru.png "title" target="_blank")
-     [Ссылка на картинку 4](./images/Aeroclub_ru.png" target="_blank)
+
+     <a href="./images/Aeroclub_ru.png" target="_blank">Ссылка на картинку 3</a>
+     
+     [Ссылка на картинку 4](./images/Aeroclub_ru.png)
 
      ![Описание картинки](./images/Aeroclub_ru.png)
   termsOfService: http://example.com/terms/
