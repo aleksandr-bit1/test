@@ -14,7 +14,10 @@ info:
      # Изменение и отмена командировки
      Пока не описано
 
-     [Ссылка на картинку](./images/Aeroclub_ru.png){:target="_blank"}
+     [Ссылка на картинку 1](./images/Aeroclub_ru.png)
+     [Ссылка на картинку 2](./images/Aeroclub_ru.png?target=_blank)
+     [Ссылка на картинку 3](./images/Aeroclub_ru.png "title" target="_blank")
+     [Ссылка на картинку 4](./images/Aeroclub_ru.png" target="_blank)
 
      ![Описание картинки](./images/Aeroclub_ru.png)
   termsOfService: http://example.com/terms/
