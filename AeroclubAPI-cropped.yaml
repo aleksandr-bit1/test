@@ -6,6 +6,7 @@ info:
      # Аутентификация 
      Пока не описано. 
 
+
      Необходимо получить токен авторизации с помощью метода [PUT /oauth/{companyId}/fingerprint/{profileId}](#put-/oauth/-companyId-/fingerprint/-profileId-). 
      # Создание командировки 
      Пока не описано. 
