@@ -21,6 +21,8 @@ info:
      [![Описание картинки](images/Aeroclub_ru.png)](images/Aeroclub_ru.png)
 
      [![Описание картинки](images/Aeroclub_ru.png "Подсказка картинки")](images/Aeroclub_ru.png)
+
+     [![Описание картинки](images/image.png "Открыть изображение в новой вкладке")](images/image.png)
   termsOfService: http://example.com/terms/
   contact:
     name: API Support
