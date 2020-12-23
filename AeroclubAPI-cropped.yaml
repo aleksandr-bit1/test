@@ -16,13 +16,9 @@ info:
 
      [Ссылка на картинку 1](./images/Aeroclub_ru.png)
 
-     [Ссылка на картинку 2](./images/Aeroclub_ru.png?target=_blank)
+     [![Описание картинки 1](./images/Aeroclub_ru.png)](./images/Aeroclub_ru.png)
 
-     <a href="./images/Aeroclub_ru.png" target="_blank">Ссылка на картинку 3</a>
-     
-     [Ссылка на картинку 4](./images/Aeroclub_ru.png)
-
-     ![Описание картинки](./images/Aeroclub_ru.png)
+     [![Описание картинки 2](images/Aeroclub_ru.png)](images/Aeroclub_ru.png)
   termsOfService: http://example.com/terms/
   contact:
     name: API Support
