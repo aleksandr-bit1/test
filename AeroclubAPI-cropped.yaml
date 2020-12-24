@@ -33,6 +33,47 @@ info:
     email: teamsigma@aeroclub.ru
   version: 1.109.3-beta
 paths:
+  /connect/token:
+    post:
+      tags:
+        - 1. Авторизация
+      description: Авторизация с помощью Passport
+      servers:
+        - url: https://dev-passport.aeroclub.ru
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              properties:
+                username:
+                  description: Логин пользователя
+                  type: string
+                password:
+                  description: Пароль пользователя
+                  type: string
+                grant_type:
+                  description: Тип разрешения на авторизацию
+                  type: string
+                client_id:
+                  description: Идентификатор клиента
+                  type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                properties:
+                  access_token:
+                    description: Авторизационный токен доступа
+                    type: string
+                  expires_in:
+                    description:  Количество минут до истечения токена
+                    type: string
+                  token_type:
+                    description: Тип токена
+                    type: string
+                type: object
   "/authfx/trip/batch/{batchToken}/complete":
     post:
       tags:
