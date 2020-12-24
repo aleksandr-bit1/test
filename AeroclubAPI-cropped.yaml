@@ -6,11 +6,14 @@ info:
      # Аутентификация 
      Пока не описано. 
 
-     Необходимо получить токен авторизации с помощью метода [PUT /oauth/{companyId}/fingerprint/{profileId}](#put-/oauth/-companyId-/fingerprint/-profileId-). 
+     Необходимо получить токен авторизации с помощью метода [PUT /oauth/{companyId}/fingerprint/{profileId}](#put-/oauth/-companyId-/fingerprint/-profileId-).
+     
      # Создание командировки 
      Пока не описано. 
+
      # Авторизация командировки и услуг
      Пока не описано.
+     
      # Изменение и отмена командировки
      Пока не описано
 
