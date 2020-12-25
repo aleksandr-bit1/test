@@ -68,6 +68,9 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/AuthTokenResponse"
+      security:
+      - passport:
+        - test
   "/authfx/trip/batch/{batchToken}/complete":
     post:
       tags:
@@ -2258,6 +2261,16 @@ components:
     basicAuth:
       type: http
       scheme: basic
+    passport:
+      type: oauth2
+      flows:
+        clientCredentials:
+          tokenUrl: https://dev-passport.aeroclub.ru/connect/token
+        authorizationCode:
+          authorizationUrl: https://dev-passport.aeroclub.ru/connect/authorize
+          tokenUrl: https://dev-passport.aeroclub.ru/connect/token
+          scopes:
+            test: Request Body
   schemas:
     Account:
       properties:
