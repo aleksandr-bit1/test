@@ -647,7 +647,7 @@ paths:
   "/oauth/{companyId}/fingerprint/{profileId}":
     put:
       tags:
-        - 1. Аутентификация
+        - 1. Авторизация
       security:
         - basicAuth: []
       description: Аутентификация клиента
@@ -2160,7 +2160,7 @@ paths:
 security:
   - apiKey: []
 tags:
-  - name: 1. Аутентификация
+  - name: 1. Авторизация
     description: >
       Описание процесса аутентификации
         # Заголовок 1
