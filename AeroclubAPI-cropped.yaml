@@ -71,9 +71,18 @@ paths:
                 grant_type:
                   description: Тип разрешения на авторизацию
                   type: string
+                  example: password
                 client_id:
                   description: Идентификатор клиента
                   type: string
+                client_secret:
+                  description: Секретный ключ клиента. Передается, если настроена авторизация по ключу
+                  type: string
+              required:
+                - username
+                - password
+                - grant_type
+                - client_id
       responses:
         '200':
           description: OK
