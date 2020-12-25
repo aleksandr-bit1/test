@@ -22,9 +22,7 @@ info:
 
     Пока не описано
 
-    Пример ссылки:
-
-    [Текст ссылки](images/image.png)
+    Пример ссылки: [Текст ссылки](images/image.png)
 
     Пример картинки:
 
@@ -39,7 +37,6 @@ info:
     [![](images/image.png "Открыть изображение в новой вкладке")](images/image.png)
 
     Пример картинки с ссылкой, которая откроется в новой вкладке:
-
     <a href="images/image.png" target="_blank"><img src="images/image.png"/></a>
   termsOfService: http://example.com/terms/
   contact:
