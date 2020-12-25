@@ -67,17 +67,7 @@ paths:
           content:
             application/json:
               schema:
-                properties:
-                  access_token:
-                    description: Авторизационный токен доступа
-                    type: string
-                  expires_in:
-                    description:  Количество минут до истечения токена
-                    type: string
-                  token_type:
-                    description: Тип токена
-                    type: string
-                type: object
+                $ref: "#/components/schemas/AuthTokenResponse"
   "/authfx/trip/batch/{batchToken}/complete":
     post:
       tags:
@@ -2560,6 +2550,9 @@ components:
         client_id:
           description: Идентификатор клиента
           type: string
+        refresh_token:
+          description: Токен для обновления токена доступа
+          type: string
         client_secret:
           description: Секретный ключ клиента. Передается, если настроена авторизация по ключу
           type: string
@@ -2568,6 +2561,28 @@ components:
         - password
         - grant_type
         - client_id
+      type: object
+    AuthTokenResponse:
+      properties:
+        id_token:
+          description: Идентификационный токен
+          type: string
+        access_token:
+          description: Токен доступа
+          type: string
+        expires_in:
+          description: Количество минут до истечения токена
+          type: string
+        token_type:
+          description: Тип токена
+          type: string
+        refresh_token:
+          description: Токен для обновления токена доступа
+          type: string
+      required:
+        - access_token
+        - expires_in
+        - token_type
       type: object
     BankAccount:
       description: Банковские реквизиты
