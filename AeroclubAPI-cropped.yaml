@@ -1,14 +1,15 @@
 openapi: 3.0.2
 info:
   title: Aeroclub Api
-  description: >
+  description: |
     Ниже будет полное описание бизнес-процессов со ссылками на методы. 
+
     # Аутентификация
 
     Пока не описано. 
 
     Необходимо получить токен авторизации с помощью метода [PUT /oauth/{companyId}/fingerprint/{profileId}](#put-/oauth/-companyId-/fingerprint/-profileId-).
-    
+
     # Создание командировки
 
     Пока не описано.
@@ -16,7 +17,7 @@ info:
     # Авторизация командировки и услуг
 
     Пока не описано.
-    
+
     # Изменение и отмена командировки
 
     Пока не описано
@@ -26,7 +27,7 @@ info:
     [Текст ссылки](images/image.png)
 
     Пример картинки:
-    
+
     ![Текст картинки](images/image.png)
 
     Пример картинки с сылкой:
@@ -38,7 +39,7 @@ info:
     [![](images/image.png "Открыть изображение в новой вкладке")](images/image.png)
 
     Пример картинки с ссылкой, которая откроется в новой вкладке:
-    
+
     <a href="images/image.png" target="_blank"><img src="images/image.png"/></a>
   termsOfService: http://example.com/terms/
   contact:
