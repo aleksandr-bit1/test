@@ -3,30 +3,30 @@ info:
   title: Aeroclub Api
   description: >
     Ниже будет полное описание бизнес-процессов со ссылками на методы. 
-     # Аутентификация 
-     Пока не описано. 
+    # Аутентификация 
+    Пока не описано. 
 
-     Необходимо получить токен авторизации с помощью метода [PUT /oauth/{companyId}/fingerprint/{profileId}](#put-/oauth/-companyId-/fingerprint/-profileId-).
-     
-     # Создание командировки 
-     Пока не описано. 
+    Необходимо получить токен авторизации с помощью метода [PUT /oauth/{companyId}/fingerprint/{profileId}](#put-/oauth/-companyId-/fingerprint/-profileId-).
+    
+    # Создание командировки 
+    Пока не описано. 
 
 
-     # Авторизация командировки и услуг
-     Пока не описано.
-     
-     # Изменение и отмена командировки
-     Пока не описано
+    # Авторизация командировки и услуг
+    Пока не описано.
+    
+    # Изменение и отмена командировки
+    Пока не описано
 
-     [Ссылка на картинку](images/image.png)
+    [Ссылка на картинку](images/image.png)
 
-     [![](images/image.png)](images/image.png)
+    [![](images/image.png)](images/image.png)
 
-     [![](images/image.png "Открыть изображение в новой вкладке")](images/image.png)
+    [![](images/image.png "Открыть изображение в новой вкладке")](images/image.png)
 
-     Пример добавления картинки с сылкой:
+    Пример добавления картинки с сылкой:
 
-     <a href="images/image.png" target="_blank"><img src="images/image.png"/></a>
+    <a href="images/image.png" target="_blank"><img src="images/image.png"/></a>
   termsOfService: http://example.com/terms/
   contact:
     name: API Support
