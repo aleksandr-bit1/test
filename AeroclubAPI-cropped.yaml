@@ -30,17 +30,15 @@ info:
 
     Пример картинки:
 
-    ![Текст картинки](images/image.png)
+    ![Текст картинки](images/Aeroclub_ru.png)
 
-    Пример картинки с сылкой:
+    Пример картинки с ссылкой:
+    [![](images/Aeroclub_ru.png)](images/Aeroclub_ru.png)
 
-    [![](images/image.png)](images/image.png)
+    Пример картинки с ссылкой и подсказкой: [![](images/Aeroclub_ru.png "Открыть изображение в новой вкладке")](images/Aeroclub_ru.png)
 
-    Пример картинки с сылкой и подсказкой:
-
-    [![](images/image.png "Открыть изображение в новой вкладке")](images/image.png)
-
-    Пример картинки с ссылкой, которая откроется в новой вкладке:
+    Пример картинки с ссылкой, которая откроется в новой вкладке (правильное оформление):
+    
     <a href="images/image.png" target="_blank"><img src="images/image.png"/></a>
   termsOfService: http://example.com/terms/
   contact:
@@ -56,33 +54,13 @@ paths:
       description: Авторизация с помощью Passport
       servers:
         - url: https://dev-passport.aeroclub.ru
-          description: cервер Passport
+          description: тестовый cервер для авторизации
       requestBody:
         content:
           application/x-www-form-urlencoded:
             schema:
-              properties:
-                username:
-                  description: Логин пользователя
-                  type: string
-                password:
-                  description: Пароль пользователя
-                  type: string
-                grant_type:
-                  description: Тип разрешения на авторизацию
-                  type: string
-                  example: password
-                client_id:
-                  description: Идентификатор клиента
-                  type: string
-                client_secret:
-                  description: Секретный ключ клиента. Передается, если настроена авторизация по ключу
-                  type: string
-              required:
-                - username
-                - password
-                - grant_type
-                - client_id
+              $ref: "#/components/schemas/AuthRequest"
+        required: true
       responses:
         '200':
           description: OK
@@ -2237,7 +2215,7 @@ tags:
     description: Запросы к техподдержке
 servers:
   - url: https://beta-api.aeroclub.ru
-    description: Тестовый сервер
+    description: тестовый сервер Aeroclub API
 components:
   requestBodies:
     IdsRequest:
@@ -2566,6 +2544,30 @@ components:
       properties:
         note:
           type: string
+      type: object
+    AuthRequest:
+      properties:
+        username:
+          description: Логин пользователя
+          type: string
+        password:
+          description: Пароль пользователя
+          type: string
+        grant_type:
+          description: Тип разрешения на авторизацию
+          type: string
+          example: password
+        client_id:
+          description: Идентификатор клиента
+          type: string
+        client_secret:
+          description: Секретный ключ клиента. Передается, если настроена авторизация по ключу
+          type: string
+      required:
+        - username
+        - password
+        - grant_type
+        - client_id
       type: object
     BankAccount:
       description: Банковские реквизиты
