@@ -681,6 +681,30 @@ paths:
                 $ref: "#/components/schemas/AuthorizationToken"
         "426":
           description: Версия протокола не поддерживается
+    delete:
+      tags:
+        - 1. Аутентификация
+      description: Удаление токена устройства
+      operationId: DeleteAuthentication
+      parameters:
+        - name: companyId
+          in: path
+          description: Идентификатор компании в справочнике Аэроклуба
+          required: true
+          schema:
+            type: integer
+        - name: profileId
+          in: path
+          description: Идентификатор профиля в справочнике Аэроклуба
+          required: true
+          schema:
+            type: integer
+      responses:
+        "204":
+          description: Операция выполнена
+        "426":
+          description: Версия протокола не поддерживается
+    parameters: []
   "/orders/{orderNumber}/services/{serviceNumber}":
     get:
       tags:
