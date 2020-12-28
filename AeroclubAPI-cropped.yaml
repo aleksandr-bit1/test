@@ -681,6 +681,38 @@ paths:
                 $ref: "#/components/schemas/AuthorizationToken"
         "426":
           description: Версия протокола не поддерживается
+  "/orders/{orderNumber}/services/{serviceNumber}":
+    get:
+      tags:
+        - 2. Создание командировки
+      description: Получение услуги по номеру заказа и номеру услуги
+      summary: Получение информации по услуге
+      operationId: GetService
+      parameters:
+        - name: orderNumber
+          in: path
+          description: Номер заказа
+          required: true
+          schema:
+            type: integer
+        - name: serviceNumber
+          in: path
+          description: Номер услуги
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Возвращается услуга
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/IServiceDetailWithPosts"
+        "404":
+          description: Услуга не найдена или нет прав на её просмотр
+        "426":
+          description: Версия протокола не поддерживается
+    parameters: []
   "/orders/{orderNumber}/services/{serviceNumber}/alloweddocuments":
     get:
       tags:
