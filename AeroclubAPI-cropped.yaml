@@ -2,8 +2,6 @@ openapi: 3.0.2
 info:
   title: Aeroclub Api
   description: >
-    
-
     # Аутентификация
 
     **Методы API**
@@ -307,7 +305,6 @@ info:
     | 4 | Проверка статуса авторизации услуг и получения списка авторизирующих лиц.                                                                       | [GET /orders/{orderNumber}/services/{serviceNumber}/authfx/state](#get-/orders/-orderNumber-/services/-serviceNumber-/authfx/state)                     |
     | 5 | Отправка запроса на авторизацию услуги                                                                                                          | [PUT /orders/{orderNumber}/services/{serviceNumber}/authfx/state](#put-/orders/-orderNumber-/services/-serviceNumber-/authfx/state)                     |
     | 6 | Отправка результата авторизации                                                                                        | [POST /authfx/trip/batch/{batchToken}/complete](#post-/authfx/trip/batch/-batchToken-/complete)                                       |
-
   termsOfService: http://example.com/terms/
   contact:
     name: API Support
@@ -315,6 +312,30 @@ info:
     email: teamsigma@aeroclub.ru
   version: 1.109.3-beta
 paths:
+  /connect/token:
+    post:
+      tags:
+        - 1. Авторизация
+      description: Авторизация с помощью Passport
+      servers:
+        - url: https://dev-passport.aeroclub.ru
+          description: тестовый cервер для авторизации
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: "#/components/schemas/AuthRequest"
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AuthTokenResponse"
+      security:
+      - passport:
+        - test
   "/authfx/trip/batch/{batchToken}/complete":
     post:
       tags:
@@ -888,7 +909,7 @@ paths:
   "/oauth/{companyId}/fingerprint/{profileId}":
     put:
       tags:
-        - 1. Аутентификация
+        - 1. Авторизация
       security:
         - basicAuth: []
       description: Аутентификация клиента
@@ -925,6 +946,62 @@ paths:
                 $ref: "#/components/schemas/AuthorizationToken"
         "426":
           description: Версия протокола не поддерживается
+    delete:
+      tags:
+        - 1. Авторизация
+      description: Удаление токена клиента
+      operationId: DeleteAuthentication
+      parameters:
+        - name: companyId
+          in: path
+          description: Идентификатор компании в справочнике Аэроклуба
+          required: true
+          schema:
+            type: integer
+        - name: profileId
+          in: path
+          description: Идентификатор профиля в справочнике Аэроклуба
+          required: true
+          schema:
+            type: integer
+      responses:
+        "204":
+          description: Операция выполнена
+        "426":
+          description: Версия протокола не поддерживается
+    parameters: []
+  "/orders/{orderNumber}/services/{serviceNumber}":
+    get:
+      tags:
+        - 2. Создание командировки
+      description: Получение услуги по номеру заказа и номеру услуги
+      summary: Получение информации по услуге
+      operationId: GetService
+      parameters:
+        - name: orderNumber
+          in: path
+          description: Номер заказа
+          required: true
+          schema:
+            type: integer
+        - name: serviceNumber
+          in: path
+          description: Номер услуги
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Возвращается услуга
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/IServiceDetailWithPosts"
+        "404":
+          description: Услуга не найдена или нет прав на её просмотр
+        "426":
+          description: Версия протокола не поддерживается
+    parameters: []
   "/orders/{orderNumber}/services/{serviceNumber}/alloweddocuments":
     get:
       tags:
@@ -2401,7 +2478,7 @@ paths:
 security:
   - apiKey: []
 tags:
-  - name: 1. Аутентификация
+  - name: 1. Авторизация
     description: >
       Описание процесса аутентификации
         # Заголовок 1
@@ -2452,7 +2529,7 @@ tags:
     description: Запросы к техподдержке
 servers:
   - url: https://beta-api.aeroclub.ru
-    description: Тестовый сервер
+    description: тестовый сервер Aeroclub API
 components:
   requestBodies:
     IdsRequest:
@@ -2505,6 +2582,16 @@ components:
     basicAuth:
       type: http
       scheme: basic
+    passport:
+      type: oauth2
+      flows:
+        clientCredentials:
+          tokenUrl: https://dev-passport.aeroclub.ru/connect/token
+        authorizationCode:
+          authorizationUrl: https://dev-passport.aeroclub.ru/connect/authorize
+          tokenUrl: https://dev-passport.aeroclub.ru/connect/token
+          scopes:
+            test: Request Body
   schemas:
     Account:
       properties:
@@ -2781,6 +2868,55 @@ components:
       properties:
         note:
           type: string
+      type: object
+    AuthRequest:
+      properties:
+        username:
+          description: Логин пользователя
+          type: string
+        password:
+          description: Пароль пользователя
+          type: string
+        grant_type:
+          description: Тип разрешения на авторизацию
+          type: string
+          example: password
+        client_id:
+          description: Идентификатор клиента
+          type: string
+        refresh_token:
+          description: Токен для обновления токена доступа
+          type: string
+        client_secret:
+          description: Секретный ключ клиента. Передается, если настроена авторизация по ключу
+          type: string
+      required:
+        - username
+        - password
+        - grant_type
+        - client_id
+      type: object
+    AuthTokenResponse:
+      properties:
+        id_token:
+          description: Идентификационный токен
+          type: string
+        access_token:
+          description: Токен доступа
+          type: string
+        expires_in:
+          description: Количество минут до истечения токена
+          type: string
+        token_type:
+          description: Тип токена
+          type: string
+        refresh_token:
+          description: Токен для обновления токена доступа
+          type: string
+      required:
+        - access_token
+        - expires_in
+        - token_type
       type: object
     BankAccount:
       description: Банковские реквизиты
