@@ -684,7 +684,7 @@ paths:
     delete:
       tags:
         - 1. Авторизация
-      description: Удаление токена устройства
+      description: Удаление токена клиента
       operationId: DeleteAuthentication
       parameters:
         - name: companyId
