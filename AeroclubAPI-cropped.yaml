@@ -683,7 +683,7 @@ paths:
           description: Версия протокола не поддерживается
     delete:
       tags:
-        - 1. Аутентификация
+        - 1. Авторизация
       description: Удаление токена устройства
       operationId: DeleteAuthentication
       parameters:
