@@ -2,14 +2,13 @@ openapi: 3.0.2
 info:
   title: Aeroclub Api
   description: |
-
     # Аутентификация
 
     **Методы API**
 
     | # | Описание                        | Метод                                              |
     |---|---------------------------------|----------------------------------------------------|
-    | 1 | Получение токена аутентификации | [PUT /oauth/{CompanyID}/fingerprint/{ProfileID}](#put-/oauth/-companyId-/fingerprint/-profileId-)     |
+    | 1 | Авторизация клиента | [PUT /oauth/{CompanyID}/fingerprint/{ProfileID}](#put-/oauth/-companyId-/fingerprint/-profileId-)     |
     | 2 | Метод выхода - SingOut          | [DELETE /oauth/{clientId}/fingerprint/{fingerprint}](#delete-/oauth/-companyId-/fingerprint/-profileId-) |
 
 
@@ -926,8 +925,8 @@ paths:
         - 1. Авторизация
       security:
         - basicAuth: []
-      description: Аутентификация клиента
-      summary: Аутентификация клиента
+      description: Авторизация клиента
+      summary: Авторизация клиента
       operationId: Authenticate
       parameters:
         - name: companyId
