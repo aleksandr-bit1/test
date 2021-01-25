@@ -1368,6 +1368,136 @@ paths:
         "426":
           description: Версия протокола не поддерживается
     parameters: []
+  "/journeys/{journeyNumber}/trips/{businessTripNumber}/posts":
+    get:
+      tags:
+        - 4. Изменение и отмена командировки
+      description: Получение  комментариев в чате с агентом в командировке
+      operationId: GetBusinessTripPosts
+      parameters:
+        - name: journeyNumber
+          in: path
+          description: Номер поездки
+          required: true
+          schema:
+            type: integer
+        - name: businessTripNumber
+          in: path
+          description: Номер командировки
+          required: true
+          schema:
+            type: integer
+        - name: last
+          in: query
+          description: Количество последних коментариев
+          schema:
+            type: integer
+            default: 10
+        - name: versionToken
+          in: query
+          description: Токен версии последней полученной выборки
+          schema:
+            type: string
+        - name: lastMessageID
+          in: query
+          description: Идентификатор последнего полученного комментария
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Список комментариев к заказу
+          headers:
+            X-UpdateToken:
+              description: Токен версии выборки
+              schema:
+                type: string
+                format: string
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BusinessTripAuthPost'
+        '426':
+          description: Версия протокола не поддерживается
+          content: {}
+    put:
+      tags:
+        - 4. Изменение и отмена командировки
+      description: Добавление комментария к командировке
+      operationId: AddBusinessTripPost
+      parameters:
+        - name: journeyNumber
+          in: path
+          description: Номер поездки
+          required: true
+          schema:
+            type: integer
+        - name: businessTripNumber
+          in: path
+          description: Номер командировки
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              properties:
+                upfile:
+                  type: string
+                  description: Прикрепляемый файл
+                  format: binary
+      responses:
+        '200':
+          description: Возвращается добавленный комментарий
+          headers:
+            X-UpdateToken:
+              description: Токен версии добавленного комментария
+              schema:
+                type: string
+                format: string
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Post'
+        '426':
+          description: Версия протокола не поддерживается
+          content: {}
+      x-codegen-request-body-name: body
+  "/journeys/{journeyNumber}/trips/{businessTripNumber}/posts/read":
+    put:
+      tags:
+        - 4. Изменение и отмена командировки
+      description: Пометить комментарии прочитанными
+      operationId: ReadBusinessTripPosts
+      parameters:
+        - name: journeyNumber
+          in: path
+          description: Номер поездки
+          required: true
+          schema:
+            type: integer
+        - name: businessTripNumber
+          in: path
+          description: Номер командировки
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/IdsRequest'
+        required: true
+      responses:
+        '200':
+          description: Запрос выполнен успешно
+          content: {}
+        '426':
+          description: Версия протокола не поддерживается
+          content: {}
+      x-codegen-request-body-name: body
   /journeys:
     put:
       tags:
@@ -5985,9 +6115,8 @@ components:
           type: boolean
           description: Признак прочитанности поста
         version:
-          description: Версия сообщения
-          items:
-            $ref: "#/components/schemas/UInt64"
+          description: Версия сообщения в Base64
+          type: string
       required:
         - id
         - is_my_message
@@ -8475,18 +8604,24 @@ components:
       properties:
         business_trip_stage:
           type: integer
+          description: "Тип сообщения. Возможные варианты: Unknow - комментарий не относится к авторизации, Fact - факт поездки, Services - набор услуг, AdditionalService - дополнительная услуга"
         id:
           type: integer
+          description: Идентификатор сообщения
         message:
           type: string
+          description: Текст сообщения
         posted_by:
           $ref: "#/components/schemas/ProfileInfo"
         posted_at_utc:
           type: string
+          description: Время отправки сообщения в UTC. Формат YYYY-MM-ddThh:mm:ssZ
         read:
           type: boolean
+          description: Статус прочтения
         is_my_message:
           type: boolean
+          description: Признак принадлежности сообщения текущему пользователю
         attachments:
           type: array
           items:
