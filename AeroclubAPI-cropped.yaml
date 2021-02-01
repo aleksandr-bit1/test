@@ -9243,7 +9243,7 @@ components:
       type: object
     Services:
       description: Услуги
-      oneOf:
+      anyOf:
         - $ref: "#/components/schemas/Aeroexpress"
         - $ref: "#/components/schemas/Avia"
         - $ref: "#/components/schemas/Hotel"
