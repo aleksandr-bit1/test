@@ -270,7 +270,7 @@ info:
 
     **Дополнительные возможности:**
 
-    1. Получение ссылок на документы (ваучеры и маршрут-квитанции) для услуг со статус «Complete».  Метод: [GET /journeys/{journeyNumber}/trips/{businessTripNumber}/documents](https://aeroclub.atlassian.net/wiki/spaces/LINK/pages/171835401/GET+journeys+journeyNumber+trips+businessTripNumber+documents)
+    1. Получение ссылок на документы (ваучеры и маршрут-квитанции) для услуг со статус «Complete».  Метод: [GET /journeys/{journeyNumber}/trips/{businessTripNumber}/documents](#get-/journeys/-journeyNumber-/trips/-businessTripNumber-/documents)
 
     2. В данных по командировке (с использованием метода: [GET /journeys/{journeyNumber}/trips/{businessTripNumber}](#get-/journeys/-journeyNumber-/trips/-businessTripNumber-)) передается не вся информация по услугам. Для получения полной информации по услуге, есть отдельный метод [GET /orders/{orderNumber}/services/{serviceNumber}](#get-/orders/-orderNumber-/services/-serviceNumber-)
 
@@ -640,7 +640,7 @@ info:
 
     ### **Возможные расширения функционала**
 
-    Получение краткой информации по направлениям командировки с датами - вызов метода [GET /journeys/{journeyNumber}/trips/{businessTripNumber}/changedatesinfo](https://aeroclub.atlassian.net/wiki/spaces/LINK/pages/1794932749/GET+journeys+journeyNumber+trips+businessTripNumber+changedatesinfo)
+    Получение краткой информации по направлениям командировки с датами - вызов метода [GET /journeys/{journeyNumber}/trips/{businessTripNumber}/changedatesinfo](#get-/journeys/-journeyNumber-/trips/-businessTripNumber-/changedatesinfo)
 
     <br>
 
@@ -716,49 +716,49 @@ info:
     4. Если нет постоянного ключа (токена) авторизации от клиента, вызов метода аутентификации на стороне клиента с входными параметрами пользователя Аэроклуб (логин, пароль)
     5. Уведомление клиента о наличии новых сообщений в командировке - на указанный клиентом URL будет отправлен Post запрос с указанным ниже описанием:
       
-          **Описание полей запроса:**      
-     
-       Data:      
-            
-       | Field              | Desctiption        | Type |
-       |--------------------|--------------------|------|
-       | businessTripNumber | Номер командировки | int  |
-       | journeyNumber      | Номер поездки      | int  |
-       | postId             | Id сообщения       | int  | 
+     **Описание полей запроса:**
 
+     - Data
 
-            Type:
+    | Field              | Desctiption        | Type |
+    |--------------------|--------------------|------|
+    | businessTripNumber | Номер командировки | int  |
+    | journeyNumber      | Номер поездки      | int  |
+    | postId             | Id сообщения       | int  |
       
-            | Enum Type | Value             | Desctiption                                           |
-            |-----------|-------------------|-------------------------------------------------------|
-            |     2     | TripPostPublished | Уведомления об оставленном комментарии в командировке |
-  
-              **Тело запроса**
 
-                `{`  
-                `"data"``: {`  
-                `"businessTripNumber"``: 15005,`  
-                `"journeyNumber"``: 13411,`  
-                `"postId"``: 861206`  
-                `},`  
-                `"type"``:` `"TripPostPublished"`  
-                `}`
+     - Type
 
-    <br>
+    | Enum Type | Value             | Desctiption                                           |
+    |-----------|-------------------|-------------------------------------------------------|
+    |     2     | TripPostPublished | Уведомления об оставленном комментарии в командировке |    
 
-            **Пример запроса:**
 
-                Tue Dec 29 11:18:21 MSK 2020:INFO:Incoming POST request: /
-                Authorization : OAuth "Токен авторизации"
-                Accept : application/json, text/json, text/x-json, text/javascript, application/xml, text/xml, Application/Json
-                Expect : 100-continue
-                User-Agent : integration@aeroclub.ru
-                Host : mow1aps7:8089
-                Accept-Encoding : gzip, deflate
-                Content-Length : 102
-                Content-Type : application/json{"data":{"businessTripNumber":18547,"journeyNumber":16908,"postId":862731},"type":"TripPostPublished"}
-   
-            >**ВАЖНО:** При отправлении запроса на сторону клиента, Аэроклуб ожидает получить статус ответа 200/202. В случае получении иного статуса Ihub будет предпринимать до 5 попыток отправить запрос на сторону клиента с интервалом в секундах: 2 * retryCallNumber
+    **Тело запроса**
+
+        `{`  
+        `"data"``: {`  
+        `"businessTripNumber"``: 15005,`  
+        `"journeyNumber"``: 13411,`  
+        `"postId"``: 861206`  
+        `},`  
+        `"type"``:` `"TripPostPublished"`  
+        `}`
+
+    **Пример запроса:**
+
+        Tue Dec 29 11:18:21 MSK 2020:INFO:Incoming POST request: /
+        Authorization : OAuth "Токен авторизации"
+        Accept : application/json, text/json, text/x-json, text/javascript, application/xml, text/xml, Application/Json
+        Expect : 100-continue
+        User-Agent : integration@aeroclub.ru
+        Host : mow1aps7:8089
+        Accept-Encoding : gzip, deflate
+        Content-Length : 102
+        Content-Type : application/json{"data":{"businessTripNumber":18547,"journeyNumber":16908,"postId":862731},"type":"TripPostPublished"}
+
+
+    >**ВАЖНО:** При отправлении запроса на сторону клиента, Аэроклуб ожидает получить статус ответа 200/202. В случае получении иного статуса Ihub будет предпринимать до 5 попыток отправить запрос на сторону клиента с интервалом в секундах: 2 * retryCallNumber
 
     6. Получение клиентом новых сообщений по командировке. Метод [GET/journeys/{journeyNumber}/trips/{businessTripNumber}/posts]() возвращает всегда все прочитанные и непрочитанные сообщения в командировке: "read": false/true
     7. Клиент помечает полученные сообщения как прочитанные - вызов метода [PUT/journeys/{journeyNumber}/trips/{businessTripNumber}/posts/read]() - передается ID сообщения. Сообщение получает параметр read: true
