@@ -1415,6 +1415,37 @@ paths:
         "426":
           description: Версия протокола не поддерживается
     parameters: []
+  "/journeys/{journeyNumber}/trips/{businessTripNumber}/documents":
+    get:
+      tags:
+        - Поиск и оформление услуг в системе клиента
+      description: Получение проездных документов по командировке
+      operationId: GetDocumentsForBusinessTrip
+      parameters:
+        - name: journeyNumber
+          in: path
+          description: Номер поездки
+          required: true
+          schema:
+            type: integer
+        - name: businessTripNumber
+          in: path
+          description: Номер командировки
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Возвращается список проездных документов
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Ticket'
+        '426':
+          description: Версия протокола не поддерживается
+          content: {}
   "/journeys/{journeyNumber}/trips/{businessTripNumber}/posts":
     get:
       tags:
