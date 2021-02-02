@@ -32,7 +32,7 @@ info:
     | 1 | Авторизация клиента | [PUT /oauth/{CompanyID}/fingerprint/{ProfileID}](#put-/oauth/-companyId-/fingerprint/-profileId-)     |
     | 2 | Метод выхода - SingOut          | [DELETE /oauth/{clientId}/fingerprint/{fingerprint}](#delete-/oauth/-companyId-/fingerprint/-profileId-) |
 
-    <br><br>
+    <br>
 
 
     # Общий процесс создания командировки
@@ -41,7 +41,6 @@ info:
     
     <a href="images/Создание командировки_общий процесс_new.png" target="_blank"><img src="images/Создание командировки_общий процесс_new.png"/></a>
 
-    <br>
 
     ## Описание процесса создания командировки
 
@@ -158,8 +157,7 @@ info:
     | 1 | Создание "сущности" командировки | [PUT /journeysV2](#put-/journeysV2) |
 
 
-
-    <br><br>
+    <br>
 
     # Заполнение доп данных в командировке (при наличие интерфейса на стороне клиента)
 
@@ -184,7 +182,7 @@ info:
 
     **Нюансы метода ["GET /journey/{journeyNumber}/businessTrip/{businessTripNumber}/stage/fact/customproperties"](#get-/journeys/-journeyNumber-/trips/-businessTripNumber-/stage/-BusinessTripStage-/customProperties):**
 
-    1.  Если используются зависимые доп данные, то при вызове данного метода будет отдан список только родительских доп данных, после заполнения значений которых, вызвав метод "PUT /journey/{journeyNumber}/trips/{businessTripNumber}/stage/fact/analytics/{сustomPropertyId}/values/{сustomPropertyValueId}/dependent" можно получить список зависимых доп данных - метод вызывается после заполнения каждого доп данного с выбором из списка, если предусмотрена работа с зависимыми доп данными  
+    1.  Если используются зависимые доп данные, то при вызове данного метода будет отдан список только родительских доп данных, после заполнения значений которых, вызвав метод ["PUT /journey/{journeyNumber}/trips/{businessTripNumber}/stage/fact/analytics/{сustomPropertyId}/values/{сustomPropertyValueId}/dependent"](#put-/journeys/-journeyNumber-/trips/-businessTripNumber-/stage/-BusinessTripStage-/analytics/-customPropertyId-/values/-customPropertyValueId-/dependent) можно получить список зависимых доп данных - метод вызывается после заполнения каждого доп данного с выбором из списка, если предусмотрена работа с зависимыми доп данными  
 
     2.  если для доп данных с заполнением manual (ручным) предусмотрен формат заполнения, то метод отдает **Параметр: "format_rule": { }**, который можно использовать для валидация заполнения таких доп данных.
 
@@ -233,7 +231,7 @@ info:
 
 
 
-    <br><br>
+    <br>
 
     # Получение данных по командировке при наличие номеров поездки и командировки
 
@@ -263,7 +261,7 @@ info:
 
     В случае, если планируется использовать только процесс "Получения данных по командировке" без их загрузки со стороны клиента. Т.е. если создание командировок находится на стороне TIME (Online Booking Tool)процесс получения деталей по командировкам выглядит следующим образом:
 
-    1.  Сначала запрашивается список всех несинхронизированных командировок через IHUB (Intagration hub) (по 100 командировок в пакете) - с помощью вызова метода "[GET businesstrips/synchronization](http://wiki.aeroclub.int/pages/viewpage.action?pageId=32153234)" - Метод предназначен для получения пакета (GET-запрос) с набором несинхронизированных услуг в рамках командировки
+    1.  Сначала запрашивается список всех несинхронизированных командировок через IHUB (Intagration hub) (по 100 командировок в пакете) - с помощью вызова метода "GET businesstrips/synchronization" - Метод предназначен для получения пакета (GET-запрос) с набором несинхронизированных услуг в рамках командировки
     
     2.  Отдается ответ на сторону АК об их синхронизации, чтобы они были убраны из очереди на отдачу. Запрос направляется n-раз до момента «пустого ответа».
     
@@ -276,7 +274,7 @@ info:
 
     2. В данных по командировке (с использованием метода: [GET /journeys/{journeyNumber}/trips/{businessTripNumber}](#get-/journeys/-journeyNumber-/trips/-businessTripNumber-)) передается не вся информация по услугам. Для получения полной информации по услуге, есть отдельный метод [GET /orders/{orderNumber}/services/{serviceNumber}](#get-/orders/-orderNumber-/services/-serviceNumber-)
 
-    <br><br>
+    <br>
 
 
     # Процессы Авторизации
@@ -343,7 +341,7 @@ info:
     | 5 | Отправка запроса на авторизацию услуги                                                                                                          | [PUT /orders/{orderNumber}/services/{serviceNumber}/authfx/state](#put-/orders/-orderNumber-/services/-serviceNumber-/authfx/state)                     |
     | 6 | Отправка результата авторизации                                                                                        | [POST /authfx/trip/batch/{batchToken}/complete](#post-/authfx/trip/batch/-batchToken-/complete)                                       |
 
-    <br><br>
+    <br>
 
 
     # Поиск, добавление в корзину, бронирование и оформление услуг
@@ -409,12 +407,12 @@ info:
 
     В зависимости от типа услуг в наборе или доп услуги процесс оформления будет отличается.
 
-    1.  Если есть услуга ЖД, после получения авторизация, если таковая требовалась, и наличия у услуги статусов, указанных в п. 2 или п.6 таблицы <a href="#rail">"Комбинации статусов ЖД"</a>, переход к проверке наличия свободных мест и выбору места в вагоне - сохранение выбранных мест производится с помощью метода бронирования "[PUT /orders/{orderNumber}/services/{serviceNumber}/reserve](#put-/orders/-orderNumber-/services/-serviceNumber-/reserve)". **ВАЖНО:**  бронирования  **НЕ**  является оформлением услуги и для ЖД "срок жизни" брони от 15 до 30 мин. Следовательно, поле вызова метода бронирования мест, необходимо сразу же произвести оформление выбранных вариантов с помощью метода "[PUT /orders/{orderNumber}/services/{serviceNumber}/execute](#put-/orders/-orderNumber-/services/-serviceNumber-/execute)". До вызова метода необходимо проверить статусы услуги - они должны соответствовать п. 7 таблицы <a href="#rail">"Комбинации статусов ЖД"</a> Если свободных месте в выбранном вагоне на момент получения авторизация не окажется, то будет возвращена ошибка. В этом случае необходимо будет осуществить поиск и оформление услуги заново.
-    2.  Если есть услуга Авиа, то в процессе получения авторизации у бронирования может истечь таймлимит (п. 12 - в таблице <a href="#avia">"Комбинация статусов Авиа"</a>). Следовательно, перед тем как отправить услугу на оформление, она должна иметь комбинацию статусов указанных в п. 4 или п.11 таблицы <a href="#avia">"Комбинация статусов Авиа"</a>. В случае, если таймлимит истек, необходимо осуществить поиск и оформление услуги заново.
-    3.  В случае отелей, после получения авторизации и наличия в услуге статусов, указанных в п. 2 и п. 6 таблицы <a href="#hotel">"Комбинации статусов отеля"</a> услуга может быть сразу отправлена на оформление.
+    1.  Если есть услуга ЖД, после получения авторизация, если таковая требовалась, и наличия у услуги статусов, указанных в п. 2 или п.6 таблицы ["Комбинации статусов ЖД"](#overview--rail), переход к проверке наличия свободных мест и выбору места в вагоне - сохранение выбранных мест производится с помощью метода бронирования "[PUT /orders/{orderNumber}/services/{serviceNumber}/reserve](#put-/orders/-orderNumber-/services/-serviceNumber-/reserve)". **ВАЖНО:**  бронирования  **НЕ**  является оформлением услуги и для ЖД "срок жизни" брони от 15 до 30 мин. Следовательно, поле вызова метода бронирования мест, необходимо сразу же произвести оформление выбранных вариантов с помощью метода "[PUT /orders/{orderNumber}/services/{serviceNumber}/execute](#put-/orders/-orderNumber-/services/-serviceNumber-/execute)". До вызова метода необходимо проверить статусы услуги - они должны соответствовать п. 7 таблицы ["Комбинации статусов ЖД"](#overview--rail) Если свободных месте в выбранном вагоне на момент получения авторизация не окажется, то будет возвращена ошибка. В этом случае необходимо будет осуществить поиск и оформление услуги заново.
+    2.  Если есть услуга Авиа, то в процессе получения авторизации у бронирования может истечь таймлимит (п. 12 - в таблице ["Комбинация статусов Авиа"](#overview--avia)). Следовательно, перед тем как отправить услугу на оформление, она должна иметь комбинацию статусов указанных в п. 4 или п.11 таблицы ["Комбинация статусов Авиа"](#overview--avia). В случае, если таймлимит истек, необходимо осуществить поиск и оформление услуги заново.
+    3.  В случае отелей, после получения авторизации и наличия в услуге статусов, указанных в п. 2 и п. 6 таблицы ["Комбинации статусов отеля"](#overview--hotel) услуга может быть сразу отправлена на оформление.
     4.  После отправки услуг на оформление необходимо проверить статус услуг, запросив информацию по командировке - в случае получения "service_state": "Execution", услуга считается оформленной.
 
-    **ВАЖНО:** Более подробно все статусы услуг и их комбинации, в которых они должны находится перед переходом к тому или иному процессу указаны ниже в <a href="#statuses">Таблицах комбинаций статусов услуг и доступных дейтвий с ними</a>.
+    **ВАЖНО:** Более подробно все статусы услуг и их комбинации, в которых они должны находится перед переходом к тому или иному процессу указаны ниже в [Таблицах комбинаций статусов услуг и доступных дейтвий с ними](#overview--statuses).
 
     <br>
 
@@ -433,10 +431,14 @@ info:
 
     <br>
 
-    <a name="statuses"></a> ## Таблицы комбинаций статусов услуг и доступных дейcтвий с ними
+    <a id="overview--statuses"></a>
+    
+    ## Таблицы комбинаций статусов услуг и доступных дейcтвий с ними
 
 
-    <a name="avia"></a> ### Комбинации статусов авиа
+    <a id="overview--avia"></a>
+    
+    ### Комбинации статусов авиа
 
 
     | №  | ServiceState | AuthorizationStatus | AuthorizationAssertion | AvailableActions        | Статус услуги          | Описание состояния, в котором находится услуга, и возможных действий с ней                                                                                    |
@@ -459,7 +461,9 @@ info:
 
     <br>
 
-    <a name="hotel"></a> ### Комбинации статусов отеля
+    <a id="overview--hotel"></a>
+    
+    ### Комбинации статусов отеля
 
 
     | № | ServiceState | AuthorizationStatus | AuthorizationAssertion | AvailableActions | Статус услуги          | Описание состояния, в котором находится услуга, и возможных действий с ней                                                                                    |
@@ -476,7 +480,9 @@ info:
 
     <br>
 
-    <a name="rail"></a> ### Комбинации статусов ЖД
+    <a id="overview--rail"></a>
+    
+    ### Комбинации статусов ЖД
 
 
     | №  | ServiceState | AuthorizationStatus | AuthorizationAssertion | AvailableActions | Статус услуги          | Описание состояния, в котором находится услуга, и возможных действий с ней                                                                                                        |
@@ -535,9 +541,7 @@ info:
 
     # Изменения командировки
 
-    ## **Отмена командировки**
-
-    <br>
+    ## Отмена командировки
 
     ### **Процесс отмены командировки:**
 
@@ -549,8 +553,8 @@ info:
 
     1.  Запрос возможности отмены командировки - параметр "business_trip_cancellation_available".
     2.  При получении business_trip_cancellation_available: true - запрос отмены командировки - передается массив услуг, по которым должна быть сделана отмена в рамках конкретной командировки с кодами причин (если таковые предусмотрены.)
-    3.  После запроса отмены командировки командировка получает  **status:** **СancellationRequested**  (статус находится в ответе метода [GET /journeys/{journeyNumber}/trips/{businessTripNumber}](#get-/journeys/-journeyNumber-/trips/-businessTripNumber-) получения деталей по командировке ) ,  **cancellation_status:** **InProgress** (в ответе метода  [_GET /journeys/{journeyNumber}/trips/{businessTripNumber}/cancellation/status_](#get-/journeys/-journeyNumber-/trips/-businessTripNumber-/cancellation/status))
-    4.  Процесс обработки отмены услуг занимает время, поэтому чтобы убедится в полном завершении процесса, используется метод - [_GET /journeys/{journeyNumber}/trips/{businessTripNumber}/cancellation/status_](#get-/journeys/-journeyNumber-/trips/-businessTripNumber-/cancellation/status), который в ответе возвращает текущее состояние командировки, после выполнения запроса отмены. - Вызывающий сервис с некой периодичностью вызывает метод, проверяя статус процесса отмены. Вызов метода завершается, после получения  **cancellation_status = Completed → **status:** **Сancelled****
+    3.  После запроса отмены командировки командировка получает  **status:** **СancellationRequested**  (статус находится в ответе метода [GET /journeys/{journeyNumber}/trips/{businessTripNumber}](#get-/journeys/-journeyNumber-/trips/-businessTripNumber-) получения деталей по командировке ) ,  **cancellation_status:** **InProgress** (в ответе метода  [GET /journeys/{journeyNumber}/trips/{businessTripNumber}/cancellation/status](#get-/journeys/-journeyNumber-/trips/-businessTripNumber-/cancellation/status))
+    4.  Процесс обработки отмены услуг занимает время, поэтому чтобы убедится в полном завершении процесса, используется метод - [GET /journeys/{journeyNumber}/trips/{businessTripNumber}/cancellation/status](#get-/journeys/-journeyNumber-/trips/-businessTripNumber-/cancellation/status), который в ответе возвращает текущее состояние командировки, после выполнения запроса отмены. - Вызывающий сервис с некой периодичностью вызывает метод, проверяя статус процесса отмены. Вызов метода завершается, после получения  **cancellation_status = Completed → **status:** **Сancelled****
 
 
     **Комментарии к процессу:**
@@ -614,9 +618,8 @@ info:
 
     <br><br>
 
-    ## **Изменение дат командировки**
+    ## Изменение дат командировки
 
-    <br>
 
     ### **Процесс изменения дат командировки:**
 
@@ -657,11 +660,10 @@ info:
 
     <br><br>
 
-    ## **Изменение услуги в командировке**
+    ## Изменение услуги в командировке
 
     <a href="bpm/Процессы изменения услуги в командировке.bpm">Процессы изменения услуги в командировке.bpm</a>
 
-    <br>
 
     ### **Процесс изменения услуги в командировке (вариант 1):**
 
@@ -675,7 +677,6 @@ info:
     4.  После обработки услуги агентом **service_state (Статус обработки услуги)** устанавливается в одно из нижеперечисленных значений
     5.  Если после завершения обработки услуги агентом **service_state ≠ **Execution**** дополнительно может быть вызван метод для получения деталей по командировке для проверки добавления новой услуги к командировке в связи с отменой текущей, по которой были запрошены изменения, так как  ряд изменений  могут быть проведены только через отмену старой услуги и создания взамен нее новой.
 
-    <br>
 
     ### **Статусы обработки услуги:**
 
@@ -726,46 +727,38 @@ info:
        | postId             | Id сообщения       | int  | 
 
 
-       Type:
+            Type:
       
-       | Enum Type | Value             | Desctiption                                           |
-       |-----------|-------------------|-------------------------------------------------------|
-       |     2     | TripPostPublished | Уведомления об оставленном комментарии в командировке |
+            | Enum Type | Value             | Desctiption                                           |
+            |-----------|-------------------|-------------------------------------------------------|
+            |     2     | TripPostPublished | Уведомления об оставленном комментарии в командировке |
   
-      **Тело запроса**
+              **Тело запроса**
 
-    `{`  
-    `"data"``: {`  
-    `"businessTripNumber"``: 15005,`  
-    `"journeyNumber"``: 13411,`  
-    `"postId"``: 861206`  
-    `},`  
-    `"type"``:` `"TripPostPublished"`  
-    `}`
+                `{`  
+                `"data"``: {`  
+                `"businessTripNumber"``: 15005,`  
+                `"journeyNumber"``: 13411,`  
+                `"postId"``: 861206`  
+                `},`  
+                `"type"``:` `"TripPostPublished"`  
+                `}`
 
     <br>
 
-      **Пример запроса:**
+            **Пример запроса:**
 
-      Tue Dec 29 11:18:21 MSK 2020:INFO:Incoming POST request: /
-
-      Authorization : OAuth "Токен авторизации"
-
-      Accept : application/json, text/json, text/x-json, text/javascript, application/xml, text/xml, Application/Json
-
-      Expect : 100-continue
-
-      User-Agent : integration@aeroclub.ru
-
-      Host : mow1aps7:8089
-
-      Accept-Encoding : gzip, deflate
-
-      Content-Length : 102
-
-      Content-Type : application/json{"data":{"businessTripNumber":18547,"journeyNumber":16908,"postId":862731},"type":"TripPostPublished"}
+                Tue Dec 29 11:18:21 MSK 2020:INFO:Incoming POST request: /
+                Authorization : OAuth "Токен авторизации"
+                Accept : application/json, text/json, text/x-json, text/javascript, application/xml, text/xml, Application/Json
+                Expect : 100-continue
+                User-Agent : integration@aeroclub.ru
+                Host : mow1aps7:8089
+                Accept-Encoding : gzip, deflate
+                Content-Length : 102
+                Content-Type : application/json{"data":{"businessTripNumber":18547,"journeyNumber":16908,"postId":862731},"type":"TripPostPublished"}
    
-       >**ВАЖНО:** При отправлении запроса на сторону клиента, Аэроклуб ожидает получить статус ответа 200/202. В случае получении иного статуса Ihub будет предпринимать до 5 попыток отправить запрос на сторону клиента с интервалом в секундах: 2 * retryCallNumber
+            >**ВАЖНО:** При отправлении запроса на сторону клиента, Аэроклуб ожидает получить статус ответа 200/202. В случае получении иного статуса Ihub будет предпринимать до 5 попыток отправить запрос на сторону клиента с интервалом в секундах: 2 * retryCallNumber
 
     6. Получение клиентом новых сообщений по командировке. Метод [GET/journeys/{journeyNumber}/trips/{businessTripNumber}/posts]() возвращает всегда все прочитанные и непрочитанные сообщения в командировке: "read": false/true
     7. Клиент помечает полученные сообщения как прочитанные - вызов метода [PUT/journeys/{journeyNumber}/trips/{businessTripNumber}/posts/read]() - передается ID сообщения. Сообщение получает параметр read: true
@@ -776,9 +769,9 @@ info:
 
     | # | Описание                                     | Метод                                                              |
     |---|----------------------------------------------|--------------------------------------------------------------------|
-    | 1 | Добавление пользователем нового сообщения    | PUT/journeys/{journeyNumber}/trips/{businessTripNumber}/posts      |
-    | 2 | Получение новых сообщений по командировке    | GET/journeys/{journeyNumber}/trips/{businessTripNumber}/posts      |
-    | 3 | Пометка полученных сообщений как прочитанных | PUT/journeys/{journeyNumber}/trips/{businessTripNumber}/posts/read |
+    | 1 | Добавление пользователем нового сообщения    | [PUT/journeys/{journeyNumber}/trips/{businessTripNumber}/posts](#put-/journeys/-journeyNumber-/trips/-businessTripNumber-/posts)      |
+    | 2 | Получение новых сообщений по командировке    | [GET/journeys/{journeyNumber}/trips/{businessTripNumber}/posts](#get-/journeys/-journeyNumber-/trips/-businessTripNumber-/posts)      |
+    | 3 | Пометка полученных сообщений как прочитанных | [PUT/journeys/{journeyNumber}/trips/{businessTripNumber}/posts/read](#put-/journeys/-journeyNumber-/trips/-businessTripNumber-/posts/read) |
 
     <br>
 
@@ -794,11 +787,10 @@ info:
 
     <br><br>
 
-    ## **Отмена услуги в командировке**
+    ## Отмена услуги в командировке
 
     <a href="bpm/Процесс отмены услуги в командировке.bpm">Процесс отмены услуги в командировке.bpm</a>
 
-    <br>
 
     ### **Процесс отмены услуги в командировке (вариант 1):**
 
