@@ -736,14 +736,14 @@ info:
 
     **Тело запроса**
 
-        `{`  
-        `"data"``: {`  
-        `"businessTripNumber"``: 15005,`  
-        `"journeyNumber"``: 13411,`  
-        `"postId"``: 861206`  
-        `},`  
-        `"type"``:` `"TripPostPublished"`  
-        `}`
+        {  
+          "data": {  
+            businessTripNumber": 15005,  
+            "journeyNumber": 13411,  
+            "postId": 861206  
+          },  
+          "type": "TripPostPublished"  
+        }
 
     **Пример запроса:**
 
