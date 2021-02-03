@@ -38,7 +38,7 @@ info:
 
     |                 Функционал                 |                   Подключение                  |
     |--------------------------------------------|----------------------------------------------------------|
-    | Поиск и оформление услуг в системе клиента | **платное** |
+    | Поиск и оформление услуг в системе клиента         | **платное** |
 
     <br>
 
@@ -764,7 +764,7 @@ paths:
       summary: Авторизация командировки
       description: |
         Авторизация командировки  
-        <span style="color: #FF3B30">**Данный метод входит в блок "Внешняя авторизация" коммерческой политики. Описание доступно по [ссылке](#overview--policy)**</span>
+        <span style="color: #FF3B30">**Данный метод входит в подписку "Внешняя авторизация". Описание доступно по [ссылке](#overview--policy)**</span>
       operationId: CompleteAuthTrip
       parameters:
         - name: batchToken
@@ -792,7 +792,7 @@ paths:
       summary: Получение доступных форм оплаты
       description: |
         Получение доступных форм оплаты для компании и профиля  
-        <span style="color: #FF3B30">**Данный метод входит в блок "Создание командировки" коммерческой политики. Описание доступно по [ссылке](#overview--policy)**</span>
+        <span style="color: #FF3B30">**Данный метод входит в подписку "Работа с командировкой". Описание доступно по [ссылке](#overview--policy)**</span>
       operationId: GetAllowedPaymentRequisites
       parameters:
         - name: profileId
@@ -824,7 +824,7 @@ paths:
       summary: Получение списка доступных компаний
       description: |
         Получение списка компаний, доступных для обслуживания текущим пользователем  
-        <span style="color: #FF3B30">**Данный метод входит в блок "Создание командировки" коммерческой политики. Описание доступно по [ссылке](#overview--policy)**</span>
+        <span style="color: #FF3B30">**Данный метод входит в подписку "Работа с командировкой". Описание доступно по [ссылке](#overview--policy)**</span>
       operationId: GetServicingCompaniesForProfile
       parameters:
         - name: profileId
@@ -848,11 +848,11 @@ paths:
   "/journeys/{journeyNumber}/trips/{businessTripNumber}":
     get:
       tags:
-        - Интеграция данных по командировке
+        - Интеграция данных по командировке и услугам
       summary: Получение информации по командировке
       description: |
         Получение командировки по номеру  
-        <span style="color: #FF3B30">**Данный метод входит в блок "Интеграция данных по командировкам и услугам" коммерческой политики. Описание доступно по [ссылке](#overview--policy)**</span>
+        <span style="color: #FF3B30">**Данный метод входит в подписку "Интеграция данных по командировкам и услугам". Описание доступно по [ссылке](#overview--policy)**</span>
       operationId: GetBusinessTrip
       parameters:
         - name: journeyNumber
@@ -884,7 +884,7 @@ paths:
       summary: Запроса отмены командировки  
       description: |
         Запроса отмены командировки  
-        <span style="color: #FF3B30">**Данный метод входит в блок "Отмена командировки" коммерческой политики. Описание доступно по [ссылке](#overview--policy)**</span>
+        <span style="color: #FF3B30">**Данный метод входит в подписку "Отмена командировки". Описание доступно по [ссылке](#overview--policy)**</span>
       operationId: CancelJourney
       parameters:
         - name: journeyNumber
@@ -924,7 +924,7 @@ paths:
       summary: Проверка возможности отмены командировки
       description: |
         Проверка возможности отмены командировки и получение ReasonCodes для отмены услуг  
-        <span style="color: #FF3B30">**Данный метод входит в блок "Отмена командировки" коммерческой политики. Описание доступно по [ссылке](#overview--policy)**</span>
+        <span style="color: #FF3B30">**Данный метод входит в подписку "Отмена командировки". Описание доступно по [ссылке](#overview--policy)**</span>
       operationId: GetTripCancellationAvailable
       parameters:
         - name: journeyNumber
@@ -959,7 +959,7 @@ paths:
       summary: Получение статуса отмены командировки
       description: |
         Получение статуса отмены командировки  
-        <span style="color: #FF3B30">**Данный метод входит в блок "Отмена командировки" коммерческой политики. Описание доступно по [ссылке](#overview--policy)**</span>
+        <span style="color: #FF3B30">**Данный метод входит в подписку "Отмена командировки". Описание доступно по [ссылке](#overview--policy)**</span>
       operationId: GetCancellationStatus
       parameters:
         - name: journeyNumber
@@ -994,7 +994,7 @@ paths:
       summary: Обновление информации по направлениям командировки
       description: |
         Обновление информации по направлениям командировки  
-        <span style="color: #FF3B30">**Данный метод входит в блок "Изменение командировки" коммерческой политики. Описание доступно по [ссылке](#overview--policy)**</span>
+        <span style="color: #FF3B30">**Данный метод входит в подписку "Изменение командировки". Описание доступно по [ссылке](#overview--policy)**</span>
       operationId: ChangeDates
       parameters:
         - name: journeyNumber
@@ -1034,7 +1034,7 @@ paths:
       summary: Получение краткой информации по направлениям командировки
       description: |
         Получение краткой информации по направлениям командировки  
-        <span style="color: #FF3B30">**Данный метод входит в блок "Изменение командировки" коммерческой политики. Описание доступно по [ссылке](#overview--policy)**</span>
+        <span style="color: #FF3B30">**Данный метод входит в подписку "Изменение командировки". Описание доступно по [ссылке](#overview--policy)**</span>
       operationId: GetChangeDatesInfo
       parameters:
         - name: journeyNumber
@@ -1066,7 +1066,7 @@ paths:
       summary: Получение зависимых доп. данных 
       description: |
         Получение зависимых дополнительных данных  
-        <span style="color: #FF3B30">**Данный метод входит в блок "Создание командировки" коммерческой политики. Описание доступно по [ссылке](#overview--policy)**</span>
+        <span style="color: #FF3B30">**Данный метод входит в подписку "Работа с командировкой". Описание доступно по [ссылке](#overview--policy)**</span>
       operationId: GetBusinessTripTravellersAnalyticsChilds
       parameters:
         - name: journeyNumber
@@ -1127,7 +1127,7 @@ paths:
       summary: Проверка необходимости авторизации и получение списка авторизующих
       description: |
         Проверка необходимости авторизации и получение списка авторизующих для командировки  
-        <span style="color: #FF3B30">**Данный метод входит в блок "Внешняя авторизация" коммерческой политики. Описание доступно по [ссылке](#overview--policy)**</span>
+        <span style="color: #FF3B30">**Данный метод входит в подписку "Внешняя авторизация". Описание доступно по [ссылке](#overview--policy)**</span>
       operationId: GetTripAuthFxState
       parameters:
         - name: journeyNumber
@@ -1163,7 +1163,7 @@ paths:
       summary: Отправка командировки и услуг в командировке на авторизацию
       description: |
         Метод отправки командировки и услуг в командировке на авторизацию  
-        <span style="color: #FF3B30">**Данный метод входит в блок "Внешняя авторизация" коммерческой политики. Описание доступно по [ссылке](#overview--policy)**</span>
+        <span style="color: #FF3B30">**Данный метод входит в подписку "Внешняя авторизация". Описание доступно по [ссылке](#overview--policy)**</span>
       operationId: ChangeTripAuthFxState
       parameters:
         - name: journeyNumber
@@ -1207,7 +1207,7 @@ paths:
       summary: Получение доп. данных для заполнения
       description: |
         Получение возможных для заполнения доп. данных по командировке  
-        <span style="color: #FF3B30">**Данный метод входит в блок "Создание командировки" коммерческой политики. Описание доступно по [ссылке](#overview--policy)**</span>
+        <span style="color: #FF3B30">**Данный метод входит в подписку "Работа с командировкой". Описание доступно по [ссылке](#overview--policy)**</span>
       operationId: GetBusinessTripAnalytics
       parameters:
         - name: journeyNumber
@@ -1264,7 +1264,7 @@ paths:
       summary: Сохранение доп. данных по командировке
       description: |
         Сохранение доп. данных по командировке  
-        <span style="color: #FF3B30">**Данный метод входит в блок "Создание командировки" коммерческой политики. Описание доступно по [ссылке](#overview--policy)**</span>
+        <span style="color: #FF3B30">**Данный метод входит в подписку "Работа с командировкой". Описание доступно по [ссылке](#overview--policy)**</span>
       operationId: SaveBusinessTripAnalytics
       parameters:
         - name: journeyNumber
@@ -1350,7 +1350,7 @@ paths:
       summary: Получение комментариев чата командировки
       description: |
         Получение комментариев в чате с агентом в командировке  
-        <span style="color: #FF3B30">**Данный метод входит в блок "Интеграция чата" коммерческой политики. Описание доступно по [ссылке](#overview--policy)**</span>
+        <span style="color: #FF3B30">**Данный метод входит в подписку "Интеграция чата". Описание доступно по [ссылке](#overview--policy)**</span>
       operationId: GetBusinessTripPosts
       parameters:
         - name: journeyNumber
@@ -1405,7 +1405,7 @@ paths:
       summary: Добавление комментария в чат командировки
       description: |
         Добавление комментария к командировке  
-        <span style="color: #FF3B30">**Данный метод входит в блок "Интеграция чата" коммерческой политики. Описание доступно по [ссылке](#overview--policy)**</span>
+        <span style="color: #FF3B30">**Данный метод входит в подписку "Интеграция чата". Описание доступно по [ссылке](#overview--policy)**</span>
       operationId: AddBusinessTripPost
       parameters:
         - name: journeyNumber
@@ -1453,7 +1453,7 @@ paths:
       summary: Пометить комментарии чата прочитанными
       description: |
         Пометить комментарии прочитанными  
-        <span style="color: #FF3B30">**Данный метод входит в блок "Интеграция чата" коммерческой политики. Описание доступно по [ссылке](#overview--policy)**</span>
+        <span style="color: #FF3B30">**Данный метод входит в подписку "Интеграция чата". Описание доступно по [ссылке](#overview--policy)**</span>
       operationId: ReadBusinessTripPosts
       parameters:
         - name: journeyNumber
@@ -1489,7 +1489,7 @@ paths:
       summary: Создание поездки
       description: |
         Создание поездки  
-        <span style="color: #FF3B30">**Данный метод входит в блок "Создание командировки" коммерческой политики. Описание доступно по [ссылке](#overview--policy)**</span>
+        <span style="color: #FF3B30">**Данный метод входит в подписку "Работа с командировкой". Описание доступно по [ссылке](#overview--policy)**</span>
       operationId: CreateJourney
       requestBody:
         content:
@@ -1514,7 +1514,7 @@ paths:
       summary: Создание поездки с несколькими пунктами
       description: |
         Создание поездки версии 2. Поддержка создания с неколькими пунктами назанчения  
-        <span style="color: #FF3B30">**Данный метод входит в блок "Создание командировки" коммерческой политики. Описание доступно по [ссылке](#overview--policy)**</span>
+        <span style="color: #FF3B30">**Данный метод входит в подписку "Работа с командировкой". Описание доступно по [ссылке](#overview--policy)**</span>
       operationId: CreateJourneyV2
       requestBody:
         content:
@@ -1600,11 +1600,11 @@ paths:
   "/orders/{orderNumber}/services/{serviceNumber}":
     get:
       tags:
-        - Интеграция данных по командировке
+        - Интеграция данных по командировке и услугам
       summary: Получение информации по услуге
       description: |
         Получение услуги по номеру заказа и номеру услуги  
-        <span style="color: #FF3B30">**Данный метод входит в блок "Интеграция данных по командировкам и услугам" коммерческой политики. Описание доступно по [ссылке](#overview--policy)**</span>
+        <span style="color: #FF3B30">**Данный метод входит в подписку "Интеграция данных по командировкам и услугам". Описание доступно по [ссылке](#overview--policy)**</span>
       operationId: GetService
       parameters:
         - name: orderNumber
@@ -1638,7 +1638,7 @@ paths:
       summary: Получение доступных документов для услуги
       description: |
         Получение доступных документов для оформления услуги  
-        <span style="color: #FF3B30">**Данный метод входит в блок "Поиск и оформление услуг в системе клиента" коммерческой политики. Описание доступно по [ссылке](#overview--policy)**</span>
+        <span style="color: #FF3B30">**Данный метод входит в подписку "Поиск и оформление услуг в системе клиента". Описание доступно по [ссылке](#overview--policy)**</span>
       operationId: GetAllowedDocuments
       parameters:
         - name: orderNumber
@@ -1678,7 +1678,7 @@ paths:
       summary: Запрос на внесение изменений в услугу
       description: |
         Запрос на внесение изменений в услугу  
-        <span style="color: #FF3B30">**Данный метод входит в блок "Изменение командировки" коммерческой политики. Описание доступно по [ссылке](#overview--policy)**</span>
+        <span style="color: #FF3B30">**Данный метод входит в подписку "Изменение командировки". Описание доступно по [ссылке](#overview--policy)**</span>
       operationId: AlterService
       parameters:
         - name: orderNumber
@@ -1712,7 +1712,7 @@ paths:
       summary: Получение информации по необходимости авторизации услуги
       description: |
         Получение информации по необходимости авторизации услуги  
-        <span style="color: #FF3B30">**Данный метод входит в блок "Внешняя авторизация" коммерческой политики. Описание доступно по [ссылке](#overview--policy)**</span>
+        <span style="color: #FF3B30">**Данный метод входит в подписку "Внешняя авторизация". Описание доступно по [ссылке](#overview--policy)**</span>
       operationId: GetAuthorizingData
       parameters:
         - name: orderNumber
@@ -1742,7 +1742,7 @@ paths:
       summary: Отправка услуги на авторизацию
       description: |
           Отправка услуги на авторизацию  
-          <span style="color: #FF3B30">**Данный метод входит в блок "Внешняя авторизация" коммерческой политики. Описание доступно по [ссылке](#overview--policy)**</span>
+          <span style="color: #FF3B30">**Данный метод входит в подписку "Внешняя авторизация". Описание доступно по [ссылке](#overview--policy)**</span>
       operationId: SendServiceToAuthorization
       parameters:
         - name: orderNumber
@@ -1780,7 +1780,7 @@ paths:
       summary: Запрос на отмену или возврат услуги
       description: |
         Запрос на отмену или возврат услуги  
-        <span style="color: #FF3B30">**Данный метод входит в блок "Изменение командировки" коммерческой политики. Описание доступно по [ссылке](#overview--policy)**</span>
+        <span style="color: #FF3B30">**Данный метод входит в подписку "Изменение командировки". Описание доступно по [ссылке](#overview--policy)**</span>
       operationId: PerformCancelationService
       parameters:
         - name: orderNumber
@@ -1810,7 +1810,7 @@ paths:
       summary: Запрос на офромление услуги
       description: |
         Запрос на офромление услуги  
-        <span style="color: #FF3B30">**Данный метод входит в блок "Поиск и оформление услуг в системе клиента" коммерческой политики. Описание доступно по [ссылке](#overview--policy)**</span>
+        <span style="color: #FF3B30">**Данный метод входит в подписку "Поиск и оформление услуг в системе клиента". Описание доступно по [ссылке](#overview--policy)**</span>
       operationId: PerformExecutionService
       parameters:
         - name: orderNumber
@@ -1840,7 +1840,7 @@ paths:
       summary: Получение правил оказания услуги
       description: |
         Получение правил оказания услуги  
-        <span style="color: #FF3B30">**Данный метод входит в блок "Поиск и оформление услуг в системе клиента" коммерческой политики. Описание доступно по [ссылке](#overview--policy)**</span>
+        <span style="color: #FF3B30">**Данный метод входит в подписку "Поиск и оформление услуг в системе клиента". Описание доступно по [ссылке](#overview--policy)**</span>
       operationId: GetServiceRegulations
       parameters:
         - name: orderNumber
@@ -1872,7 +1872,7 @@ paths:
       summary: Запрос на бронирование услуги
       description: |
         Запрос на бронирование услуги  
-        <span style="color: #FF3B30">**Данный метод входит в блок "Поиск и оформление услуг в системе клиента" коммерческой политики. Описание доступно по [ссылке](#overview--policy)**</span>
+        <span style="color: #FF3B30">**Данный метод входит в подписку "Поиск и оформление услуг в системе клиента". Описание доступно по [ссылке](#overview--policy)**</span>
       operationId: PerformReservationService
       parameters:
         - name: orderNumber
@@ -1912,7 +1912,7 @@ paths:
       summary: Получение информации о свободных местах
       description: |
         Получение актуальной информации о свободных местах в вагоне (только ЖД)  
-        <span style="color: #FF3B30">**Данный метод входит в блок "Поиск и оформление услуг в системе клиента" коммерческой политики. Описание доступно по [ссылке](#overview--policy)**</span>
+        <span style="color: #FF3B30">**Данный метод входит в подписку "Поиск и оформление услуг в системе клиента". Описание доступно по [ссылке](#overview--policy)**</span>
       operationId: GetSeatsInfo
       parameters:
         - name: orderNumber
@@ -1946,7 +1946,7 @@ paths:
       summary: Добавление путешественников в услугу
       description: |
         Добавление путешественников в услугу  
-        <span style="color: #FF3B30">**Данный метод входит в блок "Поиск и оформление услуг в системе клиента" коммерческой политики. Описание доступно по [ссылке](#overview--policy)**</span>
+        <span style="color: #FF3B30">**Данный метод входит в подписку "Поиск и оформление услуг в системе клиента". Описание доступно по [ссылке](#overview--policy)**</span>
       operationId: AddTravellers
       parameters:
         - name: orderNumber
@@ -1990,7 +1990,7 @@ paths:
       summary: Получение профайла по идентификатору
       description: |
         Получение информации о профайле по идентификатору  
-        <span style="color: #FF3B30">**Данный метод входит в блок "Поиск и оформление услуг в системе клиента" коммерческой политики. Описание доступно по [ссылке](#overview--policy)**</span>
+        <span style="color: #FF3B30">**Данный метод входит в подписку "Поиск и оформление услуг в системе клиента". Описание доступно по [ссылке](#overview--policy)**</span>
       operationId: GetProfileById
       parameters:
         - name: profileId
@@ -2016,7 +2016,7 @@ paths:
       summary: Обновление информации профайла
       description: |
         Обновление информации профайла  
-        <span style="color: #FF3B30">**Данный метод входит в блок "Поиск и оформление услуг в системе клиента" коммерческой политики. Описание доступно по [ссылке](#overview--policy)**</span>
+        <span style="color: #FF3B30">**Данный метод входит в подписку "Поиск и оформление услуг в системе клиента". Описание доступно по [ссылке](#overview--policy)**</span>
       operationId: UpdateProfile
       requestBody:
         content:
@@ -2038,7 +2038,7 @@ paths:
       summary: Поиск локаций
       description: |
         Поиск локаций (autocomplete)  
-        <span style="color: #FF3B30">**Данный метод входит в блок "Создание командировки" коммерческой политики. Описание доступно по [ссылке](#overview--policy)**</span>
+        <span style="color: #FF3B30">**Данный метод входит в подписку "Работа с командировкой". Описание доступно по [ссылке](#overview--policy)**</span>
       operationId: GetReferences
       parameters:
         - name: query
@@ -2072,7 +2072,7 @@ paths:
       summary: Поиск профилей
       description: |
         Поиск профилей (autocomplete)  
-        <span style="color: #FF3B30">**Данный метод входит в блок "Создание командировки" коммерческой политики. Описание доступно по [ссылке](#overview--policy)**</span>
+        <span style="color: #FF3B30">**Данный метод входит в подписку "Работа с командировкой". Описание доступно по [ссылке](#overview--policy)**</span>
       operationId: SearchProfiles
       parameters:
         - name: query
@@ -2099,7 +2099,7 @@ paths:
       summary: Создание запроса на поиск вариантов
       description: |
         Создание запроса на поиск вариантов  
-        <span style="color: #FF3B30">**Данный метод входит в блок "Поиск и оформление услуг в системе клиента" коммерческой политики. Описание доступно по [ссылке](#overview--policy)**</span>
+        <span style="color: #FF3B30">**Данный метод входит в подписку "Поиск и оформление услуг в системе клиента". Описание доступно по [ссылке](#overview--policy)**</span>
       operationId: CreateSearchRequest
       requestBody:
         content:
@@ -2124,7 +2124,7 @@ paths:
       summary: Получение запроса поиска по номеру
       description: |
         Получение запроса поиска по номеру  
-        <span style="color: #FF3B30">**Данный метод входит в блок "Поиск и оформление услуг в системе клиента" коммерческой политики. Описание доступно по [ссылке](#overview--policy)**</span>
+        <span style="color: #FF3B30">**Данный метод входит в подписку "Поиск и оформление услуг в системе клиента". Описание доступно по [ссылке](#overview--policy)**</span>
       operationId: GetRequest
       parameters:
         - name: requestNumber
@@ -2150,7 +2150,7 @@ paths:
       summary: Обновление результатов поиска
       description: |
         Обновление результатов поиска  
-        <span style="color: #FF3B30">**Данный метод входит в блок "Поиск и оформление услуг в системе клиента" коммерческой политики. Описание доступно по [ссылке](#overview--policy)**</span>
+        <span style="color: #FF3B30">**Данный метод входит в подписку "Поиск и оформление услуг в системе клиента". Описание доступно по [ссылке](#overview--policy)**</span>
       operationId: UpdateSearchResults
       parameters:
         - name: requestNumber
@@ -2180,7 +2180,7 @@ paths:
       summary: Получение статуса поискового запроса
       description: |
         Получение статуса поискового запроса  
-        <span style="color: #FF3B30">**Данный метод входит в блок "Поиск и оформление услуг в системе клиента" коммерческой политики. Описание доступно по [ссылке](#overview--policy)**</span>
+        <span style="color: #FF3B30">**Данный метод входит в подписку "Поиск и оформление услуг в системе клиента". Описание доступно по [ссылке](#overview--policy)**</span>
       operationId: GetOptionRequestStatus
       parameters:
         - name: requestNumber
@@ -2214,7 +2214,7 @@ paths:
       summary: Получение возможных значений фильтров
       description: |
         Получение возможных значений фильтров  
-        <span style="color: #FF3B30">**Данный метод входит в блок "Поиск и оформление услуг в системе клиента" коммерческой политики. Описание доступно по [ссылке](#overview--policy)**</span>
+        <span style="color: #FF3B30">**Данный метод входит в подписку "Поиск и оформление услуг в системе клиента". Описание доступно по [ссылке](#overview--policy)**</span>
       operationId: GetFilterValues
       parameters:
         - name: requestNumber
@@ -2243,7 +2243,7 @@ paths:
       summary: Получение информации по опции
       description: |
         Получение детальной информации по варианту  
-        <span style="color: #FF3B30">**Данный метод входит в блок "Поиск и оформление услуг в системе клиента" коммерческой политики. Описание доступно по [ссылке](#overview--policy)**</span>
+        <span style="color: #FF3B30">**Данный метод входит в подписку "Поиск и оформление услуг в системе клиента". Описание доступно по [ссылке](#overview--policy)**</span>
       operationId: GetDetailsForOption
       parameters:
         - name: requestNumber
@@ -2287,7 +2287,7 @@ paths:
       summary: Получение правил опции
       description: |
         Получение правил по опции  
-        <span style="color: #FF3B30">**Данный метод входит в блок "Поиск и оформление услуг в системе клиента" коммерческой политики. Описание доступно по [ссылке](#overview--policy)**</span>
+        <span style="color: #FF3B30">**Данный метод входит в подписку "Поиск и оформление услуг в системе клиента". Описание доступно по [ссылке](#overview--policy)**</span>
       operationId: GetRulesForOption
       parameters:
         - name: requestNumber
@@ -2325,7 +2325,7 @@ paths:
       summary: Добавление опции в командировку
       description: |
         Выбор опции для командировки (создание заказа с услугой)  
-        <span style="color: #FF3B30">**Данный метод входит в блок "Поиск и оформление услуг в системе клиента" коммерческой политики. Описание доступно по [ссылке](#overview--policy)**</span>
+        <span style="color: #FF3B30">**Данный метод входит в подписку "Поиск и оформление услуг в системе клиента". Описание доступно по [ссылке](#overview--policy)**</span>
       operationId: CreateOrderWithOptionsForBusinessTrip
       parameters:
         - name: requestNumber
@@ -2365,7 +2365,7 @@ paths:
       summary: Получение списка опций по фильтрам
       description: |
         Постраничное получение списка вариантов в опции с учётом фильтрации  
-        <span style="color: #FF3B30">**Данный метод входит в блок "Поиск и оформление услуг в системе клиента" коммерческой политики. Описание доступно по [ссылке](#overview--policy)**</span>
+        <span style="color: #FF3B30">**Данный метод входит в подписку "Поиск и оформление услуг в системе клиента". Описание доступно по [ссылке](#overview--policy)**</span>
       operationId: GetResultsForOption
       parameters:
         - name: requestNumber
@@ -2630,7 +2630,7 @@ paths:
       summary: Получения количества опций по фильтрам
       description: |
         Количество вариантов, соответствующих условиям фильтра  
-        <span style="color: #FF3B30">**Данный метод входит в блок "Поиск и оформление услуг в системе клиента" коммерческой политики. Описание доступно по [ссылке](#overview--policy)**</span>
+        <span style="color: #FF3B30">**Данный метод входит в подписку "Поиск и оформление услуг в системе клиента". Описание доступно по [ссылке](#overview--policy)**</span>
       operationId: GetResultsCount
       parameters:
         - name: requestNumber
@@ -2857,7 +2857,7 @@ paths:
       summary: Получение списка вариантов по фильтрам
       description: |
         Постраничное получение списка вариантов с учётом фильтрации  
-        <span style="color: #FF3B30">**Данный метод входит в блок "Поиск и оформление услуг в системе клиента" коммерческой политики. Описание доступно по [ссылке](#overview--policy)**</span>
+        <span style="color: #FF3B30">**Данный метод входит в подписку "Поиск и оформление услуг в системе клиента". Описание доступно по [ссылке](#overview--policy)**</span>
       operationId: GetResults
       parameters:
         - name: requestNumber
@@ -3116,7 +3116,7 @@ paths:
       summary: Получение списка запросов поиска
       description: |
         Постраничный поиск созданных запросов поиска  
-        <span style="color: #FF3B30">**Данный метод входит в блок "Поиск и оформление услуг в системе клиента" коммерческой политики. Описание доступно по [ссылке](#overview--policy)**</span>
+        <span style="color: #FF3B30">**Данный метод входит в подписку "Поиск и оформление услуг в системе клиента". Описание доступно по [ссылке](#overview--policy)**</span>
       operationId: GetRequests
       parameters:
         - name: requestType
@@ -3173,7 +3173,7 @@ tags:
   - name: Авторизация API
     description: |
       
-  - name: Интеграция данных по командировке
+  - name: Интеграция данных по командировке и услугам
     description: |
 
   - name: Создание командировки
