@@ -731,7 +731,7 @@ info:
   contact:
     name: API Support
     url: http://docs.aeroclub.ru/api
-    email: teamsigma@aeroclub.ru
+    email: integration@aeroclub.ru
   version: v1
 paths:
   /connect/token:
@@ -4046,7 +4046,7 @@ components:
         services:
           type: array
           items:
-            $ref: "#/components/schemas/Services"
+            $ref: "#/components/schemas/ServiceInfo"
         starts_on:
           type: string
           description: Дата и время начала командировки в формате YYYY-MM-DDThh:mm:ss
@@ -8698,13 +8698,209 @@ components:
     IServiceDetailWithPosts:
       description: Услуги с постами
       allOf:
-        - $ref: "#/components/schemas/Services"
+        - $ref: "#/components/schemas/ServiceDetail"
         - properties:
             comments:
               type: array
               items:
                 $ref: "#/components/schemas/Post"
       type: object
+    AeroexpressInfo:
+      description: "Информация по услуге Аэроэкспресс. Передается с 'type': AeroExpress"
+      allOf:
+        - $ref: "#/components/schemas/IServiceInfo"
+        - properties:
+            departure_from:
+              description: Пункт отправления
+              items:
+                $ref: "#/components/schemas/Location"
+            arrival_to:
+              description: Пункт прибытия
+              items:
+                $ref: "#/components/schemas/Location"
+            duration:
+              description: Длительность поездки
+              type: string
+            class_of_service:
+              description: Класс обслуживания
+              items:
+                $ref: "#/components/schemas/CodeDescription"
+          type: object
+    AviaInfo:
+      description: "Информация по услуге Авиа. Передается с 'type': Avia"
+      allOf:
+        - $ref: "#/components/schemas/IServiceInfo"
+        - properties:
+            relations:
+              type: array
+              items:
+                $ref: "#/components/schemas/Relations"
+            avia_leg:
+              type: array
+              items:
+                $ref: "#/components/schemas/AviaLeg"
+          type: object
+    HotelInfo:
+      description: "Информация по услуге Отель. Передается с 'type': Hotel"
+      allOf:
+        - $ref: "#/components/schemas/IServiceInfo"
+        - properties:
+            rating:
+              description: Рейтинг отеля
+              type: integer
+            category:
+              description: Категория отеля
+              items:
+                $ref: "#/components/schemas/LocalizedString"
+            allocation_adults:
+              description: Количество взрослых
+              type: integer
+            is_early_checkin:
+              description: Признак возможной ранней регистрации в отеле
+              type: boolean
+            is_late_check_out:
+              description: Признак возможного позднего выезда из отеля
+              type: boolean
+            hotel_conformation_code:
+              description: Код подтверждения бронирования
+              type: string
+            execution_comment:
+              description: Комментарий к бронированию отеля
+              type: string
+            additional_comment:
+              description: Дополнительный комментарий к услуге
+              type: string
+            room:
+              description: Информация по номеру
+              items:
+                $ref: "#/components/schemas/Room"
+            stars:
+              description: Количество звезд отеля
+              type: integer
+            name:
+              description: Название отеля
+              items:
+                $ref: "#/components/schemas/LocalizedString"
+            image:
+              description: Изображение отеля
+              items:
+                $ref: "#/components/schemas/Image"
+            location:
+              description: Местоположение отеля
+              items:
+                $ref: "#/components/schemas/Location"
+            address:
+              description: Адрес отеля
+              items:
+                $ref: "#/components/schemas/Address"
+            actual_checkin_at:
+              description:
+                Время регистрации в часовом поясе пользователя. Формат
+                YYYY-MM-DDThh:mm:ss
+              type: string
+            actual_checkin_at_utc:
+              description: Время регистрации. Формат YYYY-MM-DDThh:mm:ssZ
+              type: string
+            actual_checkout_at:
+              description: Время выезда в часовом поясе пользователя. Формат
+                YYYY-MM-DDThh:mm:ss
+              type: string
+            actual_checkout_at_utc:
+              description: Время выезда. Формат YYYY-MM-DDThh:mm:ssZ
+              type: string
+            is_payment_in_place:
+              description: Признак оплаты на месте
+              type: boolean
+            nights:
+              description: Количество ночей
+              type: integer
+            tariff_per_night:
+              description: Стоимость за ночь
+              type: integer
+          type: object
+    RailInfo:
+      description: "Информация по услуге ЖД. Передается с 'type': Rail"
+      allOf:
+        - $ref: "#/components/schemas/IServiceInfo"
+        - properties:
+            duration:
+              description: Длительность поездки
+              type: string
+            is_local_time:
+              description: ""
+              type: boolean
+            departure_at:
+              description: Дата и время отправления по местному времени
+              type: string
+            departure_at_utc:
+              description: Дата и время отправления в UTC
+              type: string
+            arrival_at:
+              description: Дата и время прибытия по местному времени
+              type: string
+            arrival_at_utc:
+              description: Дата и время прибыти в UTC
+              type: string
+            departure_from:
+              description: Пункт отправления
+              items:
+                $ref: "#/components/schemas/Location"
+            arrival_to:
+              description: Пункт прибытия
+              items:
+                $ref: "#/components/schemas/Location"
+            train:
+              description: Информация о поезде
+              items:
+                $ref: "#/components/schemas/Train"
+            carriage:
+              description: Информация по вагону
+              items:
+                $ref: "#/components/schemas/Carriage"
+          type: object
+    TransferInfo:
+      description: "Информация по услуге Трансфер. Передается с 'type': Transfer"
+      allOf:
+        - $ref: "#/components/schemas/IServiceInfo"
+        - properties:
+            departure_from_location:
+              description: Пункт отправления
+              items:
+                $ref: "#/components/schemas/LocalizedString"
+            arrival_to_location:
+              description: Пункт прибытия
+              items:
+                $ref: "#/components/schemas/LocalizedString"
+            departure_city:
+              description: Город отправления
+              items:
+                $ref: "#/components/schemas/Location"
+            arrival_city:
+              description: Город прибытия
+              items:
+                $ref: "#/components/schemas/Location"
+            departure_location_type:
+              $ref: "#/components/schemas/TransferLocationType"
+            arrival_location_type:
+              $ref: "#/components/schemas/TransferLocationType"
+            departure_from_number:
+              description: Номер рейса или поезда отправления
+              type: string
+            arrival_to_number:
+              description: Номер рейса или поезда прибытия
+              type: string
+            description:
+              description: Описание
+              type: string
+            pickup_card_text:
+              description: Текст таблички
+              type: string
+            flight_number:
+              description: Номер рейса
+              type: string
+            car_classification:
+              $ref: "#/components/schemas/CarClassification"
+          type: object
     Aeroexpress:
       description: "Информация по услуге Аэроэкспресс. Передается с 'type': AeroExpress"
       allOf:
@@ -9163,7 +9359,16 @@ components:
           description: Признак возможности электронной регистрации
           type: boolean
       type: object
-    Services:
+    ServiceInfo:
+      description: Услуги
+      anyOf:
+        - $ref: "#/components/schemas/AeroexpressInfo"
+        - $ref: "#/components/schemas/AviaInfo"
+        - $ref: "#/components/schemas/HotelInfo"
+        - $ref: "#/components/schemas/RailInfo"
+        - $ref: "#/components/schemas/TransferInfo"
+      type: object
+    ServiceDetail:
       description: Услуги
       anyOf:
         - $ref: "#/components/schemas/Aeroexpress"
