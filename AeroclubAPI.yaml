@@ -6,6 +6,8 @@ info:
     
     # Коммерческая политика
 
+    Для получения цен на подписки отправьте запроса на адрес corpservice@aeroclub.ru
+
     **Подписка "Работа с командировкой"**  
     Клиент может создавать, изменять, отменять командировку в своей системе. Аэроклуб будет принимать созданную в системе клиента командировку и отображать её в интерфейсе TIME
 
@@ -730,7 +732,7 @@ info:
 #  termsOfService: http://example.com/terms/
   contact:
     name: API Support
-    url: http://docs.aeroclub.ru/api
+    url: https://docs.aeroclub.ru/api
     email: integration@aeroclub.ru
   version: v1
 paths:
