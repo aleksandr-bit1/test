@@ -3,7 +3,7 @@ info:
   title: Aeroclub API
   description: |
     <a id="overview--policy"></a>
-    
+
     # Коммерческая политика
 
     Для получения цен на подписки отправьте запроса на адрес corpservice@aeroclub.ru
@@ -60,7 +60,7 @@ info:
     # Общий процесс создания командировки
 
     <a href="bpm/Создание командировки_общий процесс_.bpm">Создание командировки_общий процесс_.bpm</a>
-    
+
     <a href="images/Создание командировки_общий процесс_new.png" target="_blank"><img src="images/Создание командировки_общий процесс_new.png"/></a>
 
     ## Описание процесса создания командировки
@@ -73,7 +73,7 @@ info:
     6.  Создать "сущность" командировки (возможно 2 варианта: с простым маршрутом и сложными (несколько городов назначения))
     7.  Заполнить доп данные в командировке (если требуется)
     8.  Сохранить доп данные в командировке  
-  
+
     > **Note:** Созданные с использование API командировки могут быть открыты в Тайме по ссылке. Командировка может быть передана как без доп данных и дополнена доп данными в Тайме, так и с доп данными и, далее, через Тайм наполнена услугами.
 
     При сохранении доп данных (вызов метода: [POST /journeys/{JN}/trips/{BTN}/stage/fact/customproperties](#post-/journeys/-journeyNumber-/trips/-businessTripNumber-/stage/-BusinessTripStage-/customproperties)) происходит следующая проверка:
@@ -248,9 +248,9 @@ info:
     В случае, если планируется использовать только процесс "Получения данных по командировке" без их загрузки со стороны клиента. Т.е. если создание командировок находится на стороне TIME (Online Booking Tool)процесс получения деталей по командировкам выглядит следующим образом:
 
     1.  Сначала запрашивается список всех несинхронизированных командировок через IHUB (Intagration hub) (по 100 командировок в пакете) - с помощью вызова метода "GET businesstrips/synchronization" - Метод предназначен для получения пакета (GET-запрос) с набором несинхронизированных услуг в рамках командировки
-    
+
     2.  Отдается ответ на сторону АК об их синхронизации, чтобы они были убраны из очереди на отдачу. Запрос направляется n-раз до момента «пустого ответа».
-    
+
     3.  Далее через API AK (используя метод [GET /journeys/{journeyNumber}/trips/{businessTripNumber}](#get-/journeys/-journeyNumber-/trips/-businessTripNumber-), описанный выше) по этому списку отдаются все детали по командировкам.
 
     **Дополнительные возможности:**
@@ -371,7 +371,7 @@ info:
     8.  Запрос проверки необходимости авторизации -  **ВАЖНО**: данный метод должен вызываться всегда
 
     ## Процесс оформления набора услуг / доп услуги
- 
+
     <a href="images/Процесс оформления услуг_new_оформление услуг.png" target="_blank"><img src="images/Процесс оформления услуг_new_оформление услуг.png"/></a>
 
     ### Описание процесса
@@ -397,11 +397,11 @@ info:
     -   ЖД
 
     <a id="overview--statuses"></a>
-    
+
     ## Таблицы комбинаций статусов услуг и доступных дейcтвий с ними
 
     <a id="overview--avia"></a>
-    
+
     ### Комбинации статусов авиа
 
     | №  | ServiceState | AuthorizationStatus | AuthorizationAssertion | AvailableActions        | Статус услуги          | Описание состояния, в котором находится услуга, и возможных действий с ней                                                                                    |
@@ -423,7 +423,7 @@ info:
     | 15 | Refunding    | Authorized          | NotRequired/Required   | --                      | Отменено               | Услуга отменена                                                                                                                                               |
 
     <a id="overview--hotel"></a>
-    
+
     ### Комбинации статусов отеля
 
     | № | ServiceState | AuthorizationStatus | AuthorizationAssertion | AvailableActions | Статус услуги          | Описание состояния, в котором находится услуга, и возможных действий с ней                                                                                    |
@@ -439,7 +439,7 @@ info:
     | 9 | Refunding    | Authorized          | NotRequired/Required   | --               | Отменено               | Услуга отменена                                                                                                                                               |
 
     <a id="overview--rail"></a>
-    
+
     ### Комбинации статусов ЖД
 
     | №  | ServiceState | AuthorizationStatus | AuthorizationAssertion | AvailableActions | Статус услуги          | Описание состояния, в котором находится услуга, и возможных действий с ней                                                                                                        |
@@ -724,12 +724,12 @@ info:
     ### **Процесс отмены услуги в командировке (вариант 2):**
 
     <a href="images/Процесс отмены услуги в командировке_вариант 2.png" target="_blank"><img src="images/Процесс отмены услуги в командировке_вариант 2.png"/></a>
-    
+
     ### **Альтернативный вариант отмены услуги в командировке:**
 
     1.  Отмена услуги в OBT (TIME)
     2.  Получения изменений путем запроса детализации по командировке - вызов метода: [GET /journeys/{journeyNumber}/trips/{businessTripNumber}](#get-/journeys/-journeyNumber-/trips/-businessTripNumber-) - проверка **service_state = **Refunding****
-#  termsOfService: http://example.com/terms/
+  #  termsOfService: http://example.com/terms/
   contact:
     name: API Support
     url: https://docs.aeroclub.ru/api
@@ -752,15 +752,15 @@ paths:
               $ref: "#/components/schemas/AuthRequest"
         required: true
       responses:
-        '200':
+        "200":
           description: OK
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/AuthTokenResponse"
       security:
-      - passport:
-        - test
+        - passport:
+            - test
   "/authfx/trip/batch/{batchToken}/complete":
     post:
       tags:
@@ -885,9 +885,9 @@ paths:
     put:
       tags:
         - Отмена командировки
-      summary: Запроса отмены командировки  
+      summary: Запрос отмены командировки
       description: |
-        Запроса отмены командировки  
+        Запрос отмены командировки  
         <span style="color: #FF3B30">**Данный метод входит в подписку "Отмена командировки". Описание доступно по [ссылке](#overview--policy)**</span>
       operationId: CancelJourney
       parameters:
@@ -951,8 +951,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref:
-                  "#/components/schemas/DataResponseOfJourneyAvailableCancellationInfo"
+                $ref: "#/components/schemas/DataResponseOfJourneyAvailableCancellationInfo"
         "426":
           description: Версия протокола не поддерживается
     parameters: []
@@ -986,8 +985,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref:
-                  "#/components/schemas/DataResponseOfBusinesTripCancellationResult"
+                $ref: "#/components/schemas/DataResponseOfBusinesTripCancellationResult"
         "426":
           description: Версия протокола не поддерживается
     parameters: []
@@ -1067,7 +1065,7 @@ paths:
     put:
       tags:
         - Создание командировки
-      summary: Получение зависимых доп. данных 
+      summary: Получение зависимых доп. данных
       description: |
         Получение зависимых дополнительных данных  
         <span style="color: #FF3B30">**Данный метод входит в подписку "Работа с командировкой". Описание доступно по [ссылке](#overview--policy)**</span>
@@ -1336,15 +1334,15 @@ paths:
           schema:
             type: integer
       responses:
-        '200':
+        "200":
           description: Возвращается список проездных документов
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Ticket'
-        '426':
+                  $ref: "#/components/schemas/Ticket"
+        "426":
           description: Версия протокола не поддерживается
           content: {}
   "/journeys/{journeyNumber}/trips/{businessTripNumber}/posts":
@@ -1386,7 +1384,7 @@ paths:
           schema:
             type: integer
       responses:
-        '200':
+        "200":
           description: Список комментариев к заказу
           headers:
             X-UpdateToken:
@@ -1399,8 +1397,8 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/BusinessTripAuthPost'
-        '426':
+                  $ref: "#/components/schemas/BusinessTripAuthPost"
+        "426":
           description: Версия протокола не поддерживается
           content: {}
     put:
@@ -1434,7 +1432,7 @@ paths:
                   description: Прикрепляемый файл
                   format: binary
       responses:
-        '200':
+        "200":
           description: Возвращается добавленный комментарий
           headers:
             X-UpdateToken:
@@ -1445,8 +1443,8 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Post'
-        '426':
+                $ref: "#/components/schemas/Post"
+        "426":
           description: Версия протокола не поддерживается
           content: {}
       x-codegen-request-body-name: body
@@ -1476,13 +1474,13 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/IdsRequest'
+              $ref: "#/components/schemas/IdsRequest"
         required: true
       responses:
-        '200':
+        "200":
           description: Запрос выполнен успешно
           content: {}
-        '426':
+        "426":
           description: Версия протокола не поддерживается
           content: {}
       x-codegen-request-body-name: body
@@ -1745,8 +1743,8 @@ paths:
         - Авторизация командировки
       summary: Отправка услуги на авторизацию
       description: |
-          Отправка услуги на авторизацию  
-          <span style="color: #FF3B30">**Данный метод входит в подписку "Внешняя авторизация". Описание доступно по [ссылке](#overview--policy)**</span>
+        Отправка услуги на авторизацию  
+        <span style="color: #FF3B30">**Данный метод входит в подписку "Внешняя авторизация". Описание доступно по [ссылке](#overview--policy)**</span>
       operationId: SendServiceToAuthorization
       parameters:
         - name: orderNumber
@@ -3176,38 +3174,28 @@ security:
 tags:
   - name: Авторизация API
     description: |
-      
+
   - name: Интеграция данных по командировке и услугам
     description: |
 
   - name: Создание командировки
     description: |
-      
+
   - name: Поиск и оформление услуг в системе клиента
-    description: | 
-      
+    description: |
+
   - name: Авторизация командировки
     description: |
-      
+
   - name: Изменение командировки
     description: |
-      
+
   - name: Отмена командировки
     description: |
-      
+
   - name: Интеграция чата
     description: |
-      
-  - name: 2. Создание командировки
-    description: Описание процесса создания командировки
-  - name: 3. Авторизация командировки и услуг
-    description: Описание процесса авторизации факта поездки командировки, набора услуг и дополнительной услуги
-  - name: 4. Изменение и отмена командировки
-    description: Описание процессов изменения и отмены командировки и услуг
-  - name: 5. Поиск вариантов и создание услуг
-    description: Поиск, добавление в командировку и оформление услуг
-  - name: 6. Оформление услуг
-    description: Бронирование и оформление услуг
+
   - name: About
     description: Информация об Api
   - name: Account
@@ -4592,7 +4580,7 @@ components:
             $ref: "#/components/schemas/CustomProperty"
         validation_messages:
           type: array
-          description: Результат валидации дополнительных данных 
+          description: Результат валидации дополнительных данных
           items:
             $ref: "#/components/schemas/LocalizedString"
       type: object
@@ -4996,7 +4984,7 @@ components:
           description: Список ошибок
           type: array
           items:
-            type: string 
+            type: string
         is_success:
           type: boolean
           description: Признак успешного выполнения запроса
@@ -6972,7 +6960,7 @@ components:
       properties:
         duplicate_services:
           type: array
-          description: Информация по дублирующим услугам 
+          description: Информация по дублирующим услугам
           items:
             $ref: "#/components/schemas/ServiceNumberInfo"
         traveller_profile_id:
