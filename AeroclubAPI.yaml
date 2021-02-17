@@ -7454,8 +7454,7 @@ components:
           type: string
           description: Фамилия
         type:
-          type: string
-          description: Тип документа
+          $ref: "#/components/schemas/DocumentType"
       required:
         - id
       type: object
