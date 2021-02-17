@@ -789,14 +789,40 @@ paths:
         "426":
           description: Версия протокола не поддерживается
     parameters: []
+  "/authfx/service/batch/{batchToken}/complete":
+    post:
+      tags:
+        - АВТОРИЗАЦИЯ КОМАНДИРОВКИ
+      description: Авторизация услуги
+      operationId: CompleteAuthService
+      parameters:
+        - name: batchToken
+          in: path
+          description: Токен авторизации
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CompleteServiceAuthorizationRequest"
+        required: true
+      responses:
+        '200':
+          description: Успешно
+          content: {}
+        '426':
+          description: Версия протокола не поддерживается
+          content: {}
+      x-codegen-request-body-name: body
   "/companies/{companyId}/profiles/{profileId}/allowedpaymentrequisites":
     get:
       tags:
         - СОЗДАНИЕ КОМАНДИРОВКИ
       summary: Получение доступных форм оплаты
       description: |
-        Получение доступных форм оплаты для компании и профиля  
-        <span style="color: #FF3B30">**Данный метод входит в подписку "Работа с командировкой". Описание доступно по [ссылке](#overview--policy)**</span>
+        Получение доступных форм оплаты для компании и профиля
       operationId: GetAllowedPaymentRequisites
       parameters:
         - name: profileId
@@ -827,8 +853,7 @@ paths:
         - СОЗДАНИЕ КОМАНДИРОВКИ
       summary: Получение списка доступных компаний
       description: |
-        Получение списка компаний, доступных для обслуживания текущим пользователем  
-        <span style="color: #FF3B30">**Данный метод входит в подписку "Работа с командировкой". Описание доступно по [ссылке](#overview--policy)**</span>
+        Получение списка компаний, доступных для обслуживания текущим пользователем
       operationId: GetServicingCompaniesForProfile
       parameters:
         - name: profileId
@@ -1128,8 +1153,7 @@ paths:
         - АВТОРИЗАЦИЯ КОМАНДИРОВКИ
       summary: Проверка необходимости авторизации и получение списка авторизующих
       description: |
-        Проверка необходимости авторизации и получение списка авторизующих для командировки  
-        <span style="color: #FF3B30">**Данный метод входит в подписку "Внешняя авторизация". Описание доступно по [ссылке](#overview--policy)**</span>
+        Проверка необходимости авторизации и получение списка авторизующих для командировки
       operationId: GetTripAuthFxState
       parameters:
         - name: journeyNumber
@@ -1208,8 +1232,7 @@ paths:
         - СОЗДАНИЕ КОМАНДИРОВКИ
       summary: Получение доп. данных для заполнения
       description: |
-        Получение возможных для заполнения доп. данных по командировке  
-        <span style="color: #FF3B30">**Данный метод входит в подписку "Работа с командировкой". Описание доступно по [ссылке](#overview--policy)**</span>
+        Получение возможных для заполнения доп. данных по командировке
       operationId: GetBusinessTripAnalytics
       parameters:
         - name: journeyNumber
@@ -1713,8 +1736,7 @@ paths:
         - АВТОРИЗАЦИЯ КОМАНДИРОВКИ
       summary: Получение информации по необходимости авторизации услуги
       description: |
-        Получение информации по необходимости авторизации услуги  
-        <span style="color: #FF3B30">**Данный метод входит в подписку "Внешняя авторизация". Описание доступно по [ссылке](#overview--policy)**</span>
+        Получение информации по необходимости авторизации услуги
       operationId: GetAuthorizingData
       parameters:
         - name: orderNumber
@@ -1841,8 +1863,7 @@ paths:
         - ПОИСК И ОФОРМЛЕНИЕ УСЛУГ
       summary: Получение правил оказания услуги
       description: |
-        Получение правил оказания услуги  
-        <span style="color: #FF3B30">**Данный метод входит в подписку "Поиск и оформление услуг в системе клиента". Описание доступно по [ссылке](#overview--policy)**</span>
+        Получение правил оказания услуги
       operationId: GetServiceRegulations
       parameters:
         - name: orderNumber
@@ -1913,8 +1934,7 @@ paths:
         - ПОИСК И ОФОРМЛЕНИЕ УСЛУГ
       summary: Получение информации о свободных местах
       description: |
-        Получение актуальной информации о свободных местах в вагоне (только ЖД)  
-        <span style="color: #FF3B30">**Данный метод входит в подписку "Поиск и оформление услуг в системе клиента". Описание доступно по [ссылке](#overview--policy)**</span>
+        Получение актуальной информации о свободных местах в вагоне (только ЖД)
       operationId: GetSeatsInfo
       parameters:
         - name: orderNumber
@@ -1991,8 +2011,7 @@ paths:
         - ПОИСК И ОФОРМЛЕНИЕ УСЛУГ
       summary: Получение профайла по идентификатору
       description: |
-        Получение информации о профайле по идентификатору  
-        <span style="color: #FF3B30">**Данный метод входит в подписку "Поиск и оформление услуг в системе клиента". Описание доступно по [ссылке](#overview--policy)**</span>
+        Получение информации о профайле по идентификатору
       operationId: GetProfileById
       parameters:
         - name: profileId
@@ -2033,14 +2052,123 @@ paths:
         "426":
           description: Версия протокола не поддерживается
     parameters: []
+  /profile/avatar:
+    get:
+      tags:
+        - ПОИСК И ОФОРМЛЕНИЕ УСЛУГ
+      summary: Получение аватара текущего пользователя
+      description: |
+        Получение аватара текущего пользователя
+        <span style="color: #FF3B30">**Данный метод входит в подписку "Поиск и оформление услуг в системе клиента". Описание доступно по [ссылке](#overview--policy)**</span>
+      operationId: GetCurrentAvatar
+      parameters:
+        - name: width
+          in: query
+          description: Ширина аватарки
+          schema:
+            type: integer
+            default: 240
+        - name: height
+          in: query
+          description: Высота аватарки
+          schema:
+            type: integer
+            default: 320
+        - name: format
+          in: query
+          description: Формат аватарки
+          schema:
+            type: string
+            enum:
+              - Unknown
+              - Png
+              - Jpeg
+              - Gif
+      responses:
+        '200':
+          description: byte array
+          content: {}
+        '426':
+          description: Версия протокола не поддерживается
+          content: {}
+    put:
+      tags:
+        - ПОИСК И ОФОРМЛЕНИЕ УСЛУГ
+      summary: Сохранение аватара для текущго пользователя
+      description:  |
+        Сохранение аватара для пользотеля
+        <span style="color: #FF3B30">**Данный метод входит в подписку "Поиск и оформление услуг в системе клиента". Описание доступно по [ссылке](#overview--policy)**</span>
+      operationId: PutAvatar
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              properties:
+                upfile:
+                  type: string
+                  description: Загружаемая картинка
+                  format: binary
+      responses:
+        '200':
+          description: Успешно
+          content: {}
+        '426':
+          description: Версия протокола не поддерживается
+          content: {}
+  /profile/documents:
+    put:
+      tags:
+        - ПОИСК И ОФОРМЛЕНИЕ УСЛУГ
+      summary: Добавление документов (паспортов) пользователя
+      description: |
+        Добавление документов (паспортов) пользователя
+        <span style="color: #FF3B30">**Данный метод входит в подписку "Поиск и оформление услуг в системе клиента". Описание доступно по [ссылке](#overview--policy)**</span>
+      operationId: AddDocument
+      requestBody:
+        description: Информация о добавляемом документе
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AddDocumentRequest'
+        required: true
+      responses:
+        '200':
+          description: Успешно
+          content: {}
+        '426':
+          description: Версия протокола не поддерживается
+          content: {}
+      x-codegen-request-body-name: document
+  "/profile/documents/{documentId}":
+    delete:
+      tags:
+        - ПОИСК И ОФОРМЛЕНИЕ УСЛУГ
+      summary: Удаление документа (паспорта) пользователя
+      description: |
+        Удаление документа (паспорта) пользователя
+        <span style="color: #FF3B30">**Данный метод входит в подписку "Поиск и оформление услуг в системе клиента". Описание доступно по [ссылке](#overview--policy)**</span>
+      operationId: DeleteDocument
+      parameters:
+        - name: documentId
+          in: path
+          description: ID удаляемого документа
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Успешно
+          content: {}
+        '426':
+          description: Версия протокола не поддерживается
+          content: {}
   /references:
     get:
       tags:
         - СОЗДАНИЕ КОМАНДИРОВКИ
       summary: Поиск локаций
       description: |
-        Поиск локаций (autocomplete)  
-        <span style="color: #FF3B30">**Данный метод входит в подписку "Работа с командировкой". Описание доступно по [ссылке](#overview--policy)**</span>
+        Поиск локаций (autocomplete)
       operationId: GetReferences
       parameters:
         - name: query
@@ -2073,8 +2201,7 @@ paths:
         - СОЗДАНИЕ КОМАНДИРОВКИ
       summary: Поиск профилей
       description: |
-        Поиск профилей (autocomplete)  
-        <span style="color: #FF3B30">**Данный метод входит в подписку "Работа с командировкой". Описание доступно по [ссылке](#overview--policy)**</span>
+        Поиск профилей (autocomplete)
       operationId: SearchProfiles
       parameters:
         - name: query
@@ -3202,6 +3329,10 @@ tags:
       - [GET /orders/{orderNumber}/services/{serviceNumber}/seats](#get-/orders/-orderNumber-/services/-serviceNumber-/seats) - Получение информации о свободных местах
       - [PUT /orders/{orderNumber}/services/{serviceNumber}/travellers](#put-/orders/-orderNumber-/services/-serviceNumber-/travellers) - Добавление путешественников в услугу
       - [GET /profile/{profileId}](#get-/profile/-profileId-) - Получение профайла по идентификатору
+      - [GET /profile/avatar](#get-/profile/avatar) - Получение аватара текущего пользователя
+      - [PUT /profile/avatar](#put-/profile/avatar) - Сохранение аватара
+      - [PUT /profile/documents](#put-/profile/documents) - Добавление документов (паспортов) пользователя
+      - [DELETE /profile/documents/{documentId}](#delete-/profile/documents/-documentId-) - Удаление документа(паспорта) пользователя
       - [POST /profile/update](#post-/profile/update) - Обновление информации профайла
       - [PUT /search](#put-/search) - Создание запроса на поиск вариантов
       - [GET /search/{requestNumber}](#get-/search/-requestNumber-) - Получение запроса поиска по номеру
@@ -3217,6 +3348,7 @@ tags:
       - [GET /search/requests](#get-/search/requests) - Получение списка запросов поиска
   - name: АВТОРИЗАЦИЯ КОМАНДИРОВКИ
     description: |
+      - [POST /authfx/service/batch/{batchToken}/complete](#post-/authfx/service/batch/-batchToken-/complete) - Авторизация услуги
       - [POST /authfx/trip/batch/{batchToken}/complete](#post-/authfx/trip/batch/-batchToken-/complete) - Авторизация командировки
       - [GET /journeys/{journeyNumber}/trips/{businessTripNumber}/stage/{BusinessTripStage}/authfx/state](#get-/journeys/-journeyNumber-/trips/-businessTripNumber-/stage/-BusinessTripStage-/authfx/state) - Проверка необходимости авторизации и получение списка авторизующих
       - [PUT /journeys/{journeyNumber}/trips/{businessTripNumber}/stage/{BusinessTripStage}/authfx/state](#put-/journeys/-journeyNumber-/trips/-businessTripNumber-/stage/-BusinessTripStage-/authfx/state) - Отправка командировки и услуг в командировке на авторизацию
@@ -3362,26 +3494,37 @@ components:
       properties:
         citizenship_country_id:
           type: integer
+          description: ID страны гражданства
         city_of_issue_id:
           type: integer
+          description: ID города выдачи документа
         destination_country_id:
           type: integer
+          description: ID страны назначения
         expires_on:
           type: string
+          description: Дата окончания срока действия
         first_name:
           type: string
+          description: Имя, на кого выдан документ
         issued_on:
           type: string
+          description: Дата выдачи
         last_name:
           type: string
+          description: Фамилия, на кого выдан документ
         master_document_id:
           type: integer
+          description: ID связанного документа. Например, идентификатор заграничного паспорта, на который выдана виза
         number:
           type: string
+          description: Номер документа
         place_of_birth:
           type: string
+          description: Место рождения
         series:
           type: string
+          description: Серия документа
         type:
           $ref: "#/components/schemas/DocumentType"
       required:
@@ -4386,6 +4529,7 @@ components:
     CompleteServiceAuthorizationRequest:
       properties:
         comment:
+          description: Комментарий
           type: string
         traveller_requests:
           type: array
@@ -7246,10 +7390,13 @@ components:
         - traveller_id
       type: object
     TravellerAuthorizationRequest:
+      description: Результаты авторизации
       properties:
         is_authorized:
+          description: Признак результата авторизации
           type: boolean
         traveller_internal_identifier:
+          description: Внутренний идентификатор путешественника
           type: string
       required:
         - is_authorized
