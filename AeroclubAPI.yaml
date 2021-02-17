@@ -739,7 +739,7 @@ paths:
   /connect/token:
     post:
       tags:
-        - Авторизация API
+        - АВТОРИЗАЦИЯ API
       summary: Авторизация с помощью Passport
       description: Авторизация с помощью Passport
       servers:
@@ -764,7 +764,7 @@ paths:
   "/authfx/trip/batch/{batchToken}/complete":
     post:
       tags:
-        - Авторизация командировки
+        - АВТОРИЗАЦИЯ КОМАНДИРОВКИ
       summary: Авторизация командировки
       description: |
         Авторизация командировки  
@@ -792,7 +792,7 @@ paths:
   "/companies/{companyId}/profiles/{profileId}/allowedpaymentrequisites":
     get:
       tags:
-        - Создание командировки
+        - СОЗДАНИЕ КОМАНДИРОВКИ
       summary: Получение доступных форм оплаты
       description: |
         Получение доступных форм оплаты для компании и профиля  
@@ -824,7 +824,7 @@ paths:
   "/companies/travellerProfiles/{profileId}/servicing":
     get:
       tags:
-        - Создание командировки
+        - СОЗДАНИЕ КОМАНДИРОВКИ
       summary: Получение списка доступных компаний
       description: |
         Получение списка компаний, доступных для обслуживания текущим пользователем  
@@ -852,7 +852,7 @@ paths:
   "/journeys/{journeyNumber}/trips/{businessTripNumber}":
     get:
       tags:
-        - Интеграция данных по командировке и услугам
+        - ИНТЕГРАЦИЯ ДАННЫХ ПО КОММАНДИРОВКЕ И УСЛУГАМ
       summary: Получение информации по командировке
       description: |
         Получение командировки по номеру  
@@ -884,7 +884,7 @@ paths:
   "/journeys/{journeyNumber}/trips/{businessTripNumber}/cancellation":
     put:
       tags:
-        - Отмена командировки
+        - ОТМЕНА КОМАНДИРОВКИ
       summary: Запрос отмены командировки
       description: |
         Запрос отмены командировки  
@@ -924,7 +924,7 @@ paths:
   "/journeys/{journeyNumber}/trips/{businessTripNumber}/cancellation/available":
     get:
       tags:
-        - Отмена командировки
+        - ОТМЕНА КОМАНДИРОВКИ
       summary: Проверка возможности отмены командировки
       description: |
         Проверка возможности отмены командировки и получение ReasonCodes для отмены услуг  
@@ -958,7 +958,7 @@ paths:
   "/journeys/{journeyNumber}/trips/{businessTripNumber}/cancellation/status":
     get:
       tags:
-        - Отмена командировки
+        - ОТМЕНА КОМАНДИРОВКИ
       summary: Получение статуса отмены командировки
       description: |
         Получение статуса отмены командировки  
@@ -992,7 +992,7 @@ paths:
   "/journeys/{journeyNumber}/trips/{businessTripNumber}/changedates":
     put:
       tags:
-        - Изменение командировки
+        - ИЗМЕНЕНИЕ КОМАНДИРОВКИ
       summary: Обновление информации по направлениям командировки
       description: |
         Обновление информации по направлениям командировки  
@@ -1032,7 +1032,7 @@ paths:
   "/journeys/{journeyNumber}/trips/{businessTripNumber}/changedatesinfo":
     get:
       tags:
-        - Изменение командировки
+        - ИЗМЕНЕНИЕ КОМАНДИРОВКИ
       summary: Получение краткой информации по направлениям командировки
       description: |
         Получение краткой информации по направлениям командировки  
@@ -1064,7 +1064,7 @@ paths:
   "/journeys/{journeyNumber}/trips/{businessTripNumber}/stage/{BusinessTripStage}/analytics/{customPropertyId}/values/{customPropertyValueId}/dependent":
     put:
       tags:
-        - Создание командировки
+        - СОЗДАНИЕ КОМАНДИРОВКИ
       summary: Получение зависимых доп. данных
       description: |
         Получение зависимых дополнительных данных  
@@ -1125,7 +1125,7 @@ paths:
   "/journeys/{journeyNumber}/trips/{businessTripNumber}/stage/{BusinessTripStage}/authfx/state":
     get:
       tags:
-        - Авторизация командировки
+        - АВТОРИЗАЦИЯ КОМАНДИРОВКИ
       summary: Проверка необходимости авторизации и получение списка авторизующих
       description: |
         Проверка необходимости авторизации и получение списка авторизующих для командировки  
@@ -1161,7 +1161,7 @@ paths:
           description: Версия протокола не поддерживается
     put:
       tags:
-        - Авторизация командировки
+        - АВТОРИЗАЦИЯ КОМАНДИРОВКИ
       summary: Отправка командировки и услуг в командировке на авторизацию
       description: |
         Метод отправки командировки и услуг в командировке на авторизацию  
@@ -1205,7 +1205,7 @@ paths:
   "/journeys/{journeyNumber}/trips/{businessTripNumber}/stage/{BusinessTripStage}/customProperties":
     get:
       tags:
-        - Создание командировки
+        - СОЗДАНИЕ КОМАНДИРОВКИ
       summary: Получение доп. данных для заполнения
       description: |
         Получение возможных для заполнения доп. данных по командировке  
@@ -1262,7 +1262,7 @@ paths:
           description: Версия протокола не поддерживается
     post:
       tags:
-        - Создание командировки
+        - СОЗДАНИЕ КОМАНДИРОВКИ
       summary: Сохранение доп. данных по командировке
       description: |
         Сохранение доп. данных по командировке  
@@ -1317,7 +1317,7 @@ paths:
   "/journeys/{journeyNumber}/trips/{businessTripNumber}/documents":
     get:
       tags:
-        - Поиск и оформление услуг в системе клиента
+        - ПОИСК И ОФОРМЛЕНИЕ УСЛУГ
       description: Получение проездных документов по командировке
       operationId: GetDocumentsForBusinessTrip
       parameters:
@@ -1348,7 +1348,7 @@ paths:
   "/journeys/{journeyNumber}/trips/{businessTripNumber}/posts":
     get:
       tags:
-        - Интеграция чата
+        - ИНТЕГРАЦИЯ ЧАТА
       summary: Получение комментариев чата командировки
       description: |
         Получение комментариев в чате с агентом в командировке  
@@ -1403,7 +1403,7 @@ paths:
           content: {}
     put:
       tags:
-        - Интеграция чата
+        - ИНТЕГРАЦИЯ ЧАТА
       summary: Добавление комментария в чат командировки
       description: |
         Добавление комментария к командировке  
@@ -1451,7 +1451,7 @@ paths:
   "/journeys/{journeyNumber}/trips/{businessTripNumber}/posts/read":
     put:
       tags:
-        - Интеграция чата
+        - ИНТЕГРАЦИЯ ЧАТА
       summary: Пометить комментарии чата прочитанными
       description: |
         Пометить комментарии прочитанными  
@@ -1487,7 +1487,7 @@ paths:
   /journeys:
     put:
       tags:
-        - Создание командировки
+        - СОЗДАНИЕ КОМАНДИРОВКИ
       summary: Создание поездки
       description: |
         Создание поездки  
@@ -1512,7 +1512,7 @@ paths:
   /journeysV2:
     put:
       tags:
-        - Создание командировки
+        - СОЗДАНИЕ КОМАНДИРОВКИ
       summary: Создание поездки с несколькими пунктами
       description: |
         Создание поездки версии 2. Поддержка создания с неколькими пунктами назанчения  
@@ -1537,7 +1537,7 @@ paths:
   "/oauth/{companyId}/fingerprint/{profileId}":
     put:
       tags:
-        - Авторизация API
+        - АВТОРИЗАЦИЯ API
       security:
         - basicAuth: []
       summary: Авторизация клиента
@@ -1577,7 +1577,7 @@ paths:
           description: Версия протокола не поддерживается
     delete:
       tags:
-        - Авторизация API
+        - АВТОРИЗАЦИЯ API
       description: Удаление токена клиента
       operationId: DeleteAuthentication
       parameters:
@@ -1602,7 +1602,7 @@ paths:
   "/orders/{orderNumber}/services/{serviceNumber}":
     get:
       tags:
-        - Интеграция данных по командировке и услугам
+        - ИНТЕГРАЦИЯ ДАННЫХ ПО КОММАНДИРОВКЕ И УСЛУГАМ
       summary: Получение информации по услуге
       description: |
         Получение услуги по номеру заказа и номеру услуги  
@@ -1636,7 +1636,7 @@ paths:
   "/orders/{orderNumber}/services/{serviceNumber}/alloweddocuments":
     get:
       tags:
-        - Поиск и оформление услуг в системе клиента
+        - ПОИСК И ОФОРМЛЕНИЕ УСЛУГ
       summary: Получение доступных документов для услуги
       description: |
         Получение доступных документов для оформления услуги  
@@ -1676,7 +1676,7 @@ paths:
   "/orders/{orderNumber}/services/{serviceNumber}/alter":
     put:
       tags:
-        - Изменение командировки
+        - ИЗМЕНЕНИЕ КОМАНДИРОВКИ
       summary: Запрос на внесение изменений в услугу
       description: |
         Запрос на внесение изменений в услугу  
@@ -1710,7 +1710,7 @@ paths:
   "/orders/{orderNumber}/services/{serviceNumber}/authfx/state":
     get:
       tags:
-        - Авторизация командировки
+        - АВТОРИЗАЦИЯ КОМАНДИРОВКИ
       summary: Получение информации по необходимости авторизации услуги
       description: |
         Получение информации по необходимости авторизации услуги  
@@ -1740,7 +1740,7 @@ paths:
           description: Версия протокола не поддерживается
     put:
       tags:
-        - Авторизация командировки
+        - АВТОРИЗАЦИЯ КОМАНДИРОВКИ
       summary: Отправка услуги на авторизацию
       description: |
         Отправка услуги на авторизацию  
@@ -1778,7 +1778,7 @@ paths:
   "/orders/{orderNumber}/services/{serviceNumber}/cancel":
     put:
       tags:
-        - Изменение командировки
+        - ИЗМЕНЕНИЕ КОМАНДИРОВКИ
       summary: Запрос на отмену или возврат услуги
       description: |
         Запрос на отмену или возврат услуги  
@@ -1808,7 +1808,7 @@ paths:
   "/orders/{orderNumber}/services/{serviceNumber}/execute":
     put:
       tags:
-        - Поиск и оформление услуг в системе клиента
+        - ПОИСК И ОФОРМЛЕНИЕ УСЛУГ
       summary: Запрос на офромление услуги
       description: |
         Запрос на офромление услуги  
@@ -1838,7 +1838,7 @@ paths:
   "/orders/{orderNumber}/services/{serviceNumber}/regulations":
     get:
       tags:
-        - Поиск и оформление услуг в системе клиента
+        - ПОИСК И ОФОРМЛЕНИЕ УСЛУГ
       summary: Получение правил оказания услуги
       description: |
         Получение правил оказания услуги  
@@ -1870,7 +1870,7 @@ paths:
   "/orders/{orderNumber}/services/{serviceNumber}/reserve":
     put:
       tags:
-        - Поиск и оформление услуг в системе клиента
+        - ПОИСК И ОФОРМЛЕНИЕ УСЛУГ
       summary: Запрос на бронирование услуги
       description: |
         Запрос на бронирование услуги  
@@ -1910,7 +1910,7 @@ paths:
   "/orders/{orderNumber}/services/{serviceNumber}/seats":
     get:
       tags:
-        - Поиск и оформление услуг в системе клиента
+        - ПОИСК И ОФОРМЛЕНИЕ УСЛУГ
       summary: Получение информации о свободных местах
       description: |
         Получение актуальной информации о свободных местах в вагоне (только ЖД)  
@@ -1944,7 +1944,7 @@ paths:
   "/orders/{orderNumber}/services/{serviceNumber}/travellers":
     put:
       tags:
-        - Поиск и оформление услуг в системе клиента
+        - ПОИСК И ОФОРМЛЕНИЕ УСЛУГ
       summary: Добавление путешественников в услугу
       description: |
         Добавление путешественников в услугу  
@@ -1988,7 +1988,7 @@ paths:
   "/profile/{profileId}":
     get:
       tags:
-        - Поиск и оформление услуг в системе клиента
+        - ПОИСК И ОФОРМЛЕНИЕ УСЛУГ
       summary: Получение профайла по идентификатору
       description: |
         Получение информации о профайле по идентификатору  
@@ -2014,7 +2014,7 @@ paths:
   /profile/update:
     post:
       tags:
-        - Поиск и оформление услуг в системе клиента
+        - ПОИСК И ОФОРМЛЕНИЕ УСЛУГ
       summary: Обновление информации профайла
       description: |
         Обновление информации профайла  
@@ -2036,7 +2036,7 @@ paths:
   /references:
     get:
       tags:
-        - Создание командировки
+        - СОЗДАНИЕ КОМАНДИРОВКИ
       summary: Поиск локаций
       description: |
         Поиск локаций (autocomplete)  
@@ -2070,7 +2070,7 @@ paths:
   /references/profiles:
     get:
       tags:
-        - Создание командировки
+        - СОЗДАНИЕ КОМАНДИРОВКИ
       summary: Поиск профилей
       description: |
         Поиск профилей (autocomplete)  
@@ -2097,7 +2097,7 @@ paths:
   /search:
     put:
       tags:
-        - Поиск и оформление услуг в системе клиента
+        - ПОИСК И ОФОРМЛЕНИЕ УСЛУГ
       summary: Создание запроса на поиск вариантов
       description: |
         Создание запроса на поиск вариантов  
@@ -2122,7 +2122,7 @@ paths:
   "/search/{requestNumber}":
     get:
       tags:
-        - Поиск и оформление услуг в системе клиента
+        - ПОИСК И ОФОРМЛЕНИЕ УСЛУГ
       summary: Получение запроса поиска по номеру
       description: |
         Получение запроса поиска по номеру  
@@ -2148,7 +2148,7 @@ paths:
           description: Версия протокола не поддерживается
     put:
       tags:
-        - Поиск и оформление услуг в системе клиента
+        - ПОИСК И ОФОРМЛЕНИЕ УСЛУГ
       summary: Обновление результатов поиска
       description: |
         Обновление результатов поиска  
@@ -2178,7 +2178,7 @@ paths:
   "/search/{requestNumber}/{optionNumber}/status":
     get:
       tags:
-        - Поиск и оформление услуг в системе клиента
+        - ПОИСК И ОФОРМЛЕНИЕ УСЛУГ
       summary: Получение статуса поискового запроса
       description: |
         Получение статуса поискового запроса  
@@ -2212,7 +2212,7 @@ paths:
   "/search/{requestNumber}/filterparameters":
     get:
       tags:
-        - Поиск и оформление услуг в системе клиента
+        - ПОИСК И ОФОРМЛЕНИЕ УСЛУГ
       summary: Получение возможных значений фильтров
       description: |
         Получение возможных значений фильтров  
@@ -2241,7 +2241,7 @@ paths:
   "/search/{requestNumber}/options/{optionNumber}/details/{key}":
     get:
       tags:
-        - Поиск и оформление услуг в системе клиента
+        - ПОИСК И ОФОРМЛЕНИЕ УСЛУГ
       summary: Получение информации по опции
       description: |
         Получение детальной информации по варианту  
@@ -2285,7 +2285,7 @@ paths:
   "/search/{requestNumber}/options/{optionNumber}/details/{key}/rules":
     get:
       tags:
-        - Поиск и оформление услуг в системе клиента
+        - ПОИСК И ОФОРМЛЕНИЕ УСЛУГ
       summary: Получение правил опции
       description: |
         Получение правил по опции  
@@ -2323,7 +2323,7 @@ paths:
   "/search/{requestNumber}/options/{optionNumber}/details/{key}/selectToTrip":
     put:
       tags:
-        - Поиск и оформление услуг в системе клиента
+        - ПОИСК И ОФОРМЛЕНИЕ УСЛУГ
       summary: Добавление опции в командировку
       description: |
         Выбор опции для командировки (создание заказа с услугой)  
@@ -2363,7 +2363,7 @@ paths:
   "/search/{requestNumber}/options/{optionNumber}/results":
     get:
       tags:
-        - Поиск и оформление услуг в системе клиента
+        - ПОИСК И ОФОРМЛЕНИЕ УСЛУГ
       summary: Получение списка опций по фильтрам
       description: |
         Постраничное получение списка вариантов в опции с учётом фильтрации  
@@ -2628,7 +2628,7 @@ paths:
   "/search/{requestNumber}/options/{optionNumber}/results/count":
     get:
       tags:
-        - Поиск и оформление услуг в системе клиента
+        - ПОИСК И ОФОРМЛЕНИЕ УСЛУГ
       summary: Получения количества опций по фильтрам
       description: |
         Количество вариантов, соответствующих условиям фильтра  
@@ -2855,7 +2855,7 @@ paths:
   "/search/{requestNumber}/results":
     get:
       tags:
-        - Поиск и оформление услуг в системе клиента
+        - ПОИСК И ОФОРМЛЕНИЕ УСЛУГ
       summary: Получение списка вариантов по фильтрам
       description: |
         Постраничное получение списка вариантов с учётом фильтрации  
@@ -3114,7 +3114,7 @@ paths:
   /search/requests:
     get:
       tags:
-        - Поиск и оформление услуг в системе клиента
+        - ПОИСК И ОФОРМЛЕНИЕ УСЛУГ
       summary: Получение списка запросов поиска
       description: |
         Постраничный поиск созданных запросов поиска  
@@ -3172,28 +3172,28 @@ paths:
 security:
   - apiKey: []
 tags:
-  - name: Авторизация API
+  - name: АВТОРИЗАЦИЯ API
     description: |
 
-  - name: Интеграция данных по командировке и услугам
+  - name: ИНТЕГРАЦИЯ ДАННЫХ ПО КОММАНДИРОВКЕ И УСЛУГАМ
     description: |
 
-  - name: Создание командировки
+  - name: СОЗДАНИЕ КОМАНДИРОВКИ
     description: |
 
-  - name: Поиск и оформление услуг в системе клиента
+  - name: ПОИСК И ОФОРМЛЕНИЕ УСЛУГ
     description: |
 
-  - name: Авторизация командировки
+  - name: АВТОРИЗАЦИЯ КОМАНДИРОВКИ
     description: |
 
-  - name: Изменение командировки
+  - name: ИЗМЕНЕНИЕ КОМАНДИРОВКИ
     description: |
 
-  - name: Отмена командировки
+  - name: ОТМЕНА КОМАНДИРОВКИ
     description: |
 
-  - name: Интеграция чата
+  - name: ИНТЕГРАЦИЯ ЧАТА
     description: |
 
   - name: About
