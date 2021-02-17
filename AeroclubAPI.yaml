@@ -3522,13 +3522,13 @@ components:
           description: ID страны назначения
         expires_on:
           type: string
-          description: Дата окончания срока действия
+          description: Дата окончания срока действия в формате YYYY-MM-DDThh:mm:ss
         first_name:
           type: string
           description: Имя, на кого выдан документ
         issued_on:
           type: string
-          description: Дата выдачи
+          description: Дата выдачи в формате YYYY-MM-DDThh:mm:ss
         last_name:
           type: string
           description: Фамилия, на кого выдан документ
