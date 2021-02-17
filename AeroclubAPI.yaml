@@ -3174,28 +3174,70 @@ security:
 tags:
   - name: АВТОРИЗАЦИЯ API
     description: |
-
+      - [POST /connect/token](#post-/connect/token) - Авторизация с помощью Passport
+      - [PUT /oauth/{companyId}/fingerprint/{profileId}](#put-/oauth/-companyId-/fingerprint/-profileId-) - Авторизация клиента
+      - [DELETE /oauth/{companyId}/fingerprint/{profileId}](#delete-/oauth/-companyId-/fingerprint/-profileId-) - Удаление токена клиента
   - name: ИНТЕГРАЦИЯ ДАННЫХ ПО КОММАНДИРОВКЕ И УСЛУГАМ
     description: |
-
+      - [GET /journeys/{journeyNumber}/trips/{businessTripNumber}](#get-/journeys/-journeyNumber-/trips/-businessTripNumber-) - Получение информации по командировке
+      - [GET /orders/{orderNumber}/services/{serviceNumber}](#get-/orders/-orderNumber-/services/-serviceNumber-) - Получение информации по услуге
   - name: СОЗДАНИЕ КОМАНДИРОВКИ
     description: |
-
+      - [GET /companies/{companyId}/profiles/{profileId}/allowedpaymentrequisites](#get-/companies/-companyId-/profiles/-profileId-/allowedpaymentrequisites) - Получение доступных форм оплаты
+      - [GET /companies/travellerProfiles/{profileId}/servicing](#get-/companies/travellerProfiles/-profileId-/servicing) - Получение списка доступных компаний
+      - [PUT /journeys](#put-/journeys) - Создание поездки
+      - [PUT /journeys/{journeyNumber}/trips/{businessTripNumber}/stage/{BusinessTripStage}/analytics/{customPropertyId}/values/{customPropertyValueId}/dependent](#put-/journeys/-journeyNumber-/trips/-businessTripNumber-/stage/-BusinessTripStage-/analytics/-customPropertyId-/values/-customPropertyValueId-/dependent) - Получение зависимых доп. данных
+      - [GET /journeys/{journeyNumber}/trips/{businessTripNumber}/stage/{BusinessTripStage}/customProperties](#get-/journeys/-journeyNumber-/trips/-businessTripNumber-/stage/-BusinessTripStage-/customProperties) - Получение доп. данных для заполнения
+      - [POST /journeys/{journeyNumber}/trips/{businessTripNumber}/stage/{BusinessTripStage}/customProperties](#post-/journeys/-journeyNumber-/trips/-businessTripNumber-/stage/-BusinessTripStage-/customProperties) - Сохранение доп. данных по командировке
+      - [PUT /journeysV2](#put-/journeysV2) - Создание поездки с несколькими пунктами
+      - [GET /references](#get-/references) - Поиск локаций
+      - [GET /references/profiles](#get-/references/profiles) - Поиск профилей
   - name: ПОИСК И ОФОРМЛЕНИЕ УСЛУГ
     description: |
-
+      - [GET /journeys/{journeyNumber}/trips/{businessTripNumber}/documents](#get-/journeys/-journeyNumber-/trips/-businessTripNumber-/documents) - Получение проездных документов по командировке
+      - [GET /orders/{orderNumber}/services/{serviceNumber}/alloweddocuments](#get-/orders/-orderNumber-/services/-serviceNumber-/alloweddocuments) - Получение доступных документов для услуги
+      - [PUT /orders/{orderNumber}/services/{serviceNumber}/execute](#put-/orders/-orderNumber-/services/-serviceNumber-/execute) - Запрос на офромление услуги
+      - [GET /orders/{orderNumber}/services/{serviceNumber}/regulations](#get-/orders/-orderNumber-/services/-serviceNumber-/regulations) - Получение правил оказания услуги
+      - [PUT /orders/{orderNumber}/services/{serviceNumber}/reserve](#put-/orders/-orderNumber-/services/-serviceNumber-/reserve) - Запрос на бронирование услуги
+      - [GET /orders/{orderNumber}/services/{serviceNumber}/seats](#get-/orders/-orderNumber-/services/-serviceNumber-/seats) - Получение информации о свободных местах
+      - [PUT /orders/{orderNumber}/services/{serviceNumber}/travellers](#put-/orders/-orderNumber-/services/-serviceNumber-/travellers) - Добавление путешественников в услугу
+      - [GET /profile/{profileId}](#get-/profile/-profileId-) - Получение профайла по идентификатору
+      - [POST /profile/update](#post-/profile/update) - Обновление информации профайла
+      - [PUT /search](#put-/search) - Создание запроса на поиск вариантов
+      - [GET /search/{requestNumber}](#get-/search/-requestNumber-) - Получение запроса поиска по номеру
+      - [PUT /search/{requestNumber}](#put-/search/-requestNumber-) - Обновление результатов поиска
+      - [GET /search/{requestNumber}/{optionNumber}/status](#get-/search/-requestNumber-/-optionNumber-/status) - Получение статуса поискового запроса
+      - [GET /search/{requestNumber}/filterparameters](#get-/search/-requestNumber-/filterparameters) - Получение возможных значений фильтров
+      - [GET /search/{requestNumber}/options/{optionNumber}/details/{key}](#get-/search/-requestNumber-/options/-optionNumber-/details/-key-) - Получение информации по опции
+      - [GET /search/{requestNumber}/options/{optionNumber}/details/{key}/rules](#get-/search/-requestNumber-/options/-optionNumber-/details/-key-/rules) - Получение правил опции
+      - [PUT /search/{requestNumber}/options/{optionNumber}/details/{key}/selectToTrip](#put-/search/-requestNumber-/options/-optionNumber-/details/-key-/selectToTrip) - Добавление опции в командировку
+      - [GET /search/{requestNumber}/options/{optionNumber}/results](#get-/search/-requestNumber-/options/-optionNumber-/results) - Получение списка опций по фильтрам
+      - [GET /search/{requestNumber}/options/{optionNumber}/results/count](#get-/search/-requestNumber-/options/-optionNumber-/results/count) - Получения количества опций по фильтрам
+      - [GET /search/{requestNumber}/results](#get-/search/-requestNumber-/results) - Получение списка вариантов по фильтрам
+      - [GET /search/requests](#get-/search/requests) - Получение списка запросов поиска
   - name: АВТОРИЗАЦИЯ КОМАНДИРОВКИ
     description: |
-
+      - [POST /authfx/trip/batch/{batchToken}/complete](#post-/authfx/trip/batch/-batchToken-/complete) - Авторизация командировки
+      - [GET /journeys/{journeyNumber}/trips/{businessTripNumber}/stage/{BusinessTripStage}/authfx/state](#get-/journeys/-journeyNumber-/trips/-businessTripNumber-/stage/-BusinessTripStage-/authfx/state) - Проверка необходимости авторизации и получение списка авторизующих
+      - [PUT /journeys/{journeyNumber}/trips/{businessTripNumber}/stage/{BusinessTripStage}/authfx/state](#put-/journeys/-journeyNumber-/trips/-businessTripNumber-/stage/-BusinessTripStage-/authfx/state) - Отправка командировки и услуг в командировке на авторизацию
+      - [GET /orders/{orderNumber}/services/{serviceNumber}/authfx/state](#get-/orders/-orderNumber-/services/-serviceNumber-/authfx/state) - Получение информации по необходимости авторизации услуги
+      - [PUT /orders/{orderNumber}/services/{serviceNumber}/authfx/state](#put-/orders/-orderNumber-/services/-serviceNumber-/authfx/state) - Отправка услуги на авторизацию
   - name: ИЗМЕНЕНИЕ КОМАНДИРОВКИ
     description: |
-
+      - [PUT /journeys/{journeyNumber}/trips/{businessTripNumber}/changedates](#put-/journeys/-journeyNumber-/trips/-businessTripNumber-/changedates) - Обновление информации по направлениям командировки
+      - [GET /journeys/{journeyNumber}/trips/{businessTripNumber}/changedatesinfo](#get-/journeys/-journeyNumber-/trips/-businessTripNumber-/changedatesinfo) - Получение краткой информации по направлениям командировки
+      - [PUT /orders/{orderNumber}/services/{serviceNumber}/alter](#put-/orders/-orderNumber-/services/-serviceNumber-/alter) - Запрос на внесение изменений в услугу
+      - [PUT /orders/{orderNumber}/services/{serviceNumber}/cancel](#put-/orders/-orderNumber-/services/-serviceNumber-/cancel) - Запрос на отмену или возврат услуги
   - name: ОТМЕНА КОМАНДИРОВКИ
     description: |
-
+      - [PUT /journeys/{journeyNumber}/trips/{businessTripNumber}/cancellation](#put-/journeys/-journeyNumber-/trips/-businessTripNumber-/cancellation) - Запрос отмены командировки
+      - [GET /journeys/{journeyNumber}/trips/{businessTripNumber}/cancellation/available](#get-/journeys/-journeyNumber-/trips/-businessTripNumber-/cancellation/available) - Проверка возможности отмены командировки
+      - [GET /journeys/{journeyNumber}/trips/{businessTripNumber}/cancellation/status](#get-/journeys/-journeyNumber-/trips/-businessTripNumber-/cancellation/status) - Получение статуса отмены командировки
   - name: ИНТЕГРАЦИЯ ЧАТА
     description: |
-
+      - [GET /journeys/{journeyNumber}/trips/{businessTripNumber}/posts](#get-/journeys/-journeyNumber-/trips/-businessTripNumber-/posts) - Получение комментариев чата командировки
+      - [PUT /journeys/{journeyNumber}/trips/{businessTripNumber}/posts](#put-/journeys/-journeyNumber-/trips/-businessTripNumber-/posts) - Добавление комментария в чат командировки
+      - [PUT /journeys/{journeyNumber}/trips/{businessTripNumber}/posts/read](#put-/journeys/-journeyNumber-/trips/-businessTripNumber-/posts/read) - Пометить комментарии чата прочитанными
   - name: About
     description: Информация об Api
   - name: Account
