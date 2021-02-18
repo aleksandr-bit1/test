@@ -768,7 +768,7 @@ paths:
       summary: Авторизация командировки
       description: |
         Авторизация командировки  
-        <span style="color: #FF3B30">**Данный метод входит в подписку "Внешняя авторизация". Описание доступно по [ссылке](#overview--policy)**</span>
+        <span style="color: #FF3B30">**Данный метод входит в подписку "Внешняя авторизация". Описание подписки доступно по [ссылке](#overview--policy)**</span>
       operationId: CompleteAuthTrip
       parameters:
         - name: batchToken
@@ -796,7 +796,7 @@ paths:
       summary: Авторизация услуги
       description: |
         Авторизация услуги  
-        <span style="color: #FF3B30">**Данный метод входит в подписку "Внешняя авторизация". Описание доступно по [ссылке](#overview--policy)**</span>
+        <span style="color: #FF3B30">**Данный метод входит в подписку "Внешняя авторизация". Описание подписки доступно по [ссылке](#overview--policy)**</span>
       operationId: CompleteAuthService
       parameters:
         - name: batchToken
@@ -884,7 +884,7 @@ paths:
       summary: Получение информации по командировке
       description: |
         Получение командировки по номеру  
-        <span style="color: #FF3B30">**Данный метод входит в подписку "Интеграция данных по командировкам и услугам". Описание доступно по [ссылке](#overview--policy)**</span>
+        <span style="color: #FF3B30">**Данный метод входит в подписку "Интеграция данных по командировкам и услугам". Описание подписки доступно по [ссылке](#overview--policy)**</span>
       operationId: GetBusinessTrip
       parameters:
         - name: journeyNumber
@@ -916,7 +916,7 @@ paths:
       summary: Запрос отмены командировки
       description: |
         Запрос отмены командировки  
-        <span style="color: #FF3B30">**Данный метод входит в подписку "Отмена командировки". Описание доступно по [ссылке](#overview--policy)**</span>
+        <span style="color: #FF3B30">**Данный метод входит в подписку "Отмена командировки". Описание подписки доступно по [ссылке](#overview--policy)**</span>
       operationId: CancelJourney
       parameters:
         - name: journeyNumber
@@ -956,7 +956,7 @@ paths:
       summary: Проверка возможности отмены командировки
       description: |
         Проверка возможности отмены командировки и получение ReasonCodes для отмены услуг  
-        <span style="color: #FF3B30">**Данный метод входит в подписку "Отмена командировки". Описание доступно по [ссылке](#overview--policy)**</span>
+        <span style="color: #FF3B30">**Данный метод входит в подписку "Отмена командировки". Описание подписки доступно по [ссылке](#overview--policy)**</span>
       operationId: GetTripCancellationAvailable
       parameters:
         - name: journeyNumber
@@ -990,7 +990,7 @@ paths:
       summary: Получение статуса отмены командировки
       description: |
         Получение статуса отмены командировки  
-        <span style="color: #FF3B30">**Данный метод входит в подписку "Отмена командировки". Описание доступно по [ссылке](#overview--policy)**</span>
+        <span style="color: #FF3B30">**Данный метод входит в подписку "Отмена командировки". Описание подписки доступно по [ссылке](#overview--policy)**</span>
       operationId: GetCancellationStatus
       parameters:
         - name: journeyNumber
@@ -1024,7 +1024,7 @@ paths:
       summary: Обновление информации по направлениям командировки
       description: |
         Обновление информации по направлениям командировки  
-        <span style="color: #FF3B30">**Данный метод входит в подписку "Изменение командировки". Описание доступно по [ссылке](#overview--policy)**</span>
+        <span style="color: #FF3B30">**Данный метод входит в подписку "Изменение командировки". Описание подписки доступно по [ссылке](#overview--policy)**</span>
       operationId: ChangeDates
       parameters:
         - name: journeyNumber
@@ -1064,7 +1064,7 @@ paths:
       summary: Получение краткой информации по направлениям командировки
       description: |
         Получение краткой информации по направлениям командировки  
-        <span style="color: #FF3B30">**Данный метод входит в подписку "Изменение командировки". Описание доступно по [ссылке](#overview--policy)**</span>
+        <span style="color: #FF3B30">**Данный метод входит в подписку "Изменение командировки". Описание подписки доступно по [ссылке](#overview--policy)**</span>
       operationId: GetChangeDatesInfo
       parameters:
         - name: journeyNumber
@@ -1096,7 +1096,7 @@ paths:
       summary: Получение зависимых доп. данных
       description: |
         Получение зависимых дополнительных данных  
-        <span style="color: #FF3B30">**Данный метод входит в подписку "Работа с командировкой". Описание доступно по [ссылке](#overview--policy)**</span>
+        <span style="color: #FF3B30">**Данный метод входит в подписку "Работа с командировкой". Описание подписки доступно по [ссылке](#overview--policy)**</span>
       operationId: GetBusinessTripTravellersAnalyticsChilds
       parameters:
         - name: journeyNumber
@@ -1192,7 +1192,7 @@ paths:
       summary: Отправка командировки и услуг в командировке на авторизацию
       description: |
         Метод отправки командировки и услуг в командировке на авторизацию  
-        <span style="color: #FF3B30">**Данный метод входит в подписку "Внешняя авторизация". Описание доступно по [ссылке](#overview--policy)**</span>
+        <span style="color: #FF3B30">**Данный метод входит в подписку "Внешняя авторизация". Описание подписки доступно по [ссылке](#overview--policy)**</span>
       operationId: ChangeTripAuthFxState
       parameters:
         - name: journeyNumber
@@ -1292,7 +1292,7 @@ paths:
       summary: Сохранение доп. данных по командировке
       description: |
         Сохранение доп. данных по командировке  
-        <span style="color: #FF3B30">**Данный метод входит в подписку "Работа с командировкой". Описание доступно по [ссылке](#overview--policy)**</span>
+        <span style="color: #FF3B30">**Данный метод входит в подписку "Работа с командировкой". Описание подписки доступно по [ссылке](#overview--policy)**</span>
       operationId: SaveBusinessTripAnalytics
       parameters:
         - name: journeyNumber
@@ -1378,7 +1378,7 @@ paths:
       summary: Получение комментариев чата командировки
       description: |
         Получение комментариев в чате с агентом в командировке  
-        <span style="color: #FF3B30">**Данный метод входит в подписку "Интеграция чата". Описание доступно по [ссылке](#overview--policy)**</span>
+        <span style="color: #FF3B30">**Данный метод входит в подписку "Интеграция чата". Описание подписки доступно по [ссылке](#overview--policy)**</span>
       operationId: GetBusinessTripPosts
       parameters:
         - name: journeyNumber
@@ -1433,7 +1433,7 @@ paths:
       summary: Добавление комментария в чат командировки
       description: |
         Добавление комментария к командировке  
-        <span style="color: #FF3B30">**Данный метод входит в подписку "Интеграция чата". Описание доступно по [ссылке](#overview--policy)**</span>
+        <span style="color: #FF3B30">**Данный метод входит в подписку "Интеграция чата". Описание подписки доступно по [ссылке](#overview--policy)**</span>
       operationId: AddBusinessTripPost
       parameters:
         - name: journeyNumber
@@ -1481,7 +1481,7 @@ paths:
       summary: Пометить комментарии чата прочитанными
       description: |
         Пометить комментарии прочитанными  
-        <span style="color: #FF3B30">**Данный метод входит в подписку "Интеграция чата". Описание доступно по [ссылке](#overview--policy)**</span>
+        <span style="color: #FF3B30">**Данный метод входит в подписку "Интеграция чата". Описание подписки доступно по [ссылке](#overview--policy)**</span>
       operationId: ReadBusinessTripPosts
       parameters:
         - name: journeyNumber
@@ -1517,7 +1517,7 @@ paths:
       summary: Создание поездки
       description: |
         Создание поездки  
-        <span style="color: #FF3B30">**Данный метод входит в подписку "Работа с командировкой". Описание доступно по [ссылке](#overview--policy)**</span>
+        <span style="color: #FF3B30">**Данный метод входит в подписку "Работа с командировкой". Описание подписки доступно по [ссылке](#overview--policy)**</span>
       operationId: CreateJourney
       requestBody:
         content:
@@ -1542,7 +1542,7 @@ paths:
       summary: Создание поездки с несколькими пунктами
       description: |
         Создание поездки версии 2. Поддержка создания с неколькими пунктами назанчения  
-        <span style="color: #FF3B30">**Данный метод входит в подписку "Работа с командировкой". Описание доступно по [ссылке](#overview--policy)**</span>
+        <span style="color: #FF3B30">**Данный метод входит в подписку "Работа с командировкой". Описание подписки доступно по [ссылке](#overview--policy)**</span>
       operationId: CreateJourneyV2
       requestBody:
         content:
@@ -1632,7 +1632,7 @@ paths:
       summary: Получение информации по услуге
       description: |
         Получение услуги по номеру заказа и номеру услуги  
-        <span style="color: #FF3B30">**Данный метод входит в подписку "Интеграция данных по командировкам и услугам". Описание доступно по [ссылке](#overview--policy)**</span>
+        <span style="color: #FF3B30">**Данный метод входит в подписку "Интеграция данных по командировкам и услугам". Описание подписки доступно по [ссылке](#overview--policy)**</span>
       operationId: GetService
       parameters:
         - name: orderNumber
@@ -1666,7 +1666,7 @@ paths:
       summary: Получение доступных документов для услуги
       description: |
         Получение доступных документов для оформления услуги  
-        <span style="color: #FF3B30">**Данный метод входит в подписку "Поиск и оформление услуг в системе клиента". Описание доступно по [ссылке](#overview--policy)**</span>
+        <span style="color: #FF3B30">**Данный метод входит в подписку "Поиск и оформление услуг в системе клиента". Описание подписки доступно по [ссылке](#overview--policy)**</span>
       operationId: GetAllowedDocuments
       parameters:
         - name: orderNumber
@@ -1706,7 +1706,7 @@ paths:
       summary: Запрос на внесение изменений в услугу
       description: |
         Запрос на внесение изменений в услугу  
-        <span style="color: #FF3B30">**Данный метод входит в подписку "Изменение командировки". Описание доступно по [ссылке](#overview--policy)**</span>
+        <span style="color: #FF3B30">**Данный метод входит в подписку "Изменение командировки". Описание подписки доступно по [ссылке](#overview--policy)**</span>
       operationId: AlterService
       parameters:
         - name: orderNumber
@@ -1769,7 +1769,7 @@ paths:
       summary: Отправка услуги на авторизацию
       description: |
         Отправка услуги на авторизацию  
-        <span style="color: #FF3B30">**Данный метод входит в подписку "Внешняя авторизация". Описание доступно по [ссылке](#overview--policy)**</span>
+        <span style="color: #FF3B30">**Данный метод входит в подписку "Внешняя авторизация". Описание подписки доступно по [ссылке](#overview--policy)**</span>
       operationId: SendServiceToAuthorization
       parameters:
         - name: orderNumber
@@ -1807,7 +1807,7 @@ paths:
       summary: Запрос на отмену или возврат услуги
       description: |
         Запрос на отмену или возврат услуги  
-        <span style="color: #FF3B30">**Данный метод входит в подписку "Изменение командировки". Описание доступно по [ссылке](#overview--policy)**</span>
+        <span style="color: #FF3B30">**Данный метод входит в подписку "Изменение командировки". Описание подписки доступно по [ссылке](#overview--policy)**</span>
       operationId: PerformCancelationService
       parameters:
         - name: orderNumber
@@ -1837,7 +1837,7 @@ paths:
       summary: Запрос на офромление услуги
       description: |
         Запрос на офромление услуги  
-        <span style="color: #FF3B30">**Данный метод входит в подписку "Поиск и оформление услуг в системе клиента". Описание доступно по [ссылке](#overview--policy)**</span>
+        <span style="color: #FF3B30">**Данный метод входит в подписку "Поиск и оформление услуг в системе клиента". Описание подписки доступно по [ссылке](#overview--policy)**</span>
       operationId: PerformExecutionService
       parameters:
         - name: orderNumber
@@ -1898,7 +1898,7 @@ paths:
       summary: Запрос на бронирование услуги
       description: |
         Запрос на бронирование услуги  
-        <span style="color: #FF3B30">**Данный метод входит в подписку "Поиск и оформление услуг в системе клиента". Описание доступно по [ссылке](#overview--policy)**</span>
+        <span style="color: #FF3B30">**Данный метод входит в подписку "Поиск и оформление услуг в системе клиента". Описание подписки доступно по [ссылке](#overview--policy)**</span>
       operationId: PerformReservationService
       parameters:
         - name: orderNumber
@@ -1971,7 +1971,7 @@ paths:
       summary: Добавление путешественников в услугу
       description: |
         Добавление путешественников в услугу  
-        <span style="color: #FF3B30">**Данный метод входит в подписку "Поиск и оформление услуг в системе клиента". Описание доступно по [ссылке](#overview--policy)**</span>
+        <span style="color: #FF3B30">**Данный метод входит в подписку "Поиск и оформление услуг в системе клиента". Описание подписки доступно по [ссылке](#overview--policy)**</span>
       operationId: AddTravellers
       parameters:
         - name: orderNumber
@@ -2040,7 +2040,7 @@ paths:
       summary: Обновление информации профайла
       description: |
         Обновление информации профайла  
-        <span style="color: #FF3B30">**Данный метод входит в подписку "Поиск и оформление услуг в системе клиента". Описание доступно по [ссылке](#overview--policy)**</span>
+        <span style="color: #FF3B30">**Данный метод входит в подписку "Поиск и оформление услуг в системе клиента". Описание подписки доступно по [ссылке](#overview--policy)**</span>
       operationId: UpdateProfile
       requestBody:
         content:
@@ -2062,7 +2062,7 @@ paths:
       summary: Получение аватара текущего пользователя
       description: |
         Получение аватара текущего пользователя  
-        <span style="color: #FF3B30">**Данный метод входит в подписку "Поиск и оформление услуг в системе клиента". Описание доступно по [ссылке](#overview--policy)**</span>
+        <span style="color: #FF3B30">**Данный метод входит в подписку "Поиск и оформление услуг в системе клиента". Описание подписки доступно по [ссылке](#overview--policy)**</span>
       operationId: GetCurrentAvatar
       parameters:
         - name: width
@@ -2100,7 +2100,7 @@ paths:
       summary: Сохранение аватара для текущго пользователя
       description:  |
         Сохранение аватара для пользотеля
-        <span style="color: #FF3B30">**Данный метод входит в подписку "Поиск и оформление услуг в системе клиента". Описание доступно по [ссылке](#overview--policy)**</span>
+        <span style="color: #FF3B30">**Данный метод входит в подписку "Поиск и оформление услуг в системе клиента". Описание подписки доступно по [ссылке](#overview--policy)**</span>
       operationId: PutAvatar
       requestBody:
         content:
@@ -2125,21 +2125,21 @@ paths:
       summary: Добавление документов (паспортов) пользователя
       description: |
         Добавление документов (паспортов) пользователя  
-        <span style="color: #FF3B30">**Данный метод входит в подписку "Поиск и оформление услуг в системе клиента". Описание доступно по [ссылке](#overview--policy)**</span>  
-        ### Описание сочетаний полей для создания документов  
-        | Поле*                  | Международный паспорт | Паспорт | Виза | Особенности                                                                                                                  |
-        |------------------------|-----------------------|---------|------|------------------------------------------------------------------------------------------------------------------------------|
-        | series                 | +                     | +       | +    | Только цифры                                                                                                                 |
-        | number                 | +                     | +       | +    | Только цифры                                                                                                                 |
-        | first_name             | +                     | +       | +    |                                                                                                                              |
-        | last_name              | +                     | +       | +    |                                                                                                                              |
-        | master_document_id     | --                    | --      | +    | ID международного паспорта<br>Поиск ID осуществляется c помощью метода [GET /profile/{profileId}](#get-/profile/-profileId-) |
-        | destination_country_id | --                    | --      | +    | ID страны назначения<br>Поиск ID осуществляется c помощью метода [GET /references](#get-/references)                         |
-        | city_of_issue_id       | --                    | --      | +    | ID города выдачи<br>Поиск ID осуществляется c помощью метода [GET /references](#get-/references)                             |
-        | place_of_birth         | +                     | +       | --   |                                                                                                                              |
-        | citizenship_country_id | +                     | +       | --   | ID страны выдачи<br>Поиск ID осуществляется c помощью метода [GET /references](#get-/references)                             |
-        | issued_on              | +                     | +       | +    |                                                                                                                              |
-        | expires_on             | +                     | --      | +    |                                                                                                                              |
+        <span style="color: #FF3B30">**Данный метод входит в подписку "Поиск и оформление услуг в системе клиента". Описание подписки доступно по [ссылке](#overview--policy)**</span>  
+        ### Описание сочетаний полей по отношению типу документа  
+        | Поле*                  | NationalPassport<br>Международный паспорт | Passport<br>Паспорт | Visa<br>Виза |
+        |------------------------|:-----------------------------------------:|:-------------------:|:------------:|
+        | series                 | +                                         | +                   | +            |
+        | number                 | +                                         | +                   | +            |
+        | first_name             | +                                         | +                   | +            |
+        | last_name              | +                                         | +                   | +            |
+        | master_document_id     | --                                        | --                  | +            |
+        | destination_country_id | --                                        | --                  | +            |
+        | city_of_issue_id       | --                                        | --                  | +            |
+        | place_of_birth         | +                                         | +                   | --           |
+        | citizenship_country_id | +                                         | +                   | --           |
+        | issued_on              | +                                         | +                   | +            |
+        | expires_on             | +                                         | --                  | +            |
 
         *Все поля являются обязательными к заполнению
       operationId: AddDocument
@@ -2165,7 +2165,7 @@ paths:
       summary: Удаление документа (паспорта) пользователя
       description: |
         Удаление документа (паспорта) пользователя  
-        <span style="color: #FF3B30">**Данный метод входит в подписку "Поиск и оформление услуг в системе клиента". Описание доступно по [ссылке](#overview--policy)**</span>
+        <span style="color: #FF3B30">**Данный метод входит в подписку "Поиск и оформление услуг в системе клиента". Описание подписки доступно по [ссылке](#overview--policy)**</span>
       operationId: DeleteDocument
       parameters:
         - name: documentId
@@ -2247,7 +2247,7 @@ paths:
       summary: Создание запроса на поиск вариантов
       description: |
         Создание запроса на поиск вариантов  
-        <span style="color: #FF3B30">**Данный метод входит в подписку "Поиск и оформление услуг в системе клиента". Описание доступно по [ссылке](#overview--policy)**</span>
+        <span style="color: #FF3B30">**Данный метод входит в подписку "Поиск и оформление услуг в системе клиента". Описание подписки доступно по [ссылке](#overview--policy)**</span>
       operationId: CreateSearchRequest
       requestBody:
         content:
@@ -2272,7 +2272,7 @@ paths:
       summary: Получение запроса поиска по номеру
       description: |
         Получение запроса поиска по номеру  
-        <span style="color: #FF3B30">**Данный метод входит в подписку "Поиск и оформление услуг в системе клиента". Описание доступно по [ссылке](#overview--policy)**</span>
+        <span style="color: #FF3B30">**Данный метод входит в подписку "Поиск и оформление услуг в системе клиента". Описание подписки доступно по [ссылке](#overview--policy)**</span>
       operationId: GetRequest
       parameters:
         - name: requestNumber
@@ -2298,7 +2298,7 @@ paths:
       summary: Обновление результатов поиска
       description: |
         Обновление результатов поиска  
-        <span style="color: #FF3B30">**Данный метод входит в подписку "Поиск и оформление услуг в системе клиента". Описание доступно по [ссылке](#overview--policy)**</span>
+        <span style="color: #FF3B30">**Данный метод входит в подписку "Поиск и оформление услуг в системе клиента". Описание подписки доступно по [ссылке](#overview--policy)**</span>
       operationId: UpdateSearchResults
       parameters:
         - name: requestNumber
@@ -2328,7 +2328,7 @@ paths:
       summary: Получение статуса поискового запроса
       description: |
         Получение статуса поискового запроса  
-        <span style="color: #FF3B30">**Данный метод входит в подписку "Поиск и оформление услуг в системе клиента". Описание доступно по [ссылке](#overview--policy)**</span>
+        <span style="color: #FF3B30">**Данный метод входит в подписку "Поиск и оформление услуг в системе клиента". Описание подписки доступно по [ссылке](#overview--policy)**</span>
       operationId: GetOptionRequestStatus
       parameters:
         - name: requestNumber
@@ -2362,7 +2362,7 @@ paths:
       summary: Получение возможных значений фильтров
       description: |
         Получение возможных значений фильтров  
-        <span style="color: #FF3B30">**Данный метод входит в подписку "Поиск и оформление услуг в системе клиента". Описание доступно по [ссылке](#overview--policy)**</span>
+        <span style="color: #FF3B30">**Данный метод входит в подписку "Поиск и оформление услуг в системе клиента". Описание подписки доступно по [ссылке](#overview--policy)**</span>
       operationId: GetFilterValues
       parameters:
         - name: requestNumber
@@ -2391,7 +2391,7 @@ paths:
       summary: Получение информации по опции
       description: |
         Получение детальной информации по варианту  
-        <span style="color: #FF3B30">**Данный метод входит в подписку "Поиск и оформление услуг в системе клиента". Описание доступно по [ссылке](#overview--policy)**</span>
+        <span style="color: #FF3B30">**Данный метод входит в подписку "Поиск и оформление услуг в системе клиента". Описание подписки доступно по [ссылке](#overview--policy)**</span>
       operationId: GetDetailsForOption
       parameters:
         - name: requestNumber
@@ -2435,7 +2435,7 @@ paths:
       summary: Получение правил опции
       description: |
         Получение правил по опции  
-        <span style="color: #FF3B30">**Данный метод входит в подписку "Поиск и оформление услуг в системе клиента". Описание доступно по [ссылке](#overview--policy)**</span>
+        <span style="color: #FF3B30">**Данный метод входит в подписку "Поиск и оформление услуг в системе клиента". Описание подписки доступно по [ссылке](#overview--policy)**</span>
       operationId: GetRulesForOption
       parameters:
         - name: requestNumber
@@ -2473,7 +2473,7 @@ paths:
       summary: Добавление опции в командировку
       description: |
         Выбор опции для командировки (создание заказа с услугой)  
-        <span style="color: #FF3B30">**Данный метод входит в подписку "Поиск и оформление услуг в системе клиента". Описание доступно по [ссылке](#overview--policy)**</span>
+        <span style="color: #FF3B30">**Данный метод входит в подписку "Поиск и оформление услуг в системе клиента". Описание подписки доступно по [ссылке](#overview--policy)**</span>
       operationId: CreateOrderWithOptionsForBusinessTrip
       parameters:
         - name: requestNumber
@@ -2513,7 +2513,7 @@ paths:
       summary: Получение списка опций по фильтрам
       description: |
         Постраничное получение списка вариантов в опции с учётом фильтрации  
-        <span style="color: #FF3B30">**Данный метод входит в подписку "Поиск и оформление услуг в системе клиента". Описание доступно по [ссылке](#overview--policy)**</span>
+        <span style="color: #FF3B30">**Данный метод входит в подписку "Поиск и оформление услуг в системе клиента". Описание подписки доступно по [ссылке](#overview--policy)**</span>
       operationId: GetResultsForOption
       parameters:
         - name: requestNumber
@@ -2778,7 +2778,7 @@ paths:
       summary: Получения количества опций по фильтрам
       description: |
         Количество вариантов, соответствующих условиям фильтра  
-        <span style="color: #FF3B30">**Данный метод входит в подписку "Поиск и оформление услуг в системе клиента". Описание доступно по [ссылке](#overview--policy)**</span>
+        <span style="color: #FF3B30">**Данный метод входит в подписку "Поиск и оформление услуг в системе клиента". Описание подписки доступно по [ссылке](#overview--policy)**</span>
       operationId: GetResultsCount
       parameters:
         - name: requestNumber
@@ -3005,7 +3005,7 @@ paths:
       summary: Получение списка вариантов по фильтрам
       description: |
         Постраничное получение списка вариантов с учётом фильтрации  
-        <span style="color: #FF3B30">**Данный метод входит в подписку "Поиск и оформление услуг в системе клиента". Описание доступно по [ссылке](#overview--policy)**</span>
+        <span style="color: #FF3B30">**Данный метод входит в подписку "Поиск и оформление услуг в системе клиента". Описание подписки доступно по [ссылке](#overview--policy)**</span>
       operationId: GetResults
       parameters:
         - name: requestNumber
@@ -3264,7 +3264,7 @@ paths:
       summary: Получение списка запросов поиска
       description: |
         Постраничный поиск созданных запросов поиска  
-        <span style="color: #FF3B30">**Данный метод входит в подписку "Поиск и оформление услуг в системе клиента". Описание доступно по [ссылке](#overview--policy)**</span>
+        <span style="color: #FF3B30">**Данный метод входит в подписку "Поиск и оформление услуг в системе клиента". Описание подписки доступно по [ссылке](#overview--policy)**</span>
       operationId: GetRequests
       parameters:
         - name: requestType
@@ -3325,10 +3325,14 @@ tags:
       - [DELETE /oauth/{companyId}/fingerprint/{profileId}](#delete-/oauth/-companyId-/fingerprint/-profileId-) - Удаление токена клиента
   - name: ИНТЕГРАЦИЯ ДАННЫХ ПО КОММАНДИРОВКЕ И УСЛУГАМ
     description: |
+      <span style="color: #FF3B30">**Данный раздел входит в подписку "Интеграция данных по командировке и услугам". Описание подписки доступно по [ссылке](#overview--policy)**</span>
+
       - [GET /journeys/{journeyNumber}/trips/{businessTripNumber}](#get-/journeys/-journeyNumber-/trips/-businessTripNumber-) - Получение информации по командировке
       - [GET /orders/{orderNumber}/services/{serviceNumber}](#get-/orders/-orderNumber-/services/-serviceNumber-) - Получение информации по услуге
   - name: СОЗДАНИЕ КОМАНДИРОВКИ
     description: |
+      <span style="color: #FF3B30">**Данный раздел входит в подписку "Работа с командировкой". Описание подписки доступно по [ссылке](#overview--policy)**</span>
+
       - [GET /companies/{companyId}/profiles/{profileId}/allowedpaymentrequisites](#get-/companies/-companyId-/profiles/-profileId-/allowedpaymentrequisites) - Получение доступных форм оплаты
       - [GET /companies/travellerProfiles/{profileId}/servicing](#get-/companies/travellerProfiles/-profileId-/servicing) - Получение списка доступных компаний
       - [PUT /journeys](#put-/journeys) - Создание поездки
@@ -3340,6 +3344,8 @@ tags:
       - [GET /references/profiles](#get-/references/profiles) - Поиск профилей
   - name: ПОИСК И ОФОРМЛЕНИЕ УСЛУГ
     description: |
+      <span style="color: #FF3B30">**Данный раздел входит в подписку "Поиск и оформление услуг". Описание подписки доступно по [ссылке](#overview--policy)**</span>
+
       - [GET /journeys/{journeyNumber}/trips/{businessTripNumber}/documents](#get-/journeys/-journeyNumber-/trips/-businessTripNumber-/documents) - Получение проездных документов по командировке
       - [GET /orders/{orderNumber}/services/{serviceNumber}/alloweddocuments](#get-/orders/-orderNumber-/services/-serviceNumber-/alloweddocuments) - Получение доступных документов для услуги
       - [PUT /orders/{orderNumber}/services/{serviceNumber}/execute](#put-/orders/-orderNumber-/services/-serviceNumber-/execute) - Запрос на офромление услуги
@@ -3367,6 +3373,8 @@ tags:
       - [GET /search/requests](#get-/search/requests) - Получение списка запросов поиска
   - name: АВТОРИЗАЦИЯ КОМАНДИРОВКИ
     description: |
+      <span style="color: #FF3B30">**Данный раздел входит в подписку "Внешняя авторизация". Описание подписки доступно по [ссылке](#overview--policy)**</span>
+
       - [POST /authfx/service/batch/{batchToken}/complete](#post-/authfx/service/batch/-batchToken-/complete) - Авторизация услуги
       - [POST /authfx/trip/batch/{batchToken}/complete](#post-/authfx/trip/batch/-batchToken-/complete) - Авторизация командировки
       - [GET /journeys/{journeyNumber}/trips/{businessTripNumber}/stage/{BusinessTripStage}/authfx/state](#get-/journeys/-journeyNumber-/trips/-businessTripNumber-/stage/-BusinessTripStage-/authfx/state) - Проверка необходимости авторизации и получение списка авторизующих
@@ -3375,17 +3383,23 @@ tags:
       - [PUT /orders/{orderNumber}/services/{serviceNumber}/authfx/state](#put-/orders/-orderNumber-/services/-serviceNumber-/authfx/state) - Отправка услуги на авторизацию
   - name: ИЗМЕНЕНИЕ КОМАНДИРОВКИ
     description: |
+      <span style="color: #FF3B30">**Данный раздел входит в подписку "Работа с командировкой". Описание подписки доступно по [ссылке](#overview--policy)**</span>
+
       - [PUT /journeys/{journeyNumber}/trips/{businessTripNumber}/changedates](#put-/journeys/-journeyNumber-/trips/-businessTripNumber-/changedates) - Обновление информации по направлениям командировки
       - [GET /journeys/{journeyNumber}/trips/{businessTripNumber}/changedatesinfo](#get-/journeys/-journeyNumber-/trips/-businessTripNumber-/changedatesinfo) - Получение краткой информации по направлениям командировки
       - [PUT /orders/{orderNumber}/services/{serviceNumber}/alter](#put-/orders/-orderNumber-/services/-serviceNumber-/alter) - Запрос на внесение изменений в услугу
       - [PUT /orders/{orderNumber}/services/{serviceNumber}/cancel](#put-/orders/-orderNumber-/services/-serviceNumber-/cancel) - Запрос на отмену или возврат услуги
   - name: ОТМЕНА КОМАНДИРОВКИ
     description: |
+      <span style="color: #FF3B30">**Данный раздел входит в подписку "Работа с командировкой". Описание подписки доступно по [ссылке](#overview--policy)**</span>
+
       - [PUT /journeys/{journeyNumber}/trips/{businessTripNumber}/cancellation](#put-/journeys/-journeyNumber-/trips/-businessTripNumber-/cancellation) - Запрос отмены командировки
       - [GET /journeys/{journeyNumber}/trips/{businessTripNumber}/cancellation/available](#get-/journeys/-journeyNumber-/trips/-businessTripNumber-/cancellation/available) - Проверка возможности отмены командировки
       - [GET /journeys/{journeyNumber}/trips/{businessTripNumber}/cancellation/status](#get-/journeys/-journeyNumber-/trips/-businessTripNumber-/cancellation/status) - Получение статуса отмены командировки
   - name: ИНТЕГРАЦИЯ ЧАТА
     description: |
+      <span style="color: #FF3B30">**Данный раздел входит в подписку "Работа с командировкой". Описание подписки доступно по [ссылке](#overview--policy)**</span>
+
       - [GET /journeys/{journeyNumber}/trips/{businessTripNumber}/posts](#get-/journeys/-journeyNumber-/trips/-businessTripNumber-/posts) - Получение комментариев чата командировки
       - [PUT /journeys/{journeyNumber}/trips/{businessTripNumber}/posts](#put-/journeys/-journeyNumber-/trips/-businessTripNumber-/posts) - Добавление комментария в чат командировки
       - [PUT /journeys/{journeyNumber}/trips/{businessTripNumber}/posts/read](#put-/journeys/-journeyNumber-/trips/-businessTripNumber-/posts/read) - Пометить комментарии чата прочитанными
@@ -3513,28 +3527,30 @@ components:
       properties:
         citizenship_country_id:
           type: integer
-          description: ID страны гражданства
+          description: ID страны гражданства. Поиск ID осуществляется c помощью метода [GET /references](#get-/references)
         city_of_issue_id:
           type: integer
-          description: ID города выдачи документа
+          description: ID города выдачи документа. Поиск ID осуществляется c помощью метода [GET /references](#get-/references)
         destination_country_id:
           type: integer
-          description: ID страны назначения
+          description: ID страны назначения. Поиск ID осуществляется c помощью метода [GET /references](#get-/references)
         expires_on:
           type: string
+          format: datetime
           description: Дата окончания срока действия в формате YYYY-MM-DDThh:mm:ss
         first_name:
           type: string
           description: Имя, на кого выдан документ
         issued_on:
           type: string
+          format: datetime
           description: Дата выдачи в формате YYYY-MM-DDThh:mm:ss
         last_name:
           type: string
           description: Фамилия, на кого выдан документ
         master_document_id:
           type: integer
-          description: ID связанного документа. Например, идентификатор заграничного паспорта, на который выдана виза
+          description: ID связанного документа. Например, идентификатор заграничного паспорта, на который выдана виза. Поиск ID осуществляется c помощью метода [GET /profile/{profileId}](#get-/profile/-profileId-)
         number:
           type: string
           description: Номер документа
@@ -8600,7 +8616,15 @@ components:
         - ZWL
     DocumentType:
       type: string
-      description: Тип документа
+      description: |
+        Тип документа. Описание типов:
+        - Passport - Паспорт
+        - LocalPassport
+        - NationalPassport - Международный паспорт
+        - BirthCertificate - Свидетельство о рождении
+        - SeamanPassport - Паспорт моряка
+        - MilitaryPassport - Удостоверение военнослужащего
+        - Visa - Виза
       enum:
         - Passport
         - LocalPassport
@@ -8609,7 +8633,6 @@ components:
         - SeamanPassport
         - MilitaryPassport
         - Visa
-        - NotSpecified
     EnumSex:
       type: string
       description: Пол
