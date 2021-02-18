@@ -2148,13 +2148,13 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/AddDocumentRequest'
+              $ref: "#/components/schemas/AddDocumentRequest"
         required: true
       responses:
-        '200':
+        "200":
           description: Успешно
           content: {}
-        '426':
+        "426":
           description: Версия протокола не поддерживается
           content: {}
       x-codegen-request-body-name: document
@@ -9047,7 +9047,7 @@ components:
               description: Длительность поездки
               type: string
             is_local_time:
-              description: ""
+              description: "Признак местного времени"
               type: boolean
             departure_at:
               description: Дата и время отправления по местному времени
