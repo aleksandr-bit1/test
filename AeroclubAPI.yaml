@@ -50,10 +50,16 @@ info:
 
     **Методы API**
 
-    | # | Описание                        | Метод                                              |
-    |---|---------------------------------|----------------------------------------------------|
-    | 1 | Авторизация клиента | [PUT /oauth/{CompanyID}/fingerprint/{ProfileID}](#put-/oauth/-companyId-/fingerprint/-profileId-)     |
+    | # | Описание                        | Метод                                                                                                    |
+    |---|---------------------------------|----------------------------------------------------------------------------------------------------------|
+    | 1 | Авторизация клиента             | [PUT /oauth/{CompanyID}/fingerprint/{ProfileID}](#put-/oauth/-companyId-/fingerprint/-profileId-)        |
     | 2 | Метод выхода - SingOut          | [DELETE /oauth/{clientId}/fingerprint/{fingerprint}](#delete-/oauth/-companyId-/fingerprint/-profileId-) |
+
+    Для авторизации необходимо:
+
+    1. На странице [Authentication](#auth) установить **username** и **password** для HTTP Basic;
+    2. С помощью метода [PUT /oauth/{companyId}/fingerprint/{profileId}](#put-/oauth/-companyId-/fingerprint/-profileId-) получить **token**;
+    3. На странице [Authentication](#auth) установить "**Bearer {token}**" для API Key (Authorization).
 
     <br>
 
@@ -736,31 +742,6 @@ info:
     email: integration@aeroclub.ru
   version: v1
 paths:
-  /connect/token:
-    post:
-      tags:
-        - АВТОРИЗАЦИЯ API
-      summary: Авторизация с помощью Passport
-      description: Авторизация с помощью Passport
-      servers:
-        - url: https://dev-passport.aeroclub.ru
-          description: тестовый cервер для авторизации
-      requestBody:
-        content:
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: "#/components/schemas/AuthRequest"
-        required: true
-      responses:
-        "200":
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/AuthTokenResponse"
-      security:
-        - passport:
-            - test
   "/authfx/trip/batch/{batchToken}/complete":
     post:
       tags:
@@ -812,10 +793,10 @@ paths:
               $ref: "#/components/schemas/CompleteServiceAuthorizationRequest"
         required: true
       responses:
-        '200':
+        "200":
           description: Успешно
           content: {}
-        '426':
+        "426":
           description: Версия протокола не поддерживается
           content: {}
       x-codegen-request-body-name: body
@@ -939,9 +920,7 @@ paths:
         required: true
       responses:
         "200":
-          description:
-            Возвращается результат отмены командировки и список ошибок в случае
-            неудачи
+          description: Возвращается результат отмены командировки и список ошибок в случае неудачи
           content:
             application/json:
               schema:
@@ -973,9 +952,7 @@ paths:
             type: integer
       responses:
         "200":
-          description:
-            Возвращается флаг возможности отмены командировки и список
-            необходимых Reason-кодов
+          description: Возвращается флаг возможности отмены командировки и список необходимых Reason-кодов
           content:
             application/json:
               schema:
@@ -1007,9 +984,7 @@ paths:
             type: integer
       responses:
         "200":
-          description:
-            Возвращается флаг возможности отмены командировки и список
-            необходимых Reason-кодов
+          description: Возвращается флаг возможности отмены командировки и список необходимых Reason-кодов
           content:
             application/json:
               schema:
@@ -1047,9 +1022,7 @@ paths:
         required: true
       responses:
         "200":
-          description:
-            Возвращается результат обновления информации по направлениям
-            командировки
+          description: Возвращается результат обновления информации по направлениям командировки
           content:
             application/json:
               schema:
@@ -1560,6 +1533,31 @@ paths:
         "426":
           description: Версия протокола не поддерживается
     parameters: []
+  # /connect/token:
+  #   post:
+  #     tags:
+  #       - АВТОРИЗАЦИЯ API
+  #     summary: Авторизация с помощью Passport
+  #     description: Авторизация с помощью Passport
+  #     servers:
+  #       - url: https://dev-passport.aeroclub.ru
+  #         description: тестовый cервер для авторизации
+  #     requestBody:
+  #       content:
+  #         application/x-www-form-urlencoded:
+  #           schema:
+  #             $ref: "#/components/schemas/AuthRequest"
+  #       required: true
+  #     responses:
+  #       "200":
+  #         description: OK
+  #         content:
+  #           application/json:
+  #             schema:
+  #               $ref: "#/components/schemas/AuthTokenResponse"
+  #     security:
+  #       - passport:
+  #           - test
   "/oauth/{companyId}/fingerprint/{profileId}":
     put:
       tags:
@@ -1954,9 +1952,7 @@ paths:
             type: integer
       responses:
         "200":
-          description:
-            Возвращается актуальная информация о свободных местах в выбранном
-            вагоне
+          description: Возвращается актуальная информация о свободных местах в выбранном вагоне
           content:
             application/json:
               schema:
@@ -2088,10 +2084,10 @@ paths:
               - Jpeg
               - Gif
       responses:
-        '200':
+        "200":
           description: byte array
           content: {}
-        '426':
+        "426":
           description: Версия протокола не поддерживается
           content: {}
     put:
@@ -2112,10 +2108,10 @@ paths:
                   description: Загружаемая картинка
                   format: binary
       responses:
-        '200':
+        "200":
           description: Успешно
           content: {}
-        '426':
+        "426":
           description: Версия протокола не поддерживается
           content: {}
   /profile/documents:
@@ -2175,10 +2171,10 @@ paths:
           schema:
             type: integer
       responses:
-        '200':
+        "200":
           description: Успешно
           content: {}
-        '426':
+        "426":
           description: Версия протокола не поддерживается
           content: {}
   /references:
@@ -2309,9 +2305,7 @@ paths:
             type: integer
       responses:
         "200":
-          description:
-            В поле is_success возвращается результат отправки запроса на
-            обновление резальтатов поиска
+          description: В поле is_success возвращается результат отправки запроса на обновление резальтатов поиска
           content:
             application/json:
               schema:
@@ -3488,16 +3482,16 @@ components:
     basicAuth:
       type: http
       scheme: basic
-    passport:
-      type: oauth2
-      flows:
-        clientCredentials:
-          tokenUrl: https://dev-passport.aeroclub.ru/connect/token
-        authorizationCode:
-          authorizationUrl: https://dev-passport.aeroclub.ru/connect/authorize
-          tokenUrl: https://dev-passport.aeroclub.ru/connect/token
-          scopes:
-            test: Request Body
+  #  passport:
+  #    type: oauth2
+  #    flows:
+  #      clientCredentials:
+  #        tokenUrl: https://dev-passport.aeroclub.ru/connect/token
+  #      authorizationCode:
+  #        authorizationUrl: https://dev-passport.aeroclub.ru/connect/authorize
+  #        tokenUrl: https://dev-passport.aeroclub.ru/connect/token
+  #        scopes:
+  #          test: Request Body
   schemas:
     Account:
       properties:
@@ -4191,9 +4185,7 @@ components:
       properties:
         authorization_token:
           type: string
-          description:
-            Токен авторизации факта поездки, или набора услуг или доп. услуги
-            командировки
+          description: Токен авторизации факта поездки, или набора услуг или доп. услуги командировки
         authorization_assertion:
           $ref: "#/components/schemas/AuthorizationAssertion"
         authorization_status:
@@ -4204,12 +4196,9 @@ components:
             $ref: "#/components/schemas/BudgetExpenses"
         budget_total:
           type: number
-          description:
-            "Общий бюджет командировки. Поле выводится, если к командировке
-            добавлены услуги. При расчете бюджета учитываются: услуги в
-            командировке, дополнительные расходы в командировке. Предупреждение:
-            Если в командировке присутствуют услуги в статусе 'Черновик' -
-            Draft, то в бюджете командировки будут учтены только те черновики
+          description: "Общий бюджет командировки. Поле выводится, если к командировке добавлены услуги. При расчете бюджета 
+            учитываются: услуги в командировке, дополнительные расходы в командировке. Предупреждение: Если в командировке 
+            присутствуют услуги в статусе 'Черновик' - Draft, то в бюджете командировки будут учтены только те черновики
             услуг, которые содержат путешественников 'Travellers'"
         business_trip_destinations:
           type: array
@@ -4703,9 +4692,7 @@ components:
           description: Идентификатор банковского реквизита
         card_information_store_id:
           type: integer
-          description:
-            "Идентификатор кредитной карты. Обязательно, если 'payment_type_id':
-            3 или  'payment_type_id': 4"
+          description: "Идентификатор кредитной карты. Обязательно, если 'payment_type_id': 3 или 'payment_type_id': 4"
         company_id:
           type: integer
           description: Идентификатор компании-плательщика
@@ -5436,9 +5423,7 @@ components:
         - properties:
             reservation_expires_at:
               type: string
-              description:
-                Время, до которого можно оплатить забронированную услугу. Формат
-                YYYY-MM-DDThh:mm:ssZ
+              description: Время, до которого можно оплатить забронированную услугу. Формат YYYY-MM-DDThh:mm:ssZ
             reservation_token:
               type: string
               description: Номер бронирования услуги
@@ -5525,9 +5510,7 @@ components:
           $ref: "#/components/schemas/AvailableActions"
         end_at:
           type: string
-          description:
-            Дата и время окончания оказания услуги в часовом поясе пользователя.
-            Формат YYYY-MM-DDThh:mm:ss
+          description: Дата и время окончания оказания услуги в часовом поясе пользователя. Формат YYYY-MM-DDThh:mm:ss
         end_at_utc:
           type: string
           description: Дата и время окончания оказания услуги. Формат YYYY-MM-DDThh:mm:ssZ
@@ -5539,16 +5522,12 @@ components:
           description: Номер заказа
         reservation_expires_at_utc:
           type: string
-          description:
-            Время, до которого можно оплатить забронированную услугу. Формат
-            YYYY-MM-DDThh:mm:ssZ
+          description: Время, до которого можно оплатить забронированную услугу. Формат YYYY-MM-DDThh:mm:ssZ
         service_state:
           $ref: "#/components/schemas/ServiceState"
         start_at:
           type: string
-          description:
-            Дата и время начала оказания услуги в часовом поясе пользователя.
-            Формат YYYY-MM-DDThh:mm:ss
+          description: Дата и время начала оказания услуги в часовом поясе пользователя. Формат YYYY-MM-DDThh:mm:ss
         start_at_utc:
           type: string
           description: Дата и время начала оказания услуги. Формат YYYY-MM-DDThh:mm:ssZ
@@ -5611,9 +5590,7 @@ components:
       properties:
         card_information_store_id:
           type: integer
-          description:
-            "Идентификатор кредитной карты. Обязательно, если 'payment_type_id':
-            3 или 'payment_type_id': 4"
+          description: "Идентификатор кредитной карты. Обязательно, если 'payment_type_id': 3 или 'payment_type_id': 4"
         company_id:
           type: integer
           description: Идентификатор компании-плательщика.
@@ -5747,9 +5724,7 @@ components:
           description: Терминал (например, аэропорта)
         time_zone_offset:
           type: string
-          description:
-            Смещение часового пояса в часах относительно UTC+0 в формате
-            'HH:00:00'
+          description: Смещение часового пояса в часах относительно UTC+0 в формате 'HH:00:00'
         type:
           $ref: "#/components/schemas/LocationType"
       required:
@@ -5780,9 +5755,7 @@ components:
           description: Терминал (например, аэропорта)
         time_zone_offset:
           type: string
-          description:
-            Смещение часового пояса в часах относительно UTC+0 в формате
-            'HH:00:00'
+          description: Смещение часового пояса в часах относительно UTC+0 в формате 'HH:00:00'
         type:
           $ref: "#/components/schemas/LocationType"
       required:
@@ -8184,9 +8157,7 @@ components:
       properties:
         time_zone_offset:
           type: string
-          description:
-            Смещение часового пояса в часах относительно UTC+0 в формате
-            'HH:00:00'
+          description: Смещение часового пояса в часах относительно UTC+0 в формате 'HH:00:00'
         code:
           type: string
           description: Сокращенный код города на латинице
@@ -8654,10 +8625,7 @@ components:
         - En
     LocationType:
       type: string
-      description:
-        Тип локации. В зависимости от метода поле может отсутствовать. В
-        этом случае определяйте тип объекта по наименованию поля, в котором он
-        был передан
+      description: Тип локации. В зависимости от метода поле может отсутствовать. В этом случае определяйте тип объекта по наименованию поля, в котором он был передан
       enum:
         - Undefined
         - Airport
@@ -9014,16 +8982,13 @@ components:
               items:
                 $ref: "#/components/schemas/Address"
             actual_checkin_at:
-              description:
-                Время регистрации в часовом поясе пользователя. Формат
-                YYYY-MM-DDThh:mm:ss
+              description: Время регистрации в часовом поясе пользователя. Формат YYYY-MM-DDThh:mm:ss
               type: string
             actual_checkin_at_utc:
               description: Время регистрации. Формат YYYY-MM-DDThh:mm:ssZ
               type: string
             actual_checkout_at:
-              description: Время выезда в часовом поясе пользователя. Формат
-                YYYY-MM-DDThh:mm:ss
+              description: Время выезда в часовом поясе пользователя. Формат YYYY-MM-DDThh:mm:ss
               type: string
             actual_checkout_at_utc:
               description: Время выезда. Формат YYYY-MM-DDThh:mm:ssZ
@@ -9210,9 +9175,7 @@ components:
               items:
                 $ref: "#/components/schemas/Address"
             actual_checkin_at:
-              description:
-                Время регистрации в часовом поясе пользователя. Формат
-                YYYY-MM-DDThh:mm:ss
+              description: Время регистрации в часовом поясе пользователя. Формат YYYY-MM-DDThh:mm:ss
               type: string
             actual_checkin_at_utc:
               description: Время регистрации. Формат YYYY-MM-DDThh:mm:ssZ
