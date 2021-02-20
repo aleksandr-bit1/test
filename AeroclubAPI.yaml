@@ -209,7 +209,7 @@ info:
 
     ## Сохранение доп данных в командировке
 
-    Метод **[POST/journeys/{JN}/trips/{BTN}/stage/fact/customproperties](#post-/journeys/-journeyNumber-/trips/-businessTripNumber-/stage/-BusinessTripStage-/customproperties)**
+    Метод [POST /journeys/{journeyNumber}/trips/{businessTripNumber}/stage/{BusinessTripStage}/customProperties](#post-/journeys/-journeyNumber-/trips/-businessTripNumber-/stage/-BusinessTripStage-/customProperties)
 
     **Описание процесса заполнения и сохранения доп данных в командировке (при наличие интерфейса)**
 
@@ -1091,7 +1091,6 @@ paths:
           schema:
             type: string
             enum:
-              - Unknown
               - Fact
               - Services
               - AdditionalService
@@ -1230,7 +1229,6 @@ paths:
           schema:
             type: string
             enum:
-              - Unknown
               - Fact
               - Services
               - AdditionalService
@@ -1287,7 +1285,6 @@ paths:
           schema:
             type: string
             enum:
-              - Unknown
               - Fact
               - Services
               - AdditionalService
@@ -1295,7 +1292,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/BusinessTripsAnalytics"
+              $ref: "#/components/schemas/BusinessTripsAnalyticsValues"
         required: true
       responses:
         "200":
@@ -1679,12 +1676,6 @@ paths:
           required: true
           schema:
             type: integer
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: "#/components/schemas/AllowedDocumentsRequest"
-        required: true
       responses:
         "200":
           description: Возвращается список доступных документов для оформления услуги
@@ -3942,6 +3933,16 @@ components:
           $ref: "#/components/schemas/TravellerInfo"
       type: object
       description: Дополнительные данные командировки
+    BusinessTripCustomPropertiesValues:
+      properties:
+        custom_properties:
+          type: array
+          items:
+            $ref: "#/components/schemas/CustomPropertySavingValues"
+        traveller:
+          $ref: "#/components/schemas/TravellerIdForAdditionalService"
+      type: object
+      description: Дополнительные данные командировки
     BusinessTripDestination:
       description: Пункты назначения командировки
       properties:
@@ -4294,6 +4295,24 @@ components:
         service_number:
           type: integer
           description: Номер услуги
+      type: object
+      description: Дополнительные данные
+    BusinessTripsAnalyticsValues:
+      properties:
+        order_number:
+          type: integer
+          description: Номер заказа
+        service_number:
+          type: integer
+          description: Номер услуги
+        business_trip_custom_properties:
+          type: array
+          items:
+            $ref: "#/components/schemas/BusinessTripCustomPropertiesValues"
+        reason_codes:
+          type: array
+          items:
+            $ref: "#/components/schemas/ReasonCodesByTraveller"
       type: object
       description: Дополнительные данные
     BusinessTripServiceReasonCodes:
@@ -4780,6 +4799,20 @@ components:
         - is_visible
       type: object
       description: Дополнительные данные
+    CustomPropertySavingValues:
+      properties:
+        id:
+          type: integer
+          description: Идентификатор дополнительного данного
+        list_value:
+          description: Значение по умолчанию, если тип поля - список или Выбранное значении при сохранении объекта
+          items:
+            $ref: "#/components/schemas/CustomPropertyListValue"
+        text_value:
+          type: string
+          description: Значение по умолчанию, если тип поля - не список или 'Выбранное значении при сохранении объекта
+      type: object
+      description: Дополнительные данные
     CustomPropertyDependent:
       properties:
         dependent_custom_properties:
@@ -4812,6 +4845,15 @@ components:
         - id
       type: object
       description: Список доступных значений для выбора
+    CustomPropertyListValue:
+      properties:
+        id:
+          type: integer
+          description: Идентификатор спискового значения дополнительного данного
+      required:
+        - id
+      type: object
+      description: Списковое значение дополнительного данного
     CustomPropertyValueOnly:
       description: Дополнительные данные
       properties:
@@ -6066,6 +6108,13 @@ components:
         - id
       type: object
       description: Параметры значений кодов причин
+    CustomPropertyReasonCodeValue:
+      properties:
+        id:
+          type: integer
+          description: Идентификатор спискового значения причины
+      type: object
+      description: Списковое значение кодов причин
     PagedResponseOfIServiceInfo:
       properties:
         data:
@@ -6953,14 +7002,23 @@ components:
         - id
       type: object
       description: Коды причин их возможные значения
+    ReasonCodes:
+      properties:
+        id:
+          type: integer
+          description: Идентификатор причины
+        value:
+          $ref: "#/components/schemas/CustomPropertyReasonCodeValue"
+      type: object
+      description: Набор ризон-кодов
     ReasonCodesByTraveller:
       properties:
         reason_codes:
           type: array
           items:
-            $ref: "#/components/schemas/ReasonCode"
+            $ref: "#/components/schemas/ReasonCodes"
         traveller:
-          $ref: "#/components/schemas/TravellerInfo"
+          $ref: "#/components/schemas/TravellerId"
       type: object
       description: Коды причин
     ReasonCodeValue:
@@ -7475,6 +7533,20 @@ components:
           $ref: "#/components/schemas/ProfileInfoWithLevel"
       type: object
       description: Инофрмация о путешественнике
+    TravellerId:
+      properties:
+        id:
+          type: integer
+          description: ID путешественника
+      type: object
+      description: Информация о путешественнике
+    TravellerIdForAdditionalService:
+      properties:
+        id:
+          type: integer
+          description: ID путешественника
+      type: object
+      description: Информация о путешественнике, передается для stage = additionalservice
     TravellerReasonCode:
       description: Причины нарушения тревел-политики компании
       properties:
@@ -8589,9 +8661,9 @@ components:
       type: string
       description: |
         Тип документа. Описание типов:
-        - Passport - Паспорт
+        - Passport - Паспорт РФ
         - LocalPassport
-        - NationalPassport - Международный паспорт
+        - NationalPassport - Международный паспорт (заграничный паспорта для РФ или паспорт других стран)
         - BirthCertificate - Свидетельство о рождении
         - SeamanPassport - Паспорт моряка
         - MilitaryPassport - Удостоверение военнослужащего
@@ -9673,7 +9745,6 @@ components:
       description: Тип искомых объектов
       type: string
       enum:
-        - Undefined
         - Country
         - City
         - RailwayStation
