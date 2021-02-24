@@ -6789,6 +6789,17 @@ components:
         bottom_count:
           type: integer
           description: "Фильтр Размещение: количество нижних мест"
+        window_seat_count:
+          type: integer
+          description: "Фильтр Размещение: количество мест у окна"
+        aisle_seat_count:
+          type: integer
+          description: "Фильтр Размещение: количество мест у прохода"
+        preferences:
+          type: string
+          description: Предпочтения в местах
+          enum:
+            - not_side - не боковые
       required:
         - extend_booking
         - remote_checkin
