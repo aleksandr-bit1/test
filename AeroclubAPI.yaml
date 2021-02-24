@@ -738,7 +738,7 @@ info:
   #  termsOfService: http://example.com/terms/
   contact:
     name: API Support
-    url: https://docs.aeroclub.ru/api
+    url: https://beta-docs.aeroclub.ru/api
     email: integration@aeroclub.ru
   version: v1
 paths:
@@ -4301,10 +4301,10 @@ components:
       properties:
         order_number:
           type: integer
-          description: Номер заказа
+          description: Номер заказа. Для BusinessTripStage in {services, additionalservice}
         service_number:
           type: integer
-          description: Номер услуги
+          description: Номер услуги. Для BusinessTripStage in {services, additionalservice}
         business_trip_custom_properties:
           type: array
           items:
@@ -7031,7 +7031,7 @@ components:
         traveller:
           $ref: "#/components/schemas/TravellerId"
       type: object
-      description: Коды причин
+      description: Коды причин. Могут быть, если BusinessTripStage = {services, additionalservice}
     ReasonCodeValue:
       description: Значения причин
       properties:
@@ -7557,7 +7557,7 @@ components:
           type: integer
           description: ID путешественника
       type: object
-      description: Информация о путешественнике, передается для stage = additionalservice
+      description: Информация о путешественнике, передается для BusinessTripStage = additionalservice
     TravellerReasonCode:
       description: Причины нарушения тревел-политики компании
       properties:
