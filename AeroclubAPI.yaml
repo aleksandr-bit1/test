@@ -9692,7 +9692,7 @@ components:
           items:
             $ref: "#/components/schemas/CodeDescription"
         number:
-          description: Номер вагода
+          description: Номер вагона
           type: string
         owner:
           description: Владелец вагона
