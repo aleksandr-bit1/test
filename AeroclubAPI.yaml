@@ -1604,13 +1604,13 @@ paths:
           example: integration
           required: true
           schema:
-            type: integer
+            type: string
         - name: fingerprint
           in: path
-          description: Уникальный идентификатор приложения клиента (должен быть сгенерирован клиентом)
+          description: Уникальный идентификатор приложения клиента (должен быть сгенерирован клиентом). Максимум 50 символов.
           required: true
           schema:
-            type: integer
+            type: string
       requestBody:
         content:
           application/json:
@@ -1641,13 +1641,13 @@ paths:
           example: integration
           required: true
           schema:
-            type: integer
+            type: string
         - name: fingerprint
           in: path
           description: Уникальный идентификатор приложения клиента
           required: true
           schema:
-            type: integer
+            type: string
       responses:
         "204":
           description: Операция выполнена
@@ -3839,7 +3839,7 @@ components:
           description: Дата и время создания токена
         fingerprint:
           type: string
-          description: Идентификатор профиля в справочнике Аэроклуба
+          description: Уникальный идентификатор приложения клиента
         id:
           type: integer
           description: Внутренний идентификатор токена
