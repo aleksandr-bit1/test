@@ -82,7 +82,7 @@ info:
 
     > **Note:** Созданные с использование API командировки могут быть открыты в Тайме по ссылке. Командировка может быть передана как без доп данных и дополнена доп данными в Тайме, так и с доп данными и, далее, через Тайм наполнена услугами.
 
-    При сохранении доп данных (вызов метода: [POST /journeys/{JN}/trips/{BTN}/stage/fact/customproperties](#post-/journeys/-journeyNumber-/trips/-businessTripNumber-/stage/-BusinessTripStage-/customproperties)) происходит следующая проверка:
+    При сохранении доп данных (вызов метода: [POST /journeys/{journeyNumber}/trips/{businessTripNumber}/stage/fact/customProperties](#post-/journeys/-journeyNumber-/trips/-businessTripNumber-/stage/-BusinessTripStage-/customProperties)) происходит следующая проверка:
 
     -   наличие всех обязательных доп данных (в том числе и доп данных, закрепленных за профилем сотрудника)
     -   наличие в профиле заполненного пола
@@ -485,8 +485,8 @@ info:
     | 13 | Оформление услуги                                                                                   | [PUT /orders/{orderNumber}/services/{serviceNumber}/execute](#put-/orders/-orderNumber-/services/-serviceNumber-/execute)                                                                                  |
     | 14 | Процесс авторизации                                                                                 | методы описаны отдельно в разделе "Процессы авторизации"                                                                                    |
     | 15 | Запрос информации по командировке для проверки статусов услуг авиа и отеля                          | [GET /journeys/{journeyNumber}/trips/{businessTripNumber}](#get-/journeys/-journeyNumber-/trips/-businessTripNumber-)                     |
-    | 16 | Запрос доступных для заполнения доп данных и ризон-кодов                                                         | [GET /journeys/{journeyNumber}/trips/{businessTripNumber}/stage/{stage}/customproperties](#get-/journeys/-journeyNumber-/trips/-businessTripNumber-/stage/-BusinessTripStage-/customProperties)|
-    | 17 | Сохранение выбранного значения доп данного и ризон-кода                                                           | [POST /journeys/{journeyNumber}/trips/{businessTripNumber}/stage/{stage}/customproperties](#post-/journeys/-journeyNumber-/trips/-businessTripNumber-/stage/-BusinessTripStage-/customproperties)  |
+    | 16 | Запрос доступных для заполнения доп данных и ризон-кодов                                            | [GET /journeys/{journeyNumber}/trips/{businessTripNumber}/stage/{stage}/customproperties](#get-/journeys/-journeyNumber-/trips/-businessTripNumber-/stage/-BusinessTripStage-/customProperties)|
+    | 17 | Сохранение выбранного значения доп данного и ризон-кода                                             | [POST /journeys/{journeyNumber}/trips/{businessTripNumber}/stage/{BusinessTripStage}/customProperties](#post-/journeys/-journeyNumber-/trips/-businessTripNumber-/stage/-BusinessTripStage-/customProperties)  |
 
     **Методы (дополнительные возможности):**
 
@@ -684,8 +684,8 @@ info:
 
     >**ВАЖНО:** При отправлении запроса на сторону клиента, Аэроклуб ожидает получить статус ответа 200/202. В случае получении иного статуса Ihub будет предпринимать до 5 попыток отправить запрос на сторону клиента с интервалом в секундах: 2 * retryCallNumber
 
-    6. Получение клиентом новых сообщений по командировке. Метод [GET/journeys/{journeyNumber}/trips/{businessTripNumber}/posts]() возвращает всегда все прочитанные и непрочитанные сообщения в командировке: "read": false/true
-    7. Клиент помечает полученные сообщения как прочитанные - вызов метода [PUT/journeys/{journeyNumber}/trips/{businessTripNumber}/posts/read]() - передается ID сообщения. Сообщение получает параметр read: true
+    6. Получение клиентом новых сообщений по командировке. Метод [GET/journeys/{journeyNumber}/trips/{businessTripNumber}/posts](#get-/journeys/-journeyNumber-/trips/-businessTripNumber-/posts) возвращает всегда все прочитанные и непрочитанные сообщения в командировке: "read": false/true
+    7. Клиент помечает полученные сообщения как прочитанные - вызов метода [PUT/journeys/{journeyNumber}/trips/{businessTripNumber}/posts/read](#put-/journeys/-journeyNumber-/trips/-businessTripNumber-/posts/read) - передается ID сообщения. Сообщение получает параметр read: true
 
     ### **Методы API для чата с агентом**
 
