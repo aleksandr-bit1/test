@@ -830,8 +830,6 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/DataResponseOfPaymentRequisites"
-        "409":
-          description: Нет прав
         "426":
           description: Версия протокола не поддерживается
     parameters: []
@@ -859,8 +857,6 @@ paths:
                 type: array
                 items:
                   $ref: "#/components/schemas/ServicingCompanyInfo"
-        "409":
-          description: Нет прав
         "426":
           description: Версия протокола не поддерживается
     parameters: []
@@ -1176,8 +1172,6 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/DataResponseOfAuthFxState"
-        "409":
-          description: Нет прав
         "426":
           description: Версия протокола не поддерживается
     put:
@@ -1279,8 +1273,6 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/DataResponseOfBusinessTripsAnalytics"
-        "409":
-          description: Нет прав
         "426":
           description: Версия протокола не поддерживается
     post:
@@ -1366,8 +1358,6 @@ paths:
                 type: array
                 items:
                   $ref: "#/components/schemas/Ticket"
-        "409":
-          description: Нет прав
         "426":
           description: Версия протокола не поддерживается
           content: {}
@@ -1636,8 +1626,6 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/AuthorizationToken"
-        "409":
-          description: Нет прав
         "426":
           description: Версия протокола не поддерживается
     delete:
@@ -1806,8 +1794,6 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/DataResponseOfAuthorizationData"
-        "409":
-          description: Нет прав
         "426":
           description: Версия протокола не поддерживается
     put:
@@ -1941,8 +1927,6 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Regulation"
-        "409":
-          description: Нет прав
         "426":
           description: Версия протокола не поддерживается
     parameters: []
@@ -2016,8 +2000,6 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/DataResponseOfRailVariantDetail"
-        "409":
-          description: Нет прав
         "426":
           description: Версия протокола не поддерживается
     parameters: []
@@ -2089,8 +2071,6 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Profile"
-        "409":
-          description: Нет прав
         "426":
           description: Версия протокола не поддерживается
     parameters: []
@@ -2282,8 +2262,6 @@ paths:
                 type: array
                 items:
                   $ref: "#/components/schemas/LookupItems"
-        "409":
-          description: Нет прав
         "426":
           description: Версия протокола не поддерживается
     parameters: []
@@ -2310,8 +2288,6 @@ paths:
                 type: array
                 items:
                   $ref: "#/components/schemas/ProfileLookupItem"
-        "409":
-          description: Нет прав
         "426":
           description: Версия протокола не поддерживается
     parameters: []
