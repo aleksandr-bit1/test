@@ -1587,7 +1587,7 @@ paths:
   #     security:
   #       - passport:
   #           - test
-  "/oauth/{companyId}/fingerprint/{profileId}":
+  "/oauth/{clientId}/fingerprint/{fingerprint}":
     put:
       tags:
         - АВТОРИЗАЦИЯ API
@@ -1598,15 +1598,16 @@ paths:
         Авторизация клиента
       operationId: Authenticate
       parameters:
-        - name: companyId
+        - name: clientId
           in: path
-          description: Идентификатор компании в справочнике Аэроклуба
+          description: Идентификатор клиента. Необходимо всегда указывать 'integration'
+          example: integration
           required: true
           schema:
             type: integer
-        - name: profileId
+        - name: fingerprint
           in: path
-          description: Идентификатор профиля в справочнике Аэроклуба
+          description: Уникальный идентификатор приложения клиента (должен быть сгенерирован клиентом)
           required: true
           schema:
             type: integer
@@ -1634,15 +1635,15 @@ paths:
       description: Удаление токена клиента
       operationId: DeleteAuthentication
       parameters:
-        - name: companyId
+        - name: clientId
           in: path
-          description: Идентификатор компании в справочнике Аэроклуба
+          description: Идентификатор клиента
           required: true
           schema:
             type: integer
-        - name: profileId
+        - name: fingerprint
           in: path
-          description: Идентификатор профиля в справочнике Аэроклуба
+          description: Уникальный идентификатор приложения клиента
           required: true
           schema:
             type: integer
