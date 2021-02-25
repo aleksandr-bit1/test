@@ -3381,9 +3381,8 @@ security:
 tags:
   - name: АВТОРИЗАЦИЯ API
     description: |
-      - [POST /connect/token](#post-/connect/token) - Авторизация с помощью Passport
-      - [PUT /oauth/{companyId}/fingerprint/{profileId}](#put-/oauth/-companyId-/fingerprint/-profileId-) - Авторизация клиента
-      - [DELETE /oauth/{companyId}/fingerprint/{profileId}](#delete-/oauth/-companyId-/fingerprint/-profileId-) - Удаление токена клиента
+      - [PUT /oauth/integration/fingerprint/{fingerprint}](#put-/oauth/integration/fingerprint/-fingerprint-) - Авторизация клиента
+      - [DELETE /oauth/integration/fingerprint/{fingerprint}](#delete-/oauth/integration/fingerprint/-fingerprint-) - Удаление токена клиента
   - name: ИНТЕГРАЦИЯ ДАННЫХ ПО КОММАНДИРОВКЕ И УСЛУГАМ
     description: |
       <span style="color: #FF3B30">**Данный раздел входит в подписку "Интеграция данных по командировке и услугам". Описание подписки доступно по [ссылке](#overview--policy)**</span>
