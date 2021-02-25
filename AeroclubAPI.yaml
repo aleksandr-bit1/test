@@ -1638,6 +1638,7 @@ paths:
         - name: clientId
           in: path
           description: Идентификатор клиента
+          example: integration
           required: true
           schema:
             type: integer
