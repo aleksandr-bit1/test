@@ -52,13 +52,13 @@ info:
 
     | # | Описание                        | Метод                                                                                                    |
     |---|---------------------------------|----------------------------------------------------------------------------------------------------------|
-    | 1 | Авторизация клиента             | [PUT /oauth/{CompanyID}/fingerprint/{ProfileID}](#put-/oauth/-companyId-/fingerprint/-profileId-)        |
-    | 2 | Метод выхода - SingOut          | [DELETE /oauth/{clientId}/fingerprint/{fingerprint}](#delete-/oauth/-companyId-/fingerprint/-profileId-) |
+    | 1 | Авторизация клиента             | [PUT /oauth/integration/fingerprint/{fingerprint}](#put-/oauth/integration/fingerprint/-fingerprint-)    |
+    | 2 | Метод выхода - SingOut          | [DELETE /oauth/integration/fingerprint/{fingerprint}](#delete-/oauth/integration/fingerprint/-fingerprint-) |
 
     Для авторизации необходимо:
 
     1. На странице [Authentication](#auth) установить **username** и **password** для HTTP Basic;
-    2. С помощью метода [PUT /oauth/{clientId}/fingerprint/{fingerprint}](#put-/oauth/-clientId-/fingerprint/-fingerprint-) получить **token**;
+    2. С помощью метода [PUT /oauth/integration/fingerprint/{fingerprint}](#put-/oauth/integration/fingerprint/-fingerprint-) получить **token**;
     3. На странице [Authentication](#auth) установить "**Bearer {token}**" для API Key (Authorization).
 
     <br>
@@ -1587,7 +1587,7 @@ paths:
   #     security:
   #       - passport:
   #           - test
-  "/oauth/{clientId}/fingerprint/{fingerprint}":
+  "/oauth/integration/fingerprint/{fingerprint}":
     put:
       tags:
         - АВТОРИЗАЦИЯ API
@@ -1598,13 +1598,6 @@ paths:
         Авторизация клиента
       operationId: Authenticate
       parameters:
-        - name: clientId
-          in: path
-          description: Идентификатор клиента. Необходимо всегда указывать 'integration'
-          example: integration
-          required: true
-          schema:
-            type: string
         - name: fingerprint
           in: path
           description: Уникальный идентификатор приложения клиента (должен быть сгенерирован клиентом). Максимум 50 символов.
@@ -1635,13 +1628,6 @@ paths:
       description: Удаление токена клиента
       operationId: DeleteAuthentication
       parameters:
-        - name: clientId
-          in: path
-          description: Идентификатор клиента
-          example: integration
-          required: true
-          schema:
-            type: string
         - name: fingerprint
           in: path
           description: Уникальный идентификатор приложения клиента
