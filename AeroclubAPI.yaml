@@ -58,7 +58,7 @@ info:
     Для авторизации необходимо:
 
     1. На странице [Authentication](#auth) установить **username** и **password** для HTTP Basic;
-    2. С помощью метода [PUT /oauth/{companyId}/fingerprint/{profileId}](#put-/oauth/-companyId-/fingerprint/-profileId-) получить **token**;
+    2. С помощью метода [PUT /oauth/{clientId}/fingerprint/{fingerprint}](#put-/oauth/-clientId-/fingerprint/-fingerprint-) получить **token**;
     3. На странице [Authentication](#auth) установить "**Bearer {token}**" для API Key (Authorization).
 
     <br>
