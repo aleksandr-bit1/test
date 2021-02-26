@@ -15,6 +15,7 @@
 		id = "thedoc"
 		spec-url = "AeroclubAPI.yaml"
 		render-style="focused"
+		nav-item-spacing="compact"
 		use-path-in-nav-bar="true"
 		schema-style="table"
 		info-description-headings-in-navbar="true"
@@ -25,7 +26,7 @@
 		allow-advanced-search="true"
 		allow-spec-url-load="false"
 		allow-spec-file-load="false"
-
+		allow-server-selection="false"
 		text-color="#000000"
 		primary-color="#FF3B30"
 		bg-color="#FFFFFF"
@@ -43,9 +44,9 @@
 			<img style="padding-bottom: 8px" src="images/Aeroclub_ru.png">
 			<div style="display: flex; font-size: 15px">
 				<div style="padding-right: 5px;">Methods field tree:</div>
-				<a nohref style="cursor:pointer; color:#000; text-decoration:underline; padding-right: 5px;"
+				<a nohref style="cursor:pointer; text-decoration:underline; padding-right: 5px;"
 					onclick="document.getElementById('thedoc').setAttribute('schema-expand-level', '1')">collapse</a>
-				<a nohref style="cursor:pointer; color:#000; text-decoration:underline"
+				<a nohref style="cursor:pointer; text-decoration:underline"
 					onclick="document.getElementById('thedoc').setAttribute('schema-expand-level', '999')">expand</a>
 			</div>
 		</div>
