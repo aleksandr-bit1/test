@@ -2037,6 +2037,46 @@ paths:
         "426":
           description: Версия протокола не поддерживается
     parameters: []
+  /profile:
+    get:
+      tags:
+        - ПОИСК И ОФОРМЛЕНИЕ УСЛУГ
+      description: Получение информации по текущему профайлу
+      operationId: GetProfile
+      responses:
+        '200':
+          description: Профиль пользователя
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Profile'
+        '426':
+          description: Версия протокола не поддерживается
+          content: {}
+    # put:
+    #   tags:
+    #     - ПОИСК И ОФОРМЛЕНИЕ УСЛУГ
+    #   description: Создание нового профайла
+    #   operationId: AddProfile
+    #   requestBody:
+    #     content:
+    #       application/json:
+    #         schema:
+    #           $ref: '#/components/schemas/AddProfileRequest'
+    #     required: true
+    #   responses:
+    #     '200':
+    #       description: В поле data возвращается идентификатор созданного профиля
+    #       content:
+    #         application/json:
+    #           schema:
+    #             $ref: '#/components/schemas/DataResponseOfInt32'
+    #     "409":
+    #       description: Нет прав
+    #     '426':
+    #       description: Версия протокола не поддерживается
+    #       content: {}
+    #   x-codegen-request-body-name: body
   "/profile/{profileId}":
     get:
       tags:
@@ -3649,16 +3689,25 @@ components:
             $ref: "#/components/schemas/BonusCard"
         company_id:
           type: integer
+          description: Идентификатор компании
         date_of_birth:
           type: string
+          description: Дата рождения профиля
         email:
           type: string
+          description: Почтовый адрес
         first_name:
-          $ref: "#/components/schemas/ModelLocalizedString"
+          description: Имя
+          allOf:
+            - $ref: "#/components/schemas/LocalizedString"
         last_name:
-          $ref: "#/components/schemas/ModelLocalizedString"
+          description: Фамилия
+          allOf:
+            - $ref: "#/components/schemas/LocalizedString"
         middle_name:
-          $ref: "#/components/schemas/ModelLocalizedString"
+          description: Отчетство
+          allOf:
+            - $ref: "#/components/schemas/LocalizedString"
         phone_number:
           $ref: "#/components/schemas/PhoneNumberContact"
         sex:
@@ -3677,8 +3726,8 @@ components:
           $ref: "#/components/schemas/GeoData"
         name:
           description: Наименование
-          items:
-            $ref: "#/components/schemas/LocalizedString"
+          allOf:
+            - $ref: "#/components/schemas/LocalizedString"
       type: object
     AddTravellerDocumentRequest:
       properties:
@@ -3962,8 +4011,8 @@ components:
           description: Код карты
         bonus_card_issuer:
           description: Издатель карты
-          items:
-            $ref: "#/components/schemas/LocalizedString"
+          allOf:
+            - $ref: "#/components/schemas/LocalizedString"
         id:
           type: integer
           description: Идентификатор карты
@@ -3972,8 +4021,6 @@ components:
         number:
           type: string
           description: Номер карты
-      required:
-        - id
       type: object
       description: Бонусные карты профайла
     BudgetExpenses:
@@ -3984,8 +4031,8 @@ components:
           description: Сумма дополнительных расходов
         name:
           description: Наименование дополнительного расхода
-          items:
-            $ref: "#/components/schemas/LocalizedString"
+          allOf:
+            - $ref: "#/components/schemas/LocalizedString"
       required:
         - amount
       type: object
@@ -4026,8 +4073,8 @@ components:
           description: Дата и время прибытия в формате YYYY-MM-DDThh:mm:ss
         city:
           description: Город
-          items:
-            $ref: "#/components/schemas/Location"
+          allOf:
+            - $ref: "#/components/schemas/Location"
         leave_on:
           type: string
           description: Дата и время отправления в формате YYYY-MM-DDThh:mm:ss
@@ -4069,8 +4116,8 @@ components:
           type: string
         from_city:
           description: ""
-          items:
-            $ref: "#/components/schemas/Location"
+          allOf:
+            - $ref: "#/components/schemas/Location"
         has_unread_posts:
           type: boolean
         inactive_service_count:
@@ -4087,8 +4134,8 @@ components:
           $ref: "#/components/schemas/BusinessTripStatus"
         to_city:
           description: ""
-          items:
-            $ref: "#/components/schemas/Location"
+          allOf:
+            - $ref: "#/components/schemas/Location"
         traveller:
           $ref: "#/components/schemas/ProfileInfo"
       required:
@@ -4140,8 +4187,8 @@ components:
           type: string
         from_city:
           description: ""
-          items:
-            $ref: "#/components/schemas/Location"
+          allOf:
+            - $ref: "#/components/schemas/Location"
         has_unread_posts:
           type: boolean
         inactive_service_count:
@@ -4158,8 +4205,8 @@ components:
           $ref: "#/components/schemas/BusinessTripStatus"
         to_city:
           description: ""
-          items:
-            $ref: "#/components/schemas/Location"
+          allOf:
+            - $ref: "#/components/schemas/Location"
         traveller:
           $ref: "#/components/schemas/ProfileInfo"
       required:
@@ -4212,8 +4259,8 @@ components:
           type: string
         from_city:
           description: ""
-          items:
-            $ref: "#/components/schemas/Location"
+          allOf:
+            - $ref: "#/components/schemas/Location"
         has_unread_posts:
           type: boolean
         inactive_service_count:
@@ -4234,8 +4281,8 @@ components:
           $ref: "#/components/schemas/BusinessTripStatus"
         to_city:
           description: ""
-          items:
-            $ref: "#/components/schemas/Location"
+          allOf:
+            - $ref: "#/components/schemas/Location"
         traveller:
           $ref: "#/components/schemas/ProfileInfo"
       required:
@@ -4465,8 +4512,8 @@ components:
           type: string
         from_city:
           description: ""
-          items:
-            $ref: "#/components/schemas/Location"
+          allOf:
+            - $ref: "#/components/schemas/Location"
         has_documents:
           type: boolean
         has_unread_posts:
@@ -4489,8 +4536,8 @@ components:
           type: string
         to_city:
           description: ""
-          items:
-            $ref: "#/components/schemas/Location"
+          allOf:
+            - $ref: "#/components/schemas/Location"
         total_budget_expenses:
           type: number
         traveller:
@@ -4592,8 +4639,8 @@ components:
           description: Код
         name:
           description: Наименование
-          items:
-            $ref: "#/components/schemas/LocalizedString"
+          allOf:
+            - $ref: "#/components/schemas/LocalizedString"
       type: object
     CommentRequest:
       properties:
@@ -4605,12 +4652,12 @@ components:
       properties:
         company_name:
           description: Название компании
-          items:
-            $ref: "#/components/schemas/LocalizedString"
+          allOf:
+            - $ref: "#/components/schemas/LocalizedString"
         holding_name:
           description: Название холдинга
-          items:
-            $ref: "#/components/schemas/LocalizedString"
+          allOf:
+            - $ref: "#/components/schemas/LocalizedString"
         id:
           type: integer
           description: ID компании
@@ -4624,8 +4671,8 @@ components:
           type: integer
         name:
           description: Название компании
-          items:
-            $ref: "#/components/schemas/LocalizedString"
+          allOf:
+            - $ref: "#/components/schemas/LocalizedString"
       required:
         - id
       type: object
@@ -4851,16 +4898,16 @@ components:
             $ref: "#/components/schemas/CustomPropertyValue"
         name:
           description: Наименование
-          items:
-            $ref: "#/components/schemas/LocalizedString"
+          allOf:
+            - $ref: "#/components/schemas/LocalizedString"
         text_value:
           type: string
           description: "'Значение по умолчанию, если тип поля - не список' или 'Выбранное значении при сохранении объекта'"
         validation_messages:
           type: array
           description: Результат валидации поля
-          items:
-            $ref: "#/components/schemas/LocalizedString"
+          allOf:
+            - $ref: "#/components/schemas/LocalizedString"
         values:
           type: array
           description: Список доступных значений для выбора
@@ -4914,8 +4961,8 @@ components:
           description: Идентификатор значения
         name:
           description: Наименование значения
-          items:
-            $ref: "#/components/schemas/LocalizedString"
+          allOf:
+            - $ref: "#/components/schemas/LocalizedString"
       required:
         - id
       type: object
@@ -4934,12 +4981,12 @@ components:
       properties:
         name:
           description: Наименование дополнительного данного
-          items:
-            $ref: "#/components/schemas/LocalizedString"
+          allOf:
+            - $ref: "#/components/schemas/LocalizedString"
         value:
           description: Значение дополнительного данного
-          items:
-            $ref: "#/components/schemas/LocalizedString"
+          allOf:
+            - $ref: "#/components/schemas/LocalizedString"
       type: object
     DataResponseOfAuthFxState:
       allOf:
@@ -5077,14 +5124,18 @@ components:
       properties:
         data:
           type: integer
+          description: Идентификатор
         errors:
           type: array
+          description: Ошибки
           items:
             type: string
         is_success:
           type: boolean
+          description: Признак успешно выполненного запроса
         message:
           type: string
+          description: Сообщение
       required:
         - data
         - is_success
@@ -5422,8 +5473,8 @@ components:
       properties:
         description:
           description: "Описание правила - подсказка для поля (плейсхолдер)"
-          items:
-            $ref: "#/components/schemas/LocalizedString"
+          allOf:
+            - $ref: "#/components/schemas/LocalizedString"
         value:
           type: string
           description: Регулярное выражение
@@ -5683,9 +5734,9 @@ components:
           description: Признак успешного выполнения запроса
           type: boolean
         message:
-          description: "Сообщение"
-          items:
-            $ref: "#/components/schemas/LocalizedString"
+          description: Сообщение
+          allOf:
+            - $ref: "#/components/schemas/LocalizedString"
         services:
           type: array
           items:
@@ -5745,8 +5796,8 @@ components:
           type: string
         to_city:
           description: ""
-          items:
-            $ref: "#/components/schemas/Location"
+          allOf:
+            - $ref: "#/components/schemas/Location"
         trips:
           type: array
           items:
@@ -5773,8 +5824,8 @@ components:
           type: string
         to_city:
           description: ""
-          items:
-            $ref: "#/components/schemas/Location"
+          allOf:
+            - $ref: "#/components/schemas/Location"
         trips:
           type: array
           items:
@@ -5830,12 +5881,12 @@ components:
           description: URL cвязанного изображения
         located_in:
           description: Местонахождение
-          items:
-            $ref: "#/components/schemas/LocationNext"
+          allOf:
+            - $ref: "#/components/schemas/LocationNext"
         name:
           description: Название локации
-          items:
-            $ref: "#/components/schemas/LocalizedString"
+          allOf:
+            - $ref: "#/components/schemas/LocalizedString"
         terminal:
           type: string
           description: Терминал (например, аэропорта)
@@ -5865,8 +5916,8 @@ components:
           type: object
         name:
           description: Название локации
-          items:
-            $ref: "#/components/schemas/LocalizedString"
+          allOf:
+            - $ref: "#/components/schemas/LocalizedString"
         terminal:
           type: string
           description: Терминал (например, аэропорта)
@@ -5888,8 +5939,8 @@ components:
           description: Идентификатор объекта
         name:
           description: Название объекта
-          items:
-            $ref: "#/components/schemas/LocalizedString"
+          allOf:
+            - $ref: "#/components/schemas/LocalizedString"
         type:
           $ref: "#/components/schemas/LookupItemType"
       required:
@@ -5913,12 +5964,12 @@ components:
       properties:
         company_name:
           description: Наименование компании
-          items:
-            $ref: "#/components/schemas/LocalizedString"
+          allOf:
+            - $ref: "#/components/schemas/LocalizedString"
         holding_name:
           description: Наименование холдинга
-          items:
-            $ref: "#/components/schemas/LocalizedString"
+          allOf:
+            - $ref: "#/components/schemas/LocalizedString"
         id:
           type: integer
           description: Идентификатор компании
@@ -5948,8 +5999,8 @@ components:
           $ref: "#/components/schemas/ModelLocationNext"
         name:
           description: Наименование локации
-          items:
-            $ref: "#/components/schemas/LocalizedString"
+          allOf:
+            - $ref: "#/components/schemas/LocalizedString"
         terminal:
           type: string
           description: Терминал (например, аэропорта)
@@ -5978,8 +6029,8 @@ components:
           type: object
         name:
           description: Наименование локации
-          items:
-            $ref: "#/components/schemas/LocalizedString"
+          allOf:
+            - $ref: "#/components/schemas/LocalizedString"
         terminal:
           type: string
           description: Терминал (например, аэропорта)
@@ -6113,8 +6164,8 @@ components:
           type: integer
         company_name:
           description: ""
-          items:
-            $ref: "#/components/schemas/LocalizedString"
+          allOf:
+            - $ref: "#/components/schemas/LocalizedString"
         created_at:
           type: string
         created_at_utc:
@@ -6177,8 +6228,8 @@ components:
           description: Идентификатор значения причины
         name:
           description: Название значения
-          items:
-            $ref: "#/components/schemas/LocalizedString"
+          allOf:
+            - $ref: "#/components/schemas/LocalizedString"
       required:
         - id
       type: object
@@ -6531,8 +6582,8 @@ components:
           description: Идентификатор
         name:
           description: Наименование предпочтения
-          items:
-            $ref: "#/components/schemas/LocalizedString"
+          allOf:
+            - $ref: "#/components/schemas/LocalizedString"
         type:
           type: string
           description: Тип предпочтения
@@ -6577,8 +6628,8 @@ components:
             $ref: "#/components/schemas/ProfilesDocument"
         first_name:
           description: Имя профайла
-          items:
-            $ref: "#/components/schemas/LocalizedString"
+          allOf:
+            - $ref: "#/components/schemas/LocalizedString"
         id:
           type: integer
           description: ID профайла
@@ -6587,12 +6638,12 @@ components:
           description: Признак VIP-клиента
         last_name:
           description: Фамилия профайла
-          items:
-            $ref: "#/components/schemas/LocalizedString"
+          allOf:
+            - $ref: "#/components/schemas/LocalizedString"
         middle_name:
           description: Отчество профайла
-          items:
-            $ref: "#/components/schemas/LocalizedString"
+          allOf:
+            - $ref: "#/components/schemas/LocalizedString"
         photo_content_length:
           type: integer
           description: Размер картинки в байтах
@@ -6642,19 +6693,19 @@ components:
           $ref: "#/components/schemas/Company"
         first_name:
           description: Имя
-          items:
-            $ref: "#/components/schemas/LocalizedString"
+          allOf:
+            - $ref: "#/components/schemas/LocalizedString"
         id:
           type: integer
           description: ID пользователя
         last_name:
           description: Фамилия
-          items:
-            $ref: "#/components/schemas/LocalizedString"
+          allOf:
+            - $ref: "#/components/schemas/LocalizedString"
         middle_name:
           description: Отчество
-          items:
-            $ref: "#/components/schemas/LocalizedString"
+          allOf:
+            - $ref: "#/components/schemas/LocalizedString"
         sex:
           $ref: "#/components/schemas/EnumSex"
       required:
@@ -6670,23 +6721,23 @@ components:
           $ref: "#/components/schemas/Company"
         first_name:
           description: Имя
-          items:
-            $ref: "#/components/schemas/LocalizedString"
+          allOf:
+            - $ref: "#/components/schemas/LocalizedString"
         id:
           type: integer
           description: ID
         last_name:
           description: Фамилия
-          items:
-            $ref: "#/components/schemas/LocalizedString"
+          allOf:
+            - $ref: "#/components/schemas/LocalizedString"
         middle_name:
           description: Отчество
-          items:
-            $ref: "#/components/schemas/LocalizedString"
+          allOf:
+            - $ref: "#/components/schemas/LocalizedString"
         profile_level:
           description: Грейд
-          items:
-            $ref: "#/components/schemas/ProfileLevel"
+          allOf:
+            - $ref: "#/components/schemas/ProfileLevel"
         sex:
           $ref: "#/components/schemas/EnumSex"
       required:
@@ -6704,8 +6755,8 @@ components:
           description: ID грейда
         name:
           description: Наименование грейда
-          items:
-            $ref: "#/components/schemas/LocalizedString"
+          allOf:
+            - $ref: "#/components/schemas/LocalizedString"
         weight:
           type: integer
           description: Приоритет грейда
@@ -6721,19 +6772,19 @@ components:
           type: string
         first_name:
           description: Имя профиля
-          items:
-            $ref: "#/components/schemas/LocalizedString"
+          allOf:
+            - $ref: "#/components/schemas/LocalizedString"
         id:
           description: Идентификатор профиля
           type: integer
         last_name:
           description: Фамилия профиля
-          items:
-            $ref: "#/components/schemas/LocalizedString"
+          allOf:
+            - $ref: "#/components/schemas/LocalizedString"
         middle_name:
           description: Отчество профиля
-          items:
-            $ref: "#/components/schemas/LocalizedString"
+          allOf:
+            - $ref: "#/components/schemas/LocalizedString"
         sex:
           $ref: "#/components/schemas/EnumSex"
         title:
@@ -6812,8 +6863,8 @@ components:
           type: integer
         name:
           description: Наименование обращения
-          items:
-            $ref: "#/components/schemas/LocalizedString"
+          allOf:
+            - $ref: "#/components/schemas/LocalizedString"
       required:
         - id
       type: object
@@ -7076,8 +7127,8 @@ components:
           description: Идентификатор причины
         name:
           description: "Название причины"
-          items:
-            $ref: "#/components/schemas/LocalizedString"
+          allOf:
+            - $ref: "#/components/schemas/LocalizedString"
         value:
           $ref: "#/components/schemas/OrdersReasonCodeValue"
         values:
@@ -7143,8 +7194,8 @@ components:
       properties:
         text:
           description: "Текст правил"
-          items:
-            $ref: "#/components/schemas/LocalizedString"
+          allOf:
+            - $ref: "#/components/schemas/LocalizedString"
       type: object
     ReservationParametersRequest:
       properties:
@@ -7186,8 +7237,8 @@ components:
           type: integer
         name:
           description: ""
-          items:
-            $ref: "#/components/schemas/LocalizedString"
+          allOf:
+            - $ref: "#/components/schemas/LocalizedString"
       required:
         - id
       type: object
@@ -7564,8 +7615,8 @@ components:
           description: Код издателя карты
         issuer_name:
           description: Наименование издателя
-          items:
-            $ref: "#/components/schemas/LocalizedString"
+          allOf:
+            - $ref: "#/components/schemas/LocalizedString"
         number:
           type: string
           description: Номер бонусной карты
@@ -7583,12 +7634,12 @@ components:
           description: Описание дополнительного данного
         name:
           description: Название дополнительного данного
-          items:
-            $ref: "#/components/schemas/LocalizedString"
+          allOf:
+            - $ref: "#/components/schemas/LocalizedString"
         value:
           description: Значение доплнительного данного
-          items:
-            $ref: "#/components/schemas/LocalizedString"
+          allOf:
+            - $ref: "#/components/schemas/LocalizedString"
       type: object
     TravellerDocument:
       description: Информация по документам
@@ -7641,12 +7692,12 @@ components:
           description: Код причины в системе клиента
         name:
           description: Наименование причины
-          items:
-            $ref: "#/components/schemas/LocalizedString"
+          allOf:
+            - $ref: "#/components/schemas/LocalizedString"
         value:
           description: Значение причины
-          items:
-            $ref: "#/components/schemas/LocalizedString"
+          allOf:
+            - $ref: "#/components/schemas/LocalizedString"
       type: object
     TravellerReasonCodeValues:
       description: Коды причин путешственников
@@ -7869,8 +7920,8 @@ components:
         city:
           type: string
           description: Город
-          items:
-            $ref: "#/components/schemas/City"
+          allOf:
+            - $ref: "#/components/schemas/City"
         is_direct_contract:
           type: boolean
           description: Признак прямого контракта с отелем
@@ -7907,8 +7958,8 @@ components:
         address:
           type: string
           description: Адрес отеля
-          items:
-            $ref: "#/components/schemas/LocalizedString"
+          allOf:
+            - $ref: "#/components/schemas/LocalizedString"
       type: object
     VariantInfoRail:
       description: ЖД
@@ -8106,8 +8157,8 @@ components:
           type: string
         aircraft:
           description: Название воздушного судна
-          items:
-            $ref: "#/components/schemas/LocalizedString"
+          allOf:
+            - $ref: "#/components/schemas/LocalizedString"
         fare_basis:
           description: Вид тарифа
           type: string
@@ -8131,8 +8182,8 @@ components:
         city:
           type: string
           description: Город
-          items:
-            $ref: "#/components/schemas/City"
+          allOf:
+            - $ref: "#/components/schemas/City"
         stars:
           type: integer
           description: Звездность отеля
@@ -8300,15 +8351,15 @@ components:
           description: Идентификатор
         name:
           description: Название
-          items:
-            $ref: "#/components/schemas/LocalizedString"
+          allOf:
+            - $ref: "#/components/schemas/LocalizedString"
         terminal:
           type: string
           description: Терминал
         city:
           description: Город
-          items:
-            $ref: "#/components/schemas/City"
+          allOf:
+            - $ref: "#/components/schemas/City"
       type: object
     City:
       description: Город
@@ -8324,12 +8375,12 @@ components:
           description: ID города
         name:
           description: Название города
-          items:
-            $ref: "#/components/schemas/LocalizedString"
+          allOf:
+            - $ref: "#/components/schemas/LocalizedString"
         country:
           description: Страна
-          items:
-            $ref: "#/components/schemas/Country"
+          allOf:
+            - $ref: "#/components/schemas/Country"
       type: object
     Country:
       description: Страна
@@ -8342,8 +8393,8 @@ components:
           description: ID страны
         name:
           description: Название страны
-          items:
-            $ref: "#/components/schemas/LocalizedString"
+          allOf:
+            - $ref: "#/components/schemas/LocalizedString"
       type: object
     SegmentInfo:
       description: Страна
@@ -8368,8 +8419,8 @@ components:
           type: string
         name:
           description: Название авиакомпании
-          items:
-            $ref: "#/components/schemas/LocalizedString"
+          allOf:
+            - $ref: "#/components/schemas/LocalizedString"
       type: object
     CarriagesInfo:
       description: Набор условий для билета
@@ -8749,7 +8800,7 @@ components:
         Тип документа. Описание типов:
         - Passport - Паспорт РФ
         - LocalPassport
-        - NationalPassport - Международный паспорт (заграничный паспорта для РФ или паспорт других стран)
+        - NationalPassport - Международный паспорт (заграничный паспорт для РФ или паспорт других стран)
         - BirthCertificate - Свидетельство о рождении
         - SeamanPassport - Паспорт моряка
         - MilitaryPassport - Удостоверение военнослужащего
@@ -9096,8 +9147,8 @@ components:
               type: integer
             category:
               description: Категория отеля
-              items:
-                $ref: "#/components/schemas/LocalizedString"
+              allOf:
+                - $ref: "#/components/schemas/LocalizedString"
             allocation_adults:
               description: Количество взрослых
               type: integer
@@ -9125,8 +9176,8 @@ components:
               type: integer
             name:
               description: Название отеля
-              items:
-                $ref: "#/components/schemas/LocalizedString"
+              allOf:
+                - $ref: "#/components/schemas/LocalizedString"
             image:
               description: Изображение отеля
               items:
@@ -9208,12 +9259,12 @@ components:
         - properties:
             departure_from_location:
               description: Пункт отправления
-              items:
-                $ref: "#/components/schemas/LocalizedString"
+              allOf:
+                - $ref: "#/components/schemas/LocalizedString"
             arrival_to_location:
               description: Пункт прибытия
-              items:
-                $ref: "#/components/schemas/LocalizedString"
+              allOf:
+                - $ref: "#/components/schemas/LocalizedString"
             departure_city:
               description: Город отправления
               items:
@@ -9289,8 +9340,8 @@ components:
               type: integer
             category:
               description: Категория отеля
-              items:
-                $ref: "#/components/schemas/LocalizedString"
+              allOf:
+                - $ref: "#/components/schemas/LocalizedString"
             allocation_adults:
               description: Количество взрослых
               type: integer
@@ -9318,8 +9369,8 @@ components:
               type: integer
             name:
               description: Название отеля
-              items:
-                $ref: "#/components/schemas/LocalizedString"
+              allOf:
+                - $ref: "#/components/schemas/LocalizedString"
             image:
               description: Изображение отеля
               items:
@@ -9402,12 +9453,12 @@ components:
         - properties:
             departure_from_location:
               description: Пункт отправления
-              items:
-                $ref: "#/components/schemas/LocalizedString"
+              allOf:
+                - $ref: "#/components/schemas/LocalizedString"
             arrival_to_location:
               description: Пункт прибытия
-              items:
-                $ref: "#/components/schemas/LocalizedString"
+              allOf:
+                - $ref: "#/components/schemas/LocalizedString"
             departure_city:
               description: Город отправления
               items:
@@ -9554,16 +9605,16 @@ components:
           type: string
         aircraft:
           description: Название воздушного судна
-          items:
-            $ref: "#/components/schemas/LocalizedString"
+          allOf:
+            - $ref: "#/components/schemas/LocalizedString"
       type: object
     AirLine:
       description: Информация об авиакомпании
       properties:
         name:
           description: Название авиакомпании
-          items:
-            $ref: "#/components/schemas/LocalizedString"
+          allOf:
+            - $ref: "#/components/schemas/LocalizedString"
         code:
           description: IATA-код
           type: integer
@@ -9580,12 +9631,12 @@ components:
       properties:
         web_link:
           description: ""
-          items:
-            $ref: "#/components/schemas/LocalizedString"
+          allOf:
+            - $ref: "#/components/schemas/LocalizedString"
         pda_link:
           description: ""
-          items:
-            $ref: "#/components/schemas/LocalizedString"
+          allOf:
+            - $ref: "#/components/schemas/LocalizedString"
       type: object
     Baggage:
       description: Информация по багажу
@@ -9624,8 +9675,8 @@ components:
             - OnRequest
         name:
           description: Название комнаты
-          items:
-            $ref: "#/components/schemas/LocalizedString"
+          allOf:
+            - $ref: "#/components/schemas/LocalizedString"
       type: object
     Meal:
       description: Информация по питанию
@@ -9671,8 +9722,8 @@ components:
       properties:
         name:
           description: Название поезда
-          items:
-            $ref: "#/components/schemas/LocalizedString"
+          allOf:
+            - $ref: "#/components/schemas/LocalizedString"
         category_name:
           description: Категория поезда (скорый/скоростной)
           type: string
@@ -9684,8 +9735,8 @@ components:
       properties:
         type:
           description: Тип вагона
-          items:
-            $ref: "#/components/schemas/LocalizedString"
+          allOf:
+            - $ref: "#/components/schemas/LocalizedString"
         class_of_service:
           description: Класс обслуживания
           items:
@@ -9758,8 +9809,8 @@ components:
                 $ref: "#/components/schemas/Location"
             address:
               description: Адрес отеля
-              items:
-                $ref: "#/components/schemas/LocalizedString"
+              allOf:
+                - $ref: "#/components/schemas/LocalizedString"
           type: object
     RailwayStationLookupItem:
       description: "Информация по ЖД станции. Передается с 'type': RailwayStation"
