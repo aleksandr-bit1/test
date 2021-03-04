@@ -2053,30 +2053,6 @@ paths:
         '426':
           description: Версия протокола не поддерживается
           content: {}
-    put:
-      tags:
-        - ПОИСК И ОФОРМЛЕНИЕ УСЛУГ
-      description: Создание нового профайла
-      operationId: AddProfile
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/AddProfileRequest'
-        required: true
-      responses:
-        '200':
-          description: В поле data возвращается идентификатор созданного профиля
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/DataResponseOfInt32'
-        "409":
-          description: Нет прав
-        '426':
-          description: Версия протокола не поддерживается
-          content: {}
-      x-codegen-request-body-name: body
   "/profile/{profileId}":
     get:
       tags:
