@@ -109,11 +109,20 @@ info:
 
     **Комментарии к процессу:**
 
-    Способы загрузки сотрудников с аналитиками в АК:
-
-    -   через IHUB (Integration hub)
-    -   через TIME / LINK
-    -   через поддержку АК (загрузка Excel-файла или через агента)
+    >Способы загрузки сотрудников с аналитиками в АК:
+    >
+    >-   через IHUB (Integration Hub)
+    >-   через TIME / LINK
+    >-   через поддержку АК (загрузка Excel-файла или через агента)
+    >
+    >**Особенности**:
+    >
+    >У профилей сотрудников документы имеют разные типы в API и Integration Hub. Маппинг типов:
+    >
+    >| API              | Integration Hub       | Описание                                            |
+    >| ---------------- | --------------------- | --------------------------------------------------- |
+    >| Passport         | NationalPassport      | Паспорт гражданина РФ                               |
+    >| NationalPassport | InternationalPassport | Заграничный паспорт РФ или паспорт гражданина не РФ |
 
     **Методы API**
 
@@ -8774,9 +8783,9 @@ components:
       type: string
       description: |
         Тип документа. Описание типов:
-        - Passport - Паспорт РФ
-        - LocalPassport
-        - NationalPassport - Международный паспорт (заграничный паспорт для РФ или паспорт других стран)
+        - Passport - Паспорт гражданина РФ <span style="color: #FF3B30">(в Integration Hub это **NationalPassport**)</span>
+        - LocalPassport - Не используется
+        - NationalPassport - Заграничный паспорт РФ или паспорт гражданина не РФ <span style="color: #FF3B30">(в Integration Hub это **InternationalPassport**)</span>
         - BirthCertificate - Свидетельство о рождении
         - SeamanPassport - Паспорт моряка
         - MilitaryPassport - Удостоверение военнослужащего
