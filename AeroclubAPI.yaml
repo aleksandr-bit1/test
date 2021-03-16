@@ -9869,7 +9869,6 @@ components:
         - PreviousUnauthorized - првично авторизованный  
         - BenchmarkTariff - средняя стоимость билета по выбранному направлению  
         - AlternativeTariff - альтернативный тариф  
-        - RailRoundTrip - ЖД туда-обратно  
         - FareFamiliesWithoutBaggageMinimumTariff - минимальный тариф без багажа, входящий в группу тарифов  
         - RoundTripAlternativeSelected - выбрана альтернатива туда-обратно  
         - RoundTripAlternativeNotSelected - не выбрана альтернатива туда-обратно  
@@ -9893,8 +9892,7 @@ components:
         - SplittedFrom
         - PreviousUnauthorized
         - BenchmarkTariff
-        - AlternativeTariff
-        - RailRoundTrip
+        - AlternativeTariff        
         - FareFamiliesWithoutBaggageMinimumTariff
         - RoundTripAlternativeSelected
         - RoundTripAlternativeNotSelected
