@@ -5678,6 +5678,8 @@ components:
           description: Время, до которого можно оплатить забронированную услугу. Формат YYYY-MM-DDThh:mm:ssZ
         service_state:
           $ref: "#/components/schemas/ServiceState"
+        servicing_request:
+          $ref: "#/components/schemas/ServicingRequest"        
         start_at:
           type: string
           description: Дата и время начала оказания услуги в часовом поясе пользователя. Формат YYYY-MM-DDThh:mm:ss
@@ -6123,6 +6125,8 @@ components:
           description: Последовательный номер. Например, для ЖД - при запросе туда-обратно опция разделяется на две, где опция 'туда' имеет sequence_number=0, 'обратно' - sequence_number=1
         service_type:
           $ref: "#/components/schemas/SearchServiceType"
+        search_mode:
+          $ref: "#/components/schemas/SearchMode"
       required:
         - service_type
         - departure_on
@@ -7945,6 +7949,11 @@ components:
           description: Адрес отеля
           allOf:
             - $ref: "#/components/schemas/LocalizedString"
+        description:
+          type: string
+          description: Описание отеля
+          allOf:
+            - $ref: "#/components/schemas/LocalizedString"
       type: object
     VariantInfoRail:
       description: ЖД
@@ -8510,6 +8519,21 @@ components:
         - Visa
         - Mir
         - DinersClub
+    SearchMode:
+      description: |
+        Режим поиска отелей:  
+        Undefined - не определен  
+        CorporateAndFast -  быстрые поставщики, CORP рейты  
+        CorporateAndSlow - медленные поставщики, CORP рейты  
+        NoncorporateAndFast - быстрые поставщики, НЕ CORP рейты  
+        NoncorporateAndSlow - медленные поставщики, НЕ CORP рейты
+      type: string
+      enum:
+        - Undefined
+        - CorporateAndFast
+        - CorporateAndSlow
+        - NoncorporateAndFast
+        - NoncorporateAndSlow
     BonusCardType:
       type: string
       description: Тип карты
@@ -8901,6 +8925,27 @@ components:
         - NoPlaces
         - Expired
         - Rejected
+    ServicingRequest:
+      description: |
+        Запрос на обслуживание:  
+        Undefined - запрос отсутствует  
+        Reservation - запрос на бронирование  
+        Execution - запрос на оформление  
+        Cancellation - запрос на отмену  
+        Alteration - запрос на изменение  
+        PriceInquiry - запрос на уточнение стоимости  
+        RoomCategorySetUp - запрос на уточнение категории номера  
+        Deletion - запрос на удаление услуги
+      type: string
+      enum:
+        - Undefined
+        - Reservation
+        - Execution
+        - Cancellation
+        - Alteration
+        - PriceInquiry
+        - RoomCategorySetUp
+        - Deletion
     ServiceStatus:
       description: Статус услуги
       type: string
@@ -9808,7 +9853,31 @@ components:
                 $ref: "#/components/schemas/Location"
           type: object
     ServiceRelationType:
-      description: Тип связи
+      description: |
+        Тип связи  
+        - Undefined - не определен  
+        - MinimumTariff - минимальный тариф  
+        - MaximumTariff - максимальный тариф  
+        - MinimumCorporateTariff - минимальный CORP тариф  
+        - MaximumCorporateTariff - максимальный CORP тариф  
+        - MinimumTravelPolicyCompliantTariff - минимальный тариф, соответствующий ТП  
+        - MaximumTravelPolicyCompliantTariff - максимальный тариф, соответствующий ТП  
+        - MinimumDirectTariff - минимльный тариф без пересадок  
+        - MaximumDirectTariff - максимальный тариф без пересадок  
+        - FullTariff - полный тариф  
+        - SplittedFrom - отсплитовано из Авиа услуги  
+        - PreviousUnauthorized - првично авторизованный  
+        - BenchmarkTariff - средняя стоимость билета по выбранному направлению  
+        - AlternativeTariff - альтернативный тариф  
+        - RailRoundTrip - ЖД туда-обратно  
+        - FareFamiliesWithoutBaggageMinimumTariff - минимальный тариф без багажа, входящий в группу тарифов  
+        - RoundTripAlternativeSelected - выбрана альтернатива туда-обратно  
+        - RoundTripAlternativeNotSelected - не выбрана альтернатива туда-обратно  
+        - AlternativeSelected - выбрана альтернатива  
+        - AlternativeNotSelected - не выбрана альтернатива  
+        - BenchmarkTariff90Days - средняя стоимость билета по выбранному направлению за 90 дней  
+        - AlternativeRailNotSelected - ЖД альтернатива не выбрана  
+        - RoundTripAlternativeRailNotSelected - ЖД альтернатива туда-обратно не выбрана
       type: string
       enum:
         - Undefined
@@ -9821,7 +9890,19 @@ components:
         - MinimumDirectTariff
         - MaximumDirectTariff
         - FullTariff
+        - SplittedFrom
         - PreviousUnauthorized
+        - BenchmarkTariff
+        - AlternativeTariff
+        - RailRoundTrip
+        - FareFamiliesWithoutBaggageMinimumTariff
+        - RoundTripAlternativeSelected
+        - RoundTripAlternativeNotSelected
+        - AlternativeSelected
+        - AlternativeNotSelected
+        - BenchmarkTariff90Days
+        - AlternativeRailNotSelected
+        - RoundTripAlternativeRailNotSelected
     FlightStatus:
       description: Статус рейса
       type: string
