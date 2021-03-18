@@ -1,0 +1,105 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+      <title>Docs the schema document.xsd in Docs</title>
+      <!-- saved from url=(0014)about:internet -->
+      <link href="styles/site.css" rel="stylesheet" type="text/css"></link><script type="text/javascript" src="scripts/jquery-1.4.1.min.js"></script><script type="text/javascript" src="scripts/highlight.pack.js"></script><script type="text/javascript" src="scripts/xmlstudio.js"></script><script type="text/javascript" src="scripts/jquery.cookie.js"></script></head>
+   <body style="margin:10px"><script type="text/javascript">
+         <!--
+                            EnsureInFrame('Schema', 'document_xsd');
+                        --></script><div class="pageheader">
+         Documentation for Docs
+      </div>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" width="120px;"><b>Schema Name:</b></td>
+               <td>document.xsd</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Target Namespace:</b></td>
+               <td><a href="http___integration_aeroclub_ru_hub_schemas_profiles.html">http://integration.aeroclub.ru/hub/schemas/profiles</a></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdCode" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Code:</b> 
+               </td>
+            </tr>
+            <tr id="xsdCode_body_id">
+               <td><pre><code>
+&lt;xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://integration.aeroclub.ru/hub/schemas/profiles" 
+           targetNamespace="http://integration.aeroclub.ru/hub/schemas/profiles" elementFormDefault="qualified"&gt;
+  &lt;xs:complexType name="document"&gt;
+    &lt;xs:all&gt;
+      &lt;xs:element name="series" type="xs:string" nillable="true" /&gt;
+      &lt;xs:element name="number" type="xs:string" /&gt;
+      &lt;xs:element name="issuedOn" type="xs:date" nillable="true" /&gt;
+      &lt;xs:element name="expiresOn" type="xs:date" nillable="true" /&gt;
+      &lt;xs:element name="citizenship" minOccurs="0" maxOccurs="1"&gt;
+        &lt;xs:complexType&gt;
+          &lt;xs:sequence&gt;
+            &lt;xs:element name="code" minOccurs="1" maxOccurs="1"&gt;
+              &lt;xs:complexType&gt;
+                &lt;xs:all&gt;
+                  &lt;xs:element name="iso3611-a2" minOccurs="1" maxOccurs="1"&gt;
+                    &lt;xs:annotation&gt;
+                      &lt;xs:documentation&gt;
+                        Двухсимвольный код страны согласно ISO-3166 (http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements)
+                      &lt;/xs:documentation&gt;
+                    &lt;/xs:annotation&gt;
+                    &lt;xs:simpleType&gt;
+                      &lt;xs:restriction base="xs:string"&gt;
+                        &lt;xs:pattern value="[A-Z][A-Z]"/&gt;
+                      &lt;/xs:restriction&gt;
+                    &lt;/xs:simpleType&gt;
+                  &lt;/xs:element&gt;
+                &lt;/xs:all&gt;
+              &lt;/xs:complexType&gt;
+            &lt;/xs:element&gt;
+          &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element name="placeOfBirth" type="xs:string" nillable="true" /&gt;
+      &lt;xs:element name="firstName" type="xs:string" nillable="true" /&gt;
+      &lt;xs:element name="lastName" type="xs:string" nillable="true" /&gt;
+    &lt;/xs:all&gt;
+    &lt;xs:attribute name="type" use="required"&gt;
+      &lt;xs:simpleType&gt;
+        &lt;xs:restriction base="xs:string"&gt;
+          &lt;xs:enumeration value="NationalPassport"/&gt;
+          &lt;xs:enumeration value="InternationalPassport"/&gt;
+        &lt;/xs:restriction&gt;
+      &lt;/xs:simpleType&gt;
+    &lt;/xs:attribute&gt;
+  &lt;/xs:complexType&gt;
+&lt;/xs:schema&gt;
+</code></pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="ComplexType" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>ComplexTypes:</b></td>
+            </tr>
+            <tr id="ComplexType_body_id">
+               <td width="120px;"></td>
+               <td>
+                  <ul>
+                     <li><a href="document.html">document</a></li>
+                  </ul>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <div class="pagefooter">
+         			Documentation for Docs<br/>
+         Generated using 
+         <a href="https://www.liquid-technologies.com/">Liquid Studio 2021 - Developer Bundle (Trial) 19.0.3.10699</a></div>
+   </body>
+</html>

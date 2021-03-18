@@ -1,0 +1,442 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+      <title>Docs the schema service_new.xsd in Docs</title>
+      <!-- saved from url=(0014)about:internet -->
+      <link href="styles/site.css" rel="stylesheet" type="text/css"></link><script type="text/javascript" src="scripts/jquery-1.4.1.min.js"></script><script type="text/javascript" src="scripts/highlight.pack.js"></script><script type="text/javascript" src="scripts/xmlstudio.js"></script><script type="text/javascript" src="scripts/jquery.cookie.js"></script></head>
+   <body style="margin:10px"><script type="text/javascript">
+         <!--
+                            EnsureInFrame('Schema', 'service_new_xsd');
+                        --></script><div class="pageheader">
+         Documentation for Docs
+      </div>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" width="120px;"><b>Schema Name:</b></td>
+               <td>service_new.xsd</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Target Namespace:</b></td>
+               <td><a href="http___integration_aeroclub_ru_hub_schemas_services.html">http://integration.aeroclub.ru/hub/schemas/services</a></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdCode" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Code:</b> 
+               </td>
+            </tr>
+            <tr id="xsdCode_body_id">
+               <td><pre><code>
+&lt;!--Created with Liquid Studio 2021 (https://www.liquid-technologies.com)--&gt;
+&lt;xs:schema xmlns:p="http://integration.aeroclub.ru/hub/schemas/profiles" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://integration.aeroclub.ru/hub/schemas/services" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://integration.aeroclub.ru/hub/schemas/services" xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;
+    &lt;xs:import schemaLocation="document.xsd" namespace="http://integration.aeroclub.ru/hub/schemas/profiles" /&gt;
+    &lt;xs:complexType name="name"&gt;
+        &lt;xs:all&gt;
+            &lt;xs:element name="russian" type="xs:string" /&gt;
+            &lt;xs:element name="english" type="xs:string" /&gt;
+        &lt;/xs:all&gt;
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="country"&gt;
+        &lt;xs:all&gt;
+            &lt;xs:element name="code" type="xs:string" /&gt;
+            &lt;xs:element name="name" type="name" /&gt;
+        &lt;/xs:all&gt;
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="city"&gt;
+        &lt;xs:all&gt;
+            &lt;xs:element name="id" type="xs:unsignedInt" /&gt;
+        &lt;/xs:all&gt;
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="airport"&gt;
+        &lt;xs:all&gt;
+            &lt;xs:element name="id" type="xs:unsignedInt" /&gt;
+            &lt;xs:element name="city" type="city" /&gt;
+        &lt;/xs:all&gt;
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="railwayStation"&gt;
+        &lt;xs:all&gt;
+            &lt;xs:element name="name" type="name" /&gt;
+            &lt;xs:element name="country" type="country" minOccurs="0" maxOccurs="1" /&gt;
+        &lt;/xs:all&gt;
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="airportRef"&gt;
+        &lt;xs:sequence&gt;
+            &lt;xs:element name="airport" type="airport" /&gt;
+        &lt;/xs:sequence&gt;
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="railwayStationRef"&gt;
+        &lt;xs:sequence&gt;
+            &lt;xs:element name="id" type="xs:unsignedInt" /&gt;
+        &lt;/xs:sequence&gt;
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="aeroexpressStationRef"&gt;
+        &lt;xs:sequence&gt;
+            &lt;xs:element name="id" type="xs:unsignedInt" /&gt;
+        &lt;/xs:sequence&gt;
+        &lt;xs:attribute name="type" use="required"&gt;
+            &lt;xs:simpleType&gt;
+                &lt;xs:restriction base="xs:string"&gt;
+                    &lt;xs:enumeration value="Airport" /&gt;
+                    &lt;xs:enumeration value="RailwayStation" /&gt;
+                &lt;/xs:restriction&gt;
+            &lt;/xs:simpleType&gt;
+        &lt;/xs:attribute&gt;
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="transferRef"&gt;
+        &lt;xs:all&gt;
+            &lt;xs:element name="airport" type="airport" minOccurs="0" maxOccurs="1" /&gt;
+            &lt;xs:element name="railwayStation" type="railwayStation" minOccurs="0" maxOccurs="1" /&gt;
+            &lt;xs:element name="location" type="xs:string" /&gt;
+        &lt;/xs:all&gt;
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="property"&gt;
+        &lt;xs:all&gt;
+            &lt;xs:element name="identifier" type="xs:string"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;
+            Идентификатор дополнительного данного в системе клиента.
+          &lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+            &lt;/xs:element&gt;
+            &lt;xs:element name="value" type="xs:string"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;
+            Значение дополнительного данного в системе клиента.
+          &lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+            &lt;/xs:element&gt;
+        &lt;/xs:all&gt;
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="service"&gt;
+        &lt;xs:sequence&gt;
+            &lt;xs:element name="journeyNumber" type="xs:unsignedInt" nillable="true"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;Номер поездки&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+            &lt;/xs:element&gt;
+            &lt;xs:element name="businessTripNumber" type="xs:unsignedInt" nillable="true"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;Номер командировки&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+            &lt;/xs:element&gt;
+            &lt;xs:element name="orderNumber" type="xs:unsignedInt"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;Номер заказа&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+            &lt;/xs:element&gt;
+            &lt;xs:element name="serviceNumber" type="xs:unsignedInt"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;Порядковый номер услуги&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+            &lt;/xs:element&gt;
+            &lt;xs:element name="authorization" minOccurs="1" maxOccurs="unbounded" nillable="true"&gt;
+                &lt;xs:complexType&gt;
+                    &lt;xs:sequence&gt;
+                        &lt;xs:element name="completedAt" type="xs:dateTime"&gt;
+                            &lt;xs:annotation&gt;
+                                &lt;xs:documentation&gt;Дата и время завершения авторизации&lt;/xs:documentation&gt;
+                            &lt;/xs:annotation&gt;
+                        &lt;/xs:element&gt;
+                        &lt;xs:element name="stages"&gt;
+                            &lt;xs:annotation&gt;
+                                &lt;xs:documentation&gt;Этапы авторизации&lt;/xs:documentation&gt;
+                            &lt;/xs:annotation&gt;
+                            &lt;xs:complexType&gt;
+                                &lt;xs:sequence&gt;
+                                    &lt;xs:element name="stage" maxOccurs="unbounded"&gt;
+                                        &lt;xs:annotation&gt;
+                                            &lt;xs:documentation&gt;Этап авторизации&lt;/xs:documentation&gt;
+                                        &lt;/xs:annotation&gt;
+                                        &lt;xs:complexType&gt;
+                                            &lt;xs:sequence&gt;
+                                                &lt;xs:element name="completedAt" type="xs:dateTime"&gt;
+                                                    &lt;xs:annotation&gt;
+                                                        &lt;xs:documentation&gt;Дата и время завершения авторизации этапа&lt;/xs:documentation&gt;
+                                                    &lt;/xs:annotation&gt;
+                                                &lt;/xs:element&gt;
+                                                &lt;xs:element name="authorizers"&gt;
+                                                    &lt;xs:complexType&gt;
+                                                        &lt;xs:sequence&gt;
+                                                            &lt;xs:element name="authorizer" minOccurs="1" maxOccurs="unbounded"&gt;
+                                                                &lt;xs:complexType&gt;
+                                                                    &lt;xs:sequence&gt;
+                                                                        &lt;xs:element name="accountEmailAddress" type="xs:string" /&gt;
+                                                                    &lt;/xs:sequence&gt;
+                                                                &lt;/xs:complexType&gt;
+                                                            &lt;/xs:element&gt;
+                                                        &lt;/xs:sequence&gt;
+                                                    &lt;/xs:complexType&gt;
+                                                &lt;/xs:element&gt;
+                                            &lt;/xs:sequence&gt;
+                                        &lt;/xs:complexType&gt;
+                                    &lt;/xs:element&gt;
+                                &lt;/xs:sequence&gt;
+                            &lt;/xs:complexType&gt;
+                        &lt;/xs:element&gt;
+                    &lt;/xs:sequence&gt;
+                &lt;/xs:complexType&gt;
+            &lt;/xs:element&gt;
+            &lt;xs:element name="operation"&gt;
+                &lt;xs:complexType&gt;
+                    &lt;xs:all&gt;
+                        &lt;xs:element name="status"&gt;
+                            &lt;xs:simpleType&gt;
+                                &lt;xs:restriction base="xs:string"&gt;
+                                    &lt;xs:enumeration value="Sale"&gt;
+                                        &lt;xs:annotation&gt;
+                                            &lt;xs:documentation&gt;Продажа&lt;/xs:documentation&gt;
+                                        &lt;/xs:annotation&gt;
+                                    &lt;/xs:enumeration&gt;
+                                    &lt;xs:enumeration value="Refund"&gt;
+                                        &lt;xs:annotation&gt;
+                                            &lt;xs:documentation&gt;Возврат&lt;/xs:documentation&gt;
+                                        &lt;/xs:annotation&gt;
+                                    &lt;/xs:enumeration&gt;
+                                    &lt;xs:enumeration value="Exchange"&gt;
+                                        &lt;xs:annotation&gt;
+                                            &lt;xs:documentation&gt;Обмен&lt;/xs:documentation&gt;
+                                        &lt;/xs:annotation&gt;
+                                    &lt;/xs:enumeration&gt;
+                                &lt;/xs:restriction&gt;
+                            &lt;/xs:simpleType&gt;
+                        &lt;/xs:element&gt;
+                    &lt;/xs:all&gt;
+                &lt;/xs:complexType&gt;
+            &lt;/xs:element&gt;
+            &lt;xs:element name="startsAt" type="xs:dateTime" nillable="true" /&gt;
+            &lt;xs:element name="endsAt" type="xs:dateTime" nillable="true" /&gt;
+            &lt;xs:element name="analytics" nillable="true"&gt;
+                &lt;xs:complexType&gt;
+                    &lt;xs:sequence&gt;
+                        &lt;xs:element name="isTravelPolicyCompliant" type="xs:boolean" nillable="true"&gt;
+                            &lt;xs:annotation&gt;
+                                &lt;xs:documentation&gt;Признак соответствия TravelPolicy&lt;/xs:documentation&gt;
+                            &lt;/xs:annotation&gt;
+                        &lt;/xs:element&gt;
+                        &lt;xs:element name="code" type="xs:unsignedInt"&gt;
+                            &lt;xs:annotation&gt;
+                                &lt;xs:documentation&gt;Код услуги&lt;/xs:documentation&gt;
+                            &lt;/xs:annotation&gt;
+                        &lt;/xs:element&gt;
+                    &lt;/xs:sequence&gt;
+                &lt;/xs:complexType&gt;
+            &lt;/xs:element&gt;
+            &lt;xs:element name="document" nillable="true"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;Документ услуги&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+                &lt;xs:complexType&gt;
+                    &lt;xs:sequence&gt;
+                        &lt;xs:element name="number" type="xs:string"&gt;
+                            &lt;xs:annotation&gt;
+                                &lt;xs:documentation&gt;Номер документа&lt;/xs:documentation&gt;
+                            &lt;/xs:annotation&gt;
+                        &lt;/xs:element&gt;
+                        &lt;xs:element name="dateIssue" type="xs:dateTime"&gt;
+                            &lt;xs:annotation&gt;
+                                &lt;xs:documentation&gt;Дата продажи&lt;/xs:documentation&gt;
+                            &lt;/xs:annotation&gt;
+                        &lt;/xs:element&gt;
+                        &lt;xs:element name="exchangedNumber" type="xs:string"&gt;
+                            &lt;xs:annotation&gt;
+                                &lt;xs:documentation&gt;Номер предыдущего документа (авиабилета, принятого в обмен)&lt;/xs:documentation&gt;
+                            &lt;/xs:annotation&gt;
+                        &lt;/xs:element&gt;
+                    &lt;/xs:sequence&gt;
+                &lt;/xs:complexType&gt;
+            &lt;/xs:element&gt;
+            &lt;xs:element name="tariff"&gt;
+                &lt;xs:complexType&gt;
+                    &lt;xs:sequence&gt;
+                        &lt;xs:element name="total" type="xs:decimal"&gt;
+                            &lt;xs:annotation&gt;
+                                &lt;xs:documentation&gt;Сумма с НДС&lt;/xs:documentation&gt;
+                            &lt;/xs:annotation&gt;
+                        &lt;/xs:element&gt;
+                        &lt;xs:element name="totalNoVat" type="xs:decimal"&gt;
+                            &lt;xs:annotation&gt;
+                                &lt;xs:documentation&gt;Сумма без НДС&lt;/xs:documentation&gt;
+                            &lt;/xs:annotation&gt;
+                        &lt;/xs:element&gt;
+                        &lt;xs:element name="currency" type="xs:string"&gt;
+                            &lt;xs:annotation&gt;
+                                &lt;xs:documentation&gt;Код валюты&lt;/xs:documentation&gt;
+                            &lt;/xs:annotation&gt;
+                        &lt;/xs:element&gt;
+                    &lt;/xs:sequence&gt;
+                &lt;/xs:complexType&gt;
+            &lt;/xs:element&gt;
+            &lt;xs:element name="files" nillable="true"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;Файлы документов&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+                &lt;xs:complexType&gt;
+                    &lt;xs:sequence&gt;
+                        &lt;xs:element name="file" minOccurs="1" maxOccurs="unbounded"&gt;
+                            &lt;xs:annotation&gt;
+                                &lt;xs:documentation /&gt;
+                            &lt;/xs:annotation&gt;
+                            &lt;xs:complexType&gt;
+                                &lt;xs:all&gt;
+                                    &lt;xs:element name="name" type="xs:string"&gt;
+                                        &lt;xs:annotation&gt;
+                                            &lt;xs:documentation&gt;Название файла&lt;/xs:documentation&gt;
+                                        &lt;/xs:annotation&gt;
+                                    &lt;/xs:element&gt;
+                                    &lt;xs:element name="link" type="xs:anyURI"&gt;
+                                        &lt;xs:annotation&gt;
+                                            &lt;xs:documentation&gt;Ссылка на файл&lt;/xs:documentation&gt;
+                                        &lt;/xs:annotation&gt;
+                                    &lt;/xs:element&gt;
+                                &lt;/xs:all&gt;
+                                &lt;xs:attribute name="language" use="required"&gt;
+                                    &lt;xs:simpleType&gt;
+                                        &lt;xs:restriction base="xs:string"&gt;
+                                            &lt;xs:enumeration value="ru" /&gt;
+                                            &lt;xs:enumeration value="en" /&gt;
+                                        &lt;/xs:restriction&gt;
+                                    &lt;/xs:simpleType&gt;
+                                &lt;/xs:attribute&gt;
+                                &lt;xs:attribute name="contentType" type="xs:string" use="required" /&gt;
+                            &lt;/xs:complexType&gt;
+                        &lt;/xs:element&gt;
+                    &lt;/xs:sequence&gt;
+                &lt;/xs:complexType&gt;
+            &lt;/xs:element&gt;
+            &lt;xs:choice minOccurs="1" maxOccurs="1"&gt;
+                &lt;xs:element name="avia"&gt;
+                    &lt;xs:complexType&gt;
+                        &lt;xs:sequence&gt;
+                            &lt;xs:element name="legs" minOccurs="1"&gt;
+                                &lt;xs:complexType&gt;
+                                    &lt;xs:sequence&gt;
+                                        &lt;xs:element name="leg" minOccurs="1" maxOccurs="unbounded"&gt;
+                                            &lt;xs:complexType&gt;
+                                                &lt;xs:sequence&gt;
+                                                    &lt;xs:element name="departureFrom" type="airportRef" /&gt;
+                                                    &lt;xs:element name="arrivalTo" type="airportRef" /&gt;
+                                                &lt;/xs:sequence&gt;
+                                            &lt;/xs:complexType&gt;
+                                        &lt;/xs:element&gt;
+                                    &lt;/xs:sequence&gt;
+                                &lt;/xs:complexType&gt;
+                            &lt;/xs:element&gt;
+                        &lt;/xs:sequence&gt;
+                    &lt;/xs:complexType&gt;
+                &lt;/xs:element&gt;
+                &lt;xs:element name="rail"&gt;
+                    &lt;xs:complexType mixed="true"&gt;
+                        &lt;xs:sequence&gt;
+                            &lt;xs:element name="departureFrom" type="railwayStationRef" /&gt;
+                            &lt;xs:element name="arrivalTo" type="railwayStationRef" /&gt;
+                        &lt;/xs:sequence&gt;
+                    &lt;/xs:complexType&gt;
+                &lt;/xs:element&gt;
+                &lt;xs:element name="hotel"&gt;
+                    &lt;xs:complexType&gt;
+                        &lt;xs:sequence&gt;
+                            &lt;xs:element name="cityId" type="xs:unsignedInt" /&gt;
+                        &lt;/xs:sequence&gt;
+                    &lt;/xs:complexType&gt;
+                &lt;/xs:element&gt;
+                &lt;xs:element name="aeroexpress"&gt;
+                    &lt;xs:complexType&gt;
+                        &lt;xs:sequence&gt;
+                            &lt;xs:element name="departureFrom" type="aeroexpressStationRef" /&gt;
+                            &lt;xs:element name="arrivalTo" type="aeroexpressStationRef" /&gt;
+                        &lt;/xs:sequence&gt;
+                    &lt;/xs:complexType&gt;
+                &lt;/xs:element&gt;
+            &lt;/xs:choice&gt;
+            &lt;xs:element name="stcd1" type="xs:unsignedLong"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;ИНН&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+            &lt;/xs:element&gt;
+            &lt;xs:element name="stcd3" type="xs:unsignedLong"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;КПП&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+            &lt;/xs:element&gt;
+        &lt;/xs:sequence&gt;
+        &lt;xs:attribute name="type" use="required"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation&gt;Тип услуги&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+            &lt;xs:simpleType&gt;
+                &lt;xs:restriction base="xs:string"&gt;
+                    &lt;xs:enumeration value="Avia" /&gt;
+                    &lt;xs:enumeration value="Rail" /&gt;
+                    &lt;xs:enumeration value="Hotel" /&gt;
+                    &lt;xs:enumeration value="AeroExpress" /&gt;
+                &lt;/xs:restriction&gt;
+            &lt;/xs:simpleType&gt;
+        &lt;/xs:attribute&gt;
+        &lt;xs:attribute name="isOffline" type="xs:boolean" use="required"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation&gt;Признак оффлайн услуги&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+        &lt;/xs:attribute&gt;
+    &lt;/xs:complexType&gt;
+    &lt;xs:complexType name="report"&gt;
+        &lt;xs:sequence&gt;
+            &lt;xs:element name="service" type="service" /&gt;
+        &lt;/xs:sequence&gt;
+    &lt;/xs:complexType&gt;
+    &lt;xs:element name="report" type="report" /&gt;
+&lt;/xs:schema&gt;</code></pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="ComplexType" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>ComplexTypes:</b></td>
+            </tr>
+            <tr id="ComplexType_body_id">
+               <td width="120px;"></td>
+               <td>
+                  <ul>
+                     <li><a href="aeroexpressstationref.html">aeroexpressStationRef</a></li>
+                     <li><a href="airport.html">airport</a></li>
+                     <li><a href="airportref.html">airportRef</a></li>
+                     <li><a href="city1.html">city</a></li>
+                     <li><a href="country.html">country</a></li>
+                     <li><a href="name1.html">name</a></li>
+                     <li><a href="property.html">property</a></li>
+                     <li><a href="railwaystation.html">railwayStation</a></li>
+                     <li><a href="railwaystationref.html">railwayStationRef</a></li>
+                     <li><a href="report.html">report</a></li>
+                     <li><a href="service1.html">service</a></li>
+                     <li><a href="transferref.html">transferRef</a></li>
+                  </ul>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="Element" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Elements:</b></td>
+            </tr>
+            <tr id="Element_body_id">
+               <td width="120px;"></td>
+               <td>
+                  <ul>
+                     <li><a href="report1.html">report</a></li>
+                  </ul>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <div class="pagefooter">
+         			Documentation for Docs<br/>
+         Generated using 
+         <a href="https://www.liquid-technologies.com/">Liquid Studio 2021 - Developer Bundle (Trial) 19.0.3.10699</a></div>
+   </body>
+</html>
