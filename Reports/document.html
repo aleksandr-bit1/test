@@ -3,32 +3,36 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
    <head>
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
-      <title>Docs for schema item document in Docs</title>
+      <title>Docs for schema item document in X5 report</title>
       <!-- saved from url=(0014)about:internet -->
       <link rel="stylesheet" type="text/css" href="styles/site.css"></link><script type="text/javascript" src="scripts/jquery-1.4.1.min.js"></script><script type="text/javascript" src="scripts/highlight.pack.js"></script><script type="text/javascript" src="scripts/xmlstudio.js"></script><script type="text/javascript" src="scripts/jquery.cookie.js"></script></head>
    <body style="margin:10px"><script type="text/javascript">
          <!--
-                            EnsureInFrame('ComplexType', 'document');
+                            EnsureInFrame('Element', 'document');
                         --></script><div class="pageheader">
-         Documentation for Docs
+         Documentation for X5 report
       </div>
       <table cellpadding="0" cellspacing="0" class="mainHelp2">
          <tbody>
             <tr>
                <td class="label" width="120px;"><b>Definition Type:</b></td>
-               <td>ComplexType</td>
+               <td>Element</td>
             </tr>
             <tr>
                <td class="label" width="120px;"><b>Name:</b></td>
                <td>document</td>
             </tr>
             <tr>
-               <td class="label" width="120px;"><b>Namespace:</b></td>
-               <td><a href="http___integration_aeroclub_ru_hub_schemas_profiles.html">http://integration.aeroclub.ru/hub/schemas/profiles</a></td>
+               <td class="label" width="120px;"><b>Containing Schema:</b></td>
+               <td><a href="report_x5_xsd.html">report_x5.xsd</a></td>
             </tr>
             <tr>
-               <td class="label" width="120px;"><b>Containing Schema:</b></td>
-               <td><a href="document_xsd.html">document.xsd</a></td>
+               <td class="label" width="120px;"><b>MinOccurs</b></td>
+               <td>0</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>MaxOccurs</b></td>
+               <td>unbounded</td>
             </tr>
             <tr>
                <td class="label" width="120px;"><b>Abstract</b></td>
@@ -44,15 +48,14 @@
             </tr>
             <tr id="xsdDiagram_body_id">
                <td><map name="DiagramMap" id="DiagramMap">
-                     <area shape="rect" coords="163,386,309,430" href="lastname.html" alt="Drilldown into lastName"></area>
-                     <area shape="rect" coords="163,334,311,378" href="firstname.html" alt="Drilldown into firstName"></area>
-                     <area shape="rect" coords="163,282,327,326" href="placeofbirth.html" alt="Drilldown into placeOfBirth"></area>
-                     <area shape="rect" coords="183,250,280,275" href="citizenship.html" alt="Drilldown into citizenship"></area>
-                     <area shape="rect" coords="163,198,314,242" href="expireson.html" alt="Drilldown into expiresOn"></area>
-                     <area shape="rect" coords="163,146,310,190" href="issuedon.html" alt="Drilldown into issuedOn"></area>
-                     <area shape="rect" coords="163,114,305,139" href="number.html" alt="Drilldown into number"></area>
-                     <area shape="rect" coords="163,63,305,107" href="series.html" alt="Drilldown into series"></area>
-                     <area shape="rect" coords="118,1,282,56" href="type.html" alt="Drilldown into type"></area></map><img src="images/document.png" border="0" alt="XSD Diagram of document" usemap="#DiagramMap"></img></td>
+                     <area shape="rect" coords="530,306,672,331" href="link.html" alt="Drilldown into link"></area>
+                     <area shape="rect" coords="530,274,672,299" href="name.html" alt="Drilldown into name"></area>
+                     <area shape="rect" coords="465,242,628,267" href="contenttype.html" alt="Drilldown into contentType"></area>
+                     <area shape="rect" coords="465,180,610,235" href="language.html" alt="Drilldown into language"></area>
+                     <area shape="rect" coords="355,233,440,277" href="file.html" alt="Drilldown into file"></area>
+                     <area shape="rect" coords="182,243,267,268" href="files.html" alt="Drilldown into files"></area>
+                     <area shape="rect" coords="182,129,350,173" href="ticketnumber.html" alt="Drilldown into ticketNumber"></area>
+                     <area shape="rect" coords="137,1,301,122" href="type2.html" alt="Drilldown into type"></area></map><img src="images/document.png" border="0" alt="XSD Diagram of document" usemap="#DiagramMap"></img></td>
             </tr>
          </tbody>
       </table>
@@ -63,49 +66,54 @@
                </td>
             </tr>
             <tr id="xsdCode_body_id">
-               <td><pre><code>&lt;xs:complexType name="document"&gt;
-    &lt;xs:all&gt;
-        &lt;xs:element name="series" type="xs:string" nillable="true" /&gt;
-        &lt;xs:element name="number" type="xs:string" /&gt;
-        &lt;xs:element name="issuedOn" type="xs:date" nillable="true" /&gt;
-        &lt;xs:element name="expiresOn" type="xs:date" nillable="true" /&gt;
-        &lt;xs:element name="citizenship" minOccurs="0" maxOccurs="1"&gt;
-            &lt;xs:complexType&gt;
-                &lt;xs:sequence&gt;
-                    &lt;xs:element name="code" minOccurs="1" maxOccurs="1"&gt;
-                        &lt;xs:complexType&gt;
-                            &lt;xs:all&gt;
-                                &lt;xs:element name="iso3611-a2" minOccurs="1" maxOccurs="1"&gt;
-                                    &lt;xs:annotation&gt;
-                                        &lt;xs:documentation&gt;
-                        Двухсимвольный код страны согласно ISO-3166 (http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements)
-                      &lt;/xs:documentation&gt;
-                                    &lt;/xs:annotation&gt;
+               <td><pre><code>&lt;xs:element name="document" minOccurs="0" maxOccurs="unbounded"&gt;
+    &lt;xs:complexType&gt;
+        &lt;xs:all&gt;
+            &lt;xs:element name="ticketNumber" type="xs:string"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;Номер билета (документа)&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+            &lt;/xs:element&gt;
+            &lt;xs:element name="files"&gt;
+                &lt;xs:complexType&gt;
+                    &lt;xs:sequence&gt;
+                        &lt;xs:element name="file" minOccurs="1" maxOccurs="unbounded" nillable="false"&gt;
+                            &lt;xs:complexType&gt;
+                                &lt;xs:all minOccurs="0" maxOccurs="1"&gt;
+                                    &lt;xs:element name="name" type="xs:string" /&gt;
+                                    &lt;xs:element name="link" type="xs:string" /&gt;
+                                &lt;/xs:all&gt;
+                                &lt;xs:attribute name="language" use="required"&gt;
                                     &lt;xs:simpleType&gt;
                                         &lt;xs:restriction base="xs:string"&gt;
-                                            &lt;xs:pattern value="[A-Z][A-Z]" /&gt;
+                                            &lt;xs:enumeration value="ru" /&gt;
+                                            &lt;xs:enumeration value="en" /&gt;
                                         &lt;/xs:restriction&gt;
                                     &lt;/xs:simpleType&gt;
-                                &lt;/xs:element&gt;
-                            &lt;/xs:all&gt;
-                        &lt;/xs:complexType&gt;
-                    &lt;/xs:element&gt;
-                &lt;/xs:sequence&gt;
-            &lt;/xs:complexType&gt;
-        &lt;/xs:element&gt;
-        &lt;xs:element name="placeOfBirth" type="xs:string" nillable="true" /&gt;
-        &lt;xs:element name="firstName" type="xs:string" nillable="true" /&gt;
-        &lt;xs:element name="lastName" type="xs:string" nillable="true" /&gt;
-    &lt;/xs:all&gt;
-    &lt;xs:attribute name="type" use="required"&gt;
-        &lt;xs:simpleType&gt;
-            &lt;xs:restriction base="xs:string"&gt;
-                &lt;xs:enumeration value="NationalPassport" /&gt;
-                &lt;xs:enumeration value="InternationalPassport" /&gt;
-            &lt;/xs:restriction&gt;
-        &lt;/xs:simpleType&gt;
-    &lt;/xs:attribute&gt;
-&lt;/xs:complexType&gt;</code></pre></td>
+                                &lt;/xs:attribute&gt;
+                                &lt;xs:attribute name="contentType" type="xs:string" use="required" /&gt;
+                            &lt;/xs:complexType&gt;
+                        &lt;/xs:element&gt;
+                    &lt;/xs:sequence&gt;
+                &lt;/xs:complexType&gt;
+            &lt;/xs:element&gt;
+        &lt;/xs:all&gt;
+        &lt;xs:attribute name="type" use="required"&gt;
+            &lt;xs:simpleType&gt;
+                &lt;xs:restriction base="xs:string"&gt;
+                    &lt;xs:enumeration value="mco" /&gt;
+                    &lt;xs:enumeration value="electronic-ticket" /&gt;
+                    &lt;xs:enumeration value="execution-ticket" /&gt;
+                    &lt;xs:enumeration value="ticket" /&gt;
+                    &lt;xs:enumeration value="voucher" /&gt;
+                    &lt;xs:enumeration value="booking-confirmation" /&gt;
+                    &lt;xs:enumeration value="invoice" /&gt;
+                    &lt;xs:enumeration value="reservation" /&gt;
+                &lt;/xs:restriction&gt;
+            &lt;/xs:simpleType&gt;
+        &lt;/xs:attribute&gt;
+    &lt;/xs:complexType&gt;
+&lt;/xs:element&gt;</code></pre></td>
             </tr>
          </tbody>
       </table>
@@ -125,50 +133,14 @@
                         <td class="last">Max Occurs</td>
                      </tr>
                      <tr>
-                        <td class="first">series</td>
-                        <td><a href="http___integration_aeroclub_ru_hub_schemas_profiles.html">p</a>:<a href="series.html">series</a></td>
+                        <td class="first">ticketNumber</td>
+                        <td><a href="ticketnumber.html">ticketNumber</a></td>
                         <td class="mid">(1)</td>
                         <td class="last">(1)</td>
                      </tr>
                      <tr>
-                        <td class="first">number</td>
-                        <td><a href="http___integration_aeroclub_ru_hub_schemas_profiles.html">p</a>:<a href="number.html">number</a></td>
-                        <td class="mid">(1)</td>
-                        <td class="last">(1)</td>
-                     </tr>
-                     <tr>
-                        <td class="first">issuedOn</td>
-                        <td><a href="http___integration_aeroclub_ru_hub_schemas_profiles.html">p</a>:<a href="issuedon.html">issuedOn</a></td>
-                        <td class="mid">(1)</td>
-                        <td class="last">(1)</td>
-                     </tr>
-                     <tr>
-                        <td class="first">expiresOn</td>
-                        <td><a href="http___integration_aeroclub_ru_hub_schemas_profiles.html">p</a>:<a href="expireson.html">expiresOn</a></td>
-                        <td class="mid">(1)</td>
-                        <td class="last">(1)</td>
-                     </tr>
-                     <tr>
-                        <td class="first">citizenship</td>
-                        <td><a href="http___integration_aeroclub_ru_hub_schemas_profiles.html">p</a>:<a href="citizenship.html">citizenship</a></td>
-                        <td class="mid">0</td>
-                        <td class="last">1</td>
-                     </tr>
-                     <tr>
-                        <td class="first">placeOfBirth</td>
-                        <td><a href="http___integration_aeroclub_ru_hub_schemas_profiles.html">p</a>:<a href="placeofbirth.html">placeOfBirth</a></td>
-                        <td class="mid">(1)</td>
-                        <td class="last">(1)</td>
-                     </tr>
-                     <tr>
-                        <td class="first">firstName</td>
-                        <td><a href="http___integration_aeroclub_ru_hub_schemas_profiles.html">p</a>:<a href="firstname.html">firstName</a></td>
-                        <td class="mid">(1)</td>
-                        <td class="last">(1)</td>
-                     </tr>
-                     <tr>
-                        <td class="first">lastName</td>
-                        <td><a href="http___integration_aeroclub_ru_hub_schemas_profiles.html">p</a>:<a href="lastname.html">lastName</a></td>
+                        <td class="first">files</td>
+                        <td><a href="files.html">files</a></td>
                         <td class="mid">(1)</td>
                         <td class="last">(1)</td>
                      </tr>
@@ -194,7 +166,7 @@
                      </tr>
                      <tr>
                         <td class="first">type</td>
-                        <td><a href="http___integration_aeroclub_ru_hub_schemas_profiles.html">p</a>:<a href="type.html">type</a></td>
+                        <td><a href="type2.html">type</a></td>
                         <td class="mid"></td>
                         <td class="last">Required</td>
                      </tr>
@@ -204,7 +176,7 @@
          </tbody>
       </table>
       <div class="pagefooter">
-         			Documentation for Docs<br/>
+         			Documentation for X5 report<br/>
          Generated using 
          <a href="https://www.liquid-technologies.com/" rel="nofollow">Liquid Studio 2021 - Developer Bundle (Trial) 19.0.3.10699</a></div>
    </body>

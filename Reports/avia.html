@@ -3,14 +3,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
    <head>
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
-      <title>Docs for schema item avia in Docs</title>
+      <title>Docs for schema item avia in X5 report</title>
       <!-- saved from url=(0014)about:internet -->
       <link rel="stylesheet" type="text/css" href="styles/site.css"></link><script type="text/javascript" src="scripts/jquery-1.4.1.min.js"></script><script type="text/javascript" src="scripts/highlight.pack.js"></script><script type="text/javascript" src="scripts/xmlstudio.js"></script><script type="text/javascript" src="scripts/jquery.cookie.js"></script></head>
    <body style="margin:10px"><script type="text/javascript">
          <!--
                             EnsureInFrame('Element', 'avia');
                         --></script><div class="pageheader">
-         Documentation for Docs
+         Documentation for X5 report
       </div>
       <table cellpadding="0" cellspacing="0" class="mainHelp2">
          <tbody>
@@ -23,12 +23,8 @@
                <td>avia</td>
             </tr>
             <tr>
-               <td class="label" width="120px;"><b>Namespace:</b></td>
-               <td><a href="http___integration_aeroclub_ru_hub_schemas_services.html">http://integration.aeroclub.ru/hub/schemas/services</a></td>
-            </tr>
-            <tr>
                <td class="label" width="120px;"><b>Containing Schema:</b></td>
-               <td><a href="service_new_xsd.html">service_new.xsd</a></td>
+               <td><a href="report_x5_xsd.html">report_x5.xsd</a></td>
             </tr>
             <tr>
                <td class="label" width="120px;"><b>MinOccurs</b></td>
@@ -52,17 +48,7 @@
             </tr>
             <tr id="xsdDiagram_body_id">
                <td><map name="DiagramMap" id="DiagramMap">
-                     <area shape="rect" coords="504,171,655,196" href="arrivalto1.html" alt="Drilldown into arrivalTo"></area>
-                     <area shape="rect" coords="1242,111,1402,136" href="id2.html" alt="Drilldown into id"></area>
-                     <area shape="rect" coords="1177,86,1410,146" href="city1.html" alt="Drilldown into city"></area>
-                     <area shape="rect" coords="1010,103,1152,128" href="city.html" alt="Drilldown into city"></area>
-                     <area shape="rect" coords="1010,53,1170,78" href="id1.html" alt="Drilldown into id"></area>
-                     <area shape="rect" coords="945,28,1418,156" href="airport.html" alt="Drilldown into airport"></area>
-                     <area shape="rect" coords="778,79,920,104" href="airport1.html" alt="Drilldown into airport"></area>
-                     <area shape="rect" coords="713,2,1427,165" href="airportref.html" alt="Drilldown into airportRef"></area>
-                     <area shape="rect" coords="504,71,688,96" href="departurefrom1.html" alt="Drilldown into departureFrom"></area>
-                     <area shape="rect" coords="349,121,434,146" href="leg.html" alt="Drilldown into leg"></area>
-                     <area shape="rect" coords="176,121,261,146" href="legs.html" alt="Drilldown into legs"></area></map><img src="images/avia.png" border="0" alt="XSD Diagram of avia" usemap="#DiagramMap"></img></td>
+                     <area shape="rect" coords="156,1,241,26" href="legs.html" alt="Drilldown into legs"></area></map><img src="images/avia.png" border="0" alt="XSD Diagram of avia" usemap="#DiagramMap"></img></td>
             </tr>
          </tbody>
       </table>
@@ -76,14 +62,32 @@
                <td><pre><code>&lt;xs:element name="avia"&gt;
     &lt;xs:complexType&gt;
         &lt;xs:sequence&gt;
-            &lt;xs:element name="legs" minOccurs="1"&gt;
+            &lt;xs:element name="legs"&gt;
                 &lt;xs:complexType&gt;
                     &lt;xs:sequence&gt;
                         &lt;xs:element name="leg" minOccurs="1" maxOccurs="unbounded"&gt;
                             &lt;xs:complexType&gt;
                                 &lt;xs:sequence&gt;
+                                    &lt;xs:element name="departureAt" type="xs:dateTime" /&gt;
                                     &lt;xs:element name="departureFrom" type="airportRef" /&gt;
+                                    &lt;xs:element name="arrivalAt" type="xs:dateTime" /&gt;
                                     &lt;xs:element name="arrivalTo" type="airportRef" /&gt;
+                                    &lt;xs:element name="segments"&gt;
+                                        &lt;xs:complexType&gt;
+                                            &lt;xs:sequence&gt;
+                                                &lt;xs:element name="segment" minOccurs="1" maxOccurs="unbounded"&gt;
+                                                    &lt;xs:complexType&gt;
+                                                        &lt;xs:sequence&gt;
+                                                            &lt;xs:element name="departureAt" type="xs:dateTime" /&gt;
+                                                            &lt;xs:element name="departureFrom" type="airportRef" /&gt;
+                                                            &lt;xs:element name="arrivalAt" type="xs:dateTime" /&gt;
+                                                            &lt;xs:element name="arrivalTo" type="airportRef" /&gt;
+                                                        &lt;/xs:sequence&gt;
+                                                    &lt;/xs:complexType&gt;
+                                                &lt;/xs:element&gt;
+                                            &lt;/xs:sequence&gt;
+                                        &lt;/xs:complexType&gt;
+                                    &lt;/xs:element&gt;
                                 &lt;/xs:sequence&gt;
                             &lt;/xs:complexType&gt;
                         &lt;/xs:element&gt;
@@ -113,8 +117,8 @@
                      </tr>
                      <tr>
                         <td class="first">legs</td>
-                        <td><a href="http___integration_aeroclub_ru_hub_schemas_services.html">nsA</a>:<a href="legs.html">legs</a></td>
-                        <td class="mid">1</td>
+                        <td><a href="legs.html">legs</a></td>
+                        <td class="mid">(1)</td>
                         <td class="last">(1)</td>
                      </tr>
                   </table>
@@ -123,7 +127,7 @@
          </tbody>
       </table>
       <div class="pagefooter">
-         			Documentation for Docs<br/>
+         			Documentation for X5 report<br/>
          Generated using 
          <a href="https://www.liquid-technologies.com/" rel="nofollow">Liquid Studio 2021 - Developer Bundle (Trial) 19.0.3.10699</a></div>
    </body>

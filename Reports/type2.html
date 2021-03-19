@@ -3,14 +3,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
    <head>
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
-      <title>Docs for schema item type in Docs</title>
+      <title>Docs for schema item type in X5 report</title>
       <!-- saved from url=(0014)about:internet -->
       <link rel="stylesheet" type="text/css" href="styles/site.css"></link><script type="text/javascript" src="scripts/jquery-1.4.1.min.js"></script><script type="text/javascript" src="scripts/highlight.pack.js"></script><script type="text/javascript" src="scripts/xmlstudio.js"></script><script type="text/javascript" src="scripts/jquery.cookie.js"></script></head>
    <body style="margin:10px"><script type="text/javascript">
          <!--
                             EnsureInFrame('Attribute', 'type2');
                         --></script><div class="pageheader">
-         Documentation for Docs
+         Documentation for X5 report
       </div>
       <table cellpadding="0" cellspacing="0" class="mainHelp2">
          <tbody>
@@ -23,16 +23,12 @@
                <td>type</td>
             </tr>
             <tr>
-               <td class="label" width="120px;"><b>Namespace:</b></td>
-               <td><a href="http___integration_aeroclub_ru_hub_schemas_services.html">http://integration.aeroclub.ru/hub/schemas/services</a></td>
-            </tr>
-            <tr>
                <td class="label" width="120px;"><b>Type:</b></td>
                <td>string:http://www.w3.org/2001/XMLSchema</td>
             </tr>
             <tr>
                <td class="label" width="120px;"><b>Containing Schema:</b></td>
-               <td><a href="service_new_xsd.html">service_new.xsd</a></td>
+               <td><a href="report_x5_xsd.html">report_x5.xsd</a></td>
             </tr>
             <tr>
                <td class="label" width="120px;"><b>ContentType</b></td>
@@ -41,10 +37,6 @@
             <tr>
                <td class="label" width="120px;"><b>Use</b></td>
                <td>Required</td>
-            </tr>
-            <tr>
-               <td class="label" width="120px;"><b>Documentation:</b></td>
-               <td><pre>Тип услуги</pre></td>
             </tr>
          </tbody>
       </table>
@@ -67,15 +59,16 @@
             </tr>
             <tr id="xsdCode_body_id">
                <td><pre><code>&lt;xs:attribute name="type" use="required"&gt;
-    &lt;xs:annotation&gt;
-        &lt;xs:documentation&gt;Тип услуги&lt;/xs:documentation&gt;
-    &lt;/xs:annotation&gt;
     &lt;xs:simpleType&gt;
         &lt;xs:restriction base="xs:string"&gt;
-            &lt;xs:enumeration value="Avia" /&gt;
-            &lt;xs:enumeration value="Rail" /&gt;
-            &lt;xs:enumeration value="Hotel" /&gt;
-            &lt;xs:enumeration value="AeroExpress" /&gt;
+            &lt;xs:enumeration value="mco" /&gt;
+            &lt;xs:enumeration value="electronic-ticket" /&gt;
+            &lt;xs:enumeration value="execution-ticket" /&gt;
+            &lt;xs:enumeration value="ticket" /&gt;
+            &lt;xs:enumeration value="voucher" /&gt;
+            &lt;xs:enumeration value="booking-confirmation" /&gt;
+            &lt;xs:enumeration value="invoice" /&gt;
+            &lt;xs:enumeration value="reservation" /&gt;
         &lt;/xs:restriction&gt;
     &lt;/xs:simpleType&gt;
 &lt;/xs:attribute&gt;</code></pre></td>
@@ -97,19 +90,35 @@
                      </tr>
                      <tr>
                         <td class="label" width="120px;"><b>Enumeration</b></td>
-                        <td>Avia</td>
+                        <td>mco</td>
                      </tr>
                      <tr>
                         <td class="label" width="120px;"><b>Enumeration</b></td>
-                        <td>Rail</td>
+                        <td>electronic-ticket</td>
                      </tr>
                      <tr>
                         <td class="label" width="120px;"><b>Enumeration</b></td>
-                        <td>Hotel</td>
+                        <td>execution-ticket</td>
                      </tr>
                      <tr>
                         <td class="label" width="120px;"><b>Enumeration</b></td>
-                        <td>AeroExpress</td>
+                        <td>ticket</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>voucher</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>booking-confirmation</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>invoice</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>reservation</td>
                      </tr>
                   </table>
                </td>
@@ -117,7 +126,7 @@
          </tbody>
       </table>
       <div class="pagefooter">
-         			Documentation for Docs<br/>
+         			Documentation for X5 report<br/>
          Generated using 
          <a href="https://www.liquid-technologies.com/" rel="nofollow">Liquid Studio 2021 - Developer Bundle (Trial) 19.0.3.10699</a></div>
    </body>
