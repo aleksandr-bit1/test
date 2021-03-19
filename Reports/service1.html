@@ -40,13 +40,22 @@
             </tr>
             <tr id="xsdDiagram_body_id">
                <td><map name="DiagramMap" id="DiagramMap">
-                     <area shape="rect" coords="201,860,306,885" href="aeroexpress.html" alt="Drilldown into aeroexpress"></area>
-                     <area shape="rect" coords="201,828,286,853" href="hotel.html" alt="Drilldown into hotel"></area>
-                     <area shape="rect" coords="201,777,286,821" href="rail.html" alt="Drilldown into rail"></area>
-                     <area shape="rect" coords="201,745,286,770" href="avia.html" alt="Drilldown into avia"></area>
-                     <area shape="rect" coords="156,693,316,737" href="offerer.html" alt="Drilldown into offerer"></area>
-                     <area shape="rect" coords="156,661,241,686" href="tariff.html" alt="Drilldown into tariff"></area>
-                     <area shape="rect" coords="156,609,255,653" href="documents.html" alt="Drilldown into documents"></area>
+                     <area shape="rect" coords="201,1151,306,1176" href="aeroexpress.html" alt="Drilldown into aeroexpress"></area>
+                     <area shape="rect" coords="201,1119,286,1144" href="hotel.html" alt="Drilldown into hotel"></area>
+                     <area shape="rect" coords="201,1068,286,1112" href="rail.html" alt="Drilldown into rail"></area>
+                     <area shape="rect" coords="201,1036,286,1061" href="avia.html" alt="Drilldown into avia"></area>
+                     <area shape="rect" coords="156,984,316,1028" href="offerer.html" alt="Drilldown into offerer"></area>
+                     <area shape="rect" coords="156,952,241,977" href="tariff.html" alt="Drilldown into tariff"></area>
+                     <area shape="rect" coords="834,914,976,939" href="link.html" alt="Drilldown into link"></area>
+                     <area shape="rect" coords="834,882,976,907" href="name5.html" alt="Drilldown into name"></area>
+                     <area shape="rect" coords="789,850,952,875" href="contenttype.html" alt="Drilldown into contentType"></area>
+                     <area shape="rect" coords="789,788,934,843" href="language.html" alt="Drilldown into language"></area>
+                     <area shape="rect" coords="679,841,764,885" href="file.html" alt="Drilldown into file"></area>
+                     <area shape="rect" coords="506,851,591,876" href="files.html" alt="Drilldown into files"></area>
+                     <area shape="rect" coords="506,737,674,781" href="ticketnumber.html" alt="Drilldown into ticketNumber"></area>
+                     <area shape="rect" coords="461,609,625,730" href="type2.html" alt="Drilldown into type"></area>
+                     <area shape="rect" coords="343,729,435,754" href="document.html" alt="Drilldown into document"></area>
+                     <area shape="rect" coords="156,719,255,763" href="documents.html" alt="Drilldown into documents"></area>
                      <area shape="rect" coords="156,557,241,601" href="tickets.html" alt="Drilldown into tickets"></area>
                      <area shape="rect" coords="156,505,393,549" href="dateiss.html" alt="Drilldown into dateIss"></area>
                      <area shape="rect" coords="156,453,296,497" href="customparameters.html" alt="Drilldown into customParameters"></area>
@@ -124,6 +133,9 @@
                                                         &lt;xs:element name="authorizer" minOccurs="1" maxOccurs="unbounded"&gt;
                                                             &lt;xs:complexType&gt;
                                                                 &lt;xs:sequence&gt;
+                                                                    &lt;xs:element name="firstName" type="name" /&gt;
+                                                                    &lt;xs:element name="lastName" type="name" /&gt;
+                                                                    &lt;xs:element name="middleName" type="name" /&gt;
                                                                     &lt;xs:element name="accountEmailAddress" type="xs:string" /&gt;
                                                                 &lt;/xs:sequence&gt;
                                                             &lt;/xs:complexType&gt;
@@ -254,7 +266,7 @@
                                         &lt;xs:sequence&gt;
                                             &lt;xs:element name="file" minOccurs="1" maxOccurs="unbounded" nillable="false"&gt;
                                                 &lt;xs:complexType&gt;
-                                                    &lt;xs:all minOccurs="0" maxOccurs="1"&gt;
+                                                    &lt;xs:all&gt;
                                                         &lt;xs:element name="name" type="xs:string" /&gt;
                                                         &lt;xs:element name="link" type="xs:string" /&gt;
                                                     &lt;/xs:all&gt;
@@ -295,12 +307,12 @@
         &lt;xs:element name="tariff"&gt;
             &lt;xs:complexType&gt;
                 &lt;xs:sequence&gt;
-                    &lt;xs:element name="total" type="xs:decimal"&gt;
+                    &lt;xs:element name="costIncVat" type="xs:decimal"&gt;
                         &lt;xs:annotation&gt;
                             &lt;xs:documentation&gt;Сумма с НДС&lt;/xs:documentation&gt;
                         &lt;/xs:annotation&gt;
                     &lt;/xs:element&gt;
-                    &lt;xs:element name="totalNoVat" type="xs:decimal"&gt;
+                    &lt;xs:element name="costExclVat" type="xs:decimal"&gt;
                         &lt;xs:annotation&gt;
                             &lt;xs:documentation&gt;Сумма без НДС&lt;/xs:documentation&gt;
                         &lt;/xs:annotation&gt;
@@ -328,32 +340,16 @@
             &lt;xs:element name="avia"&gt;
                 &lt;xs:complexType&gt;
                     &lt;xs:sequence&gt;
-                        &lt;xs:element name="legs"&gt;
+                        &lt;xs:element name="segments"&gt;
                             &lt;xs:complexType&gt;
                                 &lt;xs:sequence&gt;
-                                    &lt;xs:element name="leg" minOccurs="1" maxOccurs="unbounded"&gt;
+                                    &lt;xs:element name="segment" minOccurs="1" maxOccurs="unbounded"&gt;
                                         &lt;xs:complexType&gt;
                                             &lt;xs:sequence&gt;
                                                 &lt;xs:element name="departureAt" type="xs:dateTime" /&gt;
                                                 &lt;xs:element name="departureFrom" type="airportRef" /&gt;
                                                 &lt;xs:element name="arrivalAt" type="xs:dateTime" /&gt;
                                                 &lt;xs:element name="arrivalTo" type="airportRef" /&gt;
-                                                &lt;xs:element name="segments"&gt;
-                                                    &lt;xs:complexType&gt;
-                                                        &lt;xs:sequence&gt;
-                                                            &lt;xs:element name="segment" minOccurs="1" maxOccurs="unbounded"&gt;
-                                                                &lt;xs:complexType&gt;
-                                                                    &lt;xs:sequence&gt;
-                                                                        &lt;xs:element name="departureAt" type="xs:dateTime" /&gt;
-                                                                        &lt;xs:element name="departureFrom" type="airportRef" /&gt;
-                                                                        &lt;xs:element name="arrivalAt" type="xs:dateTime" /&gt;
-                                                                        &lt;xs:element name="arrivalTo" type="airportRef" /&gt;
-                                                                    &lt;/xs:sequence&gt;
-                                                                &lt;/xs:complexType&gt;
-                                                            &lt;/xs:element&gt;
-                                                        &lt;/xs:sequence&gt;
-                                                    &lt;/xs:complexType&gt;
-                                                &lt;/xs:element&gt;
                                             &lt;/xs:sequence&gt;
                                         &lt;/xs:complexType&gt;
                                     &lt;/xs:element&gt;
@@ -381,6 +377,7 @@
                                 &lt;/xs:sequence&gt;
                             &lt;/xs:complexType&gt;
                         &lt;/xs:element&gt;
+                        &lt;xs:element name="name" type="name" /&gt;
                     &lt;/xs:sequence&gt;
                 &lt;/xs:complexType&gt;
             &lt;/xs:element&gt;

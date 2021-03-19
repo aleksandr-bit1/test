@@ -54,6 +54,12 @@
       <priority>0.5</priority>
    </url>
    <url>
+      <loc>http://schema.liquid-technologies.com/LibraryDocs/name.html</loc>
+      <lastmod>2021-03-19+03:00</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.5</priority>
+   </url>
+   <url>
       <loc>http://schema.liquid-technologies.com/LibraryDocs/airportref.html</loc>
       <lastmod>2021-03-19+03:00</lastmod>
       <changefreq>monthly</changefreq>
@@ -84,6 +90,30 @@
       <priority>0.5</priority>
    </url>
    <url>
+      <loc>http://schema.liquid-technologies.com/LibraryDocs/name1.html</loc>
+      <lastmod>2021-03-19+03:00</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.5</priority>
+   </url>
+   <url>
+      <loc>http://schema.liquid-technologies.com/LibraryDocs/name2.html</loc>
+      <lastmod>2021-03-19+03:00</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.5</priority>
+   </url>
+   <url>
+      <loc>http://schema.liquid-technologies.com/LibraryDocs/english.html</loc>
+      <lastmod>2021-03-19+03:00</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.5</priority>
+   </url>
+   <url>
+      <loc>http://schema.liquid-technologies.com/LibraryDocs/russian.html</loc>
+      <lastmod>2021-03-19+03:00</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.5</priority>
+   </url>
+   <url>
       <loc>http://schema.liquid-technologies.com/LibraryDocs/railwaystationref.html</loc>
       <lastmod>2021-03-19+03:00</lastmod>
       <changefreq>monthly</changefreq>
@@ -91,6 +121,12 @@
    </url>
    <url>
       <loc>http://schema.liquid-technologies.com/LibraryDocs/id3.html</loc>
+      <lastmod>2021-03-19+03:00</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.5</priority>
+   </url>
+   <url>
+      <loc>http://schema.liquid-technologies.com/LibraryDocs/name3.html</loc>
       <lastmod>2021-03-19+03:00</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.5</priority>
@@ -150,13 +186,13 @@
       <priority>0.5</priority>
    </url>
    <url>
-      <loc>http://schema.liquid-technologies.com/LibraryDocs/legs.html</loc>
+      <loc>http://schema.liquid-technologies.com/LibraryDocs/segments.html</loc>
       <lastmod>2021-03-19+03:00</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.5</priority>
    </url>
    <url>
-      <loc>http://schema.liquid-technologies.com/LibraryDocs/leg.html</loc>
+      <loc>http://schema.liquid-technologies.com/LibraryDocs/segment.html</loc>
       <lastmod>2021-03-19+03:00</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.5</priority>
@@ -186,42 +222,6 @@
       <priority>0.5</priority>
    </url>
    <url>
-      <loc>http://schema.liquid-technologies.com/LibraryDocs/segments.html</loc>
-      <lastmod>2021-03-19+03:00</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.5</priority>
-   </url>
-   <url>
-      <loc>http://schema.liquid-technologies.com/LibraryDocs/segment.html</loc>
-      <lastmod>2021-03-19+03:00</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.5</priority>
-   </url>
-   <url>
-      <loc>http://schema.liquid-technologies.com/LibraryDocs/arrivalat1.html</loc>
-      <lastmod>2021-03-19+03:00</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.5</priority>
-   </url>
-   <url>
-      <loc>http://schema.liquid-technologies.com/LibraryDocs/arrivalto2.html</loc>
-      <lastmod>2021-03-19+03:00</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.5</priority>
-   </url>
-   <url>
-      <loc>http://schema.liquid-technologies.com/LibraryDocs/departureat1.html</loc>
-      <lastmod>2021-03-19+03:00</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.5</priority>
-   </url>
-   <url>
-      <loc>http://schema.liquid-technologies.com/LibraryDocs/departurefrom2.html</loc>
-      <lastmod>2021-03-19+03:00</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.5</priority>
-   </url>
-   <url>
       <loc>http://schema.liquid-technologies.com/LibraryDocs/hotel.html</loc>
       <lastmod>2021-03-19+03:00</lastmod>
       <changefreq>monthly</changefreq>
@@ -240,19 +240,25 @@
       <priority>0.5</priority>
    </url>
    <url>
+      <loc>http://schema.liquid-technologies.com/LibraryDocs/name4.html</loc>
+      <lastmod>2021-03-19+03:00</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.5</priority>
+   </url>
+   <url>
       <loc>http://schema.liquid-technologies.com/LibraryDocs/rail.html</loc>
       <lastmod>2021-03-19+03:00</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.5</priority>
    </url>
    <url>
-      <loc>http://schema.liquid-technologies.com/LibraryDocs/arrivalto3.html</loc>
+      <loc>http://schema.liquid-technologies.com/LibraryDocs/arrivalto2.html</loc>
       <lastmod>2021-03-19+03:00</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.5</priority>
    </url>
    <url>
-      <loc>http://schema.liquid-technologies.com/LibraryDocs/departurefrom3.html</loc>
+      <loc>http://schema.liquid-technologies.com/LibraryDocs/departurefrom2.html</loc>
       <lastmod>2021-03-19+03:00</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.5</priority>
@@ -312,6 +318,24 @@
       <priority>0.5</priority>
    </url>
    <url>
+      <loc>http://schema.liquid-technologies.com/LibraryDocs/firstname.html</loc>
+      <lastmod>2021-03-19+03:00</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.5</priority>
+   </url>
+   <url>
+      <loc>http://schema.liquid-technologies.com/LibraryDocs/lastname.html</loc>
+      <lastmod>2021-03-19+03:00</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.5</priority>
+   </url>
+   <url>
+      <loc>http://schema.liquid-technologies.com/LibraryDocs/middlename.html</loc>
+      <lastmod>2021-03-19+03:00</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.5</priority>
+   </url>
+   <url>
       <loc>http://schema.liquid-technologies.com/LibraryDocs/completedat1.html</loc>
       <lastmod>2021-03-19+03:00</lastmod>
       <changefreq>monthly</changefreq>
@@ -366,7 +390,7 @@
       <priority>0.5</priority>
    </url>
    <url>
-      <loc>http://schema.liquid-technologies.com/LibraryDocs/name.html</loc>
+      <loc>http://schema.liquid-technologies.com/LibraryDocs/name5.html</loc>
       <lastmod>2021-03-19+03:00</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.5</priority>
@@ -480,19 +504,19 @@
       <priority>0.5</priority>
    </url>
    <url>
+      <loc>http://schema.liquid-technologies.com/LibraryDocs/costexclvat.html</loc>
+      <lastmod>2021-03-19+03:00</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.5</priority>
+   </url>
+   <url>
+      <loc>http://schema.liquid-technologies.com/LibraryDocs/costincvat.html</loc>
+      <lastmod>2021-03-19+03:00</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.5</priority>
+   </url>
+   <url>
       <loc>http://schema.liquid-technologies.com/LibraryDocs/currency.html</loc>
-      <lastmod>2021-03-19+03:00</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.5</priority>
-   </url>
-   <url>
-      <loc>http://schema.liquid-technologies.com/LibraryDocs/total.html</loc>
-      <lastmod>2021-03-19+03:00</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.5</priority>
-   </url>
-   <url>
-      <loc>http://schema.liquid-technologies.com/LibraryDocs/totalnovat.html</loc>
       <lastmod>2021-03-19+03:00</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.5</priority>

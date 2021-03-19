@@ -30,16 +30,24 @@
                <td><pre><code>
 &lt;!--Created with Liquid Studio 2021 (https://www.liquid-technologies.com)--&gt;
 &lt;xs:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;
+    &lt;xs:complexType name="name"&gt;
+        &lt;xs:all&gt;
+            &lt;xs:element name="russian" type="xs:string" /&gt;
+            &lt;xs:element name="english" type="xs:string" /&gt;
+        &lt;/xs:all&gt;
+    &lt;/xs:complexType&gt;
     &lt;xs:complexType name="city"&gt;
         &lt;xs:all&gt;
             &lt;xs:element name="id" type="xs:unsignedInt" /&gt;
             &lt;xs:element name="code" type="xs:string" /&gt;
+            &lt;xs:element name="name" type="name" /&gt;
         &lt;/xs:all&gt;
     &lt;/xs:complexType&gt;
     &lt;xs:complexType name="airport"&gt;
         &lt;xs:all&gt;
             &lt;xs:element name="id" type="xs:unsignedInt" /&gt;
             &lt;xs:element name="code" type="xs:string" /&gt;
+            &lt;xs:element name="name" type="name" /&gt;
             &lt;xs:element name="city" type="city" /&gt;
         &lt;/xs:all&gt;
     &lt;/xs:complexType&gt;
@@ -51,6 +59,7 @@
     &lt;xs:complexType name="railwayStationRef"&gt;
         &lt;xs:sequence&gt;
             &lt;xs:element name="id" type="xs:unsignedInt" /&gt;
+            &lt;xs:element name="name" type="name" /&gt;
         &lt;/xs:sequence&gt;
     &lt;/xs:complexType&gt;
     &lt;xs:complexType name="aeroexpressStationRef"&gt;
@@ -122,6 +131,9 @@
                                                             &lt;xs:element name="authorizer" minOccurs="1" maxOccurs="unbounded"&gt;
                                                                 &lt;xs:complexType&gt;
                                                                     &lt;xs:sequence&gt;
+                                                                        &lt;xs:element name="firstName" type="name" /&gt;
+                                                                        &lt;xs:element name="lastName" type="name" /&gt;
+                                                                        &lt;xs:element name="middleName" type="name" /&gt;
                                                                         &lt;xs:element name="accountEmailAddress" type="xs:string" /&gt;
                                                                     &lt;/xs:sequence&gt;
                                                                 &lt;/xs:complexType&gt;
@@ -252,7 +264,7 @@
                                             &lt;xs:sequence&gt;
                                                 &lt;xs:element name="file" minOccurs="1" maxOccurs="unbounded" nillable="false"&gt;
                                                     &lt;xs:complexType&gt;
-                                                        &lt;xs:all minOccurs="0" maxOccurs="1"&gt;
+                                                        &lt;xs:all&gt;
                                                             &lt;xs:element name="name" type="xs:string" /&gt;
                                                             &lt;xs:element name="link" type="xs:string" /&gt;
                                                         &lt;/xs:all&gt;
@@ -293,12 +305,12 @@
             &lt;xs:element name="tariff"&gt;
                 &lt;xs:complexType&gt;
                     &lt;xs:sequence&gt;
-                        &lt;xs:element name="total" type="xs:decimal"&gt;
+                        &lt;xs:element name="costIncVat" type="xs:decimal"&gt;
                             &lt;xs:annotation&gt;
                                 &lt;xs:documentation&gt;Сумма с НДС&lt;/xs:documentation&gt;
                             &lt;/xs:annotation&gt;
                         &lt;/xs:element&gt;
-                        &lt;xs:element name="totalNoVat" type="xs:decimal"&gt;
+                        &lt;xs:element name="costExclVat" type="xs:decimal"&gt;
                             &lt;xs:annotation&gt;
                                 &lt;xs:documentation&gt;Сумма без НДС&lt;/xs:documentation&gt;
                             &lt;/xs:annotation&gt;
@@ -326,32 +338,16 @@
                 &lt;xs:element name="avia"&gt;
                     &lt;xs:complexType&gt;
                         &lt;xs:sequence&gt;
-                            &lt;xs:element name="legs"&gt;
+                            &lt;xs:element name="segments"&gt;
                                 &lt;xs:complexType&gt;
                                     &lt;xs:sequence&gt;
-                                        &lt;xs:element name="leg" minOccurs="1" maxOccurs="unbounded"&gt;
+                                        &lt;xs:element name="segment" minOccurs="1" maxOccurs="unbounded"&gt;
                                             &lt;xs:complexType&gt;
                                                 &lt;xs:sequence&gt;
                                                     &lt;xs:element name="departureAt" type="xs:dateTime" /&gt;
                                                     &lt;xs:element name="departureFrom" type="airportRef" /&gt;
                                                     &lt;xs:element name="arrivalAt" type="xs:dateTime" /&gt;
                                                     &lt;xs:element name="arrivalTo" type="airportRef" /&gt;
-                                                    &lt;xs:element name="segments"&gt;
-                                                        &lt;xs:complexType&gt;
-                                                            &lt;xs:sequence&gt;
-                                                                &lt;xs:element name="segment" minOccurs="1" maxOccurs="unbounded"&gt;
-                                                                    &lt;xs:complexType&gt;
-                                                                        &lt;xs:sequence&gt;
-                                                                            &lt;xs:element name="departureAt" type="xs:dateTime" /&gt;
-                                                                            &lt;xs:element name="departureFrom" type="airportRef" /&gt;
-                                                                            &lt;xs:element name="arrivalAt" type="xs:dateTime" /&gt;
-                                                                            &lt;xs:element name="arrivalTo" type="airportRef" /&gt;
-                                                                        &lt;/xs:sequence&gt;
-                                                                    &lt;/xs:complexType&gt;
-                                                                &lt;/xs:element&gt;
-                                                            &lt;/xs:sequence&gt;
-                                                        &lt;/xs:complexType&gt;
-                                                    &lt;/xs:element&gt;
                                                 &lt;/xs:sequence&gt;
                                             &lt;/xs:complexType&gt;
                                         &lt;/xs:element&gt;
@@ -379,6 +375,7 @@
                                     &lt;/xs:sequence&gt;
                                 &lt;/xs:complexType&gt;
                             &lt;/xs:element&gt;
+                            &lt;xs:element name="name" type="name" /&gt;
                         &lt;/xs:sequence&gt;
                     &lt;/xs:complexType&gt;
                 &lt;/xs:element&gt;
@@ -434,6 +431,7 @@
                      <li><a href="airport.html">airport</a></li>
                      <li><a href="airportref.html">airportRef</a></li>
                      <li><a href="city1.html">city</a></li>
+                     <li><a href="name2.html">name</a></li>
                      <li><a href="railwaystationref.html">railwayStationRef</a></li>
                      <li><a href="report.html">report</a></li>
                      <li><a href="service1.html">service</a></li>

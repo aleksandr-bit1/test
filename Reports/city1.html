@@ -40,6 +40,7 @@
             </tr>
             <tr id="xsdDiagram_body_id">
                <td><map name="DiagramMap" id="DiagramMap">
+                     <area shape="rect" coords="156,65,298,90" href="name1.html" alt="Drilldown into name"></area>
                      <area shape="rect" coords="156,33,298,58" href="code1.html" alt="Drilldown into code"></area>
                      <area shape="rect" coords="156,1,316,26" href="id2.html" alt="Drilldown into id"></area></map><img src="images/city1.png" border="0" alt="XSD Diagram of city" usemap="#DiagramMap"></img></td>
             </tr>
@@ -56,6 +57,7 @@
     &lt;xs:all&gt;
         &lt;xs:element name="id" type="xs:unsignedInt" /&gt;
         &lt;xs:element name="code" type="xs:string" /&gt;
+        &lt;xs:element name="name" type="name" /&gt;
     &lt;/xs:all&gt;
 &lt;/xs:complexType&gt;</code></pre></td>
             </tr>
@@ -85,6 +87,12 @@
                      <tr>
                         <td class="first">code</td>
                         <td><a href="code1.html">code</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">name</td>
+                        <td><a href="name1.html">name</a></td>
                         <td class="mid">(1)</td>
                         <td class="last">(1)</td>
                      </tr>

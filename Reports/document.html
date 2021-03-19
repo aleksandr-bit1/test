@@ -48,7 +48,12 @@
             </tr>
             <tr id="xsdDiagram_body_id">
                <td><map name="DiagramMap" id="DiagramMap">
-                     <area shape="rect" coords="182,180,267,205" href="files.html" alt="Drilldown into files"></area>
+                     <area shape="rect" coords="510,306,652,331" href="link.html" alt="Drilldown into link"></area>
+                     <area shape="rect" coords="510,274,652,299" href="name5.html" alt="Drilldown into name"></area>
+                     <area shape="rect" coords="465,242,628,267" href="contenttype.html" alt="Drilldown into contentType"></area>
+                     <area shape="rect" coords="465,180,610,235" href="language.html" alt="Drilldown into language"></area>
+                     <area shape="rect" coords="355,233,440,277" href="file.html" alt="Drilldown into file"></area>
+                     <area shape="rect" coords="182,243,267,268" href="files.html" alt="Drilldown into files"></area>
                      <area shape="rect" coords="182,129,350,173" href="ticketnumber.html" alt="Drilldown into ticketNumber"></area>
                      <area shape="rect" coords="137,1,301,122" href="type2.html" alt="Drilldown into type"></area></map><img src="images/document.png" border="0" alt="XSD Diagram of document" usemap="#DiagramMap"></img></td>
             </tr>
@@ -74,7 +79,7 @@
                     &lt;xs:sequence&gt;
                         &lt;xs:element name="file" minOccurs="1" maxOccurs="unbounded" nillable="false"&gt;
                             &lt;xs:complexType&gt;
-                                &lt;xs:all minOccurs="0" maxOccurs="1"&gt;
+                                &lt;xs:all&gt;
                                     &lt;xs:element name="name" type="xs:string" /&gt;
                                     &lt;xs:element name="link" type="xs:string" /&gt;
                                 &lt;/xs:all&gt;

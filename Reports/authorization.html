@@ -48,7 +48,15 @@
             </tr>
             <tr id="xsdDiagram_body_id">
                <td><map name="DiagramMap" id="DiagramMap">
-                     <area shape="rect" coords="199,52,284,77" href="stages.html" alt="Drilldown into stages"></area>
+                     <area shape="rect" coords="886,199,1101,224" href="accountemailaddress.html" alt="Drilldown into accountEmailAddress"></area>
+                     <area shape="rect" coords="886,167,1049,192" href="middlename.html" alt="Drilldown into middleName"></area>
+                     <area shape="rect" coords="886,135,1032,160" href="lastname.html" alt="Drilldown into lastName"></area>
+                     <area shape="rect" coords="886,103,1034,128" href="firstname.html" alt="Drilldown into firstName"></area>
+                     <area shape="rect" coords="723,152,816,177" href="authorizer.html" alt="Drilldown into authorizer"></area>
+                     <area shape="rect" coords="536,152,635,177" href="authorizers.html" alt="Drilldown into authorizers"></area>
+                     <area shape="rect" coords="536,52,749,96" href="completedat1.html" alt="Drilldown into completedAt"></area>
+                     <area shape="rect" coords="372,97,466,141" href="stage.html" alt="Drilldown into stage"></area>
+                     <area shape="rect" coords="199,107,284,132" href="stages.html" alt="Drilldown into stages"></area>
                      <area shape="rect" coords="199,1,383,45" href="completedat.html" alt="Drilldown into completedAt"></area></map><img src="images/authorization.png" border="0" alt="XSD Diagram of authorization" usemap="#DiagramMap"></img></td>
             </tr>
          </tbody>
@@ -88,6 +96,9 @@
                                                 &lt;xs:element name="authorizer" minOccurs="1" maxOccurs="unbounded"&gt;
                                                     &lt;xs:complexType&gt;
                                                         &lt;xs:sequence&gt;
+                                                            &lt;xs:element name="firstName" type="name" /&gt;
+                                                            &lt;xs:element name="lastName" type="name" /&gt;
+                                                            &lt;xs:element name="middleName" type="name" /&gt;
                                                             &lt;xs:element name="accountEmailAddress" type="xs:string" /&gt;
                                                         &lt;/xs:sequence&gt;
                                                     &lt;/xs:complexType&gt;

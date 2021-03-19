@@ -48,7 +48,11 @@
             </tr>
             <tr id="xsdDiagram_body_id">
                <td><map name="DiagramMap" id="DiagramMap">
-                     <area shape="rect" coords="174,1,259,45" href="file.html" alt="Drilldown into file"></area></map><img src="images/files.png" border="0" alt="XSD Diagram of files" usemap="#DiagramMap"></img></td>
+                     <area shape="rect" coords="329,127,471,152" href="link.html" alt="Drilldown into link"></area>
+                     <area shape="rect" coords="329,95,471,120" href="name5.html" alt="Drilldown into name"></area>
+                     <area shape="rect" coords="284,63,447,88" href="contenttype.html" alt="Drilldown into contentType"></area>
+                     <area shape="rect" coords="284,1,429,56" href="language.html" alt="Drilldown into language"></area>
+                     <area shape="rect" coords="174,54,259,98" href="file.html" alt="Drilldown into file"></area></map><img src="images/files.png" border="0" alt="XSD Diagram of files" usemap="#DiagramMap"></img></td>
             </tr>
          </tbody>
       </table>
@@ -64,7 +68,7 @@
         &lt;xs:sequence&gt;
             &lt;xs:element name="file" minOccurs="1" maxOccurs="unbounded" nillable="false"&gt;
                 &lt;xs:complexType&gt;
-                    &lt;xs:all minOccurs="0" maxOccurs="1"&gt;
+                    &lt;xs:all&gt;
                         &lt;xs:element name="name" type="xs:string" /&gt;
                         &lt;xs:element name="link" type="xs:string" /&gt;
                     &lt;/xs:all&gt;

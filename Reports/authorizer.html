@@ -48,7 +48,10 @@
             </tr>
             <tr id="xsdDiagram_body_id">
                <td><map name="DiagramMap" id="DiagramMap">
-                     <area shape="rect" coords="182,1,397,26" href="accountemailaddress.html" alt="Drilldown into accountEmailAddress"></area></map><img src="images/authorizer.png" border="0" alt="XSD Diagram of authorizer" usemap="#DiagramMap"></img></td>
+                     <area shape="rect" coords="182,97,397,122" href="accountemailaddress.html" alt="Drilldown into accountEmailAddress"></area>
+                     <area shape="rect" coords="182,65,345,90" href="middlename.html" alt="Drilldown into middleName"></area>
+                     <area shape="rect" coords="182,33,328,58" href="lastname.html" alt="Drilldown into lastName"></area>
+                     <area shape="rect" coords="182,1,330,26" href="firstname.html" alt="Drilldown into firstName"></area></map><img src="images/authorizer.png" border="0" alt="XSD Diagram of authorizer" usemap="#DiagramMap"></img></td>
             </tr>
          </tbody>
       </table>
@@ -62,6 +65,9 @@
                <td><pre><code>&lt;xs:element name="authorizer" minOccurs="1" maxOccurs="unbounded"&gt;
     &lt;xs:complexType&gt;
         &lt;xs:sequence&gt;
+            &lt;xs:element name="firstName" type="name" /&gt;
+            &lt;xs:element name="lastName" type="name" /&gt;
+            &lt;xs:element name="middleName" type="name" /&gt;
             &lt;xs:element name="accountEmailAddress" type="xs:string" /&gt;
         &lt;/xs:sequence&gt;
     &lt;/xs:complexType&gt;
@@ -83,6 +89,24 @@
                         <td>Type</td>
                         <td class="mid">Min Occurs</td>
                         <td class="last">Max Occurs</td>
+                     </tr>
+                     <tr>
+                        <td class="first">firstName</td>
+                        <td><a href="firstname.html">firstName</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">lastName</td>
+                        <td><a href="lastname.html">lastName</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">middleName</td>
+                        <td><a href="middlename.html">middleName</a></td>
+                        <td class="mid">(1)</td>
+                        <td class="last">(1)</td>
                      </tr>
                      <tr>
                         <td class="first">accountEmailAddress</td>

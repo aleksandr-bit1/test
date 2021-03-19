@@ -49,8 +49,8 @@
             <tr id="xsdDiagram_body_id">
                <td><map name="DiagramMap" id="DiagramMap">
                      <area shape="rect" coords="156,104,299,148" href="currency.html" alt="Drilldown into currency"></area>
-                     <area shape="rect" coords="156,52,308,96" href="totalnovat.html" alt="Drilldown into totalNoVat"></area>
-                     <area shape="rect" coords="156,1,298,45" href="total.html" alt="Drilldown into total"></area></map><img src="images/tariff.png" border="0" alt="XSD Diagram of tariff" usemap="#DiagramMap"></img></td>
+                     <area shape="rect" coords="156,52,316,96" href="costexclvat.html" alt="Drilldown into costExclVat"></area>
+                     <area shape="rect" coords="156,1,309,45" href="costincvat.html" alt="Drilldown into costIncVat"></area></map><img src="images/tariff.png" border="0" alt="XSD Diagram of tariff" usemap="#DiagramMap"></img></td>
             </tr>
          </tbody>
       </table>
@@ -64,12 +64,12 @@
                <td><pre><code>&lt;xs:element name="tariff"&gt;
     &lt;xs:complexType&gt;
         &lt;xs:sequence&gt;
-            &lt;xs:element name="total" type="xs:decimal"&gt;
+            &lt;xs:element name="costIncVat" type="xs:decimal"&gt;
                 &lt;xs:annotation&gt;
                     &lt;xs:documentation&gt;Сумма с НДС&lt;/xs:documentation&gt;
                 &lt;/xs:annotation&gt;
             &lt;/xs:element&gt;
-            &lt;xs:element name="totalNoVat" type="xs:decimal"&gt;
+            &lt;xs:element name="costExclVat" type="xs:decimal"&gt;
                 &lt;xs:annotation&gt;
                     &lt;xs:documentation&gt;Сумма без НДС&lt;/xs:documentation&gt;
                 &lt;/xs:annotation&gt;
@@ -101,14 +101,14 @@
                         <td class="last">Max Occurs</td>
                      </tr>
                      <tr>
-                        <td class="first">total</td>
-                        <td><a href="total.html">total</a></td>
+                        <td class="first">costIncVat</td>
+                        <td><a href="costincvat.html">costIncVat</a></td>
                         <td class="mid">(1)</td>
                         <td class="last">(1)</td>
                      </tr>
                      <tr>
-                        <td class="first">totalNoVat</td>
-                        <td><a href="totalnovat.html">totalNoVat</a></td>
+                        <td class="first">costExclVat</td>
+                        <td><a href="costexclvat.html">costExclVat</a></td>
                         <td class="mid">(1)</td>
                         <td class="last">(1)</td>
                      </tr>

@@ -48,7 +48,11 @@
             </tr>
             <tr id="xsdDiagram_body_id">
                <td><map name="DiagramMap" id="DiagramMap">
-                     <area shape="rect" coords="188,1,281,26" href="authorizer.html" alt="Drilldown into authorizer"></area></map><img src="images/authorizers.png" border="0" alt="XSD Diagram of authorizers" usemap="#DiagramMap"></img></td>
+                     <area shape="rect" coords="351,97,566,122" href="accountemailaddress.html" alt="Drilldown into accountEmailAddress"></area>
+                     <area shape="rect" coords="351,65,514,90" href="middlename.html" alt="Drilldown into middleName"></area>
+                     <area shape="rect" coords="351,33,497,58" href="lastname.html" alt="Drilldown into lastName"></area>
+                     <area shape="rect" coords="351,1,499,26" href="firstname.html" alt="Drilldown into firstName"></area>
+                     <area shape="rect" coords="188,50,281,75" href="authorizer.html" alt="Drilldown into authorizer"></area></map><img src="images/authorizers.png" border="0" alt="XSD Diagram of authorizers" usemap="#DiagramMap"></img></td>
             </tr>
          </tbody>
       </table>
@@ -65,6 +69,9 @@
             &lt;xs:element name="authorizer" minOccurs="1" maxOccurs="unbounded"&gt;
                 &lt;xs:complexType&gt;
                     &lt;xs:sequence&gt;
+                        &lt;xs:element name="firstName" type="name" /&gt;
+                        &lt;xs:element name="lastName" type="name" /&gt;
+                        &lt;xs:element name="middleName" type="name" /&gt;
                         &lt;xs:element name="accountEmailAddress" type="xs:string" /&gt;
                     &lt;/xs:sequence&gt;
                 &lt;/xs:complexType&gt;
