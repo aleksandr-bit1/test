@@ -9876,7 +9876,10 @@ components:
         - AlternativeNotSelected - не выбрана альтернатива  
         - BenchmarkTariff90Days - средняя стоимость билета по выбранному направлению за 90 дней  
         - AlternativeRailNotSelected - ЖД альтернатива не выбрана  
-        - RoundTripAlternativeRailNotSelected - ЖД альтернатива туда-обратно не выбрана
+        - RoundTripAlternativeRailNotSelected - ЖД альтернатива туда-обратно не выбрана  
+        - SubstitutionByRoundTripAlternativeService - услуга OW, парметры котрой использованы для объединения услуги OW и опции OW при предложении RT альтернативы  
+        - RecalculatedRoundTripSelected - выбрана альтернатива, без учета критерия выбранной стоимости, содерщащая опции подобранные пользователем 
+        - RecalculatedRoundTripNotSelected - не выбрана альтернатива, без учета критерия выбранной стоимости, содерщащая опции подобранные пользователем
       type: string
       enum:
         - Undefined
@@ -9901,6 +9904,9 @@ components:
         - BenchmarkTariff90Days
         - AlternativeRailNotSelected
         - RoundTripAlternativeRailNotSelected
+        - SubstitutionByRoundTripAlternativeService
+        - RecalculatedRoundTripSelected
+        - RecalculatedRoundTripNotSelected
     FlightStatus:
       description: Статус рейса
       type: string
