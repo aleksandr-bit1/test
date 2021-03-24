@@ -3,14 +3,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
    <head>
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
-      <title>Docs for schema item authorizer in X5 Report</title>
+      <title>Docs for schema item authorizer in Report</title>
       <!-- saved from url=(0014)about:internet -->
       <link rel="stylesheet" type="text/css" href="styles/site.css"></link><script type="text/javascript" src="scripts/jquery-1.4.1.min.js"></script><script type="text/javascript" src="scripts/highlight.pack.js"></script><script type="text/javascript" src="scripts/xmlstudio.js"></script><script type="text/javascript" src="scripts/jquery.cookie.js"></script></head>
    <body style="margin:10px"><script type="text/javascript">
          <!--
                             EnsureInFrame('Element', 'authorizer');
                         --></script><div class="pageheader">
-         Documentation for X5 Report
+         Documentation for Report
       </div>
       <table cellpadding="0" cellspacing="0" class="mainHelp2">
          <tbody>
@@ -28,7 +28,7 @@
             </tr>
             <tr>
                <td class="label" width="120px;"><b>MinOccurs</b></td>
-               <td>1</td>
+               <td>(1)</td>
             </tr>
             <tr>
                <td class="label" width="120px;"><b>MaxOccurs</b></td>
@@ -48,10 +48,19 @@
             </tr>
             <tr id="xsdDiagram_body_id">
                <td><map name="DiagramMap" id="DiagramMap">
-                     <area shape="rect" coords="182,97,397,122" href="accountemailaddress.html" alt="Drilldown into accountEmailAddress"></area>
-                     <area shape="rect" coords="182,65,345,90" href="middlename.html" alt="Drilldown into middleName"></area>
-                     <area shape="rect" coords="182,33,328,58" href="lastname.html" alt="Drilldown into lastName"></area>
-                     <area shape="rect" coords="182,1,330,26" href="firstname.html" alt="Drilldown into firstName"></area></map><img src="images/authorizer.png" border="0" alt="XSD Diagram of authorizer" usemap="#DiagramMap"></img></td>
+                     <area shape="rect" coords="182,305,397,330" href="accountemailaddress.html" alt="Drilldown into accountEmailAddress"></area>
+                     <area shape="rect" coords="435,262,577,287" href="english.html" alt="Drilldown into english"></area>
+                     <area shape="rect" coords="435,230,577,255" href="russian.html" alt="Drilldown into russian"></area>
+                     <area shape="rect" coords="370,205,585,299" href="name2.html" alt="Drilldown into name"></area>
+                     <area shape="rect" coords="182,239,345,264" href="middlename.html" alt="Drilldown into middleName"></area>
+                     <area shape="rect" coords="418,160,560,185" href="english.html" alt="Drilldown into english"></area>
+                     <area shape="rect" coords="418,128,560,153" href="russian.html" alt="Drilldown into russian"></area>
+                     <area shape="rect" coords="353,103,568,197" href="name2.html" alt="Drilldown into name"></area>
+                     <area shape="rect" coords="182,137,328,162" href="lastname.html" alt="Drilldown into lastName"></area>
+                     <area shape="rect" coords="420,59,562,84" href="english.html" alt="Drilldown into english"></area>
+                     <area shape="rect" coords="420,27,562,52" href="russian.html" alt="Drilldown into russian"></area>
+                     <area shape="rect" coords="355,2,570,96" href="name2.html" alt="Drilldown into name"></area>
+                     <area shape="rect" coords="182,36,330,61" href="firstname.html" alt="Drilldown into firstName"></area></map><img src="images/authorizer.png" border="0" alt="XSD Diagram of authorizer" usemap="#DiagramMap"></img></td>
             </tr>
          </tbody>
       </table>
@@ -62,7 +71,7 @@
                </td>
             </tr>
             <tr id="xsdCode_body_id">
-               <td><pre><code>&lt;xs:element name="authorizer" minOccurs="1" maxOccurs="unbounded"&gt;
+               <td><pre><code>&lt;xs:element name="authorizer" maxOccurs="unbounded"&gt;
     &lt;xs:complexType&gt;
         &lt;xs:sequence&gt;
             &lt;xs:element name="firstName" type="name" /&gt;
@@ -120,7 +129,7 @@
          </tbody>
       </table>
       <div class="pagefooter">
-         			Documentation for X5 Report<br/>
+         			Documentation for Report<br/>
          Generated using 
          <a href="https://www.liquid-technologies.com/" rel="nofollow">Liquid Studio 2021 - Developer Bundle (Trial) 19.0.3.10699</a></div>
    </body>

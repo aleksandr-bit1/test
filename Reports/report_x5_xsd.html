@@ -3,14 +3,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
    <head>
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
-      <title>Docs the schema report_x5.xsd in X5 Report</title>
+      <title>Docs the schema report_x5.xsd in Report</title>
       <!-- saved from url=(0014)about:internet -->
       <link href="styles/site.css" rel="stylesheet" type="text/css"></link><script type="text/javascript" src="scripts/jquery-1.4.1.min.js"></script><script type="text/javascript" src="scripts/highlight.pack.js"></script><script type="text/javascript" src="scripts/xmlstudio.js"></script><script type="text/javascript" src="scripts/jquery.cookie.js"></script></head>
    <body style="margin:10px"><script type="text/javascript">
          <!--
                             EnsureInFrame('Schema', 'report_x5_xsd');
                         --></script><div class="pageheader">
-         Documentation for X5 Report
+         Documentation for Report
       </div>
       <table cellpadding="0" cellspacing="0" class="mainHelp2">
          <tbody>
@@ -75,74 +75,62 @@
             &lt;/xs:simpleType&gt;
         &lt;/xs:attribute&gt;
     &lt;/xs:complexType&gt;
+    &lt;xs:simpleType name="executionStatus"&gt;
+        &lt;xs:restriction base="xs:string"&gt;
+            &lt;xs:enumeration value="Succeeded"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;Продажа&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+            &lt;/xs:enumeration&gt;
+            &lt;xs:enumeration value="Cancelled"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;Возврат&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+            &lt;/xs:enumeration&gt;
+            &lt;xs:enumeration value="Exchanged"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;Обмен&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+            &lt;/xs:enumeration&gt;
+        &lt;/xs:restriction&gt;
+    &lt;/xs:simpleType&gt;
     &lt;xs:complexType name="service"&gt;
         &lt;xs:sequence&gt;
-            &lt;xs:element name="number"&gt;
-                &lt;xs:complexType&gt;
-                    &lt;xs:sequence&gt;
-                        &lt;xs:element name="journeyNumber" type="xs:unsignedInt" nillable="true"&gt;
-                            &lt;xs:annotation&gt;
-                                &lt;xs:documentation&gt;Номер поездки&lt;/xs:documentation&gt;
-                            &lt;/xs:annotation&gt;
-                        &lt;/xs:element&gt;
-                        &lt;xs:element name="businessTripNumber" type="xs:unsignedInt" nillable="true"&gt;
-                            &lt;xs:annotation&gt;
-                                &lt;xs:documentation&gt;Номер командировки&lt;/xs:documentation&gt;
-                            &lt;/xs:annotation&gt;
-                        &lt;/xs:element&gt;
-                        &lt;xs:element name="orderNumber" type="xs:unsignedInt"&gt;
-                            &lt;xs:annotation&gt;
-                                &lt;xs:documentation&gt;Номер заказа&lt;/xs:documentation&gt;
-                            &lt;/xs:annotation&gt;
-                        &lt;/xs:element&gt;
-                        &lt;xs:element name="serviceNumber" type="xs:unsignedInt"&gt;
-                            &lt;xs:annotation&gt;
-                                &lt;xs:documentation&gt;Порядковый номер услуги&lt;/xs:documentation&gt;
-                            &lt;/xs:annotation&gt;
-                        &lt;/xs:element&gt;
-                    &lt;/xs:sequence&gt;
-                &lt;/xs:complexType&gt;
+            &lt;xs:element name="journeyNumber" type="xs:unsignedInt"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;Номер поездки&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
             &lt;/xs:element&gt;
-            &lt;xs:element name="authorization" minOccurs="1" maxOccurs="unbounded" nillable="true"&gt;
+            &lt;xs:element name="businessTripNumber" type="xs:unsignedInt"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;Номер командировки&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+            &lt;/xs:element&gt;
+            &lt;xs:element name="orderNumber" type="xs:unsignedInt"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;Номер заказа&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+            &lt;/xs:element&gt;
+            &lt;xs:element name="serviceNumber" type="xs:unsignedInt"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;Порядковый номер услуги&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+            &lt;/xs:element&gt;
+            &lt;xs:element name="tickets" nillable="true"&gt;
                 &lt;xs:complexType&gt;
                     &lt;xs:sequence&gt;
-                        &lt;xs:element name="completedAt" type="xs:dateTime"&gt;
-                            &lt;xs:annotation&gt;
-                                &lt;xs:documentation&gt;Дата и время завершения авторизации&lt;/xs:documentation&gt;
-                            &lt;/xs:annotation&gt;
-                        &lt;/xs:element&gt;
-                        &lt;xs:element name="stages"&gt;
+                        &lt;xs:element name="ticket" minOccurs="1" maxOccurs="unbounded"&gt;
                             &lt;xs:complexType&gt;
                                 &lt;xs:sequence&gt;
-                                    &lt;xs:element name="stage" maxOccurs="unbounded"&gt;
+                                    &lt;xs:element name="number" type="xs:string"&gt;
                                         &lt;xs:annotation&gt;
-                                            &lt;xs:documentation&gt;Этап авторизации&lt;/xs:documentation&gt;
+                                            &lt;xs:documentation&gt;Номер документа&lt;/xs:documentation&gt;
                                         &lt;/xs:annotation&gt;
-                                        &lt;xs:complexType&gt;
-                                            &lt;xs:sequence&gt;
-                                                &lt;xs:element name="completedAt" type="xs:dateTime"&gt;
-                                                    &lt;xs:annotation&gt;
-                                                        &lt;xs:documentation&gt;Дата и время завершения авторизации этапа&lt;/xs:documentation&gt;
-                                                    &lt;/xs:annotation&gt;
-                                                &lt;/xs:element&gt;
-                                                &lt;xs:element name="authorizers"&gt;
-                                                    &lt;xs:complexType&gt;
-                                                        &lt;xs:sequence&gt;
-                                                            &lt;xs:element name="authorizer" minOccurs="1" maxOccurs="unbounded"&gt;
-                                                                &lt;xs:complexType&gt;
-                                                                    &lt;xs:sequence&gt;
-                                                                        &lt;xs:element name="firstName" type="name" /&gt;
-                                                                        &lt;xs:element name="lastName" type="name" /&gt;
-                                                                        &lt;xs:element name="middleName" type="name" /&gt;
-                                                                        &lt;xs:element name="accountEmailAddress" type="xs:string" /&gt;
-                                                                    &lt;/xs:sequence&gt;
-                                                                &lt;/xs:complexType&gt;
-                                                            &lt;/xs:element&gt;
-                                                        &lt;/xs:sequence&gt;
-                                                    &lt;/xs:complexType&gt;
-                                                &lt;/xs:element&gt;
-                                            &lt;/xs:sequence&gt;
-                                        &lt;/xs:complexType&gt;
+                                    &lt;/xs:element&gt;
+                                    &lt;xs:element name="exchangedNumber" type="xs:string" nillable="true"&gt;
+                                        &lt;xs:annotation&gt;
+                                            &lt;xs:documentation&gt;Номер предыдущего документа (авиабилета, принятого в обмен)&lt;/xs:documentation&gt;
+                                        &lt;/xs:annotation&gt;
                                     &lt;/xs:element&gt;
                                 &lt;/xs:sequence&gt;
                             &lt;/xs:complexType&gt;
@@ -150,40 +138,75 @@
                     &lt;/xs:sequence&gt;
                 &lt;/xs:complexType&gt;
             &lt;/xs:element&gt;
-            &lt;xs:element name="state"&gt;
+            &lt;xs:element name="executionStatus" type="executionStatus"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;Статус оформления - продажа, возврат, обмен&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+            &lt;/xs:element&gt;
+            &lt;xs:element name="dateIss" type="xs:dateTime"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;Дата выполнения транзакции (продажи документа)&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+            &lt;/xs:element&gt;
+            &lt;xs:element name="costInclVat" type="xs:decimal"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;Сумма с НДС&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+            &lt;/xs:element&gt;
+            &lt;xs:element name="costExclVat" type="xs:decimal"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;Сумма без НДС&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+            &lt;/xs:element&gt;
+            &lt;xs:element name="currency" type="xs:string"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;Код валюты&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+            &lt;/xs:element&gt;
+            &lt;xs:element name="customParameters"&gt;
                 &lt;xs:complexType&gt;
-                    &lt;xs:all&gt;
-                        &lt;xs:element name="execution"&gt;
+                    &lt;xs:sequence&gt;
+                        &lt;xs:element name="serviceCode" type="xs:string"&gt;
+                            &lt;xs:annotation&gt;
+                                &lt;xs:documentation&gt;Код услуги&lt;/xs:documentation&gt;
+                            &lt;/xs:annotation&gt;
+                        &lt;/xs:element&gt;
+                    &lt;/xs:sequence&gt;
+                &lt;/xs:complexType&gt;
+            &lt;/xs:element&gt;
+            &lt;xs:element name="authorization" nillable="true"&gt;
+                &lt;xs:complexType&gt;
+                    &lt;xs:sequence&gt;
+                        &lt;xs:element name="completedAt" type="xs:dateTime"&gt;
+                            &lt;xs:annotation&gt;
+                                &lt;xs:documentation&gt;Дата и время завершения авторизации&lt;/xs:documentation&gt;
+                            &lt;/xs:annotation&gt;
+                        &lt;/xs:element&gt;
+                        &lt;xs:element name="stage" maxOccurs="unbounded"&gt;
+                            &lt;xs:annotation&gt;
+                                &lt;xs:documentation&gt;Этап авторизации&lt;/xs:documentation&gt;
+                            &lt;/xs:annotation&gt;
                             &lt;xs:complexType&gt;
-                                &lt;xs:all&gt;
-                                    &lt;xs:element name="status"&gt;
+                                &lt;xs:sequence&gt;
+                                    &lt;xs:element name="completedAt" type="xs:dateTime"&gt;
                                         &lt;xs:annotation&gt;
-                                            &lt;xs:documentation&gt;Статус оформления - продажа, возврат, обмен&lt;/xs:documentation&gt;
+                                            &lt;xs:documentation&gt;Дата и время завершения авторизации этапа&lt;/xs:documentation&gt;
                                         &lt;/xs:annotation&gt;
-                                        &lt;xs:simpleType&gt;
-                                            &lt;xs:restriction base="xs:string"&gt;
-                                                &lt;xs:enumeration value="Succeeded"&gt;
-                                                    &lt;xs:annotation&gt;
-                                                        &lt;xs:documentation&gt;Продажа&lt;/xs:documentation&gt;
-                                                    &lt;/xs:annotation&gt;
-                                                &lt;/xs:enumeration&gt;
-                                                &lt;xs:enumeration value="Cancelled"&gt;
-                                                    &lt;xs:annotation&gt;
-                                                        &lt;xs:documentation&gt;Возврат&lt;/xs:documentation&gt;
-                                                    &lt;/xs:annotation&gt;
-                                                &lt;/xs:enumeration&gt;
-                                                &lt;xs:enumeration value="Exchanged"&gt;
-                                                    &lt;xs:annotation&gt;
-                                                        &lt;xs:documentation&gt;Обмен&lt;/xs:documentation&gt;
-                                                    &lt;/xs:annotation&gt;
-                                                &lt;/xs:enumeration&gt;
-                                            &lt;/xs:restriction&gt;
-                                        &lt;/xs:simpleType&gt;
                                     &lt;/xs:element&gt;
-                                &lt;/xs:all&gt;
+                                    &lt;xs:element name="authorizer" maxOccurs="unbounded"&gt;
+                                        &lt;xs:complexType&gt;
+                                            &lt;xs:sequence&gt;
+                                                &lt;xs:element name="firstName" type="name" /&gt;
+                                                &lt;xs:element name="lastName" type="name" /&gt;
+                                                &lt;xs:element name="middleName" type="name" /&gt;
+                                                &lt;xs:element name="accountEmailAddress" type="xs:string" /&gt;
+                                            &lt;/xs:sequence&gt;
+                                        &lt;/xs:complexType&gt;
+                                    &lt;/xs:element&gt;
+                                &lt;/xs:sequence&gt;
                             &lt;/xs:complexType&gt;
                         &lt;/xs:element&gt;
-                    &lt;/xs:all&gt;
+                    &lt;/xs:sequence&gt;
                 &lt;/xs:complexType&gt;
             &lt;/xs:element&gt;
             &lt;xs:element name="startsAt" type="xs:dateTime" nillable="true"&gt;
@@ -196,62 +219,10 @@
                     &lt;xs:documentation&gt;Дата окончания услуги&lt;/xs:documentation&gt;
                 &lt;/xs:annotation&gt;
             &lt;/xs:element&gt;
-            &lt;xs:element name="analytics" nillable="true"&gt;
-                &lt;xs:complexType&gt;
-                    &lt;xs:sequence&gt;
-                        &lt;xs:element name="isTravelPolicyCompliant" type="xs:boolean" nillable="true"&gt;
-                            &lt;xs:annotation&gt;
-                                &lt;xs:documentation&gt;Признак соответствия TravelPolicy&lt;/xs:documentation&gt;
-                            &lt;/xs:annotation&gt;
-                        &lt;/xs:element&gt;
-                    &lt;/xs:sequence&gt;
-                &lt;/xs:complexType&gt;
-            &lt;/xs:element&gt;
-            &lt;xs:element name="customParameters"&gt;
-                &lt;xs:annotation&gt;
-                    &lt;xs:documentation&gt;Данные клиента&lt;/xs:documentation&gt;
-                &lt;/xs:annotation&gt;
-                &lt;xs:complexType&gt;
-                    &lt;xs:sequence&gt;
-                        &lt;xs:element name="serviceCode" type="xs:string"&gt;
-                            &lt;xs:annotation&gt;
-                                &lt;xs:documentation&gt;Код услуги&lt;/xs:documentation&gt;
-                            &lt;/xs:annotation&gt;
-                        &lt;/xs:element&gt;
-                    &lt;/xs:sequence&gt;
-                &lt;/xs:complexType&gt;
-            &lt;/xs:element&gt;
-            &lt;xs:element name="dateIss" type="xs:dateTime"&gt;
-                &lt;xs:annotation&gt;
-                    &lt;xs:documentation&gt;Дата выполнения транзакции (продажи документа)&lt;/xs:documentation&gt;
-                &lt;/xs:annotation&gt;
-            &lt;/xs:element&gt;
-            &lt;xs:element name="tickets" nillable="true"&gt;
-                &lt;xs:complexType&gt;
-                    &lt;xs:sequence&gt;
-                        &lt;xs:element name="ticket" minOccurs="0" maxOccurs="unbounded"&gt;
-                            &lt;xs:complexType&gt;
-                                &lt;xs:sequence&gt;
-                                    &lt;xs:element name="number" type="xs:string"&gt;
-                                        &lt;xs:annotation&gt;
-                                            &lt;xs:documentation&gt;Номер документа&lt;/xs:documentation&gt;
-                                        &lt;/xs:annotation&gt;
-                                    &lt;/xs:element&gt;
-                                    &lt;xs:element name="exchangedNumber" type="xs:string"&gt;
-                                        &lt;xs:annotation&gt;
-                                            &lt;xs:documentation&gt;Номер предыдущего документа (авиабилета, принятого в обмен)&lt;/xs:documentation&gt;
-                                        &lt;/xs:annotation&gt;
-                                    &lt;/xs:element&gt;
-                                &lt;/xs:sequence&gt;
-                            &lt;/xs:complexType&gt;
-                        &lt;/xs:element&gt;
-                    &lt;/xs:sequence&gt;
-                &lt;/xs:complexType&gt;
-            &lt;/xs:element&gt;
             &lt;xs:element name="documents" nillable="true"&gt;
                 &lt;xs:complexType&gt;
                     &lt;xs:sequence&gt;
-                        &lt;xs:element name="document" minOccurs="0" maxOccurs="unbounded"&gt;
+                        &lt;xs:element name="document" minOccurs="1" maxOccurs="unbounded"&gt;
                             &lt;xs:complexType&gt;
                                 &lt;xs:all&gt;
                                     &lt;xs:element name="ticketNumber" type="xs:string"&gt;
@@ -262,7 +233,7 @@
                                     &lt;xs:element name="files"&gt;
                                         &lt;xs:complexType&gt;
                                             &lt;xs:sequence&gt;
-                                                &lt;xs:element name="file" minOccurs="1" maxOccurs="unbounded" nillable="false"&gt;
+                                                &lt;xs:element name="file" minOccurs="1" maxOccurs="unbounded"&gt;
                                                     &lt;xs:complexType&gt;
                                                         &lt;xs:all&gt;
                                                             &lt;xs:element name="name" type="xs:string" /&gt;
@@ -292,33 +263,11 @@
                                             &lt;xs:enumeration value="ticket" /&gt;
                                             &lt;xs:enumeration value="voucher" /&gt;
                                             &lt;xs:enumeration value="booking-confirmation" /&gt;
-                                            &lt;xs:enumeration value="invoice" /&gt;
                                             &lt;xs:enumeration value="reservation" /&gt;
                                         &lt;/xs:restriction&gt;
                                     &lt;/xs:simpleType&gt;
                                 &lt;/xs:attribute&gt;
                             &lt;/xs:complexType&gt;
-                        &lt;/xs:element&gt;
-                    &lt;/xs:sequence&gt;
-                &lt;/xs:complexType&gt;
-            &lt;/xs:element&gt;
-            &lt;xs:element name="tariff"&gt;
-                &lt;xs:complexType&gt;
-                    &lt;xs:sequence&gt;
-                        &lt;xs:element name="costIncVat" type="xs:decimal"&gt;
-                            &lt;xs:annotation&gt;
-                                &lt;xs:documentation&gt;Сумма с НДС&lt;/xs:documentation&gt;
-                            &lt;/xs:annotation&gt;
-                        &lt;/xs:element&gt;
-                        &lt;xs:element name="costExclVat" type="xs:decimal"&gt;
-                            &lt;xs:annotation&gt;
-                                &lt;xs:documentation&gt;Сумма без НДС&lt;/xs:documentation&gt;
-                            &lt;/xs:annotation&gt;
-                        &lt;/xs:element&gt;
-                        &lt;xs:element name="currency" type="xs:string"&gt;
-                            &lt;xs:annotation&gt;
-                                &lt;xs:documentation&gt;Код валюты&lt;/xs:documentation&gt;
-                            &lt;/xs:annotation&gt;
                         &lt;/xs:element&gt;
                     &lt;/xs:sequence&gt;
                 &lt;/xs:complexType&gt;
@@ -358,7 +307,7 @@
                     &lt;/xs:complexType&gt;
                 &lt;/xs:element&gt;
                 &lt;xs:element name="rail"&gt;
-                    &lt;xs:complexType mixed="true"&gt;
+                    &lt;xs:complexType&gt;
                         &lt;xs:sequence&gt;
                             &lt;xs:element name="departureFrom" type="railwayStationRef" /&gt;
                             &lt;xs:element name="arrivalTo" type="railwayStationRef" /&gt;
@@ -402,9 +351,9 @@
                 &lt;/xs:restriction&gt;
             &lt;/xs:simpleType&gt;
         &lt;/xs:attribute&gt;
-        &lt;xs:attribute name="isOffline" type="xs:boolean" use="required"&gt;
+        &lt;xs:attribute name="isTravelPolicyCompliant" type="xs:boolean" use="required"&gt;
             &lt;xs:annotation&gt;
-                &lt;xs:documentation&gt;Признак оффлайн услуги&lt;/xs:documentation&gt;
+                &lt;xs:documentation&gt;Признак того, что услуга в политике&lt;/xs:documentation&gt;
             &lt;/xs:annotation&gt;
         &lt;/xs:attribute&gt;
     &lt;/xs:complexType&gt;
@@ -455,8 +404,23 @@
             </tr>
          </tbody>
       </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="SimpleType" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>SimpleTypes:</b></td>
+            </tr>
+            <tr id="SimpleType_body_id">
+               <td width="120px;"></td>
+               <td>
+                  <ul>
+                     <li><a href="executionstatus1.html">executionStatus</a></li>
+                  </ul>
+               </td>
+            </tr>
+         </tbody>
+      </table>
       <div class="pagefooter">
-         			Documentation for X5 Report<br/>
+         			Documentation for Report<br/>
          Generated using 
          <a href="https://www.liquid-technologies.com/">Liquid Studio 2021 - Developer Bundle (Trial) 19.0.3.10699</a></div>
    </body>
