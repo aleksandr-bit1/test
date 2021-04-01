@@ -1,0 +1,1131 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <title>Schema documentation for report_x5.xsd</title>
+      <link rel="stylesheet" href="docHtml.css" type="text/css" /><script type="text/javascript"><!--
+        var propertiesBoxes= new Array('properties_report_x5.xsd', 
+				'properties_name_russian', 
+				'properties_name_english', 
+				'properties_city_id', 
+				'properties_city_code', 
+				'properties_city_name', 
+				'properties_airport_id', 
+				'properties_airport_code', 
+				'properties_airport_name', 
+				'properties_airport_city', 
+				'properties_airportRef_airport', 
+				'properties_railwayStationRef_id', 
+				'properties_railwayStationRef_name', 
+				'properties_railwayStationRef_city', 
+				'properties_aeroexpressStationRef_id', 
+				'properties_aeroexpressStationRef_city', 
+				'properties_service_journeyNumber', 
+				'properties_service_businessTripNumber', 
+				'properties_service_orderNumber', 
+				'properties_service_serviceNumber', 
+				'properties_service_tickets', 
+				'properties_service_service_tickets_ticket', 
+				'properties_service_service_tickets_service_service_tickets_ticket_number', 
+				'properties_service_service_tickets_service_service_tickets_ticket_exchangedNumber', 
+				'properties_service_executionStatus', 
+				'properties_service_dateIss', 
+				'properties_service_costInclVat', 
+				'properties_service_costExclVat', 
+				'properties_service_currency', 
+				'properties_service_customParameters', 
+				'properties_service_service_customParameters_serviceCode', 
+				'properties_service_documents', 
+				'properties_service_service_documents_document', 
+				'properties_service_service_documents_service_service_documents_document_ticketNumber', 
+				'properties_service_service_documents_service_service_documents_document_files', 
+				'properties_service_service_documents_service_service_documents_document_service_service_documents_service_service_documents_document_files_file', 
+				'properties_service_service_documents_service_service_documents_document_service_service_documents_service_service_documents_document_files_service_service_documents_service_service_documents_document_service_service_documents_service_service_documents_document_files_file_name', 
+				'properties_service_service_documents_service_service_documents_document_service_service_documents_service_service_documents_document_files_service_service_documents_service_service_documents_document_service_service_documents_service_service_documents_document_files_file_link', 
+				'properties_service_authorization', 
+				'properties_service_service_authorization_completedAt', 
+				'properties_service_service_authorization_stage', 
+				'properties_service_service_authorization_service_service_authorization_stage_completedAt', 
+				'properties_service_service_authorization_service_service_authorization_stage_authorizer', 
+				'properties_service_service_authorization_service_service_authorization_stage_service_service_authorization_service_service_authorization_stage_authorizer_firstName', 
+				'properties_service_service_authorization_service_service_authorization_stage_service_service_authorization_service_service_authorization_stage_authorizer_lastName', 
+				'properties_service_service_authorization_service_service_authorization_stage_service_service_authorization_service_service_authorization_stage_authorizer_middleName', 
+				'properties_service_service_authorization_service_service_authorization_stage_service_service_authorization_service_service_authorization_stage_authorizer_accountEmailAddress', 
+				'properties_service_startsAt', 
+				'properties_service_endsAt', 
+				'properties_service_offerer', 
+				'properties_service_service_offerer_INN', 
+				'properties_service_service_offerer_KPP', 
+				'properties_service_avia', 
+				'properties_service_service_avia_segments', 
+				'properties_service_service_avia_service_service_avia_segments_segment', 
+				'properties_service_service_avia_service_service_avia_segments_service_service_avia_service_service_avia_segments_segment_departureAt', 
+				'properties_service_service_avia_service_service_avia_segments_service_service_avia_service_service_avia_segments_segment_departureFrom', 
+				'properties_service_service_avia_service_service_avia_segments_service_service_avia_service_service_avia_segments_segment_arrivalAt', 
+				'properties_service_service_avia_service_service_avia_segments_service_service_avia_service_service_avia_segments_segment_arrivalTo', 
+				'properties_service_rail', 
+				'properties_service_service_rail_departureFrom', 
+				'properties_service_service_rail_arrivalTo', 
+				'properties_service_hotel', 
+				'properties_service_service_hotel_location', 
+				'properties_service_service_hotel_service_service_hotel_location_city', 
+				'properties_service_service_hotel_name', 
+				'properties_service_aeroexpress', 
+				'properties_service_service_aeroexpress_departureFrom', 
+				'properties_service_service_aeroexpress_arrivalTo', 
+				'properties_report_service', 
+				'properties_NO_NAMESPACE_report', 
+				'properties_aeroexpressStationRef_type', 
+				'properties_service_service_documents_service_service_documents_document_service_service_documents_service_service_documents_document_files_service_service_documents_service_service_documents_document_service_service_documents_service_service_documents_document_files_file_language', 
+				'properties_service_service_documents_service_service_documents_document_service_service_documents_service_service_documents_document_files_service_service_documents_service_service_documents_document_service_service_documents_service_service_documents_document_files_file_contentType', 
+				'properties_service_service_documents_service_service_documents_document_type', 
+				'properties_service_type', 
+				'properties_service_isTravelPolicyCompliant');
+var facetsBoxes= new Array('facets_service_executionStatus', 
+				'facets_executionStatus', 
+				'facets_aeroexpressStationRef_type', 
+				'facets_service_service_documents_service_service_documents_document_service_service_documents_service_service_documents_document_files_service_service_documents_service_service_documents_document_service_service_documents_service_service_documents_document_files_file_language', 
+				'facets_service_service_documents_service_service_documents_document_type', 
+				'facets_service_type');
+var usedByBoxes= new Array('usedBy_name', 
+				'usedBy_city', 
+				'usedBy_airport', 
+				'usedBy_airportRef', 
+				'usedBy_railwayStationRef', 
+				'usedBy_aeroexpressStationRef', 
+				'usedBy_executionStatus', 
+				'usedBy_service', 
+				'usedBy_report', 
+				'usedBy_aeroexpressStationRef_type', 
+				'usedBy_service_service_documents_service_service_documents_document_service_service_documents_service_service_documents_document_files_service_service_documents_service_service_documents_document_service_service_documents_service_service_documents_document_files_file_language', 
+				'usedBy_service_service_documents_service_service_documents_document_service_service_documents_service_service_documents_document_files_service_service_documents_service_service_documents_document_service_service_documents_service_service_documents_document_files_file_contentType', 
+				'usedBy_service_service_documents_service_service_documents_document_type', 
+				'usedBy_service_type', 
+				'usedBy_service_isTravelPolicyCompliant');
+var sourceBoxes= new Array('source_name_russian', 
+				'source_name_english', 
+				'source_city_id', 
+				'source_city_code', 
+				'source_city_name', 
+				'source_airport_id', 
+				'source_airport_code', 
+				'source_airport_name', 
+				'source_airport_city', 
+				'source_airportRef_airport', 
+				'source_railwayStationRef_id', 
+				'source_railwayStationRef_name', 
+				'source_railwayStationRef_city', 
+				'source_aeroexpressStationRef_id', 
+				'source_aeroexpressStationRef_city', 
+				'source_service_journeyNumber', 
+				'source_service_businessTripNumber', 
+				'source_service_orderNumber', 
+				'source_service_serviceNumber', 
+				'source_service_tickets', 
+				'source_service_service_tickets_ticket', 
+				'source_service_service_tickets_service_service_tickets_ticket_number', 
+				'source_service_service_tickets_service_service_tickets_ticket_exchangedNumber', 
+				'source_service_executionStatus', 
+				'source_service_dateIss', 
+				'source_service_costInclVat', 
+				'source_service_costExclVat', 
+				'source_service_currency', 
+				'source_service_customParameters', 
+				'source_service_service_customParameters_serviceCode', 
+				'source_service_documents', 
+				'source_service_service_documents_document', 
+				'source_service_service_documents_service_service_documents_document_ticketNumber', 
+				'source_service_service_documents_service_service_documents_document_files', 
+				'source_service_service_documents_service_service_documents_document_service_service_documents_service_service_documents_document_files_file', 
+				'source_service_service_documents_service_service_documents_document_service_service_documents_service_service_documents_document_files_service_service_documents_service_service_documents_document_service_service_documents_service_service_documents_document_files_file_name', 
+				'source_service_service_documents_service_service_documents_document_service_service_documents_service_service_documents_document_files_service_service_documents_service_service_documents_document_service_service_documents_service_service_documents_document_files_file_link', 
+				'source_service_authorization', 
+				'source_service_service_authorization_completedAt', 
+				'source_service_service_authorization_stage', 
+				'source_service_service_authorization_service_service_authorization_stage_completedAt', 
+				'source_service_service_authorization_service_service_authorization_stage_authorizer', 
+				'source_service_service_authorization_service_service_authorization_stage_service_service_authorization_service_service_authorization_stage_authorizer_firstName', 
+				'source_service_service_authorization_service_service_authorization_stage_service_service_authorization_service_service_authorization_stage_authorizer_lastName', 
+				'source_service_service_authorization_service_service_authorization_stage_service_service_authorization_service_service_authorization_stage_authorizer_middleName', 
+				'source_service_service_authorization_service_service_authorization_stage_service_service_authorization_service_service_authorization_stage_authorizer_accountEmailAddress', 
+				'source_service_startsAt', 
+				'source_service_endsAt', 
+				'source_service_offerer', 
+				'source_service_service_offerer_INN', 
+				'source_service_service_offerer_KPP', 
+				'source_service_avia', 
+				'source_service_service_avia_segments', 
+				'source_service_service_avia_service_service_avia_segments_segment', 
+				'source_service_service_avia_service_service_avia_segments_service_service_avia_service_service_avia_segments_segment_departureAt', 
+				'source_service_service_avia_service_service_avia_segments_service_service_avia_service_service_avia_segments_segment_departureFrom', 
+				'source_service_service_avia_service_service_avia_segments_service_service_avia_service_service_avia_segments_segment_arrivalAt', 
+				'source_service_service_avia_service_service_avia_segments_service_service_avia_service_service_avia_segments_segment_arrivalTo', 
+				'source_service_rail', 
+				'source_service_service_rail_departureFrom', 
+				'source_service_service_rail_arrivalTo', 
+				'source_service_hotel', 
+				'source_service_service_hotel_location', 
+				'source_service_service_hotel_service_service_hotel_location_city', 
+				'source_service_service_hotel_name', 
+				'source_service_aeroexpress', 
+				'source_service_service_aeroexpress_departureFrom', 
+				'source_service_service_aeroexpress_arrivalTo', 
+				'source_report_service', 
+				'source_NO_NAMESPACE_report', 
+				'source_name', 
+				'source_city', 
+				'source_airport', 
+				'source_airportRef', 
+				'source_railwayStationRef', 
+				'source_aeroexpressStationRef', 
+				'source_executionStatus', 
+				'source_service', 
+				'source_report', 
+				'source_aeroexpressStationRef_type', 
+				'source_service_service_documents_service_service_documents_document_service_service_documents_service_service_documents_document_files_service_service_documents_service_service_documents_document_service_service_documents_service_service_documents_document_files_file_language', 
+				'source_service_service_documents_service_service_documents_document_service_service_documents_service_service_documents_document_files_service_service_documents_service_service_documents_document_service_service_documents_service_service_documents_document_files_file_contentType', 
+				'source_service_service_documents_service_service_documents_document_type', 
+				'source_service_type', 
+				'source_service_isTravelPolicyCompliant');
+var instanceBoxes= new Array('instance_city_name', 
+				'instance_airport_name', 
+				'instance_airport_city', 
+				'instance_airportRef_airport', 
+				'instance_railwayStationRef_name', 
+				'instance_railwayStationRef_city', 
+				'instance_aeroexpressStationRef_city', 
+				'instance_service_tickets', 
+				'instance_service_service_tickets_ticket', 
+				'instance_service_customParameters', 
+				'instance_service_documents', 
+				'instance_service_service_documents_document', 
+				'instance_service_service_documents_service_service_documents_document_files', 
+				'instance_service_service_documents_service_service_documents_document_service_service_documents_service_service_documents_document_files_file', 
+				'instance_service_authorization', 
+				'instance_service_service_authorization_stage', 
+				'instance_service_service_authorization_service_service_authorization_stage_authorizer', 
+				'instance_service_service_authorization_service_service_authorization_stage_service_service_authorization_service_service_authorization_stage_authorizer_firstName', 
+				'instance_service_service_authorization_service_service_authorization_stage_service_service_authorization_service_service_authorization_stage_authorizer_lastName', 
+				'instance_service_service_authorization_service_service_authorization_stage_service_service_authorization_service_service_authorization_stage_authorizer_middleName', 
+				'instance_service_offerer', 
+				'instance_service_avia', 
+				'instance_service_service_avia_segments', 
+				'instance_service_service_avia_service_service_avia_segments_segment', 
+				'instance_service_service_avia_service_service_avia_segments_service_service_avia_service_service_avia_segments_segment_departureFrom', 
+				'instance_service_service_avia_service_service_avia_segments_service_service_avia_service_service_avia_segments_segment_arrivalTo', 
+				'instance_service_rail', 
+				'instance_service_service_rail_departureFrom', 
+				'instance_service_service_rail_arrivalTo', 
+				'instance_service_hotel', 
+				'instance_service_service_hotel_location', 
+				'instance_service_service_hotel_service_service_hotel_location_city', 
+				'instance_service_service_hotel_name', 
+				'instance_service_aeroexpress', 
+				'instance_service_service_aeroexpress_departureFrom', 
+				'instance_service_service_aeroexpress_arrivalTo', 
+				'instance_report_service', 
+				'instance_NO_NAMESPACE_report');
+var diagramBoxes= new Array('diagram_name_russian', 
+				'diagram_name_english', 
+				'diagram_city_id', 
+				'diagram_city_code', 
+				'diagram_city_name', 
+				'diagram_airport_id', 
+				'diagram_airport_code', 
+				'diagram_airport_name', 
+				'diagram_airport_city', 
+				'diagram_airportRef_airport', 
+				'diagram_railwayStationRef_id', 
+				'diagram_railwayStationRef_name', 
+				'diagram_railwayStationRef_city', 
+				'diagram_aeroexpressStationRef_id', 
+				'diagram_aeroexpressStationRef_city', 
+				'diagram_service_journeyNumber', 
+				'diagram_service_businessTripNumber', 
+				'diagram_service_orderNumber', 
+				'diagram_service_serviceNumber', 
+				'diagram_service_tickets', 
+				'diagram_service_service_tickets_ticket', 
+				'diagram_service_service_tickets_service_service_tickets_ticket_number', 
+				'diagram_service_service_tickets_service_service_tickets_ticket_exchangedNumber', 
+				'diagram_service_executionStatus', 
+				'diagram_service_dateIss', 
+				'diagram_service_costInclVat', 
+				'diagram_service_costExclVat', 
+				'diagram_service_currency', 
+				'diagram_service_customParameters', 
+				'diagram_service_service_customParameters_serviceCode', 
+				'diagram_service_documents', 
+				'diagram_service_service_documents_document', 
+				'diagram_service_service_documents_service_service_documents_document_ticketNumber', 
+				'diagram_service_service_documents_service_service_documents_document_files', 
+				'diagram_service_service_documents_service_service_documents_document_service_service_documents_service_service_documents_document_files_file', 
+				'diagram_service_service_documents_service_service_documents_document_service_service_documents_service_service_documents_document_files_service_service_documents_service_service_documents_document_service_service_documents_service_service_documents_document_files_file_name', 
+				'diagram_service_service_documents_service_service_documents_document_service_service_documents_service_service_documents_document_files_service_service_documents_service_service_documents_document_service_service_documents_service_service_documents_document_files_file_link', 
+				'diagram_service_authorization', 
+				'diagram_service_service_authorization_completedAt', 
+				'diagram_service_service_authorization_stage', 
+				'diagram_service_service_authorization_service_service_authorization_stage_completedAt', 
+				'diagram_service_service_authorization_service_service_authorization_stage_authorizer', 
+				'diagram_service_service_authorization_service_service_authorization_stage_service_service_authorization_service_service_authorization_stage_authorizer_firstName', 
+				'diagram_service_service_authorization_service_service_authorization_stage_service_service_authorization_service_service_authorization_stage_authorizer_lastName', 
+				'diagram_service_service_authorization_service_service_authorization_stage_service_service_authorization_service_service_authorization_stage_authorizer_middleName', 
+				'diagram_service_service_authorization_service_service_authorization_stage_service_service_authorization_service_service_authorization_stage_authorizer_accountEmailAddress', 
+				'diagram_service_startsAt', 
+				'diagram_service_endsAt', 
+				'diagram_service_offerer', 
+				'diagram_service_service_offerer_INN', 
+				'diagram_service_service_offerer_KPP', 
+				'diagram_service_avia', 
+				'diagram_service_service_avia_segments', 
+				'diagram_service_service_avia_service_service_avia_segments_segment', 
+				'diagram_service_service_avia_service_service_avia_segments_service_service_avia_service_service_avia_segments_segment_departureAt', 
+				'diagram_service_service_avia_service_service_avia_segments_service_service_avia_service_service_avia_segments_segment_departureFrom', 
+				'diagram_service_service_avia_service_service_avia_segments_service_service_avia_service_service_avia_segments_segment_arrivalAt', 
+				'diagram_service_service_avia_service_service_avia_segments_service_service_avia_service_service_avia_segments_segment_arrivalTo', 
+				'diagram_service_rail', 
+				'diagram_service_service_rail_departureFrom', 
+				'diagram_service_service_rail_arrivalTo', 
+				'diagram_service_hotel', 
+				'diagram_service_service_hotel_location', 
+				'diagram_service_service_hotel_service_service_hotel_location_city', 
+				'diagram_service_service_hotel_name', 
+				'diagram_service_aeroexpress', 
+				'diagram_service_service_aeroexpress_departureFrom', 
+				'diagram_service_service_aeroexpress_arrivalTo', 
+				'diagram_report_service', 
+				'diagram_NO_NAMESPACE_report', 
+				'diagram_name', 
+				'diagram_city', 
+				'diagram_airport', 
+				'diagram_airportRef', 
+				'diagram_railwayStationRef', 
+				'diagram_aeroexpressStationRef', 
+				'diagram_executionStatus', 
+				'diagram_service', 
+				'diagram_report');
+var annotationBoxes= new Array('annotations_service_journeyNumber', 
+				'annotations_service_businessTripNumber', 
+				'annotations_service_orderNumber', 
+				'annotations_service_serviceNumber', 
+				'annotations_service_service_tickets_service_service_tickets_ticket_number', 
+				'annotations_service_service_tickets_service_service_tickets_ticket_exchangedNumber', 
+				'annotations_service_executionStatus', 
+				'annotations_service_dateIss', 
+				'annotations_service_costInclVat', 
+				'annotations_service_costExclVat', 
+				'annotations_service_currency', 
+				'annotations_service_service_customParameters_serviceCode', 
+				'annotations_service_service_documents_service_service_documents_document_ticketNumber', 
+				'annotations_service_service_authorization_completedAt', 
+				'annotations_service_service_authorization_stage', 
+				'annotations_service_service_authorization_service_service_authorization_stage_completedAt', 
+				'annotations_service_startsAt', 
+				'annotations_service_endsAt', 
+				'annotations_service_offerer', 
+				'annotations_service_type', 
+				'annotations_service_isTravelPolicyCompliant');
+var attributesBoxes= new Array('attributes_service_service_documents_document', 
+				'attributes_service_service_documents_service_service_documents_document_service_service_documents_service_service_documents_document_files_file', 
+				'attributes_service_service_aeroexpress_departureFrom', 
+				'attributes_service_service_aeroexpress_arrivalTo', 
+				'attributes_report_service', 
+				'attributes_aeroexpressStationRef', 
+				'attributes_service');
+var modelBoxes= new Array('model_city_name', 
+				'model_airport_name', 
+				'model_airport_city', 
+				'model_airportRef_airport', 
+				'model_railwayStationRef_name', 
+				'model_railwayStationRef_city', 
+				'model_aeroexpressStationRef_city', 
+				'model_service_tickets', 
+				'model_service_service_tickets_ticket', 
+				'model_service_customParameters', 
+				'model_service_documents', 
+				'model_service_service_documents_document', 
+				'model_service_service_documents_service_service_documents_document_files', 
+				'model_service_service_documents_service_service_documents_document_service_service_documents_service_service_documents_document_files_file', 
+				'model_service_authorization', 
+				'model_service_service_authorization_stage', 
+				'model_service_service_authorization_service_service_authorization_stage_authorizer', 
+				'model_service_service_authorization_service_service_authorization_stage_service_service_authorization_service_service_authorization_stage_authorizer_firstName', 
+				'model_service_service_authorization_service_service_authorization_stage_service_service_authorization_service_service_authorization_stage_authorizer_lastName', 
+				'model_service_service_authorization_service_service_authorization_stage_service_service_authorization_service_service_authorization_stage_authorizer_middleName', 
+				'model_service_offerer', 
+				'model_service_avia', 
+				'model_service_service_avia_segments', 
+				'model_service_service_avia_service_service_avia_segments_segment', 
+				'model_service_service_avia_service_service_avia_segments_service_service_avia_service_service_avia_segments_segment_departureFrom', 
+				'model_service_service_avia_service_service_avia_segments_service_service_avia_service_service_avia_segments_segment_arrivalTo', 
+				'model_service_rail', 
+				'model_service_service_rail_departureFrom', 
+				'model_service_service_rail_arrivalTo', 
+				'model_service_hotel', 
+				'model_service_service_hotel_location', 
+				'model_service_service_hotel_service_service_hotel_location_city', 
+				'model_service_service_hotel_name', 
+				'model_service_aeroexpress', 
+				'model_service_service_aeroexpress_departureFrom', 
+				'model_service_service_aeroexpress_arrivalTo', 
+				'model_report_service', 
+				'model_NO_NAMESPACE_report', 
+				'model_name', 
+				'model_city', 
+				'model_airport', 
+				'model_airportRef', 
+				'model_railwayStationRef', 
+				'model_aeroexpressStationRef', 
+				'model_service', 
+				'model_report');
+
+      
+        var button_prefix = 'button_';
+        
+        /**
+        * Returns an element in the current HTML document.
+        *
+        * @param elementID Identifier of HTML element
+        * @return               HTML element object
+        */
+        function getElementObject(elementID) {
+            var elemObj = null;
+            if (document.getElementById) {
+                elemObj = document.getElementById(elementID);
+            }
+            return elemObj;
+        }
+        
+        /**
+        * Switches the state of a collapseable box, e.g.
+        * if it's opened, it'll be closed, and vice versa.
+        *
+        * @param boxID Identifier of box
+        */
+        function switchState(boxID) {
+            var boxObj = getElementObject(boxID);
+            var buttonObj = getElementObject(button_prefix + boxID);
+            if (boxObj == null || buttonObj == null) {
+                // Box or button not found
+            } else if (boxObj.style.display == "none") {
+                // Box is closed, so open it
+                openBox(boxObj, buttonObj);
+            } else if (boxObj.style.display == "block") {
+                // Box is opened, so close it
+                closeBox(boxObj, buttonObj);
+            }
+        }
+        
+        /**
+        * Opens a collapseable box.
+        *
+        * @param boxObj       Collapseable box
+        * @param buttonObj Button controlling box
+        */
+        function openBox(boxObj, buttonObj) {
+            if (boxObj == null || buttonObj == null) {
+                // Box or button not found
+            } else {
+                // Change 'display' CSS property of box
+                boxObj.style.display = "block";
+                
+                // Change text of button
+                if (boxObj.style.display == "block") {
+                    buttonObj.src = "img/btM.gif";
+                }
+            }
+        }
+        
+        /**
+        * Closes a collapseable box.
+        *
+        * @param boxObj       Collapseable box
+        * @param buttonObj Button controlling box
+        */
+        function closeBox(boxObj, buttonObj) {
+            if (boxObj == null || buttonObj == null) {
+                // Box or button not found
+            } else {
+                // Change 'display' CSS property of box
+                boxObj.style.display = "none";
+                
+                // Change text of button
+                if (boxObj.style.display == "none") {
+                    buttonObj.src = "img/btP.gif";
+                }
+            }
+        }
+    
+       function switchStateForAll(buttonObj, boxList) {
+            if (buttonObj == null) {
+                // button not found
+            } else if (buttonObj.value == "+") {
+                // Expand all
+                expandAll(boxList);
+                buttonObj.value = "-";
+            } else if (buttonObj.value == "-") {
+                // Collapse all
+                collapseAll(boxList);
+                buttonObj.value = "+";
+            }
+        }
+        
+        /**
+        * Closes all boxes in a given list.
+        *
+        * @param boxList Array of box IDs
+        */
+        function collapseAll(boxList) {
+            var idx;
+            for (idx = 0; idx < boxList.length; idx++) {
+                var boxObj = getElementObject(boxList[idx]);
+                var buttonObj = getElementObject(button_prefix + boxList[idx]);
+                closeBox(boxObj, buttonObj);
+            }
+        }
+            
+        /**
+        * Open all boxes in a given list.
+        *
+        * @param boxList Array of box IDs
+        */
+        function expandAll(boxList) {
+            var idx;
+            for (idx = 0; idx < boxList.length; idx++) {
+                var boxObj = getElementObject(boxList[idx]);
+                var buttonObj = getElementObject(button_prefix + boxList[idx]);
+                openBox(boxObj, buttonObj);
+            }
+        }
+        
+        /**
+         * Update the message presented in the title of the html page.
+         * - If the documentation was splited by namespace we present something like: "Documentation for namespace 'ns'"
+         * - If the documentation was splited by location we present somehing like: "Documentation for 'Schema.xsd'"
+         * - If no split we always present: "Documentation for 'MainSchema.xsd'"
+         */
+        function updatePageTitle(message) {
+            top.document.title = message;
+        }
+        
+          
+                    
+         /**
+          * Finds an HTML element by its ID and makes it floatable over the normal content.
+          *
+          * @param x_displacement The difference in pixels to the right side of the window from 
+          *           the left side of the element.
+          * @param y_displacement The difference in pixels to the right side of the window from 
+          *           the top of the element.          
+          */
+         function findAndFloat(id, x_displacement, y_displacement){
+
+            var element = getElementObject(id);            
+            
+            window[id + "_obj"] = element;
+            
+            if(document.layers) {
+               element.style = element;
+            }
+            
+            element.current_y = y_displacement;      
+            element.first_time = true;
+         
+            element.floatElement = function(){
+               // It may be closed by an user action.
+                
+               // Target X and Y coordinates.
+               var x, y;
+               
+               var myWidth = 0, myHeight = 0;
+               if( typeof( window.innerWidth ) == 'number' ) {
+                  //Non-IE
+                  myWidth = window.innerWidth;
+                  myHeight = window.innerHeight;
+               } else if( document.documentElement && ( document.documentElement.clientWidth || document.documentElement.clientHeight ) ) {
+                  //IE 6+ in 'standards compliant mode'
+                  myWidth = document.documentElement.clientWidth;
+                  myHeight = document.documentElement.clientHeight;
+               } else if( document.body && ( document.body.clientWidth || document.body.clientHeight ) ) {
+                  //IE 4 compatible
+                  myWidth = document.body.clientWidth;
+                  myHeight = document.body.clientHeight;
+               }
+               
+               
+               x = myWidth - x_displacement;
+               
+               var ns = (navigator.appName.indexOf("Netscape") != -1);               
+               y = ns ? pageYOffset : document.documentElement && document.documentElement.scrollTop ? 
+                  document.documentElement.scrollTop : document.body.scrollTop;               
+               y = y + y_displacement;               
+               
+               // The current y is the current coordinate of the floating element.
+               // This should be at the limit the y target coordinate.
+               this.current_y += (y - this.current_y)/1.25;
+               
+               // Add the pixels constant after the values
+               // and move the element.
+               var px = document.layers ? "" : "px";
+               this.style.left =  x + px;
+               this.style.top =  this.current_y + px;
+                              
+               setTimeout(this.id + "_obj.floatElement()", 100);
+            }
+            
+            element.floatElement();
+            return element;
+          }
+
+         /**
+          * Finds an HTML element by its ID and makes it floatable over the normal content.
+          *
+          * @param x_displacement The difference in pixels to the right side of the window from 
+          *           the left side of the element.
+          * @param y_displacement The difference in pixels to the right side of the window from 
+          *           the top of the element.          
+          */
+         function selectTOCGroupBy(id, isChunked, indexFileLocation, indexFileNamespace, indexFileComponent){
+
+            if (!isChunked) {
+             var selectIds = new Array('toc_group_by_namespace', 'toc_group_by_location', 'toc_group_by_component_type');
+             // Make all the tabs invisible.
+               for (i = 0; i < 3; i++){
+                  var tab = getElementObject(selectIds[i]);
+                  tab.style.display = 'none';
+               }
+               var selTab = getElementObject(id);
+               selTab.style.display = 'block';
+            } else {
+             if (id == 'toc_group_by_namespace') {
+               parent.indexFrame.location = indexFileNamespace;
+             } else  if (id == 'toc_group_by_location') {
+               parent.indexFrame.location = indexFileLocation;
+             } else  if (id == 'toc_group_by_component_type') {
+              parent.indexFrame.location = indexFileComponent;
+             }
+            }
+         }
+          
+
+    
+                        //--></script></head>
+   <body>
+      <h2><a id="INDEX">Table of Contents</a></h2>
+      <div class="toc">
+         <form action="none">
+            <div><span> Group by: <select id="selectTOC" onchange="selectTOCGroupBy(this.options[this.selectedIndex].value, false, '.html', 'ns.html', 'comp.html');">
+                     <option value="toc_group_by_namespace" selected="selected">Namespace</option>
+                     <option value="toc_group_by_location">Location</option>
+                     <option value="toc_group_by_component_type">Component Type</option></select></span></div>
+         </form>
+         <div class="level1" id="toc_group_by_namespace" style="display:block">
+            <div>
+               <div class="level2">
+                  <p><input id="button_boxIdNamespace1" type="image" value="-" src="img/btM.gif" onclick="switchState('boxIdNamespace1');" class="control" /><span class="indexGroupTitle">No namespace</span></p>
+                  <div id="boxIdNamespace1" style="display:block">
+                     <div class="horizontalLayout">
+                        <table class="rt">
+                           <tr>
+                              <td class="rt_cornerTopLeft"></td>
+                              <td class="rt_lineTop"></td>
+                              <td class="rt_cornerTopRight"></td>
+                           </tr>
+                           <tr>
+                              <td class="rt_lineLeft"></td>
+                              <td class="rt_content">
+                                 <table class="componentGroup">
+                                    <tbody>
+                                       <tr>
+                                          <td class="componentGroup"><input id="button_boxIdNamespace1Main_schema" type="image" value="-" src="img/btM.gif" onclick="switchState('boxIdNamespace1Main_schema');" class="control" /></td>
+                                          <td class="componentGroup">
+                                             <div class="componentGroupTitle">Main Schema</div>
+                                          </td>
+                                       </tr>
+                                       <tr>
+                                          <td class="componentGroup"></td>
+                                          <td class="componentGroup">
+                                             <div id="boxIdNamespace1Main_schema" class="componentGroup" style="display:block">
+                                                <div><b><a href="index.html#report_x5.xsd" target="_self" title="No namespace">report_x5.xsd</a></b></div>
+                                             </div>
+                                          </td>
+                                       </tr>
+                                    </tbody>
+                                 </table>
+                              </td>
+                              <td class="rt_lineRight"></td>
+                           </tr>
+                           <tr>
+                              <td class="rt_cornerBottomLeft"></td>
+                              <td class="rt_lineBottom"></td>
+                              <td class="rt_cornerBottomRight"></td>
+                           </tr>
+                        </table>
+                     </div>
+                     <div class="horizontalLayout">
+                        <table class="rt">
+                           <tr>
+                              <td class="rt_cornerTopLeft"></td>
+                              <td class="rt_lineTop"></td>
+                              <td class="rt_cornerTopRight"></td>
+                           </tr>
+                           <tr>
+                              <td class="rt_lineLeft"></td>
+                              <td class="rt_content">
+                                 <table class="componentGroup">
+                                    <tbody>
+                                       <tr>
+                                          <td class="componentGroup"><input id="button_boxIdNamespace1Element" type="image" value="-" src="img/btM.gif" onclick="switchState('boxIdNamespace1Element');" class="control" /></td>
+                                          <td class="componentGroup">
+                                             <div class="componentGroupTitle">Elements</div>
+                                          </td>
+                                       </tr>
+                                       <tr>
+                                          <td class="componentGroup"></td>
+                                          <td class="componentGroup">
+                                             <div id="boxIdNamespace1Element" class="componentGroup" style="display:block">
+                                                <div><b><a href="index.html#NO_NAMESPACE_report" target="_self" title="No namespace">report</a></b></div>
+                                             </div>
+                                          </td>
+                                       </tr>
+                                    </tbody>
+                                 </table>
+                              </td>
+                              <td class="rt_lineRight"></td>
+                           </tr>
+                           <tr>
+                              <td class="rt_cornerBottomLeft"></td>
+                              <td class="rt_lineBottom"></td>
+                              <td class="rt_cornerBottomRight"></td>
+                           </tr>
+                        </table>
+                     </div>
+                     <div class="horizontalLayout">
+                        <table class="rt">
+                           <tr>
+                              <td class="rt_cornerTopLeft"></td>
+                              <td class="rt_lineTop"></td>
+                              <td class="rt_cornerTopRight"></td>
+                           </tr>
+                           <tr>
+                              <td class="rt_lineLeft"></td>
+                              <td class="rt_content">
+                                 <table class="componentGroup">
+                                    <tbody>
+                                       <tr>
+                                          <td class="componentGroup"><input id="button_boxIdNamespace1Complex_Type" type="image" value="-" src="img/btM.gif" onclick="switchState('boxIdNamespace1Complex_Type');" class="control" /></td>
+                                          <td class="componentGroup">
+                                             <div class="componentGroupTitle">Complex Types</div>
+                                          </td>
+                                       </tr>
+                                       <tr>
+                                          <td class="componentGroup"></td>
+                                          <td class="componentGroup">
+                                             <div id="boxIdNamespace1Complex_Type" class="componentGroup" style="display:block">
+                                                <div><b><a href="index.html#aeroexpressStationRef" target="_self" title="No namespace">aeroexpressStationRef</a></b></div>
+                                                <div><b><a href="index.html#airport" target="_self" title="No namespace">airport</a></b></div>
+                                                <div><b><a href="index.html#airportRef" target="_self" title="No namespace">airportRef</a></b></div>
+                                                <div><b><a href="index.html#city" target="_self" title="No namespace">city</a></b></div>
+                                                <div><b><a href="index.html#name" target="_self" title="No namespace">name</a></b></div>
+                                                <div><b><a href="index.html#railwayStationRef" target="_self" title="No namespace">railwayStationRef</a></b></div>
+                                                <div><b><a href="index.html#report" target="_self" title="No namespace">report</a></b></div>
+                                                <div><b><a href="index.html#service" target="_self" title="No namespace">service</a></b></div>
+                                             </div>
+                                          </td>
+                                       </tr>
+                                    </tbody>
+                                 </table>
+                              </td>
+                              <td class="rt_lineRight"></td>
+                           </tr>
+                           <tr>
+                              <td class="rt_cornerBottomLeft"></td>
+                              <td class="rt_lineBottom"></td>
+                              <td class="rt_cornerBottomRight"></td>
+                           </tr>
+                        </table>
+                     </div>
+                     <div class="horizontalLayout">
+                        <table class="rt">
+                           <tr>
+                              <td class="rt_cornerTopLeft"></td>
+                              <td class="rt_lineTop"></td>
+                              <td class="rt_cornerTopRight"></td>
+                           </tr>
+                           <tr>
+                              <td class="rt_lineLeft"></td>
+                              <td class="rt_content">
+                                 <table class="componentGroup">
+                                    <tbody>
+                                       <tr>
+                                          <td class="componentGroup"><input id="button_boxIdNamespace1Simple_Type" type="image" value="-" src="img/btM.gif" onclick="switchState('boxIdNamespace1Simple_Type');" class="control" /></td>
+                                          <td class="componentGroup">
+                                             <div class="componentGroupTitle">Simple Types</div>
+                                          </td>
+                                       </tr>
+                                       <tr>
+                                          <td class="componentGroup"></td>
+                                          <td class="componentGroup">
+                                             <div id="boxIdNamespace1Simple_Type" class="componentGroup" style="display:block">
+                                                <div><b><a href="index.html#executionStatus" target="_self" title="No namespace">executionStatus</a></b></div>
+                                             </div>
+                                          </td>
+                                       </tr>
+                                    </tbody>
+                                 </table>
+                              </td>
+                              <td class="rt_lineRight"></td>
+                           </tr>
+                           <tr>
+                              <td class="rt_cornerBottomLeft"></td>
+                              <td class="rt_lineBottom"></td>
+                              <td class="rt_cornerBottomRight"></td>
+                           </tr>
+                        </table>
+                     </div>
+                     <div style="clear:left"></div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="level1" id="toc_group_by_component_type" style="display:none">
+            <div>
+               <div class="horizontalLayout">
+                  <table class="rt">
+                     <tr>
+                        <td class="rt_cornerTopLeft"></td>
+                        <td class="rt_lineTop"></td>
+                        <td class="rt_cornerTopRight"></td>
+                     </tr>
+                     <tr>
+                        <td class="rt_lineLeft"></td>
+                        <td class="rt_content">
+                           <table class="componentGroup">
+                              <tbody>
+                                 <tr>
+                                    <td class="componentGroup"><input id="button_Main_schema" type="image" value="-" src="img/btM.gif" onclick="switchState('Main_schema');" class="control" /></td>
+                                    <td class="componentGroup">
+                                       <div class="componentGroupTitle">Main Schema</div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="componentGroup"></td>
+                                    <td class="componentGroup">
+                                       <div id="Main_schema" class="componentGroup" style="display:block">
+                                          <div><b><a href="index.html#report_x5.xsd" target="_self" title="No namespace">report_x5.xsd</a></b></div>
+                                       </div>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </td>
+                        <td class="rt_lineRight"></td>
+                     </tr>
+                     <tr>
+                        <td class="rt_cornerBottomLeft"></td>
+                        <td class="rt_lineBottom"></td>
+                        <td class="rt_cornerBottomRight"></td>
+                     </tr>
+                  </table>
+               </div>
+               <div class="horizontalLayout">
+                  <table class="rt">
+                     <tr>
+                        <td class="rt_cornerTopLeft"></td>
+                        <td class="rt_lineTop"></td>
+                        <td class="rt_cornerTopRight"></td>
+                     </tr>
+                     <tr>
+                        <td class="rt_lineLeft"></td>
+                        <td class="rt_content">
+                           <table class="componentGroup">
+                              <tbody>
+                                 <tr>
+                                    <td class="componentGroup"><input id="button_Element" type="image" value="-" src="img/btM.gif" onclick="switchState('Element');" class="control" /></td>
+                                    <td class="componentGroup">
+                                       <div class="componentGroupTitle">Elements</div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="componentGroup"></td>
+                                    <td class="componentGroup">
+                                       <div id="Element" class="componentGroup" style="display:block">
+                                          <div><b><a href="index.html#NO_NAMESPACE_report" target="_self" title="No namespace">report</a></b></div>
+                                       </div>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </td>
+                        <td class="rt_lineRight"></td>
+                     </tr>
+                     <tr>
+                        <td class="rt_cornerBottomLeft"></td>
+                        <td class="rt_lineBottom"></td>
+                        <td class="rt_cornerBottomRight"></td>
+                     </tr>
+                  </table>
+               </div>
+               <div class="horizontalLayout">
+                  <table class="rt">
+                     <tr>
+                        <td class="rt_cornerTopLeft"></td>
+                        <td class="rt_lineTop"></td>
+                        <td class="rt_cornerTopRight"></td>
+                     </tr>
+                     <tr>
+                        <td class="rt_lineLeft"></td>
+                        <td class="rt_content">
+                           <table class="componentGroup">
+                              <tbody>
+                                 <tr>
+                                    <td class="componentGroup"><input id="button_Complex_Type" type="image" value="-" src="img/btM.gif" onclick="switchState('Complex_Type');" class="control" /></td>
+                                    <td class="componentGroup">
+                                       <div class="componentGroupTitle">Complex Types</div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="componentGroup"></td>
+                                    <td class="componentGroup">
+                                       <div id="Complex_Type" class="componentGroup" style="display:block">
+                                          <div><b><a href="index.html#aeroexpressStationRef" target="_self" title="No namespace">aeroexpressStationRef</a></b></div>
+                                          <div><b><a href="index.html#airport" target="_self" title="No namespace">airport</a></b></div>
+                                          <div><b><a href="index.html#airportRef" target="_self" title="No namespace">airportRef</a></b></div>
+                                          <div><b><a href="index.html#city" target="_self" title="No namespace">city</a></b></div>
+                                          <div><b><a href="index.html#name" target="_self" title="No namespace">name</a></b></div>
+                                          <div><b><a href="index.html#railwayStationRef" target="_self" title="No namespace">railwayStationRef</a></b></div>
+                                          <div><b><a href="index.html#report" target="_self" title="No namespace">report</a></b></div>
+                                          <div><b><a href="index.html#service" target="_self" title="No namespace">service</a></b></div>
+                                       </div>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </td>
+                        <td class="rt_lineRight"></td>
+                     </tr>
+                     <tr>
+                        <td class="rt_cornerBottomLeft"></td>
+                        <td class="rt_lineBottom"></td>
+                        <td class="rt_cornerBottomRight"></td>
+                     </tr>
+                  </table>
+               </div>
+               <div class="horizontalLayout">
+                  <table class="rt">
+                     <tr>
+                        <td class="rt_cornerTopLeft"></td>
+                        <td class="rt_lineTop"></td>
+                        <td class="rt_cornerTopRight"></td>
+                     </tr>
+                     <tr>
+                        <td class="rt_lineLeft"></td>
+                        <td class="rt_content">
+                           <table class="componentGroup">
+                              <tbody>
+                                 <tr>
+                                    <td class="componentGroup"><input id="button_Simple_Type" type="image" value="-" src="img/btM.gif" onclick="switchState('Simple_Type');" class="control" /></td>
+                                    <td class="componentGroup">
+                                       <div class="componentGroupTitle">Simple Types</div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="componentGroup"></td>
+                                    <td class="componentGroup">
+                                       <div id="Simple_Type" class="componentGroup" style="display:block">
+                                          <div><b><a href="index.html#executionStatus" target="_self" title="No namespace">executionStatus</a></b></div>
+                                       </div>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </td>
+                        <td class="rt_lineRight"></td>
+                     </tr>
+                     <tr>
+                        <td class="rt_cornerBottomLeft"></td>
+                        <td class="rt_lineBottom"></td>
+                        <td class="rt_cornerBottomRight"></td>
+                     </tr>
+                  </table>
+               </div>
+               <div style="clear:left"></div>
+            </div>
+         </div>
+         <div class="level1" id="toc_group_by_location" style="display:none">
+            <div>
+               <div class="level2">
+                  <p><input id="button_gr_report_x5.xsd" type="image" value="-" src="img/btM.gif" onclick="switchState('gr_report_x5.xsd');" class="control" /><span class="indexGroupTitle">report_x5.xsd</span></p>
+                  <div id="gr_report_x5.xsd" style="display:block">
+                     <div class="horizontalLayout">
+                        <table class="rt">
+                           <tr>
+                              <td class="rt_cornerTopLeft"></td>
+                              <td class="rt_lineTop"></td>
+                              <td class="rt_cornerTopRight"></td>
+                           </tr>
+                           <tr>
+                              <td class="rt_lineLeft"></td>
+                              <td class="rt_content">
+                                 <table class="componentGroup">
+                                    <tbody>
+                                       <tr>
+                                          <td class="componentGroup"><input id="button_gr_report_x5.xsdMain_schema" type="image" value="-" src="img/btM.gif" onclick="switchState('gr_report_x5.xsdMain_schema');" class="control" /></td>
+                                          <td class="componentGroup">
+                                             <div class="componentGroupTitle">Main Schema</div>
+                                          </td>
+                                       </tr>
+                                       <tr>
+                                          <td class="componentGroup"></td>
+                                          <td class="componentGroup">
+                                             <div id="gr_report_x5.xsdMain_schema" class="componentGroup" style="display:block">
+                                                <div><b><a href="index.html#report_x5.xsd" target="_self" title="No namespace">report_x5.xsd</a></b></div>
+                                             </div>
+                                          </td>
+                                       </tr>
+                                    </tbody>
+                                 </table>
+                              </td>
+                              <td class="rt_lineRight"></td>
+                           </tr>
+                           <tr>
+                              <td class="rt_cornerBottomLeft"></td>
+                              <td class="rt_lineBottom"></td>
+                              <td class="rt_cornerBottomRight"></td>
+                           </tr>
+                        </table>
+                     </div>
+                     <div class="horizontalLayout">
+                        <table class="rt">
+                           <tr>
+                              <td class="rt_cornerTopLeft"></td>
+                              <td class="rt_lineTop"></td>
+                              <td class="rt_cornerTopRight"></td>
+                           </tr>
+                           <tr>
+                              <td class="rt_lineLeft"></td>
+                              <td class="rt_content">
+                                 <table class="componentGroup">
+                                    <tbody>
+                                       <tr>
+                                          <td class="componentGroup"><input id="button_gr_report_x5.xsdElement" type="image" value="-" src="img/btM.gif" onclick="switchState('gr_report_x5.xsdElement');" class="control" /></td>
+                                          <td class="componentGroup">
+                                             <div class="componentGroupTitle">Elements</div>
+                                          </td>
+                                       </tr>
+                                       <tr>
+                                          <td class="componentGroup"></td>
+                                          <td class="componentGroup">
+                                             <div id="gr_report_x5.xsdElement" class="componentGroup" style="display:block">
+                                                <div><b><a href="index.html#NO_NAMESPACE_report" target="_self" title="No namespace">report</a></b></div>
+                                             </div>
+                                          </td>
+                                       </tr>
+                                    </tbody>
+                                 </table>
+                              </td>
+                              <td class="rt_lineRight"></td>
+                           </tr>
+                           <tr>
+                              <td class="rt_cornerBottomLeft"></td>
+                              <td class="rt_lineBottom"></td>
+                              <td class="rt_cornerBottomRight"></td>
+                           </tr>
+                        </table>
+                     </div>
+                     <div class="horizontalLayout">
+                        <table class="rt">
+                           <tr>
+                              <td class="rt_cornerTopLeft"></td>
+                              <td class="rt_lineTop"></td>
+                              <td class="rt_cornerTopRight"></td>
+                           </tr>
+                           <tr>
+                              <td class="rt_lineLeft"></td>
+                              <td class="rt_content">
+                                 <table class="componentGroup">
+                                    <tbody>
+                                       <tr>
+                                          <td class="componentGroup"><input id="button_gr_report_x5.xsdComplex_Type" type="image" value="-" src="img/btM.gif" onclick="switchState('gr_report_x5.xsdComplex_Type');" class="control" /></td>
+                                          <td class="componentGroup">
+                                             <div class="componentGroupTitle">Complex Types</div>
+                                          </td>
+                                       </tr>
+                                       <tr>
+                                          <td class="componentGroup"></td>
+                                          <td class="componentGroup">
+                                             <div id="gr_report_x5.xsdComplex_Type" class="componentGroup" style="display:block">
+                                                <div><b><a href="index.html#aeroexpressStationRef" target="_self" title="No namespace">aeroexpressStationRef</a></b></div>
+                                                <div><b><a href="index.html#airport" target="_self" title="No namespace">airport</a></b></div>
+                                                <div><b><a href="index.html#airportRef" target="_self" title="No namespace">airportRef</a></b></div>
+                                                <div><b><a href="index.html#city" target="_self" title="No namespace">city</a></b></div>
+                                                <div><b><a href="index.html#name" target="_self" title="No namespace">name</a></b></div>
+                                                <div><b><a href="index.html#railwayStationRef" target="_self" title="No namespace">railwayStationRef</a></b></div>
+                                                <div><b><a href="index.html#report" target="_self" title="No namespace">report</a></b></div>
+                                                <div><b><a href="index.html#service" target="_self" title="No namespace">service</a></b></div>
+                                             </div>
+                                          </td>
+                                       </tr>
+                                    </tbody>
+                                 </table>
+                              </td>
+                              <td class="rt_lineRight"></td>
+                           </tr>
+                           <tr>
+                              <td class="rt_cornerBottomLeft"></td>
+                              <td class="rt_lineBottom"></td>
+                              <td class="rt_cornerBottomRight"></td>
+                           </tr>
+                        </table>
+                     </div>
+                     <div class="horizontalLayout">
+                        <table class="rt">
+                           <tr>
+                              <td class="rt_cornerTopLeft"></td>
+                              <td class="rt_lineTop"></td>
+                              <td class="rt_cornerTopRight"></td>
+                           </tr>
+                           <tr>
+                              <td class="rt_lineLeft"></td>
+                              <td class="rt_content">
+                                 <table class="componentGroup">
+                                    <tbody>
+                                       <tr>
+                                          <td class="componentGroup"><input id="button_gr_report_x5.xsdSimple_Type" type="image" value="-" src="img/btM.gif" onclick="switchState('gr_report_x5.xsdSimple_Type');" class="control" /></td>
+                                          <td class="componentGroup">
+                                             <div class="componentGroupTitle">Simple Types</div>
+                                          </td>
+                                       </tr>
+                                       <tr>
+                                          <td class="componentGroup"></td>
+                                          <td class="componentGroup">
+                                             <div id="gr_report_x5.xsdSimple_Type" class="componentGroup" style="display:block">
+                                                <div><b><a href="index.html#executionStatus" target="_self" title="No namespace">executionStatus</a></b></div>
+                                             </div>
+                                          </td>
+                                       </tr>
+                                    </tbody>
+                                 </table>
+                              </td>
+                              <td class="rt_lineRight"></td>
+                           </tr>
+                           <tr>
+                              <td class="rt_cornerBottomLeft"></td>
+                              <td class="rt_lineBottom"></td>
+                              <td class="rt_cornerBottomRight"></td>
+                           </tr>
+                        </table>
+                     </div>
+                     <div style="clear:left"></div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="footer">
+         <hr />
+         <div align="center">XML Schema documentation generated by <a href="http://www.oxygenxml.com" target="_parent"><span class="oXygenLogo"><span class="redX">&lt;</span>o<span class="redX">X</span>ygen<span class="redX">/&gt;</span></span></a><sup>®</sup> XML Editor Trial Edition.</div>
+      </div>
+   </body>
+</html>
