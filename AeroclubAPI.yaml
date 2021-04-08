@@ -397,7 +397,6 @@ info:
     2.  Если есть услуга Авиа, то в процессе получения авторизации у бронирования может истечь таймлимит (п. 12 - в таблице ["Комбинация статусов Авиа"](#overview--avia)). Следовательно, перед тем как отправить услугу на оформление, она должна иметь комбинацию статусов указанных в п. 4 или п.11 таблицы ["Комбинация статусов Авиа"](#overview--avia). В случае, если таймлимит истек, необходимо осуществить поиск и оформление услуги заново.
     3.  В случае отелей, после получения авторизации и наличия в услуге статусов, указанных в п. 2 и п. 6 таблицы ["Комбинации статусов отеля"](#overview--hotel) услуга может быть сразу отправлена на оформление.
     4.  После отправки услуг на оформление необходимо проверить статус услуг, запросив информацию по командировке - в случае получения "service_state": "Execution", услуга считается оформленной.
-    5.  При бронировании авиа происходит автоматическое использование подходящей бонусной карты, сохраненной в профиле пользователя. При бронировании ЖД необходимо передавать бонусную карту в методе [PUT /orders/{orderNumber}/services/{serviceNumber}/reserve](#put-/orders/-orderNumber-/services/-serviceNumber-/reserve). При бронировании отелей бонусная карта не используется.
 
     **ВАЖНО:** Более подробно все статусы услуг и их комбинации, в которых они должны находится перед переходом к тому или иному процессу указаны ниже в [Таблицах комбинаций статусов услуг и доступных дейтвий с ними](#overview--statuses).
 
@@ -5854,6 +5853,15 @@ components:
           description: На русском языке
           type: string
       type: object
+    RoomDescription:
+      properties:
+        english:
+          type: string
+          description: Описание номера на английском языке
+        russian:
+          description: Описание номера на русском языке
+          type: string
+      type: object
     Location:
       properties:
         address:
@@ -8244,9 +8252,6 @@ components:
         is_pay_on_site:
           type: string
           description: Возможность оплатить на сайте
-        asim_room_commission:
-          type: integer
-          description: Комиссия за номер
         booking_code:
           type: string
           description: Хэш-код для бронирования номера
@@ -8311,9 +8316,6 @@ components:
         is_corporate_tariff:
           type: string
           description: Признак корпоративного тарифа
-        supplier_unique_identifier:
-          type: string
-          description: Уникальный идентификатор поставщика услуг
         supplier_room_id:
           type: string
           description: Идентификатор комнаты
@@ -8335,6 +8337,15 @@ components:
         is_hidden_price:
           type: string
           description: "Признак стоимости цен под запрос. Если true, то вместо цены отображается сообщение 'Под запрос'"
+        images:
+          type: array
+          description: Список ссылок на изобаражения
+          items:
+            type: string
+        room_description:
+          description: Описание номера
+          allOf:
+            - $ref: "#/components/schemas/RoomDescription"      
       type: object
     LocationPoint:
       properties:
@@ -9871,16 +9882,15 @@ components:
         - BenchmarkTariff - средняя стоимость билета по выбранному направлению  
         - AlternativeTariff - альтернативный тариф  
         - FareFamiliesWithoutBaggageMinimumTariff - минимальный тариф без багажа, входящий в группу тарифов  
-        - RoundTripAlternativeSelected - выбрана альтернатива туда-обратно  
-        - RoundTripAlternativeNotSelected - не выбрана альтернатива туда-обратно  
-        - AlternativeSelected - выбрана альтернатива  
-        - AlternativeNotSelected - не выбрана альтернатива  
+        - AlternativeSelected - выбрана альтернатива. Передается "невыгодная" опция OW или RT, которую пользователь планировал выбрать, но отказался в пользу альтернативы  
+        - AlternativeNotSelected - не выбрана альтернатива. Передается альтернатива OW или RT, от которой пользователь отказался  
+        - RoundTripAlternativeSelected - выбрана альтернатива RT, собранная на основании существующей услуги OW и добавляемой пользователем опции OW. Передается "невыгодная" опция OW, которую пользователь планировал выбрать, но отказался в пользу альтернативы  
+        - RoundTripAlternativeNotSelected - не выбрана альтернатива RT, собранная на основании существующей услуги OW и добавляемой пользователем опции OW. Передается альтернатива RT, от которой пользователь отказался  
         - BenchmarkTariff90Days - средняя стоимость билета по выбранному направлению за 90 дней  
         - AlternativeRailNotSelected - ЖД альтернатива не выбрана  
-        - RoundTripAlternativeRailNotSelected - ЖД альтернатива туда-обратно не выбрана  
-        - SubstitutionByRoundTripAlternativeService - услуга OW, парметры котрой использованы для объединения услуги OW и опции OW при предложении RT альтернативы  
-        - RecalculatedRoundTripSelected - выбрана альтернатива, без учета критерия выбранной стоимости, содерщащая опции подобранные пользователем 
-        - RecalculatedRoundTripNotSelected - не выбрана альтернатива, без учета критерия выбранной стоимости, содерщащая опции подобранные пользователем
+        - RecalculatedRoundTripSelected - выбрана альтернатива RT без учета критерия стоимости, но с учетом хотя бы какой-нибудь выгоды по стоимости. В альтернативе объединены: услуга OW и выбираемая пользователем опция OW. Передается "невыгодная" опция OW, которую пользователь планировал выбрать, но отказался в пользу альтернативы  
+        - RecalculatedRoundTripNotSelected - не выбрана альтернатива RT без учета критерия по стоимости. В альтернативе объединены: услуга OW и добавленная пользователем опция OW. Передается альтернатива RT, от которой пользователь отказался  
+        - SubstitutionByRoundTripAlternativeService - услуга OW, параметры которой использованы для объединения услуги OW и опции OW при предложении RT альтернативы ("вторая часть" для альтернативы типа RoundTrip или RecalculatedRoundTrip)
       type: string
       enum:
         - Undefined
@@ -9896,18 +9906,17 @@ components:
         - SplittedFrom
         - PreviousUnauthorized
         - BenchmarkTariff
-        - AlternativeTariff        
+        - AlternativeTariff
         - FareFamiliesWithoutBaggageMinimumTariff
-        - RoundTripAlternativeSelected
-        - RoundTripAlternativeNotSelected
         - AlternativeSelected
         - AlternativeNotSelected
+        - RoundTripAlternativeSelected
+        - RoundTripAlternativeNotSelected
         - BenchmarkTariff90Days
         - AlternativeRailNotSelected
-        - RoundTripAlternativeRailNotSelected
-        - SubstitutionByRoundTripAlternativeService
         - RecalculatedRoundTripSelected
         - RecalculatedRoundTripNotSelected
+        - SubstitutionByRoundTripAlternativeService
     FlightStatus:
       description: Статус рейса
       type: string
