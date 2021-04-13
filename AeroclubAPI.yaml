@@ -7938,7 +7938,10 @@ components:
           type: boolean
           description: Признак часто продаваемого отеля
         recommendations:
-          $ref: "#/components/schemas/HotelRecommendationType"
+          $ref: "#/components/schemas/HotelRecommendationType"        
+        recommendations_enhanced:
+          type: string
+          description: Информация о рекомендации отеля. Параметр содержит несколько значений recommendations (перечисление), если отель имеет несколько рекомендаций.
         start_on:
           type: string
           description: Дата заеда в часовом поясе пользователя в формате YYYY-MM-DDThh:mm:ss
@@ -8221,6 +8224,7 @@ components:
           type: boolean
           description: Признак часто продаваемого отеля
         recommendations:
+          description: Информация о рекомендации отеля
           $ref: "#/components/schemas/HotelRecommendationType"
       type: object
     RoomDetail:
