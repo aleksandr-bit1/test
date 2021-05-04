@@ -61,6 +61,8 @@ info:
     2. С помощью метода [PUT /oauth/integration/fingerprint/{fingerprint}](#put-/oauth/integration/fingerprint/-fingerprint-) получить **token**;
     3. На странице [Authentication](#auth) установить "**Bearer {token}**" для API Key (Authorization).
 
+    >Полученный токен можно использовать многократно. Обратите внимание: при обновлении страницы в браузере токен сбрасывается.
+
     <br>
 
     # Общий процесс создания командировки
@@ -1868,9 +1870,9 @@ paths:
     put:
       tags:
         - ПОИСК И ОФОРМЛЕНИЕ УСЛУГ
-      summary: Запрос на офромление услуги
+      summary: Запрос на оформление услуги
       description: |
-        Запрос на офромление услуги  
+        Запрос на оформление услуги  
         <span style="color: #FF3B30">**Данный метод входит в подписку "Поиск и оформление услуг в системе клиента". Описание подписки доступно по [ссылке](#overview--policy)**</span>
       operationId: PerformExecutionService
       parameters:
@@ -3433,7 +3435,7 @@ tags:
 
       - [GET /journeys/{journeyNumber}/trips/{businessTripNumber}/documents](#get-/journeys/-journeyNumber-/trips/-businessTripNumber-/documents) - Получение проездных документов по командировке
       - [GET /orders/{orderNumber}/services/{serviceNumber}/alloweddocuments](#get-/orders/-orderNumber-/services/-serviceNumber-/alloweddocuments) - Получение доступных документов для услуги
-      - [PUT /orders/{orderNumber}/services/{serviceNumber}/execute](#put-/orders/-orderNumber-/services/-serviceNumber-/execute) - Запрос на офромление услуги
+      - [PUT /orders/{orderNumber}/services/{serviceNumber}/execute](#put-/orders/-orderNumber-/services/-serviceNumber-/execute) - Запрос на оформление услуги
       - [GET /orders/{orderNumber}/services/{serviceNumber}/regulations](#get-/orders/-orderNumber-/services/-serviceNumber-/regulations) - Получение правил оказания услуги
       - [PUT /orders/{orderNumber}/services/{serviceNumber}/reserve](#put-/orders/-orderNumber-/services/-serviceNumber-/reserve) - Запрос на бронирование услуги
       - [GET /orders/{orderNumber}/services/{serviceNumber}/seats](#get-/orders/-orderNumber-/services/-serviceNumber-/seats) - Получение информации о свободных местах
@@ -4021,6 +4023,18 @@ components:
       required:
         - amount
       type: object
+    BusinessTripAuthorizationTokenInfo:
+      properties:
+        token:
+          type: string
+          description: Токен авторизации
+        type:
+          $ref: "#/components/schemas/BusinessTripStage"
+        service_ids:
+          type: array
+          description: Список идентификаторов услуг. Передается при type = Services или type = AdditionalService
+          items:
+            type: integer
     BusinessTripCustomProperties:
       properties:
         business_trip_number:
@@ -4294,10 +4308,19 @@ components:
         authorization_token:
           type: string
           description: Токен авторизации факта поездки, или набора услуг или доп. услуги командировки
+        authorization_info:
+          type: array
+          description: Информация по запросам авторзации командировки
+          items:
+            $ref: "#/components/schemas/BusinessTripAuthorizationTokenInfo"
         authorization_assertion:
-          $ref: "#/components/schemas/AuthorizationAssertion"
+          description: Необходимость авторизации факта поездки
+          allOf:
+            - $ref: "#/components/schemas/AuthorizationAssertion"
         authorization_status:
-          $ref: "#/components/schemas/AuthorizationStatus"
+          description: Статус авторизации факта поездки
+          allOf:
+            - $ref: "#/components/schemas/AuthorizationStatus"
         budget_expenses:
           type: array
           items:
@@ -4315,9 +4338,13 @@ components:
         company:
           $ref: "#/components/schemas/Company"
         complete_trip_authorization_assertion:
-          $ref: "#/components/schemas/AuthorizationAssertion"
+          description: Необходимость авторизации набора услуг
+          allOf:
+            - $ref: "#/components/schemas/AuthorizationAssertion"
         complete_trip_authorization_status:
-          $ref: "#/components/schemas/AuthorizationStatus"
+          description: Статус авторизаци набора услуг
+          allOf:
+            - $ref: "#/components/schemas/AuthorizationStatus"
         count:
           $ref: "#/components/schemas/ServicesCountInfo"
         created_at:
@@ -4334,8 +4361,8 @@ components:
           description: Дата и время окончания командировки в формате YYYY-MM-DDThh:mm:ss
         from_city:
           description: Город отправления
-          items:
-            $ref: "#/components/schemas/Location"
+          allOf:
+            - $ref: "#/components/schemas/Location"
         has_documents:
           type: boolean
           description: Признак наличия документов
@@ -4364,8 +4391,8 @@ components:
           description: Ссылка на командировку в Time
         to_city:
           description: Город назначения
-          items:
-            $ref: "#/components/schemas/Location"
+          allOf:
+            - $ref: "#/components/schemas/Location"
         total_budget_expenses:
           type: number
           description: Общая сумма дополнительных расходов
