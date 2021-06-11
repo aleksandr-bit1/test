@@ -476,6 +476,10 @@ info:
 
     1.  При попытке добавить повторно любую из вышеперечисленных услуг в текущую или новую командировку, будет выдана ошибка 500 - попытка создания дубля услуги на стадии оформления
     2.  При попытке повторно отправить услуга на оформление будет выдана ошибка - 500 - попытка повторного оформления
+    3.  При попытке оформление авиа услуги выполняется проверка на наличие дублей услуг. Если дубли будут обнаружены, то бронирование или оформление будет завершено с ошибкой. Дублями считаются услуги, у которых:
+        - Одинаковая авиакомпания
+        - Одинаковый путешественник
+        - Разница в дне отправления меньше или равна нулю
 
     ## Методы API
 
@@ -781,38 +785,6 @@ paths:
         "426":
           description: Версия протокола не поддерживается
     parameters: []
-  "/authfx/service/batch/{batchToken}/complete":
-    post:
-      tags:
-        - АВТОРИЗАЦИЯ КОМАНДИРОВКИ
-      summary: Авторизация услуги
-      description: |
-        Авторизация услуги  
-        <span style="color: #FF3B30">**Данный метод входит в подписку "Внешняя авторизация". Описание подписки доступно по [ссылке](#overview--policy)**</span>
-      operationId: CompleteAuthService
-      parameters:
-        - name: batchToken
-          in: path
-          description: Токен авторизации
-          required: true
-          schema:
-            type: string
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: "#/components/schemas/CompleteServiceAuthorizationRequest"
-        required: true
-      responses:
-        "200":
-          description: Успешно
-          content: {}
-        "409":
-          description: Нет прав
-        "426":
-          description: Версия протокола не поддерживается
-          content: {}
-      x-codegen-request-body-name: body
   "/companies/{companyId}/profiles/{profileId}/allowedpaymentrequisites":
     get:
       tags:
@@ -3462,7 +3434,6 @@ tags:
     description: |
       <span style="color: #FF3B30">**Данный раздел входит в подписку "Внешняя авторизация". Описание подписки доступно по [ссылке](#overview--policy)**</span>
 
-      - [POST /authfx/service/batch/{batchToken}/complete](#post-/authfx/service/batch/-batchToken-/complete) - Авторизация услуги
       - [POST /authfx/trip/batch/{batchToken}/complete](#post-/authfx/trip/batch/-batchToken-/complete) - Авторизация командировки
       - [GET /journeys/{journeyNumber}/trips/{businessTripNumber}/stage/{BusinessTripStage}/authfx/state](#get-/journeys/-journeyNumber-/trips/-businessTripNumber-/stage/-BusinessTripStage-/authfx/state) - Проверка необходимости авторизации и получение списка авторизующих
       - [PUT /journeys/{journeyNumber}/trips/{businessTripNumber}/stage/{BusinessTripStage}/authfx/state](#put-/journeys/-journeyNumber-/trips/-businessTripNumber-/stage/-BusinessTripStage-/authfx/state) - Отправка командировки и услуг в командировке на авторизацию
@@ -5170,7 +5141,14 @@ components:
       required:
         - is_success
       type: object
-      description: Информация по возможности отмены командировки и коды причин для отмены услуг
+      description: |
+        Информация по возможности отмены командировки и коды причин для отмены услуг. Возможные следующие причины, которые не позволят отменить командировку:
+        - В командировке запрошена авторизация факта поездки
+        - Командировка находится в процессе отмены
+        - Командировка отменена
+        - Командировка находится в архиве
+        - Следующие оформленные услуги ({serviceId}) содержатся в совместной поездке и не подлежат автоматической отмене вместе с командировкой. Пожалуйста, аннулируйте их отдельно перед отменой командировки
+        - Данное действие недоступно, т.к. в командировке есть услуги, ожидающие авторизации. Для отмены запроса обратитесь к агенту в чате, а затем повторите отмену командировки по нажатию кнопки.
     DataResponseOfJourneyInfo:
       properties:
         data:
