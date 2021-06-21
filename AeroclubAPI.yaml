@@ -1432,6 +1432,10 @@ paths:
                   type: string
                   description: Прикрепляемый файл
                   format: binary
+          application/json:
+            schema:
+              $ref: "#/components/schemas/MessageRequest"
+              required: true
       responses:
         "200":
           description: Возвращается добавленный комментарий
@@ -4889,8 +4893,8 @@ components:
         validation_messages:
           type: array
           description: Результат валидации поля
-          allOf:
-            - $ref: "#/components/schemas/LocalizedString"
+          items:
+            $ref: "#/components/schemas/LocalizedString"
         values:
           type: array
           description: Список доступных значений для выбора
@@ -5148,7 +5152,7 @@ components:
         - Командировка отменена
         - Командировка находится в архиве
         - Следующие оформленные услуги ({serviceId}) содержатся в совместной поездке и не подлежат автоматической отмене вместе с командировкой. Пожалуйста, аннулируйте их отдельно перед отменой командировки
-        - Данное действие недоступно, т.к. в командировке есть услуги, ожидающие авторизации. Для отмены запроса обратитесь к агенту в чате, а затем повторите отмену командировки по нажатию кнопки.
+        - Данное действие недоступно, т.к. в командировке есть услуги, ожидающие авторизации. Для отмены запроса обратитесь к агенту в чате, а затем повторите отмену командировки
     DataResponseOfJourneyInfo:
       properties:
         data:
@@ -5959,6 +5963,9 @@ components:
         message:
           type: string
           description: Текст сообщения, сопровождающего запрос
+        profile_id:
+          type: integer
+          description: Идентификатор профиля автора сообщения
       type: object
       description: Тело запроса
     ModelCompany:
