@@ -3686,16 +3686,17 @@ components:
       properties:
         is_corporate_tariff:
           type: boolean
-          description: Признак корпоративного тарифа
+          description: Признак корпоративного тарифа (только для услуг AeroExpress, Avia, Hotel, Rail)
         is_travel_policy_compliant:
           type: boolean
           description: Признак соответствия тревел-политике
         travel_policy_violation_reason:
           type: string
-          description: Причина несоответствия тревел-политике
+          description: Причина несоответствия тревел-политике (только для услуг AeroExpress, Avia, Hotel, Rail) 
         travel_policy_violations:
           type: array
-          description: Список причин несоответствия тревел-политике
+          description: |
+            Список причин несоответствия тревел-политике (только для услуг AeroExpress, Avia, Hotel, Rail) <span style="color: #FF3B30">**(платная опция)**</span>
           items:
             type: string
       required:
@@ -9894,9 +9895,10 @@ components:
         - FullTariff - полный тариф  
         - SplittedFrom - отсплитовано из Авиа услуги  
         - PreviousUnauthorized - првично авторизованный  
+        - FareFamiliesWithoutBaggageMinimumTariff - минимальный тариф без багажа, входящий в группу тарифов  
+        <span style="color: #FF3B30">**Сохранение данных в услугах для аналитик ниже - платная опция**</span>
         - BenchmarkTariff - средняя стоимость билета по выбранному направлению  
         - AlternativeTariff - альтернативный тариф  
-        - FareFamiliesWithoutBaggageMinimumTariff - минимальный тариф без багажа, входящий в группу тарифов  
         - AlternativeSelected - выбрана альтернатива. Передается "невыгодная" опция OW или RT, которую пользователь планировал выбрать, но отказался в пользу альтернативы  
         - AlternativeNotSelected - не выбрана альтернатива. Передается альтернатива OW или RT, от которой пользователь отказался  
         - RoundTripAlternativeSelected - выбрана альтернатива RT, собранная на основании существующей услуги OW и добавляемой пользователем опции OW. Передается "невыгодная" опция OW, которую пользователь планировал выбрать, но отказался в пользу альтернативы  
@@ -9920,9 +9922,9 @@ components:
         - FullTariff
         - SplittedFrom
         - PreviousUnauthorized
+        - FareFamiliesWithoutBaggageMinimumTariff
         - BenchmarkTariff
         - AlternativeTariff
-        - FareFamiliesWithoutBaggageMinimumTariff
         - AlternativeSelected
         - AlternativeNotSelected
         - RoundTripAlternativeSelected
