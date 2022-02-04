@@ -2487,7 +2487,7 @@ paths:
         | expires_on             | +                                         | --                  | +            |
 
         *Все поля являются обязательными к заполнению
-      operationId: AddDocument
+      operationId: IntegrationAddDocument
       requestBody:
         description: Информация о добавляемом документе
         content:
@@ -2599,22 +2599,22 @@ paths:
         - Должно быть заполнено только отдно из указанных полей.
           - /integration/profile/search?ExternalProfileId={ExternalProfileId}&InternalCompanyId={InternalCompanyId}
           - /integration/profile/search?ExternalProfileId={ExternalProfileId}&ExternalCompanyId={ExternalCompanyId}
-      operationId: GetProfile
+      operationId: IntegrationGetProfile
       parameters:
         - name: ExternalProfileId
-          in: path
+          in: query
           description: Внешний идентификатор профиля
           required: true
           schema:
             type: string
         - name: ExternalCompanyId
-          in: path
+          in: query
           description: Внешний идентификатор компании
           required: true
           schema:
             type: string
         - name: InternalCompanyId
-          in: path
+          in: query
           description: Внутренний идентификатор компании в системе Аэроклуба
           required: true
           schema:
@@ -2639,7 +2639,7 @@ paths:
       - СОЗДАНИЕ КОМАНДИРОВКИ
       summary: Создание поездки версии 2 (с возможностью передачи внешних идентификаторов компаний)
       description: Создание поездки версии 2 (с возможностью передачи внешних идентификаторов компаний). Поддержка создания с неколькими пунктами назначения
-      operationId: CreateJourneyV2
+      operationId: IntegrationCreateJourneyV2
       requestBody:
         content:
           application/json:
@@ -5517,8 +5517,8 @@ components:
         validation_messages:
           type: array
           description: Результат валидации поля
-          allOf:
-            - $ref: "#/components/schemas/LocalizedString"
+          items:
+            $ref: "#/components/schemas/LocalizedString"
         values:
           type: array
           description: Список доступных значений для выбора
@@ -8719,10 +8719,12 @@ components:
       properties:
         legs:
           type: array
-          $ref: "#/components/schemas/LegDetailGrouppedVariantInfo"
+          items:
+            $ref: "#/components/schemas/LegDetailGrouppedVariantInfo"
         pricings:
           type: array
-          $ref: "#/components/schemas/AviaVariantDetail"
+          items:
+            $ref: "#/components/schemas/AviaVariantDetail"
       type: object  
     VariantInfoAvia:
       description: Авиа
@@ -8751,8 +8753,8 @@ components:
       properties:
         hotel:
           description: Информация по отелю
-          items:
-            $ref: "#/components/schemas/CodeDescription"
+          allOf:
+            - $ref: "#/components/schemas/CodeDescription"
         city:
           type: string
           description: Город
@@ -8787,10 +8789,7 @@ components:
           type: string
           description: Дата выезда в часовом поясе пользователя в формате YYYY-MM-DDThh:mm:ss
         tariffs:
-          type: string
-          description: Информация о стоимости размещения
-          items:
-            $ref: "#/components/schemas/HotelTariffInfo"
+          $ref: "#/components/schemas/HotelTariffInfo"
         is_travel_policy_compliant:
           type: boolean
           description: Признак соответствия тревел-политики компании
@@ -9060,10 +9059,9 @@ components:
       description: Отель
       properties:
         hotel:
-          type: string
           description: Информация по отелю
-          items:
-            $ref: "#/components/schemas/CodeDescription"
+          allOf:
+            - $ref: "#/components/schemas/CodeDescription"
         city:
           type: string
           description: Город
@@ -9337,10 +9335,7 @@ components:
           type: integer
           description: Минимальная стоимость места в вагоне
         type:
-          type: string
-          description: Тип вагона
-          items:
-            $ref: "#/components/schemas/CarriageType"
+          $ref: "#/components/schemas/CarriageType"
         carriage_owner:
           type: string
           description: Перевозчик
