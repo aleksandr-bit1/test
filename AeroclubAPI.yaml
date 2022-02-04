@@ -2,15 +2,20 @@ openapi: 3.0.2
 info:
   title: Aeroclub API
   description: |
-    # Аутентификация
+    Информация о версии API:
 
+    | # | Описание | Метод |
+    |---|---------------------------------------------------|---------------------------------|
+    | 1 | Получение информации о версии API и номере сборки | [GET /about](#get-/about) |
+
+    # Аутентификация
     **Методы API**
 
-    | # | Описание                        | Метод                                                                                                    |
+    | # | Описание | Метод |
     |---|---------------------------------|----------------------------------------------------------------------------------------------------------|
-    | 1 | Авторизация клиента             | [PUT /oauth/integration/fingerprint/{fingerprint}](#put-/oauth/integration/fingerprint/-fingerprint-)    |
-    | 2 | Метод выхода - SingOut          | [DELETE /oauth/integration/fingerprint/{fingerprint}](#delete-/oauth/integration/fingerprint/-fingerprint-) |
-
+    | 1 | Авторизация клиента | [PUT /oauth/integration/fingerprint/{fingerprint}](#put-/oauth/integration/fingerprint/-fingerprint-) |
+    | 2 | Метод выхода - SingOut | [DELETE /oauth/integration/fingerprint/{fingerprint}](#delete-/oauth/integration/fingerprint/-fingerprint-) |    
+    
     Для авторизации необходимо:
 
     1. На странице [Authentication](#auth) установить **username** и **password** для HTTP Basic;
@@ -19,37 +24,115 @@ info:
 
     >Полученный токен можно использовать многократно. Обратите внимание: при обновлении страницы в браузере токен сбрасывается.
 
-    <br>
-
     # Общий процесс создания командировки
+    
+    Процесс работы с командировками можно построить на передаче идентификаторов из клиентской системы (v1) или на передаче идентификаторов из базы данных Аэроклуба (v2).
+
+    ## Описание процесса создания командировки v1 (c ID клиента)
+    
+    <a href="images/integration_Создание_командировки.png" target="_blank"><img src="images/integration_Создание_командировки.png"/></a>
+
+    1. Выбрать город назначения
+    2. Выбрать интервал дат командировки
+    3. Выбрать путешественника
+    4. Выбрать компанию-плательщика
+    5. Выбрать форму оплаты
+    6. Создать "сущность" командировки (возможно 2 варианта: с простым маршрутом и сложными (несколько городов назначения))
+    7. Заполнить доп данные в командировке (если требуется)
+    8. Сохранить доп данные в командировке
+
+    > **Note:** Созданные с использованием API командировки могут быть открыты в Тайме по ссылке. Командировка может быть передана как без доп данных и дополнена доп данными в Тайме, так и с доп данными и, далее, через Тайм наполнена услугами.
+
+    ## Описание процесса создания командировки v2 (c ID Аэроклуба)
 
     <a href="bpm/Создание командировки_общий процесс_.bpm">Создание командировки_общий процесс_.bpm</a>
-
     <a href="images/Создание командировки_общий процесс_new.png" target="_blank"><img src="images/Создание командировки_общий процесс_new.png"/></a>
 
-    ## Описание процесса создания командировки
-
-    1.  Выбрать город назначения
-    2.  Выбрать интервал дат командировки
-    3.  Выбрать путешественника
-    4.  Выбрать компанию-плательщика
-    5.  Выбрать форму оплаты
-    6.  Создать "сущность" командировки (возможно 2 варианта: с простым маршрутом и сложными (несколько городов назначения))
-    7.  Заполнить доп данные в командировке (если требуется)
-    8.  Сохранить доп данные в командировке  
+    1. Выбрать город назначения
+    2. Выбрать интервал дат командировки
+    3. Выбрать путешественника
+    4. Выбрать компанию-плательщика
+    5. Выбрать форму оплаты
+    6. Создать "сущность" командировки (возможно 2 варианта: с простым маршрутом и сложными (несколько городов назначения))
+    7. Заполнить доп данные в командировке (если требуется)
+    8. Сохранить доп данные в командировке
 
     > **Note:** Созданные с использованием API командировки могут быть открыты в Тайме по ссылке. Командировка может быть передана как без доп данных и дополнена доп данными в Тайме, так и с доп данными и, далее, через Тайм наполнена услугами.
 
     При сохранении доп данных (вызов метода: [POST /journeys/{journeyNumber}/trips/{businessTripNumber}/stage/fact/customProperties](#post-/journeys/-journeyNumber-/trips/-businessTripNumber-/stage/-BusinessTripStage-/customProperties)) происходит следующая проверка:
+    - наличие всех обязательных доп данных (в том числе и доп данных, закрепленных за профилем сотрудника)
+    - наличие в профиле заполненного пола
+    - наличие в профиле Фамилии и Имени на английском языке
+    - для доп данных с ручным заполнением проверяется соответствие переданных значений заложенным в доп данных форматам, если таковые предусмотрены
 
-    -   наличие всех обязательных доп данных (в том числе и доп данных, закрепленных за профилем сотрудника)
-    -   наличие в профиле заполненного пола
-    -   наличие в профилие Фамилии и Имени на английском языке
-    -   для доп данных с ручным заполнением проверяется соответствие переданных значений заложенным в доп данных форматам, если таковые предусмотрены
+    При отсутствии каких-либо параметров из вышеперечисленных будет возвращена **ошибка: 500**
 
-    при отсутствии каких-либо параметров из вышеперечисленных будет возвращена **ошибка: 500**
+    ## Методы для создания командировки без доп данных (v1)
 
-    ## Методы для создания командировки без доп данных
+    ### Заполнение города назначения
+
+    <a href="images/integration_город_назначения.png" target="_blank"><img src="images/integration_город_назначения.png"/></a>
+
+    **Методы API**
+
+    | # | Описание                                                 | Метод                                     |
+    |---|----------------------------------------------------------|-------------------------------------------|
+    | 1 | Поиск совпадений по поисковому запросу "Название города" | [GET /references?Query=Калинград&Type=City](#get-/references) |
+
+    ### Заполнение путешественника
+
+    <a href="images/integration_заполнение_путешественника.png" target="_blank"><img src="images/integration_заполнение_путешественника.png"/></a>
+
+    **Комментарии к процессу:**
+
+    >Способы загрузки сотрудников с аналитиками в АК:
+    >
+    >-   через IHUB (Integration Hub)
+    >-   через TIME / LINK
+    >-   через поддержку АК (загрузка Excel-файла или через агента)
+    >
+    >**Особенности**:
+    >
+    >У профилей сотрудников документы имеют разные типы в Aeroclub API и Integration Hub. Маппинг типов:
+    >
+    >| Aeroclub API     | Integration Hub       | Описание                                            |
+    >| ---------------- | --------------------- | --------------------------------------------------- |
+    >| Passport         | NationalPassport      | Паспорт гражданина РФ                               |
+    >| NationalPassport | InternationalPassport | Заграничный паспорт РФ или паспорт гражданина не РФ |
+    
+    ### Заполнение города отправления
+
+    <a href="images/integration_город_отправления.png" target="_blank"><img src="images/integration_город_отправления.png"/></a>
+
+    **Методы API**
+
+    | # | Описание                                                | Метод                    |
+    |---|---------------------------------------------------------|--------------------------|
+    | 1 | Поиск совпадений по поисковому запросу "Название города" | [GET /references?Query=Калинград&Type=City](#get-/references) |
+
+    ### Заполнение компании-плательщика
+
+    <a href="images/integration_заполнение_компании-плательщика.png" target="_blank"><img src="images/integration_заполнение_компании-плательщика.png"/></a>
+    
+    ### Заполнение формы оплаты
+
+    <a href="images/integration_заполнение_способа_оплаты.png" target="_blank"><img src="images/integration_заполнение_способа_оплаты.png"/></a>
+
+    **Методы API**
+
+    | # | Описание                                                | Метод                    |
+    |---|---------------------------------------------------------|--------------------------|
+    | 1 | Загрузка списка доступных пользователю способов оплаты | [GET /companies/{companyId}/profiles/{profileId}/allowedpaymentrequisites](#get-/companies/-companyId-/profiles/-profileId-/allowedpaymentrequisites) |
+    
+    ### Создание сущности командировки с простым или сложным маршрутом
+
+    **Методы API**
+
+    | # | Описание                                                | Метод                    |
+    |---|---------------------------------------------------------|--------------------------|
+    | 1 | Создание "сущности" командировки | [PUT /integration/journeysV2](#put-/integration/journeysV2) |
+
+    ## Методы для создания командировки без доп данных (v2)
 
     ### Заполнение города назначения
 
@@ -820,6 +903,20 @@ info:
     email: integration@aeroclub.ru
   version: v1
 paths:
+  /about:
+    get:
+      tags:
+      - About
+      summary: Получение информации о версии сборки и протокола
+      operationId: GetApiInfo
+      responses:
+        "200":
+          description: Информация об Api
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiInfoResponse'
+
   "/authfx/trip/batch/{batchToken}/complete":
     post:
       tags:
@@ -2533,7 +2630,70 @@ paths:
           description: Вывод текста ошибки. Пример "Не удалось сопоставить Id профайла с идентификатором 12345ABCD для CompanyId 123456"
         "426":
           description: Версия протокола не поддерживается
-    parameters: []  
+    parameters: []
+  /integration/journeysV2:
+    put:
+      tags:
+      - СОЗДАНИЕ КОМАНДИРОВКИ
+      summary: Создание поездки версии 2 (с возможностью передачи внешних идентификаторов компаний)
+      description: Создание поездки версии 2 (с возможностью передачи внешних идентификаторов компаний). Поддержка создания с неколькими пунктами назначения
+      operationId: CreateJourneyV2
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateJourneyRequestV2'
+        required: true
+      responses:
+        200:
+          description: Возвращается номер созданной поездки и командировок
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DataResponseOfJourneyNumbers'
+        426:
+          description: Версия протокола не поддерживается
+          content: {}
+      x-codegen-request-body-name: body
+  /integration/journeys/{journeyNumber}/trips/{businessTripNumber}/customproperties:
+    put:
+      tags:
+      - СОЗДАНИЕ КОМАНДИРОВКИ
+      summary: Заполнение / обновление текстовых значений доп. данных
+      description: Заполнение / обновление текстовых значений доп. данных в командировке
+        и услугах + заполнение суточных
+      operationId: InsertOrUpdateUpdateBusinessTripCustomProperties
+      parameters:
+      - name: journeyNumber
+        in: path
+        description: Номер командировки
+        required: true
+        schema:
+          type: integer
+      - name: businessTripNumber
+        in: path
+        description: Номер поездки
+        required: true
+        schema:
+          type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InsertOrUpdateBusinessTripsCustomPropertiesRequest'
+        required: true
+      responses:
+        200:
+          description: Возвращается список доп. данных с указанием успешности обновления
+            их значений
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DataResponseOfInsertOrUpdateBusinessTripsCustomPropertiesResponse'
+        426:
+          description: Версия протокола не поддерживается
+          content: {}
+      x-codegen-request-body-name: body
   /search:
     put:
       tags:
@@ -3824,6 +3984,8 @@ tags:
       - [GET /journeys/{journeyNumber}/trips/{businessTripNumber}/stage/{BusinessTripStage}/customProperties](#get-/journeys/-journeyNumber-/trips/-businessTripNumber-/stage/-BusinessTripStage-/customProperties) - Получение доп. данных для заполнения
       - [POST /journeys/{journeyNumber}/trips/{businessTripNumber}/stage/{BusinessTripStage}/customProperties](#post-/journeys/-journeyNumber-/trips/-businessTripNumber-/stage/-BusinessTripStage-/customProperties) - Сохранение доп. данных по командировке
       - [PUT /journeysV2](#put-/journeysV2) - Создание поездки с несколькими пунктами
+      - [PUT /integration/journeys/{journeyNumber}/trips/{businessTripNumber}/customproperties](#put-/integration/journeys/-journeyNumber-/trips/-businessTripNumber-/customproperties) - Сохранение доп. данных по командировке с использованием внешних идентификаторовв
+      - [PUT /integration/journeysV2](#put-/integration/journeysV2) - Создание поездки с несколькими пунктами с использованием ID клиента. Простой и сложный маршрут.
       - [GET /references](#get-/references) - Поиск локаций
       - [GET /references/profiles](#get-/references/profiles) - Поиск профилей (Поиск осуществляется только по профайлам, которым в данный момент 18 лет или старше)
       - [GET /integration/profile/search?ExternalProfileId={ExternalProfileId}&InternalCompanyId={InternalCompanyId}](#get-/integration/profile/search?ExternalProfileId={ExternalProfileId}&InternalCompanyId={InternalCompanyId}) - Получение ID профиля из внутренних систем Аэроклуба
@@ -4196,8 +4358,10 @@ components:
       properties:
         description:
           type: string
+          description: Версия API и номер сборки
         protocol_version:
           type: string
+          description: Версия протокола
       type: object
     Attachment:
       description: Вложения
@@ -5205,8 +5369,10 @@ components:
             $ref: "#/components/schemas/CreateTripRequestV2"
         creator_external_company_id:
           type: string
+          description: Внешний идентификатор компании создателя командировки. Передается Аэроклубом
         creator_external_profile_id:
           type: string
+          description: Внешний идентификатор профиля создателя командировки (ExternalIdentifier в iHUB). 
       type: object
     CreateOrderForBusinessTripRequest:
       properties:
@@ -5295,10 +5461,13 @@ components:
       properties:
         external_company_id:
           type: string
+          description: Внешний идентификатор компании командируемого. Сообщается Аэроклубом
         external_profile_id:
           type: string
+          description: Внешний идентификатор профиля командируемого (ExternalIdentifier в iHUB)
         from_city_id:
           type: integer
+          description: Идентификатор города отправления в командировку
         payment_type:
           $ref: "#/components/schemas/PaymentType"
         trip_destination_requests:
@@ -5544,17 +5713,20 @@ components:
     DataResponseOfInsertOrUpdateBusinessTripsCustomPropertiesResponse:
       properties:
         data:
+          description: Блок данных с информацией о добавлении / обновлении доп.данных
           $ref:
-            "#/components/schemas/InsertOrUpdateBusinessTripsCustomPropertiesRe\
-            sponse"
+            "#/components/schemas/InsertOrUpdateBusinessTripsCustomPropertiesResponse"
         errors:
           type: array
+          description: Список ошибок
           items:
             type: string
         is_success:
           type: boolean
+          description: Признак успешного выполнения запроса
         message:
           type: string
+          description: Текст сообщения
       required:
         - is_success
       type: object
@@ -6025,6 +6197,7 @@ components:
       properties:
         custom_properties:
           type: array
+          description: Доп.данные командировки и их значения
           items:
             $ref: "#/components/schemas/UpdateCustomPropertyRequest"
       type: object
@@ -6032,6 +6205,7 @@ components:
       properties:
         results:
           type: array
+          description: Информация о результатах обработки доп.данных
           items:
             $ref: "#/components/schemas/UpdateCustomPropertyResponse"
         type:
@@ -8394,16 +8568,21 @@ components:
       properties:
         identifier:
           type: string
+          description: Внешний идентификатор доп.данного
         value:
+          description: Значение доп.данного
           type: string
       type: object
     UpdateCustomPropertyResponse:
       properties:
         error:
+          description: Ошибки при обработке доп.данного
           type: string
         identifier:
+          description: Идентификатор доп.данного
           type: string
         is_success:
+          description: Признак успешности обработки доп.данного
           type: boolean
       required:
         - is_success
@@ -9582,6 +9761,7 @@ components:
         - Female
     InsertOrUpdateType:
       type: string
+      description: Значения типа операции
       enum:
         - Unknown
         - Insert
