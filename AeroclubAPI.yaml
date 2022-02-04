@@ -909,6 +909,7 @@ paths:
       - About
       summary: Получение информации о версии сборки и протокола
       operationId: GetApiInfo
+      security: [] 
       responses:
         "200":
           description: Информация об Api
@@ -916,7 +917,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ApiInfoResponse'
-
+        "426":
+          description: Версия протокола не поддерживается
   "/authfx/trip/batch/{batchToken}/complete":
     post:
       tags:
@@ -2586,7 +2588,7 @@ paths:
         "426":
           description: Версия протокола не поддерживается
     parameters: []
-  /integration/profile/search?ExternalProfileId={ExternalProfileId}&InternalCompanyId={InternalCompanyId}:
+  /integration/profile/search:
     get:
       tags:
         - СОЗДАНИЕ КОМАНДИРОВКИ
@@ -3961,6 +3963,9 @@ paths:
 security:
   - apiKey: []
 tags:
+  - name: About
+    description: Информация об Api
+
   - name: АВТОРИЗАЦИЯ API
     description: |
       <span style="color: #FF3B30">**Доступ к методам в данном разделе настраивается в соответствии с подпиской компании на модули API**</span>
@@ -4060,8 +4065,6 @@ tags:
       - [GET /feedback/companies](#get-/feedback/companies) - Получение списка компаний, для который возможно настроить подписку
       - [POST /feedback/companies/{CompanyID}/subscriptions](#post-/feedback/companies/-companyId-/subscriptions) - Создание подписки на события
       - [GET /feedback/companies/{CompanyID}/subscriptions](#get-/feedback/companies/-companyId-/subscriptions) - Получение списка настроенных событий
-  - name: About
-    description: Информация об Api
   - name: Account
     description: Работа с аккаунтами пользователя
   - name: Authentication
