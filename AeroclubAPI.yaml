@@ -86,7 +86,7 @@ info:
 
     | # | Описание                                                | Метод                    |
     |---|---------------------------------------------------------|--------------------------|
-    | 1 | Поиск совпадений по поисковому запросу "ФИО сотрудника" | [GET /references/profiles](#get-/references/profiles) |
+    | 1 | Поиск совпадений по поисковому запросу "ФИО сотрудника" (Поиск осуществляется только по профайлам, которым в данный момент 18 лет или старше) | [GET /references/profiles](#get-/references/profiles) |
 
     ### Заполнение города отправления
 
@@ -491,6 +491,51 @@ info:
     |  8 | Servicing    | Authorized          | NotRequired/Required   | --               | Обрабатывается агентом | Услуга ушла на ручное оформление агенту                                                                                                                                           |
     |  9 | Execution    | Authorized          | NotRequired/Required   | Change           | Оформлено              | Услуга оформлена                                                                                                                                                                  |
     | 10 | Refunding    | Authorized          | NotRequired/Required   | --               | Отменено               | Услуга отменена                                                                                                                                                                   |
+
+    ## Заполнение информации о багаже в Авиауслуге
+
+    В ответе каких методов API заполняется информация о багаже:
+    -  Получение списка вариантов по фильтрам: GET /search/{requestNumber}/results
+    -  Получение информации по опции: GET /search/{requestNumber}/options/{optionNumber}/details/{key}
+    -  Получение информации по услуге: GET /orders/{orderNumber}/services/{serviceNumber}
+    -  Получение информации по командировке: GET /journeys/{journeyNumber}/trips/{businessTripNumber}
+
+    Передаваемые в ответе методов параметры багажа:
+           
+        {
+          "baggage": {
+            "type": null,
+            "quantity": null,
+            "weigh_measurement": null
+          },
+        }
+
+    >**ВАЖНО:** В зависимости от типа багажа "type", заполняется один из параметров: Quantity или Weigh_Measurement.
+    >
+    >**ВАЖНО:** Не могут быть заполнены одновременно оба параметра.
+    >
+    >**ВАЖНО:** При передаче количества мест багажа, масса не указывается, так как норма багажа для места может различаться.
+
+    **Данные о багаже, полученные от поставщика:**    
+
+    |Type                    | WeightMeasurementType                           | Quantity                                    | Информация от поставщика                                                             |
+    |------------------------|-------------------------------------------------|---------------------------------------------|-----------------------------------------------------------------------------------------------|
+    |NotSet (отсутствует)    | NotSet (отсутствует)                            | NotSet (отсутствует)                        |Информация о багаже не передана                                                                |
+    |Weight (масса)          | NotSet (отсутствует)                            | Ошибка получения массы багажа от поставщика |тип багажа - масса, единица измерения массы - не передана, значение массы багажа - не передано |
+    |Weight (масса)          | Pound (единица измерения массы - фунты)         | Передана масса багажа в фунтах              |тип багажа - масса, единица измерения массы - фунты, передана масса багажа в фунтах            |
+    |Weight (масса)          | Kilogram (единица измерения массы - килограммы) | Передана масса багажа в килограммах         |тип багажа - масса, единица измерения массы - килограммы, передана масса багажа в килограммах  |
+    |Piece (количество мест) | NotSet (отсутствует)                            | Передано количество мест багажа             |тип багажа - место, единица измерения массы - не передана, передано количество мест багажа |
+    
+    **Заполнение параметров багажа в указанных методах API:**    
+
+    |Type                 | Weight_Measurement                                                                    | Quantity               | Информация в ответе методов API                                                               |
+    |---------------------|---------------------------------------------------------------------------------------|------------------------|-----------------------------------------------------------------------------------------------|
+    |NotSet (отсутствует) | NULL                                                                                  | NULL                   |Информация о багаже не передана                                                                |
+    |Weight (масса)       | NULL                                                                                  | NULL                   |тип багажа - масса, единица измерения массы - не передана, значение массы багажа - не передано |
+    |Weight (масса)       | Масса багажа в килограммах (конвертация из фунтов в килограммы, 1 фунт = 0,453592 кг) | NULL                   |тип багажа - масса, единица измерения массы - килограммы, передана масса багажа в килограммах  |
+    |Weight (масса)       | Масса багажа в килограммах                                                            | NULL                   |тип багажа - масса, единица измерения массы - килограммы, передана масса багажа в килограммах  |
+    |Seats (место)        | NULL                                                                                  | Количество мест багажа |тип багажа - место, единица измерения массы - не передана, передано количество мест багажа     |
+    
 
     ## Варианты ошибок
 
@@ -2320,6 +2365,47 @@ paths:
           description: Версия протокола не поддерживается
           content: {}
       x-codegen-request-body-name: document
+  /integration/profile/documents:
+    put:
+      tags:
+        - ПОИСК И ОФОРМЛЕНИЕ УСЛУГ
+      summary: Добавление документов (паспортов) пользователя по внешнему идентификатору
+      description: |
+        Добавление документов (паспортов) пользователя  
+        ### Описание сочетаний полей по отношению типу документа  
+        | Поле*                  | NationalPassport<br>Международный паспорт | Passport<br>Паспорт | Visa<br>Виза |
+        |------------------------|:-----------------------------------------:|:-------------------:|:------------:|
+        | series                 | +                                         | +                   | +            |
+        | number                 | +                                         | +                   | +            |
+        | first_name             | +                                         | +                   | +            |
+        | last_name              | +                                         | +                   | +            |
+        | master_document_id     | --                                        | --                  | +            |
+        | destination_country_id | --                                        | --                  | +            |
+        | city_of_issue_id       | --                                        | --                  | +            |
+        | place_of_birth         | +                                         | +                   | --           |
+        | citizenship_country_id | +                                         | +                   | --           |
+        | issued_on              | +                                         | +                   | +            |
+        | expires_on             | +                                         | --                  | +            |
+
+        *Все поля являются обязательными к заполнению
+      operationId: AddDocument
+      requestBody:
+        description: Информация о добавляемом документе
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/AddExternalDocumentsRequest"
+        required: true
+      responses:
+        "200":
+          description: Успешно
+          content: {}
+        "409":
+          description: Нет прав
+        "426":
+          description: Версия протокола не поддерживается
+          content: {}
+      x-codegen-request-body-name: document    
   "/profile/documents/{documentId}":
     delete:
       tags:
@@ -2383,7 +2469,7 @@ paths:
         - СОЗДАНИЕ КОМАНДИРОВКИ
       summary: Поиск профилей
       description: |
-        Поиск профилей (autocomplete)
+        Поиск профилей (autocomplete). Поиск осуществляется только по профайлам, которым в данный момент 18 лет или старше.
       operationId: SearchProfiles
       parameters:
         - name: query
@@ -2403,6 +2489,51 @@ paths:
         "426":
           description: Версия протокола не поддерживается
     parameters: []
+  /integration/profile/search?ExternalProfileId={ExternalProfileId}&InternalCompanyId={InternalCompanyId}:
+    get:
+      tags:
+        - СОЗДАНИЕ КОМАНДИРОВКИ
+      summary: Получение ID профиля из внутренних систем Аэроклуба
+      description: |
+        Получение профилей с использованием внешнего идентификатора профиля и внешнего или внутреннего идентификатора компании.
+        - Обязательно к заполненению любое из полей ExternalCompanyId или InternalCompanyId.
+        - Должно быть заполнено только отдно из указанных полей.
+          - /integration/profile/search?ExternalProfileId={ExternalProfileId}&InternalCompanyId={InternalCompanyId}
+          - /integration/profile/search?ExternalProfileId={ExternalProfileId}&ExternalCompanyId={ExternalCompanyId}
+      operationId: GetProfile
+      parameters:
+        - name: ExternalProfileId
+          in: path
+          description: Внешний идентификатор профиля
+          required: true
+          schema:
+            type: string
+        - name: ExternalCompanyId
+          in: path
+          description: Внешний идентификатор компании
+          required: true
+          schema:
+            type: string
+        - name: InternalCompanyId
+          in: path
+          description: Внутренний идентификатор компании в системе Аэроклуба
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Список найденных профилей
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/ProfileLookupItem"
+        "400":
+          description: Вывод текста ошибки. Пример "Не удалось сопоставить Id профайла с идентификатором 12345ABCD для CompanyId 123456"
+        "426":
+          description: Версия протокола не поддерживается
+    parameters: []  
   /search:
     put:
       tags:
@@ -2917,6 +3048,11 @@ paths:
           description: Признак рекомендованного отеля
           schema:
             type: boolean
+        - name: HotelName
+          in: query
+          description: Название отеля
+          schema:
+            type: string            
         - name: pageNumber
           in: query
           description: Номер страницы
@@ -2941,6 +3077,180 @@ paths:
         "426":
           description: Версия протокола не поддерживается
     parameters: []
+  "/search/{requestNumber}/options/{optionNumber}/resultsavia":
+    get:
+      tags:
+        - ПОИСК И ОФОРМЛЕНИЕ УСЛУГ
+      summary: Постраничное получение списка авиа вариантов в опции с учётом фильтрации
+      description: |
+        Получение списка авиа вариантов с группировкой по опциям и фильтрам
+      operationId: GetAviaResultsForOption
+      parameters:
+        - name: requestNumber
+          in: path
+          description: Номер запроса
+          required: true
+          schema:
+            type: integer
+        - name: optionNumber
+          in: path
+          description: Номер опции
+          required: true
+          schema:
+            type: integer
+        - name: times
+          in: query
+          description: Диапазон времени
+          schema:
+            type: string
+            enum:
+              - Night
+              - Morning
+              - Afternoon
+              - Evening
+        - name: orderBy
+          in: query
+          description: Сортировка по параметру. Optimal - оптимально, Price - дешевле, Duration - продолжительность, ByTime - быстрее
+          schema:
+            type: string
+            enum:
+              - Optimal
+              - Price
+              - Duration
+              - ByTime
+        - name: isDescending
+          in: query
+          description: Сортировка в обратном порядке
+          schema:
+            type: boolean
+            default: false
+        - name: departureAtThereTimes
+          in: query
+          description: Время отправления туда
+          schema:
+            type: string
+            enum:
+              - Night
+              - Morning
+              - Afternoon
+              - Evening
+        - name: arrivalAtThereTimes
+          in: query
+          description: Время прибытия туда
+          schema:
+            type: string
+            enum:
+              - Night
+              - Morning
+              - Afternoon
+              - Evening
+        - name: departureAtBackTimes
+          in: query
+          description: Время прибытия обратно
+          schema:
+            type: string
+            enum:
+              - Night
+              - Morning
+              - Afternoon
+              - Evening
+        - name: arrivalAtBackTimes
+          in: query
+          description: Время прибытия обратно
+          schema:
+            type: string
+            enum:
+              - Night
+              - Morning
+              - Afternoon
+              - Evening
+        - name: departureFromThere
+          in: query
+          description: "ID пункта отправления туда. Варианты заполнения параметра, по типу пункта назначения: cXXX - город, aXXX - аэропорт, sXXX - жд станция"
+          schema:
+            type: string
+        - name: arrivalToThere
+          in: query
+          description: "ID пункта прибытия туда. Варианты заполнения параметра, по типу пункта назначения: cXXX - город, aXXX - аэропорт, sXXX - жд станция"
+          schema:
+            type: string
+        - name: departureFromBack
+          in: query
+          description: "ID пункта отправления обратно. Варианты заполнения параметра, по типу пункта назначения: cXXX - город, aXXX - аэропорт, sXXX - жд станция"
+          schema:
+            type: string
+        - name: arrivalToBack
+          in: query
+          description: "ID пункта прибытия обратно. Варианты заполнения параметра, по типу пункта назначения: cXXX - город, aXXX - аэропорт, sXXX - жд станция"
+          schema:
+            type: string
+        - name: IsTravelPolicyCompliant
+          in: query
+          description: Признак соответствия Travel policy
+          schema:
+            type: boolean
+        - name: IsCorporateTariff
+          in: query
+          description: Признак соответствия Corporate tariff
+          schema:
+            type: boolean
+        - name: aviaFilter_airCompanies
+          in: query
+          description: Список авиакомпаний через запятую
+          schema:
+            type: string
+        - name: aviaFilter_classes
+          in: query
+          description: Список классов через запятую
+          schema:
+            type: string
+        - name: aviaFilter_transfer
+          in: query
+          description: Пересадка
+          schema:
+            type: string
+            enum:
+              - Direct
+              - One
+              - TwoAndMore
+        - name: aviaFilter_baggage
+          in: query
+          description: С багажом
+          schema:
+            type: boolean
+            default: true
+        - name: aviaFilter_rules
+          in: query
+          description: Возвраты
+          schema:
+            type: string
+            enum:
+              - Changeable
+              - Refundable
+        - name: pageNumber
+          in: query
+          description: Номер страницы
+          schema:
+            type: integer
+            default: 0
+        - name: maxCount
+          in: query
+          description: Количество элементов на странице
+          schema:
+            type: integer
+            default: 15
+      responses:
+        "200":
+          description: Список найденных вариантов
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PagedResponseOfAviaGrouppedVariantInfo"
+        "409":
+          description: Нет прав
+        "426":
+          description: Версия протокола не поддерживается
+    parameters: []  
   "/search/{requestNumber}/options/{optionNumber}/results/count":
     get:
       tags:
@@ -3515,7 +3825,9 @@ tags:
       - [POST /journeys/{journeyNumber}/trips/{businessTripNumber}/stage/{BusinessTripStage}/customProperties](#post-/journeys/-journeyNumber-/trips/-businessTripNumber-/stage/-BusinessTripStage-/customProperties) - Сохранение доп. данных по командировке
       - [PUT /journeysV2](#put-/journeysV2) - Создание поездки с несколькими пунктами
       - [GET /references](#get-/references) - Поиск локаций
-      - [GET /references/profiles](#get-/references/profiles) - Поиск профилей
+      - [GET /references/profiles](#get-/references/profiles) - Поиск профилей (Поиск осуществляется только по профайлам, которым в данный момент 18 лет или старше)
+      - [GET /integration/profile/search?ExternalProfileId={ExternalProfileId}&InternalCompanyId={InternalCompanyId}](#get-/integration/profile/search?ExternalProfileId={ExternalProfileId}&InternalCompanyId={InternalCompanyId}) - Получение ID профиля из внутренних систем Аэроклуба
+  
   - name: ПОИСК И ОФОРМЛЕНИЕ УСЛУГ
     description: |
       <span style="color: #FF3B30">**Доступ к методам в данном разделе настраивается в соответствии с подпиской компании на модули API**</span>
@@ -3531,6 +3843,7 @@ tags:
       - [GET /profile/avatar](#get-/profile/avatar) - Получение аватара текущего пользователя
       - [PUT /profile/avatar](#put-/profile/avatar) - Сохранение аватара
       - [PUT /profile/documents](#put-/profile/documents) - Добавление документов (паспортов) пользователя
+      - [PUT /integration/profile/documents](#put-/integration/profile/documents) - Добавление документов (паспортов) пользователя по внешнему идентификатору
       - [DELETE /profile/documents/{documentId}](#delete-/profile/documents/-documentId-) - Удаление документа(паспорта) пользователя
       - [POST /profile/update](#post-/profile/update) - Обновление информации профайла
       - [PUT /search](#put-/search) - Создание запроса на поиск вариантов
@@ -3542,6 +3855,7 @@ tags:
       - [GET /search/{requestNumber}/options/{optionNumber}/details/{key}/rules](#get-/search/-requestNumber-/options/-optionNumber-/details/-key-/rules) - Получение правил опции
       - [PUT /search/{requestNumber}/options/{optionNumber}/details/{key}/selectToTrip](#put-/search/-requestNumber-/options/-optionNumber-/details/-key-/selectToTrip) - Добавление опции в командировку
       - [GET /search/{requestNumber}/options/{optionNumber}/results](#get-/search/-requestNumber-/options/-optionNumber-/results) - Получение списка опций по фильтрам
+      - [GET /search/{requestNumber}/options/{optionNumber}/resultsavia](#get-/search/-requestNumber-/options/-optionNumber-/resultsavia) - Получение списка авиа вариантов с группировкой по опциям и фильтрам 
       - [GET /search/{requestNumber}/options/{optionNumber}/results/count](#get-/search/-requestNumber-/options/-optionNumber-/results/count) - Получения количества опций по фильтрам
       - [GET /search/{requestNumber}/results](#get-/search/-requestNumber-/results) - Получение списка вариантов по фильтрам
       - [GET /search/requests](#get-/search/requests) - Получение списка запросов поиска
@@ -3718,7 +4032,7 @@ components:
         expires_on:
           type: string
           format: datetime
-          description: Дата окончания срока действия в формате YYYY-MM-DDThh:mm:ss
+          description: Дата окончания срока действия в формате YYYY-MM-DDThh:mm:ss 
         first_name:
           type: string
           description: Имя, на кого выдан документ
@@ -3746,6 +4060,21 @@ components:
       required:
         - type
       type: object
+    AddExternalDocumentsRequest:
+      required:
+      - profile_id
+      type: object
+      properties:
+        documents:
+          type: array
+          items:
+            $ref: '#/components/schemas/AddDocumentRequest'
+        external_profile_id:
+          type: string
+          description: Внешний идентификатор профайла (Например его табельный номер). Если при запросе указано значение profile_id, то external_profile_id является не обязательным
+        profile_id:
+          type: integer
+          description: Идентификатор профайла в системе АК. Если при запросе указано значение external_profile_id, то profile_id является не обязательным
     AdditionalInfo:
       properties:
         name_en:
@@ -3853,7 +4182,7 @@ components:
           description: Признак соответствия тревел-политике
         travel_policy_violation_reason:
           type: string
-          description: Причина несоответствия тревел-политике (только для услуг AeroExpress, Avia, Hotel, Rail) 
+          description: Лимит, передается только при нарушении тревел-политики (только для услуг AeroExpress, Avia, Hotel, Rail) 
         travel_policy_violations:
           type: array
           description: |
@@ -4856,6 +5185,9 @@ components:
         to_city_id:
           type: integer
           description: Идентификатор города назначения командировки
+        creator_profile_id:
+          type: integer
+          description: Идентификатор профиля создателя (заказчика)
         travellers:
           type: array
           items:
@@ -4937,10 +5269,10 @@ components:
       properties:
         bank_account_id:
           type: integer
-          description: "Идентификатор банковского реквизита. Обязательно, если 'payment_type_id': 2"
+          description: "Идентификатор банковского реквизита. Обязательно, если 'payment_type_id': 2. Значение bank_accounts.id из запроса [получение доступных форм оплаты.](#get-/companies/-companyId-/profiles/-profileId-/allowedpaymentrequisites)"
         card_information_store_id:
           type: integer
-          description: "Идентификатор кредитной карты. Обязательно, если 'payment_type_id': 3 или 'payment_type_id': 4"
+          description: "Идентификатор кредитной карты. Обязательно, если 'payment_type_id': 3 или 'payment_type_id': 4. Значение payment_policies.payment_policy_items.id из запроса [получение доступных форм оплаты.](#get-/companies/-companyId-/profiles/-profileId-/allowedpaymentrequisites)"
         company_id:
           type: integer
           description: Идентификатор компании-плательщика
@@ -5563,8 +5895,17 @@ components:
     FilterParameter:
       properties:
         parameter_name:
-          type: string
-          description: Название фильтра
+          type: string           
+          description: |
+              Возможно применение следующих фильтров:  
+              Stars - Звездность отеля  
+              PriceFrom - Стоимость от  
+              PriceTo - Стоимость до  
+              HotelTypes - Тип отеля  
+              PaymentPlaces - Оплата  
+              ConfirmationTypes - Подтверждение  
+              IsRecommended - Признак рекомендованного отеля  
+              HotelName - Название отеля
         values:
           type: array
           description: Значения фильтра
@@ -5801,6 +6142,9 @@ components:
         order_number:
           type: integer
           description: Номер заказа
+        id:
+          type: integer
+          description: Идентификатор услуги
         reservation_expires_at_utc:
           type: string
           description: Время, до которого можно оплатить забронированную услугу. Формат YYYY-MM-DDThh:mm:ssZ
@@ -5824,6 +6168,122 @@ components:
           description: Идентификатор услуги (Id в Base64)
         type:
           $ref: "#/components/schemas/ServiceType"
+      required:
+        - authorization_assertion
+        - authorization_status
+        - available_actions
+        - number
+        - order_number
+        - service_state
+        - status
+        - tariff_total
+        - type
+      type: object    
+    IServiceHotelRelationsInfo:
+      properties:
+        analytics:
+          $ref: "#/components/schemas/Analytics"
+        authorization_assertion:
+          $ref: "#/components/schemas/AuthorizationAssertion"
+        authorization_status:
+          $ref: "#/components/schemas/AuthorizationStatus"
+        available_actions:
+          $ref: "#/components/schemas/AvailableActions"
+        end_at:
+          type: string
+          description: Дата и время окончания оказания услуги в часовом поясе пользователя. Формат YYYY-MM-DDThh:mm:ss
+        end_at_utc:
+          type: string
+          description: Дата и время окончания оказания услуги. Формат YYYY-MM-DDThh:mm:ssZ
+        number:
+          type: integer
+          description: Номер услуги
+        order_number:
+          type: integer
+          description: Номер заказа
+        id:
+          type: integer
+          description: Идентификатор услуги
+        service_state:
+          $ref: "#/components/schemas/ServiceState"
+        servicing_request:
+          $ref: "#/components/schemas/ServicingRequest"        
+        start_at:
+          type: string
+          description: Дата и время начала оказания услуги в часовом поясе пользователя. Формат YYYY-MM-DDThh:mm:ss
+        start_at_utc:
+          type: string
+          description: Дата и время начала оказания услуги. Формат YYYY-MM-DDThh:mm:ssZ
+        status:
+          $ref: "#/components/schemas/ServiceStatus"
+        tariff_total:
+          type: number
+          description: Общая стоимость услуги, включая сервисный сбор
+        unique_identifier:
+          type: string
+          description: Идентификатор услуги (Id в Base64)
+        type:
+          $ref: "#/components/schemas/ServiceType"
+        rating:
+              description: Рейтинг отеля
+              type: integer           
+        category:
+              description: Категория отеля
+              allOf:
+                - $ref: "#/components/schemas/LocalizedString"                       
+        allocation_adults:
+              description: Количество взрослых
+              type: integer
+        is_early_checkin:
+              description: Признак возможной ранней регистрации в отеле
+              type: boolean
+        is_late_check_out:
+              description: Признак возможного позднего выезда из отеля
+              type: boolean
+        room:
+              description: Информация по номеру
+              items:
+                $ref: "#/components/schemas/Room"
+        stars:
+              description: Количество звезд отеля
+              type: integer
+        name:
+              description: Название отеля
+              allOf:
+                - $ref: "#/components/schemas/LocalizedString"
+        images:
+              description: Изображение отеля
+              items:
+                $ref: "#/components/schemas/Image"
+        location:
+              description: Местоположение отеля
+              items:
+                $ref: "#/components/schemas/Location"
+        address:
+              description: Адрес отеля
+              items:
+                $ref: "#/components/schemas/Address"
+        actual_checkin_at:
+              description: Время регистрации в часовом поясе пользователя. Формат YYYY-MM-DDThh:mm:ss
+              type: string
+        actual_checkin_at_utc:
+              description: Время регистрации. Формат YYYY-MM-DDThh:mm:ssZ
+              type: string
+        actual_checkout_at:
+              description: Время выезда в часовом поясе пользователя. Формат YYYY-MM-DDThh:mm:ss
+              type: string
+        actual_checkout_at_utc:
+              description: Время выезда. Формат YYYY-MM-DDThh:mm:ssZ
+              type: string
+        is_payment_in_place:
+              description: Признак оплаты на месте
+              type: boolean
+        nights:
+              description: Количество ночей
+              type: integer
+        tariff_per_night:
+              description: Стоимость за ночь
+              type: integer
       required:
         - authorization_assertion
         - authorization_status
@@ -5863,6 +6323,9 @@ components:
       description: Данные
     JourneyCreateJourneyRequestV2:
       properties:
+        creator_profile_id:
+          type: integer
+          description: Идентификатор профиля создателя (заказчика)
         create_trip_requests:
           type: array
           items:
@@ -5873,7 +6336,7 @@ components:
       properties:
         card_information_store_id:
           type: integer
-          description: "Идентификатор кредитной карты. Обязательно, если 'payment_type_id': 3 или 'payment_type_id': 4"
+          description: "Идентификатор кредитной карты. Обязательно, если 'payment_type_id': 3 или 'payment_type_id': 4. Значение payment_policies.payment_policy_items.id из запроса [получение доступных форм оплаты.](#get-/companies/-companyId-/profiles/-profileId-/allowedpaymentrequisites)"
         company_id:
           type: integer
           description: Идентификатор компании-плательщика.
@@ -6283,6 +6746,8 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/SearchMode'
+        avia_search_mode:
+          $ref: '#/components/schemas/AviaSearchMode'
         status:
           $ref: '#/components/schemas/OptionRequestStatus'
       required:
@@ -6499,6 +6964,39 @@ components:
           description: Информация по вариантам
           items:
             $ref: "#/components/schemas/VariantInfo"
+        errors:
+          type: array
+          description: Список ошибок
+          items:
+            type: string
+        is_success:
+          type: boolean
+          description: Признак успешного запроса
+        items_count:
+          type: integer
+          description: Количество вариантов
+        items_per_page:
+          type: integer
+          description: Количество вариантов на странице
+        message:
+          type: string
+          description: Сообщение
+        page_number:
+          type: integer
+          description: Номер страницы
+      required:
+        - is_success
+        - items_count
+        - items_per_page
+        - page_number
+      type: object
+    PagedResponseOfAviaGrouppedVariantInfo:
+      properties:
+        data:
+          type: array
+          description: Информация по вариантам
+          items:
+            $ref: "#/components/schemas/AviaGrouppedVariantInfo"
         errors:
           type: array
           description: Список ошибок
@@ -8035,6 +8533,15 @@ components:
         - option_number
         - service_type
       type: object
+    AviaGrouppedVariantInfo:
+      properties:
+        legs:
+          type: array
+          $ref: "#/components/schemas/LegDetailGrouppedVariantInfo"
+        pricings:
+          type: array
+          $ref: "#/components/schemas/AviaVariantDetail"
+      type: object  
     VariantInfoAvia:
       description: Авиа
       properties:
@@ -8273,6 +8780,47 @@ components:
           items:
             $ref: "#/components/schemas/SegmentDetail"
       type: object
+    LegDetailGrouppedVariantInfo:
+      description: Плечи перелета
+      properties:
+        departure_from:
+          description: Аэропорт отправления
+          items:
+            $ref: "#/components/schemas/LocationPoint"
+        arrival_to:
+          description: Аэропорт прибытия
+          items:
+            $ref: "#/components/schemas/LocationPoint"
+        departure_at:
+          type: string
+          description: Дата и время отправления по местному времени
+        departure_at_utc:
+          type: string
+          description: Дата и время отправления в UTC
+        arrival_at:
+          type: string
+          description: Дата и время прибытия по местному времени
+        arrival_at_utc:
+          type: string
+          description: Дата и время прибытия в UTC
+        duration:
+          type: string
+          description: Длительность перелета
+        segments:
+          type: array
+          items:
+            $ref: "#/components/schemas/SegmentDetailGrouppedVariantInfo"
+      type: object
+    SegmentDetailGrouppedVariantInfo:
+      properties:
+        flight_number:
+          description: Номер рейса
+          type: string
+        marketing_airline:
+          $ref: "#/components/schemas/MarketingAirline"
+        operating_airline:
+          $ref: "#/components/schemas/OperatingAirline"
+      type: object
     SegmentDetail:
       properties:
         departure_at:
@@ -8305,8 +8853,8 @@ components:
           description: Длительность перелета
         marketing_airline:
           $ref: "#/components/schemas/MarketingAirline"
-        Operating_airline:
-          $ref: "#/components/schemas/MarketingAirline"
+        operating_airline:
+          $ref: "#/components/schemas/OperatingAirline"
         transfer:
           description: Трансфер
           type: string
@@ -8501,7 +9049,10 @@ components:
         room_description:
           description: Описание номера
           allOf:
-            - $ref: "#/components/schemas/RoomDescription"      
+            - $ref: "#/components/schemas/RoomDescription"
+        number_of_free_rooms:
+          type: integer
+          description: Количество свободных номеров
       type: object
     LocationPoint:
       properties:
@@ -8572,6 +9123,8 @@ components:
           type: string
         marketing_airline:
           $ref: "#/components/schemas/MarketingAirline"
+        operating_airline:
+          $ref: "#/components/schemas/OperatingAirline"  
       type: object
     MarketingAirline:
       description: Маркетинговый перевозчик (авиакомпания)
@@ -8584,6 +9137,17 @@ components:
           allOf:
             - $ref: "#/components/schemas/LocalizedString"
       type: object
+    OperatingAirline:
+      description: Оперирующий перевозчик (авиакомпания)
+      properties:
+        code:
+          description: Код авиакомпании
+          type: string
+        name:
+          description: Название авиакомпании
+          allOf:
+            - $ref: "#/components/schemas/LocalizedString"
+      type: object  
     CarriagesInfo:
       description: Набор условий для билета
       properties:
@@ -8702,6 +9266,25 @@ components:
         - CorporateAndSlow
         - NoncorporateAndFast
         - NoncorporateAndSlow
+    AviaSearchMode:
+      description: 
+        Режим поиска авиабилетов
+      required:
+      - cabin_class
+      type: object
+      properties:
+        cabin_class:
+          $ref: '#/components/schemas/CabinClass'
+    CabinClass:
+      description: |
+        Выбор предфильтра: Класс авиабилета
+      type: string
+      enum:
+      - NotSet
+      - Econom
+      - Business
+      - First
+      - Comfort
     BonusCardType:
       type: string
       description: Тип карты
@@ -9741,7 +10324,7 @@ components:
         service:
           description: Информация по связи
           items:
-            $ref: "#/components/schemas/IServiceInfo"
+            $ref: "#/components/schemas/IServiceHotelRelationsInfo"
         tariff_fare:
           description: Тариф
           type: integer
@@ -10129,6 +10712,7 @@ components:
         - MinimumStandartCategoryTariff - Минимальный тариф стандартной категории в отеле в выбранной группе тарифов  
         - MinimumStandarCategorytWithMealTariff - Минимальный тариф стандартной категории с питанием в отеле в выбранной группе тарифов  
         - RecommendedHotelTariff - Отельный тариф, который рекомендован клиенту
+        - InitialHotelTariff - Исходный отельный тариф
       type: string
       enum:
         - Undefined
@@ -10137,6 +10721,7 @@ components:
         - MinimumStandartCategoryTariff
         - MinimumStandarCategorytWithMealTariff
         - RecommendedHotelTariff
+        - InitialHotelTariff
     FlightStatus:
       description: Статус рейса
       type: string
