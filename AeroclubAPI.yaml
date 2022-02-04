@@ -1183,7 +1183,7 @@ paths:
         "426":
           description: Версия протокола не поддерживается
     parameters: []
-  "/integration/journeys/[journeyNumber]/trips/[businessTripNumber]/changedates":
+  "/integration/journeys/{journeyNumber}/trips/{businessTripNumber}/changedates":
     put:
       tags:
         - ИЗМЕНЕНИЕ КОМАНДИРОВКИ
