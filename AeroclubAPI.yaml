@@ -228,7 +228,7 @@ info:
     **Комментарии к общему процессу заполнения доп данных**
 
     Способы загрузки справочников доп данных:
-    -   через IHUB (Intagration hub)
+    -   через IHUB (Integration hub)
 
     > **ВАЖНО**: Заполнение доп данных в командировке с использованием API возможно только при наличии интерфейса на стороне клиента.
 
@@ -281,13 +281,14 @@ info:
 
     # Получение данных по командировке
 
-    Для получения данных по командировке (при наличие номера поездки и командировки) используется метод, описанный ниже:
+    Для получения данных по командировке (при наличие номера поездки и командировки) используются методы, описанные ниже:
 
     **Методы API**
 
     | # | Описание                                                | Метод                    |
     |---|---------------------------------------------------------|--------------------------|
-    | 1 | Получение данных по командировке | [GET /journeys/{journeyNumber}/trips/{businessTripNumber}](#get-/journeys/-journeyNumber-/trips/-businessTripNumber-) |
+    | 1 | Получение поездки по номеру      | [GET /journeys/{journeyNumber}](#get-/journeys/-journeyNumber-) |
+    | 2 | Получение данных по командировке | [GET /journeys/{journeyNumber}/trips/{businessTripNumber}](#get-/journeys/-journeyNumber-/trips/-businessTripNumber-) |
 
     ## Основной вариант получения данных по командировкам
 
@@ -661,10 +662,71 @@ info:
     <br>
 
     # Изменения командировки
+    Процесс работы с командировками можно построить на передаче идентификаторов из клиентской системы (v1) или на запросе идентификаторов из базы данных Аэроклуба (v2).
 
-    ## Отмена командировки
+    ## Отмена командировки v1 (c ID клиента)
+  
+    ### **Процесс отмены командировки с использованием внешних идентификаторов (ID клиента):** 
+ 
+    <a href="images/Процесс отмены командировки_integration.png" target="_blank"><img src="images/Процесс отмены командировки_integration.png"/></a>    
+    **Описание процесса:**
 
-    ### **Процесс отмены командировки:**
+    1.  Запрос возможности отмены командировки - параметр "business_trip_cancellation_available".
+    2.  При получении business_trip_cancellation_available: true - запрос отмены командировки - передается массив услуг, по которым должна быть сделана отмена в рамках конкретной командировки с кодами причин (если таковые предусмотрены.)
+    3.  После запроса отмены командировки командировка получает  **status:** **СancellationRequested**  (статус находится в ответе метода [GET /journeys/{journeyNumber}/trips/{businessTripNumber}](#get-/journeys/-journeyNumber-/trips/-businessTripNumber-) получения деталей по командировке ) ,  **cancellation_status:** **InProgress** (в ответе метода  [GET /journeys/{journeyNumber}/trips/{businessTripNumber}/cancellation/status](#get-/journeys/-journeyNumber-/trips/-businessTripNumber-/cancellation/status))
+    4.  Процесс обработки отмены услуг занимает время, поэтому чтобы убедится в полном завершении процесса, используется метод - [GET /journeys/{journeyNumber}/trips/{businessTripNumber}/cancellation/status](#get-/journeys/-journeyNumber-/trips/-businessTripNumber-/cancellation/status), который в ответе возвращает текущее состояние командировки, после выполнения запроса отмены. - Вызывающий сервис с некой периодичностью вызывает метод, проверяя статус процесса отмены. Вызов метода завершается, после получения  **cancellation_status = Completed → **status:** **Сancelled****
+
+    **Комментарии к процессу:**
+
+    >**ВАЖНО:**  Используя данный процесс, клиент соглашается на все штрафы, которые могут возникнуть при аннуляции услуг при отмене командировки.
+    >
+    >**ВАЖНО**: при наличии ризон-кодов, возможно принимать только одно значение причины отмены.
+
+    ### **Состояние командировки для возможности ее отмены:**
+
+    1.  Если командировка НЕ находится в архиве и факт поездки авторизован (либо данная опция не предусмотрена).
+    2.  В командировке есть оформленные услуги и нет услуг, ожидающих авторизации и в процессе оформления.
+    3.  В командировке НЕТ услуг, оформленных на 2 пассажиров.
+
+    > Если в командировке в оформленных услугах выбрано "Запросить отмену или возврат", а в неоформленных - "Запросить удаление", это не является блокирующим фактором для отмены командировки. Нажатие кнопки "Отменить" отменяет всю командировку.
+
+    >Отмененная командировка отображается в разделе "Архив" в Time.
+
+    ### **Статусы командировки:**
+
+    | Поле   | Описание                                                                                                                                                                                                                                                                                                                                                                                                                 |
+    |--------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+    | status | Статус командировки.<br>Возможные значения:<br>-- **Draft** - командировка создана, но необходимо заполнить доп.данные;<br>-- **Active** - заполнение доп.данных командировки завершено, командировка активна;<br>-- **Complete** -  командировка выполнена, поездка совершена;<br>-- **Closed** - командировка закрыта;<br>-- **Archived** - командировка в арихве;<br>-- **СancellationRequested** - Запрошена отмена;<br>-- **Сancelled** - Отменена; |
+
+    ### **Статусы отмены командировки:**
+
+    | Поле                | Описание                                                                           |
+    |---------------------|------------------------------------------------------------------------------------|
+    | cancellation_status | Статус отмены<br>Варианты значений:<br>-- **Completed**<br>-- **InProgress**<br>-- **Unknown** |
+
+    ### **Mapping статусов отмены:**
+
+    | cancellation_status                         | status                                                    |
+    |---------------------------------------------|-----------------------------------------------------------|
+    | -- Completed<br>-- InProgress<br>-- Unknown | -- Cancelled<br>-- CancellationRequested<br>-- NotDefined |
+
+    ### **Методы API отмены командировки**
+
+    | # | Описание                                                                                 | Метод                                                                           |
+    |---|------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------|
+    | 1 | Запрос возможности отмены командировки и необходимых для заполнения в услугах ReasonCode | [GET /journeys/{journeyNumber}/trips/{businessTripNumber}/cancellation/available](#get-/journeys/-journeyNumber-/trips/-businessTripNumber-/cancellation/available) |
+    | 2 | Запрос отмены командировки с использованием внешних идентификаторов                      | [PUT /integration/journeys/{journeyNumber}/trips/{businessTripNumber}/cancellation](#put-/integration/journeys/-journeyNumber-/trips/-businessTripNumber-/cancellation) |
+    | 3 | Получение статуса отмены командировки                                                    | [GET /journeys/{journeyNumber}/trips/{businessTripNumber}/cancellation/status](#get-/journeys/-journeyNumber-/trips/-businessTripNumber-/cancellation/status)    |
+
+    ### **Альтернативный вариант отмены командировки:**
+
+    1.  Отмена командировки в OBT (TIME)
+    2.  Получения изменений путем запроса детализации по командировке - вызов метода: [GET /journeys/{journeyNumber}/trips/{businessTripNumber}](#get-/journeys/-journeyNumber-/trips/-businessTripNumber-)
+
+    
+    ## Отмена командировки v2 (c ID Аэроклуба)
+
+    ### **Процесс отмены командировки с использованием идентификаторов в Аэроклубе:**
 
     <a href="bpm/Процесс отмены командировки.bpm">Процесс отмены командировки.bpm</a>
 
@@ -687,7 +749,7 @@ info:
 
     1.  Если командировка НЕ находится в архиве и факт поездки авторизован (либо данная опция не предусмотрена).
     2.  В командировке есть оформленные услуги и нет услуг, ожидающих авторизации и в процессе оформления.
-    3.  В командировке НЕТ услуг, оформленные на 2 пассажиров.
+    3.  В командировке НЕТ услуг, оформленных на 2 пассажиров.
 
     > Если в командировке в оформленных услугах выбрано "Запросить отмену или возврат", а в неоформленных - "Запросить удаление", это не является блокирующим фактором для отмены командировки. Нажатие кнопки "Отменить" отменяет всю командировку.
 
@@ -723,6 +785,22 @@ info:
 
     1.  Отмена командировки в OBT (TIME)
     2.  Получения изменений путем запроса детализации по командировке - вызов метода: [GET /journeys/{journeyNumber}/trips/{businessTripNumber}](#get-/journeys/-journeyNumber-/trips/-businessTripNumber-)
+
+    
+    ## Изменение доп. данных в командировке
+    ### **Процесс изменения доп. данных в командировке**
+    <a href="images/Изменение_доп_данных.png" target="_blank"><img src="images/Изменение_доп_данных.png"/></a>
+
+    **Комментарии к процессу**
+    - Справочники доп.данных могут быть загружены через IHUB (Integration Hub)
+    - Изменение доп. данных производится с использованием внешних идентификаторов доп. данных
+    - Внешние идентификаторы доп. данных предоставляются Аэроклубом
+
+    ### **Методы API для изменения доп.данных командировки**
+
+    | # | Описание                                                           | Метод                                                                    |
+    |---|--------------------------------------------------------------------|--------------------------------------------------------------------------|
+    | 1 | Сохранение и изменение доп.данных по внешним идентификаторам | [PUT /integration/journeys/{journeyNumber}/trips/{businessTripNumber}/customproperties](#put-/integration/journeys/-journeyNumber-/trips/-businessTripNumber-/customproperties) |
 
     ## Изменение дат командировки
 
@@ -1006,6 +1084,29 @@ paths:
         "426":
           description: Версия протокола не поддерживается
     parameters: []
+  /journeys/{journeyNumber}:
+    get:
+      tags:
+      - ИНТЕГРАЦИЯ ДАННЫХ ПО КОМАНДИРОВКЕ И УСЛУГАМ
+      description: Получение поездки по номеру
+      operationId: GetJourneyByNumber
+      parameters:
+      - name: journeyNumber
+        in: path
+        description: Номер поездки
+        required: true
+        schema:
+          type: integer
+      responses:
+        "200":
+          description: Возвращается информация о поездке
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DataResponseOfJourneyInfo'
+        "426":
+          description: Версия протокола не поддерживается
+          content: {}
   "/journeys/{journeyNumber}/trips/{businessTripNumber}":
     get:
       tags:
@@ -1078,6 +1179,43 @@ paths:
         "426":
           description: Версия протокола не поддерживается
     parameters: []
+  /integration/journeys/{journeyNumber}/trips/{businessTripNumber}/cancellation:
+    put:
+      tags:
+      - ОТМЕНА КОМАНДИРОВКИ
+      description: Запрос отмены командировки (с указанием внешних идентификаторов путешественников)
+      operationId: CancelJourney
+      parameters:
+      - name: journeyNumber
+        in: path
+        description: Номер поездки
+        required: true
+        schema:
+          type: integer
+      - name: businessTripNumber
+        in: path
+        description: Номер командировки
+        required: true
+        schema:
+          type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CancelTripRequestV2'
+        required: true
+      responses:
+        "200":
+          description: Возвращается результат отмены командировки и список ошибок
+            в случае неудачи
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BaseResponse'
+        "426":
+          description: Версия протокола не поддерживается
+          content: {}
+
   "/journeys/{journeyNumber}/trips/{businessTripNumber}/cancellation/available":
     get:
       tags:
@@ -2294,6 +2432,35 @@ paths:
         "426":
           description: Версия протокола не поддерживается
     parameters: []
+  /orders/{orderNumber}/services/{serviceNumber}/duplicates:
+    get:
+      tags:
+      - ПОИСК И ОФОРМЛЕНИЕ УСЛУГ
+      description: Запрос информации о дублях услуги по путешественникам.
+      operationId: GetServiceDuplicateInfo
+      parameters:
+      - name: orderNumber
+        in: path
+        description: Номер заказа
+        required: true
+        schema:
+          type: integer
+      - name: serviceNumber
+        in: path
+        description: Номер услуги
+        required: true
+        schema:
+          type: integer
+      responses:
+        "200":
+          description: Данные о дублях услуги.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DataResponseOfServiceDuplicateInfo'
+        "426":
+          description: Версия протокола не поддерживается
+          content: {}
   /profile:
     get:
       tags:
@@ -2660,10 +2827,14 @@ paths:
   /integration/journeys/{journeyNumber}/trips/{businessTripNumber}/customproperties:
     put:
       tags:
-      - СОЗДАНИЕ КОМАНДИРОВКИ
+      - ИЗМЕНЕНИЕ КОМАНДИРОВКИ
       summary: Заполнение / обновление текстовых значений доп. данных
-      description: Заполнение / обновление текстовых значений доп. данных в командировке
-        и услугах + заполнение суточных
+      description: |
+        Заполнение / обновление текстовых значений доп. данных в командировке и услугах + заполнение суточных.
+
+        >**Важно**
+        >- Если изменить доп.данные до получения авторизации, то они обновятся в командировке и в реестре.
+        >- Если изменить доп.данные после получения авторизации, то они обновятся только в командировке. В реестре сохранятся первоначальные данные.         
       operationId: InsertOrUpdateUpdateBusinessTripCustomProperties
       parameters:
       - name: journeyNumber
@@ -2685,14 +2856,14 @@ paths:
               $ref: '#/components/schemas/InsertOrUpdateBusinessTripsCustomPropertiesRequest'
         required: true
       responses:
-        200:
+        "200":
           description: Возвращается список доп. данных с указанием успешности обновления
             их значений
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/DataResponseOfInsertOrUpdateBusinessTripsCustomPropertiesResponse'
-        426:
+        "426":
           description: Версия протокола не поддерживается
           content: {}
       x-codegen-request-body-name: body
@@ -3976,6 +4147,7 @@ tags:
     description: |
       <span style="color: #FF3B30">**Доступ к методам в данном разделе настраивается в соответствии с подпиской компании на модули API**</span>
 
+      - [GET /journeys/{journeyNumber}](#get-/journeys/-journeyNumber-) - Получение данных по номеру поездки 
       - [GET /journeys/{journeyNumber}/trips/{businessTripNumber}](#get-/journeys/-journeyNumber-/trips/-businessTripNumber-) - Получение информации по командировке
       - [GET /orders/{orderNumber}/services/{serviceNumber}](#get-/orders/-orderNumber-/services/-serviceNumber-) - Получение информации по услуге
   - name: СОЗДАНИЕ КОМАНДИРОВКИ
@@ -3989,7 +4161,6 @@ tags:
       - [GET /journeys/{journeyNumber}/trips/{businessTripNumber}/stage/{BusinessTripStage}/customProperties](#get-/journeys/-journeyNumber-/trips/-businessTripNumber-/stage/-BusinessTripStage-/customProperties) - Получение доп. данных для заполнения
       - [POST /journeys/{journeyNumber}/trips/{businessTripNumber}/stage/{BusinessTripStage}/customProperties](#post-/journeys/-journeyNumber-/trips/-businessTripNumber-/stage/-BusinessTripStage-/customProperties) - Сохранение доп. данных по командировке
       - [PUT /journeysV2](#put-/journeysV2) - Создание поездки с несколькими пунктами
-      - [PUT /integration/journeys/{journeyNumber}/trips/{businessTripNumber}/customproperties](#put-/integration/journeys/-journeyNumber-/trips/-businessTripNumber-/customproperties) - Сохранение доп. данных по командировке с использованием внешних идентификаторовв
       - [PUT /integration/journeysV2](#put-/integration/journeysV2) - Создание поездки с несколькими пунктами с использованием ID клиента. Простой и сложный маршрут.
       - [GET /references](#get-/references) - Поиск локаций
       - [GET /references/profiles](#get-/references/profiles) - Поиск профилей (Поиск осуществляется только по профайлам, которым в данный момент 18 лет или старше)
@@ -4006,6 +4177,7 @@ tags:
       - [PUT /orders/{orderNumber}/services/{serviceNumber}/reserve](#put-/orders/-orderNumber-/services/-serviceNumber-/reserve) - Запрос на бронирование услуги
       - [GET /orders/{orderNumber}/services/{serviceNumber}/seats](#get-/orders/-orderNumber-/services/-serviceNumber-/seats) - Получение информации о свободных местах
       - [PUT /orders/{orderNumber}/services/{serviceNumber}/travellers](#put-/orders/-orderNumber-/services/-serviceNumber-/travellers) - Добавление путешественников в услугу
+      - [GET /orders/{orderNumber}/services/{serviceNumber}/duplicates](#get-/orders/-orderNumber-/services/-serviceNumber-/duplicates) - Запрос информации о дублях услуги по путешественникам
       - [GET /profile/{profileId}](#get-/profile/-profileId-) - Получение профайла по идентификатору
       - [GET /profile/avatar](#get-/profile/avatar) - Получение аватара текущего пользователя
       - [PUT /profile/avatar](#put-/profile/avatar) - Сохранение аватара
@@ -4040,14 +4212,18 @@ tags:
       <span style="color: #FF3B30">**Доступ к методам в данном разделе настраивается в соответствии с подпиской компании на модули API**</span>
 
       - [PUT /journeys/{journeyNumber}/trips/{businessTripNumber}/changedates](#put-/journeys/-journeyNumber-/trips/-businessTripNumber-/changedates) - Обновление информации по направлениям командировки
+      - [PUT /integration/journeys/{journeyNumber}/trips/{businessTripNumber}/changedates](#put-/integration/journeys/-journeyNumber-/trips/-businessTripNumber-/changedates) - Обновление информации по направлениям командировки (Integration). Метод позволяет менять даты командировок, которые содержат только один BusinessTrip
       - [GET /journeys/{journeyNumber}/trips/{businessTripNumber}/changedatesinfo](#get-/journeys/-journeyNumber-/trips/-businessTripNumber-/changedatesinfo) - Получение краткой информации по направлениям командировки
       - [PUT /orders/{orderNumber}/services/{serviceNumber}/alter](#put-/orders/-orderNumber-/services/-serviceNumber-/alter) - Запрос на внесение изменений в услугу
       - [PUT /orders/{orderNumber}/services/{serviceNumber}/cancel](#put-/orders/-orderNumber-/services/-serviceNumber-/cancel) - Запрос на отмену или возврат услуги
+      - [PUT /integration/journeys/{journeyNumber}/trips/{businessTripNumber}/customproperties](#put-/integration/journeys/-journeyNumber-/trips/-businessTripNumber-/customproperties) - Сохранение и изменение доп. данных по командировке с использованием внешних идентификаторовв
+
   - name: ОТМЕНА КОМАНДИРОВКИ
     description: |
       <span style="color: #FF3B30">**Доступ к методам в данном разделе настраивается в соответствии с подпиской компании на модули API**</span>
 
       - [PUT /journeys/{journeyNumber}/trips/{businessTripNumber}/cancellation](#put-/journeys/-journeyNumber-/trips/-businessTripNumber-/cancellation) - Запрос отмены командировки
+      - [PUT /integration/journeys/{journeyNumber}/trips/{businessTripNumber}/cancellation](#put-/integration/journeys/-journeyNumber-/trips/-businessTripNumber-/cancellation) - Запрос отмены командировки (с указанием внешних идентификаторов путешественников)
       - [GET /journeys/{journeyNumber}/trips/{businessTripNumber}/cancellation/available](#get-/journeys/-journeyNumber-/trips/-businessTripNumber-/cancellation/available) - Проверка возможности отмены командировки
       - [GET /journeys/{journeyNumber}/trips/{businessTripNumber}/cancellation/status](#get-/journeys/-journeyNumber-/trips/-businessTripNumber-/cancellation/status) - Получение статуса отмены командировки
   - name: ИНТЕГРАЦИЯ ЧАТА
@@ -4680,14 +4856,17 @@ components:
       properties:
         active_service_count:
           type: integer
+          description: Количество активных услуг
         authorization_assertion:
           $ref: "#/components/schemas/AuthorizationAssertion"
         authorization_status:
           $ref: "#/components/schemas/AuthorizationStatus"
         budget_total:
           type: number
+          description: Общий бюджет командировки
         business_trip_destinations:
           type: array
+          description: Направления командировки
           items:
             $ref: "#/components/schemas/BusinessTripDestination"
         company:
@@ -4700,30 +4879,37 @@ components:
           $ref: "#/components/schemas/ServicesCountInfo"
         created_at:
           type: string
+          description: Дата и время создания командировки в формате YYYY-MM-DDThh:mm:ss
         created_by:
           $ref: "#/components/schemas/ProfileInfo"
         ends_on:
           type: string
+          description: Дата и время окончания командировки в формате YYYY-MM-DDThh:mm:ss
         from_city:
-          description: ""
+          description: Город отправления в командировке
           allOf:
             - $ref: "#/components/schemas/Location"
         has_unread_posts:
           type: boolean
+          description: Признак наличия непрочитанных сообщений
         inactive_service_count:
           type: integer
+          description: Количество неактивных услуг
         journey_number:
           type: integer
+          description: Номер поездки
         number:
           type: integer
+          description: Номер командировки
         service_count:
           type: integer
+          description: Количество услуг
         starts_on:
           type: string
         status:
           $ref: "#/components/schemas/BusinessTripStatus"
         to_city:
-          description: ""
+          description: Город назначения в командировке
           allOf:
             - $ref: "#/components/schemas/Location"
         traveller:
@@ -5172,6 +5358,7 @@ components:
       properties:
         services:
           type: array
+          description: Список услуг в командировке
           items:
             $ref: "#/components/schemas/ServiceTravellerWithReasonCodesV2"
       type: object
@@ -5781,16 +5968,19 @@ components:
         - Данное действие недоступно, т.к. в командировке есть услуги, ожидающие авторизации. Для отмены запроса обратитесь к агенту в чате, а затем повторите отмену командировки
     DataResponseOfJourneyInfo:
       properties:
-        data:
+        data:        
           $ref: "#/components/schemas/JourneyInfo"
         errors:
           type: array
+          description: Список ошибок
           items:
             type: string
         is_success:
           type: boolean
+          description: Признак успешности выполнения запроса
         message:
           type: string
+          description: Текст сообщения
       required:
         - is_success
       type: object
@@ -5912,12 +6102,15 @@ components:
             $ref: "#/components/schemas/ServiceDuplicateInfo"
         errors:
           type: array
+          description: Список ошибок
           items:
             type: string
         is_success:
           type: boolean
+          description: Признак успешности выполнения запроса
         message:
           type: string
+          description: Текст сообщения
       required:
         - is_success
       type: object
@@ -6541,20 +6734,25 @@ components:
           $ref: "#/components/schemas/Company"
         created_at:
           type: string
+          description: Дата и время создания поездки в формате YYYY-MM-DDThh:mm:ss
         created_by:
           $ref: "#/components/schemas/ProfileInfo"
         ends_on:
           type: string
+          description: Дата и время окончания поездки в формате YYYY-MM-DDThh:mm:ss
         number:
           type: integer
+          description: Номер поездки
         starts_on:
           type: string
+          description: Дата и время начала поездки в формате YYYY-MM-DDThh:mm:ss
         to_city:
           description: ""
           allOf:
             - $ref: "#/components/schemas/Location"
         trips:
           type: array
+          description: Командировки в поездке
           items:
             $ref: "#/components/schemas/BusinessTripInfo"
       required:
@@ -7997,8 +8195,10 @@ components:
       properties:
         code:
           type: string
+          description: Наименование ризон-кода
         value_code:
           type: string
+          description: Значение ризон-кода
       type: object
     RecoveryPasswordRequest:
       properties:
@@ -8320,10 +8520,13 @@ components:
       properties:
         order_number:
           type: integer
+          description: Номер заказа
         service_number:
           type: integer
+          description: Номер услуги
         travellers:
           type: array
+          description: Путешественники в командировке
           items:
             $ref: "#/components/schemas/TravellerReasonCodeValuesV2"
       required:
@@ -8538,8 +8741,10 @@ components:
       properties:
         external_profile_id:
           type: string
+          description: Внешний идентификатор путешественника или табельный номер
         reason_codes:
           type: array
+          description: Список ризон-кодов
           items:
             $ref: "#/components/schemas/ReasonCodeValueV2"
       type: object
@@ -8789,7 +8994,10 @@ components:
           type: string
           description: Дата выезда в часовом поясе пользователя в формате YYYY-MM-DDThh:mm:ss
         tariffs:
-          $ref: "#/components/schemas/HotelTariffInfo"
+          type: string
+          description: Информация о стоимости размещения
+          items:
+            $ref: "#/components/schemas/HotelTariffInfo"
         is_travel_policy_compliant:
           type: boolean
           description: Признак соответствия тревел-политики компании
@@ -9335,7 +9543,10 @@ components:
           type: integer
           description: Минимальная стоимость места в вагоне
         type:
-          $ref: "#/components/schemas/CarriageType"
+          type: string
+          description: Тип вагона
+          items:
+            $ref: "#/components/schemas/CarriageType"
         carriage_owner:
           type: string
           description: Перевозчик
