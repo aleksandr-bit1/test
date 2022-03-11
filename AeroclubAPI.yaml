@@ -4271,7 +4271,9 @@ tags:
     description: Запросы к техподдержке
 servers:
   - url: https://beta-api.aeroclub.ru
-    description: тестовый сервер Aeroclub API
+    description: Beta сервер Aeroclub API
+  - url:  https://api.aeroclub.ru
+    description: Production сервер Aeroclub API
 components:
   requestBodies:
     IdsRequest:
