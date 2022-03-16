@@ -4270,10 +4270,10 @@ tags:
   - name: Support
     description: Запросы к техподдержке
 servers:
-  - url: https://beta-api.aeroclub.ru
-    description: Beta сервер Aeroclub API
-  - url:  https://api.aeroclub.ru
-    description: Production сервер Aeroclub API
+  - url: "https://beta-api.aeroclub.ru"
+    description: beta сервер
+  - url: "https://api.aeroclub.ru"
+    description: production сервер
 components:
   requestBodies:
     IdsRequest:
