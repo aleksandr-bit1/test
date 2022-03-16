@@ -1,5 +1,5 @@
 <!DOCTYPE html
-  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
    <head>
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -236,21 +236,21 @@
           
 
     
-                    //--></script></head>
+                        //--></script></head>
    <body>
       <h2><a id="INDEX">Table of Contents</a></h2>
       <div class="toc">
          <form action="none">
-            <div><span> Group by: <select id="selectTOC" onchange="selectTOCGroupBy(this.options[this.selectedIndex].value, true, 'report.indexList.html', 'report.indexListns.html', 'report.indexListcomp.html');">
-                     <option value="toc_group_by_namespace">Namespace</option>
-                     <option value="toc_group_by_location" selected="selected">Location</option>
+            <div><span> Group by: <select id="selectTOC" onchange="selectTOCGroupBy(this.options[this.selectedIndex].value, true, 'gpb-report.indexList.html', 'gpb-report.indexListns.html', 'gpb-report.indexListcomp.html');">
+                     <option value="toc_group_by_namespace" selected="selected">Namespace</option>
+                     <option value="toc_group_by_location">Location</option>
                      <option value="toc_group_by_component_type">Component Type</option></select></span></div>
          </form>
-         <div class="level1" id="toc_group_by_location" style="display:block">
+         <div class="level1" id="toc_group_by_namespace" style="display:block">
             <div>
                <div class="level2">
-                  <p><input id="button_gr_report.xsd" type="image" value="-" src="img/btM.gif" onclick="switchState('gr_report.xsd');" class="control" /><span class="indexGroupTitle">report.xsd</span></p>
-                  <div id="gr_report.xsd" style="display:block">
+                  <p><input id="button_boxIdNamespace1" type="image" value="-" src="img/btM.gif" onclick="switchState('boxIdNamespace1');" class="control" /><span class="indexGroupTitle">No namespace</span></p>
+                  <div id="boxIdNamespace1" style="display:block">
                      <div class="horizontalLayout">
                         <table class="rt">
                            <tr>
@@ -264,7 +264,7 @@
                                  <table class="componentGroup">
                                     <tbody>
                                        <tr>
-                                          <td class="componentGroup"><input id="button_gr_report.xsdMain_schema" type="image" value="-" src="img/btM.gif" onclick="switchState('gr_report.xsdMain_schema');" class="control" /></td>
+                                          <td class="componentGroup"><input id="button_boxIdNamespace1Main_schema" type="image" value="-" src="img/btM.gif" onclick="switchState('boxIdNamespace1Main_schema');" class="control" /></td>
                                           <td class="componentGroup">
                                              <div class="componentGroupTitle">Main Schema</div>
                                           </td>
@@ -272,8 +272,8 @@
                                        <tr>
                                           <td class="componentGroup"></td>
                                           <td class="componentGroup">
-                                             <div id="gr_report.xsdMain_schema" class="componentGroup" style="display:block">
-                                                <div><b><a href="report_xsd.html#report.xsd" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for report.xsd')">report.xsd</a></b></div>
+                                             <div id="boxIdNamespace1Main_schema" class="componentGroup" style="display:block">
+                                                <div><b><a href="gpb-report_xsd.html#gpb-report.xsd" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">gpb-report.xsd</a></b></div>
                                              </div>
                                           </td>
                                        </tr>
@@ -302,7 +302,7 @@
                                  <table class="componentGroup">
                                     <tbody>
                                        <tr>
-                                          <td class="componentGroup"><input id="button_gr_report.xsdElement" type="image" value="-" src="img/btM.gif" onclick="switchState('gr_report.xsdElement');" class="control" /></td>
+                                          <td class="componentGroup"><input id="button_boxIdNamespace1Element" type="image" value="-" src="img/btM.gif" onclick="switchState('boxIdNamespace1Element');" class="control" /></td>
                                           <td class="componentGroup">
                                              <div class="componentGroupTitle">Elements</div>
                                           </td>
@@ -310,8 +310,8 @@
                                        <tr>
                                           <td class="componentGroup"></td>
                                           <td class="componentGroup">
-                                             <div id="gr_report.xsdElement" class="componentGroup" style="display:block">
-                                                <div><b><a href="report_xsd.html#report" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for report.xsd')">report</a></b></div>
+                                             <div id="boxIdNamespace1Element" class="componentGroup" style="display:block">
+                                                <div><b><a href="gpb-report_xsd.html#report" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">report</a></b></div>
                                              </div>
                                           </td>
                                        </tr>
@@ -340,7 +340,7 @@
                                  <table class="componentGroup">
                                     <tbody>
                                        <tr>
-                                          <td class="componentGroup"><input id="button_gr_report.xsdComplex_Type" type="image" value="-" src="img/btM.gif" onclick="switchState('gr_report.xsdComplex_Type');" class="control" /></td>
+                                          <td class="componentGroup"><input id="button_boxIdNamespace1Complex_Type" type="image" value="-" src="img/btM.gif" onclick="switchState('boxIdNamespace1Complex_Type');" class="control" /></td>
                                           <td class="componentGroup">
                                              <div class="componentGroupTitle">Complex Types</div>
                                           </td>
@@ -348,24 +348,24 @@
                                        <tr>
                                           <td class="componentGroup"></td>
                                           <td class="componentGroup">
-                                             <div id="gr_report.xsdComplex_Type" class="componentGroup" style="display:block">
-                                                <div><b><a href="report_xsd.html#Airport" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for report.xsd')">Airport</a></b></div>
-                                                <div><b><a href="report_xsd.html#AviaSegments" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for report.xsd')">AviaSegments</a></b></div>
-                                                <div><b><a href="report_xsd.html#BusinessTrip" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for report.xsd')">BusinessTrip</a></b></div>
-                                                <div><b><a href="report_xsd.html#City" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for report.xsd')">City</a></b></div>
-                                                <div><b><a href="report_xsd.html#Country" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for report.xsd')">Country</a></b></div>
-                                                <div><b><a href="report_xsd.html#CustomProperty" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for report.xsd')">CustomProperty</a></b></div>
-                                                <div><b><a href="report_xsd.html#Hotel" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for report.xsd')">Hotel</a></b></div>
-                                                <div><b><a href="report_xsd.html#Name" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for report.xsd')">Name</a></b></div>
-                                                <div><b><a href="report_xsd.html#OtherLocation" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for report.xsd')">OtherLocation</a></b></div>
-                                                <div><b><a href="report_xsd.html#OtherService" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for report.xsd')">OtherService</a></b></div>
-                                                <div><b><a href="report_xsd.html#RailSegments" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for report.xsd')">RailSegments</a></b></div>
-                                                <div><b><a href="report_xsd.html#RailwayStation" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for report.xsd')">RailwayStation</a></b></div>
-                                                <div><b><a href="report_xsd.html#NO_NAMESPACE_Report" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for report.xsd')">Report</a></b></div>
-                                                <div><b><a href="report_xsd.html#Services" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for report.xsd')">Services</a></b></div>
-                                                <div><b><a href="report_xsd.html#Ticket" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for report.xsd')">Ticket</a></b></div>
-                                                <div><b><a href="report_xsd.html#TicketCarrier" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for report.xsd')">TicketCarrier</a></b></div>
-                                                <div><b><a href="report_xsd.html#Traveller" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for report.xsd')">Traveller</a></b></div>
+                                             <div id="boxIdNamespace1Complex_Type" class="componentGroup" style="display:block">
+                                                <div><b><a href="gpb-report_xsd.html#Airport" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">Airport</a></b></div>
+                                                <div><b><a href="gpb-report_xsd.html#AviaSegments" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">AviaSegments</a></b></div>
+                                                <div><b><a href="gpb-report_xsd.html#BusinessTrip" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">BusinessTrip</a></b></div>
+                                                <div><b><a href="gpb-report_xsd.html#City" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">City</a></b></div>
+                                                <div><b><a href="gpb-report_xsd.html#Country" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">Country</a></b></div>
+                                                <div><b><a href="gpb-report_xsd.html#CustomProperty" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">CustomProperty</a></b></div>
+                                                <div><b><a href="gpb-report_xsd.html#Hotel" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">Hotel</a></b></div>
+                                                <div><b><a href="gpb-report_xsd.html#Name" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">Name</a></b></div>
+                                                <div><b><a href="gpb-report_xsd.html#OtherLocation" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">OtherLocation</a></b></div>
+                                                <div><b><a href="gpb-report_xsd.html#OtherService" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">OtherService</a></b></div>
+                                                <div><b><a href="gpb-report_xsd.html#RailSegments" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">RailSegments</a></b></div>
+                                                <div><b><a href="gpb-report_xsd.html#RailwayStation" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">RailwayStation</a></b></div>
+                                                <div><b><a href="gpb-report_xsd.html#NO_NAMESPACE_Report" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">Report</a></b></div>
+                                                <div><b><a href="gpb-report_xsd.html#Services" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">Services</a></b></div>
+                                                <div><b><a href="gpb-report_xsd.html#Ticket" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">Ticket</a></b></div>
+                                                <div><b><a href="gpb-report_xsd.html#TicketCarrier" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">TicketCarrier</a></b></div>
+                                                <div><b><a href="gpb-report_xsd.html#Traveller" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">Traveller</a></b></div>
                                              </div>
                                           </td>
                                        </tr>
@@ -394,7 +394,7 @@
                                  <table class="componentGroup">
                                     <tbody>
                                        <tr>
-                                          <td class="componentGroup"><input id="button_gr_report.xsdSimple_Type" type="image" value="-" src="img/btM.gif" onclick="switchState('gr_report.xsdSimple_Type');" class="control" /></td>
+                                          <td class="componentGroup"><input id="button_boxIdNamespace1Simple_Type" type="image" value="-" src="img/btM.gif" onclick="switchState('boxIdNamespace1Simple_Type');" class="control" /></td>
                                           <td class="componentGroup">
                                              <div class="componentGroupTitle">Simple Types</div>
                                           </td>
@@ -402,11 +402,11 @@
                                        <tr>
                                           <td class="componentGroup"></td>
                                           <td class="componentGroup">
-                                             <div id="gr_report.xsdSimple_Type" class="componentGroup" style="display:block">
-                                                <div><b><a href="report_xsd.html#BusinessTripStatus" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for report.xsd')">BusinessTripStatus</a></b></div>
-                                                <div><b><a href="report_xsd.html#TicketOperationType" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for report.xsd')">TicketOperationType</a></b></div>
-                                                <div><b><a href="report_xsd.html#TicketTransportCode" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for report.xsd')">TicketTransportCode</a></b></div>
-                                                <div><b><a href="report_xsd.html#TicketType" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for report.xsd')">TicketType</a></b></div>
+                                             <div id="boxIdNamespace1Simple_Type" class="componentGroup" style="display:block">
+                                                <div><b><a href="gpb-report_xsd.html#BusinessTripStatus" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">BusinessTripStatus</a></b></div>
+                                                <div><b><a href="gpb-report_xsd.html#TicketOperationType" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">TicketOperationType</a></b></div>
+                                                <div><b><a href="gpb-report_xsd.html#TicketTransportCode" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">TicketTransportCode</a></b></div>
+                                                <div><b><a href="gpb-report_xsd.html#TicketType" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">TicketType</a></b></div>
                                              </div>
                                           </td>
                                        </tr>
@@ -431,33 +431,6 @@
       <div class="footer">
          <hr />
          <div align="center">XML Schema documentation generated by <a href="http://www.oxygenxml.com" target="_parent"><span class="oXygenLogo"><span class="redX">&lt;</span>o<span class="redX">X</span>ygen<span class="redX">/&gt;</span></span></a><sup>®</sup> XML Editor Trial Edition.</div>
-      </div><script type="text/javascript"><!--
-                     // The namespace is the selected option in the TOC combo.
-                    
-                     // Floats the toolbar.
-                     var globalControls = getElementObject("global_controls"); 
-                     
-                     if(globalControls != null){
-	                     var browser=navigator.appName;
-						 var version = parseFloat(navigator.appVersion.split('MSIE')[1]);
-						 
-						 var IE6 = false;
-						 if ((browser=="Microsoft Internet Explorer") && (version < 7)){
-						 	IE6 = true;
-						 }
-	
-	                     //alert (IE6 + " |V| " + version);
-	                     
-	                     if(IE6){
-	                     	// On IE 6 the 'fixed' property is not supported. We must use javascript. 
-	                         globalControls.style.position='absolute';                         
-	                         // The global controls will do not exist in the TOC frame, when chunking.
-	                         findAndFloat("global_controls", 225, 30);    
-	                     } else {
-	                      	  globalControls.style.position='fixed';                     	
-	                     }
-	                     
-	                     globalControls.style.right='0';                       
-                     }
-                //--></script></body>
+      </div>
+   </body>
 </html>
