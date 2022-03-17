@@ -98,14 +98,13 @@
 				'properties_OtherService_costInclVat', 
 				'properties_OtherService_feeCostInclVat', 
 				'properties_OtherService_totalCostInclVat', 
-				'properties_Ticket_type');
+				'properties_Ticket_type', 
+				'properties_OtherService_type');
 var facetsBoxes= new Array('facets_BusinessTrip_status', 
-				'facets_Ticket_transportCode', 
 				'facets_Ticket_operationType', 
 				'facets_City_code', 
 				'facets_Country_code', 
 				'facets_BusinessTripStatus', 
-				'facets_TicketTransportCode', 
 				'facets_TicketOperationType', 
 				'facets_TicketType', 
 				'facets_Ticket_type');
@@ -117,7 +116,6 @@ var usedByBoxes= new Array('usedBy_NO_NAMESPACE_Report',
 				'usedBy_CustomProperty', 
 				'usedBy_Services', 
 				'usedBy_Ticket', 
-				'usedBy_TicketTransportCode', 
 				'usedBy_TicketOperationType', 
 				'usedBy_AviaSegments', 
 				'usedBy_TicketCarrier', 
@@ -130,7 +128,8 @@ var usedByBoxes= new Array('usedBy_NO_NAMESPACE_Report',
 				'usedBy_Hotel', 
 				'usedBy_OtherService', 
 				'usedBy_OtherLocation', 
-				'usedBy_Ticket_type');
+				'usedBy_Ticket_type', 
+				'usedBy_OtherService_type');
 var sourceBoxes= new Array('source_report', 
 				'source_NO_NAMESPACE_Report_businessTrip', 
 				'source_BusinessTrip_journeyNumber', 
@@ -231,7 +230,6 @@ var sourceBoxes= new Array('source_report',
 				'source_CustomProperty', 
 				'source_Services', 
 				'source_Ticket', 
-				'source_TicketTransportCode', 
 				'source_TicketOperationType', 
 				'source_AviaSegments', 
 				'source_TicketCarrier', 
@@ -244,7 +242,8 @@ var sourceBoxes= new Array('source_report',
 				'source_Hotel', 
 				'source_OtherService', 
 				'source_OtherLocation', 
-				'source_Ticket_type');
+				'source_Ticket_type', 
+				'source_OtherService_type');
 var instanceBoxes= new Array('instance_report', 
 				'instance_NO_NAMESPACE_Report_businessTrip', 
 				'instance_BusinessTrip_traveller', 
@@ -389,7 +388,6 @@ var diagramBoxes= new Array('diagram_report',
 				'diagram_CustomProperty', 
 				'diagram_Services', 
 				'diagram_Ticket', 
-				'diagram_TicketTransportCode', 
 				'diagram_TicketOperationType', 
 				'diagram_AviaSegments', 
 				'diagram_TicketCarrier', 
@@ -480,9 +478,12 @@ var annotationBoxes= new Array('annotations_BusinessTrip_journeyNumber',
 				'annotations_OtherService_costInclVat', 
 				'annotations_OtherService_feeCostInclVat', 
 				'annotations_OtherService_totalCostInclVat', 
-				'annotations_Ticket_type');
+				'annotations_Ticket_type', 
+				'annotations_OtherService_type');
 var attributesBoxes= new Array('attributes_Services_Services_tickets_ticket', 
-				'attributes_Ticket');
+				'attributes_Services_Services_otherServices_otherService', 
+				'attributes_Ticket', 
+				'attributes_OtherService');
 var modelBoxes= new Array('model_report', 
 				'model_NO_NAMESPACE_Report_businessTrip', 
 				'model_BusinessTrip_traveller', 
@@ -3049,7 +3050,7 @@ var modelBoxes= new Array('model_report',
                            <div class="floatRight"><input id="button_diagram_Services_Services_tickets_ticket" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_Services_Services_tickets_ticket');" class="control" /></div>
                         </td>
                         <td class="diagram">
-                           <div id="diagram_Services_Services_tickets_ticket" style="display:block"><img alt="Diagram" border="0" src="img/gpb-report_xsd_Element_ticket.png" usemap="#gpb-report_xsd_Element_ticket" /><map name="gpb-report_xsd_Element_ticket" id="gpb-report_xsd_Element_ticket"><area alt="gpb-report_xsd.tmp#Ticket_type" href="gpb-report_xsd.html#Ticket_type" coords="147,79,262,123" /><area alt="gpb-report_xsd.tmp#Ticket_orderNumber" href="gpb-report_xsd.html#Ticket_orderNumber" coords="204,171,337,215" /><area alt="gpb-report_xsd.tmp#Ticket_serviceNumber" href="gpb-report_xsd.html#Ticket_serviceNumber" coords="204,256,337,300" /><area alt="gpb-report_xsd.tmp#Ticket_transportCode" href="gpb-report_xsd.html#Ticket_transportCode" coords="204,341,367,385" /><area alt="gpb-report_xsd.tmp#Ticket_operationType" href="gpb-report_xsd.html#Ticket_operationType" coords="204,426,366,470" /><area alt="gpb-report_xsd.tmp#Ticket_supplierName" href="gpb-report_xsd.html#Ticket_supplierName" coords="204,511,309,555" /><area alt="gpb-report_xsd.tmp#Ticket_number" href="gpb-report_xsd.html#Ticket_number" coords="204,596,309,640" /><area alt="gpb-report_xsd.tmp#Ticket_IssuedInExchangeFor" href="gpb-report_xsd.html#Ticket_IssuedInExchangeFor" coords="204,681,339,725" /><area alt="gpb-report_xsd.tmp#Ticket_classOfService" href="gpb-report_xsd.html#Ticket_classOfService" coords="204,780,310,824" /><area alt="gpb-report_xsd.tmp#Ticket_deaprtureDate" href="gpb-report_xsd.html#Ticket_deaprtureDate" coords="204,865,304,909" /><area alt="gpb-report_xsd.tmp#Ticket_routeCities" href="gpb-report_xsd.html#Ticket_routeCities" coords="204,950,294,994" /><area alt="gpb-report_xsd.tmp#Ticket_ticketCostInclVat" href="gpb-report_xsd.html#Ticket_ticketCostInclVat" coords="204,1035,318,1079" /><area alt="gpb-report_xsd.tmp#Ticket_feeCostInclVat" href="gpb-report_xsd.html#Ticket_feeCostInclVat" coords="204,1120,318,1164" /><area alt="gpb-report_xsd.tmp#Ticket_penaltyCostInclVat" href="gpb-report_xsd.html#Ticket_penaltyCostInclVat" coords="204,1205,325,1249" /><area alt="gpb-report_xsd.tmp#Ticket_refundExchangeFeeInclVat" href="gpb-report_xsd.html#Ticket_refundExchangeFeeInclVat" coords="204,1290,366,1334" /><area alt="gpb-report_xsd.tmp#Ticket_refundNoticeFeeInclVat" href="gpb-report_xsd.html#Ticket_refundNoticeFeeInclVat" coords="204,1375,348,1419" /><area alt="gpb-report_xsd.tmp#Ticket_totalCostInclVat" href="gpb-report_xsd.html#Ticket_totalCostInclVat" coords="204,1460,318,1504" /><area alt="gpb-report_xsd.tmp#Ticket_avia" href="gpb-report_xsd.html#Ticket_avia" coords="275,1545,408,1589" /><area alt="gpb-report_xsd.tmp#Ticket_rail" href="gpb-report_xsd.html#Ticket_rail" coords="275,1599,403,1643" /><area alt="gpb-report_xsd.tmp#Ticket" href="gpb-report_xsd.html#Ticket" coords="122,3,201,25" /></map></div>
+                           <div id="diagram_Services_Services_tickets_ticket" style="display:block"><img alt="Diagram" border="0" src="img/gpb-report_xsd_Element_ticket.png" usemap="#gpb-report_xsd_Element_ticket" /><map name="gpb-report_xsd_Element_ticket" id="gpb-report_xsd_Element_ticket"><area alt="gpb-report_xsd.tmp#Ticket_type" href="gpb-report_xsd.html#Ticket_type" coords="147,79,262,123" /><area alt="gpb-report_xsd.tmp#Ticket_orderNumber" href="gpb-report_xsd.html#Ticket_orderNumber" coords="204,171,337,215" /><area alt="gpb-report_xsd.tmp#Ticket_serviceNumber" href="gpb-report_xsd.html#Ticket_serviceNumber" coords="204,256,337,300" /><area alt="gpb-report_xsd.tmp#Ticket_transportCode" href="gpb-report_xsd.html#Ticket_transportCode" coords="204,341,309,385" /><area alt="gpb-report_xsd.tmp#Ticket_operationType" href="gpb-report_xsd.html#Ticket_operationType" coords="204,426,366,470" /><area alt="gpb-report_xsd.tmp#Ticket_supplierName" href="gpb-report_xsd.html#Ticket_supplierName" coords="204,511,309,555" /><area alt="gpb-report_xsd.tmp#Ticket_number" href="gpb-report_xsd.html#Ticket_number" coords="204,596,309,640" /><area alt="gpb-report_xsd.tmp#Ticket_IssuedInExchangeFor" href="gpb-report_xsd.html#Ticket_IssuedInExchangeFor" coords="204,681,339,725" /><area alt="gpb-report_xsd.tmp#Ticket_classOfService" href="gpb-report_xsd.html#Ticket_classOfService" coords="204,780,310,824" /><area alt="gpb-report_xsd.tmp#Ticket_deaprtureDate" href="gpb-report_xsd.html#Ticket_deaprtureDate" coords="204,865,304,909" /><area alt="gpb-report_xsd.tmp#Ticket_routeCities" href="gpb-report_xsd.html#Ticket_routeCities" coords="204,950,294,994" /><area alt="gpb-report_xsd.tmp#Ticket_ticketCostInclVat" href="gpb-report_xsd.html#Ticket_ticketCostInclVat" coords="204,1035,318,1079" /><area alt="gpb-report_xsd.tmp#Ticket_feeCostInclVat" href="gpb-report_xsd.html#Ticket_feeCostInclVat" coords="204,1120,318,1164" /><area alt="gpb-report_xsd.tmp#Ticket_penaltyCostInclVat" href="gpb-report_xsd.html#Ticket_penaltyCostInclVat" coords="204,1205,325,1249" /><area alt="gpb-report_xsd.tmp#Ticket_refundExchangeFeeInclVat" href="gpb-report_xsd.html#Ticket_refundExchangeFeeInclVat" coords="204,1290,366,1334" /><area alt="gpb-report_xsd.tmp#Ticket_refundNoticeFeeInclVat" href="gpb-report_xsd.html#Ticket_refundNoticeFeeInclVat" coords="204,1375,348,1419" /><area alt="gpb-report_xsd.tmp#Ticket_totalCostInclVat" href="gpb-report_xsd.html#Ticket_totalCostInclVat" coords="204,1460,318,1504" /><area alt="gpb-report_xsd.tmp#Ticket_avia" href="gpb-report_xsd.html#Ticket_avia" coords="275,1545,408,1589" /><area alt="gpb-report_xsd.tmp#Ticket_rail" href="gpb-report_xsd.html#Ticket_rail" coords="275,1599,403,1643" /><area alt="gpb-report_xsd.tmp#Ticket" href="gpb-report_xsd.html#Ticket" coords="122,3,201,25" /></map></div>
                         </td>
                      </tr>
                      <tr>
@@ -3417,12 +3418,12 @@ var modelBoxes= new Array('model_report',
                            <div class="floatRight"><input id="button_diagram_Ticket_transportCode" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_Ticket_transportCode');" class="control" /></div>
                         </td>
                         <td class="diagram">
-                           <div id="diagram_Ticket_transportCode" style="display:block"><img alt="Diagram" border="0" src="img/gpb-report_xsd_Element_transportCode.png" usemap="#gpb-report_xsd_Element_transportCode" /><map name="gpb-report_xsd_Element_transportCode" id="gpb-report_xsd_Element_transportCode"><area alt="gpb-report_xsd.tmp#TicketTransportCode" href="gpb-report_xsd.html#TicketTransportCode" coords="211,9,366,35" /></map></div>
+                           <div id="diagram_Ticket_transportCode" style="display:block"><img alt="Diagram" border="0" src="img/gpb-report_xsd_Element_transportCode.png" /></div>
                         </td>
                      </tr>
                      <tr>
                         <td class="firstColumn"><b>Type</b></td>
-                        <td><b><a href="gpb-report_xsd.html#TicketTransportCode" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">TicketTransportCode</a></b></td>
+                        <td><b>xs:string</b></td>
                      </tr>
                      <tr>
                         <td class="firstColumn">
@@ -3442,32 +3443,6 @@ var modelBoxes= new Array('model_report',
                      </tr>
                      <tr>
                         <td class="firstColumn">
-                           <div class="floatLeft"><b>Facets</b></div>
-                           <div class="floatRight"><input id="button_facets_Ticket_transportCode" type="image" src="img/btM.gif" value="-" onclick="switchState('facets_Ticket_transportCode');" class="control" /></div>
-                        </td>
-                        <td>
-                           <div id="facets_Ticket_transportCode" style="display:block">
-                              <table class="facetsTable">
-                                 <tr>
-                                    <td class="firstColumn">enumeration</td>
-                                    <td width="30%"><b>АТ</b></td>
-                                    <td>
-                                       <div class="annotation"></div>
-                                    </td>
-                                 </tr>
-                                 <tr>
-                                    <td class="firstColumn">enumeration</td>
-                                    <td width="30%"><b>ЖТ</b></td>
-                                    <td>
-                                       <div class="annotation"></div>
-                                    </td>
-                                 </tr>
-                              </table>
-                           </div>
-                        </td>
-                     </tr>
-                     <tr>
-                        <td class="firstColumn">
                            <div class="floatLeft"><b>Source</b></div>
                            <div class="floatRight"><input id="button_source_Ticket_transportCode" type="image" src="img/btM.gif" value="-" onclick="switchState('source_Ticket_transportCode');" class="control" /></div>
                         </td>
@@ -3476,7 +3451,7 @@ var modelBoxes= new Array('model_report',
                               <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
                                  <tr>
                                     <td width="100%">
-                                       <pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"transportCode"</span><span class="tAN"> type=</span><span class="tAV">"TicketTransportCode"</span><span class="tEl">&gt;</span><span class="tI">
+                                       <pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"transportCode"</span><span class="tAN"> type=</span><span class="tAV">"xs:string"</span><span class="tEl">&gt;</span><span class="tI">
   </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
     </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Вид транспорта</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
   </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
@@ -9964,7 +9939,7 @@ var modelBoxes= new Array('model_report',
                                  <tr>
                                     <td width="100%">
                                        <pre><span class="tEl">&lt;otherServices</span><span class="tEl">&gt;</span><span class="tI">
-  </span><span class="tEl">&lt;otherService</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,unbounded}</span><span class="tEl">&lt;/otherService&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;otherService</span><span class="tT"> </span><span class="tAN">type=</span><span class="tAV">""</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,unbounded}</span><span class="tEl">&lt;/otherService&gt;</span><span class="tI">
 </span><span class="tEl">&lt;/otherServices&gt;</span></pre>
                                     </td>
                                  </tr>
@@ -10030,7 +10005,7 @@ var modelBoxes= new Array('model_report',
                            <div class="floatRight"><input id="button_diagram_Services_Services_otherServices_otherService" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_Services_Services_otherServices_otherService');" class="control" /></div>
                         </td>
                         <td class="diagram">
-                           <div id="diagram_Services_Services_otherServices_otherService" style="display:block"><img alt="Diagram" border="0" src="img/gpb-report_xsd_Element_otherService.png" usemap="#gpb-report_xsd_Element_otherService" /><map name="gpb-report_xsd_Element_otherService" id="gpb-report_xsd_Element_otherService"><area alt="gpb-report_xsd.tmp#OtherService_name" href="gpb-report_xsd.html#OtherService_name" coords="240,40,330,84" /><area alt="gpb-report_xsd.tmp#OtherService_description" href="gpb-report_xsd.html#OtherService_description" coords="240,125,345,169" /><area alt="gpb-report_xsd.tmp#OtherService_location" href="gpb-report_xsd.html#OtherService_location" coords="240,210,371,254" /><area alt="gpb-report_xsd.tmp#OtherService_date" href="gpb-report_xsd.html#OtherService_date" coords="240,295,361,339" /><area alt="gpb-report_xsd.tmp#OtherService_costInclVat" href="gpb-report_xsd.html#OtherService_costInclVat" coords="240,380,354,424" /><area alt="gpb-report_xsd.tmp#OtherService_feeCostInclVat" href="gpb-report_xsd.html#OtherService_feeCostInclVat" coords="240,465,354,509" /><area alt="gpb-report_xsd.tmp#OtherService_totalCostInclVat" href="gpb-report_xsd.html#OtherService_totalCostInclVat" coords="240,550,354,594" /><area alt="gpb-report_xsd.tmp#OtherService" href="gpb-report_xsd.html#OtherService" coords="158,3,273,25" /></map></div>
+                           <div id="diagram_Services_Services_otherServices_otherService" style="display:block"><img alt="Diagram" border="0" src="img/gpb-report_xsd_Element_otherService.png" usemap="#gpb-report_xsd_Element_otherService" /><map name="gpb-report_xsd_Element_otherService" id="gpb-report_xsd_Element_otherService"><area alt="gpb-report_xsd.tmp#OtherService_type" href="gpb-report_xsd.html#OtherService_type" coords="183,79,288,123" /><area alt="gpb-report_xsd.tmp#OtherService_name" href="gpb-report_xsd.html#OtherService_name" coords="240,171,330,215" /><area alt="gpb-report_xsd.tmp#OtherService_description" href="gpb-report_xsd.html#OtherService_description" coords="240,256,345,300" /><area alt="gpb-report_xsd.tmp#OtherService_location" href="gpb-report_xsd.html#OtherService_location" coords="240,341,371,385" /><area alt="gpb-report_xsd.tmp#OtherService_date" href="gpb-report_xsd.html#OtherService_date" coords="240,426,361,470" /><area alt="gpb-report_xsd.tmp#OtherService_costInclVat" href="gpb-report_xsd.html#OtherService_costInclVat" coords="240,511,354,555" /><area alt="gpb-report_xsd.tmp#OtherService_feeCostInclVat" href="gpb-report_xsd.html#OtherService_feeCostInclVat" coords="240,596,354,640" /><area alt="gpb-report_xsd.tmp#OtherService_totalCostInclVat" href="gpb-report_xsd.html#OtherService_totalCostInclVat" coords="240,681,354,725" /><area alt="gpb-report_xsd.tmp#OtherService" href="gpb-report_xsd.html#OtherService" coords="158,3,273,25" /></map></div>
                         </td>
                      </tr>
                      <tr>
@@ -10078,7 +10053,7 @@ var modelBoxes= new Array('model_report',
                               <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
                                  <tr>
                                     <td width="100%">
-                                       <pre><span class="tEl">&lt;otherService</span><span class="tEl">&gt;</span><span class="tI">
+                                       <pre><span class="tEl">&lt;otherService</span><span class="tT"> </span><span class="tAN">type=</span><span class="tAV">""</span><span class="tEl">&gt;</span><span class="tI">
   </span><span class="tEl">&lt;name</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/name&gt;</span><span class="tI">
   </span><span class="tEl">&lt;description</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/description&gt;</span><span class="tI">
   </span><span class="tEl">&lt;location</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/location&gt;</span><span class="tI">
@@ -10087,6 +10062,42 @@ var modelBoxes= new Array('model_report',
   </span><span class="tEl">&lt;feeCostInclVat</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/feeCostInclVat&gt;</span><span class="tI">
   </span><span class="tEl">&lt;totalCostInclVat</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/totalCostInclVat&gt;</span><span class="tI">
 </span><span class="tEl">&lt;/otherService&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Attributes</b></div>
+                           <div class="floatRight"><input id="button_attributes_Services_Services_otherServices_otherService" type="image" src="img/btM.gif" value="-" onclick="switchState('attributes_Services_Services_otherServices_otherService');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="attributes_Services_Services_otherServices_otherService" style="display:block">
+                              <table class="attributesTable">
+                                 <thead>
+                                    <tr>
+                                       <th>QName</th>
+                                       <th width="10%">Type</th>
+                                       <th width="5%">Use</th>
+                                       <th>Annotation</th>
+                                    </tr>
+                                 </thead>
+                                 <tr>
+                                    <td class="firstColumn"><b><a href="gpb-report_xsd.html#OtherService_type" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">type</a></b></td>
+                                    <td><b>xs:string</b></td>
+                                    <td>required</td>
+                                    <td>
+                                       <div class="annotation">
+                                          <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                             <tr>
+                                                <td width="100%">
+                                                   <pre><span class="tT">Тип услуги</span></pre>
+                                                </td>
+                                             </tr>
+                                          </table>
+                                       </div>
                                     </td>
                                  </tr>
                               </table>
@@ -10147,7 +10158,7 @@ var modelBoxes= new Array('model_report',
                                  <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
                                     <tr>
                                        <td width="100%">
-                                          <pre><span class="tT">Название</span></pre>
+                                          <pre><span class="tT">Название услуги</span></pre>
                                        </td>
                                     </tr>
                                  </table>
@@ -10227,7 +10238,7 @@ var modelBoxes= new Array('model_report',
                                     <td width="100%">
                                        <pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"name"</span><span class="tAN"> type=</span><span class="tAV">"Name"</span><span class="tEl">&gt;</span><span class="tI">
   </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
-    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Название</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Название услуги</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
   </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
 </span><span class="tEl">&lt;/xs:element&gt;</span></pre>
                                     </td>
@@ -10273,7 +10284,7 @@ var modelBoxes= new Array('model_report',
                                  <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
                                     <tr>
                                        <td width="100%">
-                                          <pre><span class="tT">Описание</span></pre>
+                                          <pre><span class="tT">Описание услуги</span></pre>
                                        </td>
                                     </tr>
                                  </table>
@@ -10322,7 +10333,7 @@ var modelBoxes= new Array('model_report',
                                     <td width="100%">
                                        <pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"description"</span><span class="tAN"> type=</span><span class="tAV">"xs:string"</span><span class="tEl">&gt;</span><span class="tI">
   </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
-    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Описание</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Описание услуги</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
   </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
 </span><span class="tEl">&lt;/xs:element&gt;</span></pre>
                                     </td>
@@ -11834,7 +11845,7 @@ var modelBoxes= new Array('model_report',
                            <div class="floatRight"><input id="button_diagram_Ticket" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_Ticket');" class="control" /></div>
                         </td>
                         <td class="diagram">
-                           <div id="diagram_Ticket" style="display:block"><img alt="Diagram" border="0" src="img/gpb-report_xsd_Complex_Type_Ticket.png" usemap="#gpb-report_xsd_Complex_Type_Ticket" /><map name="gpb-report_xsd_Complex_Type_Ticket" id="gpb-report_xsd_Complex_Type_Ticket"><area alt="gpb-report_xsd.tmp#Ticket_type" href="gpb-report_xsd.html#Ticket_type" coords="125,39,240,83" /><area alt="gpb-report_xsd.tmp#Ticket_orderNumber" href="gpb-report_xsd.html#Ticket_orderNumber" coords="182,131,315,175" /><area alt="gpb-report_xsd.tmp#Ticket_serviceNumber" href="gpb-report_xsd.html#Ticket_serviceNumber" coords="182,216,315,260" /><area alt="gpb-report_xsd.tmp#Ticket_transportCode" href="gpb-report_xsd.html#Ticket_transportCode" coords="182,301,345,345" /><area alt="gpb-report_xsd.tmp#Ticket_operationType" href="gpb-report_xsd.html#Ticket_operationType" coords="182,386,344,430" /><area alt="gpb-report_xsd.tmp#Ticket_supplierName" href="gpb-report_xsd.html#Ticket_supplierName" coords="182,471,287,515" /><area alt="gpb-report_xsd.tmp#Ticket_number" href="gpb-report_xsd.html#Ticket_number" coords="182,556,287,600" /><area alt="gpb-report_xsd.tmp#Ticket_IssuedInExchangeFor" href="gpb-report_xsd.html#Ticket_IssuedInExchangeFor" coords="182,641,317,685" /><area alt="gpb-report_xsd.tmp#Ticket_classOfService" href="gpb-report_xsd.html#Ticket_classOfService" coords="182,740,288,784" /><area alt="gpb-report_xsd.tmp#Ticket_deaprtureDate" href="gpb-report_xsd.html#Ticket_deaprtureDate" coords="182,825,282,869" /><area alt="gpb-report_xsd.tmp#Ticket_routeCities" href="gpb-report_xsd.html#Ticket_routeCities" coords="182,910,272,954" /><area alt="gpb-report_xsd.tmp#Ticket_ticketCostInclVat" href="gpb-report_xsd.html#Ticket_ticketCostInclVat" coords="182,995,296,1039" /><area alt="gpb-report_xsd.tmp#Ticket_feeCostInclVat" href="gpb-report_xsd.html#Ticket_feeCostInclVat" coords="182,1080,296,1124" /><area alt="gpb-report_xsd.tmp#Ticket_penaltyCostInclVat" href="gpb-report_xsd.html#Ticket_penaltyCostInclVat" coords="182,1165,303,1209" /><area alt="gpb-report_xsd.tmp#Ticket_refundExchangeFeeInclVat" href="gpb-report_xsd.html#Ticket_refundExchangeFeeInclVat" coords="182,1250,344,1294" /><area alt="gpb-report_xsd.tmp#Ticket_refundNoticeFeeInclVat" href="gpb-report_xsd.html#Ticket_refundNoticeFeeInclVat" coords="182,1335,326,1379" /><area alt="gpb-report_xsd.tmp#Ticket_totalCostInclVat" href="gpb-report_xsd.html#Ticket_totalCostInclVat" coords="182,1420,296,1464" /><area alt="gpb-report_xsd.tmp#Ticket_avia" href="gpb-report_xsd.html#Ticket_avia" coords="253,1505,386,1549" /><area alt="gpb-report_xsd.tmp#Ticket_rail" href="gpb-report_xsd.html#Ticket_rail" coords="253,1559,381,1603" /></map></div>
+                           <div id="diagram_Ticket" style="display:block"><img alt="Diagram" border="0" src="img/gpb-report_xsd_Complex_Type_Ticket.png" usemap="#gpb-report_xsd_Complex_Type_Ticket" /><map name="gpb-report_xsd_Complex_Type_Ticket" id="gpb-report_xsd_Complex_Type_Ticket"><area alt="gpb-report_xsd.tmp#Ticket_type" href="gpb-report_xsd.html#Ticket_type" coords="125,39,240,83" /><area alt="gpb-report_xsd.tmp#Ticket_orderNumber" href="gpb-report_xsd.html#Ticket_orderNumber" coords="182,131,315,175" /><area alt="gpb-report_xsd.tmp#Ticket_serviceNumber" href="gpb-report_xsd.html#Ticket_serviceNumber" coords="182,216,315,260" /><area alt="gpb-report_xsd.tmp#Ticket_transportCode" href="gpb-report_xsd.html#Ticket_transportCode" coords="182,301,287,345" /><area alt="gpb-report_xsd.tmp#Ticket_operationType" href="gpb-report_xsd.html#Ticket_operationType" coords="182,386,344,430" /><area alt="gpb-report_xsd.tmp#Ticket_supplierName" href="gpb-report_xsd.html#Ticket_supplierName" coords="182,471,287,515" /><area alt="gpb-report_xsd.tmp#Ticket_number" href="gpb-report_xsd.html#Ticket_number" coords="182,556,287,600" /><area alt="gpb-report_xsd.tmp#Ticket_IssuedInExchangeFor" href="gpb-report_xsd.html#Ticket_IssuedInExchangeFor" coords="182,641,317,685" /><area alt="gpb-report_xsd.tmp#Ticket_classOfService" href="gpb-report_xsd.html#Ticket_classOfService" coords="182,740,288,784" /><area alt="gpb-report_xsd.tmp#Ticket_deaprtureDate" href="gpb-report_xsd.html#Ticket_deaprtureDate" coords="182,825,282,869" /><area alt="gpb-report_xsd.tmp#Ticket_routeCities" href="gpb-report_xsd.html#Ticket_routeCities" coords="182,910,272,954" /><area alt="gpb-report_xsd.tmp#Ticket_ticketCostInclVat" href="gpb-report_xsd.html#Ticket_ticketCostInclVat" coords="182,995,296,1039" /><area alt="gpb-report_xsd.tmp#Ticket_feeCostInclVat" href="gpb-report_xsd.html#Ticket_feeCostInclVat" coords="182,1080,296,1124" /><area alt="gpb-report_xsd.tmp#Ticket_penaltyCostInclVat" href="gpb-report_xsd.html#Ticket_penaltyCostInclVat" coords="182,1165,303,1209" /><area alt="gpb-report_xsd.tmp#Ticket_refundExchangeFeeInclVat" href="gpb-report_xsd.html#Ticket_refundExchangeFeeInclVat" coords="182,1250,344,1294" /><area alt="gpb-report_xsd.tmp#Ticket_refundNoticeFeeInclVat" href="gpb-report_xsd.html#Ticket_refundNoticeFeeInclVat" coords="182,1335,326,1379" /><area alt="gpb-report_xsd.tmp#Ticket_totalCostInclVat" href="gpb-report_xsd.html#Ticket_totalCostInclVat" coords="182,1420,296,1464" /><area alt="gpb-report_xsd.tmp#Ticket_avia" href="gpb-report_xsd.html#Ticket_avia" coords="253,1505,386,1549" /><area alt="gpb-report_xsd.tmp#Ticket_rail" href="gpb-report_xsd.html#Ticket_rail" coords="253,1559,381,1603" /></map></div>
                         </td>
                      </tr>
                      <tr>
@@ -11922,7 +11933,7 @@ var modelBoxes= new Array('model_report',
         </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Порядковый номер услуги</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
       </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
     </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
-    </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"transportCode"</span><span class="tAN"> type=</span><span class="tAV">"TicketTransportCode"</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"transportCode"</span><span class="tAN"> type=</span><span class="tAV">"xs:string"</span><span class="tEl">&gt;</span><span class="tI">
       </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
         </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Вид транспорта</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
       </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
@@ -12005,109 +12016,6 @@ var modelBoxes= new Array('model_report',
     </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
   </span><span class="tEl">&lt;/xs:attribute&gt;</span><span class="tI">
 </span><span class="tEl">&lt;/xs:complexType&gt;</span></pre>
-                                    </td>
-                                 </tr>
-                              </table>
-                           </div>
-                        </td>
-                     </tr>
-                  </tbody>
-               </table>
-            </td>
-            <td class="rt_lineRight"></td>
-         </tr>
-         <tr>
-            <td class="rt_cornerBottomLeft"></td>
-            <td class="rt_lineBottom"></td>
-            <td class="rt_cornerBottomRight"></td>
-         </tr>
-      </table><a id="TicketTransportCode"></a><div class="componentTitle">Simple Type <span class="qname">TicketTransportCode</span></div>
-      <table class="rt">
-         <tr>
-            <td class="rt_cornerTopLeft"></td>
-            <td class="rt_lineTop"></td>
-            <td class="rt_cornerTopRight"></td>
-         </tr>
-         <tr>
-            <td class="rt_lineLeft"></td>
-            <td class="rt_content">
-               <table class="component">
-                  <tbody>
-                     <tr>
-                        <td class="firstColumn"><b>Namespace</b></td>
-                        <td>No namespace</td>
-                     </tr>
-                     <tr>
-                        <td class="firstColumn">
-                           <div class="floatLeft"><b>Diagram</b></div>
-                           <div class="floatRight"><input id="button_diagram_TicketTransportCode" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_TicketTransportCode');" class="control" /></div>
-                        </td>
-                        <td class="diagram">
-                           <div id="diagram_TicketTransportCode" style="display:block"><img alt="Diagram" border="0" src="img/gpb-report_xsd_Simple_Type_TicketTransportCode.png" /></div>
-                        </td>
-                     </tr>
-                     <tr>
-                        <td class="firstColumn"><b>Type</b></td>
-                        <td>restriction of <b>xs:string</b></td>
-                     </tr>
-                     <tr>
-                        <td class="firstColumn">
-                           <div class="floatLeft"><b>Facets</b></div>
-                           <div class="floatRight"><input id="button_facets_TicketTransportCode" type="image" src="img/btM.gif" value="-" onclick="switchState('facets_TicketTransportCode');" class="control" /></div>
-                        </td>
-                        <td>
-                           <div id="facets_TicketTransportCode" style="display:block">
-                              <table class="facetsTable">
-                                 <tr>
-                                    <td class="firstColumn">enumeration</td>
-                                    <td width="30%"><b>АТ</b></td>
-                                    <td>
-                                       <div class="annotation"></div>
-                                    </td>
-                                 </tr>
-                                 <tr>
-                                    <td class="firstColumn">enumeration</td>
-                                    <td width="30%"><b>ЖТ</b></td>
-                                    <td>
-                                       <div class="annotation"></div>
-                                    </td>
-                                 </tr>
-                              </table>
-                           </div>
-                        </td>
-                     </tr>
-                     <tr>
-                        <td class="firstColumn">
-                           <div class="floatLeft"><b>Used by</b></div>
-                           <div class="floatRight"><input id="button_usedBy_TicketTransportCode" type="image" src="img/btM.gif" value="-" onclick="switchState('usedBy_TicketTransportCode');" class="control" /></div>
-                        </td>
-                        <td>
-                           <div id="usedBy_TicketTransportCode" style="display:block">
-                              <table class="usedByTable">
-                                 <tr>
-                                    <td class="firstColumn">Element </td>
-                                    <td><b><a href="gpb-report_xsd.html#Ticket_transportCode" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">Ticket/transportCode</a></b></td>
-                                 </tr>
-                              </table>
-                           </div>
-                        </td>
-                     </tr>
-                     <tr>
-                        <td class="firstColumn">
-                           <div class="floatLeft"><b>Source</b></div>
-                           <div class="floatRight"><input id="button_source_TicketTransportCode" type="image" src="img/btM.gif" value="-" onclick="switchState('source_TicketTransportCode');" class="control" /></div>
-                        </td>
-                        <td>
-                           <div id="source_TicketTransportCode" style="display:block">
-                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
-                                 <tr>
-                                    <td width="100%">
-                                       <pre><span class="tEl">&lt;xs:simpleType</span><span class="tAN"> name=</span><span class="tAV">"TicketTransportCode"</span><span class="tEl">&gt;</span><span class="tI">
-  </span><span class="tEl">&lt;xs:restriction</span><span class="tAN"> base=</span><span class="tAV">"xs:string"</span><span class="tEl">&gt;</span><span class="tI">
-    </span><span class="tEl">&lt;xs:enumeration</span><span class="tAN"> value=</span><span class="tAV">"АТ"</span><span class="tEl">/&gt;</span><span class="tI">
-    </span><span class="tEl">&lt;xs:enumeration</span><span class="tAN"> value=</span><span class="tAV">"ЖТ"</span><span class="tEl">/&gt;</span><span class="tI">
-  </span><span class="tEl">&lt;/xs:restriction&gt;</span><span class="tI">
-</span><span class="tEl">&lt;/xs:simpleType&gt;</span></pre>
                                     </td>
                                  </tr>
                               </table>
@@ -13234,7 +13142,7 @@ var modelBoxes= new Array('model_report',
                            <div class="floatRight"><input id="button_diagram_OtherService" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_OtherService');" class="control" /></div>
                         </td>
                         <td class="diagram">
-                           <div id="diagram_OtherService" style="display:block"><img alt="Diagram" border="0" src="img/gpb-report_xsd_Complex_Type_OtherService.png" usemap="#gpb-report_xsd_Complex_Type_OtherService" /><map name="gpb-report_xsd_Complex_Type_OtherService" id="gpb-report_xsd_Complex_Type_OtherService"><area alt="gpb-report_xsd.tmp#OtherService_name" href="gpb-report_xsd.html#OtherService_name" coords="218,0,308,44" /><area alt="gpb-report_xsd.tmp#OtherService_description" href="gpb-report_xsd.html#OtherService_description" coords="218,85,323,129" /><area alt="gpb-report_xsd.tmp#OtherService_location" href="gpb-report_xsd.html#OtherService_location" coords="218,170,349,214" /><area alt="gpb-report_xsd.tmp#OtherService_date" href="gpb-report_xsd.html#OtherService_date" coords="218,255,339,299" /><area alt="gpb-report_xsd.tmp#OtherService_costInclVat" href="gpb-report_xsd.html#OtherService_costInclVat" coords="218,340,332,384" /><area alt="gpb-report_xsd.tmp#OtherService_feeCostInclVat" href="gpb-report_xsd.html#OtherService_feeCostInclVat" coords="218,425,332,469" /><area alt="gpb-report_xsd.tmp#OtherService_totalCostInclVat" href="gpb-report_xsd.html#OtherService_totalCostInclVat" coords="218,510,332,554" /></map></div>
+                           <div id="diagram_OtherService" style="display:block"><img alt="Diagram" border="0" src="img/gpb-report_xsd_Complex_Type_OtherService.png" usemap="#gpb-report_xsd_Complex_Type_OtherService" /><map name="gpb-report_xsd_Complex_Type_OtherService" id="gpb-report_xsd_Complex_Type_OtherService"><area alt="gpb-report_xsd.tmp#OtherService_type" href="gpb-report_xsd.html#OtherService_type" coords="161,39,266,83" /><area alt="gpb-report_xsd.tmp#OtherService_name" href="gpb-report_xsd.html#OtherService_name" coords="218,131,308,175" /><area alt="gpb-report_xsd.tmp#OtherService_description" href="gpb-report_xsd.html#OtherService_description" coords="218,216,323,260" /><area alt="gpb-report_xsd.tmp#OtherService_location" href="gpb-report_xsd.html#OtherService_location" coords="218,301,349,345" /><area alt="gpb-report_xsd.tmp#OtherService_date" href="gpb-report_xsd.html#OtherService_date" coords="218,386,339,430" /><area alt="gpb-report_xsd.tmp#OtherService_costInclVat" href="gpb-report_xsd.html#OtherService_costInclVat" coords="218,471,332,515" /><area alt="gpb-report_xsd.tmp#OtherService_feeCostInclVat" href="gpb-report_xsd.html#OtherService_feeCostInclVat" coords="218,556,332,600" /><area alt="gpb-report_xsd.tmp#OtherService_totalCostInclVat" href="gpb-report_xsd.html#OtherService_totalCostInclVat" coords="218,641,332,685" /></map></div>
                         </td>
                      </tr>
                      <tr>
@@ -13266,6 +13174,42 @@ var modelBoxes= new Array('model_report',
                      </tr>
                      <tr>
                         <td class="firstColumn">
+                           <div class="floatLeft"><b>Attributes</b></div>
+                           <div class="floatRight"><input id="button_attributes_OtherService" type="image" src="img/btM.gif" value="-" onclick="switchState('attributes_OtherService');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="attributes_OtherService" style="display:block">
+                              <table class="attributesTable">
+                                 <thead>
+                                    <tr>
+                                       <th>QName</th>
+                                       <th width="10%">Type</th>
+                                       <th width="5%">Use</th>
+                                       <th>Annotation</th>
+                                    </tr>
+                                 </thead>
+                                 <tr>
+                                    <td class="firstColumn"><b><a href="gpb-report_xsd.html#OtherService_type" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">type</a></b></td>
+                                    <td><b>xs:string</b></td>
+                                    <td>required</td>
+                                    <td>
+                                       <div class="annotation">
+                                          <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                             <tr>
+                                                <td width="100%">
+                                                   <pre><span class="tT">Тип услуги</span></pre>
+                                                </td>
+                                             </tr>
+                                          </table>
+                                       </div>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
                            <div class="floatLeft"><b>Source</b></div>
                            <div class="floatRight"><input id="button_source_OtherService" type="image" src="img/btM.gif" value="-" onclick="switchState('source_OtherService');" class="control" /></div>
                         </td>
@@ -13278,12 +13222,12 @@ var modelBoxes= new Array('model_report',
   </span><span class="tEl">&lt;xs:sequence</span><span class="tEl">&gt;</span><span class="tI">
     </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"name"</span><span class="tAN"> type=</span><span class="tAV">"Name"</span><span class="tEl">&gt;</span><span class="tI">
       </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
-        </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Название</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Название услуги</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
       </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
     </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
     </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"description"</span><span class="tAN"> type=</span><span class="tAV">"xs:string"</span><span class="tEl">&gt;</span><span class="tI">
       </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
-        </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Описание</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Описание услуги</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
       </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
     </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
     </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"location"</span><span class="tAN"> type=</span><span class="tAV">"OtherLocation"</span><span class="tEl">&gt;</span><span class="tI">
@@ -13312,6 +13256,11 @@ var modelBoxes= new Array('model_report',
       </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
     </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
   </span><span class="tEl">&lt;/xs:sequence&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:attribute</span><span class="tAN"> name=</span><span class="tAV">"type"</span><span class="tAN"> type=</span><span class="tAV">"xs:string"</span><span class="tAN"> use=</span><span class="tAV">"required"</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Тип услуги</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:attribute&gt;</span><span class="tI">
 </span><span class="tEl">&lt;/xs:complexType&gt;</span></pre>
                                     </td>
                                  </tr>
@@ -13529,6 +13478,108 @@ var modelBoxes= new Array('model_report',
                                  <tr>
                                     <td width="100%">
                                        <pre><span class="tEl">&lt;xs:attribute</span><span class="tAN"> name=</span><span class="tAV">"type"</span><span class="tAN"> type=</span><span class="tAV">"TicketType"</span><span class="tAN"> use=</span><span class="tAV">"required"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Тип услуги</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:attribute&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="OtherService_type"></a><div class="componentTitle">Attribute <span class="qname"><b><a href="gpb-report_xsd.html#OtherService" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">OtherService</a></b> / @type</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_OtherService_type" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_OtherService_type');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_OtherService_type" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%">
+                                          <pre><span class="tT">Тип услуги</span></pre>
+                                       </td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b>xs:string</b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_OtherService_type" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_OtherService_type');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_OtherService_type" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">use</td>
+                                    <td><b>required</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Used by</b></div>
+                           <div class="floatRight"><input id="button_usedBy_OtherService_type" type="image" src="img/btM.gif" value="-" onclick="switchState('usedBy_OtherService_type');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="usedBy_OtherService_type" style="display:block">
+                              <table class="usedByTable">
+                                 <tr>
+                                    <td class="firstColumn">Complex Type </td>
+                                    <td><b><a href="gpb-report_xsd.html#OtherService" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">OtherService</a></b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_OtherService_type" type="image" src="img/btM.gif" value="-" onclick="switchState('source_OtherService_type');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_OtherService_type" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%">
+                                       <pre><span class="tEl">&lt;xs:attribute</span><span class="tAN"> name=</span><span class="tAV">"type"</span><span class="tAN"> type=</span><span class="tAV">"xs:string"</span><span class="tAN"> use=</span><span class="tAV">"required"</span><span class="tEl">&gt;</span><span class="tI">
   </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
     </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Тип услуги</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
   </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
