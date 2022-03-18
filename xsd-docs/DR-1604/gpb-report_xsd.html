@@ -76,7 +76,10 @@
 				'properties_RailSegments_RailSegments_segments_RailSegments_RailSegments_segments_segment_arrivalTo', 
 				'properties_Services_hotels', 
 				'properties_Services_Services_hotels_hotel', 
+				'properties_Hotel_orderNumber', 
+				'properties_Hotel_serviceNumber', 
 				'properties_Hotel_name', 
+				'properties_Hotel_operationType', 
 				'properties_Hotel_location', 
 				'properties_Hotel_Hotel_location_city', 
 				'properties_Hotel_roomCategoryName', 
@@ -89,6 +92,9 @@
 				'properties_Hotel_totalCostInclVat', 
 				'properties_Services_otherServices', 
 				'properties_Services_Services_otherServices_otherService', 
+				'properties_OtherService_orderNumber', 
+				'properties_OtherService_serviceNumber', 
+				'properties_OtherService_operationType', 
 				'properties_OtherService_name', 
 				'properties_OtherService_description', 
 				'properties_OtherService_location', 
@@ -104,6 +110,8 @@ var facetsBoxes= new Array('facets_BusinessTrip_status',
 				'facets_Ticket_operationType', 
 				'facets_City_code', 
 				'facets_Country_code', 
+				'facets_Hotel_operationType', 
+				'facets_OtherService_operationType', 
 				'facets_BusinessTripStatus', 
 				'facets_TicketOperationType', 
 				'facets_TicketType', 
@@ -200,7 +208,10 @@ var sourceBoxes= new Array('source_report',
 				'source_RailSegments_RailSegments_segments_RailSegments_RailSegments_segments_segment_arrivalTo', 
 				'source_Services_hotels', 
 				'source_Services_Services_hotels_hotel', 
+				'source_Hotel_orderNumber', 
+				'source_Hotel_serviceNumber', 
 				'source_Hotel_name', 
+				'source_Hotel_operationType', 
 				'source_Hotel_location', 
 				'source_Hotel_Hotel_location_city', 
 				'source_Hotel_roomCategoryName', 
@@ -213,6 +224,9 @@ var sourceBoxes= new Array('source_report',
 				'source_Hotel_totalCostInclVat', 
 				'source_Services_otherServices', 
 				'source_Services_Services_otherServices_otherService', 
+				'source_OtherService_orderNumber', 
+				'source_OtherService_serviceNumber', 
+				'source_OtherService_operationType', 
 				'source_OtherService_name', 
 				'source_OtherService_description', 
 				'source_OtherService_location', 
@@ -358,7 +372,10 @@ var diagramBoxes= new Array('diagram_report',
 				'diagram_RailSegments_RailSegments_segments_RailSegments_RailSegments_segments_segment_arrivalTo', 
 				'diagram_Services_hotels', 
 				'diagram_Services_Services_hotels_hotel', 
+				'diagram_Hotel_orderNumber', 
+				'diagram_Hotel_serviceNumber', 
 				'diagram_Hotel_name', 
+				'diagram_Hotel_operationType', 
 				'diagram_Hotel_location', 
 				'diagram_Hotel_Hotel_location_city', 
 				'diagram_Hotel_roomCategoryName', 
@@ -371,6 +388,9 @@ var diagramBoxes= new Array('diagram_report',
 				'diagram_Hotel_totalCostInclVat', 
 				'diagram_Services_otherServices', 
 				'diagram_Services_Services_otherServices_otherService', 
+				'diagram_OtherService_orderNumber', 
+				'diagram_OtherService_serviceNumber', 
+				'diagram_OtherService_operationType', 
 				'diagram_OtherService_name', 
 				'diagram_OtherService_description', 
 				'diagram_OtherService_location', 
@@ -457,7 +477,10 @@ var annotationBoxes= new Array('annotations_BusinessTrip_journeyNumber',
 				'annotations_RailwayStation_RailwayStation_railwayStation_name', 
 				'annotations_RailwayStation_RailwayStation_railwayStation_city', 
 				'annotations_Services_hotels', 
+				'annotations_Hotel_orderNumber', 
+				'annotations_Hotel_serviceNumber', 
 				'annotations_Hotel_name', 
+				'annotations_Hotel_operationType', 
 				'annotations_Hotel_location', 
 				'annotations_Hotel_Hotel_location_city', 
 				'annotations_Hotel_roomCategoryName', 
@@ -469,6 +492,9 @@ var annotationBoxes= new Array('annotations_BusinessTrip_journeyNumber',
 				'annotations_Hotel_feeCostInclVat', 
 				'annotations_Hotel_totalCostInclVat', 
 				'annotations_Services_otherServices', 
+				'annotations_OtherService_orderNumber', 
+				'annotations_OtherService_serviceNumber', 
+				'annotations_OtherService_operationType', 
 				'annotations_OtherService_name', 
 				'annotations_OtherService_description', 
 				'annotations_OtherService_location', 
@@ -3309,7 +3335,7 @@ var modelBoxes= new Array('model_report',
                                  <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
                                     <tr>
                                        <td width="100%">
-                                          <pre><span class="tT">Порядковый номер услуги</span></pre>
+                                          <pre><span class="tT">Порядковый номер услуги в заказе</span></pre>
                                        </td>
                                     </tr>
                                  </table>
@@ -3358,7 +3384,7 @@ var modelBoxes= new Array('model_report',
                                     <td width="100%">
                                        <pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"serviceNumber"</span><span class="tAN"> type=</span><span class="tAV">"xs:unsignedInt"</span><span class="tEl">&gt;</span><span class="tI">
   </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
-    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Порядковый номер услуги</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Порядковый номер услуги в заказе</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
   </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
 </span><span class="tEl">&lt;/xs:element&gt;</span></pre>
                                     </td>
@@ -8582,7 +8608,7 @@ var modelBoxes= new Array('model_report',
                            <div class="floatRight"><input id="button_diagram_Services_Services_hotels_hotel" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_Services_Services_hotels_hotel');" class="control" /></div>
                         </td>
                         <td class="diagram">
-                           <div id="diagram_Services_Services_hotels_hotel" style="display:block"><img alt="Diagram" border="0" src="img/gpb-report_xsd_Element_hotel.png" usemap="#gpb-report_xsd_Element_hotel" /><map name="gpb-report_xsd_Element_hotel" id="gpb-report_xsd_Element_hotel"><area alt="gpb-report_xsd.tmp#Hotel_name" href="gpb-report_xsd.html#Hotel_name" coords="200,40,290,84" /><area alt="gpb-report_xsd.tmp#Hotel_location" href="gpb-report_xsd.html#Hotel_location" coords="200,125,268,150" /><area alt="gpb-report_xsd.tmp#Hotel_roomCategoryName" href="gpb-report_xsd.html#Hotel_roomCategoryName" coords="200,191,326,235" /><area alt="gpb-report_xsd.tmp#Hotel_startsAt" href="gpb-report_xsd.html#Hotel_startsAt" coords="200,276,321,320" /><area alt="gpb-report_xsd.tmp#Hotel_endsAt" href="gpb-report_xsd.html#Hotel_endsAt" coords="200,361,321,405" /><area alt="gpb-report_xsd.tmp#Hotel_durationDays" href="gpb-report_xsd.html#Hotel_durationDays" coords="200,446,311,490" /><area alt="gpb-report_xsd.tmp#Hotel_rateCostInclVat" href="gpb-report_xsd.html#Hotel_rateCostInclVat" coords="200,531,314,575" /><area alt="gpb-report_xsd.tmp#Hotel_costInclVat" href="gpb-report_xsd.html#Hotel_costInclVat" coords="200,616,314,660" /><area alt="gpb-report_xsd.tmp#Hotel_feeCostInclVat" href="gpb-report_xsd.html#Hotel_feeCostInclVat" coords="200,701,314,745" /><area alt="gpb-report_xsd.tmp#Hotel_totalCostInclVat" href="gpb-report_xsd.html#Hotel_totalCostInclVat" coords="200,786,314,830" /><area alt="gpb-report_xsd.tmp#Hotel" href="gpb-report_xsd.html#Hotel" coords="118,3,193,25" /></map></div>
+                           <div id="diagram_Services_Services_hotels_hotel" style="display:block"><img alt="Diagram" border="0" src="img/gpb-report_xsd_Element_hotel.png" usemap="#gpb-report_xsd_Element_hotel" /><map name="gpb-report_xsd_Element_hotel" id="gpb-report_xsd_Element_hotel"><area alt="gpb-report_xsd.tmp#Hotel_orderNumber" href="gpb-report_xsd.html#Hotel_orderNumber" coords="200,40,333,84" /><area alt="gpb-report_xsd.tmp#Hotel_serviceNumber" href="gpb-report_xsd.html#Hotel_serviceNumber" coords="200,125,333,169" /><area alt="gpb-report_xsd.tmp#Hotel_name" href="gpb-report_xsd.html#Hotel_name" coords="200,210,290,254" /><area alt="gpb-report_xsd.tmp#Hotel_operationType" href="gpb-report_xsd.html#Hotel_operationType" coords="200,295,362,339" /><area alt="gpb-report_xsd.tmp#Hotel_location" href="gpb-report_xsd.html#Hotel_location" coords="200,380,268,405" /><area alt="gpb-report_xsd.tmp#Hotel_roomCategoryName" href="gpb-report_xsd.html#Hotel_roomCategoryName" coords="200,446,326,490" /><area alt="gpb-report_xsd.tmp#Hotel_startsAt" href="gpb-report_xsd.html#Hotel_startsAt" coords="200,531,321,575" /><area alt="gpb-report_xsd.tmp#Hotel_endsAt" href="gpb-report_xsd.html#Hotel_endsAt" coords="200,616,321,660" /><area alt="gpb-report_xsd.tmp#Hotel_durationDays" href="gpb-report_xsd.html#Hotel_durationDays" coords="200,701,311,745" /><area alt="gpb-report_xsd.tmp#Hotel_rateCostInclVat" href="gpb-report_xsd.html#Hotel_rateCostInclVat" coords="200,786,314,830" /><area alt="gpb-report_xsd.tmp#Hotel_costInclVat" href="gpb-report_xsd.html#Hotel_costInclVat" coords="200,871,314,915" /><area alt="gpb-report_xsd.tmp#Hotel_feeCostInclVat" href="gpb-report_xsd.html#Hotel_feeCostInclVat" coords="200,956,314,1000" /><area alt="gpb-report_xsd.tmp#Hotel_totalCostInclVat" href="gpb-report_xsd.html#Hotel_totalCostInclVat" coords="200,1041,314,1085" /><area alt="gpb-report_xsd.tmp#Hotel" href="gpb-report_xsd.html#Hotel" coords="118,3,193,25" /></map></div>
                         </td>
                      </tr>
                      <tr>
@@ -8613,12 +8639,12 @@ var modelBoxes= new Array('model_report',
                         <td class="firstColumn"><b>Model</b><div class="floatRight"><input id="button_model_Services_Services_hotels_hotel" type="image" src="img/btM.gif" value="-" onclick="switchState('model_Services_Services_hotels_hotel');" class="control" /></div>
                         </td>
                         <td>
-                           <div id="model_Services_Services_hotels_hotel" style="display:block"><b><a href="gpb-report_xsd.html#Hotel_name" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">name</a></b> , <b><a href="gpb-report_xsd.html#Hotel_location" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">location</a></b> , <b><a href="gpb-report_xsd.html#Hotel_roomCategoryName" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">roomCategoryName</a></b> , <b><a href="gpb-report_xsd.html#Hotel_startsAt" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">startsAt</a></b> , <b><a href="gpb-report_xsd.html#Hotel_endsAt" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">endsAt</a></b> , <b><a href="gpb-report_xsd.html#Hotel_durationDays" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">durationDays</a></b> , <b><a href="gpb-report_xsd.html#Hotel_rateCostInclVat" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">rateCostInclVat</a></b> , <b><a href="gpb-report_xsd.html#Hotel_costInclVat" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">costInclVat</a></b> , <b><a href="gpb-report_xsd.html#Hotel_feeCostInclVat" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">feeCostInclVat</a></b> , <b><a href="gpb-report_xsd.html#Hotel_totalCostInclVat" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">totalCostInclVat</a></b></div>
+                           <div id="model_Services_Services_hotels_hotel" style="display:block"><b><a href="gpb-report_xsd.html#Hotel_orderNumber" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">orderNumber</a></b> , <b><a href="gpb-report_xsd.html#Hotel_serviceNumber" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">serviceNumber</a></b> , <b><a href="gpb-report_xsd.html#Hotel_name" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">name</a></b> , <b><a href="gpb-report_xsd.html#Hotel_operationType" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">operationType</a></b> , <b><a href="gpb-report_xsd.html#Hotel_location" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">location</a></b> , <b><a href="gpb-report_xsd.html#Hotel_roomCategoryName" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">roomCategoryName</a></b> , <b><a href="gpb-report_xsd.html#Hotel_startsAt" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">startsAt</a></b> , <b><a href="gpb-report_xsd.html#Hotel_endsAt" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">endsAt</a></b> , <b><a href="gpb-report_xsd.html#Hotel_durationDays" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">durationDays</a></b> , <b><a href="gpb-report_xsd.html#Hotel_rateCostInclVat" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">rateCostInclVat</a></b> , <b><a href="gpb-report_xsd.html#Hotel_costInclVat" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">costInclVat</a></b> , <b><a href="gpb-report_xsd.html#Hotel_feeCostInclVat" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">feeCostInclVat</a></b> , <b><a href="gpb-report_xsd.html#Hotel_totalCostInclVat" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">totalCostInclVat</a></b></div>
                         </td>
                      </tr>
                      <tr>
                         <td class="firstColumn"><b>Children</b></td>
-                        <td><b><a href="gpb-report_xsd.html#Hotel_costInclVat" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">costInclVat</a></b>, <b><a href="gpb-report_xsd.html#Hotel_durationDays" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">durationDays</a></b>, <b><a href="gpb-report_xsd.html#Hotel_endsAt" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">endsAt</a></b>, <b><a href="gpb-report_xsd.html#Hotel_feeCostInclVat" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">feeCostInclVat</a></b>, <b><a href="gpb-report_xsd.html#Hotel_location" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">location</a></b>, <b><a href="gpb-report_xsd.html#Hotel_name" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">name</a></b>, <b><a href="gpb-report_xsd.html#Hotel_rateCostInclVat" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">rateCostInclVat</a></b>, <b><a href="gpb-report_xsd.html#Hotel_roomCategoryName" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">roomCategoryName</a></b>, <b><a href="gpb-report_xsd.html#Hotel_startsAt" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">startsAt</a></b>, <b><a href="gpb-report_xsd.html#Hotel_totalCostInclVat" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">totalCostInclVat</a></b></td>
+                        <td><b><a href="gpb-report_xsd.html#Hotel_costInclVat" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">costInclVat</a></b>, <b><a href="gpb-report_xsd.html#Hotel_durationDays" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">durationDays</a></b>, <b><a href="gpb-report_xsd.html#Hotel_endsAt" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">endsAt</a></b>, <b><a href="gpb-report_xsd.html#Hotel_feeCostInclVat" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">feeCostInclVat</a></b>, <b><a href="gpb-report_xsd.html#Hotel_location" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">location</a></b>, <b><a href="gpb-report_xsd.html#Hotel_name" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">name</a></b>, <b><a href="gpb-report_xsd.html#Hotel_operationType" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">operationType</a></b>, <b><a href="gpb-report_xsd.html#Hotel_orderNumber" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">orderNumber</a></b>, <b><a href="gpb-report_xsd.html#Hotel_rateCostInclVat" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">rateCostInclVat</a></b>, <b><a href="gpb-report_xsd.html#Hotel_roomCategoryName" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">roomCategoryName</a></b>, <b><a href="gpb-report_xsd.html#Hotel_serviceNumber" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">serviceNumber</a></b>, <b><a href="gpb-report_xsd.html#Hotel_startsAt" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">startsAt</a></b>, <b><a href="gpb-report_xsd.html#Hotel_totalCostInclVat" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">totalCostInclVat</a></b></td>
                      </tr>
                      <tr>
                         <td class="firstColumn">
@@ -8631,7 +8657,10 @@ var modelBoxes= new Array('model_report',
                                  <tr>
                                     <td width="100%">
                                        <pre><span class="tEl">&lt;hotel</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;orderNumber</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/orderNumber&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;serviceNumber</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/serviceNumber&gt;</span><span class="tI">
   </span><span class="tEl">&lt;name</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/name&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;operationType</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/operationType&gt;</span><span class="tI">
   </span><span class="tEl">&lt;location</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/location&gt;</span><span class="tI">
   </span><span class="tEl">&lt;roomCategoryName</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/roomCategoryName&gt;</span><span class="tI">
   </span><span class="tEl">&lt;startsAt</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/startsAt&gt;</span><span class="tI">
@@ -8659,6 +8688,196 @@ var modelBoxes= new Array('model_report',
                                  <tr>
                                     <td width="100%">
                                        <pre><span class="tEl">&lt;xs:element</span><span class="tAN"> maxOccurs=</span><span class="tAV">"unbounded"</span><span class="tAN"> name=</span><span class="tAV">"hotel"</span><span class="tAN"> type=</span><span class="tAV">"Hotel"</span><span class="tEl">/&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="Hotel_orderNumber"></a><div class="componentTitle">Element <span class="qname"><b><a href="gpb-report_xsd.html#Hotel" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">Hotel</a></b> / orderNumber</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_Hotel_orderNumber" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_Hotel_orderNumber');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_Hotel_orderNumber" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%">
+                                          <pre><span class="tT">Номер заказа</span></pre>
+                                       </td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_Hotel_orderNumber" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_Hotel_orderNumber');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_Hotel_orderNumber" style="display:block"><img alt="Diagram" border="0" src="img/gpb-report_xsd_Element_orderNumber_1.png" /></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b>xs:unsignedInt</b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_Hotel_orderNumber" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_Hotel_orderNumber');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_Hotel_orderNumber" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>simple</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_Hotel_orderNumber" type="image" src="img/btM.gif" value="-" onclick="switchState('source_Hotel_orderNumber');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_Hotel_orderNumber" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%">
+                                       <pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"orderNumber"</span><span class="tAN"> type=</span><span class="tAV">"xs:unsignedInt"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Номер заказа</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="Hotel_serviceNumber"></a><div class="componentTitle">Element <span class="qname"><b><a href="gpb-report_xsd.html#Hotel" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">Hotel</a></b> / serviceNumber</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_Hotel_serviceNumber" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_Hotel_serviceNumber');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_Hotel_serviceNumber" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%">
+                                          <pre><span class="tT">Порядковый номер услуги в заказе</span></pre>
+                                       </td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_Hotel_serviceNumber" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_Hotel_serviceNumber');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_Hotel_serviceNumber" style="display:block"><img alt="Diagram" border="0" src="img/gpb-report_xsd_Element_serviceNumber_1.png" /></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b>xs:unsignedInt</b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_Hotel_serviceNumber" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_Hotel_serviceNumber');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_Hotel_serviceNumber" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>simple</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_Hotel_serviceNumber" type="image" src="img/btM.gif" value="-" onclick="switchState('source_Hotel_serviceNumber');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_Hotel_serviceNumber" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%">
+                                       <pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"serviceNumber"</span><span class="tAN"> type=</span><span class="tAV">"xs:unsignedInt"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Порядковый номер услуги в заказе</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre>
                                     </td>
                                  </tr>
                               </table>
@@ -8783,6 +9002,134 @@ var modelBoxes= new Array('model_report',
                                        <pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"name"</span><span class="tAN"> type=</span><span class="tAV">"Name"</span><span class="tEl">&gt;</span><span class="tI">
   </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
     </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Название</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="Hotel_operationType"></a><div class="componentTitle">Element <span class="qname"><b><a href="gpb-report_xsd.html#Hotel" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">Hotel</a></b> / operationType</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_Hotel_operationType" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_Hotel_operationType');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_Hotel_operationType" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%">
+                                          <pre><span class="tT">Тип операции</span></pre>
+                                       </td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_Hotel_operationType" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_Hotel_operationType');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_Hotel_operationType" style="display:block"><img alt="Diagram" border="0" src="img/gpb-report_xsd_Element_operationType_1.png" usemap="#gpb-report_xsd_Element_operationType_1" /><map name="gpb-report_xsd_Element_operationType_1" id="gpb-report_xsd_Element_operationType_1"><area alt="gpb-report_xsd.tmp#TicketOperationType" href="gpb-report_xsd.html#TicketOperationType" coords="210,9,364,35" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b><a href="gpb-report_xsd.html#TicketOperationType" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">TicketOperationType</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_Hotel_operationType" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_Hotel_operationType');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_Hotel_operationType" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>simple</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Facets</b></div>
+                           <div class="floatRight"><input id="button_facets_Hotel_operationType" type="image" src="img/btM.gif" value="-" onclick="switchState('facets_Hotel_operationType');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="facets_Hotel_operationType" style="display:block">
+                              <table class="facetsTable">
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td width="30%"><b>sale</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td width="30%"><b>refund</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td width="30%"><b>exchange</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_Hotel_operationType" type="image" src="img/btM.gif" value="-" onclick="switchState('source_Hotel_operationType');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_Hotel_operationType" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%">
+                                       <pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"operationType"</span><span class="tAN"> type=</span><span class="tAV">"TicketOperationType"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Тип операции</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
   </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
 </span><span class="tEl">&lt;/xs:element&gt;</span></pre>
                                     </td>
@@ -10005,7 +10352,7 @@ var modelBoxes= new Array('model_report',
                            <div class="floatRight"><input id="button_diagram_Services_Services_otherServices_otherService" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_Services_Services_otherServices_otherService');" class="control" /></div>
                         </td>
                         <td class="diagram">
-                           <div id="diagram_Services_Services_otherServices_otherService" style="display:block"><img alt="Diagram" border="0" src="img/gpb-report_xsd_Element_otherService.png" usemap="#gpb-report_xsd_Element_otherService" /><map name="gpb-report_xsd_Element_otherService" id="gpb-report_xsd_Element_otherService"><area alt="gpb-report_xsd.tmp#OtherService_type" href="gpb-report_xsd.html#OtherService_type" coords="183,79,288,123" /><area alt="gpb-report_xsd.tmp#OtherService_name" href="gpb-report_xsd.html#OtherService_name" coords="240,171,330,215" /><area alt="gpb-report_xsd.tmp#OtherService_description" href="gpb-report_xsd.html#OtherService_description" coords="240,256,345,300" /><area alt="gpb-report_xsd.tmp#OtherService_location" href="gpb-report_xsd.html#OtherService_location" coords="240,341,371,385" /><area alt="gpb-report_xsd.tmp#OtherService_date" href="gpb-report_xsd.html#OtherService_date" coords="240,426,361,470" /><area alt="gpb-report_xsd.tmp#OtherService_costInclVat" href="gpb-report_xsd.html#OtherService_costInclVat" coords="240,511,354,555" /><area alt="gpb-report_xsd.tmp#OtherService_feeCostInclVat" href="gpb-report_xsd.html#OtherService_feeCostInclVat" coords="240,596,354,640" /><area alt="gpb-report_xsd.tmp#OtherService_totalCostInclVat" href="gpb-report_xsd.html#OtherService_totalCostInclVat" coords="240,681,354,725" /><area alt="gpb-report_xsd.tmp#OtherService" href="gpb-report_xsd.html#OtherService" coords="158,3,273,25" /></map></div>
+                           <div id="diagram_Services_Services_otherServices_otherService" style="display:block"><img alt="Diagram" border="0" src="img/gpb-report_xsd_Element_otherService.png" usemap="#gpb-report_xsd_Element_otherService" /><map name="gpb-report_xsd_Element_otherService" id="gpb-report_xsd_Element_otherService"><area alt="gpb-report_xsd.tmp#OtherService_type" href="gpb-report_xsd.html#OtherService_type" coords="183,79,288,123" /><area alt="gpb-report_xsd.tmp#OtherService_orderNumber" href="gpb-report_xsd.html#OtherService_orderNumber" coords="240,171,373,215" /><area alt="gpb-report_xsd.tmp#OtherService_serviceNumber" href="gpb-report_xsd.html#OtherService_serviceNumber" coords="240,256,373,300" /><area alt="gpb-report_xsd.tmp#OtherService_operationType" href="gpb-report_xsd.html#OtherService_operationType" coords="240,341,402,385" /><area alt="gpb-report_xsd.tmp#OtherService_name" href="gpb-report_xsd.html#OtherService_name" coords="240,426,330,470" /><area alt="gpb-report_xsd.tmp#OtherService_description" href="gpb-report_xsd.html#OtherService_description" coords="240,511,345,555" /><area alt="gpb-report_xsd.tmp#OtherService_location" href="gpb-report_xsd.html#OtherService_location" coords="240,596,371,640" /><area alt="gpb-report_xsd.tmp#OtherService_date" href="gpb-report_xsd.html#OtherService_date" coords="240,681,361,725" /><area alt="gpb-report_xsd.tmp#OtherService_costInclVat" href="gpb-report_xsd.html#OtherService_costInclVat" coords="240,766,354,810" /><area alt="gpb-report_xsd.tmp#OtherService_feeCostInclVat" href="gpb-report_xsd.html#OtherService_feeCostInclVat" coords="240,851,354,895" /><area alt="gpb-report_xsd.tmp#OtherService_totalCostInclVat" href="gpb-report_xsd.html#OtherService_totalCostInclVat" coords="240,936,354,980" /><area alt="gpb-report_xsd.tmp#OtherService" href="gpb-report_xsd.html#OtherService" coords="158,3,273,25" /></map></div>
                         </td>
                      </tr>
                      <tr>
@@ -10036,12 +10383,12 @@ var modelBoxes= new Array('model_report',
                         <td class="firstColumn"><b>Model</b><div class="floatRight"><input id="button_model_Services_Services_otherServices_otherService" type="image" src="img/btM.gif" value="-" onclick="switchState('model_Services_Services_otherServices_otherService');" class="control" /></div>
                         </td>
                         <td>
-                           <div id="model_Services_Services_otherServices_otherService" style="display:block"><b><a href="gpb-report_xsd.html#OtherService_name" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">name</a></b> , <b><a href="gpb-report_xsd.html#OtherService_description" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">description</a></b> , <b><a href="gpb-report_xsd.html#OtherService_location" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">location</a></b> , <b><a href="gpb-report_xsd.html#OtherService_date" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">date</a></b> , <b><a href="gpb-report_xsd.html#OtherService_costInclVat" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">costInclVat</a></b> , <b><a href="gpb-report_xsd.html#OtherService_feeCostInclVat" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">feeCostInclVat</a></b> , <b><a href="gpb-report_xsd.html#OtherService_totalCostInclVat" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">totalCostInclVat</a></b></div>
+                           <div id="model_Services_Services_otherServices_otherService" style="display:block"><b><a href="gpb-report_xsd.html#OtherService_orderNumber" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">orderNumber</a></b> , <b><a href="gpb-report_xsd.html#OtherService_serviceNumber" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">serviceNumber</a></b> , <b><a href="gpb-report_xsd.html#OtherService_operationType" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">operationType</a></b> , <b><a href="gpb-report_xsd.html#OtherService_name" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">name</a></b> , <b><a href="gpb-report_xsd.html#OtherService_description" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">description</a></b> , <b><a href="gpb-report_xsd.html#OtherService_location" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">location</a></b> , <b><a href="gpb-report_xsd.html#OtherService_date" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">date</a></b> , <b><a href="gpb-report_xsd.html#OtherService_costInclVat" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">costInclVat</a></b> , <b><a href="gpb-report_xsd.html#OtherService_feeCostInclVat" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">feeCostInclVat</a></b> , <b><a href="gpb-report_xsd.html#OtherService_totalCostInclVat" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">totalCostInclVat</a></b></div>
                         </td>
                      </tr>
                      <tr>
                         <td class="firstColumn"><b>Children</b></td>
-                        <td><b><a href="gpb-report_xsd.html#OtherService_costInclVat" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">costInclVat</a></b>, <b><a href="gpb-report_xsd.html#OtherService_date" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">date</a></b>, <b><a href="gpb-report_xsd.html#OtherService_description" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">description</a></b>, <b><a href="gpb-report_xsd.html#OtherService_feeCostInclVat" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">feeCostInclVat</a></b>, <b><a href="gpb-report_xsd.html#OtherService_location" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">location</a></b>, <b><a href="gpb-report_xsd.html#OtherService_name" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">name</a></b>, <b><a href="gpb-report_xsd.html#OtherService_totalCostInclVat" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">totalCostInclVat</a></b></td>
+                        <td><b><a href="gpb-report_xsd.html#OtherService_costInclVat" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">costInclVat</a></b>, <b><a href="gpb-report_xsd.html#OtherService_date" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">date</a></b>, <b><a href="gpb-report_xsd.html#OtherService_description" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">description</a></b>, <b><a href="gpb-report_xsd.html#OtherService_feeCostInclVat" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">feeCostInclVat</a></b>, <b><a href="gpb-report_xsd.html#OtherService_location" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">location</a></b>, <b><a href="gpb-report_xsd.html#OtherService_name" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">name</a></b>, <b><a href="gpb-report_xsd.html#OtherService_operationType" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">operationType</a></b>, <b><a href="gpb-report_xsd.html#OtherService_orderNumber" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">orderNumber</a></b>, <b><a href="gpb-report_xsd.html#OtherService_serviceNumber" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">serviceNumber</a></b>, <b><a href="gpb-report_xsd.html#OtherService_totalCostInclVat" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">totalCostInclVat</a></b></td>
                      </tr>
                      <tr>
                         <td class="firstColumn">
@@ -10054,6 +10401,9 @@ var modelBoxes= new Array('model_report',
                                  <tr>
                                     <td width="100%">
                                        <pre><span class="tEl">&lt;otherService</span><span class="tT"> </span><span class="tAN">type=</span><span class="tAV">""</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;orderNumber</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/orderNumber&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;serviceNumber</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/serviceNumber&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;operationType</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/operationType&gt;</span><span class="tI">
   </span><span class="tEl">&lt;name</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/name&gt;</span><span class="tI">
   </span><span class="tEl">&lt;description</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/description&gt;</span><span class="tI">
   </span><span class="tEl">&lt;location</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/location&gt;</span><span class="tI">
@@ -10115,6 +10465,324 @@ var modelBoxes= new Array('model_report',
                                  <tr>
                                     <td width="100%">
                                        <pre><span class="tEl">&lt;xs:element</span><span class="tAN"> maxOccurs=</span><span class="tAV">"unbounded"</span><span class="tAN"> name=</span><span class="tAV">"otherService"</span><span class="tAN"> type=</span><span class="tAV">"OtherService"</span><span class="tEl">/&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="OtherService_orderNumber"></a><div class="componentTitle">Element <span class="qname"><b><a href="gpb-report_xsd.html#OtherService" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">OtherService</a></b> / orderNumber</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_OtherService_orderNumber" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_OtherService_orderNumber');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_OtherService_orderNumber" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%">
+                                          <pre><span class="tT">Номер заказа</span></pre>
+                                       </td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_OtherService_orderNumber" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_OtherService_orderNumber');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_OtherService_orderNumber" style="display:block"><img alt="Diagram" border="0" src="img/gpb-report_xsd_Element_orderNumber_2.png" /></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b>xs:unsignedInt</b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_OtherService_orderNumber" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_OtherService_orderNumber');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_OtherService_orderNumber" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>simple</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_OtherService_orderNumber" type="image" src="img/btM.gif" value="-" onclick="switchState('source_OtherService_orderNumber');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_OtherService_orderNumber" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%">
+                                       <pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"orderNumber"</span><span class="tAN"> type=</span><span class="tAV">"xs:unsignedInt"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Номер заказа</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="OtherService_serviceNumber"></a><div class="componentTitle">Element <span class="qname"><b><a href="gpb-report_xsd.html#OtherService" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">OtherService</a></b> / serviceNumber</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_OtherService_serviceNumber" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_OtherService_serviceNumber');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_OtherService_serviceNumber" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%">
+                                          <pre><span class="tT">Порядковый номер услуги в заказе</span></pre>
+                                       </td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_OtherService_serviceNumber" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_OtherService_serviceNumber');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_OtherService_serviceNumber" style="display:block"><img alt="Diagram" border="0" src="img/gpb-report_xsd_Element_serviceNumber_2.png" /></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b>xs:unsignedInt</b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_OtherService_serviceNumber" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_OtherService_serviceNumber');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_OtherService_serviceNumber" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>simple</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_OtherService_serviceNumber" type="image" src="img/btM.gif" value="-" onclick="switchState('source_OtherService_serviceNumber');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_OtherService_serviceNumber" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%">
+                                       <pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"serviceNumber"</span><span class="tAN"> type=</span><span class="tAV">"xs:unsignedInt"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Порядковый номер услуги в заказе</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="OtherService_operationType"></a><div class="componentTitle">Element <span class="qname"><b><a href="gpb-report_xsd.html#OtherService" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">OtherService</a></b> / operationType</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_OtherService_operationType" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_OtherService_operationType');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_OtherService_operationType" style="display:block">
+                              <div class="annotation">
+                                 <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                    <tr>
+                                       <td width="100%">
+                                          <pre><span class="tT">Тип операции</span></pre>
+                                       </td>
+                                    </tr>
+                                 </table>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_OtherService_operationType" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_OtherService_operationType');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_OtherService_operationType" style="display:block"><img alt="Diagram" border="0" src="img/gpb-report_xsd_Element_operationType_2.png" usemap="#gpb-report_xsd_Element_operationType_2" /><map name="gpb-report_xsd_Element_operationType_2" id="gpb-report_xsd_Element_operationType_2"><area alt="gpb-report_xsd.tmp#TicketOperationType" href="gpb-report_xsd.html#TicketOperationType" coords="210,9,364,35" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b><a href="gpb-report_xsd.html#TicketOperationType" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">TicketOperationType</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_OtherService_operationType" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_OtherService_operationType');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_OtherService_operationType" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>simple</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Facets</b></div>
+                           <div class="floatRight"><input id="button_facets_OtherService_operationType" type="image" src="img/btM.gif" value="-" onclick="switchState('facets_OtherService_operationType');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="facets_OtherService_operationType" style="display:block">
+                              <table class="facetsTable">
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td width="30%"><b>sale</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td width="30%"><b>refund</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td width="30%"><b>exchange</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_OtherService_operationType" type="image" src="img/btM.gif" value="-" onclick="switchState('source_OtherService_operationType');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_OtherService_operationType" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%">
+                                       <pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"operationType"</span><span class="tAN"> type=</span><span class="tAV">"TicketOperationType"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Тип операции</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre>
                                     </td>
                                  </tr>
                               </table>
@@ -11930,7 +12598,7 @@ var modelBoxes= new Array('model_report',
     </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
     </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"serviceNumber"</span><span class="tAN"> type=</span><span class="tAV">"xs:unsignedInt"</span><span class="tEl">&gt;</span><span class="tI">
       </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
-        </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Порядковый номер услуги</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Порядковый номер услуги в заказе</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
       </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
     </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
     </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"transportCode"</span><span class="tAN"> type=</span><span class="tAV">"xs:string"</span><span class="tEl">&gt;</span><span class="tI">
@@ -12103,8 +12771,8 @@ var modelBoxes= new Array('model_report',
                            <div id="usedBy_TicketOperationType" style="display:block">
                               <table class="usedByTable">
                                  <tr>
-                                    <td class="firstColumn">Element </td>
-                                    <td><b><a href="gpb-report_xsd.html#Ticket_operationType" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">Ticket/operationType</a></b></td>
+                                    <td class="firstColumn">Elements </td>
+                                    <td><b><a href="gpb-report_xsd.html#Hotel_operationType" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">Hotel/operationType</a></b>, <b><a href="gpb-report_xsd.html#OtherService_operationType" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">OtherService/operationType</a></b>, <b><a href="gpb-report_xsd.html#Ticket_operationType" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">Ticket/operationType</a></b></td>
                                  </tr>
                               </table>
                            </div>
@@ -13001,7 +13669,7 @@ var modelBoxes= new Array('model_report',
                            <div class="floatRight"><input id="button_diagram_Hotel" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_Hotel');" class="control" /></div>
                         </td>
                         <td class="diagram">
-                           <div id="diagram_Hotel" style="display:block"><img alt="Diagram" border="0" src="img/gpb-report_xsd_Complex_Type_Hotel.png" usemap="#gpb-report_xsd_Complex_Type_Hotel" /><map name="gpb-report_xsd_Complex_Type_Hotel" id="gpb-report_xsd_Complex_Type_Hotel"><area alt="gpb-report_xsd.tmp#Hotel_name" href="gpb-report_xsd.html#Hotel_name" coords="178,0,268,44" /><area alt="gpb-report_xsd.tmp#Hotel_location" href="gpb-report_xsd.html#Hotel_location" coords="178,85,246,110" /><area alt="gpb-report_xsd.tmp#Hotel_roomCategoryName" href="gpb-report_xsd.html#Hotel_roomCategoryName" coords="178,151,304,195" /><area alt="gpb-report_xsd.tmp#Hotel_startsAt" href="gpb-report_xsd.html#Hotel_startsAt" coords="178,236,299,280" /><area alt="gpb-report_xsd.tmp#Hotel_endsAt" href="gpb-report_xsd.html#Hotel_endsAt" coords="178,321,299,365" /><area alt="gpb-report_xsd.tmp#Hotel_durationDays" href="gpb-report_xsd.html#Hotel_durationDays" coords="178,406,289,450" /><area alt="gpb-report_xsd.tmp#Hotel_rateCostInclVat" href="gpb-report_xsd.html#Hotel_rateCostInclVat" coords="178,491,292,535" /><area alt="gpb-report_xsd.tmp#Hotel_costInclVat" href="gpb-report_xsd.html#Hotel_costInclVat" coords="178,576,292,620" /><area alt="gpb-report_xsd.tmp#Hotel_feeCostInclVat" href="gpb-report_xsd.html#Hotel_feeCostInclVat" coords="178,661,292,705" /><area alt="gpb-report_xsd.tmp#Hotel_totalCostInclVat" href="gpb-report_xsd.html#Hotel_totalCostInclVat" coords="178,746,292,790" /></map></div>
+                           <div id="diagram_Hotel" style="display:block"><img alt="Diagram" border="0" src="img/gpb-report_xsd_Complex_Type_Hotel.png" usemap="#gpb-report_xsd_Complex_Type_Hotel" /><map name="gpb-report_xsd_Complex_Type_Hotel" id="gpb-report_xsd_Complex_Type_Hotel"><area alt="gpb-report_xsd.tmp#Hotel_orderNumber" href="gpb-report_xsd.html#Hotel_orderNumber" coords="178,0,311,44" /><area alt="gpb-report_xsd.tmp#Hotel_serviceNumber" href="gpb-report_xsd.html#Hotel_serviceNumber" coords="178,85,311,129" /><area alt="gpb-report_xsd.tmp#Hotel_name" href="gpb-report_xsd.html#Hotel_name" coords="178,170,268,214" /><area alt="gpb-report_xsd.tmp#Hotel_operationType" href="gpb-report_xsd.html#Hotel_operationType" coords="178,255,340,299" /><area alt="gpb-report_xsd.tmp#Hotel_location" href="gpb-report_xsd.html#Hotel_location" coords="178,340,246,365" /><area alt="gpb-report_xsd.tmp#Hotel_roomCategoryName" href="gpb-report_xsd.html#Hotel_roomCategoryName" coords="178,406,304,450" /><area alt="gpb-report_xsd.tmp#Hotel_startsAt" href="gpb-report_xsd.html#Hotel_startsAt" coords="178,491,299,535" /><area alt="gpb-report_xsd.tmp#Hotel_endsAt" href="gpb-report_xsd.html#Hotel_endsAt" coords="178,576,299,620" /><area alt="gpb-report_xsd.tmp#Hotel_durationDays" href="gpb-report_xsd.html#Hotel_durationDays" coords="178,661,289,705" /><area alt="gpb-report_xsd.tmp#Hotel_rateCostInclVat" href="gpb-report_xsd.html#Hotel_rateCostInclVat" coords="178,746,292,790" /><area alt="gpb-report_xsd.tmp#Hotel_costInclVat" href="gpb-report_xsd.html#Hotel_costInclVat" coords="178,831,292,875" /><area alt="gpb-report_xsd.tmp#Hotel_feeCostInclVat" href="gpb-report_xsd.html#Hotel_feeCostInclVat" coords="178,916,292,960" /><area alt="gpb-report_xsd.tmp#Hotel_totalCostInclVat" href="gpb-report_xsd.html#Hotel_totalCostInclVat" coords="178,1001,292,1045" /></map></div>
                         </td>
                      </tr>
                      <tr>
@@ -13024,12 +13692,12 @@ var modelBoxes= new Array('model_report',
                         <td class="firstColumn"><b>Model</b><div class="floatRight"><input id="button_model_Hotel" type="image" src="img/btM.gif" value="-" onclick="switchState('model_Hotel');" class="control" /></div>
                         </td>
                         <td>
-                           <div id="model_Hotel" style="display:block"><b><a href="gpb-report_xsd.html#Hotel_name" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">name</a></b> , <b><a href="gpb-report_xsd.html#Hotel_location" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">location</a></b> , <b><a href="gpb-report_xsd.html#Hotel_roomCategoryName" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">roomCategoryName</a></b> , <b><a href="gpb-report_xsd.html#Hotel_startsAt" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">startsAt</a></b> , <b><a href="gpb-report_xsd.html#Hotel_endsAt" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">endsAt</a></b> , <b><a href="gpb-report_xsd.html#Hotel_durationDays" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">durationDays</a></b> , <b><a href="gpb-report_xsd.html#Hotel_rateCostInclVat" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">rateCostInclVat</a></b> , <b><a href="gpb-report_xsd.html#Hotel_costInclVat" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">costInclVat</a></b> , <b><a href="gpb-report_xsd.html#Hotel_feeCostInclVat" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">feeCostInclVat</a></b> , <b><a href="gpb-report_xsd.html#Hotel_totalCostInclVat" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">totalCostInclVat</a></b></div>
+                           <div id="model_Hotel" style="display:block"><b><a href="gpb-report_xsd.html#Hotel_orderNumber" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">orderNumber</a></b> , <b><a href="gpb-report_xsd.html#Hotel_serviceNumber" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">serviceNumber</a></b> , <b><a href="gpb-report_xsd.html#Hotel_name" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">name</a></b> , <b><a href="gpb-report_xsd.html#Hotel_operationType" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">operationType</a></b> , <b><a href="gpb-report_xsd.html#Hotel_location" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">location</a></b> , <b><a href="gpb-report_xsd.html#Hotel_roomCategoryName" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">roomCategoryName</a></b> , <b><a href="gpb-report_xsd.html#Hotel_startsAt" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">startsAt</a></b> , <b><a href="gpb-report_xsd.html#Hotel_endsAt" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">endsAt</a></b> , <b><a href="gpb-report_xsd.html#Hotel_durationDays" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">durationDays</a></b> , <b><a href="gpb-report_xsd.html#Hotel_rateCostInclVat" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">rateCostInclVat</a></b> , <b><a href="gpb-report_xsd.html#Hotel_costInclVat" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">costInclVat</a></b> , <b><a href="gpb-report_xsd.html#Hotel_feeCostInclVat" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">feeCostInclVat</a></b> , <b><a href="gpb-report_xsd.html#Hotel_totalCostInclVat" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">totalCostInclVat</a></b></div>
                         </td>
                      </tr>
                      <tr>
                         <td class="firstColumn"><b>Children</b></td>
-                        <td><b><a href="gpb-report_xsd.html#Hotel_costInclVat" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">costInclVat</a></b>, <b><a href="gpb-report_xsd.html#Hotel_durationDays" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">durationDays</a></b>, <b><a href="gpb-report_xsd.html#Hotel_endsAt" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">endsAt</a></b>, <b><a href="gpb-report_xsd.html#Hotel_feeCostInclVat" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">feeCostInclVat</a></b>, <b><a href="gpb-report_xsd.html#Hotel_location" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">location</a></b>, <b><a href="gpb-report_xsd.html#Hotel_name" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">name</a></b>, <b><a href="gpb-report_xsd.html#Hotel_rateCostInclVat" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">rateCostInclVat</a></b>, <b><a href="gpb-report_xsd.html#Hotel_roomCategoryName" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">roomCategoryName</a></b>, <b><a href="gpb-report_xsd.html#Hotel_startsAt" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">startsAt</a></b>, <b><a href="gpb-report_xsd.html#Hotel_totalCostInclVat" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">totalCostInclVat</a></b></td>
+                        <td><b><a href="gpb-report_xsd.html#Hotel_costInclVat" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">costInclVat</a></b>, <b><a href="gpb-report_xsd.html#Hotel_durationDays" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">durationDays</a></b>, <b><a href="gpb-report_xsd.html#Hotel_endsAt" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">endsAt</a></b>, <b><a href="gpb-report_xsd.html#Hotel_feeCostInclVat" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">feeCostInclVat</a></b>, <b><a href="gpb-report_xsd.html#Hotel_location" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">location</a></b>, <b><a href="gpb-report_xsd.html#Hotel_name" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">name</a></b>, <b><a href="gpb-report_xsd.html#Hotel_operationType" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">operationType</a></b>, <b><a href="gpb-report_xsd.html#Hotel_orderNumber" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">orderNumber</a></b>, <b><a href="gpb-report_xsd.html#Hotel_rateCostInclVat" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">rateCostInclVat</a></b>, <b><a href="gpb-report_xsd.html#Hotel_roomCategoryName" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">roomCategoryName</a></b>, <b><a href="gpb-report_xsd.html#Hotel_serviceNumber" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">serviceNumber</a></b>, <b><a href="gpb-report_xsd.html#Hotel_startsAt" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">startsAt</a></b>, <b><a href="gpb-report_xsd.html#Hotel_totalCostInclVat" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">totalCostInclVat</a></b></td>
                      </tr>
                      <tr>
                         <td class="firstColumn">
@@ -13043,9 +13711,24 @@ var modelBoxes= new Array('model_report',
                                     <td width="100%">
                                        <pre><span class="tEl">&lt;xs:complexType</span><span class="tAN"> name=</span><span class="tAV">"Hotel"</span><span class="tEl">&gt;</span><span class="tI">
   </span><span class="tEl">&lt;xs:sequence</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"orderNumber"</span><span class="tAN"> type=</span><span class="tAV">"xs:unsignedInt"</span><span class="tEl">&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Номер заказа</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"serviceNumber"</span><span class="tAN"> type=</span><span class="tAV">"xs:unsignedInt"</span><span class="tEl">&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Порядковый номер услуги в заказе</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
     </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"name"</span><span class="tAN"> type=</span><span class="tAV">"Name"</span><span class="tEl">&gt;</span><span class="tI">
       </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
         </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Название</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"operationType"</span><span class="tAN"> type=</span><span class="tAV">"TicketOperationType"</span><span class="tEl">&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Тип операции</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
       </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
     </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
     </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"location"</span><span class="tEl">&gt;</span><span class="tI">
@@ -13142,7 +13825,7 @@ var modelBoxes= new Array('model_report',
                            <div class="floatRight"><input id="button_diagram_OtherService" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_OtherService');" class="control" /></div>
                         </td>
                         <td class="diagram">
-                           <div id="diagram_OtherService" style="display:block"><img alt="Diagram" border="0" src="img/gpb-report_xsd_Complex_Type_OtherService.png" usemap="#gpb-report_xsd_Complex_Type_OtherService" /><map name="gpb-report_xsd_Complex_Type_OtherService" id="gpb-report_xsd_Complex_Type_OtherService"><area alt="gpb-report_xsd.tmp#OtherService_type" href="gpb-report_xsd.html#OtherService_type" coords="161,39,266,83" /><area alt="gpb-report_xsd.tmp#OtherService_name" href="gpb-report_xsd.html#OtherService_name" coords="218,131,308,175" /><area alt="gpb-report_xsd.tmp#OtherService_description" href="gpb-report_xsd.html#OtherService_description" coords="218,216,323,260" /><area alt="gpb-report_xsd.tmp#OtherService_location" href="gpb-report_xsd.html#OtherService_location" coords="218,301,349,345" /><area alt="gpb-report_xsd.tmp#OtherService_date" href="gpb-report_xsd.html#OtherService_date" coords="218,386,339,430" /><area alt="gpb-report_xsd.tmp#OtherService_costInclVat" href="gpb-report_xsd.html#OtherService_costInclVat" coords="218,471,332,515" /><area alt="gpb-report_xsd.tmp#OtherService_feeCostInclVat" href="gpb-report_xsd.html#OtherService_feeCostInclVat" coords="218,556,332,600" /><area alt="gpb-report_xsd.tmp#OtherService_totalCostInclVat" href="gpb-report_xsd.html#OtherService_totalCostInclVat" coords="218,641,332,685" /></map></div>
+                           <div id="diagram_OtherService" style="display:block"><img alt="Diagram" border="0" src="img/gpb-report_xsd_Complex_Type_OtherService.png" usemap="#gpb-report_xsd_Complex_Type_OtherService" /><map name="gpb-report_xsd_Complex_Type_OtherService" id="gpb-report_xsd_Complex_Type_OtherService"><area alt="gpb-report_xsd.tmp#OtherService_type" href="gpb-report_xsd.html#OtherService_type" coords="161,39,266,83" /><area alt="gpb-report_xsd.tmp#OtherService_orderNumber" href="gpb-report_xsd.html#OtherService_orderNumber" coords="218,131,351,175" /><area alt="gpb-report_xsd.tmp#OtherService_serviceNumber" href="gpb-report_xsd.html#OtherService_serviceNumber" coords="218,216,351,260" /><area alt="gpb-report_xsd.tmp#OtherService_operationType" href="gpb-report_xsd.html#OtherService_operationType" coords="218,301,380,345" /><area alt="gpb-report_xsd.tmp#OtherService_name" href="gpb-report_xsd.html#OtherService_name" coords="218,386,308,430" /><area alt="gpb-report_xsd.tmp#OtherService_description" href="gpb-report_xsd.html#OtherService_description" coords="218,471,323,515" /><area alt="gpb-report_xsd.tmp#OtherService_location" href="gpb-report_xsd.html#OtherService_location" coords="218,556,349,600" /><area alt="gpb-report_xsd.tmp#OtherService_date" href="gpb-report_xsd.html#OtherService_date" coords="218,641,339,685" /><area alt="gpb-report_xsd.tmp#OtherService_costInclVat" href="gpb-report_xsd.html#OtherService_costInclVat" coords="218,726,332,770" /><area alt="gpb-report_xsd.tmp#OtherService_feeCostInclVat" href="gpb-report_xsd.html#OtherService_feeCostInclVat" coords="218,811,332,855" /><area alt="gpb-report_xsd.tmp#OtherService_totalCostInclVat" href="gpb-report_xsd.html#OtherService_totalCostInclVat" coords="218,896,332,940" /></map></div>
                         </td>
                      </tr>
                      <tr>
@@ -13165,12 +13848,12 @@ var modelBoxes= new Array('model_report',
                         <td class="firstColumn"><b>Model</b><div class="floatRight"><input id="button_model_OtherService" type="image" src="img/btM.gif" value="-" onclick="switchState('model_OtherService');" class="control" /></div>
                         </td>
                         <td>
-                           <div id="model_OtherService" style="display:block"><b><a href="gpb-report_xsd.html#OtherService_name" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">name</a></b> , <b><a href="gpb-report_xsd.html#OtherService_description" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">description</a></b> , <b><a href="gpb-report_xsd.html#OtherService_location" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">location</a></b> , <b><a href="gpb-report_xsd.html#OtherService_date" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">date</a></b> , <b><a href="gpb-report_xsd.html#OtherService_costInclVat" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">costInclVat</a></b> , <b><a href="gpb-report_xsd.html#OtherService_feeCostInclVat" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">feeCostInclVat</a></b> , <b><a href="gpb-report_xsd.html#OtherService_totalCostInclVat" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">totalCostInclVat</a></b></div>
+                           <div id="model_OtherService" style="display:block"><b><a href="gpb-report_xsd.html#OtherService_orderNumber" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">orderNumber</a></b> , <b><a href="gpb-report_xsd.html#OtherService_serviceNumber" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">serviceNumber</a></b> , <b><a href="gpb-report_xsd.html#OtherService_operationType" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">operationType</a></b> , <b><a href="gpb-report_xsd.html#OtherService_name" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">name</a></b> , <b><a href="gpb-report_xsd.html#OtherService_description" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">description</a></b> , <b><a href="gpb-report_xsd.html#OtherService_location" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">location</a></b> , <b><a href="gpb-report_xsd.html#OtherService_date" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">date</a></b> , <b><a href="gpb-report_xsd.html#OtherService_costInclVat" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">costInclVat</a></b> , <b><a href="gpb-report_xsd.html#OtherService_feeCostInclVat" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">feeCostInclVat</a></b> , <b><a href="gpb-report_xsd.html#OtherService_totalCostInclVat" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">totalCostInclVat</a></b></div>
                         </td>
                      </tr>
                      <tr>
                         <td class="firstColumn"><b>Children</b></td>
-                        <td><b><a href="gpb-report_xsd.html#OtherService_costInclVat" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">costInclVat</a></b>, <b><a href="gpb-report_xsd.html#OtherService_date" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">date</a></b>, <b><a href="gpb-report_xsd.html#OtherService_description" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">description</a></b>, <b><a href="gpb-report_xsd.html#OtherService_feeCostInclVat" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">feeCostInclVat</a></b>, <b><a href="gpb-report_xsd.html#OtherService_location" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">location</a></b>, <b><a href="gpb-report_xsd.html#OtherService_name" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">name</a></b>, <b><a href="gpb-report_xsd.html#OtherService_totalCostInclVat" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">totalCostInclVat</a></b></td>
+                        <td><b><a href="gpb-report_xsd.html#OtherService_costInclVat" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">costInclVat</a></b>, <b><a href="gpb-report_xsd.html#OtherService_date" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">date</a></b>, <b><a href="gpb-report_xsd.html#OtherService_description" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">description</a></b>, <b><a href="gpb-report_xsd.html#OtherService_feeCostInclVat" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">feeCostInclVat</a></b>, <b><a href="gpb-report_xsd.html#OtherService_location" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">location</a></b>, <b><a href="gpb-report_xsd.html#OtherService_name" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">name</a></b>, <b><a href="gpb-report_xsd.html#OtherService_operationType" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">operationType</a></b>, <b><a href="gpb-report_xsd.html#OtherService_orderNumber" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">orderNumber</a></b>, <b><a href="gpb-report_xsd.html#OtherService_serviceNumber" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">serviceNumber</a></b>, <b><a href="gpb-report_xsd.html#OtherService_totalCostInclVat" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for gpb-report.xsd')">totalCostInclVat</a></b></td>
                      </tr>
                      <tr>
                         <td class="firstColumn">
@@ -13220,6 +13903,21 @@ var modelBoxes= new Array('model_report',
                                     <td width="100%">
                                        <pre><span class="tEl">&lt;xs:complexType</span><span class="tAN"> name=</span><span class="tAV">"OtherService"</span><span class="tEl">&gt;</span><span class="tI">
   </span><span class="tEl">&lt;xs:sequence</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"orderNumber"</span><span class="tAN"> type=</span><span class="tAV">"xs:unsignedInt"</span><span class="tEl">&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Номер заказа</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"serviceNumber"</span><span class="tAN"> type=</span><span class="tAV">"xs:unsignedInt"</span><span class="tEl">&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Порядковый номер услуги в заказе</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"operationType"</span><span class="tAN"> type=</span><span class="tAV">"TicketOperationType"</span><span class="tEl">&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Тип операции</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
     </span><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"name"</span><span class="tAN"> type=</span><span class="tAV">"Name"</span><span class="tEl">&gt;</span><span class="tI">
       </span><span class="tEl">&lt;xs:annotation</span><span class="tEl">&gt;</span><span class="tI">
         </span><span class="tEl">&lt;xs:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Название услуги</span><span class="tEl">&lt;/xs:documentation&gt;</span><span class="tI">
