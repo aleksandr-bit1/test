@@ -1,0 +1,12 @@
+contexts:
+  time:
+    title: Time
+    location: Приложения/Time
+    components:
+      - aeroclub.time
+  messages:
+    title: Сообщения
+    location: Сообщения/BusinessTripCreatedMessage
+    uml:
+    components:
+      - aeroclub.time

@@ -1,0 +1,802 @@
+components:
+  aeroclub.db.zoom:
+    title: zoom
+    entity: database
+    project: Aerolcub Databases
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  aeroclub.db.workcalendar:
+    title: WorkCalendar
+    entity: database
+    project: Aerolcub Databases
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  aeroclub.db.voicerecordings:
+    title: voicerecordings
+    entity: database
+    project: Aerolcub Databases
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  aeroclub.db.view:
+    title: view
+    entity: database
+    project: Aerolcub Databases
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  aeroclub.db.tscrm:
+    title: TSCRM
+    entity: database
+    project: Aerolcub Databases
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  aeroclub.db.travelboard:
+    title: travelboard
+    entity: database
+    project: Aerolcub Databases
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  aeroclub.db.tp:
+    title: TP
+    entity: database
+    project: Aerolcub Databases
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  aeroclub.db.tophotel:
+    title: TopHotel
+    entity: database
+    project: Aerolcub Databases
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  aeroclub.db.timeauditevents:
+    title: TimeAuditEvents
+    entity: database
+    project: Aerolcub Databases
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  aeroclub.db.ticketsintegration:
+    title: TicketsIntegration
+    entity: database
+    project: Aerolcub Databases
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  aeroclub.db.telemetry:
+    title: Telemetry
+    entity: database
+    project: Aerolcub Databases
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  aeroclub.db.teamcity:
+    title: teamcity
+    entity: database
+    project: Aerolcub Databases
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  aeroclub.db.taxes:
+    title: taxes
+    entity: database
+    project: Aerolcub Databases
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  aeroclub.db.taskscheduler:
+    title: taskscheduler
+    entity: database
+    project: Aerolcub Databases
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  aeroclub.db.surveys:
+    title: Surveys
+    entity: database
+    project: Aerolcub Databases
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  aeroclub.db.staff_time:
+    title: Staff_Time
+    entity: database
+    project: Aerolcub Databases
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  aeroclub.db.sql_monitor:
+    title: sql_monitor
+    entity: database
+    project: Aerolcub Databases
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  aeroclub.db.sp_storage:
+    title: SP_Storage
+    entity: database
+    project: Aerolcub Databases
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  aeroclub.db.smsgate:
+    title: SMSGate
+    entity: database
+    project: Aerolcub Databases
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  aeroclub.db.sessions:
+    title: sessions
+    entity: database
+    project: Aerolcub Databases
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  aeroclub.db.servicedesk:
+    title: ServiceDesk
+    entity: database
+    project: Aerolcub Databases
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  aeroclub.db.senatorswap:
+    title: SenatorSwap
+    entity: database
+    project: Aerolcub Databases
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  aeroclub.db.scoreboard:
+    title: ScoreBoard
+    entity: database
+    project: Aerolcub Databases
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  aeroclub.db.rosstat:
+    title: Rosstat
+    entity: database
+    project: Aerolcub Databases
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  aeroclub.db.proget:
+    title: proget
+    entity: database
+    project: Aerolcub Databases
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  aeroclub.db.profiles:
+    title: Profiles
+    entity: database
+    project: Aerolcub Databases
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  aeroclub.db.pricingscheme:
+    title: PricingScheme
+    entity: database
+    project: Aerolcub Databases
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  aeroclub.db.pricebenchmark:
+    title: PriceBenchmark
+    entity: database
+    project: Aerolcub Databases
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  aeroclub.db.posdb:
+    title: PosDB
+    entity: database
+    project: Aerolcub Databases
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  aeroclub.db.passport:
+    title: Passport
+    entity: database
+    project: Aerolcub Databases
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  aeroclub.db.ostrovokhoteldata:
+    title: OstrovokHotelData
+    entity: database
+    project: Aerolcub Databases
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  aeroclub.db.ordersdb:
+    title: OrdersDB
+    entity: database
+    project: Aerolcub Databases
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  aeroclub.db.ops:
+    title: ops
+    entity: database
+    project: Aerolcub Databases
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  aeroclub.db.openapi:
+    title: OpenApi
+    entity: database
+    project: Aerolcub Databases
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  aeroclub.db.onlineorders:
+    title: OnlineOrders
+    entity: database
+    project: Aerolcub Databases
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  aeroclub.db.ofdintegration:
+    title: ofdintegration
+    entity: database
+    project: Aerolcub Databases
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  aeroclub.db.newspaperlogging:
+    title: NewsPaperLogging
+    entity: database
+    project: Aerolcub Databases
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  aeroclub.db.monitoring:
+    title: Monitoring
+    entity: database
+    project: Aerolcub Databases
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  aeroclub.db.migrations:
+    title: aeroclub.db.migrations
+    entity: component
+    project: Aerolcub Databases
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  aeroclub.db.midoffice:
+    title: MidOffice
+    entity: database
+    project: Aerolcub Databases
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  aeroclub.db.jmpdb:
+    title: JMPDB
+    entity: database
+    project: Aerolcub Databases
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  aeroclub.db.jira:
+    title: JIRA
+    entity: database
+    project: Aerolcub Databases
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  aeroclub.db.integrationhub:
+    title: integrationhub
+    entity: database
+    project: Aerolcub Databases
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  aeroclub.db.hotelcalculation:
+    title: HotelCalculation
+    entity: database
+    project: Aerolcub Databases
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  aeroclub.db.hglab:
+    title: hglab
+    entity: database
+    project: Aerolcub Databases
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  aeroclub.db.gdsimporter:
+    title: gdsimporter
+    entity: database
+    project: Aerolcub Databases
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  aeroclub.db.fs:
+    title: fs
+    entity: database
+    project: Aerolcub Databases
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  aeroclub.db.flightstatusstatement:
+    title: FlightStatusStatement
+    entity: database
+    project: Aerolcub Databases
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  aeroclub.db.flightstatus:
+    title: flightstatus
+    entity: database
+    project: Aerolcub Databases
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  aeroclub.db.feedbackintegration:
+    title: FeedbackIntegration
+    entity: database
+    project: Aerolcub Databases
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  aeroclub.db.expense_corteos:
+    title: expense_corteos
+    entity: database
+    project: Aerolcub Databases
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  aeroclub.db.expense:
+    title: Expense
+    entity: database
+    project: Aerolcub Databases
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  aeroclub.db.employesdb:
+    title: EmployesDB
+    entity: database
+    project: Aerolcub Databases
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  aeroclub.db.elmah:
+    title: elmah
+    entity: database
+    project: Aerolcub Databases
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  aeroclub.db.distribution:
+    title: distribution
+    entity: database
+    project: Aerolcub Databases
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  aeroclub.db.directhotels:
+    title: DirectHotels
+    entity: database
+    project: Aerolcub Databases
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  aeroclub.db.directcars_v2:
+    title: directcars_v2
+    entity: database
+    project: Aerolcub Databases
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  aeroclub.db.dictionary_ws:
+    title: DICTIONARY_WS
+    entity: database
+    project: Aerolcub Databases
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  aeroclub.db.dictionary:
+    title: DICTIONARY
+    entity: database
+    project: Aerolcub Databases
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  aeroclub.db.dictdb:
+    title: DictDB
+    entity: database
+    project: Aerolcub Databases
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  aeroclub.db.db_webparts:
+    title: db_webparts
+    entity: database
+    project: Aerolcub Databases
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  aeroclub.db.crucible:
+    title: Crucible
+    entity: database
+    project: Aerolcub Databases
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  aeroclub.db.confluence:
+    title: confluence
+    entity: database
+    project: Aerolcub Databases
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  aeroclub.db.companies_legacy:
+    title: Companies_Legacy
+    entity: database
+    project: Aerolcub Databases
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  aeroclub.db.companies:
+    title: Companies
+    entity: database
+    project: Aerolcub Databases
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  aeroclub.db.commission:
+    title: Commission
+    entity: database
+    project: Aerolcub Databases
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  aeroclub.db.cabinet:
+    title: Cabinet
+    entity: database
+    project: Aerolcub Databases
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  aeroclub.db.billing:
+    title: billing
+    entity: database
+    project: Aerolcub Databases
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  aeroclub.db.aviaticketchecker:
+    title: aviaticketchecker
+    entity: database
+    project: Aerolcub Databases
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  aeroclub.db.aviaqueues:
+    title: aviaqueues
+    entity: database
+    project: Aerolcub Databases
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  aeroclub.db.avia:
+    title: AVIA
+    entity: database
+    project: Aerolcub Databases
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  aeroclub.db.autooffersexchange:
+    title: AutooffersExchange
+    entity: database
+    project: Aerolcub Databases
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  aeroclub.db.autooffersdata:
+    title: AutooffersData
+    entity: database
+    project: Aerolcub Databases
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  aeroclub.db.authorization:
+    title: authorization
+    entity: database
+    project: Aerolcub Databases
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  aeroclub.db.authfx:
+    title: authfx
+    entity: database
+    project: Aerolcub Databases
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  aeroclub.db.asim:
+    title: asim
+    entity: database
+    project: Aerolcub Databases
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  aeroclub.db.asia_custs:
+    title: ASIA_CUSTS
+    entity: database
+    project: Aerolcub Databases
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  aeroclub.db.asia:
+    title: ASIA
+    entity: database
+    project: Aerolcub Databases
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  aeroclub.db.aria:
+    title: ARIA
+    entity: database
+    project: Aerolcub Databases
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  aeroclub.db.appvolumes:
+    title: AppVolumes
+    entity: database
+    project: Aerolcub Databases
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  aeroclub.db.apacs3000:
+    title: apacs3000
+    entity: database
+    project: Aerolcub Databases
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  aeroclub.db.airscenarios:
+    title: AirScenarios
+    entity: database
+    project: Aerolcub Databases
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  aeroclub.db.airfiles:
+    title: AirFiles
+    entity: database
+    project: Aerolcub Databases
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  aeroclub.db.aeroexpress:
+    title: aeroexpress
+    entity: database
+    project: Aerolcub Databases
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  aeroclub.db.adsync:
+    title: ADSync
+    entity: database
+    project: Aerolcub Databases
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  aeroclub.db.adfsconfiguration:
+    title: AdfsConfiguration
+    entity: database
+    project: Aerolcub Databases
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  aeroclub.db.adfsartifactstore:
+    title: AdfsArtifactStore
+    entity: database
+    project: Aerolcub Databases
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  aeroclub.db.3dcontract:
+    title: 3dContract
+    entity: database
+    project: Aerolcub Databases
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  aeroclub.db.1cexchange:
+    title: 1CExchange
+    entity: database
+    project: Aerolcub Databases
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
