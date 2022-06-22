@@ -2,6 +2,7 @@ imports:
   - backgroundservices.yaml
   - databases.yaml
   - services.yaml
+  - others.yaml
 components:
   aeroclub.asim:
     title: Asim

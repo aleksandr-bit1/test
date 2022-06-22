@@ -1,5 +1,4 @@
 components:
-
   aeroclub.widgets:
     title: widgets
     entity: component
@@ -523,7 +522,6 @@ components:
     aspects:
     technologies:
     links:
-
   aeroclub.parser:
     title: parser
     entity: component
