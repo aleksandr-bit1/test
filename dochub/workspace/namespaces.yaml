@@ -2,8 +2,6 @@ namespaces:
   aeroclub:
     title: Aeroclub
   aeroclub.db:
-    title: Базы данных
+    title: Databases
   aeroclub.backgroundservices:
     title: Background Services
-  aeroclub.authorization:
-    title: Authorization
