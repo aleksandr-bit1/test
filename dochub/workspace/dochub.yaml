@@ -1,6 +1,6 @@
 imports:
   - aspects.yaml
-  - root.yaml
+  - components/root.yaml
   - contexts.yaml
   - datasets.yaml
   - docs.yaml
