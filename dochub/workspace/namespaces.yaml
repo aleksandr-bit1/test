@@ -1,7 +1,9 @@
 namespaces:
   aeroclub:
     title: Aeroclub
-  aeroclub.db:
+  db:
     title: Databases
-  aeroclub.backgroundservices:
+  backgroundservices:
     title: Background Services
+  services:
+    title: Services

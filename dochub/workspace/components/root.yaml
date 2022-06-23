@@ -3,6 +3,7 @@ imports:
   - databases.yaml
   - services.yaml
   - integration.yaml
+  - time.yaml
 #  - others.yaml
 components:
   aeroclub.asim:

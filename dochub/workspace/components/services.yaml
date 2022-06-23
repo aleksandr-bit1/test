@@ -639,13 +639,3 @@ components:
     aspects:
     technologies:
     links:
-  services:
-    repository: aeroclub.services
-    title: aeroclub.services
-    entity: component
-    project: Aeroclub Services
-    description:
-    url:
-    aspects:
-    technologies:
-    links:

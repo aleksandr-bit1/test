@@ -309,13 +309,3 @@ components:
     aspects:
     technologies:
     links:
-  backgroundservices:
-    repository: aeroclub.backgroundservices
-    title: aeroclub.backgroundservices
-    entity: component
-    project:
-    description:
-    url:
-    aspects:
-    technologies:
-    links:

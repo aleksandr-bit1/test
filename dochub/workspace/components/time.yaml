@@ -1,0 +1,102 @@
+components:
+  ---
+  time.api.messaging:
+    repository: aeroclub.time.api.messaging
+    title: Time Api Messaging
+    entity: component
+    project: Aeroclub Time
+    description: Служба обновления статистики в базе Travelboard по входящим сообщениям
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/Aeroclub+Time+Api+Messaging
+    aspects:
+    technologies:
+    links:
+  time.api:
+    repository: aeroclub.time.api
+    title: Time Api
+    entity: component
+    project: Aeroclub Time
+    description: Получение данных статистики
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Time.Api
+    aspects:
+    technologies:
+    links:
+  time.avia:
+    repository: aeroclub.time.avia
+    title: Time Avia
+    entity: component
+    project: Aeroclub Time
+    description: Поиск авиа для time. В основном, смысл в кешировании результатов поиска с доступом по OData. Конвертация модели WSCommon в модель для Time
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Time.Avia
+    aspects:
+    technologies:
+    links:
+  time.docs:
+    repository: aeroclub.time.docs
+    title: aeroclub.time.docs
+    entity: component
+    project: Aeroclub Time
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  time.loadtests:
+    repository: aeroclub.time.loadtests
+    title: aeroclub.time.loadtests
+    entity: component
+    project: Aeroclub Time
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  time.tarifffinder:
+    repository: aeroclub.time.tarifffinder
+    title: aeroclub.time.tarifffinder
+    entity: component
+    project: Aeroclub Time
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  time.tests:
+    repository: aeroclub.time.tests
+    title: aeroclub.time.tests
+    entity: component
+    project: Aeroclub Time
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  time.ui:
+    repository: aeroclub.time.ui
+    title: Travelboard
+    entity: component
+    project: Aeroclub Time
+    description:
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/Travelboard
+    aspects:
+    technologies:
+    links:
+  time.userguide:
+    repository: aeroclub.time.userguide
+    title: aeroclub.time.userguide
+    entity: component
+    project: Aeroclub Time
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  time:
+    repository: aeroclub.time
+    title: Time
+    entity: component
+    project: Aeroclub Time
+    description: Самостоятельное оформления услуг клиентами
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/Time
+    aspects:
+    technologies:
+    links:
