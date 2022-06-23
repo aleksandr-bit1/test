@@ -645,6 +645,12 @@ components:
         direction: --
       - id: services.propertyfx
         direction: --
+      - id: services.businesstrips
+        direction: --
+      - id: services.journeys
+        direction: --
+      - id: services.budgeting
+        direction: --
   applications.vault:
     repository: aeroclub.vault
     title: Card Information Service
@@ -675,6 +681,8 @@ components:
     aspects:
     technologies:
     links:
+      - id: db.integrationhub
+        direction: --
   applications.integration.hub.xsd:
     repository: aeroclub.integration.hub.xsd
     title: aeroclub.integration.hub.xsd

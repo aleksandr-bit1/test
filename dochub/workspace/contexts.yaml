@@ -6,6 +6,6 @@ contexts:
       - applications.time
   messages:
     title: Сообщения
-    location: Сообщения/BusinessTripCreatedMessage
+    location: Сообщения/Message1
     icon: settings_ethernet
     uml: messages/message1.puml
