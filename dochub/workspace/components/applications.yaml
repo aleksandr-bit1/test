@@ -649,6 +649,12 @@ components:
     aspects:
     technologies:
     links:
+      - id: db.cabinet
+        direction: --
+      - id: services.authfx
+        direction: --
+      - id: services.propertyfx
+        direction: --
   applications.vault:
     repository: aeroclub.vault
     title: Card Information Service
