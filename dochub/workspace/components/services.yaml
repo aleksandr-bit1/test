@@ -39,6 +39,8 @@ components:
     aspects:
     technologies:
     links:
+      - id: services.authfx
+        direction: --
   services.approvalservice:
     repository: aeroclub.services.approvalservice
     title: aeroclub.services.approvalservice
@@ -99,6 +101,8 @@ components:
     aspects:
     technologies:
     links:
+      - id: db.authfx
+        direction: --
   services.authorization:
     repository: aeroclub.services.authorization
     title: aeroclub.services.authorization

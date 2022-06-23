@@ -19,16 +19,6 @@ components:
     aspects:
     technologies:
     links:
-  applications.integration.aeroexpress:
-    repository: aeroclub.integration.aeroexpress
-    title: aeroclub.integration.aeroexpress
-    entity: component
-    project: Aeroclub Aeroexpress
-    description:
-    url:
-    aspects:
-    technologies:
-    links:
   applications.companies.service:
     repository: aeroclub.companies.service
     title: Companies & Personal Service
@@ -665,13 +655,33 @@ components:
     aspects:
     technologies:
     links:
-  applications.documentation.open.api:
+  applications.api-documentation:
     repository: aeroclub.documentation.open.api
     title: Api Documentation
     entity: component
     project:
     description: Cайт с документацией по Aeroclub API
     url: http://wiki.aeroclub.int/display/PROJECTDOC/Aeroclub.Api.Documentation
+    aspects:
+    technologies:
+    links:
+  applications.integrationhub.scripts:
+    repository: aeroclub.integrationhub.scripts
+    title: aeroclub.integrationhub.scripts
+    entity: component
+    project: Aeroclub Scripts
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  applications.integrationhub:
+    repository: aeroclub.integrationhub
+    title: Integration HUB
+    entity: component
+    project: Aeroclub Integration
+    description:
+    url:
     aspects:
     technologies:
     links:

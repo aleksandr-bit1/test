@@ -9,3 +9,5 @@ namespaces:
     title: Services
   applications:
     title: Applications
+  integration:
+    title: Integration

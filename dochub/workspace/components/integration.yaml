@@ -1,5 +1,4 @@
 components:
-  ---
   integration.aeroexpress:
     repository: aeroclub.integration.aeroexpress
     title: aeroclub.integration.aeroexpress
@@ -153,36 +152,6 @@ components:
   integration.wallet:
     repository: aeroclub.integration.wallet
     title: aeroclub.integration.wallet
-    entity: component
-    project: Aeroclub Integration
-    description:
-    url:
-    aspects:
-    technologies:
-    links:
-  integration:
-    repository: aeroclub.integration
-    title: aeroclub.integration
-    entity: component
-    project: Aeroclub Integration
-    description:
-    url:
-    aspects:
-    technologies:
-    links:
-  integrationhub.scripts:
-    repository: aeroclub.integrationhub.scripts
-    title: aeroclub.integrationhub.scripts
-    entity: component
-    project: Aeroclub Scripts
-    description:
-    url:
-    aspects:
-    technologies:
-    links:
-  integrationhub:
-    repository: aeroclub.integrationhub
-    title: aeroclub.integrationhub
     entity: component
     project: Aeroclub Integration
     description:
