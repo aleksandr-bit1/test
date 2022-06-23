@@ -1,0 +1,192 @@
+components:
+  ---
+  integration.aeroexpress:
+    repository: aeroclub.integration.aeroexpress
+    title: aeroclub.integration.aeroexpress
+    entity: component
+    project: Aeroclub Aeroexpress
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  integration.amadeus:
+    repository: aeroclub.integration.amadeus
+    title: aeroclub.integration.amadeus
+    entity: component
+    project: Aeroclub Integration
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  integration.feedback:
+    repository: aeroclub.integration.feedback
+    title: Feedback Integration
+    entity: component
+    project: Aeroclub Integration
+    description: CRUD сервис для работы с подписками клиентов на события по услугам и командировкам. Вызывается из Aeroclub API, использует собственную базу FeedbackIntegration
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/Feedback+Integration+Service
+    aspects:
+    technologies:
+    links:
+  integration.flightstatus:
+    repository: aeroclub.integration.flightstatus
+    title: Flightstatus Integration
+    entity: component
+    project: Aeroclub Integration
+    description: Интеграция с сервисом FlightStatus
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Integration.Flightstatus
+    aspects:
+    technologies:
+    links:
+  integration.gds:
+    repository: aeroclub.integration.gds
+    title: aeroclub.integration.gds
+    entity: component
+    project: Aeroclub Integration
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  integration.genesys:
+    repository: aeroclub.integration.genesys
+    title: Genesys Integration Backend
+    entity: component
+    project: Aeroclub Integration
+    description:
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/Genesys+Integration+Backend
+    aspects:
+    technologies:
+    links:
+  integration.hds:
+    repository: aeroclub.integration.hds
+    title: aeroclub.integration.hds
+    entity: component
+    project: Aeroclub Integration
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  integration.hub.xsd:
+    repository: aeroclub.integration.hub.xsd
+    title: aeroclub.integration.hub.xsd
+    entity: component
+    project: Aeroclub Integration
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  integration.hub:
+    repository: aeroclub.integration.hub
+    title: Integration Hub
+    entity: component
+    project: Aeroclub Integration
+    description: Комплекс приложений и сервисов, обеспечивающий функциональность по взаимной интеграции программных комплексов клиентов и внутренних сервисов "Аэроклуб?
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/Aeroclub+Integration+Hub
+    aspects:
+    technologies:
+    links:
+  integration.iway:
+    repository: aeroclub.integration.iway
+    title: aeroclub.integration.iway
+    entity: component
+    project: Aeroclub Integration
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  integration.postmark:
+    repository: aeroclub.integration.postmark
+    title: Postmark Integration
+    entity: component
+    project: Aeroclub Integration
+    description: 'Получение Webhook''ов от Postmark'
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Integration+Postmark
+    aspects:
+    technologies:
+    links:
+  integration.raileurope:
+    repository: aeroclub.integration.raileurope
+    title: aeroclub.integration.raileurope
+    entity: component
+    project: Aeroclub Integration
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  integration.s7:
+    repository: aeroclub.integration.s7
+    title: aeroclub.integration.s7
+    entity: component
+    project: Aeroclub Integration
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  integration.surveymonkey:
+    repository: aeroclub.integration.surveymonkey
+    title: SurveyMonkey Integration
+    entity: component
+    project: Aeroclub Integration
+    description: Получение webhook от SurveyMonkey
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Integration+SurveyMonkey
+    aspects:
+    technologies:
+    links:
+  integration.transfers:
+    repository: aeroclub.integration.transfers
+    title: Integration Transfers
+    entity: component
+    project: Aeroclub Services
+    description: Получение сообщений от поставщиков трансферов с изменениями по заказу. С последующей отправкой сообщений в RabbitMQ
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/Integration+Transfers
+    aspects:
+    technologies:
+    links:
+  integration.wallet:
+    repository: aeroclub.integration.wallet
+    title: aeroclub.integration.wallet
+    entity: component
+    project: Aeroclub Integration
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  integration:
+    repository: aeroclub.integration
+    title: aeroclub.integration
+    entity: component
+    project: Aeroclub Integration
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  integrationhub.scripts:
+    repository: aeroclub.integrationhub.scripts
+    title: aeroclub.integrationhub.scripts
+    entity: component
+    project: Aeroclub Scripts
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  integrationhub:
+    repository: aeroclub.integrationhub
+    title: aeroclub.integrationhub
+    entity: component
+    project: Aeroclub Integration
+    description:
+    url:
+    aspects:
+    technologies:
+    links:

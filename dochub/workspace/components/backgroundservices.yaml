@@ -1,275 +1,16 @@
 components:
-  aeroclub.backgroundservices:
-    title: Background services
+  backgroundservices.aviaticketchecker3000:
+    repository: aeroclub.backgroundservices.aviaticketchecker3000
+    title: AviaTicketChecker3000
     entity: component
     project: Aeroclub Background Services
-    description:
-    url:
+    description: Робот ежедневно формирует список неиспользованных билетов согласно статусам билетов и запрашивает посегментный статус в WSCommon, в случае изменения статусов билетов отмечает их и формирует структуру-таблицу по которой будет в дальнейшем строиться ежемесячный отчёт.
+    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=20515097
     aspects:
     technologies:
     links:
-  aeroclub.backgroundservices.wscommon:
-    title: WSCMN Backend
-    entity: component
-    project: Aeroclub Background Services
-    description: Служба для работы с WSCMN и отсылки сообщений в RabbitMQ с результатами работы с WSCMN
-    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=32174056
-    aspects:
-    technologies:
-    links:
-  aeroclub.backgroundservices.travelboard:
-    title: Travelboard Backend
-    entity: component
-    project: Aeroclub Background Services
-    description: Отслеживает сообщения в "кролике" об изменении статистических данных для проекта Travelboard (оформление, возврат, авторизация, удаление услуг и командировок и т.д.)
-    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=55702015
-    aspects:
-    technologies:
-    links:
-  aeroclub.backgroundservices.ticketsimporter:
-    title: aeroclub.backgroundservices.ticketsimporter
-    entity: component
-    project: Aeroclub Background Services
-    description:
-    url:
-    aspects:
-    technologies:
-    links:
-  aeroclub.backgroundservices.ticketsexporter:
-    title: Ticket exporter
-    entity: component
-    project: Aeroclub Background Services
-    description: Экспортирует услуги в систему Tickets для дальнейшего выставления счетов клиентам
-    url: http://wiki.aeroclub.int/display/PROJECTDOC/Ticket+exporter
-    aspects:
-    technologies:
-    links:
-  aeroclub.backgroundservices.taskscheduler:
-    title: Task Scheduler
-    entity: component
-    project: Aeroclub Background Services
-    description: Робот обеспечивает функционал по планированию и выполнению произвольных задач.
-    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=24781839
-    aspects:
-    technologies:
-    links:
-  aeroclub.backgroundservices.sync:
-    title: aeroclub.backgroundservices.sync
-    entity: component
-    project: Aeroclub Background Services
-    description:
-    url:
-    aspects:
-    technologies:
-    links:
-  aeroclub.backgroundservices.surveys:
-    title: Surveys Backend
-    entity: component
-    project: Aeroclub Background Services
-    description: Автоматическая рассылка приглашений на опрос клиентов АК и выгрузка результатов из SM, сохранение в БД
-    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=32163312
-    aspects:
-    technologies:
-    links:
-  aeroclub.backgroundservices.securityaudit:
-    title: Security Audit Backend
-    entity: component
-    project: Aeroclub Background Services
-    description: "\tСлужба ведения журнала аудита безопасности"
-    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=39886536
-    aspects:
-    technologies:
-    links:
-  aeroclub.backgroundservices.queues:
-    title: Queues
-    entity: component
-    project: Aeroclub Background Services
-    description: Управление списком авиа-бронирований в очередях GDS
-    url: http://wiki.aeroclub.int/display/PROJECTDOC/Queues
-    aspects:
-    technologies:
-    links:
-  aeroclub.backgroundservices.pushpublisher:
-    title: Push publisher
-    entity: component
-    project: Aeroclub Background Services
-    description: Push-уведомления в МП Aeroclub Link
-    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=20515482
-    aspects:
-    technologies:
-    links:
-  aeroclub.backgroundservices.profilesindexer:
-    title: aeroclub.backgroundservices.profilesindexer
-    entity: component
-    project: Aeroclub Background Services
-    description:
-    url:
-    aspects:
-    technologies:
-    links:
-  aeroclub.backgroundservices.pnrpostprocessing:
-    title: PNR postprocessor
-    entity: component
-    project: Aeroclub Background Services
-    description: Служба создания GK-бронирований
-    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=29231602
-    aspects:
-    technologies:
-    links:
-  aeroclub.backgroundservices.ordersindexer:
-    title: aeroclub.backgroundservices.ordersindexer
-    entity: component
-    project: Aeroclub Background Services
-    description:
-    url:
-    aspects:
-    technologies:
-    links:
-  aeroclub.backgroundservices.orders:
-    title: Orders Backend
-    entity: component
-    project: Aeroclub Background Services
-    description: Отслеживает сообщения в "кролике"- поисковые запросы, события. Обрабатывает события, результат - отправляет в шину
-    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=19141097
-    aspects:
-    technologies:
-    links:
-  aeroclub.backgroundservices.ofdintegration:
-    title: OFD Transaction (Background VPOS Service)
-    entity: component
-    project: Aeroclub Background Services
-    description: Отправка транзакции для формирования чека в ОФД, при условии успешной VPOS Транзакции. Постановка транзакций очередь на отправку.
-    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=19140077
-    aspects:
-    technologies:
-    links:
-  aeroclub.backgroundservices.nlp:
-    title: aeroclub.backgroundservices.nlp
-    entity: component
-    project: Aeroclub Background Services
-    description:
-    url:
-    aspects:
-    technologies:
-    links:
-  aeroclub.backgroundservices.jirasnitch:
-    title: Jira snitch
-    entity: component
-    project: Aeroclub Background Services
-    description: Используется для преобразования сообщений кролика в задачи в джире
-    url: http://wiki.aeroclub.int/display/PROJECTDOC/Jira+snitch
-    aspects:
-    technologies:
-    links:
-  aeroclub.backgroundservices.itrgenerator:
-    title: ITR Generator
-    entity: component
-    project: Aeroclub Background Services
-    description:
-    url: http://wiki.aeroclub.int/display/PROJECTDOC/ITR+Generator
-    aspects:
-    technologies:
-    links:
-  aeroclub.backgroundservices.invoicemigrationtool:
-    title: InvoiceMigrationTool
-    entity: component
-    project: Aeroclub Background Services
-    description: Инструмент для миграции настроек автовыставления из csv файла в db MidOffice
-    url: http://wiki.aeroclub.int/display/PROJECTDOC/Aeroclub.BackgroundServices.InvoiceMigrationTool
-    aspects:
-    technologies:
-    links:
-  aeroclub.backgroundservices.indexer:
-    title: Aeroclub Indexer
-    entity: component
-    project: Aeroclub Background Services
-    description: Индексирование профайлов и командировок
-    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=29231585
-    aspects:
-    technologies:
-    links:
-  aeroclub.backgroundservices.hotelimporter:
-    title: Hotel importer
-    entity: component
-    project: Aeroclub Background Services
-    description: Робот загрузки новых отелей после поиска/обновления отелей от поставщика
-    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+HotelImporter
-    aspects:
-    technologies:
-    links:
-  aeroclub.backgroundservices.heliosdatabridge:
-    title: VPOS Exchange
-    entity: component
-    project: Aeroclub Background Services
-    description: Получение данных из VPOS для передачи в Helios
-    url: http://wiki.aeroclub.int/display/PROJECTDOC/VPOS+Exchange
-    aspects:
-    technologies:
-    links:
-  aeroclub.backgroundservices.gdspnr:
-    title: GDS-PNR
-    entity: component
-    project: Aeroclub Background Services
-    description:
-    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=29231589
-    aspects:
-    technologies:
-    links:
-  aeroclub.backgroundservices.gdsimporter:
-    title: Gdsimporter
-    entity: component
-    project: Aeroclub Background Services
-    description: Сервис контроля 3D договоров
-    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=32170448
-    aspects:
-    technologies:
-    links:
-  aeroclub.backgroundservices.flightstatus:
-    title: FlightStatus
-    entity: component
-    project: Aeroclub Background Services
-    description:
-    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=29231528
-    aspects:
-    technologies:
-    links:
-  aeroclub.backgroundservices.flightsegmentresource:
-    title: DocumentApi
-    entity: component
-    project: Aeroclub Background Services
-    description: Генерация и получение документов. В данный момент реализовано получение справок по использованным билетам.
-    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=20521650
-    aspects:
-    technologies:
-    links:
-  aeroclub.backgroundservices.currencyrateimporter:
-    title: aeroclub.backgroundservices.currencyrateimporter
-    entity: component
-    project: Aeroclub Background Services
-    description:
-    url:
-    aspects:
-    technologies:
-    links:
-  aeroclub.backgroundservices.bigqueryimporter:
-    title: BigQueryImporter
-    entity: component
-    project: Aeroclub Background Services
-    description: Получение данных из BigQuery
-    url: http://wiki.aeroclub.int/display/PROJECTDOC/BigQueryImporter
-    aspects:
-    technologies:
-    links:
-  aeroclub.backgroundservices.bayerprofilesync:
-    title: Bayer profile sync
-    entity: component
-    project: Aeroclub Background Services
-    description:
-    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=29231583
-    aspects:
-    technologies:
-    links:
-  aeroclub.backgroundservices.backxmlimporter:
+  backgroundservices.backxmlimporter:
+    repository: aeroclub.backgroundservices.backxmlimporter
     title: Back XML Importer
     entity: component
     project: Aeroclub Background Services
@@ -278,12 +19,303 @@ components:
     aspects:
     technologies:
     links:
-  aeroclub.backgroundservices.aviaticketchecker3000:
-    title: AviaTicketChecker3000
+  backgroundservices.bayerprofilesync:
+    repository: aeroclub.backgroundservices.bayerprofilesync
+    title: Bayer profile sync
     entity: component
     project: Aeroclub Background Services
-    description: Робот ежедневно формирует список неиспользованных билетов согласно статусам билетов и запрашивает посегментный статус в WSCommon, в случае изменения статусов билетов отмечает их и формирует структуру-таблицу по которой будет в дальнейшем строиться ежемесячный отчёт.
-    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=20515097
+    description:
+    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=29231583
+    aspects:
+    technologies:
+    links:
+  backgroundservices.bigqueryimporter:
+    repository: aeroclub.backgroundservices.bigqueryimporter
+    title: BigQueryImporter
+    entity: component
+    project: Aeroclub Background Services
+    description: Получение данных из BigQuery
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/BigQueryImporter
+    aspects:
+    technologies:
+    links:
+  backgroundservices.currencyrateimporter:
+    repository: aeroclub.backgroundservices.currencyrateimporter
+    title: aeroclub.backgroundservices.currencyrateimporter
+    entity: component
+    project: Aeroclub Background Services
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  backgroundservices.flightsegmentresource:
+    repository: aeroclub.backgroundservices.flightsegmentresource
+    title: DocumentApi
+    entity: component
+    project: Aeroclub Background Services
+    description: Генерация и получение документов. В данный момент реализовано получение справок по использованным билетам.
+    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=20521650
+    aspects:
+    technologies:
+    links:
+  backgroundservices.flightstatus:
+    repository: aeroclub.backgroundservices.flightstatus
+    title: FlightStatus
+    entity: component
+    project: Aeroclub Background Services
+    description:
+    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=29231528
+    aspects:
+    technologies:
+    links:
+  backgroundservices.gdsimporter:
+    repository: aeroclub.backgroundservices.gdsimporter
+    title: Gdsimporter
+    entity: component
+    project: Aeroclub Background Services
+    description: Сервис контроля 3D договоров
+    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=32170448
+    aspects:
+    technologies:
+    links:
+  backgroundservices.gdspnr:
+    repository: aeroclub.backgroundservices.gdspnr
+    title: GDS-PNR
+    entity: component
+    project: Aeroclub Background Services
+    description:
+    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=29231589
+    aspects:
+    technologies:
+    links:
+  backgroundservices.heliosdatabridge:
+    repository: aeroclub.backgroundservices.heliosdatabridge
+    title: VPOS Exchange
+    entity: component
+    project: Aeroclub Background Services
+    description: Получение данных из VPOS для передачи в Helios
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/VPOS+Exchange
+    aspects:
+    technologies:
+    links:
+  backgroundservices.hotelimporter:
+    repository: aeroclub.backgroundservices.hotelimporter
+    title: Hotel importer
+    entity: component
+    project: Aeroclub Background Services
+    description: Робот загрузки новых отелей после поиска/обновления отелей от поставщика
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+HotelImporter
+    aspects:
+    technologies:
+    links:
+  backgroundservices.indexer:
+    repository: aeroclub.backgroundservices.indexer
+    title: Aeroclub Indexer
+    entity: component
+    project: Aeroclub Background Services
+    description: Индексирование профайлов и командировок
+    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=29231585
+    aspects:
+    technologies:
+    links:
+  backgroundservices.invoicemigrationtool:
+    repository: aeroclub.backgroundservices.invoicemigrationtool
+    title: InvoiceMigrationTool
+    entity: component
+    project: Aeroclub Background Services
+    description: Инструмент для миграции настроек автовыставления из csv файла в db MidOffice
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/Aeroclub.BackgroundServices.InvoiceMigrationTool
+    aspects:
+    technologies:
+    links:
+  backgroundservices.itrgenerator:
+    repository: aeroclub.backgroundservices.itrgenerator
+    title: ITR Generator
+    entity: component
+    project: Aeroclub Background Services
+    description:
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/ITR+Generator
+    aspects:
+    technologies:
+    links:
+  backgroundservices.jirasnitch:
+    repository: aeroclub.backgroundservices.jirasnitch
+    title: Jira snitch
+    entity: component
+    project: Aeroclub Background Services
+    description: Используется для преобразования сообщений кролика в задачи в джире
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/Jira+snitch
+    aspects:
+    technologies:
+    links:
+  backgroundservices.nlp:
+    repository: aeroclub.backgroundservices.nlp
+    title: aeroclub.backgroundservices.nlp
+    entity: component
+    project: Aeroclub Background Services
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  backgroundservices.ofdintegration:
+    repository: aeroclub.backgroundservices.ofdintegration
+    title: OFD Transaction (Background VPOS Service)
+    entity: component
+    project: Aeroclub Background Services
+    description: Отправка транзакции для формирования чека в ОФД, при условии успешной VPOS Транзакции. Постановка транзакций очередь на отправку.
+    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=19140077
+    aspects:
+    technologies:
+    links:
+  backgroundservices.orders:
+    repository: aeroclub.backgroundservices.orders
+    title: Orders Backend
+    entity: component
+    project: Aeroclub Background Services
+    description: Отслеживает сообщения в "кролике"- поисковые запросы, события. Обрабатывает события, результат - отправляет в шину
+    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=19141097
+    aspects:
+    technologies:
+    links:
+  backgroundservices.ordersindexer:
+    repository: aeroclub.backgroundservices.ordersindexer
+    title: aeroclub.backgroundservices.ordersindexer
+    entity: component
+    project: Aeroclub Background Services
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  backgroundservices.pnrpostprocessing:
+    repository: aeroclub.backgroundservices.pnrpostprocessing
+    title: PNR postprocessor
+    entity: component
+    project: Aeroclub Background Services
+    description: Служба создания GK-бронирований
+    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=29231602
+    aspects:
+    technologies:
+    links:
+  backgroundservices.profilesindexer:
+    repository: aeroclub.backgroundservices.profilesindexer
+    title: aeroclub.backgroundservices.profilesindexer
+    entity: component
+    project: Aeroclub Background Services
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  backgroundservices.pushpublisher:
+    repository: aeroclub.backgroundservices.pushpublisher
+    title: Push publisher
+    entity: component
+    project: Aeroclub Background Services
+    description: Push-уведомления в МП Aeroclub Link
+    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=20515482
+    aspects:
+    technologies:
+    links:
+  backgroundservices.queues:
+    repository: aeroclub.backgroundservices.queues
+    title: Queues
+    entity: component
+    project: Aeroclub Background Services
+    description: Управление списком авиа-бронирований в очередях GDS
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/Queues
+    aspects:
+    technologies:
+    links:
+  backgroundservices.securityaudit:
+    repository: aeroclub.backgroundservices.securityaudit
+    title: Security Audit Backend
+    entity: component
+    project: Aeroclub Background Services
+    description: "\tСлужба ведения журнала аудита безопасности"
+    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=39886536
+    aspects:
+    technologies:
+    links:
+  backgroundservices.surveys:
+    repository: aeroclub.backgroundservices.surveys
+    title: Surveys Backend
+    entity: component
+    project: Aeroclub Background Services
+    description: Автоматическая рассылка приглашений на опрос клиентов АК и выгрузка результатов из SM, сохранение в БД
+    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=32163312
+    aspects:
+    technologies:
+    links:
+  backgroundservices.sync:
+    repository: aeroclub.backgroundservices.sync
+    title: aeroclub.backgroundservices.sync
+    entity: component
+    project: Aeroclub Background Services
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  backgroundservices.taskscheduler:
+    repository: aeroclub.backgroundservices.taskscheduler
+    title: Task Scheduler
+    entity: component
+    project: Aeroclub Background Services
+    description: Робот обеспечивает функционал по планированию и выполнению произвольных задач.
+    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=24781839
+    aspects:
+    technologies:
+    links:
+  backgroundservices.ticketsexporter:
+    repository: aeroclub.backgroundservices.ticketsexporter
+    title: Ticket exporter
+    entity: component
+    project: Aeroclub Background Services
+    description: Экспортирует услуги в систему Tickets для дальнейшего выставления счетов клиентам
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/Ticket+exporter
+    aspects:
+    technologies:
+    links:
+  backgroundservices.ticketsimporter:
+    repository: aeroclub.backgroundservices.ticketsimporter
+    title: aeroclub.backgroundservices.ticketsimporter
+    entity: component
+    project: Aeroclub Background Services
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  backgroundservices.travelboard:
+    repository: aeroclub.backgroundservices.travelboard
+    title: Travelboard Backend
+    entity: component
+    project: Aeroclub Background Services
+    description: Отслеживает сообщения в "кролике" об изменении статистических данных для проекта Travelboard (оформление, возврат, авторизация, удаление услуг и командировок и т.д.)
+    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=55702015
+    aspects:
+    technologies:
+    links:
+  backgroundservices.wscommon:
+    repository: aeroclub.backgroundservices.wscommon
+    title: WSCMN Backend
+    entity: component
+    project: Aeroclub Background Services
+    description: Служба для работы с WSCMN и отсылки сообщений в RabbitMQ с результатами работы с WSCMN
+    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=32174056
+    aspects:
+    technologies:
+    links:
+  backgroundservices:
+    repository: aeroclub.backgroundservices
+    title: aeroclub.backgroundservices
+    entity: component
+    project:
+    description:
+    url:
     aspects:
     technologies:
     links:

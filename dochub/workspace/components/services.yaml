@@ -1,572 +1,16 @@
 components:
-  aeroclub.services:
-    title: Services
+  services.api.query:
+    repository: aeroclub.services.api.query
+    title: Api Query
     entity: component
     project: Aeroclub Services
-    description:
-    url:
+    description: Используется для получения специфичной информации о заказах, командировках, проездных документах и пр. из базы Cabinet
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Mobile+Api+Query
     aspects:
     technologies:
     links:
-  aeroclub.services.wscommon:
-    title: WsCommon
-    entity: component
-    project: Aeroclub Services
-    description: Сервис для интеграции с поставщиками данных - GDS, Booking И т.д.
-    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=18580094
-    aspects:
-    technologies:
-    links:
-  aeroclub.services.wscommon.transfers:
-    title: Transfers
-    entity: component
-    project: Aeroclub Services
-    description: Взаимодействие с поставщиком услуг трансферов (IWay)
-    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Transfers
-    aspects:
-    technologies:
-    links:
-  aeroclub.services.wscommon.tests:
-    title: aeroclub.services.wscommon.tests
-    entity: component
-    project: Aeroclub Services
-    description:
-    url:
-    aspects:
-    technologies:
-    links:
-  aeroclub.services.wscommon.rail:
-    title: Rail
-    entity: component
-    project: Aeroclub Services
-    description: Сервис предназначен для общения с ЖД поставщиками
-    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Rail
-    aspects:
-    technologies:
-    links:
-  aeroclub.services.wscommon.hotels:
-    title: Hotels
-    entity: component
-    project: Aeroclub Services
-    description: Сервис предназначен для работы с отельными поставщиками
-    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Hotels
-    aspects:
-    technologies:
-    links:
-  aeroclub.services.wscommon.avia:
-    title: Avia
-    entity: component
-    project: Aeroclub Services
-    description: API для разработки другими командами своих продуктов
-    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Avia
-    aspects:
-    technologies:
-    links:
-  aeroclub.services.wscommon.assemblies:
-    title: aeroclub.services.wscommon.assemblies
-    entity: component
-    project: Aeroclub Services
-    description:
-    url:
-    aspects:
-    technologies:
-    links:
-  aeroclub.services.wifiguest:
-    title: aeroclub.services.wifiguest
-    entity: component
-    project: Aeroclub Services
-    description:
-    url:
-    aspects:
-    technologies:
-    links:
-  aeroclub.services.wifibot:
-    title: WifiBot
-    entity: component
-    project: Aeroclub Services
-    description: Выдача учёток гостевой Wifi-сети
-    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+WifiBot
-    aspects:
-    technologies:
-    links:
-  aeroclub.services.vat:
-    title: VatService
-    entity: component
-    project: Aeroclub Services
-    description: Рассчет НДС через Amadeus или нашу БД
-    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+VatService
-    aspects:
-    technologies:
-    links:
-  aeroclub.services.travelpolicy:
-    title: TravelPolicy Service
-    entity: component
-    project: Aeroclub Services
-    description: Проверка опций перелетов, размещений в отеле, ж/д на соответствие TravelPolicy клиента
-    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+TravelPolicy
-    aspects:
-    technologies:
-    links:
-  aeroclub.services.transfers:
-    title: DirectCars Transfers
-    entity: component
-    project: Aeroclub Services
-    description: Взаимодействие с БД DirectCars
-    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+DirectCars+Transfers
-    aspects:
-    technologies:
-    links:
-  aeroclub.services.tophotels:
-    title: aeroclub.services.tophotels
-    entity: component
-    project: Aeroclub Services
-    description:
-    url:
-    aspects:
-    technologies:
-    links:
-  aeroclub.services.time.stateengine:
-    title: Time StateEngine
-    entity: component
-    project: Aeroclub Services
-    description: Получение возможных действий над командировкой. Проверка возможности конкретного действия с командировкой.
-    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Time.StateEngine
-    aspects:
-    technologies:
-    links:
-  aeroclub.services.time.notifyservice:
-    title: aeroclub.services.time.notifyservice
-    entity: component
-    project: Aeroclub Services
-    description:
-    url:
-    aspects:
-    technologies:
-    links:
-  aeroclub.services.timatic:
-    title: aeroclub.services.timatic
-    entity: component
-    project: Aeroclub Services
-    description:
-    url:
-    aspects:
-    technologies:
-    links:
-  aeroclub.services.ticketing:
-    title: Ticketing
-    entity: component
-    project: Aeroclub Services
-    description: Бронирование, выписка, обновление статусов - ЖД и Авиабилеты, через WSCommon
-    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Ticketing
-    aspects:
-    technologies:
-    links:
-  aeroclub.services.ticketing.tests:
-    title: aeroclub.services.ticketing.tests
-    entity: component
-    project: Aeroclub Services
-    description:
-    url:
-    aspects:
-    technologies:
-    links:
-  aeroclub.services.templating:
-    title: Templating
-    entity: component
-    project: Aeroclub Services
-    description: Генерация HTML/PDF версий отчетов и писем (IEP, ITR и прочее), рассылаемых клиентам
-    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Templating
-    aspects:
-    technologies:
-    links:
-  aeroclub.services.taxes:
-    title: Taxes
-    entity: component
-    project: Aeroclub Services
-    description: Определение применимости и расчет дополнительных такс
-    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Taxes
-    aspects:
-    technologies:
-    links:
-  aeroclub.services.taskscheduler:
-    title: aeroclub.services.taskscheduler
-    entity: component
-    project: Aeroclub Services
-    description:
-    url:
-    aspects:
-    technologies:
-    links:
-  aeroclub.services.surveys:
-    title: aeroclub.services.surveys
-    entity: component
-    project: Aeroclub Services
-    description:
-    url:
-    aspects:
-    technologies:
-    links:
-  aeroclub.services.smsgate:
-    title: Sms Gate
-    entity: component
-    project: Aeroclub Services
-    description:
-    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+SMSGate
-    aspects:
-    technologies:
-    links:
-  aeroclub.services.sessionstore:
-    title: Amadeus Session Store
-    entity: component
-    project: Aeroclub Services
-    description:
-    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Amadeus+Session+Store
-    aspects:
-    technologies:
-    links:
-  aeroclub.services.searchvariants:
-    title: SearchVariants
-    entity: component
-    project:
-    description: "Сервис поиска вариантов (авиа, жд, отели). Дёргается из OrdersBackend.\n\nВыполняет поиск вариантов в WsCommon и складывает результаты в кэш Redis."
-    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+SearchVariants
-    aspects:
-    technologies:
-    links:
-  aeroclub.services.queues:
-    title: Queues Service
-    entity: component
-    project: Aeroclub Services
-    description: Сервис для работы с очередями бронирований
-    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Queues
-    aspects:
-    technologies:
-    links:
-  aeroclub.services.publisher:
-    title: aeroclub.services.publisher
-    entity: component
-    project: Aeroclub Services
-    description:
-    url:
-    aspects:
-    technologies:
-    links:
-  aeroclub.services.propertyfx:
-    title: CustomPropertyFx Service
-    entity: component
-    project: Aeroclub Services
-    description: Работа с доп. данными в Time и Link
-    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+CustomPropertyFx
-    aspects:
-    technologies:
-    links:
-  aeroclub.services.profiles:
-    title: Profiles (Актуальный)
-    entity: component
-    project: Aeroclub Services
-    description: Сервис предназначен для работы с профайлами пользователей
-    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=19141795
-    aspects:
-    technologies:
-    links:
-  aeroclub.services.ordersws:
-    title: Orders
-    entity: component
-    project: Aeroclub Services
-    description: Создание и обновление услуг, черновиков; добавление в услуги доп. данных, документов, профилей путешественников и т.д.
-    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Orders
-    aspects:
-    technologies:
-    links:
-  aeroclub.services.ordersws.tests:
-    title: aeroclub.services.ordersws.tests
-    entity: component
-    project: Aeroclub Services
-    description:
-    url:
-    aspects:
-    technologies:
-    links:
-  aeroclub.services.orders:
-    title: aeroclub.services.orders
-    entity: component
-    project: Aeroclub Services
-    description:
-    url:
-    aspects:
-    technologies:
-    links:
-  aeroclub.services.orders.query:
-    title: Orders Query
-    entity: component
-    project: Aeroclub Services
-    description: Поиск услуг в ASIM
-    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Orders+Query
-    aspects:
-    technologies:
-    links:
-  aeroclub.services.midoffice:
-    title: MidOffice Service
-    entity: component
-    project: Aeroclub Services
-    description: Сервис получения/добавления/редактирования настроек автовыставления из БД MidOffice
-    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+MidOffice
-    aspects:
-    technologies:
-    links:
-  aeroclub.services.journeys:
-    title: Journeys
-    entity: component
-    project: Aeroclub Services
-    description: Поиск командировок с использованием Lucene-индексера
-    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Journeys
-    aspects:
-    technologies:
-    links:
-  aeroclub.services.jiraservicedesk:
-    title: Jira Service Desk
-    entity: component
-    project: Aeroclub Services
-    description: Используется веб-интерфейсом ServiceDesk для получения и обработки заявок SD в Jira
-    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+JiraSD
-    aspects:
-    technologies:
-    links:
-  aeroclub.services.itr:
-    title: Itr
-    entity: component
-    project: Aeroclub Services
-    description: Генерация отельных и трансферных ваучеров
-    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+ITR+Service
-    aspects:
-    technologies:
-    links:
-  aeroclub.services.features:
-    title: aeroclub.services.features
-    entity: component
-    project: Aeroclub Services
-    description:
-    url:
-    aspects:
-    technologies:
-    links:
-  aeroclub.services.faqbot:
-    title: FaqBot
-    entity: component
-    project: Aeroclub Services
-    description: Ответы на вопросы по базе знаний
-    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+FaqBot
-    aspects:
-    technologies:
-    links:
-  aeroclub.services.discounts:
-    title: aeroclub.services.discounts
-    entity: component
-    project: Aeroclub Services
-    description:
-    url:
-    aspects:
-    technologies:
-    links:
-  aeroclub.services.databroom:
-    title: Databroom
-    entity: component
-    project:
-    description: Сбор аналитических данных для построения отчетов и проверок гипотез
-    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Databroom
-    aspects:
-    technologies:
-    links:
-  aeroclub.services.currency:
-    title: Currency
-    entity: component
-    project: Aeroclub Services
-    description: Конвертация валют
-    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Currency
-    aspects:
-    technologies:
-    links:
-  aeroclub.services.conversion:
-    title: Conversion
-    entity: component
-    project: Aeroclub Services
-    description: Используется для конвертации HTML в PDF
-    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=39889584
-    aspects:
-    technologies:
-    links:
-  aeroclub.services.companiesws.v2:
-    title: Profiles v2 (Актуальный)
-    entity: component
-    project: Aeroclub Services
-    description: Сервис предназначен для работы с профайлами клиентов и компаний
-    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=19141735
-    aspects:
-    technologies:
-    links:
-  aeroclub.services.companiesws.v1:
-    title: aeroclub.services.companiesws.v1
-    entity: component
-    project: Aeroclub Services
-    description:
-    url:
-    aspects:
-    technologies:
-    links:
-  aeroclub.services.companies:
-    title: Companies (Актуальный)
-    entity: component
-    project: Aeroclub Services
-    description: Сервис предназначен для работы с профайлами компаний
-    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=19141737
-    aspects:
-    technologies:
-    links:
-  aeroclub.services.commission:
-    title: Commission
-    entity: component
-    project: Aeroclub Services
-    description: Расчет комиссий
-    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Commission
-    aspects:
-    technologies:
-    links:
-  aeroclub.services.ceobreakfastbot:
-    title: CeoBreakfastBot
-    entity: component
-    project:
-    description: Бронирование встречи с одним из CEO Аэроклуба
-    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+CeoBreakfastBot
-    aspects:
-    technologies:
-    links:
-  aeroclub.services.businesstrips:
-    title: BusinessTrips
-    entity: component
-    project: Aeroclub Services
-    description: Создан для агрегации бизнес-логики из области командировок, на первом этапе реализует импорт командировок из внешних систем
-    url: http://wiki.aeroclub.int/display/PROJECTDOC/BusinessTrips+Service
-    aspects:
-    technologies:
-    links:
-  aeroclub.services.budgeting:
-    title: Budgeting
-    entity: component
-    project: Aeroclub Services
-    description: Производит расчёт суточных в командировке за весь период.
-    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Budgeting
-    aspects:
-    technologies:
-    links:
-  aeroclub.services.billingws:
-    title: aeroclub.services.billingws
-    entity: component
-    project: Aeroclub Services
-    description:
-    url:
-    aspects:
-    technologies:
-    links:
-  aeroclub.services.billing:
-    title: Billing
-    entity: component
-    project: Aeroclub Services
-    description: Ведение расходов по договору
-    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Billing
-    aspects:
-    technologies:
-    links:
-  aeroclub.services.backxml:
-    title: Back XML
-    entity: component
-    project: Aeroclub Services
-    description: "Сервис предназначен для получения информации от поставщика по услугам/отелям, в случае изменения каких-либо данных на стороне поставщика.\n"
-    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Back+XML
-    aspects:
-    technologies:
-    links:
-  aeroclub.services.authorization:
-    title: aeroclub.services.authorization
-    entity: component
-    project: Aeroclub Services
-    description:
-    url:
-    aspects:
-    technologies:
-    links:
-  aeroclub.services.authfx:
-    title: AuthFx Service
-    entity: component
-    project: Aeroclub Services
-    description: Авторизация услуг, командировок пользователей.
-    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+AuthFx
-    aspects:
-    technologies:
-    links:
-  aeroclub.services.asia:
-    title: Asia Service
-    entity: component
-    project: Aeroclub Services
-    description: Обслуживание специфичных запросов приложения ASIA
-    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+ASIA
-    aspects:
-    technologies:
-    links:
-  aeroclub.services.asia.v7:
-    title: Asia Service v7
-    entity: component
-    project: Aeroclub Services
-    description: Обслуживание специфичных запросов приложения ASIA
-    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+ASIA+v7
-    aspects:
-    technologies:
-    links:
-  aeroclub.services.aria:
-    title: Aria  Service
-    entity: component
-    project: Aeroclub Services
-    description:
-    url: http://wiki.aeroclub.int/display/PROJECTDOC/ARIA
-    aspects:
-    technologies:
-    links:
-  aeroclub.services.aria.templates:
-    title: Aria  Service Templates
-    entity: component
-    project: Aeroclub Services
-    description:
-    url: http://wiki.aeroclub.int/display/PROJECTDOC/ARIA
-    aspects:
-    technologies:
-    links:
-  aeroclub.services.approvalservice:
-    title: aeroclub.services.approvalservice
-    entity: component
-    project: Aeroclub Services
-    description:
-    url:
-    aspects:
-    technologies:
-    links:
-  aeroclub.services.api:
-    title: Api
-    entity: component
-    project: Aeroclub Services
-    description: Работа с мобильным приложением Link
-    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=18580096
-    aspects:
-    technologies:
-    links:
-  aeroclub.services.api.tests:
-    title: aeroclub.services.api.tests
-    entity: component
-    project: Aeroclub Services
-    description:
-    url:
-    aspects:
-    technologies:
-    links:
-  aeroclub.services.api.redis.cache:
+  services.api.redis.cache:
+    repository: aeroclub.services.api.redis.cache
     title: aeroclub.services.api.redis.cache
     entity: component
     project: Aeroclub Services
@@ -575,12 +19,633 @@ components:
     aspects:
     technologies:
     links:
-  aeroclub.services.api.query:
-    title: Api Query
+  services.api.tests:
+    repository: aeroclub.services.api.tests
+    title: aeroclub.services.api.tests
     entity: component
     project: Aeroclub Services
-    description: Используется для получения специфичной информации о заказах, командировках, проездных документах и пр. из базы Cabinet
-    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Mobile+Api+Query
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  services.api:
+    repository: aeroclub.services.api
+    title: Api
+    entity: component
+    project: Aeroclub Services
+    description: Работа с мобильным приложением Link
+    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=18580096
+    aspects:
+    technologies:
+    links:
+  services.approvalservice:
+    repository: aeroclub.services.approvalservice
+    title: aeroclub.services.approvalservice
+    entity: component
+    project: Aeroclub Services
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  services.aria.templates:
+    repository: aeroclub.services.aria.templates
+    title: Aria  Service Templates
+    entity: component
+    project: Aeroclub Services
+    description:
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/ARIA
+    aspects:
+    technologies:
+    links:
+  services.aria:
+    repository: aeroclub.services.aria
+    title: Aria  Service
+    entity: component
+    project: Aeroclub Services
+    description:
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/ARIA
+    aspects:
+    technologies:
+    links:
+  services.asia.v7:
+    repository: aeroclub.services.asia.v7
+    title: Asia Service v7
+    entity: component
+    project: Aeroclub Services
+    description: Обслуживание специфичных запросов приложения ASIA
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+ASIA+v7
+    aspects:
+    technologies:
+    links:
+  services.asia:
+    repository: aeroclub.services.asia
+    title: Asia Service
+    entity: component
+    project: Aeroclub Services
+    description: Обслуживание специфичных запросов приложения ASIA
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+ASIA
+    aspects:
+    technologies:
+    links:
+  services.authfx:
+    repository: aeroclub.services.authfx
+    title: AuthFx Service
+    entity: component
+    project: Aeroclub Services
+    description: Авторизация услуг, командировок пользователей.
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+AuthFx
+    aspects:
+    technologies:
+    links:
+  services.authorization:
+    repository: aeroclub.services.authorization
+    title: aeroclub.services.authorization
+    entity: component
+    project: Aeroclub Services
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  services.backxml:
+    repository: aeroclub.services.backxml
+    title: Back XML
+    entity: component
+    project: Aeroclub Services
+    description: "Сервис предназначен для получения информации от поставщика по услугам/отелям, в случае изменения каких-либо данных на стороне поставщика.\n"
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Back+XML
+    aspects:
+    technologies:
+    links:
+  services.billing:
+    repository: aeroclub.services.billing
+    title: Billing
+    entity: component
+    project: Aeroclub Services
+    description: Ведение расходов по договору
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Billing
+    aspects:
+    technologies:
+    links:
+  services.billingws:
+    repository: aeroclub.services.billingws
+    title: aeroclub.services.billingws
+    entity: component
+    project: Aeroclub Services
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  services.budgeting:
+    repository: aeroclub.services.budgeting
+    title: Budgeting
+    entity: component
+    project: Aeroclub Services
+    description: Производит расчёт суточных в командировке за весь период.
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Budgeting
+    aspects:
+    technologies:
+    links:
+  services.businesstrips:
+    repository: aeroclub.services.businesstrips
+    title: BusinessTrips
+    entity: component
+    project: Aeroclub Services
+    description: Создан для агрегации бизнес-логики из области командировок, на первом этапе реализует импорт командировок из внешних систем
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/BusinessTrips+Service
+    aspects:
+    technologies:
+    links:
+  services.ceobreakfastbot:
+    repository: aeroclub.services.ceobreakfastbot
+    title: CeoBreakfastBot
+    entity: component
+    project: Aeroclub Services
+    description: Бронирование встречи с одним из CEO Аэроклуба
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+CeoBreakfastBot
+    aspects:
+    technologies:
+    links:
+  services.commission:
+    repository: aeroclub.services.commission
+    title: Commission
+    entity: component
+    project: Aeroclub Services
+    description: Расчет комиссий
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Commission
+    aspects:
+    technologies:
+    links:
+  services.companies:
+    repository: aeroclub.services.companies
+    title: Companies (Актуальный)
+    entity: component
+    project: Aeroclub Services
+    description: Сервис предназначен для работы с профайлами компаний
+    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=19141737
+    aspects:
+    technologies:
+    links:
+  services.companiesws.v1:
+    repository: aeroclub.services.companiesws.v1
+    title: aeroclub.services.companiesws.v1
+    entity: component
+    project: Aeroclub Services
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  services.companiesws.v2:
+    repository: aeroclub.services.companiesws.v2
+    title: Profiles v2 (Актуальный)
+    entity: component
+    project: Aeroclub Services
+    description: Сервис предназначен для работы с профайлами клиентов и компаний
+    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=19141735
+    aspects:
+    technologies:
+    links:
+  services.conversion:
+    repository: aeroclub.services.conversion
+    title: Conversion
+    entity: component
+    project: Aeroclub Services
+    description: Используется для конвертации HTML в PDF
+    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=39889584
+    aspects:
+    technologies:
+    links:
+  services.currency:
+    repository: aeroclub.services.currency
+    title: Currency
+    entity: component
+    project: Aeroclub Services
+    description: Конвертация валют
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Currency
+    aspects:
+    technologies:
+    links:
+  services.databroom:
+    repository: aeroclub.services.databroom
+    title: Databroom
+    entity: component
+    project: Aeroclub Services
+    description: Сбор аналитических данных для построения отчетов и проверок гипотез
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Databroom
+    aspects:
+    technologies:
+    links:
+  services.discounts:
+    repository: aeroclub.services.discounts
+    title: aeroclub.services.discounts
+    entity: component
+    project: Aeroclub Services
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  services.faqbot:
+    repository: aeroclub.services.faqbot
+    title: FaqBot
+    entity: component
+    project: Aeroclub Services
+    description: Ответы на вопросы по базе знаний
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+FaqBot
+    aspects:
+    technologies:
+    links:
+  services.features:
+    repository: aeroclub.services.features
+    title: aeroclub.services.features
+    entity: component
+    project: Aeroclub Services
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  services.itr:
+    repository: aeroclub.services.itr
+    title: Itr
+    entity: component
+    project: Aeroclub Services
+    description: Генерация отельных и трансферных ваучеров
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+ITR+Service
+    aspects:
+    technologies:
+    links:
+  services.jiraservicedesk:
+    repository: aeroclub.services.jiraservicedesk
+    title: Jira Service Desk
+    entity: component
+    project: Aeroclub Services
+    description: Используется веб-интерфейсом ServiceDesk для получения и обработки заявок SD в Jira
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+JiraSD
+    aspects:
+    technologies:
+    links:
+  services.journeys:
+    repository: aeroclub.services.journeys
+    title: Journeys
+    entity: component
+    project: Aeroclub Services
+    description: Поиск командировок с использованием Lucene-индексера
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Journeys
+    aspects:
+    technologies:
+    links:
+  services.midoffice:
+    repository: aeroclub.services.midoffice
+    title: MidOffice Service
+    entity: component
+    project: Aeroclub Services
+    description: Сервис получения/добавления/редактирования настроек автовыставления из БД MidOffice
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+MidOffice
+    aspects:
+    technologies:
+    links:
+  services.orders.query:
+    repository: aeroclub.services.orders.query
+    title: Orders Query
+    entity: component
+    project: Aeroclub Services
+    description: Поиск услуг в ASIM
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Orders+Query
+    aspects:
+    technologies:
+    links:
+  services.orders:
+    repository: aeroclub.services.orders
+    title: aeroclub.services.orders
+    entity: component
+    project: Aeroclub Services
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  services.ordersws.tests:
+    repository: aeroclub.services.ordersws.tests
+    title: aeroclub.services.ordersws.tests
+    entity: component
+    project: Aeroclub Services
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  services.ordersws:
+    repository: aeroclub.services.ordersws
+    title: Orders
+    entity: component
+    project: Aeroclub Services
+    description: Создание и обновление услуг, черновиков; добавление в услуги доп. данных, документов, профилей путешественников и т.д.
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Orders
+    aspects:
+    technologies:
+    links:
+  services.profiles:
+    repository: aeroclub.services.profiles
+    title: Profiles (Актуальный)
+    entity: component
+    project: Aeroclub Services
+    description: Сервис предназначен для работы с профайлами пользователей
+    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=19141795
+    aspects:
+    technologies:
+    links:
+  services.propertyfx:
+    repository: aeroclub.services.propertyfx
+    title: CustomPropertyFx Service
+    entity: component
+    project: Aeroclub Services
+    description: Работа с доп. данными в Time и Link
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+CustomPropertyFx
+    aspects:
+    technologies:
+    links:
+  services.publisher:
+    repository: aeroclub.services.publisher
+    title: aeroclub.services.publisher
+    entity: component
+    project: Aeroclub Services
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  services.queues:
+    repository: aeroclub.services.queues
+    title: Queues Service
+    entity: component
+    project: Aeroclub Services
+    description: Сервис для работы с очередями бронирований
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Queues
+    aspects:
+    technologies:
+    links:
+  services.searchvariants:
+    repository: aeroclub.services.searchvariants
+    title: SearchVariants
+    entity: component
+    project:
+    description: "Сервис поиска вариантов (авиа, жд, отели). Дёргается из OrdersBackend.\n\nВыполняет поиск вариантов в WsCommon и складывает результаты в кэш Redis."
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+SearchVariants
+    aspects:
+    technologies:
+    links:
+  services.sessionstore:
+    repository: aeroclub.services.sessionstore
+    title: Amadeus Session Store
+    entity: component
+    project: Aeroclub Services
+    description:
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Amadeus+Session+Store
+    aspects:
+    technologies:
+    links:
+  services.smsgate:
+    repository: aeroclub.services.smsgate
+    title: Sms Gate
+    entity: component
+    project: Aeroclub Services
+    description:
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+SMSGate
+    aspects:
+    technologies:
+    links:
+  services.surveys:
+    repository: aeroclub.services.surveys
+    title: aeroclub.services.surveys
+    entity: component
+    project: Aeroclub Services
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  services.taskscheduler:
+    repository: aeroclub.services.taskscheduler
+    title: aeroclub.services.taskscheduler
+    entity: component
+    project: Aeroclub Services
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  services.taxes:
+    repository: aeroclub.services.taxes
+    title: Taxes
+    entity: component
+    project: Aeroclub Services
+    description: Определение применимости и расчет дополнительных такс
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Taxes
+    aspects:
+    technologies:
+    links:
+  services.templating:
+    repository: aeroclub.services.templating
+    title: Templating
+    entity: component
+    project: Aeroclub Services
+    description: Генерация HTML/PDF версий отчетов и писем (IEP, ITR и прочее), рассылаемых клиентам
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Templating
+    aspects:
+    technologies:
+    links:
+  services.ticketing.tests:
+    repository: aeroclub.services.ticketing.tests
+    title: aeroclub.services.ticketing.tests
+    entity: component
+    project: Aeroclub Services
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  services.ticketing:
+    repository: aeroclub.services.ticketing
+    title: Ticketing
+    entity: component
+    project: Aeroclub Services
+    description: Бронирование, выписка, обновление статусов - ЖД и Авиабилеты, через WSCommon
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Ticketing
+    aspects:
+    technologies:
+    links:
+  services.timatic:
+    repository: aeroclub.services.timatic
+    title: aeroclub.services.timatic
+    entity: component
+    project: Aeroclub Services
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  services.time.notifyservice:
+    repository: aeroclub.services.time.notifyservice
+    title: aeroclub.services.time.notifyservice
+    entity: component
+    project: Aeroclub Services
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  services.time.stateengine:
+    repository: aeroclub.services.time.stateengine
+    title: Time StateEngine
+    entity: component
+    project: Aeroclub Services
+    description: Получение возможных действий над командировкой. Проверка возможности конкретного действия с командировкой.
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Time.StateEngine
+    aspects:
+    technologies:
+    links:
+  services.tophotels:
+    repository: aeroclub.services.tophotels
+    title: aeroclub.services.tophotels
+    entity: component
+    project: Aeroclub Services
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  services.transfers:
+    repository: aeroclub.services.transfers
+    title: DirectCars Transfers
+    entity: component
+    project: Aeroclub Services
+    description: Взаимодействие с БД DirectCars
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+DirectCars+Transfers
+    aspects:
+    technologies:
+    links:
+  services.travelpolicy:
+    repository: aeroclub.services.travelpolicy
+    title: TravelPolicy Service
+    entity: component
+    project: Aeroclub Services
+    description: Проверка опций перелетов, размещений в отеле, ж/д на соответствие TravelPolicy клиента
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+TravelPolicy
+    aspects:
+    technologies:
+    links:
+  services.vat:
+    repository: aeroclub.services.vat
+    title: VatService
+    entity: component
+    project: Aeroclub Services
+    description: Рассчет НДС через Amadeus или нашу БД
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+VatService
+    aspects:
+    technologies:
+    links:
+  services.wifibot:
+    repository: aeroclub.services.wifibot
+    title: WifiBot
+    entity: component
+    project: Aeroclub Services
+    description: Выдача учёток гостевой Wifi-сети
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+WifiBot
+    aspects:
+    technologies:
+    links:
+  services.wifiguest:
+    repository: aeroclub.services.wifiguest
+    title: aeroclub.services.wifiguest
+    entity: component
+    project: Aeroclub Services
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  services.wscommon.assemblies:
+    repository: aeroclub.services.wscommon.assemblies
+    title: aeroclub.services.wscommon.assemblies
+    entity: component
+    project: Aeroclub Services
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  services.wscommon.avia:
+    repository: aeroclub.services.wscommon.avia
+    title: Avia
+    entity: component
+    project: Aeroclub Services
+    description: API для разработки другими командами своих продуктов
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Avia
+    aspects:
+    technologies:
+    links:
+  services.wscommon.hotels:
+    repository: aeroclub.services.wscommon.hotels
+    title: Hotels
+    entity: component
+    project: Aeroclub Services
+    description: Сервис предназначен для работы с отельными поставщиками
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Hotels
+    aspects:
+    technologies:
+    links:
+  services.wscommon.rail:
+    repository: aeroclub.services.wscommon.rail
+    title: Rail
+    entity: component
+    project: Aeroclub Services
+    description: Сервис предназначен для общения с ЖД поставщиками
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Rail
+    aspects:
+    technologies:
+    links:
+  services.wscommon.tests:
+    repository: aeroclub.services.wscommon.tests
+    title: aeroclub.services.wscommon.tests
+    entity: component
+    project: Aeroclub Services
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  services.wscommon.transfers:
+    repository: aeroclub.services.wscommon.transfers
+    title: Transfers
+    entity: component
+    project: Aeroclub Services
+    description: Взаимодействие с поставщиком услуг трансферов (IWay)
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Transfers
+    aspects:
+    technologies:
+    links:
+  services.wscommon:
+    repository: aeroclub.services.wscommon
+    title: WsCommon
+    entity: component
+    project: Aeroclub Services
+    description: Сервис для интеграции с поставщиками данных - GDS, Booking И т.д.
+    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=18580094
+    aspects:
+    technologies:
+    links:
+  services:
+    repository: aeroclub.services
+    title: aeroclub.services
+    entity: component
+    project: Aeroclub Services
+    description:
+    url:
     aspects:
     technologies:
     links:

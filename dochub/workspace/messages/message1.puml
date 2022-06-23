@@ -1,0 +1,14 @@
+participant "[[/architect/components/aeroclub.time Time]]" as Time
+entity Queue
+participant "[[/architect/components/aeroclub.feedback Feedback]]" as Feedback
+
+
+Feedback -> Queue : dequeue
+activate Feedback
+...
+Time -> Queue : enqueue
+activate Feedback
+Queue --> Feedback
+deactivate Feedback
+Queue --> Time
+deactivate Time
