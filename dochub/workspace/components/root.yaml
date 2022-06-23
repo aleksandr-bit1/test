@@ -2,7 +2,7 @@ imports:
   - applications.yaml
   - backgroundservices.yaml
   - databases.yaml
-  - services.yaml
   - integration.yaml
+  - services.yaml
 #  - others.yaml
 components:
