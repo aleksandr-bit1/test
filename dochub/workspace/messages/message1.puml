@@ -1,14 +1,17 @@
 @startuml
 title Message1
-participant "[[/architect/components/aeroclub.time Time]]" as Time
+participant "[[/architect/components/applications.time Time]]" as Time
 entity Queue
-participant "[[/architect/components/aeroclub.feedback Feedback]]" as Feedback
+participant "[[/architect/components/applications.integration.hub IHub]]" as IHub
 
 activate Time
-activate Queue
-Time -> Queue : Message1
-Queue -> Feedback ++ : Message1
-Feedback -> Feedback : Process
+Time -> Time : **Process1**
+Time -> Queue ++ : Message1
+Time <-- Queue : (response)
+Queue -> IHub ++ : Message1
+Queue <-- IHub : (response)
+deactivate Queue
+IHub -> IHub : **Process2**
 
 deactivate Time
 @enduml

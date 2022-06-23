@@ -69,26 +69,6 @@ components:
     aspects:
     technologies:
     links:
-  integration.hub.xsd:
-    repository: aeroclub.integration.hub.xsd
-    title: aeroclub.integration.hub.xsd
-    entity: component
-    project: Aeroclub Integration
-    description:
-    url:
-    aspects:
-    technologies:
-    links:
-  integration.hub:
-    repository: aeroclub.integration.hub
-    title: Integration Hub
-    entity: component
-    project: Aeroclub Integration
-    description: Комплекс приложений и сервисов, обеспечивающий функциональность по взаимной интеграции программных комплексов клиентов и внутренних сервисов "Аэроклуб?
-    url: http://wiki.aeroclub.int/display/PROJECTDOC/Aeroclub+Integration+Hub
-    aspects:
-    technologies:
-    links:
   integration.iway:
     repository: aeroclub.integration.iway
     title: aeroclub.integration.iway
