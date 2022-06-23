@@ -7,3 +7,5 @@ namespaces:
     title: Background Services
   services:
     title: Services
+  applications:
+    title: Applications

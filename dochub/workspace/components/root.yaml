@@ -1,4 +1,5 @@
 imports:
+  - applications.yaml
   - backgroundservices.yaml
   - databases.yaml
   - services.yaml

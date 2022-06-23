@@ -1,0 +1,671 @@
+components:
+  applications.aeroexpress:
+    repository: aeroclub.aeroexpress
+    title: Aeroexpress
+    entity: component
+    project: Aeroclub Aeroexpress
+    description: Консоль оформления билетов на Аэроэкспресс
+    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=22806835
+    aspects:
+    technologies:
+    links:
+  applications.api:
+    repository: aeroclub.api
+    title: aeroclub.api
+    entity: component
+    project: Aeroclub Aeroexpress
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  applications.integration.aeroexpress:
+    repository: aeroclub.integration.aeroexpress
+    title: aeroclub.integration.aeroexpress
+    entity: component
+    project: Aeroclub Aeroexpress
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  applications.companies.service:
+    repository: aeroclub.companies.service
+    title: Companies & Personal Service
+    entity: component
+    project: Aeroclub Companies
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  applications.companies:
+    repository: aeroclub.companies
+    title: Companies & Personal Console
+    entity: component
+    project: Aeroclub Companies
+    description: Консоль для настроек компаний
+    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=18580224
+    aspects:
+    technologies:
+    links:
+  applications.expense.integration:
+    repository: aeroclub.expense.integration
+    title: Expense Integration
+    entity: component
+    project: Aeroclub Expense
+    description: Служба, подписана на сообщения, отправляемые Time-ом в RabbitMQ. Сообщения содержат информацию о расходах из командировок и услуги с наличной формой оплаты. После получения сообщения, служба определяет пользователя, которому нужно выгрузить расходы (например по CompanyID) и вызывает необходимые методы внутри SRV Expenses integration API, выгружает расходы.
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Expenses+integration+API
+    aspects:
+    technologies:
+    links:
+  applications.expense.ui:
+    repository: aeroclub.expense.ui
+    title: Expense UI
+    entity: component
+    project: Aeroclub Expense
+    description: API для работы с интерфейсом пользователя - клиентская / административная среда
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Expenses+UI+API
+    aspects:
+    technologies:
+    links:
+  applications.expense.xsd:
+    repository: aeroclub.expense.xsd
+    title: Expense XSD
+    entity: component
+    project: Aeroclub Expense
+    description:
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/Expense
+    aspects:
+    technologies:
+    links:
+  applications.expense:
+    repository: aeroclub.expense
+    title: Expense
+    entity: component
+    project: Aeroclub Expense
+    description: Работа с номенклатурой расходов - созданных вручную, экспортированных из Time и прочих приложений. Согласование расходов до оплаты, формирование заявок на выдачу аванса, формирование авансового отчета, выгрузка сформированных документов и проводок по ним в учетную систему.
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/Expense
+    aspects:
+    technologies:
+    links:
+  applications.b2basia:
+    repository: aeroclub.b2basia
+    title: aeroclub.b2basia
+    entity: component
+    project: Aeroclub External Applications
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  applications.flightsegmentresource:
+    repository: aeroclub.flightsegmentresource
+    title: aeroclub.flightsegmentresource
+    entity: component
+    project: Aeroclub External Applications
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  applications.link:
+    repository: aeroclub.link
+    title: Link
+    entity: component
+    project: Aeroclub External Applications
+    description: Мобильное приложение для работы с заказами- Авиа, ЖД, Отели
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/Link
+    aspects:
+    technologies:
+    links:
+  applications.mobile:
+    repository: aeroclub.mobile
+    title: aeroclub.mobile
+    entity: component
+    project: Aeroclub External Applications
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  applications.offers:
+    repository: aeroclub.offers
+    title: Offers
+    entity: component
+    project: Aeroclub External Applications
+    description: Используется для подтверждения или отказа клиента от предложенного (сгенерированного системой) оффера
+    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=32163006
+    aspects:
+    technologies:
+    links:
+  applications.sales:
+    repository: aeroclub.sales
+    title: aeroclub.sales
+    entity: component
+    project: Aeroclub External Applications
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  applications.static:
+    repository: aeroclub.static
+    title: aeroclub.static
+    entity: component
+    project: Aeroclub External Applications
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  applications.unsubscribe.surveys:
+    repository: aeroclub.unsubscribe.surveys
+    title: Surveys Unsubscribe
+    entity: component
+    project: Aeroclub External Applications
+    description: Служебные страницы для респондентов (отписка от опросов, опросы на иностранном языке), следящий пиксель в письме-приглашении
+    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=32166429
+    aspects:
+    technologies:
+    links:
+  applications.unsubscribe:
+    repository: aeroclub.unsubscribe
+    title: aeroclub.unsubscribe
+    entity: component
+    project: Aeroclub External Applications
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  applications.3dcontracts:
+    repository: aeroclub.3dcontracts
+    title: 3DContract
+    entity: component
+    project: Aeroclub Internal Applications
+    description: Консоль 3-х сторонних договоров по авиа
+    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=18580201
+    aspects:
+    technologies:
+    links:
+  applications.aria:
+    repository: aeroclub.aria
+    title: Aria
+    entity: component
+    project: Aeroclub Internal Applications
+    description: Приложение для формирования отчетов
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/ARIA
+    aspects:
+    technologies:
+    links:
+  applications.asia.assemblies:
+    repository: aeroclub.asia.assemblies
+    title: aeroclub.asia.assemblies
+    entity: component
+    project: Aeroclub Internal Applications
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  applications.asia.ua:
+    repository: aeroclub.asia.ua
+    title: Sign In (для ASIA UA)
+    entity: component
+    project: Aeroclub Internal Applications
+    description: Проверка логина и пароля для украинской ASIA. Часть проекта ASIA UA
+    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=22119132
+    aspects:
+    technologies:
+    links:
+  applications.asia:
+    repository: aeroclub.asia
+    title: Asia
+    entity: component
+    project: Aeroclub Internal Applications
+    description: Приложение для агентов для формирования офферов, создания бронирований и оформления авиабилетов
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/Asia
+    aspects:
+    technologies:
+    links:
+  applications.asim.tests:
+    repository: aeroclub.asim.tests
+    title: Asim Tests
+    entity: component
+    project: Aeroclub Internal Applications
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  applications.asim:
+    repository: aeroclub.asim
+    title: Asim
+    entity: component
+    project: Aeroclub Internal Applications
+    description: Приложение для агентов для поиска и бронирование отелей. Работа с онлайн/оффлайн отельными услугами
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/Asim
+    aspects:
+    technologies:
+    links:
+  applications.authorizationsconsole:
+    repository: aeroclub.authorizationsconsole
+    title: aeroclub.authorizationsconsole
+    entity: component
+    project: Aeroclub Internal Applications
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  applications.autosender:
+    repository: aeroclub.autosender
+    title: Autosender
+    entity: component
+    project: Aeroclub Internal Applications
+    description: Для рассылки отчетов клиентам и внутренним сотрудникам АК (КАМ, операционка и т.д.)
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/Autosender
+    aspects:
+    technologies:
+    links:
+  applications.callstatistics:
+    repository: aeroclub.callstatistics
+    title: Callstatistics
+    entity: component
+    project: Aeroclub Internal Applications
+    description: Просмотр статистики по звонкам
+    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=22119619
+    aspects:
+    technologies:
+    links:
+  applications.customproperty.gui:
+    repository: aeroclub.customproperty.gui
+    title: CustomProperty.GUI
+    entity: component
+    project: Aeroclub Internal Applications
+    description:
+    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=32148447
+    aspects:
+    technologies:
+    links:
+  applications.directhotels3dcontracts:
+    repository: aeroclub.directhotels3dcontracts
+    title: HotelAgreements
+    entity: component
+    project: Aeroclub Internal Applications
+    description: Консоль для оформления отельных договоров
+    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=18580206
+    aspects:
+    technologies:
+    links:
+  applications.directpayment:
+    repository: aeroclub.directpayment
+    title: DirectPayment
+    entity: component
+    project: Aeroclub Internal Applications
+    description: Консоль для прямого снятия денег с карт, позволяет как снимать деньги с карт, так и возвращать.
+    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=18580204
+    aspects:
+    technologies:
+    links:
+  applications.employees:
+    repository: aeroclub.employees
+    title: Employees
+    entity: component
+    project: Aeroclub Internal Applications
+    description: Консоль для настройки прав сотрудников
+    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=19138707
+    aspects:
+    technologies:
+    links:
+  applications.employeesholding:
+    repository: aeroclub.employeesholding
+    title: EmployeesHolding
+    entity: component
+    project: Aeroclub Internal Applications
+    description: Страница "Сотрудники", на неё есть ссылка с home.aeroclub.int
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/EmployesHolding
+    aspects:
+    technologies:
+    links:
+  applications.financeconsole:
+    repository: aeroclub.financeconsole
+    title: Finance Console
+    entity: component
+    project: Aeroclub Internal Applications
+    description: Для заполнения справочников, которые используются для расчета финансовых показателей. Пользователи через WEB-интерфейс заполняют данные, а консоль выполняет расчеты по ним.
+    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=29233640
+    aspects:
+    technologies:
+    links:
+  applications.games:
+    repository: aeroclub.games
+    title: aeroclub.games
+    entity: component
+    project: Aeroclub Internal Applications
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  applications.invoicingconsole:
+    repository: aeroclub.invoicingconsole
+    title: aeroclub.invoicingconsole
+    entity: component
+    project: Aeroclub Internal Applications
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  applications.jira:
+    repository: jira
+    title: Jira
+    entity: component
+    project: Aeroclub Internal Applications
+    description:
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/Jira
+    aspects:
+    technologies:
+    links:
+  applications.jiraexporter:
+    repository: aeroclub.jiraexporter
+    title: Jira exporter
+    entity: component
+    project: Aeroclub Internal Applications
+    description: Печать карточек из Jira
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/Jira+exporter
+    aspects:
+    technologies:
+    links:
+  applications.midoffice:
+    repository: aeroclub.midoffice
+    title: MidOffice
+    entity: component
+    project: Aeroclub Internal Applications
+    description: Консоль настроек автовыставления
+    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=55673121
+    aspects:
+    technologies:
+    links:
+  applications.perspective:
+    repository: aeroclub.perspective
+    title: aeroclub.perspective
+    entity: component
+    project: Aeroclub Internal Applications
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  applications.phonebook:
+    repository: aeroclub.phonebook
+    title: Phonebook
+    entity: component
+    project: Aeroclub Internal Applications
+    description:
+    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=18580189
+    aspects:
+    technologies:
+    links:
+  applications.qcmonitor:
+    repository: aeroclub.qcmonitor
+    title: QCMonitor
+    entity: component
+    project: Aeroclub Internal Applications
+    description: Контроль качества работы агентов
+    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=18580194
+    aspects:
+    technologies:
+    links:
+  applications.saythanks:
+    repository: aeroclub.saythanks
+    title: aeroclub.saythanks
+    entity: component
+    project: Aeroclub Internal Applications
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  applications.servicedesk:
+    repository: aeroclub.servicedesk
+    title: ServiceDesk
+    entity: component
+    project: Aeroclub Internal Applications
+    description: Страница для просмотра и создания заявок ServiceDesk
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/ServiceDesk
+    aspects:
+    technologies:
+    links:
+  applications.sofconsole:
+    repository: aeroclub.sofconsole
+    title: Sof Console
+    entity: component
+    project: Aeroclub Internal Applications
+    description: Просмотр платежных карт
+    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=18580217
+    aspects:
+    technologies:
+    links:
+  applications.surveysconsole:
+    repository: aeroclub.surveysconsole
+    title: Surveys Console
+    entity: component
+    project: Aeroclub Internal Applications
+    description: Обработка результатов опросов, оценка работы агентов в привязке к отзыву
+    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=32166433
+    aspects:
+    technologies:
+    links:
+  applications.television:
+    repository: aeroclub.television
+    title: aeroclub.television
+    entity: component
+    project: Aeroclub Internal Applications
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  applications.train:
+    repository: aeroclub.train
+    title: Train
+    entity: component
+    project: Aeroclub Internal Applications
+    description:
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/Train
+    aspects:
+    technologies:
+    links:
+  applications.travelpolicy:
+    repository: aeroclub.travelpolicy
+    title: TravelPolicy
+    entity: component
+    project: Aeroclub Internal Applications
+    description: Настройка правил Travel Policy
+    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=29233970
+    aspects:
+    technologies:
+    links:
+  applications.voicerecordings:
+    repository: aeroclub.voicerecordings
+    title: Voice Recordings
+    entity: component
+    project: Aeroclub Internal Applications
+    description: Просмотр истории по звонкам и прослушивание записанных разговоров
+    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=24779468
+    aspects:
+    technologies:
+    links:
+  applications.vpos:
+    repository: aeroclub.vpos
+    title: VirtualPOS
+    entity: component
+    project: Aeroclub Internal Applications
+    description: Формирование и передача транзакции в соответствующую библиотеку провайдера (Pos TR, Pos UCS)
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/VirtualPOS
+    aspects:
+    technologies:
+    links:
+  applications.passport:
+    repository: aeroclub.passport
+    title: Passport
+    entity: component
+    project: Aeroclub Passport
+    description: Предоставление данных для доступа к ресурсам
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/Passport
+    aspects:
+    technologies:
+    links:
+  applications.statusboard:
+    repository: aeroclub.statusboard
+    title: Status Board
+    entity: component
+    project: Aeroclub Statusboard
+    description: Отслеживание статуса автовыставления (и отправка на повторное автовыставление) счетов, выгрузка маршрут-квитанций
+    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=20515850
+    aspects:
+    technologies:
+    links:
+  applications.cabinet:
+    repository: aeroclub.cabinet
+    title: Служба создания GK бронирований
+    entity: component
+    project: Aeroclub Time
+    description: JOB для создания отельных GK сегментов
+    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=19147938
+    aspects:
+    technologies:
+    links:
+  applications.privateoffice:
+    repository: aeroclub.privateoffice
+    title: aeroclub.privateoffice
+    entity: component
+    project: Aeroclub Time
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  applications.time.api.messaging:
+    repository: aeroclub.time.api.messaging
+    title: Time Api Messaging
+    entity: component
+    project: Aeroclub Time
+    description: Служба обновления статистики в базе Travelboard по входящим сообщениям
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/Aeroclub+Time+Api+Messaging
+    aspects:
+    technologies:
+    links:
+  applications.time.api:
+    repository: aeroclub.time.api
+    title: Time Api
+    entity: component
+    project: Aeroclub Time
+    description: Получение данных статистики
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Time.Api
+    aspects:
+    technologies:
+    links:
+  applications.time.avia:
+    repository: aeroclub.time.avia
+    title: Time Avia
+    entity: component
+    project: Aeroclub Time
+    description: Поиск авиа для time. В основном, смысл в кешировании результатов поиска с доступом по OData. Конвертация модели WSCommon в модель для Time
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Time.Avia
+    aspects:
+    technologies:
+    links:
+  applications.time.docs:
+    repository: aeroclub.time.docs
+    title: aeroclub.time.docs
+    entity: component
+    project: Aeroclub Time
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  applications.time.loadtests:
+    repository: aeroclub.time.loadtests
+    title: aeroclub.time.loadtests
+    entity: component
+    project: Aeroclub Time
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  applications.time.tarifffinder:
+    repository: aeroclub.time.tarifffinder
+    title: aeroclub.time.tarifffinder
+    entity: component
+    project: Aeroclub Time
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  applications.time.tests:
+    repository: aeroclub.time.tests
+    title: aeroclub.time.tests
+    entity: component
+    project: Aeroclub Time
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  applications.time.ui:
+    repository: aeroclub.time.ui
+    title: Travelboard
+    entity: component
+    project: Aeroclub Time
+    description:
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/Travelboard
+    aspects:
+    technologies:
+    links:
+  applications.time.userguide:
+    repository: aeroclub.time.userguide
+    title: aeroclub.time.userguide
+    entity: component
+    project: Aeroclub Time
+    description:
+    url:
+    aspects:
+    technologies:
+    links:
+  applications.time:
+    repository: aeroclub.time
+    title: Time
+    entity: component
+    project: Aeroclub Time
+    description: Самостоятельное оформления услуг клиентами
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/Time
+    aspects:
+    technologies:
+    links:
+  applications.vault:
+    repository: aeroclub.vault
+    title: Card Information Service
+    entity: component
+    project: Aeroclub Vault
+    description: Используется для валидации и работы с платежными картами. Проверка валидности карты по дате; возможности оплаты выбранным типом карты определенных поставщиков; определение карты, привязанной к профилю компании; добавление карты, работает с DB PosDB
+    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=19137520
+    aspects:
+    technologies:
+    links:
+  applications.documentation.open.api:
+    repository: aeroclub.documentation.open.api
+    title: Api Documentation
+    entity: component
+    project:
+    description: Cайт с документацией по Aeroclub API
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/Aeroclub.Api.Documentation
+    aspects:
+    technologies:
+    links:
