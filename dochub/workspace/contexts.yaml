@@ -3,10 +3,9 @@ contexts:
     title: Time
     location: Приложения/Time
     components:
-      - aeroclub.time
+      - applications.time
   messages:
     title: Сообщения
     location: Сообщения/BusinessTripCreatedMessage
-    uml:
-    components:
-      - aeroclub.time
+    icon: settings_ethernet
+    uml: messages/message1.puml
