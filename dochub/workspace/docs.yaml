@@ -21,7 +21,8 @@ docs:
             "id": $keys()[0],
             "title": *.title,
             "link": *.url,
-            "project": *.project
+            "project": *.project,
+            "description": *.description
           }
           )]^(id)
       )
