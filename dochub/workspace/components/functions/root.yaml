@@ -1,0 +1,6 @@
+imports:
+components:
+  applications.time.functions.auth:
+    title: Ввод логина и пароля
+    entity: usecase
+

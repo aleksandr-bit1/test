@@ -303,6 +303,8 @@ components:
     aspects:
     technologies:
     links:
+      - id: backgroundservices.indexer
+        direction: --
   services.midoffice:
     repository: aeroclub.services.midoffice
     title: MidOffice Service

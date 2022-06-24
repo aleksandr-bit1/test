@@ -8,10 +8,10 @@ activate Time
 Time -> Time : **Process1**
 Time -> Queue ++ : Message1
 Time <-- Queue : (response)
+deactivate Time
 Queue -> IHub ++ : Message1
 Queue <-- IHub : (response)
 deactivate Queue
 IHub -> IHub : **Process2**
 
-deactivate Time
 @enduml

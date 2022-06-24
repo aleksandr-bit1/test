@@ -507,6 +507,7 @@ components:
     description: Предоставление данных для доступа к ресурсам
     url: http://wiki.aeroclub.int/display/PROJECTDOC/Passport
     aspects:
+      - authentication
     technologies:
     links:
   applications.statusboard:
@@ -637,6 +638,9 @@ components:
     description: Самостоятельное оформления услуг клиентами
     url: http://wiki.aeroclub.int/display/PROJECTDOC/Time
     aspects:
+      - time.functions.authentication
+      - time.businesstrip.list
+      - time.businesstrip.creation
     technologies:
     links:
       - id: db.cabinet
@@ -651,6 +655,7 @@ components:
         direction: --
       - id: services.budgeting
         direction: --
+      - id: applications.passport
   applications.vault:
     repository: aeroclub.vault
     title: Card Information Service

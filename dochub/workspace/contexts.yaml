@@ -1,3 +1,5 @@
+imports:
+  - components/functions/contexts.yaml
 contexts:
   time:
     title: Time

@@ -1,0 +1,10 @@
+aspects:   # Архитектурные аспекты
+  time.functions.authentication:
+    title: Аутентификация
+    location: Блоки/Аутентификация
+  time.businesstrip.list:
+    title: Просмотр списка командировок
+    location: Блоки/Просмотр списка командировок
+  time.businesstrip.creation:
+    title: Создание новой командировки
+    location: Блоки/Создание новой командировки
