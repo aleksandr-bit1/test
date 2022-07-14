@@ -1,4 +1,7 @@
 contexts:
+  time.businesstrip.list:
+    title: Просмотр списка командировок
+    location: Time/Просмотр списка командировок
   applications.time.businesstrip.creation:
     title: Создание новой командировки
     location: Time/Создание новой командировки

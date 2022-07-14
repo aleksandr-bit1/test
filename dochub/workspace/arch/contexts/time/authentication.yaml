@@ -6,7 +6,6 @@ contexts:
     components:
       - applications.time
       - db.cabinet
-      - applications.passport
   applications.time.authentication.login:
     title: Ввод логина
     location: Time/Аутентификация/Ввод логина
@@ -19,10 +18,3 @@ contexts:
     title: Вход с помощью SSO
     location: Time/Аутентификация/Вход с помощью SSO
     uml: ../../puml/time/authentication/sso.puml
-  time.businesstrip.list:
-    title: Просмотр списка командировок
-    location: Time/Просмотр списка командировок
-    components:
-      - applications.time.functions.auth
-      - db.cabinet
-      - applications.passport
