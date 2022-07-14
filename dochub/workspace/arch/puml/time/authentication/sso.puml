@@ -1,0 +1,11 @@
+@startuml
+title Вход с помощью SSO
+
+actor User
+participant "[[/architect/components/applications.time Time]]" as Time
+
+User -> Time ++ : Открытие домена компании пользователя
+activate User
+deactivate User
+
+@enduml

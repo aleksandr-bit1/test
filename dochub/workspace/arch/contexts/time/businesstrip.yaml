@@ -1,0 +1,10 @@
+contexts:
+  applications.time.businesstrip.creation:
+    title: Создание новой командировки
+    location: Time/Создание новой командировки
+  applications.time.businesstrip.creation.step1:
+    title: Создание новой командировки
+    location: Time/Создание новой командировки/Шаг 1
+  applications.time.businesstrip.creation.step2:
+    title: Создание новой командировки
+    location: Time/Создание новой командировки/Шаг 2

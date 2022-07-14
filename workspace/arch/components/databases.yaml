@@ -1,0 +1,47 @@
+components:
+  db.asim:
+    repository: aeroclub.db.asim
+    title: asim
+    entity: database
+    project:
+    description:
+    url:
+    technologies:
+    links:
+  db.authfx:
+    repository: aeroclub.db.authfx
+    title: authfx
+    entity: database
+    project:
+    description:
+    url:
+    technologies:
+    links:
+  db.cabinet:
+    repository: aeroclub.db.cabinet
+    title: Cabinet
+    entity: database
+    project:
+    description:
+    url:
+    technologies:
+    links:
+  db.travelboard:
+    repository: aeroclub.db.travelboard
+    title: travelboard
+    entity: database
+    project:
+    description:
+    url:
+    technologies:
+    links:
+  db.passport:
+    repository: aeroclub.db.passport
+    title: Passport
+    entity: database
+    project:
+    description:
+    url:
+    technologies:
+    links:
+      - id: applications.passport

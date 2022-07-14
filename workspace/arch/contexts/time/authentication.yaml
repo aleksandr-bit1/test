@@ -1,0 +1,28 @@
+contexts:
+  applications.time.authentication:
+    title: Аутентификация в Time
+    location: Time/Аутентификация
+    extra-links: false
+    components:
+      - applications.time
+      - db.cabinet
+      - applications.passport
+  applications.time.authentication.login:
+    title: Ввод логина
+    location: Time/Аутентификация/Ввод логина
+    uml: ../../puml/time/authentication/login.puml
+  applications.time.authentication.password:
+    title: Ввод пароля
+    location: Time/Аутентификация/Ввод пароля
+    uml: ../../puml/time/authentication/password.puml
+  applications.time.authentication.sso:
+    title: Вход с помощью SSO
+    location: Time/Аутентификация/Вход с помощью SSO
+    uml: ../../puml/time/authentication/sso.puml
+  time.businesstrip.list:
+    title: Просмотр списка командировок
+    location: Time/Просмотр списка командировок
+    components:
+      - applications.time.functions.auth
+      - db.cabinet
+      - applications.passport

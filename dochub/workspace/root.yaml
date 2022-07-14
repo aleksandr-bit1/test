@@ -1,9 +1,3 @@
 imports:
-  - aspects.yaml
-  - components/root.yaml
-  - contexts.yaml
-  - datasets.yaml
-  - docs.yaml
-  - forms.yaml
-  - namespaces.yaml
-  - technologies.yaml
+  - arch/root.yaml
+  - docs/root.yaml

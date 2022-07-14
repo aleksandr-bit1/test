@@ -1,0 +1,10 @@
+imports:
+  - authentication.yaml
+  - businesstrip.yaml
+  - messages.yaml
+contexts:
+  applications.time:
+    title: Time
+    location: Time
+    components:
+      - applications.time

@@ -1,0 +1,36 @@
+@startuml
+start
+:Вход в Time;
+if (Вход на домене компании) then (да)
+    label sp_lab0
+    label sp_lab1
+    label sp_lab2
+    label sp_lab3
+    label sp_lab4
+    label sp_lab5
+    label sp_lab5
+    label 123
+    :Вход на странице домена компании;
+    :Авторизация с помощью SSO
+    на стороне клиента;
+else (нет)
+    :Вход на общей странице;
+    :Ввод логина;
+    if (ВКЛЮЧЕНА фича automatic-redirect-to-sso) then (да)
+        :Переадресация на домен компании;
+        goto 123
+    else (нет)
+        :Ввод пароля;
+        if (ВКЛЮЧЕНА фича limited-password-lifetime) then (да)
+            if (Пароль старше 90 дней) then (да)
+                :Ошибка;
+            end
+            else (нет)
+            endif
+        else (нет)
+    endif
+    :Валидация пароля;
+endif
+:Загрузка командировок / профиля пользователя;
+end
+@enduml

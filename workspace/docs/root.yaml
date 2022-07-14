@@ -1,0 +1,31 @@
+docs:
+  dochub_welcome:
+    type: markdown
+    source: welcome.md
+  aeroclub.table:
+    type: table
+    headers:
+      - value: id
+        text: Идентификатор
+        sortable: true
+        align: left
+        link: link       # Идентификатор поля, в котором хранится ссылка
+      - value: title
+        text: Наименование
+      - value: project
+        text: Проект
+      - value: description
+        text: Описание
+    location: Таблица компонентов
+    source: >                # JSONata запрос к архитектуре
+      (
+        [components.$spread().(
+          {
+            "id": $keys()[0],
+            "title": *.title,
+            "link": *.url,
+            "project": *.project,
+            "description": *.description
+          }
+          )]^(id)
+      )

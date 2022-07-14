@@ -1,7 +1,13 @@
-forms:
-  - entity:
-      - component
-    fields:
-      source_file:
-        title: Файл
-        required: true
+forms:                    # Формы
+  - entity:               # Сущности для которых форма релевантна (см. PlantUML)
+      - component         # В данном случае, это компонент
+    fields:               # Поля формы
+      project:
+        title: Проект
+        required: false
+      description:        # Идентификатор поля
+        title: Описание       # Название поля
+        required: false    # Признак обязательности
+      url:
+        title: URL
+        required: false
