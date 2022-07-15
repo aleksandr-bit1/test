@@ -98,6 +98,8 @@ components:
     url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=55702015
     technologies:
     links:
+      - id: db.travelboard
+        direction: -->
   backgroundservices.wscommon:
     repository: aeroclub.backgroundservices.wscommon
     title: WSCMN Backend

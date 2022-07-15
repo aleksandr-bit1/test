@@ -24,8 +24,6 @@ components:
     project:
     description:
     url:
-    technologies:
-    links:
   db.travelboard:
     repository: aeroclub.db.travelboard
     title: travelboard

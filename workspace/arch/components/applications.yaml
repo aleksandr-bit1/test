@@ -1,4 +1,7 @@
 components:
+  applications:
+    entity: component
+    title: Applications
   applications.companies.service:
     repository: aeroclub.companies.service
     title: Companies & Profiles Service
@@ -153,24 +156,46 @@ components:
     technologies:
     links:
       - id: db.passport
-  applications.time.api.messaging:
-    repository: aeroclub.time.api.messaging
-    title: Time Api Messaging
+  applications.time:
+    repository: aeroclub.time
+    title: Time
     entity: component
     project: Aeroclub Time
-    description: Служба обновления статистики в базе Travelboard по входящим сообщениям
-    url: http://wiki.aeroclub.int/display/PROJECTDOC/Aeroclub+Time+Api+Messaging
+    description: Самостоятельное оформления услуг клиентами
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/Time
     technologies:
     links:
-  applications.time.api:
-    repository: aeroclub.time.api
-    title: Time Api
+      - id: applications.travelboard
+        direction: <-->
+  applications.time.backend:
+    repository: aeroclub.time.backend
+    title: Time Backend
     entity: component
     project: Aeroclub Time
-    description: Получение данных статистики
+    description:
     url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Time.Api
     technologies:
     links:
+      - id: db.cabinet
+        direction: -->
+      - id: services.authfx
+        direction: <-->
+      - id: services.propertyfx
+        direction: -->
+      - id: services.businesstrips
+        direction: -->
+      - id: services.journeys
+        direction: -->
+      - id: services.budgeting
+        direction: -->
+      - id: applications.passport
+        direction: -->
+      - id: services.wscommon
+        direction: -->
+      - id: services.time_stateengine
+        direction: -->
+      - id: applications.travelboard.frontend
+        direction: <-->
   applications.time.avia:
     repository: aeroclub.time.avia
     title: Time Avia
@@ -180,6 +205,8 @@ components:
     url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Time.Avia
     technologies:
     links:
+      - id: services.wscommon
+        direction: -->
   applications.time.docs:
     repository: aeroclub.time.docs
     title: aeroclub.time.docs
@@ -216,7 +243,7 @@ components:
     url:
     technologies:
     links:
-  applications.time.ui:
+  applications.travelboard:
     repository: aeroclub.time.ui
     title: Travelboard
     entity: component
@@ -225,6 +252,41 @@ components:
     url: http://wiki.aeroclub.int/display/PROJECTDOC/Travelboard
     technologies:
     links:
+      - id: applications.time
+        direction: <-->
+  applications.travelboard.frontend:
+    repository: aeroclub.time.ui
+    title: Travelboard Frontend
+    entity: component
+    project: Aeroclub Time
+    description:
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/Travelboard
+    technologies:
+    links:
+      - id: applications.travelboard.api
+        direction: -->
+  applications.travelboard.api:
+    repository: aeroclub.time.api
+    title: Travelboard Api
+    entity: component
+    project: Aeroclub Time
+    description: Получение данных статистики
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Time.Api
+    technologies:
+    links:
+      - id: db.travelboard
+        direction: -->
+  applications.travelboard.api.messaging:
+    repository: aeroclub.time.api.messaging
+    title: Travelboard Api Messaging
+    entity: component
+    project: Aeroclub Time
+    description: Служба обновления статистики в базе Travelboard по входящим сообщениям
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/Aeroclub+Time+Api+Messaging
+    technologies:
+    links:
+      - id: db.travelboard
+        direction: -->
   applications.time.userguide:
     repository: aeroclub.time.userguide
     title: aeroclub.time.userguide
@@ -234,29 +296,6 @@ components:
     url:
     technologies:
     links:
-  applications.time:
-    repository: aeroclub.time
-    title: Time
-    entity: component
-    project: Aeroclub Time
-    description: Самостоятельное оформления услуг клиентами
-    url: http://wiki.aeroclub.int/display/PROJECTDOC/Time
-#    aspects:
-    technologies:
-    links:
-      - id: db.cabinet
-        direction: --
-      - id: services.authfx
-        direction: --
-      - id: services.propertyfx
-        direction: --
-      - id: services.businesstrips
-        direction: --
-      - id: services.journeys
-        direction: --
-      - id: services.budgeting
-        direction: --
-      - id: applications.passport
   applications.documentation_api:
     repository: documentation-open-api
     title: Api Documentation

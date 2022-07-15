@@ -3,8 +3,23 @@ imports:
   - businesstrip.yaml
   - messages.yaml
 contexts:
-  applications.time:
+  time:
     title: Time
     location: Time
     components:
       - applications.time
+  applications.time:
+    title: Time
+    location: Time/Архитектура Time
+    extra-links: true
+    components:
+      - applications.time.backend
+      - applications.time.avia
+      - applications.time.docs
+      - applications.time.loadtests
+      - applications.time.tarifffinder
+      - applications.time.tests
+      - applications.time.userguide
+      - services.time_stateengine
+      - services.wscommon
+      - db.cabinet

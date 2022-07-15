@@ -1,0 +1,23 @@
+@startuml
+title Восстановление пароля в Time
+
+actor User
+participant "[[/architect/components/applications.time Time]]" as Time
+database "[[/architect/components/db.cabinet Cabinet]]" as Cabinet
+
+User -> Time ++ : Открытие time.aero
+activate User
+User <-- Time : Отображение формы для ввода логина
+User -> Time : Восстановление пароля
+User <-- Time : Отображение формы для ввода логина пользователя
+User -> Time : Ввод и отправка логина
+alt Фича automatic-redirect-to-sso включена
+Time -> Cabinet ++ : Запрос домена компании из подписки
+return (результат)
+alt SSO настроено
+User <-- Time : [[/architect/contexts/applications.time.authentication.sso Переадресация пользователя на <домен>.time.aero]]
+end alt
+else
+end alt
+return (результат)
+deactivate User

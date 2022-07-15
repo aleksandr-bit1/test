@@ -1,0 +1,29 @@
+@startuml
+title Вход в Time
+
+actor User
+participant "[[/architect/components/applications.time Time]]" as Time
+database "[[/architect/components/db.cabinet Cabinet]]" as Cabinet
+
+User -> Time ++ : Открытие time.aero
+activate User
+User <-- Time : Отображение формы для ввода логина
+User -> Time : Ввод и отправка логина
+Time -> Time : Валидация логина
+
+alt Логин НЕ валиден
+User <-- Time : (ошибка)
+end alt
+
+group Включена фича automatic-redirect-to-sso
+Time -> Cabinet ++ : Запрос домена компании из подписки
+return (результат)
+alt SSO настроено
+User <-- Time : [[/architect/contexts/applications.time.authentication.sso Переадресация пользователя на <sso_domain>.time.aero]]
+end alt
+end group
+
+return  [[/architect/contexts/applications.time.authentication.signin.password Отображение формы для ввода пароля]]
+deactivate User
+
+@enduml
