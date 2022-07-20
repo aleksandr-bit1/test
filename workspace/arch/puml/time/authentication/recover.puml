@@ -11,13 +11,15 @@ User <-- Time : Отображение формы для ввода логина
 User -> Time : Восстановление пароля
 User <-- Time : Отображение формы для ввода логина пользователя
 User -> Time : Ввод и отправка логина
-alt Фича automatic-redirect-to-sso включена
-Time -> Cabinet ++ : Запрос домена компании из подписки
+
+group Фича automatic-redirect-to-sso включена
+    Time -> Cabinet ++ : Запрос домена компании из подписки
+    return (результат)
+    alt SSO настроено
+        User <-- Time : [[/architect/contexts/applications.time.authentication.sso Переадресация пользователя на <домен>.time.aero]]
+    end
+end
+
 return (результат)
-alt SSO настроено
-User <-- Time : [[/architect/contexts/applications.time.authentication.sso Переадресация пользователя на <домен>.time.aero]]
-end alt
-else
-end alt
-return (результат)
+
 deactivate User

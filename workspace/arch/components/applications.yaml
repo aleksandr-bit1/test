@@ -150,6 +150,7 @@ components:
     repository: aeroclub.passport
     title: Passport
     entity: component
+    template: Создать
     project: Aeroclub Passport
     description: Предоставление данных для доступа к ресурсам
     url: http://wiki.aeroclub.int/display/PROJECTDOC/Passport
@@ -160,6 +161,7 @@ components:
     repository: aeroclub.time
     title: Time
     entity: component
+    template: Изменить
     project: Aeroclub Time
     description: Самостоятельное оформления услуг клиентами
     url: http://wiki.aeroclub.int/display/PROJECTDOC/Time
@@ -247,6 +249,7 @@ components:
     repository: aeroclub.time.ui
     title: Travelboard
     entity: component
+    template: Изменить
     project: Aeroclub Time
     description:
     url: http://wiki.aeroclub.int/display/PROJECTDOC/Travelboard
@@ -258,6 +261,7 @@ components:
     repository: aeroclub.time.ui
     title: Travelboard Frontend
     entity: component
+    template: Изменить
     project: Aeroclub Time
     description:
     url: http://wiki.aeroclub.int/display/PROJECTDOC/Travelboard

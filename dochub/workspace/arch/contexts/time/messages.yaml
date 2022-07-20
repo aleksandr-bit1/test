@@ -1,6 +1,0 @@
-contexts:
-  applications.time.messages:
-    title: Message1
-    location: Time/Сообщения/Message1
-    icon: settings_ethernet
-    uml: ../../puml/time/messages/message1.puml

@@ -1,8 +1,0 @@
-imports:
-  - applications.yaml
-  - backgroundservices.yaml
-  - databases.yaml
-  - integration.yaml
-  - services.yaml
-#  - others.yaml
-components:

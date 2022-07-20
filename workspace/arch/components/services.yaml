@@ -133,6 +133,7 @@ components:
     repository: aeroclub.services.journeys
     title: Journeys
     entity: component
+    template: Удалить
     project: Aeroclub Services
     description: Поиск командировок с использованием Lucene-индексера
     url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Journeys

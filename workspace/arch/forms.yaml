@@ -2,6 +2,9 @@ forms:                    # Формы
   - entity:               # Сущности для которых форма релевантна (см. PlantUML)
       - component         # В данном случае, это компонент
     fields:               # Поля формы
+      repository:
+        title: Репозиторий
+        required: false
       project:
         title: Проект
         required: false
