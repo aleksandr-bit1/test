@@ -10,7 +10,7 @@ contexts:
       $before: >
         skinparam component {
           BackgroundColor<<Создать>> LightGreen
-          BackgroundColor<<Изменить>> LightYellow
+          BackgroundColor<<Изменить>> Gold
           BackgroundColor<<Удалить>> Pink
         }
       $notation: plantuml
@@ -24,7 +24,13 @@ contexts:
       $before: >
         skinparam component {
           BackgroundColor<<Создать>> LightGreen
-          BackgroundColor<<Изменить>> LightYellow
+          BackgroundColor<<Изменить>> Gold
+          BackgroundColor<<Удалить>> Pink
+        }
+
+        skinparam rectangle {
+          BackgroundColor<<Создать>> LightGreen
+          BackgroundColor<<Изменить>> Gold
           BackgroundColor<<Удалить>> Pink
         }
       $notation: plantuml
