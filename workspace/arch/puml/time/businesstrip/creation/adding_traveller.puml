@@ -1,0 +1,20 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+actor User
+participant "[[/architect/components/applications.time Time]]" as Time
+participant "[[/architect/components/services.dictionaries Dictionaries Service]]" as Dictionaries
+database "[[/architect/components/db.profiles Profiles DB]]" as Profiles
+
+activate User
+User -> Time ++ : Ввод путешественника
+Time -> Profiles ++ : Запрос сотрудников
+return (результат)
+Time -> Time : Фильтрация сотрудников по правам пользователя
+
+Time -> Profiles ++ : Запрос ДД оставшихся сотрудников
+return (результат)
+return (список сотрудников)
+
+deactivate User
+@enduml

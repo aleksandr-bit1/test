@@ -6,6 +6,7 @@ contexts:
     components:
       - applications.time.backend
       - db.cabinet
+      - db.profiles
   applications.time.authentication.signin.login:
     title: Ввод логина
     location: Time/Аутентификация/1. Вход/Ввод логина

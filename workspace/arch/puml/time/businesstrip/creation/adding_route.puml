@@ -1,0 +1,49 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+actor User
+participant "[[/architect/components/applications.time Time]]" as Time
+participant "[[/architect/components/services.dictionaries Dictionaries Service]]" as Dictionaries
+
+activate User
+
+User -> Time ++ : Открытие страницы создания командировки
+return (результат)
+
+group Добавление основного города
+    User -> Time ++ : Ввод города
+        Time -> Dictionaries ++ : Запрос списка городов
+        return (результат)
+    return (список городов для автокомплита)
+    alt
+        User -> Time ++ : Выбор города из автокомплита
+        return (результат)
+    end
+    User -> Time ++ : Ввод даты прибытия и даты убытия
+    group Включена фича business-trip-duplicate-search
+        Time -> Time : Поиск командировок с пересекаюшимися датами
+        alt Командировки найдены
+            Time --> User : (предупреждение)
+        end
+    end
+    group Включена фича business-trip-duplicate-search-validation
+        Time -> Time : Поиск командировок с пересекаюшимися датами
+        alt Командировки найдены
+            Time -[#red]->x User : (запрет создания командировки) 
+        end
+    end
+    return (результат)
+end
+group Включена фича journey-addCity-show-button
+    alt Добавление следующего города
+    note over User, Time
+        Соотв. **Добавление основного города**
+    end note
+    end
+end
+
+User -> Time : [[/architect/contexts/applications.time.businesstrip.creation.adding_traveller Добавление путешественника]]
+
+deactivate User
+
+@enduml

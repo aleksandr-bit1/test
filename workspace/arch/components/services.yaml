@@ -340,3 +340,14 @@ components:
     url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=18580094
     technologies:
     links:
+  services.dictionaries:
+    repository: aeroclub.platform.dictionaries.service
+    title: Dictionaries Service
+    entity: component
+    project: Aeroclub Platform
+    description:
+    url:
+    technologies:
+    links:
+      - id: db.dictdb
+        direction: -->

@@ -1196,33 +1196,6 @@ components:
     url:
     technologies:
     links:
-  db.dictdb:
-    repository: aeroclub.db.dictdb
-    title: DictDB
-    entity: database
-    project:
-    description:
-    url:
-    technologies:
-    links:
-  db.dictionary:
-    repository: aeroclub.db.dictionary
-    title: DICTIONARY
-    entity: database
-    project:
-    description:
-    url:
-    technologies:
-    links:
-  db.dictionary_ws:
-    repository: aeroclub.db.dictionary_ws
-    title: DICTIONARY_WS
-    entity: database
-    project:
-    description:
-    url:
-    technologies:
-    links:
   db.directcars_v2:
     repository: aeroclub.db.directcars_v2
     title: directcars_v2
@@ -1484,15 +1457,7 @@ components:
     url:
     technologies:
     links:
-  db.profiles:
-    repository: aeroclub.db.profiles
-    title: Profiles
-    entity: database
-    project:
-    description:
-    url:
-    technologies:
-    links:
+
   db.proget:
     repository: aeroclub.db.proget
     title: proget

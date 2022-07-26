@@ -2,15 +2,6 @@ components:
   applications:
     entity: component
     title: Applications
-  applications.companies.service:
-    repository: aeroclub.companies.service
-    title: Companies & Profiles Service
-    entity: component
-    project: Aeroclub Companies
-    description:
-    url:
-    technologies:
-    links:
   applications.companies:
     repository: aeroclub.companies
     title: Companies & Profiles Console
@@ -20,6 +11,18 @@ components:
     url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=18580224
     technologies:
     links:
+      - id: applications.time
+  applications.companies.service:
+    repository: aeroclub.companies.service
+    title: Companies & Profiles Service
+    entity: component
+    project: Aeroclub Companies
+    description:
+    url:
+    technologies:
+    links:
+      - id: db.profiles
+        direction: -->
   applications.flightsegmentresource:
     repository: aeroclub.flightsegmentresource
     title: aeroclub.flightsegmentresource
@@ -198,6 +201,8 @@ components:
         direction: -->
       - id: applications.travelboard.frontend
         direction: <-->
+      - id: db.profiles
+        direction: -->
   applications.time.avia:
     repository: aeroclub.time.avia
     title: Time Avia
@@ -325,6 +330,15 @@ components:
     title: aeroclub.integration.hub.xsd
     entity: component
     project: Aeroclub Integration
+    description:
+    url:
+    technologies:
+    links:
+  applications.dictionaries:
+    repository: aeroclub.platform.dictionaries
+    title: Dictionaries Console
+    entity: component
+    project: Aeroclub Platform
     description:
     url:
     technologies:

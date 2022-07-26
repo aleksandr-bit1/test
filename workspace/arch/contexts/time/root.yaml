@@ -27,12 +27,6 @@ contexts:
           BackgroundColor<<Изменить>> Gold
           BackgroundColor<<Удалить>> Pink
         }
-
-        skinparam rectangle {
-          BackgroundColor<<Создать>> LightGreen
-          BackgroundColor<<Изменить>> Gold
-          BackgroundColor<<Удалить>> Pink
-        }
       $notation: plantuml
     components:
       - applications.time.backend
