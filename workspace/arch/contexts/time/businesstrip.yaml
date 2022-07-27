@@ -2,6 +2,14 @@ contexts:
   applications.time.businesstrip:
     title: Работа с командировкой
     location: Time/Работа с командировкой
+    extra-links: false
+    components:
+      - applications.time.backend
+      - services.dictionaries
+      - services.propertyfx
+      - services.vault
+      - db.cabinet
+      - db.profiles
   applications.time.businesstrip.list:
     title: Просмотр списка командировок
     location: Time/Работа с командировкой/Просмотр списка командировок
@@ -11,8 +19,16 @@ contexts:
   applications.time.businesstrip.creation.adding_route:
     title: Создание новой командировки
     location: Time/Работа с командировкой/Создание новой командировки/1. Ввод маршрута
-    uml: ../../puml/time/businesstrip/creation/adding_route.puml
-  applications.time.businesstrip.creation.adding_traveller:
+    uml: ../../puml/time/businesstrip/creation/route.puml
+  applications.time.businesstrip.creation.traveller:
     title: Создание новой командировки
     location: Time/Работа с командировкой/Создание новой командировки/2. Добавление путешественника
-    uml: ../../puml/time/businesstrip/creation/adding_traveller.puml
+    uml: ../../puml/time/businesstrip/creation/traveller.puml
+  applications.time.businesstrip.creation.custom_property:
+    title: Создание новой командировки
+    location: Time/Работа с командировкой/Создание новой командировки/3. Добавление доп. данных
+    uml: ../../puml/time/businesstrip/creation/custom_property.puml
+  applications.time.businesstrip.creation.expenses:
+    title: Создание новой командировки
+    location: Time/Работа с командировкой/Создание новой командировки/4. Добавление расходов
+    uml: ../../puml/time/businesstrip/creation/expenses.puml

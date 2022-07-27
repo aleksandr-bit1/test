@@ -351,3 +351,12 @@ components:
     links:
       - id: db.dictdb
         direction: -->
+  services.vault:
+    repository: aeroclub.vault
+    title: Card Information Service
+    entity: component
+    project: Aeroclub Vault
+    description: Используется для валидации и работы с платежными картами. Проверка валидности карты по дате; возможности оплаты выбранным типом карты определенных поставщиков; определение карты, привязанной к профилю компании; добавление карты, работает с DB PosDB
+    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=19137520
+    technologies:
+    links:

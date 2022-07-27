@@ -1,0 +1,32 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+
+actor User
+participant "[[/architect/components/applications.time Time]]" as Time
+participant "[[/architect/components/services.propertyfx PropertyFx Service]]" as PropertyFx
+database "[[/architect/components/db.cabinet Cabinet DB]]" as Cabinet
+
+activate User
+
+User -> Time ++ : Переход к заполнению ДД
+    Time -> PropertyFx ++ : Получение дефолтных ДД
+    return (результат)
+return (результат)
+User -> Time ++ : Выбор ДД
+    Time -> PropertyFx ++ : Получение зависимых ДД
+    return (результат)
+return (результат)
+
+group businessTrip-customProperty-megapolisDuctTape
+end
+group company-grade-by-customproperties-journeys-only
+end
+
+User -> Time ++ : Завершение создания командировки
+    Time -> Cabinet ++ : Запись ДД
+    return (результат)
+return (результат)
+
+deactivate User
+@enduml

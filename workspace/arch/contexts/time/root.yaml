@@ -39,3 +39,8 @@ contexts:
       - services.time_stateengine
       - services.wscommon
       - db.cabinet
+      - services.dictionaries
+      - services.propertyfx
+      - services.vault
+      - db.cabinet
+      - db.profiles

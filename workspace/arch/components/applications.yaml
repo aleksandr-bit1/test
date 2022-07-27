@@ -203,6 +203,10 @@ components:
         direction: <-->
       - id: db.profiles
         direction: -->
+      - id: services.dictionaries
+        direction: -->
+      - id: services.vault
+        direction: -->
   applications.time.avia:
     repository: aeroclub.time.avia
     title: Time Avia
