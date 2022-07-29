@@ -2,6 +2,17 @@ contexts:
   applications.time.businesstrip:
     title: Работа с командировкой
     location: Time/Работа с командировкой
+    extra-links: false
+    components:
+      - applications.time.backend
+      - services.dictionaries
+      - services.propertyfx
+      - services.vault
+      - services.budgeting
+      - services.authfx
+      - db.cabinet
+      - db.profiles
+      - backgroundservices.indexer
   applications.time.businesstrip.list:
     title: Просмотр списка командировок
     location: Time/Работа с командировкой/Просмотр списка командировок

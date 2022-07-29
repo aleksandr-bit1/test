@@ -207,6 +207,8 @@ components:
         direction: -->
       - id: services.vault
         direction: -->
+      - id: backgroundservices.indexer
+        direction: -->
   applications.time.avia:
     repository: aeroclub.time.avia
     title: Time Avia
