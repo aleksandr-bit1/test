@@ -36,19 +36,21 @@ end
 
 opt Добавление суточных
     User -> Time ++ : Добавление суточных
+    alt Настроен расчет суточных по доп. параметрам
     Time -> Budgeting ++ : Запрос параметров суточных
     return (результат)
     return (результат)
     User -> Time ++ : Выбор параметров суточных
     return (результат)
     User -> Time ++ : Расчет суточных
+    end
     Time -> Budgeting ++ : Запрос суммы суточных
     return (результат)
     return (результат)
 end
 
 User -> Time ++ : Завершение создания командировки
-Time -> Cabinet ++ : Запись ДД
+Time -> PropertyFx ++ : Запись ДД
 group Включена фича company-grade-by-customproperties-journeys-only
     Time -> Time : Добавление ДД грейд сотрудника (EmployeeLevel)
 end

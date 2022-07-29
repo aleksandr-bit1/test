@@ -6,8 +6,10 @@ actor User
 participant "[[/architect/components/applications.time Time]]" as Time
 participant "[[/architect/components/services.propertyfx PropertyFx Service]]" as PropertyFx
 participant "[[/architect/components/services.vault Acis (vault)]]" as Acis
+participant "[[/architect/components/services.pricingscheme Pricing Scheme Service]]" as PricingScheme
 database "[[/architect/components/db.cabinet Cabinet DB]]" as Cabinet
 database "[[/architect/components/db.profiles Profiles DB]]" as Profiles
+database "[[/architect/components/db.companies Companies DB]]" as Companies
 
 activate User
 
@@ -18,25 +20,31 @@ loop
     Time -> PropertyFx ++ : Получение табельных номер и департаментов
     return (результат)
     return (список сотрудников)
-    User -> Time ++ : Добавление путешественника в список
+    User -> Time ++ : Добавление путешественника\nв список
     return (результат)
 end
 loop
-    User -> Time ++ : Подтверждение списка путешественников
-    Time -> Cabinet ++ : Получение компаний холдинга пользователя согласно \nнастройкам обслуживания и правам пользователя
+    User -> Time ++ : Подтверждение списка\nпутешественников
+    Time -> Cabinet ++ : Получение настроек обслуживания и прав пользователя
+    return (результат)
+    Time -> Companies ++ : Получение компаний холдинга пользователя согласно \nнастройкам обслуживания и правам пользователя
     return (результат)
     group Включена фича set_paymentcompany_from_profilecompany
-        Time -> Time : Компания, выбранная в профиле указывается предвыбранной для путешественника
+        Time -> Time : Компания, выбранная в профиле указывается\nпредвыбранной для путешественника
     end
     group Включена фича business-trip-requisites-company-from-customproperties
-        Time -> PropertyFx ++ : Получение только компаний, для которых заполнены и валидны ДД сотрудника
+        Time -> PropertyFx ++ : Получение только компаний, для которых заполнены\nи валидны ДД сотрудника
         return (результат)
     end
-    Time -> Time : Получение форм оплат, доступных пользователю для выбранной компании
-    Time -> Acis ++ : Получение доступных корп. карт
+    Time -> PricingScheme ++ : Получение форм оплат, доступных пользователю для выбранной компании
+    return (результат)
+    Time -> Acis ++ : Получение доступных карт
     return (результат)
     group Включена фича company-form-of-payments-override-enabled
-        Time -> Time : Переопределение форм оплат
+        Time -> Companies ++ : Переопределение форм оплат???
+        return (результат)
+        Time -> Acis ++ : Получаем и оставляем только карты, доступные сотруднику
+        return (результат)
     end
     group Включена фича trip-only-profile-personal-bankCard-payment-method
         Time -> Acis ++ : Получаем и оставляем только карты, доступные сотруднику
@@ -45,12 +53,13 @@ loop
     group Включена фича profile-personal-bankCard-and-other-payment-method
         Time -> Acis ++ : Получаем и оставляем только карты, доступные сотруднику
         return (результат)
-        Time -> Time : Добавляем остальные формы оплаты, доступные сотруднику
+        Time -> Companies ++ : Добавляем остальные формы оплаты, доступные сотруднику
+        return (результат)
     end
     return (результат)
 end
 loop
-    User -> Time ++ : Выбор города отправления, компании и формы оплаты
+    User -> Time ++ : Выбор города отправления,\nкомпании и формы оплаты
     return (результат)
 end
 User --> Time : [[applications.time.businesstrip.creation.custom_property Переход к заполнению ДД]]

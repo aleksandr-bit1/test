@@ -206,6 +206,8 @@ components:
     url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+CustomPropertyFx
     technologies:
     links:
+      - id: db.cabinet
+        direction: -->
   services.searchvariants:
     repository: aeroclub.services.searchvariants
     title: SearchVariants
