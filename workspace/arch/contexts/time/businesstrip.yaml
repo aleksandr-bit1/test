@@ -2,6 +2,12 @@ contexts:
   applications.time.businesstrip:
     title: Работа с командировкой
     location: Time/Работа с командировкой
+  applications.time.businesstrip.list:
+    title: Просмотр списка командировок
+    location: Time/Работа с командировкой/Просмотр списка командировок
+  applications.time.businesstrip.creation:
+    title: Создание новой командировки
+    location: Time/Работа с командировкой/Создание новой командировки
     extra-links: false
     components:
       - applications.time.backend
@@ -12,12 +18,6 @@ contexts:
       - services.authfx
       - db.cabinet
       - db.profiles
-  applications.time.businesstrip.list:
-    title: Просмотр списка командировок
-    location: Time/Работа с командировкой/Просмотр списка командировок
-  applications.time.businesstrip.creation:
-    title: Создание новой командировки
-    location: Time/Работа с командировкой/Создание новой командировки
   applications.time.businesstrip.creation.adding_route:
     title: Создание новой командировки
     location: Time/Работа с командировкой/Создание новой командировки/1. Ввод маршрута
