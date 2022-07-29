@@ -13,10 +13,10 @@ activate User
 
 loop
     User -> Time ++ : Поиск путешественника
-        Time -> Profiles ++ : Запрос сотрудников
-        return (результат)
-        Time -> PropertyFx ++ : Получение табельных номер и департаментов
-        return (результат)
+    Time -> Profiles ++ : Запрос сотрудников
+    return (результат)
+    Time -> PropertyFx ++ : Получение табельных номер и департаментов
+    return (результат)
     return (список сотрудников)
     User -> Time ++ : Добавление путешественника в список
     return (результат)
@@ -26,7 +26,7 @@ loop
     Time -> Cabinet ++ : Получение компаний холдинга пользователя согласно \nнастройкам обслуживания и правам пользователя
     return (результат)
     group Включена фича set_paymentcompany_from_profilecompany
-    Time -> Time : Компания, выбранная в профиле указывается предвыбранной для путешественника
+        Time -> Time : Компания, выбранная в профиле указывается предвыбранной для путешественника
     end
     group Включена фича business-trip-requisites-company-from-customproperties
         Time -> PropertyFx ++ : Получение только компаний, для которых заполнены и валидны ДД сотрудника
@@ -47,13 +47,13 @@ loop
         return (результат)
         Time -> Time : Добавляем остальные формы оплаты, доступные сотруднику
     end
-return (результат)
+    return (результат)
 end
 loop
     User -> Time ++ : Выбор города отправления, компании и формы оплаты
     return (результат)
 end
-User --> Time : Переход к заполнению ДД
+User --> Time : [[applications.time.businesstrip.creation.custom_property Переход к заполнению ДД]]
 
 deactivate User
 @enduml

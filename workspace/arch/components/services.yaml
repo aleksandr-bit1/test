@@ -47,7 +47,9 @@ components:
     technologies:
     links:
       - id: db.authfx
-        direction: --
+        direction: -->
+      - id: db.cabinet
+        direction: -->
   services.billing:
     repository: aeroclub.services.billing
     title: Billing
@@ -68,7 +70,7 @@ components:
     links:
   services.budgeting:
     repository: aeroclub.services.budgeting
-    title: Budgeting
+    title: Budgeting Service
     entity: component
     project: Aeroclub Services
     description: Производит расчёт суточных в командировке за весь период.

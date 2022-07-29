@@ -12,8 +12,8 @@ return (результат)
 
 group Добавление основного города
     User -> Time ++ : Ввод города
-        Time -> Dictionaries ++ : Запрос списка городов
-        return (результат)
+    Time -> Dictionaries ++ : Запрос списка городов
+    return (результат)
     return (список городов для автокомплита)
     alt
         User -> Time ++ : Выбор города из автокомплита
@@ -29,16 +29,16 @@ group Добавление основного города
     group Включена фича business-trip-duplicate-search-validation
         Time -> Time : Поиск командировок с пересекаюшимися датами
         alt Командировки найдены
-            Time -[#red]->x User : (запрет создания командировки) 
+            Time -[#red]->x User : (запрет создания командировки)
         end
     end
     return (результат)
 end
 group Включена фича journey-addCity-show-button
     alt Добавление следующего города
-    note over User, Time
+        note over User, Time
         Соотв. **Добавление основного города**
-    end note
+        end note
     end
 end
 

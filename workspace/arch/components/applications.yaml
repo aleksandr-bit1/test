@@ -184,7 +184,7 @@ components:
       - id: db.cabinet
         direction: -->
       - id: services.authfx
-        direction: <-->
+        direction: -->
       - id: services.propertyfx
         direction: -->
       - id: services.businesstrips

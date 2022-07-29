@@ -4,29 +4,64 @@
 
 actor User
 participant "[[/architect/components/applications.time Time]]" as Time
-participant "[[/architect/components/services.propertyfx PropertyFx Service]]" as PropertyFx
 database "[[/architect/components/db.cabinet Cabinet DB]]" as Cabinet
+participant "[[/architect/components/services.propertyfx PropertyFx Service]]" as PropertyFx
+participant "[[/architect/components/services.budgeting Budgeting Service]]" as Budgeting
+participant "[[/architect/components/services.authfx AuthFx Service]]" as AuthFx
+
 
 activate User
 
-User -> Time ++ : Переход к заполнению ДД
-    Time -> PropertyFx ++ : Получение дефолтных ДД
+User -> Time ++ : Переход к заполнению ДД и расходов
+group Включена фича trip-expenses
+    Time -> Cabinet ++ : Получение типов расходов
     return (результат)
-return (результат)
-User -> Time ++ : Выбор ДД
-    Time -> PropertyFx ++ : Получение зависимых ДД
-    return (результат)
-return (результат)
-
-group businessTrip-customProperty-megapolisDuctTape
 end
-group company-grade-by-customproperties-journeys-only
+Time -> PropertyFx ++ : Получение ДД командировки
+return (результат)
+group Включена фича company-grade-by-customproperties-journeys-only
+    Time -> Time : Удаление ДД грейд сотрудника (EmployeeLevel)
+end
+return (результат)
+loop
+User -> Time ++ : Выбор ДД
+Time -> PropertyFx ++ : Получение зависимых ДД
+return (результат)
+return (результат)
+end
+loop
+    User -> Time ++ : Добавление расхода
+    return (результат)
+end
+
+opt Добавление суточных
+    User -> Time ++ : Добавление суточных
+    Time -> Budgeting ++ : Запрос параметров суточных
+    return (результат)
+    return (результат)
+    User -> Time ++ : Выбор параметров суточных
+    return (результат)
+    User -> Time ++ : Расчет суточных
+    Time -> Budgeting ++ : Запрос суммы суточных
+    return (результат)
+    return (результат)
 end
 
 User -> Time ++ : Завершение создания командировки
-    Time -> Cabinet ++ : Запись ДД
-    return (результат)
+Time -> Cabinet ++ : Запись ДД
+group Включена фича company-grade-by-customproperties-journeys-only
+    Time -> Time : Добавление ДД грейд сотрудника (EmployeeLevel)
+end
 return (результат)
+Time -> Cabinet ++ : Запись расходов
+return (результат)
+group Активация командировки
+Time -> AuthFx ++ : Проерка на необходимось авторизации командировки
+return (результат)
+Time -> Cabinet ++ : Запись статуса авторизации
+return (результат)
+end
+return (страница командировки)
 
 deactivate User
 @enduml

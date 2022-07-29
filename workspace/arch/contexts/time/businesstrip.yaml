@@ -8,6 +8,8 @@ contexts:
       - services.dictionaries
       - services.propertyfx
       - services.vault
+      - services.budgeting
+      - services.authfx
       - db.cabinet
       - db.profiles
   applications.time.businesstrip.list:
@@ -26,9 +28,5 @@ contexts:
     uml: ../../puml/time/businesstrip/creation/traveller.puml
   applications.time.businesstrip.creation.custom_property:
     title: Создание новой командировки
-    location: Time/Работа с командировкой/Создание новой командировки/3. Добавление доп. данных
+    location: Time/Работа с командировкой/Создание новой командировки/3. Заполнение ДД и расходов
     uml: ../../puml/time/businesstrip/creation/custom_property.puml
-  applications.time.businesstrip.creation.expenses:
-    title: Создание новой командировки
-    location: Time/Работа с командировкой/Создание новой командировки/4. Добавление расходов
-    uml: ../../puml/time/businesstrip/creation/expenses.puml
