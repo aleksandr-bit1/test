@@ -1,4 +1,7 @@
 components:
+  db:
+    title: Databases
+    entity: database
   db.asim:
     repository: aeroclub.db.asim
     title: asim
@@ -72,6 +75,15 @@ components:
   db.dictdb:
     repository: aeroclub.db.dictdb
     title: DictDB
+    entity: database
+    project:
+    description:
+    url:
+    technologies:
+    links:
+  db.pricingscheme:
+    repository: aeroclub.db.pricingscheme
+    title: PricingScheme
     entity: database
     project:
     description:

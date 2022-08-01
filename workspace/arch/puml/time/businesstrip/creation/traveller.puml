@@ -1,12 +1,12 @@
 @startuml
 'https://plantuml.com/sequence-diagram
 
-
 actor User
 participant "[[/architect/components/applications.time Time]]" as Time
 participant "[[/architect/components/services.propertyfx PropertyFx Service]]" as PropertyFx
 participant "[[/architect/components/services.vault Acis (vault)]]" as Acis
 participant "[[/architect/components/services.pricingscheme Pricing Scheme Service]]" as PricingScheme
+participant "[[/architect/components/services.businesstrips BusinessTrips Service]]" as BusinessTrips
 database "[[/architect/components/db.cabinet Cabinet DB]]" as Cabinet
 database "[[/architect/components/db.profiles Profiles DB]]" as Profiles
 database "[[/architect/components/db.companies Companies DB]]" as Companies
@@ -62,7 +62,10 @@ loop
     User -> Time ++ : Выбор города отправления,\nкомпании и формы оплаты
     return (результат)
 end
-User --> Time : [[applications.time.businesstrip.creation.custom_property Переход к заполнению ДД]]
+User -> Time ++ : Переход к добавлению ДД и расходов
+Time -> BusinessTrips ++ : Создание командировки в статусе черновика
+return (результат)
+return [[applications.time.businesstrip.creation.custom_property Страница заполнения ДД и расходов]]
 
 deactivate User
 @enduml

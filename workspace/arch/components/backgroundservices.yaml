@@ -1,4 +1,7 @@
 components:
+  backgroundservices:
+    title: Background Services
+    entity: component
   backgroundservices.flightsegmentresource:
     repository: aeroclub.backgroundservices.flightsegmentresource
     title: DocumentApi

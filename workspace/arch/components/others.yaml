@@ -1439,16 +1439,6 @@ components:
     url:
     technologies:
     links:
-  db.pricingscheme:
-    repository: aeroclub.db.pricingscheme
-    title: PricingScheme
-    entity: database
-    project:
-    description:
-    url:
-    technologies:
-    links:
-
   db.proget:
     repository: aeroclub.db.proget
     title: proget

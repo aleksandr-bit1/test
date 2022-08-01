@@ -8,6 +8,9 @@ participant "[[/architect/components/services.dictionaries Dictionaries Service]
 activate User
 
 User -> Time ++ : Открытие страницы создания командировки
+group Включена фича journey-addCity-show-button
+Time -> Time : Отображение кнопки для добавления нескольких городов
+end
 return (результат)
 
 group Добавление основного города
@@ -42,7 +45,7 @@ group Включена фича journey-addCity-show-button
     end
 end
 
-User -> Time : [[/architect/contexts/applications.time.businesstrip.creation.adding_traveller Добавление путешественника]]
+User -> Time : [[/architect/contexts/applications.time.businesstrip.creation.traveller Добавление путешественника]]
 
 deactivate User
 

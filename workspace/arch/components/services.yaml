@@ -1,4 +1,7 @@
 components:
+  services:
+    title: Services
+    entity: component
   services.api.query:
     repository: aeroclub.services.api.query
     title: Api Query
@@ -75,17 +78,24 @@ components:
     project: Aeroclub Services
     description: Производит расчёт суточных в командировке за весь период.
     url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Budgeting
-    technologies:
-    links:
+  services.budgeting.scripts:
+    repository: aeroclub.services.budgeting
+    title: Budgeting Scripts
+    entity: file
+    project: Aeroclub Services
+    description: Производит расчёт суточных в командировке за весь период.
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Budgeting
   services.businesstrips:
     repository: aeroclub.services.businesstrips
-    title: BusinessTrips
+    title: BusinessTrips Service
     entity: component
     project: Aeroclub Services
     description: Создан для агрегации бизнес-логики из области командировок, на первом этапе реализует импорт командировок из внешних систем
     url: http://wiki.aeroclub.int/display/PROJECTDOC/BusinessTrips+Service
     technologies:
     links:
+      - id: db.cabinet
+        direction: -->
   services.companies:
     repository: aeroclub.services.companies
     title: Companies (Актуальный)
@@ -113,6 +123,17 @@ components:
     url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=19141735
     technologies:
     links:
+  services.pricingscheme:
+    repository: aeroclub.services.companiesws.v2
+    title: PricingScheme Service
+    entity: component
+    project: Aeroclub Services
+    description: Сервис предназначен для работы с профайлами клиентов и компаний
+    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=19141735
+    technologies:
+    links:
+      - id: db.pricingscheme
+        direction: -->
   services.features:
     repository: aeroclub.services.features
     title: aeroclub.services.features

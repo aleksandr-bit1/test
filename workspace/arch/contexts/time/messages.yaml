@@ -1,6 +1,9 @@
 contexts:
   applications.time.messages:
-    title: Message1
-    location: Time/Сообщения/Message1
+    title: Сообщения
+    location: Time/Сообщения
     icon: settings_ethernet
+  applications.time.messages.BusinessTripNotRequiredAssertionMessage:
+    title: BusinessTripNotRequiredAssertionMessage
+    location: Time/Сообщения/BusinessTripNotRequiredAssertionMessage
     uml: ../../puml/time/messages/message1.puml

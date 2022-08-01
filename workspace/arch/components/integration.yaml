@@ -1,4 +1,7 @@
 components:
+  integration:
+    title: Integration
+    entity: component
   integration.flightstatus:
     repository: aeroclub.integration.flightstatus
     title: Flightstatus Integration

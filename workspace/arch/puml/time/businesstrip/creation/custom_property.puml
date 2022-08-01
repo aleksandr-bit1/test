@@ -1,13 +1,13 @@
 @startuml
 'https://plantuml.com/sequence-diagram
 
-
 actor User
 participant "[[/architect/components/applications.time Time]]" as Time
 database "[[/architect/components/db.cabinet Cabinet DB]]" as Cabinet
 participant "[[/architect/components/services.propertyfx PropertyFx Service]]" as PropertyFx
 participant "[[/architect/components/services.budgeting Budgeting Service]]" as Budgeting
 participant "[[/architect/components/services.authfx AuthFx Service]]" as AuthFx
+queue Queue
 
 
 activate User
@@ -20,7 +20,7 @@ end
 Time -> PropertyFx ++ : Получение ДД командировки
 return (результат)
 group Включена фича company-grade-by-customproperties-journeys-only
-    Time -> Time : Удаление ДД грейд сотрудника (EmployeeLevel)
+    Time -> Time : Удаление ДД "Грейд сотрудника" (EmployeeLevel)
 end
 return (результат)
 loop
@@ -52,7 +52,7 @@ end
 User -> Time ++ : Завершение создания командировки
 Time -> PropertyFx ++ : Запись ДД
 group Включена фича company-grade-by-customproperties-journeys-only
-    Time -> Time : Добавление ДД грейд сотрудника (EmployeeLevel)
+    Time -> Time : Добавление ДД "Цель поедки" (purpose_of_trip)\nкак "Грейд сотрудника" (EmployeeLevel)
 end
 return (результат)
 Time -> Cabinet ++ : Запись расходов
@@ -60,10 +60,15 @@ return (результат)
 group Активация командировки
 Time -> AuthFx ++ : Проерка на необходимось авторизации командировки
 return (результат)
-Time -> Cabinet ++ : Запись статуса авторизации
-return (результат)
+Time -> Cabinet ++ : Активация командировки
+Time -> Time : Запись статусов командировки
+alt Авторизация факта поездки НЕ требуется
+Time -> Queue : Отправка сообщения [[/architect/contexts/applications.time.messages.BusinessTripNotRequiredAssertionMessage BusinessTripNotRequiredAssertionMessage]]
 end
+return (результат)
+
 return (страница командировки)
 
 deactivate User
 @enduml
+
