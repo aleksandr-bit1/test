@@ -10,7 +10,6 @@ components:
     description: Интеграция с сервисом FlightStatus
     url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Integration.Flightstatus
     technologies:
-    links:
   integration.iway:
     repository: aeroclub.integration.iway
     title: aeroclub.integration.iway
@@ -19,7 +18,6 @@ components:
     description:
     url:
     technologies:
-    links:
   integration.transfers:
     repository: aeroclub.integration.transfers
     title: Integration Transfers
@@ -28,4 +26,3 @@ components:
     description: Получение сообщений от поставщиков трансферов с изменениями по заказу. С последующей отправкой сообщений в RabbitMQ
     url: http://wiki.aeroclub.int/display/PROJECTDOC/Integration+Transfers
     technologies:
-    links:

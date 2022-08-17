@@ -31,7 +31,6 @@ components:
     description:
     url:
     technologies:
-    links:
   applications.link:
     repository: aeroclub.link
     title: Link
@@ -40,7 +39,6 @@ components:
     description: Мобильное приложение для работы с заказами- Авиа, ЖД, Отели
     url: http://wiki.aeroclub.int/display/PROJECTDOC/Link
     technologies:
-    links:
   applications.aria:
     repository: aeroclub.aria
     title: Aria
@@ -49,7 +47,6 @@ components:
     description: Приложение для формирования отчетов
     url: http://wiki.aeroclub.int/display/PROJECTDOC/ARIA
     technologies:
-    links:
   applications.asia.assemblies:
     repository: aeroclub.asia.assemblies
     title: aeroclub.asia.assemblies
@@ -58,7 +55,6 @@ components:
     description:
     url:
     technologies:
-    links:
   applications.asia.ua:
     repository: aeroclub.asia.ua
     title: Sign In (для ASIA UA)
@@ -67,7 +63,6 @@ components:
     description: Проверка логина и пароля для украинской ASIA. Часть проекта ASIA UA
     url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=22119132
     technologies:
-    links:
   applications.asia:
     repository: aeroclub.asia
     title: Asia
@@ -76,7 +71,6 @@ components:
     description: Приложение для агентов для формирования офферов, создания бронирований и оформления авиабилетов
     url: http://wiki.aeroclub.int/display/PROJECTDOC/Asia
     technologies:
-    links:
   applications.asim.tests:
     repository: aeroclub.asim.tests
     title: Asim Tests
@@ -85,7 +79,6 @@ components:
     description:
     url:
     technologies:
-    links:
   applications.asim:
     repository: aeroclub.asim
     title: Asim
@@ -94,7 +87,6 @@ components:
     description: Приложение для агентов для поиска и бронирование отелей. Работа с онлайн/оффлайн отельными услугами
     url: http://wiki.aeroclub.int/display/PROJECTDOC/Asim
     technologies:
-    links:
   applications.employees:
     repository: aeroclub.employees
     title: Employees
@@ -103,7 +95,6 @@ components:
     description: Консоль для настройки прав сотрудников
     url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=19138707
     technologies:
-    links:
   applications.employeesholding:
     repository: aeroclub.employeesholding
     title: EmployeesHolding
@@ -112,7 +103,6 @@ components:
     description: Страница "Сотрудники", на неё есть ссылка с home.aeroclub.int
     url: http://wiki.aeroclub.int/display/PROJECTDOC/EmployesHolding
     technologies:
-    links:
   applications.midoffice:
     repository: aeroclub.midoffice
     title: MidOffice
@@ -121,7 +111,6 @@ components:
     description: Консоль настроек автовыставления
     url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=55673121
     technologies:
-    links:
   applications.train:
     repository: aeroclub.train
     title: Train
@@ -130,7 +119,6 @@ components:
     description:
     url: http://wiki.aeroclub.int/display/PROJECTDOC/Train
     technologies:
-    links:
   applications.travelpolicy:
     repository: aeroclub.travelpolicy
     title: TravelPolicy
@@ -139,7 +127,6 @@ components:
     description: Настройка правил Travel Policy
     url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=29233970
     technologies:
-    links:
   applications.vpos:
     repository: aeroclub.vpos
     title: VirtualPOS
@@ -148,12 +135,11 @@ components:
     description: Формирование и передача транзакции в соответствующую библиотеку провайдера (Pos TR, Pos UCS)
     url: http://wiki.aeroclub.int/display/PROJECTDOC/VirtualPOS
     technologies:
-    links:
   applications.passport:
     repository: aeroclub.passport
     title: Passport
-    entity: component
-    template: Создать
+    entity: $component
+    type: Изменить
     project: Aeroclub Passport
     description: Предоставление данных для доступа к ресурсам
     url: http://wiki.aeroclub.int/display/PROJECTDOC/Passport
@@ -163,8 +149,8 @@ components:
   applications.time:
     repository: aeroclub.time
     title: Time
-    entity: component
-    template: Изменить
+    entity: $component
+    type: Изменить
     project: Aeroclub Time
     description: Самостоятельное оформления услуг клиентами
     url: http://wiki.aeroclub.int/display/PROJECTDOC/Time
@@ -175,7 +161,8 @@ components:
   applications.time.backend:
     repository: aeroclub.time.backend
     title: Time Backend
-    entity: component
+    entity: $component
+    type: Удалить
     project: Aeroclub Time
     description:
     url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Time.Api
@@ -228,7 +215,6 @@ components:
     description:
     url:
     technologies:
-    links:
   applications.time.loadtests:
     repository: aeroclub.time.loadtests
     title: aeroclub.time.loadtests
@@ -237,7 +223,6 @@ components:
     description:
     url:
     technologies:
-    links:
   applications.time.tarifffinder:
     repository: aeroclub.time.tarifffinder
     title: aeroclub.time.tarifffinder
@@ -246,7 +231,6 @@ components:
     description:
     url:
     technologies:
-    links:
   applications.time.tests:
     repository: aeroclub.time.tests
     title: aeroclub.time.tests
@@ -255,12 +239,11 @@ components:
     description:
     url:
     technologies:
-    links:
   applications.travelboard:
     repository: aeroclub.time.ui
     title: Travelboard
-    entity: component
-    template: Изменить
+    entity: $component
+    type: Изменить
     project: Aeroclub Time
     description:
     url: http://wiki.aeroclub.int/display/PROJECTDOC/Travelboard
@@ -271,8 +254,8 @@ components:
   applications.travelboard.frontend:
     repository: aeroclub.time.ui
     title: Travelboard Frontend
-    entity: component
-    template: Изменить
+    entity: $component
+    type: Создать
     project: Aeroclub Time
     description:
     url: http://wiki.aeroclub.int/display/PROJECTDOC/Travelboard
@@ -310,7 +293,6 @@ components:
     description:
     url:
     technologies:
-    links:
   applications.documentation_api:
     repository: documentation-open-api
     title: Api Documentation
@@ -319,7 +301,6 @@ components:
     description: Cайт с документацией по Aeroclub API
     url: http://wiki.aeroclub.int/display/PROJECTDOC/Aeroclub.Api.Documentation
     technologies:
-    links:
   applications.integration_hub:
     repository: aeroclub.integration.hub
     title: Integration Hub
@@ -328,9 +309,6 @@ components:
     description: Комплекс приложений и сервисов, обеспечивающий функциональность по взаимной интеграции программных комплексов клиентов и внутренних сервисов "Аэроклуб?
     url: http://wiki.aeroclub.int/display/PROJECTDOC/Aeroclub+Integration+Hub
     technologies:
-    links:
-      - id: db.integrationhub
-        direction: --
   applications.integration_hub.xsd:
     repository: aeroclub.integration.hub.xsd
     title: aeroclub.integration.hub.xsd
@@ -339,7 +317,6 @@ components:
     description:
     url:
     technologies:
-    links:
   applications.dictionaries:
     repository: aeroclub.platform.dictionaries
     title: Dictionaries Console
@@ -348,4 +325,3 @@ components:
     description:
     url:
     technologies:
-    links:

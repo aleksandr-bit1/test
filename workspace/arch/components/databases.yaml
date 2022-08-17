@@ -10,7 +10,6 @@ components:
     description:
     url:
     technologies:
-    links:
   db.authfx:
     repository: aeroclub.db.authfx
     title: authfx
@@ -19,7 +18,6 @@ components:
     description:
     url:
     technologies:
-    links:
   db.cabinet:
     repository: aeroclub.db.cabinet
     title: Cabinet
@@ -35,7 +33,6 @@ components:
     description:
     url:
     technologies:
-    links:
   db.passport:
     repository: aeroclub.db.passport
     title: Passport
@@ -62,7 +59,6 @@ components:
     description:
     url:
     technologies:
-    links:
   db.dictionary_ws:
     repository: aeroclub.db.dictionary_ws
     title: DICTIONARY_WS
@@ -71,7 +67,6 @@ components:
     description:
     url:
     technologies:
-    links:
   db.dictdb:
     repository: aeroclub.db.dictdb
     title: DictDB
@@ -80,7 +75,6 @@ components:
     description:
     url:
     technologies:
-    links:
   db.pricingscheme:
     repository: aeroclub.db.pricingscheme
     title: PricingScheme
@@ -89,4 +83,3 @@ components:
     description:
     url:
     technologies:
-    links:

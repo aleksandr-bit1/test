@@ -10,7 +10,6 @@ components:
     description: Генерация и получение документов. В данный момент реализовано получение справок по использованным билетам.
     url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=20521650
     technologies:
-    links:
   backgroundservices.flightstatus:
     repository: aeroclub.backgroundservices.flightstatus
     title: FlightStatus
@@ -19,7 +18,6 @@ components:
     description:
     url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=29231528
     technologies:
-    links:
   backgroundservices.indexer:
     repository: aeroclub.backgroundservices.indexer
     title: Aeroclub Indexer
@@ -28,7 +26,6 @@ components:
     description: Индексирование профайлов и командировок
     url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=29231585
     technologies:
-    links:
   backgroundservices.itrgenerator:
     repository: aeroclub.backgroundservices.itrgenerator
     title: ITR Generator
@@ -37,7 +34,6 @@ components:
     description:
     url: http://wiki.aeroclub.int/display/PROJECTDOC/ITR+Generator
     technologies:
-    links:
   backgroundservices.orders:
     repository: aeroclub.backgroundservices.orders
     title: Orders Backend
@@ -46,7 +42,6 @@ components:
     description: Отслеживает сообщения в "кролике"- поисковые запросы, события. Обрабатывает события, результат - отправляет в шину
     url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=19141097
     technologies:
-    links:
   backgroundservices.ordersindexer:
     repository: aeroclub.backgroundservices.ordersindexer
     title: aeroclub.backgroundservices.ordersindexer
@@ -55,7 +50,6 @@ components:
     description:
     url:
     technologies:
-    links:
   backgroundservices.profilesindexer:
     repository: aeroclub.backgroundservices.profilesindexer
     title: aeroclub.backgroundservices.profilesindexer
@@ -64,7 +58,6 @@ components:
     description:
     url:
     technologies:
-    links:
   backgroundservices.taskscheduler:
     repository: aeroclub.backgroundservices.taskscheduler
     title: Task Scheduler
@@ -73,7 +66,6 @@ components:
     description: Робот обеспечивает функционал по планированию и выполнению произвольных задач.
     url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=24781839
     technologies:
-    links:
   backgroundservices.ticketsexporter:
     repository: aeroclub.backgroundservices.ticketsexporter
     title: Ticket exporter
@@ -82,7 +74,6 @@ components:
     description: Экспортирует услуги в систему Tickets для дальнейшего выставления счетов клиентам
     url: http://wiki.aeroclub.int/display/PROJECTDOC/Ticket+exporter
     technologies:
-    links:
   backgroundservices.ticketsimporter:
     repository: aeroclub.backgroundservices.ticketsimporter
     title: aeroclub.backgroundservices.ticketsimporter
@@ -91,7 +82,6 @@ components:
     description:
     url:
     technologies:
-    links:
   backgroundservices.travelboard:
     repository: aeroclub.backgroundservices.travelboard
     title: Travelboard Backend
@@ -111,4 +101,3 @@ components:
     description: Служба для работы с WSCMN и отсылки сообщений в RabbitMQ с результатами работы с WSCMN
     url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=32174056
     technologies:
-    links:

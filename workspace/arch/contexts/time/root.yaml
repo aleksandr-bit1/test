@@ -6,28 +6,12 @@ contexts:
   time:
     title: Time
     location: Time
-    uml:
-      $before: >
-        skinparam component {
-          BackgroundColor<<Создать>> LightGreen
-          BackgroundColor<<Изменить>> Gold
-          BackgroundColor<<Удалить>> Pink
-        }
-      $notation: plantuml
     components:
       - applications.time
   applications.time:
     title: Time
     location: Time/Архитектура Time
     extra-links: true
-    uml:
-      $before: >
-        skinparam component {
-          BackgroundColor<<Создать>> LightGreen
-          BackgroundColor<<Изменить>> Gold
-          BackgroundColor<<Удалить>> Pink
-        }
-      $notation: plantuml
     components:
       - applications.time.backend
       - applications.time.avia

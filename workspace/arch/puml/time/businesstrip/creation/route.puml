@@ -40,7 +40,7 @@ end
 group Включена фича journey-addCity-show-button
     alt Добавление следующего города
         note over User, Time
-        Соотв. **Добавление основного города**
+        Соответствует **Добавлению основного города**
         end note
     end
 end

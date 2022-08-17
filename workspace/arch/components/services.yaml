@@ -10,7 +10,6 @@ components:
     description: Используется для получения специфичной информации о заказах, командировках, проездных документах и пр. из базы Cabinet
     url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Mobile+Api+Query
     technologies:
-    links:
   services.api.redis_cache:
     repository: aeroclub.services.api.redis.cache
     title: aeroclub.services.api.redis.cache
@@ -19,7 +18,6 @@ components:
     description:
     url:
     technologies:
-    links:
   services.api.tests:
     repository: aeroclub.services.api.tests
     title: aeroclub.services.api.tests
@@ -28,7 +26,6 @@ components:
     description:
     url:
     technologies:
-    links:
   services.api:
     repository: aeroclub.services.api
     title: Api
@@ -61,7 +58,6 @@ components:
     description: Ведение расходов по договору
     url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Billing
     technologies:
-    links:
   services.billingws:
     repository: aeroclub.services.billingws
     title: aeroclub.services.billingws
@@ -70,7 +66,6 @@ components:
     description:
     url:
     technologies:
-    links:
   services.budgeting:
     repository: aeroclub.services.budgeting
     title: Budgeting Service
@@ -104,7 +99,6 @@ components:
     description: Сервис предназначен для работы с профайлами компаний
     url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=19141737
     technologies:
-    links:
   services.companiesws_v1:
     repository: aeroclub.services.companiesws.v1
     title: Profiles v1 (Актуальный)
@@ -113,7 +107,6 @@ components:
     description:
     url:
     technologies:
-    links:
   services.companiesws_v2:
     repository: aeroclub.services.companiesws.v2
     title: Profiles v2 (Актуальный)
@@ -122,7 +115,6 @@ components:
     description: Сервис предназначен для работы с профайлами клиентов и компаний
     url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=19141735
     technologies:
-    links:
   services.pricingscheme:
     repository: aeroclub.services.companiesws.v2
     title: PricingScheme Service
@@ -142,7 +134,6 @@ components:
     description:
     url:
     technologies:
-    links:
   services.itr:
     repository: aeroclub.services.itr
     title: Itr
@@ -151,7 +142,6 @@ components:
     description: Генерация отельных и трансферных ваучеров
     url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+ITR+Service
     technologies:
-    links:
   services.journeys:
     repository: aeroclub.services.journeys
     title: Journeys
@@ -172,7 +162,6 @@ components:
     description: Сервис получения/добавления/редактирования настроек автовыставления из БД MidOffice
     url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+MidOffice
     technologies:
-    links:
   services.orders.query:
     repository: aeroclub.services.orders.query
     title: Orders Query
@@ -181,7 +170,6 @@ components:
     description: Поиск услуг в ASIM
     url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Orders+Query
     technologies:
-    links:
   services.orders:
     repository: aeroclub.services.orders
     title: Orders
@@ -190,7 +178,6 @@ components:
     description:
     url:
     technologies:
-    links:
   services.ordersws.tests:
     repository: aeroclub.services.ordersws.tests
     title: aeroclub.services.ordersws.tests
@@ -199,7 +186,6 @@ components:
     description:
     url:
     technologies:
-    links:
   services.ordersws:
     repository: aeroclub.services.ordersws
     title: Orders WS
@@ -208,7 +194,6 @@ components:
     description: Создание и обновление услуг, черновиков; добавление в услуги доп. данных, документов, профилей путешественников и т.д.
     url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Orders
     technologies:
-    links:
   services.profiles:
     repository: aeroclub.services.profiles
     title: Profiles (Актуальный)
@@ -217,7 +202,6 @@ components:
     description: Сервис предназначен для работы с профайлами пользователей
     url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=19141795
     technologies:
-    links:
   services.propertyfx:
     repository: aeroclub.services.propertyfx
     title: CustomPropertyFx Service
@@ -237,7 +221,6 @@ components:
     description: "Сервис поиска вариантов (авиа, жд, отели). Дёргается из OrdersBackend.\n\nВыполняет поиск вариантов в WsCommon и складывает результаты в кэш Redis."
     url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+SearchVariants
     technologies:
-    links:
   services.taskscheduler:
     repository: aeroclub.services.taskscheduler
     title: aeroclub.services.taskscheduler
@@ -246,8 +229,6 @@ components:
     description:
     url:
     technologies:
-    links:
-
   services.ticketing.tests:
     repository: aeroclub.services.ticketing.tests
     title: aeroclub.services.ticketing.tests
@@ -256,7 +237,6 @@ components:
     description:
     url:
     technologies:
-    links:
   services.ticketing:
     repository: aeroclub.services.ticketing
     title: Ticketing
@@ -265,7 +245,6 @@ components:
     description: Бронирование, выписка, обновление статусов - ЖД и Авиабилеты, через WSCommon
     url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Ticketing
     technologies:
-    links:
   services.time_stateengine:
     repository: aeroclub.services.time.stateengine
     title: Time StateEngine
@@ -274,7 +253,6 @@ components:
     description: Получение возможных действий над командировкой. Проверка возможности конкретного действия с командировкой.
     url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Time.StateEngine
     technologies:
-    links:
   services.tophotels:
     repository: aeroclub.services.tophotels
     title: aeroclub.services.tophotels
@@ -283,7 +261,6 @@ components:
     description:
     url:
     technologies:
-    links:
   services.transfers:
     repository: aeroclub.services.transfers
     title: DirectCars Transfers
@@ -292,7 +269,6 @@ components:
     description: Взаимодействие с БД DirectCars
     url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+DirectCars+Transfers
     technologies:
-    links:
   services.travelpolicy:
     repository: aeroclub.services.travelpolicy
     title: TravelPolicy Service
@@ -301,7 +277,6 @@ components:
     description: Проверка опций перелетов, размещений в отеле, ж/д на соответствие TravelPolicy клиента
     url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+TravelPolicy
     technologies:
-    links:
   services.wscommon.assemblies:
     repository: aeroclub.services.wscommon.assemblies
     title: aeroclub.services.wscommon.assemblies
@@ -310,7 +285,6 @@ components:
     description:
     url:
     technologies:
-    links:
   services.wscommon.avia:
     repository: aeroclub.services.wscommon.avia
     title: Avia
@@ -319,7 +293,6 @@ components:
     description: API для разработки другими командами своих продуктов
     url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Avia
     technologies:
-    links:
   services.wscommon.hotels:
     repository: aeroclub.services.wscommon.hotels
     title: Hotels
@@ -328,7 +301,6 @@ components:
     description: Сервис предназначен для работы с отельными поставщиками
     url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Hotels
     technologies:
-    links:
   services.wscommon.rail:
     repository: aeroclub.services.wscommon.rail
     title: Rail
@@ -337,7 +309,6 @@ components:
     description: Сервис предназначен для общения с ЖД поставщиками
     url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Rail
     technologies:
-    links:
   services.wscommon.tests:
     repository: aeroclub.services.wscommon.tests
     title: aeroclub.services.wscommon.tests
@@ -346,7 +317,6 @@ components:
     description:
     url:
     technologies:
-    links:
   services.wscommon.transfers:
     repository: aeroclub.services.wscommon.transfers
     title: Transfers
@@ -355,7 +325,6 @@ components:
     description: Взаимодействие с поставщиком услуг трансферов (IWay)
     url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Transfers
     technologies:
-    links:
   services.wscommon:
     repository: aeroclub.services.wscommon
     title: WsCommon
@@ -364,7 +333,6 @@ components:
     description: Сервис для интеграции с поставщиками данных - GDS, Booking И т.д.
     url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=18580094
     technologies:
-    links:
   services.dictionaries:
     repository: aeroclub.platform.dictionaries.service
     title: Dictionaries Service
@@ -384,4 +352,3 @@ components:
     description: Используется для валидации и работы с платежными картами. Проверка валидности карты по дате; возможности оплаты выбранным типом карты определенных поставщиков; определение карты, привязанной к профилю компании; добавление карты, работает с DB PosDB
     url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=19137520
     technologies:
-    links:
