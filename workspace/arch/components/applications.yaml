@@ -149,8 +149,7 @@ components:
   applications.time:
     repository: aeroclub.time
     title: Time
-    entity: $component
-    type: Изменить
+    entity: component
     project: Aeroclub Time
     description: Самостоятельное оформления услуг клиентами
     url: http://wiki.aeroclub.int/display/PROJECTDOC/Time
