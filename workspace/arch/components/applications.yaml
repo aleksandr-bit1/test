@@ -138,7 +138,7 @@ components:
   applications.passport:
     repository: aeroclub.passport
     title: Passport
-    entity: $component
+    entity: component
     type: Изменить
     project: Aeroclub Passport
     description: Предоставление данных для доступа к ресурсам
@@ -160,7 +160,7 @@ components:
   applications.time.backend:
     repository: aeroclub.time.backend
     title: Time Backend
-    entity: $component
+    entity: component
     type: Удалить
     project: Aeroclub Time
     description:
@@ -169,6 +169,7 @@ components:
     links:
       - id: db.cabinet
         direction: -->
+        title: тест
       - id: services.authfx
         direction: -->
       - id: services.propertyfx
@@ -241,7 +242,7 @@ components:
   applications.travelboard:
     repository: aeroclub.time.ui
     title: Travelboard
-    entity: $component
+    entity: component
     type: Изменить
     project: Aeroclub Time
     description:
@@ -253,7 +254,7 @@ components:
   applications.travelboard.frontend:
     repository: aeroclub.time.ui
     title: Travelboard Frontend
-    entity: $component
+    entity: component
     type: Создать
     project: Aeroclub Time
     description:

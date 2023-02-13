@@ -3,6 +3,9 @@ contexts:
     title: Аутентификация в Time
     location: Time/Аутентификация
     extra-links: false
+    uml:
+      $before: >
+        !pragma layout elk
     components:
       - applications.time.backend
       - db.cabinet
