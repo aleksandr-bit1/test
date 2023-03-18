@@ -28,3 +28,24 @@ contexts:
       - services.vault
       - db.cabinet
       - db.profiles
+      - db.
+  applications.new-time:
+    title: New Time
+    location: New Time
+    extra-links: true
+    components:
+      - applications.travelboard
+  applications.travelboard:
+    title: New Time
+    location: New Time/travelboard
+    extra-links: true
+    components:
+      - applications.travelboard.api
+  applications.travelboard.api:
+    title: New Time
+    location: New Time/travelboard/api
+    extra-links: true
+    components:
+      - services.api.query
+      - services.companies
+      - services.authfx

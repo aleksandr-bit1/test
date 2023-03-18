@@ -1142,15 +1142,6 @@ components:
     url:
     technologies:
     links:
-  db.companies:
-    repository: aeroclub.db.companies
-    title: Companies
-    entity: database
-    project:
-    description:
-    url:
-    technologies:
-    links:
   db.companies_legacy:
     repository: aeroclub.db.companies_legacy
     title: Companies_Legacy

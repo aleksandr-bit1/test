@@ -10,6 +10,9 @@ components:
     description: Используется для получения специфичной информации о заказах, командировках, проездных документах и пр. из базы Cabinet
     url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Mobile+Api+Query
     technologies:
+    links:
+      - id: db.cabinet
+        direction: -->
   services.api.redis_cache:
     repository: aeroclub.services.api.redis.cache
     title: aeroclub.services.api.redis.cache
@@ -99,6 +102,11 @@ components:
     description: Сервис предназначен для работы с профайлами компаний
     url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=19141737
     technologies:
+    links:
+      - id: db.companies
+        direction: -->
+      - id: db.cabinet
+        direction: -->
   services.companiesws_v1:
     repository: aeroclub.services.companiesws.v1
     title: Profiles v1 (Актуальный)

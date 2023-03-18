@@ -83,3 +83,12 @@ components:
     description:
     url:
     technologies:
+  db.companies:
+    repository: aeroclub.db.companies
+    title: Companies
+    entity: database
+    project:
+    description:
+    url:
+    technologies:
+    links:

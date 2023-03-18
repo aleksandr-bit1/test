@@ -29,3 +29,7 @@ docs:
           }
           )]^(id)
       )
+  arch_records:
+    type: markdown
+    location: Реестр архитектурных решений/2023/02/15
+    source: 23-02-15.md

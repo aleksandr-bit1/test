@@ -1,15 +1,17 @@
 @startuml
 'https://plantuml.com/sequence-diagram
 
+skinparam MaxMessageSize 250
+
 actor User
 participant "[[/architect/components/applications.time Time]]" as Time
-participant "[[/architect/components/services.propertyfx PropertyFx Service]]" as PropertyFx
-participant "[[/architect/components/services.vault Acis (vault)]]" as Acis
-participant "[[/architect/components/services.pricingscheme Pricing Scheme Service]]" as PricingScheme
-participant "[[/architect/components/services.businesstrips BusinessTrips Service]]" as BusinessTrips
-database "[[/architect/components/db.cabinet Cabinet DB]]" as Cabinet
-database "[[/architect/components/db.profiles Profiles DB]]" as Profiles
-database "[[/architect/components/db.companies Companies DB]]" as Companies
+participant "[[/architect/components/services.propertyfx PropertyFx\nService]]" as PropertyFx
+participant "[[/architect/components/services.vault Acis\n(vault)]]" as Acis
+participant "[[/architect/components/services.pricingscheme PricingScheme\nService]]" as PricingScheme
+participant "[[/architect/components/services.businesstrips BusinessTrips\nService]]" as BusinessTrips
+database "[[/architect/components/db.cabinet CabinetDB]]" as Cabinet
+database "[[/architect/components/db.profiles ProfilesDB]]" as Profiles
+database "[[/architect/components/db.companies CompaniesDB]]" as Companies
 
 activate User
 
@@ -20,20 +22,20 @@ loop
     Time -> PropertyFx ++ : Получение табельных номер и департаментов
     return (результат)
     return (список сотрудников)
-    User -> Time ++ : Добавление путешественника\nв список
+    User -> Time ++ : Добавление путешественника в список
     return (результат)
 end
 loop
-    User -> Time ++ : Подтверждение списка\nпутешественников
+    User -> Time ++ : Подтверждение списка путешественников
     Time -> Cabinet ++ : Получение настроек обслуживания и прав пользователя
     return (результат)
-    Time -> Companies ++ : Получение компаний холдинга пользователя согласно \nнастройкам обслуживания и правам пользователя
+    Time -> Companies ++ : Получение компаний холдинга пользователя согласно настройкам обслуживания и правам пользователя
     return (результат)
     group Включена фича set_paymentcompany_from_profilecompany
-        Time -> Time : Компания, выбранная в профиле указывается\nпредвыбранной для путешественника
+        Time -> Time : Компания, выбранная в профиле указывается предвыбранной для путешественника
     end
     group Включена фича business-trip-requisites-company-from-customproperties
-        Time -> PropertyFx ++ : Получение только компаний, для которых заполнены\nи валидны ДД сотрудника
+        Time -> PropertyFx ++ : Получение только компаний, для которых заполнены и валидны ДД сотрудника
         return (результат)
     end
     Time -> PricingScheme ++ : Получение форм оплат, доступных пользователю для выбранной компании
@@ -59,7 +61,7 @@ loop
     return (результат)
 end
 loop
-    User -> Time ++ : Выбор города отправления,\nкомпании и формы оплаты
+    User -> Time ++ : Выбор города отправления, компании и формы оплаты
     return (результат)
 end
 User -> Time ++ : Переход к добавлению ДД и расходов

@@ -274,6 +274,10 @@ components:
     links:
       - id: db.travelboard
         direction: -->
+      - id: services.api.query
+        direction: -->
+      - id: services.companies
+        direction: -->
   applications.travelboard.api.messaging:
     repository: aeroclub.time.api.messaging
     title: Travelboard Api Messaging
