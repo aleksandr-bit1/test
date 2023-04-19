@@ -2,27 +2,3 @@ components:
   integration:
     title: Integration
     entity: component
-  integration.flightstatus:
-    repository: aeroclub.integration.flightstatus
-    title: Flightstatus Integration
-    entity: component
-    project: Aeroclub Integration
-    description: Интеграция с сервисом FlightStatus
-    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Integration.Flightstatus
-    technologies:
-  integration.iway:
-    repository: aeroclub.integration.iway
-    title: aeroclub.integration.iway
-    entity: component
-    project: Aeroclub Integration
-    description:
-    url:
-    technologies:
-  integration.transfers:
-    repository: aeroclub.integration.transfers
-    title: Integration Transfers
-    entity: component
-    project: Aeroclub Services
-    description: Получение сообщений от поставщиков трансферов с изменениями по заказу. С последующей отправкой сообщений в RabbitMQ
-    url: http://wiki.aeroclub.int/display/PROJECTDOC/Integration+Transfers
-    technologies:

@@ -2,22 +2,6 @@ components:
   db:
     title: Databases
     entity: database
-  db.asim:
-    repository: aeroclub.db.asim
-    title: asim
-    entity: database
-    project:
-    description:
-    url:
-    technologies:
-  db.authfx:
-    repository: aeroclub.db.authfx
-    title: authfx
-    entity: database
-    project:
-    description:
-    url:
-    technologies:
   db.cabinet:
     repository: aeroclub.db.cabinet
     title: Cabinet
@@ -27,7 +11,7 @@ components:
     url:
   db.travelboard:
     repository: aeroclub.db.travelboard
-    title: travelboard
+    title: Travelboard
     entity: database
     project:
     description:
@@ -70,14 +54,6 @@ components:
   db.dictdb:
     repository: aeroclub.db.dictdb
     title: DictDB
-    entity: database
-    project:
-    description:
-    url:
-    technologies:
-  db.pricingscheme:
-    repository: aeroclub.db.pricingscheme
-    title: PricingScheme
     entity: database
     project:
     description:

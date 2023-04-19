@@ -2,6 +2,10 @@ imports:
   - authentication.yaml
   - businesstrip.yaml
   - messages.yaml
+entities:
+  contexts:
+    config:
+      renderCore: graphviz #elk | graphviz
 contexts:
   time:
     title: Time
@@ -29,18 +33,18 @@ contexts:
       - db.cabinet
       - db.profiles
       - db.
-  applications.new-time:
+  applications.newtime:
     title: New Time
     location: New Time
     extra-links: true
     components:
-      - applications.travelboard
-  applications.travelboard:
-    title: New Time
-    location: New Time/travelboard
+      - applications.newtime
+  services.timeApi:
+    title: TimeAPI
+    location: New Time/TimeAPI
     extra-links: true
     components:
-      - applications.travelboard.api
+      - services.timeApi
   applications.travelboard.api:
     title: New Time
     location: New Time/travelboard/api

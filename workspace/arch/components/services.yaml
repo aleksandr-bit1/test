@@ -2,9 +2,21 @@ components:
   services:
     title: Services
     entity: component
-  services.api.query:
+  services.aeroclubApi:
+    repository: aeroclub.services.api
+    title: AeroclubApi
+    entity: component
+    project: Aeroclub Services
+    description: Работа с мобильным приложением Link
+    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=18580096
+    technologies:
+    links:
+      - id: services.aeroclubApiQuery
+        direction: -->
+        title: Получение информации
+  services.aeroclubApiQuery:
     repository: aeroclub.services.api.query
-    title: Api Query
+    title: AeroclubApiQuery
     entity: component
     project: Aeroclub Services
     description: Используется для получения специфичной информации о заказах, командировках, проездных документах и пр. из базы Cabinet
@@ -13,79 +25,9 @@ components:
     links:
       - id: db.cabinet
         direction: -->
-  services.api.redis_cache:
-    repository: aeroclub.services.api.redis.cache
-    title: aeroclub.services.api.redis.cache
-    entity: component
-    project: Aeroclub Services
-    description:
-    url:
-    technologies:
-  services.api.tests:
-    repository: aeroclub.services.api.tests
-    title: aeroclub.services.api.tests
-    entity: component
-    project: Aeroclub Services
-    description:
-    url:
-    technologies:
-  services.api:
-    repository: aeroclub.services.api
-    title: Api
-    entity: component
-    project: Aeroclub Services
-    description: Работа с мобильным приложением Link
-    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=18580096
-    technologies:
-    links:
-      - id: services.authfx
-        direction: --
-  services.authfx:
-    repository: aeroclub.services.authfx
-    title: AuthFx Service
-    entity: component
-    project: Aeroclub Services
-    description: Авторизация услуг, командировок пользователей.
-    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+AuthFx
-    technologies:
-    links:
-      - id: db.authfx
-        direction: -->
-      - id: db.cabinet
-        direction: -->
-  services.billing:
-    repository: aeroclub.services.billing
-    title: Billing
-    entity: component
-    project: Aeroclub Services
-    description: Ведение расходов по договору
-    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Billing
-    technologies:
-  services.billingws:
-    repository: aeroclub.services.billingws
-    title: aeroclub.services.billingws
-    entity: component
-    project: Aeroclub Services
-    description:
-    url:
-    technologies:
-  services.budgeting:
-    repository: aeroclub.services.budgeting
-    title: Budgeting Service
-    entity: component
-    project: Aeroclub Services
-    description: Производит расчёт суточных в командировке за весь период.
-    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Budgeting
-  services.budgeting.scripts:
-    repository: aeroclub.services.budgeting
-    title: Budgeting Scripts
-    entity: file
-    project: Aeroclub Services
-    description: Производит расчёт суточных в командировке за весь период.
-    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Budgeting
   services.businesstrips:
     repository: aeroclub.services.businesstrips
-    title: BusinessTrips Service
+    title: BusinessTrips
     entity: component
     project: Aeroclub Services
     description: Создан для агрегации бизнес-логики из области командировок, на первом этапе реализует импорт командировок из внешних систем
@@ -96,36 +38,18 @@ components:
         direction: -->
   services.companies:
     repository: aeroclub.services.companies
-    title: Companies (Актуальный)
+    title: Companies
     entity: component
     project: Aeroclub Services
-    description: Сервис предназначен для работы с профайлами компаний
+    description: REST cервис предназначен для работы с профайлами компаний
     url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=19141737
     technologies:
     links:
       - id: db.companies
         direction: -->
-      - id: db.cabinet
-        direction: -->
-  services.companiesws_v1:
-    repository: aeroclub.services.companiesws.v1
-    title: Profiles v1 (Актуальный)
-    entity: component
-    project: Aeroclub Services
-    description:
-    url:
-    technologies:
-  services.companiesws_v2:
-    repository: aeroclub.services.companiesws.v2
-    title: Profiles v2 (Актуальный)
-    entity: component
-    project: Aeroclub Services
-    description: Сервис предназначен для работы с профайлами клиентов и компаний
-    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=19141735
-    technologies:
   services.pricingscheme:
     repository: aeroclub.services.companiesws.v2
-    title: PricingScheme Service
+    title: PricingScheme
     entity: component
     project: Aeroclub Services
     description: Сервис предназначен для работы с профайлами клиентов и компаний
@@ -134,22 +58,6 @@ components:
     links:
       - id: db.pricingscheme
         direction: -->
-  services.features:
-    repository: aeroclub.services.features
-    title: aeroclub.services.features
-    entity: component
-    project: Aeroclub Services
-    description:
-    url:
-    technologies:
-  services.itr:
-    repository: aeroclub.services.itr
-    title: Itr
-    entity: component
-    project: Aeroclub Services
-    description: Генерация отельных и трансферных ваучеров
-    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+ITR+Service
-    technologies:
   services.journeys:
     repository: aeroclub.services.journeys
     title: Journeys
@@ -162,57 +70,31 @@ components:
     links:
       - id: backgroundservices.indexer
         direction: --
-  services.midoffice:
-    repository: aeroclub.services.midoffice
-    title: MidOffice Service
-    entity: component
-    project: Aeroclub Services
-    description: Сервис получения/добавления/редактирования настроек автовыставления из БД MidOffice
-    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+MidOffice
-    technologies:
-  services.orders.query:
-    repository: aeroclub.services.orders.query
-    title: Orders Query
-    entity: component
-    project: Aeroclub Services
-    description: Поиск услуг в ASIM
-    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Orders+Query
-    technologies:
-  services.orders:
-    repository: aeroclub.services.orders
-    title: Orders
-    entity: component
-    project: Aeroclub Services
-    description:
-    url:
-    technologies:
-  services.ordersws.tests:
-    repository: aeroclub.services.ordersws.tests
-    title: aeroclub.services.ordersws.tests
-    entity: component
-    project: Aeroclub Services
-    description:
-    url:
-    technologies:
   services.ordersws:
     repository: aeroclub.services.ordersws
-    title: Orders WS
+    title: OrdersWS
     entity: component
     project: Aeroclub Services
     description: Создание и обновление услуг, черновиков; добавление в услуги доп. данных, документов, профилей путешественников и т.д.
     url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Orders
     technologies:
+    links:
+      - id: db.cabinet
+        direction: --
   services.profiles:
     repository: aeroclub.services.profiles
-    title: Profiles (Актуальный)
+    title: Profiles
     entity: component
     project: Aeroclub Services
-    description: Сервис предназначен для работы с профайлами пользователей
+    description: REST сервис предназначен для работы с профайлами пользователей
     url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=19141795
     technologies:
+    links:
+      - id: db.profiles
+        direction: --
   services.propertyfx:
     repository: aeroclub.services.propertyfx
-    title: CustomPropertyFx Service
+    title: PropertyFx
     entity: component
     project: Aeroclub Services
     description: Работа с доп. данными в Time и Link
@@ -221,30 +103,6 @@ components:
     links:
       - id: db.cabinet
         direction: -->
-  services.searchvariants:
-    repository: aeroclub.services.searchvariants
-    title: SearchVariants
-    entity: component
-    project:
-    description: "Сервис поиска вариантов (авиа, жд, отели). Дёргается из OrdersBackend.\n\nВыполняет поиск вариантов в WsCommon и складывает результаты в кэш Redis."
-    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+SearchVariants
-    technologies:
-  services.taskscheduler:
-    repository: aeroclub.services.taskscheduler
-    title: aeroclub.services.taskscheduler
-    entity: component
-    project: Aeroclub Services
-    description:
-    url:
-    technologies:
-  services.ticketing.tests:
-    repository: aeroclub.services.ticketing.tests
-    title: aeroclub.services.ticketing.tests
-    entity: component
-    project: Aeroclub Services
-    description:
-    url:
-    technologies:
   services.ticketing:
     repository: aeroclub.services.ticketing
     title: Ticketing
@@ -255,95 +113,15 @@ components:
     technologies:
   services.time_stateengine:
     repository: aeroclub.services.time.stateengine
-    title: Time StateEngine
+    title: Time_StateEngine
     entity: component
     project: Aeroclub Services
     description: Получение возможных действий над командировкой. Проверка возможности конкретного действия с командировкой.
     url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Time.StateEngine
     technologies:
-  services.tophotels:
-    repository: aeroclub.services.tophotels
-    title: aeroclub.services.tophotels
-    entity: component
-    project: Aeroclub Services
-    description:
-    url:
-    technologies:
-  services.transfers:
-    repository: aeroclub.services.transfers
-    title: DirectCars Transfers
-    entity: component
-    project: Aeroclub Services
-    description: Взаимодействие с БД DirectCars
-    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+DirectCars+Transfers
-    technologies:
-  services.travelpolicy:
-    repository: aeroclub.services.travelpolicy
-    title: TravelPolicy Service
-    entity: component
-    project: Aeroclub Services
-    description: Проверка опций перелетов, размещений в отеле, ж/д на соответствие TravelPolicy клиента
-    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+TravelPolicy
-    technologies:
-  services.wscommon.assemblies:
-    repository: aeroclub.services.wscommon.assemblies
-    title: aeroclub.services.wscommon.assemblies
-    entity: component
-    project: Aeroclub Services
-    description:
-    url:
-    technologies:
-  services.wscommon.avia:
-    repository: aeroclub.services.wscommon.avia
-    title: Avia
-    entity: component
-    project: Aeroclub Services
-    description: API для разработки другими командами своих продуктов
-    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Avia
-    technologies:
-  services.wscommon.hotels:
-    repository: aeroclub.services.wscommon.hotels
-    title: Hotels
-    entity: component
-    project: Aeroclub Services
-    description: Сервис предназначен для работы с отельными поставщиками
-    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Hotels
-    technologies:
-  services.wscommon.rail:
-    repository: aeroclub.services.wscommon.rail
-    title: Rail
-    entity: component
-    project: Aeroclub Services
-    description: Сервис предназначен для общения с ЖД поставщиками
-    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Rail
-    technologies:
-  services.wscommon.tests:
-    repository: aeroclub.services.wscommon.tests
-    title: aeroclub.services.wscommon.tests
-    entity: component
-    project: Aeroclub Services
-    description:
-    url:
-    technologies:
-  services.wscommon.transfers:
-    repository: aeroclub.services.wscommon.transfers
-    title: Transfers
-    entity: component
-    project: Aeroclub Services
-    description: Взаимодействие с поставщиком услуг трансферов (IWay)
-    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Transfers
-    technologies:
-  services.wscommon:
-    repository: aeroclub.services.wscommon
-    title: WsCommon
-    entity: component
-    project: Aeroclub Services
-    description: Сервис для интеграции с поставщиками данных - GDS, Booking И т.д.
-    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=18580094
-    technologies:
   services.dictionaries:
     repository: aeroclub.platform.dictionaries.service
-    title: Dictionaries Service
+    title: Dictionaries
     entity: component
     project: Aeroclub Platform
     description:
@@ -354,9 +132,48 @@ components:
         direction: -->
   services.vault:
     repository: aeroclub.vault
-    title: Card Information Service
+    title: Vault (ACIS)
     entity: component
     project: Aeroclub Vault
-    description: Используется для валидации и работы с платежными картами. Проверка валидности карты по дате; возможности оплаты выбранным типом карты определенных поставщиков; определение карты, привязанной к профилю компании; добавление карты, работает с DB PosDB
+    description: Он же Aeroclub Card Information Service (ACIS). Используется для валидации и работы с платежными картами. Проверка валидности карты по дате; возможности оплаты выбранным типом карты определенных поставщиков; определение карты, привязанной к профилю компании; добавление карты, работает с DB PosDB
     url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=19137520
     technologies:
+    links:
+  services.inappstory:
+    repository:
+    title: InAppStory
+    entity: component
+    project: 
+    description: Сервис для отображение историй
+    url: https://inappstory.ru/
+    technologies:
+  services.timeApi:
+    repository: aeroclub.time.api
+    title: TimeApi
+    entity: component
+    project: Aeroclub Time
+    description: Получение данных статистики
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Time.Api
+    technologies:
+    links:
+      - id: db.travelboard
+        direction: -->
+        title: Получение статистики для виджетов менеджера
+      - id: db.cabinet
+        direction: -->
+        title: Получение настроек виджетов
+      - id: services.aeroclubApi
+        direction: -->
+        title: Получение доступных компаний и форм оплаты
+      - id: services.aeroclubApiQuery
+        direction: -->
+        title: Получение информации из БД Cabinet
+      - id: services.dictionaries
+        direction: -->
+        title: Получение справочников
+      - id: services.profiles
+        direction: -->
+        title: Получение информации профиля
+      - id: services.companies
+        direction: -->
+        title: Получение настроек подписки

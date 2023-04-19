@@ -1,0 +1,331 @@
+components:
+  applications:
+    entity: component
+    title: Applications
+  applications.companies:
+    repository: aeroclub.companies
+    title: Companies & Profiles Console
+    entity: component
+    project: Aeroclub Companies
+    description: Консоль для настроек компаний
+    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=18580224
+    technologies:
+    links:
+      - id: applications.time
+  applications.companies.service:
+    repository: aeroclub.companies.service
+    title: Companies & Profiles Service
+    entity: component
+    project: Aeroclub Companies
+    description:
+    url:
+    technologies:
+    links:
+      - id: db.profiles
+        direction: -->
+  applications.flightsegmentresource:
+    repository: aeroclub.flightsegmentresource
+    title: aeroclub.flightsegmentresource
+    entity: component
+    project: Aeroclub External Applications
+    description:
+    url:
+    technologies:
+  applications.link:
+    repository: aeroclub.link
+    title: Link
+    entity: component
+    project: Aeroclub External Applications
+    description: Мобильное приложение для работы с заказами- Авиа, ЖД, Отели
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/Link
+    technologies:
+  applications.aria:
+    repository: aeroclub.aria
+    title: Aria
+    entity: component
+    project: Aeroclub Internal Applications
+    description: Приложение для формирования отчетов
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/ARIA
+    technologies:
+  applications.asia.assemblies:
+    repository: aeroclub.asia.assemblies
+    title: aeroclub.asia.assemblies
+    entity: component
+    project: Aeroclub Internal Applications
+    description:
+    url:
+    technologies:
+  applications.asia.ua:
+    repository: aeroclub.asia.ua
+    title: Sign In (для ASIA UA)
+    entity: component
+    project: Aeroclub Internal Applications
+    description: Проверка логина и пароля для украинской ASIA. Часть проекта ASIA UA
+    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=22119132
+    technologies:
+  applications.asia:
+    repository: aeroclub.asia
+    title: Asia
+    entity: component
+    project: Aeroclub Internal Applications
+    description: Приложение для агентов для формирования офферов, создания бронирований и оформления авиабилетов
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/Asia
+    technologies:
+  applications.asim.tests:
+    repository: aeroclub.asim.tests
+    title: Asim Tests
+    entity: component
+    project: Aeroclub Internal Applications
+    description:
+    url:
+    technologies:
+  applications.asim:
+    repository: aeroclub.asim
+    title: Asim
+    entity: component
+    project: Aeroclub Internal Applications
+    description: Приложение для агентов для поиска и бронирование отелей. Работа с онлайн/оффлайн отельными услугами
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/Asim
+    technologies:
+  applications.employees:
+    repository: aeroclub.employees
+    title: Employees
+    entity: component
+    project: Aeroclub Internal Applications
+    description: Консоль для настройки прав сотрудников
+    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=19138707
+    technologies:
+  applications.employeesholding:
+    repository: aeroclub.employeesholding
+    title: EmployeesHolding
+    entity: component
+    project: Aeroclub Internal Applications
+    description: Страница "Сотрудники", на неё есть ссылка с home.aeroclub.int
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/EmployesHolding
+    technologies:
+  applications.midoffice:
+    repository: aeroclub.midoffice
+    title: MidOffice
+    entity: component
+    project: Aeroclub Internal Applications
+    description: Консоль настроек автовыставления
+    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=55673121
+    technologies:
+  applications.train:
+    repository: aeroclub.train
+    title: Train
+    entity: component
+    project: Aeroclub Internal Applications
+    description:
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/Train
+    technologies:
+  applications.travelpolicy:
+    repository: aeroclub.travelpolicy
+    title: TravelPolicy
+    entity: component
+    project: Aeroclub Internal Applications
+    description: Настройка правил Travel Policy
+    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=29233970
+    technologies:
+  applications.vpos:
+    repository: aeroclub.vpos
+    title: VirtualPOS
+    entity: component
+    project: Aeroclub Internal Applications
+    description: Формирование и передача транзакции в соответствующую библиотеку провайдера (Pos TR, Pos UCS)
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/VirtualPOS
+    technologies:
+  applications.passport:
+    repository: aeroclub.passport
+    title: Passport
+    entity: component
+    type: Изменить
+    project: Aeroclub Passport
+    description: Предоставление данных для доступа к ресурсам
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/Passport
+    technologies:
+    links:
+      - id: db.passport
+  applications.time:
+    repository: aeroclub.time
+    title: Time
+    entity: component
+    project: Aeroclub Time
+    description: Самостоятельное оформления услуг клиентами
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/Time
+    technologies:
+    links:
+      - id: applications.travelboard
+        direction: <-->
+  applications.time.backend:
+    repository: aeroclub.time.backend
+    title: Time Backend
+    entity: component
+    type: Удалить
+    project: Aeroclub Time
+    description:
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Time.Api
+    technologies:
+    links:
+      - id: db.cabinet
+        direction: -->
+        title: тест
+      - id: services.authfx
+        direction: -->
+      - id: services.propertyfx
+        direction: -->
+      - id: services.businesstrips
+        direction: -->
+      - id: services.journeys
+        direction: -->
+      - id: services.budgeting
+        direction: -->
+      - id: applications.passport
+        direction: -->
+      - id: services.wscommon
+        direction: -->
+      - id: services.time_stateengine
+        direction: -->
+      - id: applications.travelboard.frontend
+        direction: <-->
+      - id: db.profiles
+        direction: -->
+      - id: services.dictionaries
+        direction: -->
+      - id: services.vault
+        direction: -->
+      - id: backgroundservices.indexer
+        direction: -->
+  applications.time.avia:
+    repository: aeroclub.time.avia
+    title: Time Avia
+    entity: component
+    project: Aeroclub Time
+    description: Поиск авиа для time. В основном, смысл в кешировании результатов поиска с доступом по OData. Конвертация модели WSCommon в модель для Time
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Time.Avia
+    technologies:
+    links:
+      - id: services.wscommon
+        direction: -->
+  applications.time.docs:
+    repository: aeroclub.time.docs
+    title: aeroclub.time.docs
+    entity: component
+    project: Aeroclub Time
+    description:
+    url:
+    technologies:
+  applications.time.loadtests:
+    repository: aeroclub.time.loadtests
+    title: aeroclub.time.loadtests
+    entity: component
+    project: Aeroclub Time
+    description:
+    url:
+    technologies:
+  applications.time.tarifffinder:
+    repository: aeroclub.time.tarifffinder
+    title: aeroclub.time.tarifffinder
+    entity: component
+    project: Aeroclub Time
+    description:
+    url:
+    technologies:
+  applications.time.tests:
+    repository: aeroclub.time.tests
+    title: aeroclub.time.tests
+    entity: component
+    project: Aeroclub Time
+    description:
+    url:
+    technologies:
+  applications.travelboard:
+    repository: aeroclub.time.ui
+    title: Travelboard
+    entity: component
+    type: Изменить
+    project: Aeroclub Time
+    description:
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/Travelboard
+    technologies:
+    links:
+      - id: applications.time
+        direction: <-->
+  applications.travelboard.frontend:
+    repository: aeroclub.time.ui
+    title: Travelboard Frontend
+    entity: component
+    type: Создать
+    project: Aeroclub Time
+    description:
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/Travelboard
+    technologies:
+    links:
+      - id: applications.travelboard.api
+        direction: -->
+  applications.travelboard.api:
+    repository: aeroclub.time.api
+    title: Travelboard Api
+    entity: component
+    project: Aeroclub Time
+    description: Получение данных статистики
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Time.Api
+    technologies:
+    links:
+      - id: db.travelboard
+        direction: -->
+      - id: services.api.query
+        direction: -->
+      - id: services.companies
+        direction: -->
+  applications.travelboard.api.messaging:
+    repository: aeroclub.time.api.messaging
+    title: Travelboard Api Messaging
+    entity: component
+    project: Aeroclub Time
+    description: Служба обновления статистики в базе Travelboard по входящим сообщениям
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/Aeroclub+Time+Api+Messaging
+    technologies:
+    links:
+      - id: db.travelboard
+        direction: -->
+  applications.time.userguide:
+    repository: aeroclub.time.userguide
+    title: aeroclub.time.userguide
+    entity: component
+    project: Aeroclub Time
+    description:
+    url:
+    technologies:
+  applications.documentation_api:
+    repository: documentation-open-api
+    title: Api Documentation
+    entity: component
+    project:
+    description: Cайт с документацией по Aeroclub API
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/Aeroclub.Api.Documentation
+    technologies:
+  applications.integration_hub:
+    repository: aeroclub.integration.hub
+    title: Integration Hub
+    entity: component
+    project: Aeroclub Integration
+    description: Комплекс приложений и сервисов, обеспечивающий функциональность по взаимной интеграции программных комплексов клиентов и внутренних сервисов "Аэроклуб?
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/Aeroclub+Integration+Hub
+    technologies:
+  applications.integration_hub.xsd:
+    repository: aeroclub.integration.hub.xsd
+    title: aeroclub.integration.hub.xsd
+    entity: component
+    project: Aeroclub Integration
+    description:
+    url:
+    technologies:
+  applications.dictionaries:
+    repository: aeroclub.platform.dictionaries
+    title: Dictionaries Console
+    entity: component
+    project: Aeroclub Platform
+    description:
+    url:
+    technologies:

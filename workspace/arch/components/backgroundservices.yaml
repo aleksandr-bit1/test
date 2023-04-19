@@ -2,22 +2,6 @@ components:
   backgroundservices:
     title: Background Services
     entity: component
-  backgroundservices.flightsegmentresource:
-    repository: aeroclub.backgroundservices.flightsegmentresource
-    title: DocumentApi
-    entity: component
-    project: Aeroclub Background Services
-    description: Генерация и получение документов. В данный момент реализовано получение справок по использованным билетам.
-    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=20521650
-    technologies:
-  backgroundservices.flightstatus:
-    repository: aeroclub.backgroundservices.flightstatus
-    title: FlightStatus
-    entity: component
-    project: Aeroclub Background Services
-    description:
-    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=29231528
-    technologies:
   backgroundservices.indexer:
     repository: aeroclub.backgroundservices.indexer
     title: Aeroclub Indexer
@@ -25,62 +9,6 @@ components:
     project: Aeroclub Background Services
     description: Индексирование профайлов и командировок
     url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=29231585
-    technologies:
-  backgroundservices.itrgenerator:
-    repository: aeroclub.backgroundservices.itrgenerator
-    title: ITR Generator
-    entity: component
-    project: Aeroclub Background Services
-    description:
-    url: http://wiki.aeroclub.int/display/PROJECTDOC/ITR+Generator
-    technologies:
-  backgroundservices.orders:
-    repository: aeroclub.backgroundservices.orders
-    title: Orders Backend
-    entity: component
-    project: Aeroclub Background Services
-    description: Отслеживает сообщения в "кролике"- поисковые запросы, события. Обрабатывает события, результат - отправляет в шину
-    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=19141097
-    technologies:
-  backgroundservices.ordersindexer:
-    repository: aeroclub.backgroundservices.ordersindexer
-    title: aeroclub.backgroundservices.ordersindexer
-    entity: component
-    project: Aeroclub Background Services
-    description:
-    url:
-    technologies:
-  backgroundservices.profilesindexer:
-    repository: aeroclub.backgroundservices.profilesindexer
-    title: aeroclub.backgroundservices.profilesindexer
-    entity: component
-    project: Aeroclub Background Services
-    description:
-    url:
-    technologies:
-  backgroundservices.taskscheduler:
-    repository: aeroclub.backgroundservices.taskscheduler
-    title: Task Scheduler
-    entity: component
-    project: Aeroclub Background Services
-    description: Робот обеспечивает функционал по планированию и выполнению произвольных задач.
-    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=24781839
-    technologies:
-  backgroundservices.ticketsexporter:
-    repository: aeroclub.backgroundservices.ticketsexporter
-    title: Ticket exporter
-    entity: component
-    project: Aeroclub Background Services
-    description: Экспортирует услуги в систему Tickets для дальнейшего выставления счетов клиентам
-    url: http://wiki.aeroclub.int/display/PROJECTDOC/Ticket+exporter
-    technologies:
-  backgroundservices.ticketsimporter:
-    repository: aeroclub.backgroundservices.ticketsimporter
-    title: aeroclub.backgroundservices.ticketsimporter
-    entity: component
-    project: Aeroclub Background Services
-    description:
-    url:
     technologies:
   backgroundservices.travelboard:
     repository: aeroclub.backgroundservices.travelboard
@@ -93,11 +21,3 @@ components:
     links:
       - id: db.travelboard
         direction: -->
-  backgroundservices.wscommon:
-    repository: aeroclub.backgroundservices.wscommon
-    title: WSCMN Backend
-    entity: component
-    project: Aeroclub Background Services
-    description: Служба для работы с WSCMN и отсылки сообщений в RabbitMQ с результатами работы с WSCMN
-    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=32174056
-    technologies:

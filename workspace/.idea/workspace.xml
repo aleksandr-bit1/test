@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="c630db71-4a51-41e9-8037-769beecc42b4" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../404.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app.js" beforeDir="false" afterPath="$PROJECT_DIR$/../app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../app.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../css/app.3bab9e1c.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../css/plugins/plugins/html.6fea4073.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../documentation/arch/components/front.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../documentation/arch/components/front.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../documentation/docs/manual/docs/examples/table.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../documentation/docs/manual/docs/examples/table.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../documentation/docs/manual/plugins/root.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../documentation/docs/manual/plugins/root.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../documentation/docs/manual/root.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../documentation/docs/manual/root.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../documentation/entities/interactions/entity.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../documentation/entities/interactions/entity.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../documentation/root.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../documentation/root.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../example/root.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/1065.3ef655cd.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/1065.3ef655cd.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/1134.19e10931.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/1134.19e10931.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/1147.c7ace2e3.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/1147.c7ace2e3.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/1156.4f75f21f.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/1156.4f75f21f.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/1259.280873d5.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/1259.280873d5.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/1448.9bdbed25.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/1448.9bdbed25.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/1471.14dda5cd.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/1471.14dda5cd.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/180.2357b124.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/180.2357b124.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/1886.70a36e2a.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/1886.70a36e2a.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/1960.d7f1924d.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/1960.d7f1924d.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/1961.f3ff1629.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/1961.f3ff1629.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/2060.f00282c8.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/2060.f00282c8.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/2075.9a3526c7.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/2075.9a3526c7.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/2140.bbedca8b.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/2140.bbedca8b.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/2240.6397daab.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/2240.6397daab.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/249.a10e3430.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/249.a10e3430.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/2571.1fe8b7dc.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/2571.1fe8b7dc.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/2798.b4300ee5.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/2798.b4300ee5.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/2814.42434e56.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/2814.42434e56.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/2892.5af3567f.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/2892.5af3567f.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/2911.bbfdc1de.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/2911.bbfdc1de.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/2954.1183fcd8.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/2954.1183fcd8.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/3036.cc9ee55f.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/3036.cc9ee55f.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/3585.fab6612f.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/3585.fab6612f.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/3632.b221cb64.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/3632.b221cb64.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/3682.d9b4a5a4.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/3682.d9b4a5a4.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/3760.e5c807a8.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/3760.e5c807a8.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/3919.3262b6a2.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/3919.3262b6a2.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/4028.0bdd72b3.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/4028.0bdd72b3.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/4129.b7bec793.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/4129.b7bec793.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/4188.5ed7fba0.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/4188.5ed7fba0.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/4368.5016e127.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/4368.5016e127.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/4386.5eb2138e.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/4386.5eb2138e.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/4407.e0e88005.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/4407.e0e88005.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/4902.56555bba.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/4902.56555bba.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/4912.63efbedc.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/4912.63efbedc.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/4946.3cff69b3.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/4946.3cff69b3.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/5062.98b8b98a.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/5062.98b8b98a.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/525.bbf6b1e9.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/525.bbf6b1e9.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/5288.f842fe11.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/5288.f842fe11.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/5377.09fb40de.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/5377.09fb40de.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/5593.522fcd5d.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/5593.522fcd5d.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/5703.e5c1233f.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/5703.e5c1233f.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/5849.654adef6.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/5849.654adef6.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/5880.c643a7f5.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/5880.c643a7f5.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/5962.00b4547d.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/5962.00b4547d.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/6082.f7657bc5.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/6082.f7657bc5.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/6241.cc8c867f.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/6241.cc8c867f.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/6423.472f1da5.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/6423.472f1da5.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/6424.ce57b095.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/6424.ce57b095.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/6449.446d1de3.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/6449.446d1de3.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/6489.a91a37b6.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/6489.a91a37b6.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/6587.e699a05b.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/6587.e699a05b.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/665.374e3075.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/665.374e3075.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/6717.ba637b2e.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/6717.ba637b2e.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/7043.49d21602.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/7043.49d21602.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/7131.ada68e8b.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/7131.ada68e8b.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/7287.ea31a728.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/7287.ea31a728.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/7562.52a28947.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/7562.52a28947.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/7637.74a6a436.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/7637.74a6a436.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/7778.e10bf249.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/7778.e10bf249.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/7835.b780c56a.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/7835.b780c56a.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/8045.8050b6e9.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/8045.8050b6e9.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/8070.00a4de4b.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/8070.00a4de4b.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/8084.a0666135.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/8084.a0666135.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/8180.07d3841b.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/8180.07d3841b.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/8401.877f40de.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/8401.877f40de.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/8424.9add8bfa.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/8424.9add8bfa.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/848.5975631a.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/848.5975631a.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/854.f72bda0c.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/854.f72bda0c.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/8670.5797469b.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/8670.5797469b.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/8715.0b0b5ef7.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/8715.0b0b5ef7.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/8719.19dd7bf6.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/8719.19dd7bf6.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/8906.43e756ca.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/8906.43e756ca.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/8946.8be9a6e0.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/8946.8be9a6e0.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/911.36fa469f.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/911.36fa469f.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/9343.bb717d63.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/9343.bb717d63.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/9398.c90b903a.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/9398.c90b903a.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/9400.0d1e3783.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/9400.0d1e3783.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/9537.92b1734d.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/9537.92b1734d.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/9684.738fe5d5.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/9684.738fe5d5.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/9907.a0cda09a.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/9907.a0cda09a.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/996.6d2bf7f0.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/996.6d2bf7f0.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../plugins/plugins/html.js" beforeDir="false" afterPath="$PROJECT_DIR$/../plugins/plugins/html.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../plugins/plugins/html.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../plugins/plugins/html.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../runtime.js" beforeDir="false" afterPath="$PROJECT_DIR$/../runtime.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../runtime.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../runtime.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/arch/components/applications.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/arch/components/applications.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arch/components/backgroundservices.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/arch/components/backgroundservices.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arch/components/databases.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/arch/components/databases.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arch/components/integration.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/arch/components/integration.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arch/components/others.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/arch/components/services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/arch/components/services.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arch/contexts/time/authentication.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/arch/contexts/time/authentication.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arch/contexts/time/root.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/arch/contexts/time/root.yaml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2OcHfifWTZOhpRiZGGxdNUVyaBQ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/Alexander.Bityutskov/Desktop/DocHub/elk-0.8.1"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c630db71-4a51-41e9-8037-769beecc42b4" name="Changes" comment="" />
+      <created>1681853056673</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1681853056673</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
