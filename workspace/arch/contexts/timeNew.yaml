@@ -4,6 +4,7 @@ contexts:
     location: Time New
     extra-links: false
     components:
+      - aeroclub.applications.timeNew
       - aeroclub.applications.timeNew.ui
       - aeroclub.applications.timeNew.api
   aeroclub.applications.timeNew.ui:

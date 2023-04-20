@@ -5,5 +5,4 @@ imports:
   - integration.yaml
   - services.yaml
   - timeNew.yaml
-  - suppliers.yaml
 #  - others.yaml

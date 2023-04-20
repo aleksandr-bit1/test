@@ -13,6 +13,9 @@ components:
     description:
     url:
     technologies:
+    links:
+      - id: aeroclub.services.dictionaries
+        direction: -->
   aeroclub.applications.companies:
     repository: aeroclub.companies
     title: Companies & Profiles Console
@@ -21,6 +24,9 @@ components:
     description: Консоль для настроек компаний
     url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=18580224
     technologies:
+    links:
+      - id: aeroclub.services.companies
+        direction: -->
   aeroclub.applications.passport:
     repository: aeroclub.passport
     title: Passport
@@ -32,6 +38,10 @@ components:
     technologies:
     links:
       - id: aeroclub.db.passport
+        direction: -->
+      - id: aeroclub.db.profiles
+        direction: -->
+        title: Аутентификация
   aeroclub.applications.time:
     repository: aeroclub.time
     title: Time
@@ -42,6 +52,8 @@ components:
     technologies:
     links:
       - id: aeroclub.applications.timeNew
+        direction: -->
+      - id: aeroclub.applications.time.backend
         direction: -->
   aeroclub.applications.time.backend:
     repository: aeroclub.time.backend

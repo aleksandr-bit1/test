@@ -73,3 +73,11 @@ components:
     description:
     url:
     technologies:
+  aeroclub.db.posdb:
+    repository: aeroclub.db.posdb
+    title: PosDB
+    entity: database
+    project:
+    description:
+    url:
+    technologies:
