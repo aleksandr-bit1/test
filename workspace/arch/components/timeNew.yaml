@@ -30,7 +30,7 @@ components:
         title: Получение историй и онбординга
       - id: aeroclub.applications.timeNew.api
         direction: -->
-        title: Вся основная работа с виджетами, командировками
+        title: Работа с виджетами, командировками
       - id: aeroclub.integration.yandexMetrika
         direction: -->
       - id: aeroclub.integration.googleAnalytics
