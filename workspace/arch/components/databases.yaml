@@ -1,15 +1,15 @@
 components:
-  db:
+  aeroclub.db:
     title: Databases
     entity: database
-  db.cabinet:
+  aeroclub.db.cabinet:
     repository: aeroclub.db.cabinet
     title: Cabinet
     entity: database
     project:
     description:
     url:
-  db.travelboard:
+  aeroclub.db.travelboard:
     repository: aeroclub.db.travelboard
     title: Travelboard
     entity: database
@@ -17,7 +17,7 @@ components:
     description:
     url:
     technologies:
-  db.passport:
+  aeroclub.db.passport:
     repository: aeroclub.db.passport
     title: Passport
     entity: database
@@ -25,9 +25,7 @@ components:
     description:
     url:
     technologies:
-    links:
-      - id: applications.passport
-  db.profiles:
+  aeroclub.db.profiles:
     repository: aeroclub.db.profiles
     title: Profiles
     entity: database
@@ -35,7 +33,7 @@ components:
     description:
     url:
     technologies:
-  db.dictionary:
+  aeroclub.db.dictionary:
     repository: aeroclub.db.dictionary
     title: DICTIONARY
     entity: database
@@ -43,7 +41,7 @@ components:
     description:
     url:
     technologies:
-  db.dictionary_ws:
+  aeroclub.db.dictionary_ws:
     repository: aeroclub.db.dictionary_ws
     title: DICTIONARY_WS
     entity: database
@@ -51,7 +49,7 @@ components:
     description:
     url:
     technologies:
-  db.dictdb:
+  aeroclub.db.dictdb:
     repository: aeroclub.db.dictdb
     title: DictDB
     entity: database
@@ -59,7 +57,7 @@ components:
     description:
     url:
     technologies:
-  db.companies:
+  aeroclub.db.companies:
     repository: aeroclub.db.companies
     title: Companies
     entity: database
@@ -67,4 +65,11 @@ components:
     description:
     url:
     technologies:
-    links:
+  aeroclub.db.pricingscheme:
+    repository: aeroclub.db.pricingscheme
+    title: PricingScheme
+    entity: database
+    project:
+    description:
+    url:
+    technologies:

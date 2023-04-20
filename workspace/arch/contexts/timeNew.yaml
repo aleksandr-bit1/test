@@ -1,0 +1,25 @@
+contexts:
+  aeroclub.applications.timeNew:
+    title: Time New
+    location: Time New
+    extra-links: false
+    components:
+      - aeroclub.applications.timeNew.ui
+      - aeroclub.applications.timeNew.api
+  aeroclub.applications.timeNew.ui:
+    title: TimeAPI
+    location: Time New/UI
+    extra-links: false
+    components:
+      - aeroclub.applications.time
+      - aeroclub.applications.timeNew.ui
+      - aeroclub.applications.passport
+      - aeroclub.integration.inAppStory
+      - aeroclub.integration.yandexMetrika
+      - aeroclub.integration.googleAnalytics
+  aeroclub.applications.timeNew.api:
+    title: API
+    location: Time New/API
+    extra-links: true
+    components:
+      - aeroclub.applications.timeNew.api

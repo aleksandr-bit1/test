@@ -4,10 +4,10 @@ contexts:
     location: Time/Аутентификация
     extra-links: false
     components:
-      - applications.time.backend
-      - db.cabinet
-      - db.profiles
-      - services.api
+      - aeroclub.applications.time.backend
+      - aeroclub.db.cabinet
+      - aeroclub.db.profiles
+      - aeroclub.services.api
   applications.time.authentication.signin.login:
     title: Ввод логина
     location: Time/Аутентификация/1. Вход/Ввод логина

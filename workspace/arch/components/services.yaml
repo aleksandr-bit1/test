@@ -1,31 +1,34 @@
 components:
-  services:
+  aeroclub.services:
     title: Services
     entity: component
-  services.aeroclubApi:
+  aeroclub.services.api:
     repository: aeroclub.services.api
-    title: AeroclubApi
+    title: Api
     entity: component
     project: Aeroclub Services
     description: Работа с мобильным приложением Link
     url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=18580096
     technologies:
     links:
-      - id: services.aeroclubApiQuery
+      - id: aeroclub.services.apiQuery
         direction: -->
-        title: Получение информации
-  services.aeroclubApiQuery:
+        title: Получение информации из БД Cabinet
+      - id: aeroclub.services.propertyfx
+        direction: -->
+        title: Получение ДД
+  aeroclub.services.apiQuery:
     repository: aeroclub.services.api.query
-    title: AeroclubApiQuery
+    title: ApiQuery
     entity: component
     project: Aeroclub Services
     description: Используется для получения специфичной информации о заказах, командировках, проездных документах и пр. из базы Cabinet
     url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Mobile+Api+Query
     technologies:
     links:
-      - id: db.cabinet
+      - id: aeroclub.db.cabinet
         direction: -->
-  services.businesstrips:
+  aeroclub.services.businesstrips:
     repository: aeroclub.services.businesstrips
     title: BusinessTrips
     entity: component
@@ -34,9 +37,13 @@ components:
     url: http://wiki.aeroclub.int/display/PROJECTDOC/BusinessTrips+Service
     technologies:
     links:
-      - id: db.cabinet
+      - id: aeroclub.db.cabinet
         direction: -->
-  services.companies:
+        title: Работа с командировками
+      - id: aeroclub.services.vault
+        direction: -->
+        title: Получение форм оплат для командировки
+  aeroclub.services.companies:
     repository: aeroclub.services.companies
     title: Companies
     entity: component
@@ -45,9 +52,9 @@ components:
     url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=19141737
     technologies:
     links:
-      - id: db.companies
+      - id: aeroclub.db.companies
         direction: -->
-  services.pricingscheme:
+  aeroclub.services.pricingscheme:
     repository: aeroclub.services.companiesws.v2
     title: PricingScheme
     entity: component
@@ -56,21 +63,9 @@ components:
     url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=19141735
     technologies:
     links:
-      - id: db.pricingscheme
+      - id: aeroclub.db.pricingscheme
         direction: -->
-  services.journeys:
-    repository: aeroclub.services.journeys
-    title: Journeys
-    entity: component
-    template: Удалить
-    project: Aeroclub Services
-    description: Поиск командировок с использованием Lucene-индексера
-    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Journeys
-    technologies:
-    links:
-      - id: backgroundservices.indexer
-        direction: --
-  services.ordersws:
+  aeroclub.services.ordersws:
     repository: aeroclub.services.ordersws
     title: OrdersWS
     entity: component
@@ -79,9 +74,9 @@ components:
     url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Orders
     technologies:
     links:
-      - id: db.cabinet
+      - id: aeroclub.db.cabinet
         direction: --
-  services.profiles:
+  aeroclub.services.profiles:
     repository: aeroclub.services.profiles
     title: Profiles
     entity: component
@@ -90,36 +85,9 @@ components:
     url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=19141795
     technologies:
     links:
-      - id: db.profiles
+      - id: aeroclub.db.profiles
         direction: --
-  services.propertyfx:
-    repository: aeroclub.services.propertyfx
-    title: PropertyFx
-    entity: component
-    project: Aeroclub Services
-    description: Работа с доп. данными в Time и Link
-    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+CustomPropertyFx
-    technologies:
-    links:
-      - id: db.cabinet
-        direction: -->
-  services.ticketing:
-    repository: aeroclub.services.ticketing
-    title: Ticketing
-    entity: component
-    project: Aeroclub Services
-    description: Бронирование, выписка, обновление статусов - ЖД и Авиабилеты, через WSCommon
-    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Ticketing
-    technologies:
-  services.time_stateengine:
-    repository: aeroclub.services.time.stateengine
-    title: Time_StateEngine
-    entity: component
-    project: Aeroclub Services
-    description: Получение возможных действий над командировкой. Проверка возможности конкретного действия с командировкой.
-    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Time.StateEngine
-    technologies:
-  services.dictionaries:
+  aeroclub.services.dictionaries:
     repository: aeroclub.platform.dictionaries.service
     title: Dictionaries
     entity: component
@@ -128,9 +96,9 @@ components:
     url:
     technologies:
     links:
-      - id: db.dictdb
+      - id: aeroclub.db.dictdb
         direction: -->
-  services.vault:
+  aeroclub.services.vault:
     repository: aeroclub.vault
     title: Vault (ACIS)
     entity: component
@@ -138,42 +106,14 @@ components:
     description: Он же Aeroclub Card Information Service (ACIS). Используется для валидации и работы с платежными картами. Проверка валидности карты по дате; возможности оплаты выбранным типом карты определенных поставщиков; определение карты, привязанной к профилю компании; добавление карты, работает с DB PosDB
     url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=19137520
     technologies:
-    links:
-  services.inappstory:
-    repository:
-    title: InAppStory
+  aeroclub.services.propertyfx:
+    repository: aeroclub.services.propertyfx
+    title: CustomPropertyFx
     entity: component
-    project: 
-    description: Сервис для отображение историй
-    url: https://inappstory.ru/
-    technologies:
-  services.timeApi:
-    repository: aeroclub.time.api
-    title: TimeApi
-    entity: component
-    project: Aeroclub Time
-    description: Получение данных статистики
-    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Time.Api
+    project: Aeroclub Services
+    description: Работа с доп. данными в Time и Link
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+CustomPropertyFx
     technologies:
     links:
-      - id: db.travelboard
+      - id: aeroclub.db.cabinet
         direction: -->
-        title: Получение статистики для виджетов менеджера
-      - id: db.cabinet
-        direction: -->
-        title: Получение настроек виджетов
-      - id: services.aeroclubApi
-        direction: -->
-        title: Получение доступных компаний и форм оплаты
-      - id: services.aeroclubApiQuery
-        direction: -->
-        title: Получение информации из БД Cabinet
-      - id: services.dictionaries
-        direction: -->
-        title: Получение справочников
-      - id: services.profiles
-        direction: -->
-        title: Получение информации профиля
-      - id: services.companies
-        direction: -->
-        title: Получение настроек подписки

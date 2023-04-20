@@ -4,16 +4,14 @@ contexts:
     location: Time/Работа с командировкой
     extra-links: false
     components:
-      - applications.time.backend
-      - services.dictionaries
-      - services.propertyfx
-      - services.vault
-      - services.budgeting
-      - services.authfx
-      - db.cabinet
-      - db.profiles
-      - backgroundservices.indexer
-      - services.businesstrips
+      - aeroclub.applications.time.backend
+      - aeroclub.services.dictionaries
+      - aeroclub.services.propertyfx
+      - aeroclub.services.vault
+      - aeroclub.db.cabinet
+      - aeroclub.db.profiles
+      - aeroclub.backgroundservices.indexer
+      - aeroclub.services.businesstrips
   applications.time.businesstrip.list:
     title: Просмотр списка командировок
     location: Time/Работа с командировкой/Просмотр списка командировок
@@ -22,15 +20,13 @@ contexts:
     location: Time/Работа с командировкой/Создание новой командировки
     extra-links: false
     components:
-      - applications.time.backend
-      - services.dictionaries
-      - services.propertyfx
-      - services.vault
-      - services.budgeting
-      - services.authfx
-      - db.cabinet
-      - db.profiles
-      - services.businesstrips
+      - aeroclub.applications.time.backend
+      - aeroclub.services.dictionaries
+      - aeroclub.services.propertyfx
+      - aeroclub.services.vault
+      - aeroclub.db.cabinet
+      - aeroclub.db.profiles
+      - aeroclub.services.businesstrips
   applications.time.businesstrip.creation.adding_route:
     title: Создание новой командировки
     location: Time/Работа с командировкой/Создание новой командировки/1. Ввод маршрута

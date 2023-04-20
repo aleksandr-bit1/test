@@ -1,8 +1,19 @@
 components:
-  applications:
+  aeroclub:
+    entity: component
+    title: Aeroclub
+  aeroclub.applications:
     entity: component
     title: Applications
-  applications.companies:
+  aeroclub.applications.dictionaries:
+    repository: aeroclub.platform.dictionaries
+    title: Dictionaries Console
+    entity: component
+    project: Aeroclub Platform
+    description:
+    url:
+    technologies:
+  aeroclub.applications.companies:
     repository: aeroclub.companies
     title: Companies & Profiles Console
     entity: component
@@ -10,8 +21,7 @@ components:
     description: Консоль для настроек компаний
     url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=18580224
     technologies:
-    links:
-  applications.passport:
+  aeroclub.applications.passport:
     repository: aeroclub.passport
     title: Passport
     entity: component
@@ -21,8 +31,8 @@ components:
     url: http://wiki.aeroclub.int/display/PROJECTDOC/Passport
     technologies:
     links:
-      - id: db.passport
-  applications.time:
+      - id: aeroclub.db.passport
+  aeroclub.applications.time:
     repository: aeroclub.time
     title: Time
     entity: component
@@ -31,9 +41,9 @@ components:
     url: http://wiki.aeroclub.int/display/PROJECTDOC/Time
     technologies:
     links:
-      - id: applications.travelboard
-        direction: <-->
-  applications.time.backend:
+      - id: aeroclub.applications.timeNew
+        direction: -->
+  aeroclub.applications.time.backend:
     repository: aeroclub.time.backend
     title: Time Backend
     entity: component
@@ -43,58 +53,23 @@ components:
     url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Time.Api
     technologies:
     links:
-      - id: db.cabinet
+      - id: aeroclub.db.cabinet
         direction: -->
-        title: тест
-      - id: services.authfx
+      - id: aeroclub.services.businesstrips
         direction: -->
-      - id: services.propertyfx
+      - id: aeroclub.db.profiles
         direction: -->
-      - id: services.businesstrips
+      - id: aeroclub.services.dictionaries
         direction: -->
-      - id: services.journeys
+      - id: aeroclub.services.vault
         direction: -->
-      - id: services.budgeting
+      - id: aeroclub.backgroundservices.indexer
         direction: -->
-      - id: applications.passport
-        direction: -->
-      - id: services.wscommon
-        direction: -->
-      - id: services.time_stateengine
-        direction: -->
-      - id: applications.travelboard.frontend
-        direction: <-->
-      - id: db.profiles
-        direction: -->
-      - id: services.dictionaries
-        direction: -->
-      - id: services.vault
-        direction: -->
-      - id: backgroundservices.indexer
-        direction: -->
-  applications.newtime:
-    repository: aeroclub.time.ui
-    title: NewTime
+  aeroclub.integration.inAppStory:
+    repository:
+    title: InAppStory
     entity: component
-    project: Aeroclub Time
-    description: Веб-приложение на React
-    url: http://wiki.aeroclub.int/display/PROJECTDOC/Travelboard
-    technologies:
-    links:
-      - id: applications.time
-        direction: <-->
-        title: Переход на страницы старого Тайма
-      - id: services.inappstory
-        direction: -->
-        title: Получение историй и онбординга
-      - id: services.timeApi
-        direction: -->
-        title: Вся основная работа с виджетами, командировками
-  applications.dictionaries:
-    repository: aeroclub.platform.dictionaries
-    title: Dictionaries Console
-    entity: component
-    project: Aeroclub Platform
-    description:
-    url:
+    project:
+    description: Сервис для отображение историй
+    url: https://inappstory.ru/
     technologies:

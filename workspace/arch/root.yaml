@@ -6,3 +6,7 @@ imports:
   - forms.yaml
   - namespaces.yaml
   - technologies.yaml
+entities:
+  contexts:
+    config:
+      renderCore: graphviz #elk | graphviz

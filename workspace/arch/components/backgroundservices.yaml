@@ -1,8 +1,8 @@
 components:
-  backgroundservices:
+  aeroclub.backgroundservices:
     title: Background Services
     entity: component
-  backgroundservices.indexer:
+  aeroclub.backgroundservices.indexer:
     repository: aeroclub.backgroundservices.indexer
     title: Aeroclub Indexer
     entity: component
@@ -10,7 +10,7 @@ components:
     description: Индексирование профайлов и командировок
     url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=29231585
     technologies:
-  backgroundservices.travelboard:
+  aeroclub.backgroundservices.travelboard:
     repository: aeroclub.backgroundservices.travelboard
     title: Travelboard Backend
     entity: component
@@ -19,5 +19,5 @@ components:
     url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=55702015
     technologies:
     links:
-      - id: db.travelboard
+      - id: aeroclub.db.travelboard
         direction: -->

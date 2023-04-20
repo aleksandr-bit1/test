@@ -1,4 +1,10 @@
 components:
-  integration:
-    title: Integration
+  aeroclub.integration:
     entity: component
+    title: Integration
+  aeroclub.integration.yandexMetrika:
+    entity: component
+    title: Yandex Metrika
+  aeroclub.integration.googleAnalytics:
+    entity: component
+    title: Google Analytics

@@ -4,5 +4,6 @@ imports:
   - databases.yaml
   - integration.yaml
   - services.yaml
+  - timeNew.yaml
+  - suppliers.yaml
 #  - others.yaml
-components:

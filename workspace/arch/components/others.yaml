@@ -1,0 +1,2161 @@
+components:
+  ai.aibackend:
+    repository: aeroclub.ai.aibackend
+    title: AI Backend
+    entity: component
+    project: Aeroclub AI
+    description: Обогащение данными заявок, пришедших из Ai.Exchange, поиск билетов в AVIA, формирование оффера
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+AI+Backend
+    technologies:
+    links:
+  ai.autooffers:
+    repository: aeroclub.ai.autooffers
+    title: AI AutooffersData
+    entity: component
+    project: Aeroclub AI
+    description: Предназначен для работы с БД AutooffersData
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+AI+AutooffersData
+    technologies:
+    links:
+  ai.autooffersconsole:
+    repository: aeroclub.ai.autooffersconsole
+    title: AI AutooffersConsole
+    entity: component
+    project: Aeroclub AI
+    description: Проверка подобранных рейсов операторами на проекте Автоофферы
+    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=32159787
+    technologies:
+    links:
+  ai.box:
+    repository: aeroclub.ai.box
+    title: AIBox
+    entity: component
+    project: Aeroclub AI
+    description: Оценка вероятности выбора перелета при данном запросе от агента
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+AIBox
+    technologies:
+    links:
+  ai.exchange:
+    repository: aeroclub.ai.exchange
+    title: AI Exchange
+    entity: component
+    project: Aeroclub AI
+    description: Взаимодействие с сервером Exchange
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+AI+Exchange
+    technologies:
+    links:
+  ai.searchdatatransport:
+    repository: aeroclub.ai.searchdatatransport
+    title: AI SearchDataTransport
+    entity: component
+    project: Aeroclub AI
+    description: Proxy сервис между Avia и AI Box
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+AI+SearchDataTransport
+    technologies:
+    links:
+  ai.travelbot:
+    repository: aeroclub.ai.travelbot
+    title: TravelBot
+    entity: component
+    project: Aeroclub AI
+    description: Поиск в Aeroclub Link через мессенджеры
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+TravelBot
+    technologies:
+    links:
+  apps:
+    repository: aeroclub.apps
+    title: aeroclub.apps
+    entity: component
+    project: Aeroclub Platform
+    description:
+    url:
+    technologies:
+    links:
+  atom:
+    repository: aeroclub.atom
+    title: Atom
+    entity: component
+    project: Aeroclub Atom
+    description: "Портал для получения аналитических показателей и отчетов на их основе. \nДля внутренних пользователей также доступен через мобильное и десктоп-приложения MS Power BI"
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/Atom
+    technologies:
+    links:
+  authfx:
+    repository: aeroclub.authfx
+    title: AuthFx
+    entity: component
+    project: Aeroclub AuthFx
+    description:
+    url:
+    technologies:
+    links:
+  authfx.scripts:
+    repository: aeroclub.authfx.scripts
+    title: AuthFx Scripts
+    entity: component
+    project: Aeroclub AuthFx
+    description:
+    url:
+    technologies:
+    links:
+  authorization:
+    repository: aeroclub.authorization
+    title: aeroclub.authorization
+    entity: component
+    project:
+    description:
+    url:
+    technologies:
+    links:
+  authorization.scripts:
+    repository: aeroclub.authorization.scripts
+    title: aeroclub.authorization.scripts
+    entity: component
+    project: Aeroclub Scripts
+    description:
+    url:
+    technologies:
+    links:
+  birthdayrobotnotification:
+    repository: aeroclub.birthdayrobotnotification
+    title: BirthDayRobotNotification
+    entity: component
+    project: Tfs
+    description: Авторассылка писем о днях рождениях
+    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=22806625
+    technologies:
+    links:
+  budgeting.scripts:
+    repository: aeroclub.budgeting.scripts
+    title: aeroclub.budgeting.scripts
+    entity: component
+    project: Aeroclub Scripts
+    description:
+    url:
+    technologies:
+    links:
+  build:
+    repository: aeroclub.build
+    title: aeroclub.build
+    entity: component
+    project: Aeroclub Build
+    description:
+    url:
+    technologies:
+    links:
+  build.teamcity:
+    repository: aeroclub.build.teamcity
+    title: aeroclub.build.teamcity
+    entity: component
+    project: Aeroclub Build
+    description:
+    url:
+    technologies:
+    links:
+  cl.connectionstringmanager:
+    repository: aeroclub.cl.connectionstringmanager
+    title: aeroclub.cl.connectionstringmanager
+    entity: component
+    project: Aeroclub Platform
+    description:
+    url:
+    technologies:
+    links:
+  databroom:
+    repository: aeroclub.databroom
+    title: aeroclub.databroom
+    entity: component
+    project: Aeroclub Services
+    description:
+    url:
+    technologies:
+    links:
+  db.migrations:
+    repository: aeroclub.db.migrations
+    title: aeroclub.db.migrations
+    entity: component
+    project: Aeroclub Db
+    description:
+    url:
+    technologies:
+    links:
+  foundation:
+    repository: aeroclub.foundation
+    title: aeroclub.foundation
+    entity: component
+    project: Aeroclub Foundation
+    description:
+    url:
+    technologies:
+    links:
+  foundation.db:
+    repository: aeroclub.foundation.db
+    title: aeroclub.foundation.db
+    entity: component
+    project: Aeroclub Foundation
+    description:
+    url:
+    technologies:
+    links:
+  foundation.dss:
+    repository: aeroclub.foundation.dss
+    title: aeroclub.foundation.dss
+    entity: component
+    project: Aeroclub Foundation
+    description:
+    url:
+    technologies:
+    links:
+  foundation.hotels.calculations:
+    repository: aeroclub.foundation.hotels.calculations
+    title: aeroclub.foundation.hotels.calculations
+    entity: component
+    project: Aeroclub Foundation
+    description:
+    url:
+    technologies:
+    links:
+  foundation.hotels.cancellationrules:
+    repository: aeroclub.foundation.hotels.cancellationrules
+    title: aeroclub.foundation.hotels.cancellationrules
+    entity: component
+    project: Aeroclub Foundation
+    description:
+    url:
+    technologies:
+    links:
+  foundation.lucene:
+    repository: aeroclub.foundation.lucene
+    title: aeroclub.foundation.lucene
+    entity: component
+    project: Aeroclub Foundation
+    description:
+    url:
+    technologies:
+    links:
+  foundation.nlog:
+    repository: aeroclub.foundation.nlog
+    title: aeroclub.foundation.nlog
+    entity: component
+    project: Aeroclub Foundation
+    description:
+    url:
+    technologies:
+    links:
+  foundation.openapi:
+    repository: aeroclub.foundation.openapi
+    title: aeroclub.foundation.openapi
+    entity: component
+    project: Aeroclub Foundation
+    description:
+    url:
+    technologies:
+    links:
+  foundation.redis:
+    repository: aeroclub.foundation.redis
+    title: aeroclub.foundation.redis
+    entity: component
+    project: Aeroclub Foundation
+    description:
+    url:
+    technologies:
+    links:
+  foundation.rest:
+    repository: aeroclub.foundation.rest
+    title: aeroclub.foundation.rest
+    entity: component
+    project: Aeroclub Foundation
+    description:
+    url:
+    technologies:
+    links:
+  foundation.servicemodel:
+    repository: aeroclub.foundation.servicemodel
+    title: aeroclub.foundation.servicemodel
+    entity: component
+    project: Aeroclub Foundation
+    description:
+    url:
+    technologies:
+    links:
+  gdsfilerobot:
+    repository: aeroclub.gdsfilerobot
+    title: GDS File Robot
+    entity: component
+    project: Aeroclub Integration
+    description: Парсинг файлов поставщиков Avia
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/GDS+File+Robot
+    technologies:
+    links:
+  integration.transfers:
+    repository: aeroclub.integration.transfers
+    title: Integration Transfers
+    entity: component
+    project: Aeroclub Services
+    description: Получение сообщений от поставщиков трансферов с изменениями по заказу. С последующей отправкой сообщений в RabbitMQ
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/Integration+Transfers
+    technologies:
+    links:
+  integrationhub.scripts:
+    repository: aeroclub.integrationhub.scripts
+    title: aeroclub.integrationhub.scripts
+    entity: component
+    project: Aeroclub Scripts
+    description:
+    url:
+    technologies:
+    links:
+  openapi:
+    repository: aeroclub.openapi
+    title: OpenApi
+    entity: component
+    project:
+    description: Сервис предназначен продажи всех типов услуг внешним потребителям
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Aeroclub.OpenApi
+    technologies:
+    links:
+  parser:
+    repository: aeroclub.parser
+    title: aeroclub.parser
+    entity: component
+    project:
+    description:
+    url:
+    technologies:
+    links:
+  parser.box:
+    repository: aeroclub.parser.box
+    title: Parser BOX
+    entity: component
+    project:
+    description: Сервис получает на вход структурированный объект входящего письма от клиента, на выходе выдает распознанные сущности + вероятность является ли данное письмо заказом
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Parser+BOX
+    technologies:
+    links:
+  pricecomparer:
+    repository: aeroclub.pricecomparer
+    title: PriceComparer
+    entity: component
+    project:
+    description: Сравнение цен между нами и AirInMe.
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+PriceComparer
+    technologies:
+    links:
+  propertyfx.scripts:
+    repository: aeroclub.propertyfx.scripts
+    title: CustomPropertyFx Scripts
+    entity: component
+    project: Aeroclub Scripts
+    description:
+    url:
+    technologies:
+    links:
+  releasescripts:
+    repository: aeroclub.releasescripts
+    title: aeroclub.releasescripts
+    entity: component
+    project: Aeroclub Build
+    description:
+    url:
+    technologies:
+    links:
+  reports:
+    repository: aeroclub.reports
+    title: aeroclub.reports
+    entity: component
+    project: Aeroclub Reports
+    description:
+    url:
+    technologies:
+    links:
+  reports.outofproducts:
+    repository: aeroclub.reports.outofproducts
+    title: aeroclub.reports.outofproducts
+    entity: component
+    project: Aeroclub Reports
+    description:
+    url:
+    technologies:
+    links:
+  reports.time:
+    repository: aeroclub.reports.time
+    title: aeroclub.reports.time
+    entity: component
+    project: Aeroclub Reports
+    description:
+    url:
+    technologies:
+    links:
+  services.searchvariants:
+    repository: aeroclub.services.searchvariants
+    title: SearchVariants
+    entity: component
+    project:
+    description: "Сервис поиска вариантов (авиа, жд, отели). Дёргается из OrdersBackend.\n\nВыполняет поиск вариантов в WsCommon и складывает результаты в кэш Redis."
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+SearchVariants
+    technologies:
+    links:
+  sqa:
+    repository: aeroclub.sqa
+    title: aeroclub.sqa
+    entity: component
+    project: Aeroclub SQA Infrastructure
+    description:
+    url:
+    technologies:
+    links:
+  sqa.infrastructure:
+    repository: aeroclub.sqa.infrastructure
+    title: aeroclub.sqa.infrastructure
+    entity: component
+    project: Aeroclub SQA Infrastructure
+    description:
+    url:
+    technologies:
+    links:
+  sqa.infrastructure.bootstrap:
+    repository: aeroclub.sqa.infrastructure.bootstrap
+    title: aeroclub.sqa.infrastructure.bootstrap
+    entity: component
+    project: Aeroclub SQA Infrastructure
+    description:
+    url:
+    technologies:
+    links:
+  sqa.infrastructure.unmanaged:
+    repository: aeroclub.sqa.infrastructure.unmanaged
+    title: aeroclub.sqa.infrastructure.unmanaged
+    entity: component
+    project: Aeroclub SQA Infrastructure
+    description:
+    url:
+    technologies:
+    links:
+  ssaseventslog:
+    repository: aeroclub.ssaseventslog
+    title: aeroclub.ssaseventslog
+    entity: component
+    project: Aeroclub Atom
+    description:
+    url:
+    technologies:
+    links:
+  tasks:
+    repository: aeroclub.tasks
+    title: aeroclub.tasks
+    entity: component
+    project: Aeroclub Tasks
+    description:
+    url:
+    technologies:
+    links:
+  tasks.citiesimporter:
+    repository: aeroclub.tasks.citiesimporter
+    title: aeroclub.tasks.citiesimporter
+    entity: component
+    project: Aeroclub Tasks
+    description:
+    url:
+    technologies:
+    links:
+  tasks.hotelbookingratinggenerator:
+    repository: aeroclub.tasks.hotelbookingratinggenerator
+    title: Hotel Booking Rating Generator
+    entity: component
+    project: Aeroclub Tasks
+    description: Перегенерация рейтингов отелей по версии "Аэроклуба"
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/Hotel+Booking+Rating+Generator
+    technologies:
+    links:
+  tasks.mailcounter:
+    repository: aeroclub.tasks.mailcounter
+    title: MailCounter
+    entity: component
+    project: Aeroclub Tasks
+    description: Получение о входящих письмах на внутренние почтовые ящики через MX-сервера Аэроблуба
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/MailCounter
+    technologies:
+    links:
+  tasks.ostrovokimporter:
+    repository: aeroclub.tasks.ostrovokimporter
+    title: Ostrovok Importer
+    entity: component
+    project: Aeroclub Tasks
+    description: Загрузки данных с SFTP сервера отельного поставщика "Островок" в БД OstrovokHotelData
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/Ostrovok+Importer
+    technologies:
+    links:
+  tools:
+    repository: aeroclub.tools
+    title: aeroclub.tools
+    entity: component
+    project: Aeroclub Tools
+    description:
+    url:
+    technologies:
+    links:
+  tools.assembycomparator:
+    repository: aeroclub.tools.assembycomparator
+    title: aeroclub.tools.assembycomparator
+    entity: component
+    project: Aeroclub Tools
+    description:
+    url:
+    technologies:
+    links:
+  tools.cli.sendmail:
+    repository: aeroclub.tools.cli.sendmail
+    title: aeroclub.tools.cli.sendmail
+    entity: component
+    project: Aeroclub Tools
+    description:
+    url:
+    technologies:
+    links:
+  tools.envconfig:
+    repository: aeroclub.tools.envconfig
+    title: aeroclub.tools.envconfig
+    entity: component
+    project: Aeroclub Tools
+    description:
+    url:
+    technologies:
+    links:
+  tools.monitoringbroker:
+    repository: aeroclub.tools.monitoringbroker
+    title: aeroclub.tools.monitoringbroker
+    entity: component
+    project: Aeroclub Tools
+    description:
+    url:
+    technologies:
+    links:
+  tools.redismanager:
+    repository: aeroclub.tools.redismanager
+    title: aeroclub.tools.redismanager
+    entity: component
+    project: Aeroclub Tools
+    description:
+    url:
+    technologies:
+    links:
+  tools.sqlscripter:
+    repository: aeroclub.tools.sqlscripter
+    title: aeroclub.tools.sqlscripter
+    entity: component
+    project: Aeroclub Tools
+    description:
+    url:
+    technologies:
+    links:
+  tools.static:
+    repository: aeroclub.tools.static
+    title: aeroclub.tools.static
+    entity: component
+    project: Aeroclub Tools
+    description:
+    url:
+    technologies:
+    links:
+  tools.wsdl:
+    repository: aeroclub.tools.wsdl
+    title: aeroclub.tools.wsdl
+    entity: component
+    project: Aeroclub Tools
+    description:
+    url:
+    technologies:
+    links:
+  trak:
+    repository: aeroclub.trak
+    title: aeroclub.trak
+    entity: component
+    project:
+    description:
+    url:
+    technologies:
+    links:
+  uatfx:
+    repository: aeroclub.uatfx
+    title: aeroclub.uatfx
+    entity: component
+    project:
+    description:
+    url:
+    technologies:
+    links:
+  wallnewspaper:
+    repository: aeroclub.wallnewspaper
+    title: WallNewspaper
+    entity: component
+    project:
+    description: Журнал Аэроклуб
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/WallNewspaper
+    technologies:
+    links:
+  widgets:
+    repository: aeroclub.widgets
+    title: aeroclub.widgets
+    entity: component
+    project: Aeroclub Widgets
+    description:
+    url:
+    technologies:
+    links:
+  widgets.carriagescheme:
+    repository: aeroclub.widgets.carriagescheme
+    title: aeroclub.widgets.carriagescheme
+    entity: component
+    project: Aeroclub Widgets
+    description:
+    url:
+    technologies:
+    links:
+  tickets:
+    repository: tickets
+    title: Tickets
+    entity: component
+    project: Aeroclub Integration
+    description: Управленческая информация по продажам билетов
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/Tickets
+    technologies:
+    links:
+  applications.aeroexpress:
+    repository: aeroclub.aeroexpress
+    title: Aeroexpress
+    entity: component
+    project: Aeroclub Aeroexpress
+    description: Консоль оформления билетов на Аэроэкспресс
+    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=22806835
+    technologies:
+    links:
+  applications.api:
+    repository: aeroclub.api
+    title: aeroclub.api
+    entity: component
+    project: Aeroclub Aeroexpress
+    description:
+    url:
+    technologies:
+    links:
+  applications.expense.integration:
+    repository: aeroclub.expense.integration
+    title: Expense Integration
+    entity: component
+    project: Aeroclub Expense
+    description: Служба, подписана на сообщения, отправляемые Time-ом в RabbitMQ. Сообщения содержат информацию о расходах из командировок и услуги с наличной формой оплаты. После получения сообщения, служба определяет пользователя, которому нужно выгрузить расходы (например по CompanyID) и вызывает необходимые методы внутри SRV Expenses integration API, выгружает расходы.
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Expenses+integration+API
+    technologies:
+    links:
+  applications.expense.ui:
+    repository: aeroclub.expense.ui
+    title: Expense UI
+    entity: component
+    project: Aeroclub Expense
+    description: API для работы с интерфейсом пользователя - клиентская / административная среда
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Expenses+UI+API
+    technologies:
+    links:
+  applications.expense.xsd:
+    repository: aeroclub.expense.xsd
+    title: Expense XSD
+    entity: component
+    project: Aeroclub Expense
+    description:
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/Expense
+    technologies:
+    links:
+  applications.expense:
+    repository: aeroclub.expense
+    title: Expense
+    entity: component
+    project: Aeroclub Expense
+    description: Работа с номенклатурой расходов - созданных вручную, экспортированных из Time и прочих приложений. Согласование расходов до оплаты, формирование заявок на выдачу аванса, формирование авансового отчета, выгрузка сформированных документов и проводок по ним в учетную систему.
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/Expense
+    technologies:
+    links:
+  applications.b2basia:
+    repository: aeroclub.b2basia
+    title: aeroclub.b2basia
+    entity: component
+    project: Aeroclub External Applications
+    description:
+    url:
+    technologies:
+    links:
+  applications.mobile:
+    repository: aeroclub.mobile
+    title: aeroclub.mobile
+    entity: component
+    project: Aeroclub External Applications
+    description:
+    url:
+    technologies:
+    links:
+  applications.offers:
+    repository: aeroclub.offers
+    title: Offers
+    entity: component
+    project: Aeroclub External Applications
+    description: Используется для подтверждения или отказа клиента от предложенного (сгенерированного системой) оффера
+    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=32163006
+    technologies:
+    links:
+  applications.sales:
+    repository: aeroclub.sales
+    title: aeroclub.sales
+    entity: component
+    project: Aeroclub External Applications
+    description:
+    url:
+    technologies:
+    links:
+  applications.static:
+    repository: aeroclub.static
+    title: aeroclub.static
+    entity: component
+    project: Aeroclub External Applications
+    description:
+    url:
+    technologies:
+    links:
+  applications.unsubscribe.surveys:
+    repository: aeroclub.unsubscribe.surveys
+    title: Surveys Unsubscribe
+    entity: component
+    project: Aeroclub External Applications
+    description: Служебные страницы для респондентов (отписка от опросов, опросы на иностранном языке), следящий пиксель в письме-приглашении
+    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=32166429
+    technologies:
+    links:
+  applications.unsubscribe:
+    repository: aeroclub.unsubscribe
+    title: aeroclub.unsubscribe
+    entity: component
+    project: Aeroclub External Applications
+    description:
+    url:
+    technologies:
+    links:
+  applications.3dcontracts:
+    repository: aeroclub.3dcontracts
+    title: 3DContract
+    entity: component
+    project: Aeroclub Internal Applications
+    description: Консоль 3-х сторонних договоров по авиа
+    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=18580201
+    technologies:
+    links:
+  applications.authorizationsconsole:
+    repository: aeroclub.authorizationsconsole
+    title: aeroclub.authorizationsconsole
+    entity: component
+    project: Aeroclub Internal Applications
+    description:
+    url:
+    technologies:
+    links:
+  applications.autosender:
+    repository: aeroclub.autosender
+    title: Autosender
+    entity: component
+    project: Aeroclub Internal Applications
+    description: Для рассылки отчетов клиентам и внутренним сотрудникам АК (КАМ, операционка и т.д.)
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/Autosender
+    technologies:
+    links:
+  applications.callstatistics:
+    repository: aeroclub.callstatistics
+    title: Callstatistics
+    entity: component
+    project: Aeroclub Internal Applications
+    description: Просмотр статистики по звонкам
+    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=22119619
+    technologies:
+    links:
+  applications.customproperty.gui:
+    repository: aeroclub.customproperty.gui
+    title: CustomProperty.GUI
+    entity: component
+    project: Aeroclub Internal Applications
+    description:
+    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=32148447
+    technologies:
+    links:
+  applications.directhotels3dcontracts:
+    repository: aeroclub.directhotels3dcontracts
+    title: HotelAgreements
+    entity: component
+    project: Aeroclub Internal Applications
+    description: Консоль для оформления отельных договоров
+    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=18580206
+    technologies:
+    links:
+  applications.directpayment:
+    repository: aeroclub.directpayment
+    title: DirectPayment
+    entity: component
+    project: Aeroclub Internal Applications
+    description: Консоль для прямого снятия денег с карт, позволяет как снимать деньги с карт, так и возвращать.
+    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=18580204
+    technologies:
+    links:
+  applications.financeconsole:
+    repository: aeroclub.financeconsole
+    title: Finance Console
+    entity: component
+    project: Aeroclub Internal Applications
+    description: Для заполнения справочников, которые используются для расчета финансовых показателей. Пользователи через WEB-интерфейс заполняют данные, а консоль выполняет расчеты по ним.
+    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=29233640
+    technologies:
+    links:
+  applications.games:
+    repository: aeroclub.games
+    title: aeroclub.games
+    entity: component
+    project: Aeroclub Internal Applications
+    description:
+    url:
+    technologies:
+    links:
+  applications.invoicingconsole:
+    repository: aeroclub.invoicingconsole
+    title: aeroclub.invoicingconsole
+    entity: component
+    project: Aeroclub Internal Applications
+    description:
+    url:
+    technologies:
+    links:
+  applications.jira:
+    repository: jira
+    title: Jira
+    entity: component
+    project: Aeroclub Internal Applications
+    description:
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/Jira
+    technologies:
+    links:
+  applications.jiraexporter:
+    repository: aeroclub.jiraexporter
+    title: Jira exporter
+    entity: component
+    project: Aeroclub Internal Applications
+    description: Печать карточек из Jira
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/Jira+exporter
+    technologies:
+    links:
+  applications.perspective:
+    repository: aeroclub.perspective
+    title: aeroclub.perspective
+    entity: component
+    project: Aeroclub Internal Applications
+    description:
+    url:
+    technologies:
+    links:
+  applications.phonebook:
+    repository: aeroclub.phonebook
+    title: Phonebook
+    entity: component
+    project: Aeroclub Internal Applications
+    description:
+    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=18580189
+    technologies:
+    links:
+  applications.qcmonitor:
+    repository: aeroclub.qcmonitor
+    title: QCMonitor
+    entity: component
+    project: Aeroclub Internal Applications
+    description: Контроль качества работы агентов
+    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=18580194
+    technologies:
+    links:
+  applications.saythanks:
+    repository: aeroclub.saythanks
+    title: aeroclub.saythanks
+    entity: component
+    project: Aeroclub Internal Applications
+    description:
+    url:
+    technologies:
+    links:
+  applications.servicedesk:
+    repository: aeroclub.servicedesk
+    title: ServiceDesk
+    entity: component
+    project: Aeroclub Internal Applications
+    description: Страница для просмотра и создания заявок ServiceDesk
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/ServiceDesk
+    technologies:
+    links:
+  applications.sofconsole:
+    repository: aeroclub.sofconsole
+    title: Sof Console
+    entity: component
+    project: Aeroclub Internal Applications
+    description: Просмотр платежных карт
+    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=18580217
+    technologies:
+    links:
+  applications.surveysconsole:
+    repository: aeroclub.surveysconsole
+    title: Surveys Console
+    entity: component
+    project: Aeroclub Internal Applications
+    description: Обработка результатов опросов, оценка работы агентов в привязке к отзыву
+    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=32166433
+    technologies:
+    links:
+  applications.television:
+    repository: aeroclub.television
+    title: aeroclub.television
+    entity: component
+    project: Aeroclub Internal Applications
+    description:
+    url:
+    technologies:
+    links:
+  applications.voicerecordings:
+    repository: aeroclub.voicerecordings
+    title: Voice Recordings
+    entity: component
+    project: Aeroclub Internal Applications
+    description: Просмотр истории по звонкам и прослушивание записанных разговоров
+    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=24779468
+    technologies:
+    links:
+  applications.statusboard:
+    repository: aeroclub.statusboard
+    title: Status Board
+    entity: component
+    project: Aeroclub Statusboard
+    description: Отслеживание статуса автовыставления (и отправка на повторное автовыставление) счетов, выгрузка маршрут-квитанций
+    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=20515850
+    technologies:
+    links:
+  applications.cabinet:
+    repository: aeroclub.cabinet
+    title: Служба создания GK бронирований
+    entity: component
+    project: Aeroclub Time
+    description: JOB для создания отельных GK сегментов
+    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=19147938
+    technologies:
+    links:
+  applications.privateoffice:
+    repository: aeroclub.privateoffice
+    title: aeroclub.privateoffice
+    entity: component
+    project: Aeroclub Time
+    description:
+    url:
+    technologies:
+    links:
+  db.1cexchange:
+    repository: aeroclub.db.1cexchange
+    title: 1CExchange
+    entity: database
+    project:
+    description:
+    url:
+    technologies:
+    links:
+  db.3dcontract:
+    repository: aeroclub.db.3dcontract
+    title: 3dContract
+    entity: database
+    project:
+    description:
+    url:
+    technologies:
+    links:
+  db.adfsartifactstore:
+    repository: aeroclub.db.adfsartifactstore
+    title: AdfsArtifactStore
+    entity: database
+    project:
+    description:
+    url:
+    technologies:
+    links:
+  db.adfsconfiguration:
+    repository: aeroclub.db.adfsconfiguration
+    title: AdfsConfiguration
+    entity: database
+    project:
+    description:
+    url:
+    technologies:
+    links:
+  db.adsync:
+    repository: aeroclub.db.adsync
+    title: ADSync
+    entity: database
+    project:
+    description:
+    url:
+    technologies:
+    links:
+  db.aeroexpress:
+    repository: aeroclub.db.aeroexpress
+    title: aeroexpress
+    entity: database
+    project:
+    description:
+    url:
+    technologies:
+    links:
+  db.airfiles:
+    repository: aeroclub.db.airfiles
+    title: AirFiles
+    entity: database
+    project:
+    description:
+    url:
+    technologies:
+    links:
+  db.airscenarios:
+    repository: aeroclub.db.airscenarios
+    title: AirScenarios
+    entity: database
+    project:
+    description:
+    url:
+    technologies:
+    links:
+  db.apacs3000:
+    repository: aeroclub.db.apacs3000
+    title: apacs3000
+    entity: database
+    project:
+    description:
+    url:
+    technologies:
+    links:
+  db.appvolumes:
+    repository: aeroclub.db.appvolumes
+    title: AppVolumes
+    entity: database
+    project:
+    description:
+    url:
+    technologies:
+    links:
+  db.aria:
+    repository: aeroclub.db.aria
+    title: ARIA
+    entity: database
+    project:
+    description:
+    url:
+    technologies:
+    links:
+  db.asia:
+    repository: aeroclub.db.asia
+    title: ASIA
+    entity: database
+    project:
+    description:
+    url:
+    technologies:
+    links:
+  db.asia_custs:
+    repository: aeroclub.db.asia_custs
+    title: ASIA_CUSTS
+    entity: database
+    project:
+    description:
+    url:
+    technologies:
+    links:
+  db.authorization:
+    repository: aeroclub.db.authorization
+    title: authorization
+    entity: database
+    project:
+    description:
+    url:
+    technologies:
+    links:
+  db.autooffersdata:
+    repository: aeroclub.db.autooffersdata
+    title: AutooffersData
+    entity: database
+    project:
+    description:
+    url:
+    technologies:
+    links:
+  db.autooffersexchange:
+    repository: aeroclub.db.autooffersexchange
+    title: AutooffersExchange
+    entity: database
+    project:
+    description:
+    url:
+    technologies:
+    links:
+  db.avia:
+    repository: aeroclub.db.avia
+    title: AVIA
+    entity: database
+    project:
+    description:
+    url:
+    technologies:
+    links:
+  db.aviaqueues:
+    repository: aeroclub.db.aviaqueues
+    title: aviaqueues
+    entity: database
+    project:
+    description:
+    url:
+    technologies:
+    links:
+  db.aviaticketchecker:
+    repository: aeroclub.db.aviaticketchecker
+    title: aviaticketchecker
+    entity: database
+    project:
+    description:
+    url:
+    technologies:
+    links:
+  db.billing:
+    repository: aeroclub.db.billing
+    title: billing
+    entity: database
+    project:
+    description:
+    url:
+    technologies:
+    links:
+  db.commission:
+    repository: aeroclub.db.commission
+    title: Commission
+    entity: database
+    project:
+    description:
+    url:
+    technologies:
+    links:
+  db.companies_legacy:
+    repository: aeroclub.db.companies_legacy
+    title: Companies_Legacy
+    entity: database
+    project:
+    description:
+    url:
+    technologies:
+    links:
+  db.confluence:
+    repository: aeroclub.db.confluence
+    title: confluence
+    entity: database
+    project:
+    description:
+    url:
+    technologies:
+    links:
+  db.crucible:
+    repository: aeroclub.db.crucible
+    title: Crucible
+    entity: database
+    project:
+    description:
+    url:
+    technologies:
+    links:
+  db.db_webparts:
+    repository: aeroclub.db.db_webparts
+    title: db_webparts
+    entity: database
+    project:
+    description:
+    url:
+    technologies:
+    links:
+  db.directcars_v2:
+    repository: aeroclub.db.directcars_v2
+    title: directcars_v2
+    entity: database
+    project:
+    description:
+    url:
+    technologies:
+    links:
+  db.directhotels:
+    repository: aeroclub.db.directhotels
+    title: DirectHotels
+    entity: database
+    project:
+    description:
+    url:
+    technologies:
+    links:
+  db.distribution:
+    repository: aeroclub.db.distribution
+    title: distribution
+    entity: database
+    project:
+    description:
+    url:
+    technologies:
+    links:
+  db.elmah:
+    repository: aeroclub.db.elmah
+    title: elmah
+    entity: database
+    project:
+    description:
+    url:
+    technologies:
+    links:
+  db.employesdb:
+    repository: aeroclub.db.employesdb
+    title: EmployesDB
+    entity: database
+    project:
+    description:
+    url:
+    technologies:
+    links:
+  db.expense:
+    repository: aeroclub.db.expense
+    title: Expense
+    entity: database
+    project:
+    description:
+    url:
+    technologies:
+    links:
+  db.expense_corteos:
+    repository: aeroclub.db.expense_corteos
+    title: expense_corteos
+    entity: database
+    project:
+    description:
+    url:
+    technologies:
+    links:
+  db.feedbackintegration:
+    repository: aeroclub.db.feedbackintegration
+    title: FeedbackIntegration
+    entity: database
+    project:
+    description:
+    url:
+    technologies:
+    links:
+  db.flightstatus:
+    repository: aeroclub.db.flightstatus
+    title: flightstatus
+    entity: database
+    project:
+    description:
+    url:
+    technologies:
+    links:
+  db.flightstatusstatement:
+    repository: aeroclub.db.flightstatusstatement
+    title: FlightStatusStatement
+    entity: database
+    project:
+    description:
+    url:
+    technologies:
+    links:
+  db.fs:
+    repository: aeroclub.db.fs
+    title: fs
+    entity: database
+    project:
+    description:
+    url:
+    technologies:
+    links:
+  db.gdsimporter:
+    repository: aeroclub.db.gdsimporter
+    title: gdsimporter
+    entity: database
+    project:
+    description:
+    url:
+    technologies:
+    links:
+  db.hglab:
+    repository: aeroclub.db.hglab
+    title: hglab
+    entity: database
+    project:
+    description:
+    url:
+    technologies:
+    links:
+  db.hotelcalculation:
+    repository: aeroclub.db.hotelcalculation
+    title: HotelCalculation
+    entity: database
+    project:
+    description:
+    url:
+    technologies:
+    links:
+  db.integrationhub:
+    repository: aeroclub.db.integrationhub
+    title: integrationhub
+    entity: database
+    project:
+    description:
+    url:
+    technologies:
+    links:
+  db.jira:
+    repository: aeroclub.db.jira
+    title: JIRA
+    entity: database
+    project:
+    description:
+    url:
+    technologies:
+    links:
+  db.jmpdb:
+    repository: aeroclub.db.jmpdb
+    title: JMPDB
+    entity: database
+    project:
+    description:
+    url:
+    technologies:
+    links:
+  db.midoffice:
+    repository: aeroclub.db.midoffice
+    title: MidOffice
+    entity: database
+    project:
+    description:
+    url:
+    technologies:
+    links:
+  db.monitoring:
+    repository: aeroclub.db.monitoring
+    title: Monitoring
+    entity: database
+    project:
+    description:
+    url:
+    technologies:
+    links:
+  db.newspaperlogging:
+    repository: aeroclub.db.newspaperlogging
+    title: NewsPaperLogging
+    entity: database
+    project:
+    description:
+    url:
+    technologies:
+    links:
+  db.ofdintegration:
+    repository: aeroclub.db.ofdintegration
+    title: ofdintegration
+    entity: database
+    project:
+    description:
+    url:
+    technologies:
+    links:
+  db.onlineorders:
+    repository: aeroclub.db.onlineorders
+    title: OnlineOrders
+    entity: database
+    project:
+    description:
+    url:
+    technologies:
+    links:
+  db.openapi:
+    repository: aeroclub.db.openapi
+    title: OpenApi
+    entity: database
+    project:
+    description:
+    url:
+    technologies:
+    links:
+  db.ops:
+    repository: aeroclub.db.ops
+    title: ops
+    entity: database
+    project:
+    description:
+    url:
+    technologies:
+    links:
+  db.ordersdb:
+    repository: aeroclub.db.ordersdb
+    title: OrdersDB
+    entity: database
+    project:
+    description:
+    url:
+    technologies:
+    links:
+  db.ostrovokhoteldata:
+    repository: aeroclub.db.ostrovokhoteldata
+    title: OstrovokHotelData
+    entity: database
+    project:
+    description:
+    url:
+    technologies:
+    links:
+  db.posdb:
+    repository: aeroclub.db.posdb
+    title: PosDB
+    entity: database
+    project:
+    description:
+    url:
+    technologies:
+    links:
+  db.pricebenchmark:
+    repository: aeroclub.db.pricebenchmark
+    title: PriceBenchmark
+    entity: database
+    project:
+    description:
+    url:
+    technologies:
+    links:
+  db.proget:
+    repository: aeroclub.db.proget
+    title: proget
+    entity: database
+    project:
+    description:
+    url:
+    technologies:
+    links:
+  db.rosstat:
+    repository: aeroclub.db.rosstat
+    title: Rosstat
+    entity: database
+    project:
+    description:
+    url:
+    technologies:
+    links:
+  db.scoreboard:
+    repository: aeroclub.db.scoreboard
+    title: ScoreBoard
+    entity: database
+    project:
+    description:
+    url:
+    technologies:
+    links:
+  db.senatorswap:
+    repository: aeroclub.db.senatorswap
+    title: SenatorSwap
+    entity: database
+    project:
+    description:
+    url:
+    technologies:
+    links:
+  db.servicedesk:
+    repository: aeroclub.db.servicedesk
+    title: ServiceDesk
+    entity: database
+    project:
+    description:
+    url:
+    technologies:
+    links:
+  db.sessions:
+    repository: aeroclub.db.sessions
+    title: sessions
+    entity: database
+    project:
+    description:
+    url:
+    technologies:
+    links:
+  db.smsgate:
+    repository: aeroclub.db.smsgate
+    title: SMSGate
+    entity: database
+    project:
+    description:
+    url:
+    technologies:
+    links:
+  db.sp_storage:
+    repository: aeroclub.db.sp_storage
+    title: SP_Storage
+    entity: database
+    project:
+    description:
+    url:
+    technologies:
+    links:
+  db.sql_monitor:
+    repository: aeroclub.db.sql_monitor
+    title: sql_monitor
+    entity: database
+    project:
+    description:
+    url:
+    technologies:
+    links:
+  db.staff_time:
+    repository: aeroclub.db.staff_time
+    title: Staff_Time
+    entity: database
+    project:
+    description:
+    url:
+    technologies:
+    links:
+  db.surveys:
+    repository: aeroclub.db.surveys
+    title: Surveys
+    entity: database
+    project:
+    description:
+    url:
+    technologies:
+    links:
+  db.taskscheduler:
+    repository: aeroclub.db.taskscheduler
+    title: taskscheduler
+    entity: database
+    project:
+    description:
+    url:
+    technologies:
+    links:
+  db.taxes:
+    repository: aeroclub.db.taxes
+    title: taxes
+    entity: database
+    project:
+    description:
+    url:
+    technologies:
+    links:
+  db.teamcity:
+    repository: aeroclub.db.teamcity
+    title: teamcity
+    entity: database
+    project:
+    description:
+    url:
+    technologies:
+    links:
+  db.telemetry:
+    repository: aeroclub.db.telemetry
+    title: Telemetry
+    entity: database
+    project:
+    description:
+    url:
+    technologies:
+    links:
+  db.ticketsintegration:
+    repository: aeroclub.db.ticketsintegration
+    title: TicketsIntegration
+    entity: database
+    project:
+    description:
+    url:
+    technologies:
+    links:
+  db.timeauditevents:
+    repository: aeroclub.db.timeauditevents
+    title: TimeAuditEvents
+    entity: database
+    project:
+    description:
+    url:
+    technologies:
+    links:
+  db.tophotel:
+    repository: aeroclub.db.tophotel
+    title: TopHotel
+    entity: database
+    project:
+    description:
+    url:
+    technologies:
+    links:
+  db.tp:
+    repository: aeroclub.db.tp
+    title: TP
+    entity: database
+    project:
+    description:
+    url:
+    technologies:
+    links:
+  db.tscrm:
+    repository: aeroclub.db.tscrm
+    title: TSCRM
+    entity: database
+    project:
+    description:
+    url:
+    technologies:
+    links:
+  db.view:
+    repository: aeroclub.db.view
+    title: view
+    entity: database
+    project:
+    description:
+    url:
+    technologies:
+    links:
+  db.voicerecordings:
+    repository: aeroclub.db.voicerecordings
+    title: voicerecordings
+    entity: database
+    project:
+    description:
+    url:
+    technologies:
+    links:
+  db.workcalendar:
+    repository: aeroclub.db.workcalendar
+    title: WorkCalendar
+    entity: database
+    project:
+    description:
+    url:
+    technologies:
+    links:
+  db.zoom:
+    repository: aeroclub.db.zoom
+    title: zoom
+    entity: database
+    project:
+    description:
+    url:
+    technologies:
+    links:
+  services.approvalservice:
+    repository: aeroclub.services.approvalservice
+    title: aeroclub.services.approvalservice
+    entity: component
+    project: Aeroclub Services
+    description:
+    url:
+    technologies:
+    links:
+  services.aria.templates:
+    repository: aeroclub.services.aria.templates
+    title: Aria  Service Templates
+    entity: component
+    project: Aeroclub Services
+    description:
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/ARIA
+    technologies:
+    links:
+  services.aria:
+    repository: aeroclub.services.aria
+    title: Aria  Service
+    entity: component
+    project: Aeroclub Services
+    description:
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/ARIA
+    technologies:
+    links:
+  services.asia.v7:
+    repository: aeroclub.services.asia.v7
+    title: Asia Service v7
+    entity: component
+    project: Aeroclub Services
+    description: Обслуживание специфичных запросов приложения ASIA
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+ASIA+v7
+    technologies:
+    links:
+  services.asia:
+    repository: aeroclub.services.asia
+    title: Asia Service
+    entity: component
+    project: Aeroclub Services
+    description: Обслуживание специфичных запросов приложения ASIA
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+ASIA
+    technologies:
+    links:
+  services.authorization:
+    repository: aeroclub.services.authorization
+    title: aeroclub.services.authorization
+    entity: component
+    project: Aeroclub Services
+    description:
+    url:
+    technologies:
+    links:
+  services.backxml:
+    repository: aeroclub.services.backxml
+    title: Back XML
+    entity: component
+    project: Aeroclub Services
+    description: "Сервис предназначен для получения информации от поставщика по услугам/отелям, в случае изменения каких-либо данных на стороне поставщика.\n"
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Back+XML
+    technologies:
+    links:
+  services.ceobreakfastbot:
+    repository: aeroclub.services.ceobreakfastbot
+    title: CeoBreakfastBot
+    entity: component
+    project: Aeroclub Services
+    description: Бронирование встречи с одним из CEO Аэроклуба
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+CeoBreakfastBot
+    technologies:
+    links:
+  services.commission:
+    repository: aeroclub.services.commission
+    title: Commission
+    entity: component
+    project: Aeroclub Services
+    description: Расчет комиссий
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Commission
+    technologies:
+    links:
+  services.conversion:
+    repository: aeroclub.services.conversion
+    title: Conversion
+    entity: component
+    project: Aeroclub Services
+    description: Используется для конвертации HTML в PDF
+    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=39889584
+    technologies:
+    links:
+  services.currency:
+    repository: aeroclub.services.currency
+    title: Currency
+    entity: component
+    project: Aeroclub Services
+    description: Конвертация валют
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Currency
+    technologies:
+    links:
+  services.databroom:
+    repository: aeroclub.services.databroom
+    title: Databroom
+    entity: component
+    project: Aeroclub Services
+    description: Сбор аналитических данных для построения отчетов и проверок гипотез
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Databroom
+    technologies:
+    links:
+  services.discounts:
+    repository: aeroclub.services.discounts
+    title: aeroclub.services.discounts
+    entity: component
+    project: Aeroclub Services
+    description:
+    url:
+    technologies:
+    links:
+  services.faqbot:
+    repository: aeroclub.services.faqbot
+    title: FaqBot
+    entity: component
+    project: Aeroclub Services
+    description: Ответы на вопросы по базе знаний
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+FaqBot
+    technologies:
+    links:
+  services.jiraservicedesk:
+    repository: aeroclub.services.jiraservicedesk
+    title: Jira Service Desk
+    entity: component
+    project: Aeroclub Services
+    description: Используется веб-интерфейсом ServiceDesk для получения и обработки заявок SD в Jira
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+JiraSD
+    technologies:
+    links:
+  services.publisher:
+    repository: aeroclub.services.publisher
+    title: aeroclub.services.publisher
+    entity: component
+    project: Aeroclub Services
+    description:
+    url:
+    technologies:
+    links:
+  services.queues:
+    repository: aeroclub.services.queues
+    title: Queues Service
+    entity: component
+    project: Aeroclub Services
+    description: Сервис для работы с очередями бронирований
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Queues
+    technologies:
+    links:
+  services.sessionstore:
+    repository: aeroclub.services.sessionstore
+    title: Amadeus Session Store
+    entity: component
+    project: Aeroclub Services
+    description:
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Amadeus+Session+Store
+    technologies:
+    links:
+  services.smsgate:
+    repository: aeroclub.services.smsgate
+    title: Sms Gate
+    entity: component
+    project: Aeroclub Services
+    description:
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+SMSGate
+    technologies:
+    links:
+  services.surveys:
+    repository: aeroclub.services.surveys
+    title: aeroclub.services.surveys
+    entity: component
+    project: Aeroclub Services
+    description:
+    url:
+    technologies:
+    links:
+  services.taxes:
+    repository: aeroclub.services.taxes
+    title: Taxes
+    entity: component
+    project: Aeroclub Services
+    description: Определение применимости и расчет дополнительных такс
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Taxes
+    technologies:
+    links:
+  services.templating:
+    repository: aeroclub.services.templating
+    title: Templating
+    entity: component
+    project: Aeroclub Services
+    description: Генерация HTML/PDF версий отчетов и писем (IEP, ITR и прочее), рассылаемых клиентам
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Templating
+    technologies:
+    links:
+  services.timatic:
+    repository: aeroclub.services.timatic
+    title: aeroclub.services.timatic
+    entity: component
+    project: Aeroclub Services
+    description:
+    url:
+    technologies:
+    links:
+  services.time.notifyservice:
+    repository: aeroclub.services.time.notifyservice
+    title: aeroclub.services.time.notifyservice
+    entity: component
+    project: Aeroclub Services
+    description:
+    url:
+    technologies:
+    links:
+  services.vat:
+    repository: aeroclub.services.vat
+    title: VatService
+    entity: component
+    project: Aeroclub Services
+    description: Рассчет НДС через Amadeus или нашу БД
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+VatService
+    technologies:
+    links:
+  services.wifibot:
+    repository: aeroclub.services.wifibot
+    title: WifiBot
+    entity: component
+    project: Aeroclub Services
+    description: Выдача учёток гостевой Wifi-сети
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+WifiBot
+    technologies:
+    links:
+  services.wifiguest:
+    repository: aeroclub.services.wifiguest
+    title: aeroclub.services.wifiguest
+    entity: component
+    project: Aeroclub Services
+    description:
+    url:
+    technologies:
+    links:
+  backgroundservices.aviaticketchecker3000:
+    repository: aeroclub.backgroundservices.aviaticketchecker3000
+    title: AviaTicketChecker3000
+    entity: component
+    project: Aeroclub Background Services
+    description: Робот ежедневно формирует список неиспользованных билетов согласно статусам билетов и запрашивает посегментный статус в WSCommon, в случае изменения статусов билетов отмечает их и формирует структуру-таблицу по которой будет в дальнейшем строиться ежемесячный отчёт.
+    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=20515097
+    technologies:
+    links:
+  backgroundservices.backxmlimporter:
+    repository: aeroclub.backgroundservices.backxmlimporter
+    title: Back XML Importer
+    entity: component
+    project: Aeroclub Background Services
+    description: Обработка сообщений RMQ, загруженных через сервис BackXML
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/Back+XML+Importer
+    technologies:
+    links:
+  backgroundservices.bayerprofilesync:
+    repository: aeroclub.backgroundservices.bayerprofilesync
+    title: Bayer profile sync
+    entity: component
+    project: Aeroclub Background Services
+    description:
+    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=29231583
+    technologies:
+    links:
+  backgroundservices.bigqueryimporter:
+    repository: aeroclub.backgroundservices.bigqueryimporter
+    title: BigQueryImporter
+    entity: component
+    project: Aeroclub Background Services
+    description: Получение данных из BigQuery
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/BigQueryImporter
+    technologies:
+    links:
+  backgroundservices.currencyrateimporter:
+    repository: aeroclub.backgroundservices.currencyrateimporter
+    title: aeroclub.backgroundservices.currencyrateimporter
+    entity: component
+    project: Aeroclub Background Services
+    description:
+    url:
+    technologies:
+    links:
+  backgroundservices.gdsimporter:
+    repository: aeroclub.backgroundservices.gdsimporter
+    title: Gdsimporter
+    entity: component
+    project: Aeroclub Background Services
+    description: Сервис контроля 3D договоров
+    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=32170448
+    technologies:
+    links:
+  backgroundservices.gdspnr:
+    repository: aeroclub.backgroundservices.gdspnr
+    title: GDS-PNR
+    entity: component
+    project: Aeroclub Background Services
+    description:
+    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=29231589
+    technologies:
+    links:
+  backgroundservices.heliosdatabridge:
+    repository: aeroclub.backgroundservices.heliosdatabridge
+    title: VPOS Exchange
+    entity: component
+    project: Aeroclub Background Services
+    description: Получение данных из VPOS для передачи в Helios
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/VPOS+Exchange
+    technologies:
+    links:
+  backgroundservices.hotelimporter:
+    repository: aeroclub.backgroundservices.hotelimporter
+    title: Hotel importer
+    entity: component
+    project: Aeroclub Background Services
+    description: Робот загрузки новых отелей после поиска/обновления отелей от поставщика
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+HotelImporter
+    technologies:
+    links:
+  backgroundservices.invoicemigrationtool:
+    repository: aeroclub.backgroundservices.invoicemigrationtool
+    title: InvoiceMigrationTool
+    entity: component
+    project: Aeroclub Background Services
+    description: Инструмент для миграции настроек автовыставления из csv файла в db MidOffice
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/Aeroclub.BackgroundServices.InvoiceMigrationTool
+    technologies:
+    links:
+  backgroundservices.pushpublisher:
+    repository: aeroclub.backgroundservices.pushpublisher
+    title: Push publisher
+    entity: component
+    project: Aeroclub Background Services
+    description: Push-уведомления в МП Aeroclub Link
+    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=20515482
+    technologies:
+    links:
+  backgroundservices.queues:
+    repository: aeroclub.backgroundservices.queues
+    title: Queues
+    entity: component
+    project: Aeroclub Background Services
+    description: Управление списком авиа-бронирований в очередях GDS
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/Queues
+    technologies:
+    links:
+  backgroundservices.securityaudit:
+    repository: aeroclub.backgroundservices.securityaudit
+    title: Security Audit Backend
+    entity: component
+    project: Aeroclub Background Services
+    description: "\tСлужба ведения журнала аудита безопасности"
+    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=39886536
+    technologies:
+    links:
+  backgroundservices.surveys:
+    repository: aeroclub.backgroundservices.surveys
+    title: Surveys Backend
+    entity: component
+    project: Aeroclub Background Services
+    description: Автоматическая рассылка приглашений на опрос клиентов АК и выгрузка результатов из SM, сохранение в БД
+    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=32163312
+    technologies:
+    links:
+  backgroundservices.sync:
+    repository: aeroclub.backgroundservices.sync
+    title: aeroclub.backgroundservices.sync
+    entity: component
+    project: Aeroclub Background Services
+    description:
+    url:
+    technologies:
+    links:
+  integration.aeroexpress:
+    repository: aeroclub.integration.aeroexpress
+    title: aeroclub.integration.aeroexpress
+    entity: component
+    project: Aeroclub Aeroexpress
+    description:
+    url:
+    technologies:
+    links:
+  integration.amadeus:
+    repository: aeroclub.integration.amadeus
+    title: aeroclub.integration.amadeus
+    entity: component
+    project: Aeroclub Integration
+    description:
+    url:
+    technologies:
+    links:
+  integration.feedback:
+    repository: aeroclub.integration.feedback
+    title: Feedback Integration
+    entity: component
+    project: Aeroclub Integration
+    description: CRUD сервис для работы с подписками клиентов на события по услугам и командировкам. Вызывается из Aeroclub API, использует собственную базу FeedbackIntegration
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/Feedback+Integration+Service
+    technologies:
+    links:
+  integration.gds:
+    repository: aeroclub.integration.gds
+    title: aeroclub.integration.gds
+    entity: component
+    project: Aeroclub Integration
+    description:
+    url:
+    technologies:
+    links:
+  integration.genesys:
+    repository: aeroclub.integration.genesys
+    title: Genesys Integration Backend
+    entity: component
+    project: Aeroclub Integration
+    description:
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/Genesys+Integration+Backend
+    technologies:
+    links:
+  integration.hds:
+    repository: aeroclub.integration.hds
+    title: aeroclub.integration.hds
+    entity: component
+    project: Aeroclub Integration
+    description:
+    url:
+    technologies:
+    links:
+  integration.postmark:
+    repository: aeroclub.integration.postmark
+    title: Postmark Integration
+    entity: component
+    project: Aeroclub Integration
+    description: 'Получение Webhook''ов от Postmark'
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Integration+Postmark
+    technologies:
+    links:
+  integration.raileurope:
+    repository: aeroclub.integration.raileurope
+    title: aeroclub.integration.raileurope
+    entity: component
+    project: Aeroclub Integration
+    description:
+    url:
+    technologies:
+    links:
+  integration.s7:
+    repository: aeroclub.integration.s7
+    title: aeroclub.integration.s7
+    entity: component
+    project: Aeroclub Integration
+    description:
+    url:
+    technologies:
+    links:
+  integration.surveymonkey:
+    repository: aeroclub.integration.surveymonkey
+    title: SurveyMonkey Integration
+    entity: component
+    project: Aeroclub Integration
+    description: Получение webhook от SurveyMonkey
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Integration+SurveyMonkey
+    technologies:
+    links:
+  integration.wallet:
+    repository: aeroclub.integration.wallet
+    title: aeroclub.integration.wallet
+    entity: component
+    project: Aeroclub Integration
+    description:
+    url:
+    technologies:
+    links:
+  backgroundservices.jirasnitch:
+    repository: aeroclub.backgroundservices.jirasnitch
+    title: Jira snitch
+    entity: component
+    project: Aeroclub Background Services
+    description: Используется для преобразования сообщений кролика в задачи в джире
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/Jira+snitch
+    technologies:
+    links:
+  backgroundservices.nlp:
+    repository: aeroclub.backgroundservices.nlp
+    title: aeroclub.backgroundservices.nlp
+    entity: component
+    project: Aeroclub Background Services
+    description:
+    url:
+    technologies:
+    links:
+  backgroundservices.ofdintegration:
+    repository: aeroclub.backgroundservices.ofdintegration
+    title: OFD Transaction (Background VPOS Service)
+    entity: component
+    project: Aeroclub Background Services
+    description: Отправка транзакции для формирования чека в ОФД, при условии успешной VPOS Транзакции. Постановка транзакций очередь на отправку.
+    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=19140077
+    technologies:
+    links:
+  backgroundservices.pnrpostprocessing:
+    repository: aeroclub.backgroundservices.pnrpostprocessing
+    title: PNR postprocessor
+    entity: component
+    project: Aeroclub Background Services
+    description: Служба создания GK-бронирований
+    url: http://wiki.aeroclub.int/pages/viewpage.action?pageId=29231602
+    technologies:
+    links:

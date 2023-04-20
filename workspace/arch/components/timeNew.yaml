@@ -1,0 +1,70 @@
+components:
+  aeroclub.applications.timeNew:
+    repository:
+    title: Time New
+    entity: component
+    project: Aeroclub Time
+    description: Новое приложения для оформления командировок
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/Travelboard
+    technologies:
+    links:
+      - id: aeroclub.applications.time
+        direction: -->
+  aeroclub.applications.timeNew.ui:
+    repository: aeroclub.time.ui
+    title: UI
+    entity: component
+    project: Aeroclub Time
+    description: Веб-приложение на React
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/Travelboard
+    technologies:
+    links:
+      - id: aeroclub.applications.time
+        direction: <-->
+        title: Переходы меджду старыми/новыми страницами
+      - id: aeroclub.applications.passport
+        direction: -->
+        title: Аутентификация
+      - id: aeroclub.integration.inAppStory
+        direction: -->
+        title: Получение историй и онбординга
+      - id: aeroclub.applications.timeNew.api
+        direction: -->
+        title: Вся основная работа с виджетами, командировками
+      - id: aeroclub.integration.yandexMetrika
+        direction: -->
+      - id: aeroclub.integration.googleAnalytics
+        direction: -->
+  aeroclub.applications.timeNew.api:
+    repository: aeroclub.time.api
+    title: API
+    entity: component
+    project: Aeroclub Time
+    description: Получение данных статистики
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Time.Api
+    technologies:
+    links:
+      - id: aeroclub.db.travelboard
+        direction: -->
+        title: Получение статистики для виджетов менеджера
+      - id: aeroclub.db.cabinet
+        direction: -->
+        title: Получение настроек виджетов
+      - id: aeroclub.services.api
+        direction: -->
+        title: Получение доступных компаний
+      - id: aeroclub.services.apiQuery
+        direction: -->
+        title: Получение информации из БД Cabinet
+      - id: aeroclub.services.dictionaries
+        direction: -->
+        title: Получение справочников
+      - id: aeroclub.services.profiles
+        direction: -->
+        title: Получение информации для профилей
+      - id: aeroclub.services.companies
+        direction: -->
+        title: Получение настроек подписки
+      - id: aeroclub.services.businesstrips
+        direction: -->
+        title: Командировки и формы оплаты

@@ -1,0 +1,14 @@
+contexts:
+  aerclub.applications.time:
+    title: Time
+    location: Time/Архитектура Time
+    extra-links: true
+    components:
+      - aeroclub
+      - aeroclub.applications
+      - aeroclub.applications.time.backend
+      - aeroclub.db.cabinet
+      - aeroclub.services.dictionaries
+      - aeroclub.services.vault
+      - aeroclub.db.cabinet
+      - aeroclub.db.profiles
