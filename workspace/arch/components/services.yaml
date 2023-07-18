@@ -4,7 +4,7 @@ components:
     entity: component
   aeroclub.services.api:
     repository: aeroclub.services.api
-    title: Api
+    title: Aeroclub Api
     entity: component
     project: Aeroclub Services
     description: Работа с мобильным приложением Link
@@ -75,7 +75,7 @@ components:
     technologies:
     links:
       - id: aeroclub.db.cabinet
-        direction: --
+        direction: -->
   aeroclub.services.profiles:
     repository: aeroclub.services.profiles
     title: Profiles
@@ -86,7 +86,7 @@ components:
     technologies:
     links:
       - id: aeroclub.db.profiles
-        direction: --
+        direction: -->
   aeroclub.services.dictionaries:
     repository: aeroclub.platform.dictionaries.service
     title: Dictionaries
@@ -119,3 +119,36 @@ components:
     description: Работа с доп. данными в Time и Link
     url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+CustomPropertyFx
     technologies:
+  aeroclub.services.journeys:
+    repository: aeroclub.services.journeys
+    title: Journeys
+    entity: component
+    project: Aeroclub Services
+    description: Поиск командировок с использованием Lucene-индексера
+    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Journeys
+    technologies:
+    links:
+      - id: aeroclub.db.lucene
+        direction: -->
+  aeroclub.services.blobstore:
+    repository: aeroclub.services.blobstore
+    title: BlobStore
+    entity: component
+    project: Aeroclub Services
+    description: Сервис для работы с S3
+    url: 
+    technologies:
+    links:
+      - id: aeroclub.db.fs
+        direction: -->
+  aeroclub.services.indexProfiles:
+    repository:
+    title: Index Profiles
+    entity: component
+    project: Aeroclub Services
+    description: Сервис предназначен для быстрого получения профилей
+    url: 
+    technologies:
+    links:
+      - id: aeroclub.db.elastic
+        direction: -->

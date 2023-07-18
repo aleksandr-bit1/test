@@ -26,7 +26,7 @@ contexts:
       - aeroclub.services.vault
       - aeroclub.db.cabinet
       - aeroclub.db.profiles
-      - services.businesstrips
+      - aeroclub.services.businesstrips
   applications.time.businesstrip.creation.adding_route:
     title: Создание новой командировки
     location: Time/Работа с командировкой/Создание новой командировки/1. Ввод маршрута

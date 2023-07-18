@@ -53,8 +53,6 @@ components:
     links:
       - id: aeroclub.applications.timeNew
         direction: -->
-      - id: aeroclub.applications.time.backend
-        direction: -->
   aeroclub.applications.time.backend:
     repository: aeroclub.time.backend
     title: Time Backend
@@ -65,6 +63,8 @@ components:
     url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Time.Api
     technologies:
     links:
+      - id: aeroclub.applications.time
+        direction: -->
       - id: aeroclub.db.cabinet
         direction: -->
       - id: aeroclub.services.businesstrips

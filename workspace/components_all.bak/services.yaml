@@ -150,18 +150,6 @@ components:
     description: Генерация отельных и трансферных ваучеров
     url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+ITR+Service
     technologies:
-  services.journeys:
-    repository: aeroclub.services.journeys
-    title: Journeys
-    entity: component
-    template: Удалить
-    project: Aeroclub Services
-    description: Поиск командировок с использованием Lucene-индексера
-    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Journeys
-    technologies:
-    links:
-      - id: backgroundservices.indexer
-        direction: --
   services.midoffice:
     repository: aeroclub.services.midoffice
     title: MidOffice Service

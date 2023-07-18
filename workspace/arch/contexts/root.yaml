@@ -1,3 +1,35 @@
 imports:
   - time/root.yaml
   - timeNew.yaml
+contexts:
+  aeroclub:
+    title: Aeroclub
+    location: Aeroclub
+    components:
+      - aeroclub
+      - aeroclub.*
+  aeroclub.applications:
+    title: Applications
+    location: Aeroclub/Applications
+    components:
+      - aeroclub.applications.*
+  aeroclub.db:
+    title: Databases
+    location: Aeroclub/Databases
+    components:
+      - aeroclub.db.*
+  aeroclub.services:
+    title: Services
+    location: Aeroclub/Services
+    components:
+      - aeroclub.services.*
+  aeroclub.integration:
+    title: Integration
+    location: Aeroclub/Integration
+    components:
+      - aeroclub.integration.*
+  aeroclub.backgroundservices:
+    title: BackgroundServices
+    location: Aeroclub/BackgroundServices
+    components:
+      - aeroclub.backgroundservices.*

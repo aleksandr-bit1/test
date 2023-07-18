@@ -1268,15 +1268,6 @@ components:
     url:
     technologies:
     links:
-  db.fs:
-    repository: aeroclub.db.fs
-    title: fs
-    entity: database
-    project:
-    description:
-    url:
-    technologies:
-    links:
   db.gdsimporter:
     repository: aeroclub.db.gdsimporter
     title: gdsimporter

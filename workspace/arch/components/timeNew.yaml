@@ -1,70 +1,131 @@
 components:
   aeroclub.applications.timeNew:
-    repository:
     title: Time New
     entity: component
-    project: Aeroclub Time
     description: Новое приложения для оформления командировок
-    url: http://wiki.aeroclub.int/display/PROJECTDOC/Travelboard
-    technologies:
+    mainClients:
+    technicalInfo:
+    repository:
+    test:
+    prod:
+    build:
+    logsTest:
+    logsProd:
+    versions:
+    responsible:
+    monitoring:
+    project: Aeroclub Time
+    wiki: http://wiki.aeroclub.int/display/PROJECTDOC/Travelboard
     links:
       - id: aeroclub.applications.time
         direction: -->
+        title: Переходы меджду старыми/новыми страницами
   aeroclub.applications.timeNew.ui:
-    repository: aeroclub.time.ui
     title: UI
     entity: component
-    project: Aeroclub Time
     description: Веб-приложение на React
-    url: http://wiki.aeroclub.int/display/PROJECTDOC/Travelboard
+    mainClients:
+    technicalInfo:
+    repository: https://github.com/aeroclub-it/time-ui
+    test:
+    prod:
+    build:
+    logsTest:
+    logsProd:
+    versions:
+    responsible:
+    monitoring:
+    project: Aeroclub Time
+    wiki: http://wiki.aeroclub.int/display/PROJECTDOC/Travelboard
     technologies:
+      - js
+      - react
     links:
-      - id: aeroclub.applications.time
-        direction: <-->
-        title: Переходы меджду старыми/новыми страницами
+      - id: aeroclub.applications.timeNew.api
+        direction: -->
       - id: aeroclub.applications.passport
         direction: -->
         title: Аутентификация
       - id: aeroclub.integration.inAppStory
         direction: -->
         title: Получение историй и онбординга
-      - id: aeroclub.applications.timeNew.api
-        direction: -->
-        title: Работа с виджетами, командировками
       - id: aeroclub.integration.yandexMetrika
         direction: -->
       - id: aeroclub.integration.googleAnalytics
         direction: -->
   aeroclub.applications.timeNew.api:
-    repository: aeroclub.time.api
-    title: API
+    title: Time API
     entity: component
-    project: Aeroclub Time
     description: Получение данных статистики
-    url: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Time.Api
+    mainClients: Менеджер путешествий во времени (Time travel manager)
+    technicalInfo: .net core
+    repository: http://hg.aeroclub.int/projects/time/repositories/aeroclub.time.api
+    test: https://dev-api.time.aero/statistics/v1/
+    prod: https://api.time.aero/statistics/v1/
+    build: http://dev.aeroclub.int:8080/project.html?projectId=ea_TimeApi
+    logsTest: http://logs.aeroclub.int/streams/5d234ce9adbe1d000a88f13d/search
+    logsProd: http://logs.aeroclub.int/streams/5d234d0eadbe1d000a88f2a7/search
+    versions: http://wiki.aeroclub.int/display/TECHDOC/aeroclub.time.api
+    responsible: Team NT
+    monitoring: /servicing
+    project: Aeroclub Time
+    wiki: http://wiki.aeroclub.int/display/PROJECTDOC/SRV+Time.Api
     technologies:
+      - net
+      - webapi
     links:
-      - id: aeroclub.db.travelboard
+      - id: aeroclub.db.dwh
+        title: Запрос статистики для виджетов
         direction: -->
-        title: Получение статистики для виджетов менеджера
+      - id: aeroclub.db.surveys
+        title: Запрос статистики для виджетов
+        direction: -->
       - id: aeroclub.db.cabinet
         direction: -->
-        title: Получение настроек виджетов
-      - id: aeroclub.services.api
+        title: Запрос настроек виджетов
+      - id: aeroclub.db.travelboard
         direction: -->
-        title: Получение доступных компаний
+        title: Запрос статистики для виджетов
+      - id: aeroclub.services.dictionaries
+        direction: -->
+        title: Запрос справочников
+      - id: aeroclub.services.companies
+        direction: -->
+        title: Работа с компаниями, подписками
+      - id: aeroclub.services.profiles
+        direction: -->
+        title: Работа с профилями
+      - id: aeroclub.services.journeys
+        direction: -->
+        title: Автокомплит в ТБМ
       - id: aeroclub.services.apiQuery
         direction: -->
         title: Получение информации из БД Cabinet
-      - id: aeroclub.services.dictionaries
+      - id: aeroclub.applications.timeNew.styles
         direction: -->
-        title: Получение справочников
-      - id: aeroclub.services.profiles
-        direction: -->
-        title: Получение информации для профилей
-      - id: aeroclub.services.companies
-        direction: -->
-        title: Получение настроек подписки
+        title: Получение стилей для брендирования
       - id: aeroclub.services.businesstrips
         direction: -->
-        title: Командировки и формы оплаты
+        title: Работа с командировками и формами оплаты
+      - id: aeroclub.services.propertyfx
+        direction: -->
+        title: Работа с доп. данными
+      - id: aeroclub.services.blobstore
+        direction: -->
+        title: Работа с файлами
+      - id: aeroclub.services.indexProfiles
+        direction: -->
+        title: Запрос профилей
+      - id: aeroclub.services.vault
+        direction: -->
+        title: Работа с банковскими картами
+  aeroclub.applications.timeNew.styles:
+    title: Styles
+    entity: file
+    description: Репозиторий стилей для Time
+    mainClients: Time API
+    technicalInfo: Json файлы
+    repository: http://hg.aeroclub.int/projects/time/repositories/aeroclub.time.styles/
+    responsible:
+    project: Aeroclub Time
+    technologies:

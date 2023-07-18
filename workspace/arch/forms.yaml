@@ -1,16 +1,47 @@
 forms:                    # Формы
   - entity:               # Сущности для которых форма релевантна (см. PlantUML)
       - component         # В данном случае, это компонент
+      - file
     fields:               # Поля формы
+      description:        # Идентификатор поля
+        title: Описание       # Название поля
+        required: false    # Признак обязательности
+      mainClients:
+        title: Основные пользователи
+        required: false
+      technicalInfo:
+        title: Краткое техническое описание
+        required: false
       repository:
         title: Репозиторий
+        required: false
+      test:
+        title: Тестовая система
+        required: false
+      prod:
+        title: Рабочая система
+        required: false
+      build:
+        title: Сборка и публикация
+        required: false
+      logsTest:
+        title: Логи тестовой системы
+        required: false
+      logsProd:
+        title: Логи рабочей системы
+        required: false
+      versions:
+        title: Версии релизов
+        required: false
+      responsible:
+        title: Кем поддерживается
+        required: false
+      monitoring:
+        title: URL для мониторинга
         required: false
       project:
         title: Проект
         required: false
-      description:        # Идентификатор поля
-        title: Описание       # Название поля
-        required: false    # Признак обязательности
-      url:
-        title: URL
+      wiki:
+        title: Wiki
         required: false

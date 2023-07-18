@@ -81,3 +81,43 @@ components:
     description:
     url:
     technologies:
+  aeroclub.db.dwh:
+    repository: aeroclub.db.dwh
+    title: DWH
+    entity: database
+    project:
+    description:
+    url:
+    technologies:
+  aeroclub.db.surveys:
+    repository: aeroclub.db.surveys
+    title: Surveys
+    entity: database
+    project:
+    description:
+    url:
+    technologies:
+  aeroclub.db.fs:
+    repository: aeroclub.db.fs
+    title: FS
+    entity: database
+    project:
+    description: БД для хранения отпечатков для компактных ссылок на файлы
+    url:
+    technologies:
+  aeroclub.db.elastic:
+    repository: aeroclub.db.elastic
+    title: Elastic
+    entity: database
+    project:
+    description:
+    url:
+    technologies:
+  aeroclub.db.lucene:
+    repository: aeroclub.db.lucene
+    title: Lucene
+    entity: database
+    project:
+    description:
+    url:
+    technologies:

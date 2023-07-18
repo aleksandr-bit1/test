@@ -9,19 +9,13 @@ contexts:
   aeroclub.applications.timeNew.ui:
     title: TimeAPI
     location: Time New/UI
-    extra-links: false
+    extra-links: true
     components:
-      - aeroclub.applications.time
       - aeroclub.applications.timeNew.ui
-      - aeroclub.applications.passport
-      - aeroclub.integration.inAppStory
-      - aeroclub.integration.yandexMetrika
-      - aeroclub.integration.googleAnalytics
   aeroclub.applications.timeNew.api:
     title: API
     location: Time New/API
     extra-links: true
     components:
       - aeroclub.applications.timeNew.api
-      - aeroclub.services.api
-      - aeroclub.services.apiQuery
+      - aeroclub.applications.timeNew.styles
